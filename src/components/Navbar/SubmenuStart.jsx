@@ -3,8 +3,8 @@ import Link from "next/link";
 const SubmenuStart = () => {
 	return (
 		<>
-			<div className="flex flex-row p-2 rounded-lg bg-base-550">
-				<div className="w-56 flex flex-col items-start whitespace-normal rounded hover:bg-blue-900">
+			<div className="flex flex-row p-2 rounded-lg bg-base-550 bg-opacity-99">
+				<div className="w-56 flex flex-col items-start whitespace-normal rounded hover:bg-blue-900 transition duration-300">
 					<Link href="/login" className="p-3">
 						<div>
 							<h2 className="font-semibold mb-1">Start my project</h2>
@@ -12,7 +12,7 @@ const SubmenuStart = () => {
 						</div>
 					</Link>
 				</div>
-				<div className="w-48 flex flex-col items-start whitespace-normal rounded hover:bg-blue-900">
+				<div className="w-48 flex flex-col items-start whitespace-normal rounded hover:bg-blue-900 transition duration-300">
 					<Link href="/sign-up" className="p-3">
 						<div>
 							<h2 className="font-semibold mb-1">Join a project</h2>

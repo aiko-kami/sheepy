@@ -1,4 +1,4 @@
-import "./globals.css";
+import "../globals.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,5 +9,11 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-	return <html lang="en">{children}</html>;
+	return (
+		<body className="flex flex-col h-screen text-base-100 bg-base-500">
+			<Navbar />
+			<main className="relative my-auto md:mx-10 xl:mx-36">{children}</main>
+			<Footer />
+		</body>
+	);
 }

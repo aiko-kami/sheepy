@@ -4,7 +4,7 @@ import Login from "@/components/Navbar/Login";
 
 const Header = () => {
 	return (
-		<header className="sticky p-2 z-50 flex justify-between">
+		<header className="sticky p-2 z-50 flex justify-between bg-custom-blue-dark">
 			<div className="">
 				<Sandwich />
 			</div>

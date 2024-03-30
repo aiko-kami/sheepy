@@ -4,7 +4,7 @@ const Footer = () => {
 	const currentYear = new Date().getFullYear();
 	return (
 		<>
-			<footer className="bg-base-600 sticky top-[100vh]">
+			<footer className="bg-base-600 sticky top-[100vh] mt-12">
 				<div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8 ">
 					<div className="md:flex md:justify-between">
 						<div className="mb-6 md:mb-0">
