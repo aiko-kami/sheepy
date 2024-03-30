@@ -51,7 +51,7 @@ const Hero = () => {
 				</div>
 				<button
 					type="button"
-					className="text-white text-3xl bg-green-500 hover:bg-green-600 active:bg-green-900 font-medium rounded-full px-7 py-4 text-center m-4 absolute left-1/2 -translate-x-1/2 bottom-20"
+					className="text-white text-3xl bg-green-500 hover:bg-green-600 active:bg-green-900 transition duration-300 font-medium rounded-full px-7 py-4 text-center m-4 absolute left-1/2 -translate-x-1/2 bottom-20"
 				>
 					Start my project
 				</button>
