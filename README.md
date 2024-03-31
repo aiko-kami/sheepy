@@ -1,5 +1,3 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
 First, run the development server:
@@ -89,8 +87,7 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 - [Features](#-features)
 - [Installation](#-installation)
 - [Code Structure](#-code-structure)
-- [API Documentation](#-api-documentation)
-- [API Endpoints](#-api-endpoints)
+- [Application routes](#-application-routes)
 - [Environment Variables](#-environment-variables)
 - [Author](#-author)
 - [Contributing](#-contributing)
@@ -99,7 +96,12 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 
 ## 🧰 Features
 
-- [] xxxxxxxx
+- [] Project description page
+- [] Project creation page
+- [] User profile update page
+- [] User profile public page
+- [] View my profile page
+
   - [] xxxxxxxx
 
 ---
@@ -118,16 +120,16 @@ Order of priorities: ❤ > 💛 > 💚
 
 ## 📦 Installation
 
-Panda server requires [Node.js](https://nodejs.org/) and [MongoDB](https://mongodb.com/) to run.
+Sheppy requires [Node.js](https://nodejs.org/) to run.
 
 Install the dependencies with npm:
 
 ```bash
-  cd panda-server
+  cd sheepy
   npm install
 ```
 
-Start the server in dev mode:
+Start the application in dev mode:
 
 ```bash
   npm run dev
@@ -137,41 +139,17 @@ Start the server in dev mode:
 
 ```
 src
-├───.jest                 # Jest imports
-├───config                # Configuration related variables
-├───controllers           # Route controllers
-│   ├───auth
-│   ├───project
-│   └───user
-├───docs                  # Documentation
-├───middlewares           # Custom middlewares
-├───models                # Mongoose models
-├───routes                # Routes
-├───services              # Business logic
-│   ├───auth
-│   ├───project
-│   ├───token
-│   └───user
-├───tests                 # Tests
-│   ├───front-end
-│   ├───services
-│   │   └───auth
-│   └───utils
-│       └───validation
-└───utils                 # Utility classes and functions
-    ├───email
-    ├───queries
-    ├───scripts
-    ├───tools
-    └───validation
-app.js                    # App entry point
+├───.next                 # next built
+├───public                # public files assets
+├───src
+│   ├───app              # Route controllers
+│   │   └───not-found.jsx
+│   ├───components
+│   │   └───Navbar
+│
 ```
 
-## 📖 API Documentation
-
-Not available right now.
-
-## 🧭 API Endpoints
+## 🧭 Application routes
 
 List of available routes:
 
@@ -322,7 +300,7 @@ Please contact neutroneer100@gmail.com
 
 ## 🌮 Demo
 
-NextJS version: [Sheepy](https://sheepy-beta.vercel.app/)
+NextJS version: [Sheepy](https://sheepy.vercel.app/)
 
 ## 🧗‍♂️ Status
 
