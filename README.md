@@ -60,13 +60,31 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 
 ## 🧰 Features
 
+### Pages
+
 - [] Project description page
 - [] Project creation page
 - [] User profile update page
 - [] User profile public page
 - [] View my profile page
+- [] Search projects page
+- [] Search talents page
 
-  - [] xxxxxxxx
+### Components
+
+- [] Other mosaic
+- [] Talent card
+- [] Project card for search
+- [] Project table for search
+- [] Talent card for search
+- [] Talent table for search
+- [] List of categories (buttons)
+- [] Carousel with profiles or projects
+- [] Video presentation
+
+### Other
+
+- [] Add button See more on the home page
 
 ---
 

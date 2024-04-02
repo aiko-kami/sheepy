@@ -4,7 +4,7 @@ import Link from "next/link";
 const ProjectCard = () => {
 	return (
 		<>
-			<div className="rounded-lg max-w-72 shadow-2xl m-2">
+			<div className="rounded-lg max-w-72 shadow-2xl">
 				<div className="relative w-full">
 					<Image src="https://superawesomevectors.com/wp-content/uploads/2021/04/yellow-submarine-vector.jpg" className="rounded-t-lg" alt="Card" width={600} height={225} />
 					<Link href="/login">
