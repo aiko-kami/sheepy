@@ -42,12 +42,12 @@ const Sandwich = () => {
 								<div id="doubleDropdown" className="m-0 z-10 hidden bg-white rounded-lg shadow w-36 tn:w-40">
 									<ul className="py-1 text-sm text-gray-700" aria-labelledby="doubleDropdownButton">
 										<li>
-											<Link href="#" className="block px-4 py-2 hover:bg-gray-200 duration-200 active:text-base-450">
+											<Link href="/start/start-my-project" className="block px-4 py-2 hover:bg-gray-200 duration-200 active:text-base-450">
 												Start my project
 											</Link>
 										</li>
 										<li>
-											<Link href="#" className="block px-4 py-2 hover:bg-gray-200 duration-200 active:text-base-450">
+											<Link href="/start/join-a-project" className="block px-4 py-2 hover:bg-gray-200 duration-200 active:text-base-450">
 												Join a project
 											</Link>
 										</li>
@@ -70,27 +70,27 @@ const Sandwich = () => {
 								<div id="doubleDropdown2" className="m-0 z-10 hidden bg-white rounded-lg shadow w-36 tn:w-40">
 									<ul className="py-1 text-sm text-gray-700" aria-labelledby="doubleDropdownButton2">
 										<li>
-											<Link href="#" className="block px-4 py-2 hover:bg-gray-200 duration-200 active:text-base-450">
+											<Link href="/how-it-works/take-a-tour" className="block px-4 py-2 hover:bg-gray-200 duration-200 active:text-base-450">
 												Take a tour
 											</Link>
 										</li>
 										<li>
-											<Link href="#" className="block px-4 py-2 hover:bg-gray-200 duration-200 active:text-base-450">
+											<Link href="/how-it-works/initiate-a-project" className="block px-4 py-2 hover:bg-gray-200 duration-200 active:text-base-450">
 												Initiate a project
 											</Link>
 										</li>
 										<li>
-											<Link href="#" className="block px-4 py-2 hover:bg-gray-200 duration-200 active:text-base-450">
+											<Link href="/how-it-works/join-a-project" className="block px-4 py-2 hover:bg-gray-200 duration-200 active:text-base-450">
 												Join a project
 											</Link>
 										</li>
 										<li>
-											<Link href="#" className="block px-4 py-2 hover:bg-gray-200 duration-200 active:text-base-450">
+											<Link href="/how-it-works/why-us" className="block px-4 py-2 hover:bg-gray-200 duration-200 active:text-base-450">
 												Why us?
 											</Link>
 										</li>
 										<li>
-											<Link href="#" className="block px-4 py-2 hover:bg-gray-200 duration-200 active:text-base-450">
+											<Link href="/how-it-works/pricing-and-fees" className="block px-4 py-2 hover:bg-gray-200 duration-200 active:text-base-450">
 												Pricing and fees
 											</Link>
 										</li>
@@ -98,7 +98,7 @@ const Sandwich = () => {
 								</div>
 							</li>
 							<li>
-								<Link href="#" className="block px-4 py-2 hover:bg-gray-200 duration-200 active:text-base-450">
+								<Link href="/discover" className="block px-4 py-2 hover:bg-gray-200 duration-200 active:text-base-450">
 									Discover
 								</Link>
 							</li>

@@ -28,7 +28,7 @@ const Menu = () => {
 						<SubmenuHowItWorks />
 					</div>
 				</div>
-				<Link href="/login" className="inline-flex items-center duration-200 active:text-base-450 px-10 py-1.5 tn:m-2">
+				<Link href="/discover" className="inline-flex items-center duration-200 active:text-base-450 px-10 py-1.5 tn:m-2">
 					Discover
 				</Link>
 				<Link href="/login" className="inline-flex items-center duration-200 active:text-base-450 px-10 py-1.5 tn:m-2">
