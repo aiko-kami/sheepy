@@ -50,7 +50,7 @@ const Hero = () => {
 					<h2 className="text-center text-2xl font-oldenburg mb-6">Bring your ideas to life</h2>
 					<h2 className="text-center text-2xl font-oldenburg">by finding the best talents</h2>
 				</div>
-				<Link href="/sign-up">
+				<Link href="/start/start-my-project">
 					<button
 						type="button"
 						className="text-white text-lg bg-green-500 hover:bg-green-600 active:bg-green-900 transition duration-300 font-medium rounded-xl px-5 py-2.5 text-center absolute left-1/2 -translate-x-1/2 bottom-38"
@@ -96,7 +96,7 @@ const Hero = () => {
 					<h2 className="text-center text-4xl font-oldenburg mb-10">Bring your ideas to life</h2>
 					<h2 className="text-center text-4xl font-oldenburg">by finding the best talents</h2>
 				</div>
-				<Link href="/sign-up">
+				<Link href="/start/start-my-project">
 					<button
 						type="button"
 						className="text-white text-3xl bg-green-500 hover:bg-green-600 active:bg-green-900 transition duration-300 font-medium rounded-full px-7 py-4 text-center m-4 absolute left-1/2 -translate-x-1/2 bottom-20"

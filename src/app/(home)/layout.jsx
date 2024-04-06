@@ -1,8 +1,8 @@
-import "./../globals.css";
+import "../globals.css";
 
-import NavbarHome from "@/components/Navbar/NavbarHome";
-import Hero from "@/components/Hero";
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Hero from "@/components/Hero";
 
 export const metadata = {
 	title: "Sheepy",
@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<body className="flex flex-col h-screen text-base-100 bg-base-500">
-			<NavbarHome />
+			<Navbar isHomePage={true} />
 			<div className="relative">
 				<Hero />
 			</div>
