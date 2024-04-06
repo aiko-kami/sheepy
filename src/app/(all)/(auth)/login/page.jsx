@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import sheepLogo from "../../../../public/sheepyLogo.png";
+import sheepLogo from "../../../../../public/sheepyLogo.png";
 
 const LoginPage = () => {
 	const [formData, setFormData] = useState({

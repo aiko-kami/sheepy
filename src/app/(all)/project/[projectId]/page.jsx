@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import moz01 from "../../../../public/assets/mosaic/moz01.png";
+import moz01 from "../../../../../public/assets/mosaic/moz01.png";
 
 const ProjectDescriptionPage = ({ params }) => {
 	const project = {
