@@ -6,12 +6,12 @@ const TalentCard = () => {
 		<>
 			<div className="rounded-lg max-w-66 shadow-2xl bg-blue-900">
 				<div className="flex flex-col items-center p-4">
-					<Link href="/projects/01">
+					<Link href="/users/01">
 						<Image src="https://picsum.photos/id/64/300/300" className="rounded-full" alt="Card" width={300} height={200} />
 					</Link>
 				</div>
 				<div className="p-4 text-center">
-					<Link href="/projects/01">
+					<Link href="/users/01">
 						<h2 className="font-semibold text-xl py-1">Marine</h2>
 						<p className="py-1">Hello! I am web designer ready to help you with your project ideas.</p>
 					</Link>
