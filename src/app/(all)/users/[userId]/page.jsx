@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import moz01 from "../../../../../public/assets/mosaic/moz01.png";
+import { FaRegBuilding, FaRegCommentDots, FaLink } from "react-icons/fa";
+import { FiMapPin } from "react-icons/fi";
+import { IoLocationOutline, IoBusinessOutline, IoChatbubbleEllipsesOutline, IoLinkOutline } from "react-icons/io5";
 
 const UserDescriptionPage = ({ params }) => {
 	const user = {
@@ -10,125 +13,285 @@ const UserDescriptionPage = ({ params }) => {
 		locationCity: "USS Enterprise",
 		locationCountry: "United Federation of Planets",
 		company: "Starfleet",
-		bio: "I am Captain Jean-Luc Picard of the USS Enterprise. As a dedicated Starfleet officer, I have spent my career boldly going where no one has gone before, exploring the far reaches of space, seeking out new life and civilizations, and upholding the principles of peace, diplomacy, and justice.",
 		languages: ["Federation Standard", "Klingon", "Vulcan"],
 		website: "https://memory-alpha.fandom.com/wiki/Jean-Luc_Picard",
 		talents: ["Strategic Leadership", "Diplomacy", "Tactical Command", "Archaeology"],
+		bio: "I am Captain Jean-Luc Picard of the USS Enterprise. As a dedicated Starfleet officer, I have spent my career boldly going where no one has gone before, exploring the far reaches of space, seeking out new life and civilizations, and upholding the principles of peace, diplomacy, and justice.",
 	};
 	return (
-		<div className="container my-8 mx-auto min-w-full bg-base-450 shadow-2xl">
-			<div className="h-40 tn:h-70 relative">
-				<Image
-					src="https://cdn.futura-sciences.com/cdn-cgi/image/width=1920,quality=50,format=auto/sources/images/cerisier-japon-fuji-min.jpeg"
-					fill
-					alt="Background profile picture"
-					className="object-cover"
-				/>
-			</div>
-			<div className="hidden lg:block absolute lg:w-4/12 px-4 lg:order-1 right-0">
-				<div className="flex justify-center py-4 lg:pt-4 pt-8">
-					<div className="mr-4 p-3 text-center">
-						<span className="text-4xl font-bold block uppercase tracking-wide text-blueGray-600">3</span>
-						<div className="text-sm text-blueGray-400">projects</div>
-						<div className="text-sm text-blueGray-400">on-going</div>
+		<>
+			<div className="grid md:grid-cols-3 gap-8 my-8">
+				{/* User card with picture */}
+				<div className="md:row-span-2 bg-base-450 shadow-2xl relative">
+					{/* background picture */}
+					<div className="h-46 relative">
+						<Image
+							src="https://cdn.futura-sciences.com/cdn-cgi/image/width=1920,quality=50,format=auto/sources/images/cerisier-japon-fuji-min.jpeg"
+							fill
+							alt="Background profile picture"
+							className="object-cover"
+						/>
 					</div>
-					<div className="mr-4 p-3 text-center">
-						<span className="text-4xl font-bold block uppercase tracking-wide text-blueGray-600">6</span>
-						<div className="text-sm text-blueGray-400">projects</div>
-						<div className="text-sm text-blueGray-400">completed</div>
+					{/* Profile picture */}
+					<div className="h-40 w-40 tn:min-h-60 tn:min-w-60 relative mx-auto -mt-30 rounded-full">
+						<Image src={user.profilePicture} fill alt="User profile picture" className="rounded-full object-cover border-8 border-base-500" />
 					</div>
-					<div className="mr-4 p-3 text-center">
-						<span className="text-4xl font-bold block uppercase tracking-wide text-blueGray-600">4</span>
-						<div className="text-sm text-blueGray-400">projects</div>
-						<div className="text-sm text-blueGray-400">created</div>
+					{/* Username and description */}
+					<div className="text-center my-4">
+						<h1 className="text-3xl font-semibold mb-2">{user.username}</h1>
+						<p className="text-gray-300">{user.description}</p>
+					</div>
+					{/* Projects counters */}
+					<div className="flex justify-evenly my-8 text-gray-300">
+						<div className="text-center">
+							<span className="text-4xl font-bold block uppercase tracking-wide text-white">3</span>
+							<div className="text-sm ">projects</div>
+							<div className="text-sm">on-going</div>
+						</div>
+						<div className="text-center">
+							<span className="text-4xl font-bold block uppercase tracking-wide text-white">5</span>
+							<div className="text-sm">projects</div>
+							<div className="text-sm">created</div>
+						</div>
+						<div className="text-center">
+							<span className="text-4xl font-bold block uppercase tracking-wide text-white">8</span>
+							<div className="text-sm">projects</div>
+							<div className="text-sm">completed</div>
+						</div>
+					</div>
+					{/* User details */}
+					<div className="px-4">
+						<p className="text-2xl font-semibold">More about me...</p>
+						<ul className="px-1">
+							<li className="flex my-4">
+								<div>
+									<IoLocationOutline className="text-gray-400 mr-2 text-2xl" />
+								</div>
+								<p className="">
+									<span className="font-semibold text-gray-400">Location:</span> {user.locationCity}, {user.locationCountry}
+								</p>
+							</li>
+							<li className="flex my-4">
+								<div>
+									<IoBusinessOutline className="text-gray-400 mr-2 text-2xl" />
+								</div>
+								<p className="">
+									<span className="font-semibold text-gray-400">Company:</span> {user.company}
+								</p>
+							</li>
+							<li className="flex my-4">
+								<div>
+									<IoChatbubbleEllipsesOutline className="text-gray-400 mr-2 text-2xl" />
+								</div>
+								<p className="">
+									<span className="font-semibold text-gray-400">Languages:</span> {user.languages.join(", ")}
+								</p>
+							</li>
+							<li className="flex my-4">
+								<div>
+									<IoLinkOutline className="text-gray-400 mr-2 text-2xl" />
+								</div>
+								<p className="">
+									<span className="font-semibold text-gray-400">Website:</span>{" "}
+									<a href={user.website} className="italic hover:underline">
+										{user.website}
+									</a>
+								</p>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				{/* User card with bio */}
+				<div className="md:col-span-2 bg-base-450 shadow-2xl p-6">
+					<h2 className="text-2xl font-semibold mb-2">My Bio</h2>
+					<p className="p-1 text-justify">
+						{user.bio}
+						Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates tempore vitae enim aut, quam quas consectetur voluptatum provident quisquam maiores repudiandae amet, omnis, atque
+						voluptatem aliquam similique voluptas quibusdam culpa aspernatur quod. Tempora fuga nobis hic? Nemo architecto placeat culpa tempora ipsa alias. Distinctio est provident inventore labore?
+						Iure accusantium omnis sed dolorum laudantium in consectetur laboriosam illum. Doloremque et alias ipsam sunt. Facilis ullam, nihil qui dignissimos corporis obcaecati? Labore, blanditiis
+						placeat cum reprehenderit libero eveniet non rerum quaerat cupiditate expedita possimus nemo nihil minus neque omnis error aspernatur praesentium ipsum, ipsam delectus provident quis
+						deserunt mollitia reiciendis. Nam!
+					</p>
+				</div>
+
+				{/* User card with talents */}
+				<div className="md:col-span-2 bg-base-450 shadow-2xl p-6">
+					<h2 className="text-2xl font-semibold mb-2">My talents</h2>
+					<ul className="py-2 grid md:grid-cols-3 gap-4">
+						<li>
+							<div className="rounded-lg min-w-full shadow-2xl bg-blue-900">
+								<div className="p-4 text-center">
+									<Link href="/users/01">
+										<h2 className="font-semibold text-xl py-1">UX/UI Designer</h2>
+										<p className="py-1">Builder of intuitive digital experiences</p>
+									</Link>
+									<div className="py-2 flex flex-wrap justify-center">
+										<Link href="/tags/ocean">
+											<div className="inline-flex items-center bg-blue-300 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">User research</div>
+										</Link>
+										<Link href="/tags/mecanics">
+											<div className="inline-flex items-center bg-orange-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Wireframing</div>
+										</Link>
+										<Link href="/tags/exploration">
+											<div className="inline-flex items-center bg-green-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Prototyping</div>
+										</Link>
+									</div>
+									<Link href="/users/01" className="italic hover:underline">
+										Read more...
+									</Link>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div className="rounded-lg min-w-full shadow-2xl bg-blue-900">
+								<div className="p-4 text-center">
+									<Link href="/users/01">
+										<h2 className="font-semibold text-xl py-1">UX/UI Designer</h2>
+										<p className="py-1">Builder of intuitive digital experiences</p>
+									</Link>
+									<div className="py-2 flex flex-wrap justify-center">
+										<Link href="/tags/ocean">
+											<div className="inline-flex items-center bg-blue-300 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">User research</div>
+										</Link>
+										<Link href="/tags/mecanics">
+											<div className="inline-flex items-center bg-orange-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Wireframing</div>
+										</Link>
+										<Link href="/tags/exploration">
+											<div className="inline-flex items-center bg-green-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Prototyping</div>
+										</Link>
+									</div>
+									<Link href="/users/01" className="italic hover:underline">
+										Read more...
+									</Link>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div className="rounded-lg min-w-full shadow-2xl bg-blue-900">
+								<div className="p-4 text-center">
+									<Link href="/users/01">
+										<h2 className="font-semibold text-xl py-1">UX/UI Designer</h2>
+										<p className="py-1">Builder of intuitive digital experiences</p>
+									</Link>
+									<div className="py-2 flex flex-wrap justify-center">
+										<Link href="/tags/ocean">
+											<div className="inline-flex items-center bg-blue-300 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">User research</div>
+										</Link>
+										<Link href="/tags/mecanics">
+											<div className="inline-flex items-center bg-orange-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Wireframing</div>
+										</Link>
+										<Link href="/tags/exploration">
+											<div className="inline-flex items-center bg-green-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Prototyping</div>
+										</Link>
+									</div>
+									<Link href="/users/01" className="italic hover:underline">
+										Read more...
+									</Link>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div className="rounded-lg min-w-full shadow-2xl bg-blue-900">
+								<div className="p-4 text-center">
+									<Link href="/users/01">
+										<h2 className="font-semibold text-xl py-1">UX/UI Designer</h2>
+										<p className="py-1">Builder of intuitive digital experiences</p>
+									</Link>
+									<div className="py-2 flex flex-wrap justify-center">
+										<Link href="/tags/ocean">
+											<div className="inline-flex items-center bg-blue-300 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">User research</div>
+										</Link>
+										<Link href="/tags/mecanics">
+											<div className="inline-flex items-center bg-orange-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Wireframing</div>
+										</Link>
+										<Link href="/tags/exploration">
+											<div className="inline-flex items-center bg-green-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Prototyping</div>
+										</Link>
+									</div>
+									<Link href="/users/01" className="italic hover:underline">
+										Read more...
+									</Link>
+								</div>
+							</div>
+						</li>
+						<li>
+							<div className="rounded-lg min-w-full shadow-2xl bg-blue-900">
+								<div className="p-4 text-center">
+									<Link href="/users/01">
+										<h2 className="font-semibold text-xl py-1">UX/UI Designer</h2>
+										<p className="py-1">Builder of intuitive digital experiences</p>
+									</Link>
+									<div className="py-2 flex flex-wrap justify-center">
+										<Link href="/tags/ocean">
+											<div className="inline-flex items-center bg-blue-300 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">User research</div>
+										</Link>
+										<Link href="/tags/mecanics">
+											<div className="inline-flex items-center bg-orange-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Wireframing</div>
+										</Link>
+										<Link href="/tags/exploration">
+											<div className="inline-flex items-center bg-green-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Prototyping</div>
+										</Link>
+									</div>
+									<Link href="/users/01" className="italic hover:underline">
+										Read more...
+									</Link>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				{/* User card with projects */}
+				<div class="md:col-span-3 bg-base-450 shadow-2xl">
+					{/* Menu top */}
+					<ul class="flex flex-wrap justify-center text-gray-600" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
+						<li class="me-2">
+							<button id="workproject-tab" data-tabs-target="#workproject" type="button" role="tab" aria-controls="workproject" aria-selected="true" class="inline-block p-4 hover:text-gray-300">
+								Projects I work on
+							</button>
+						</li>
+						<li class="me-2">
+							<button
+								id="createdproject-tab"
+								data-tabs-target="#createdproject"
+								type="button"
+								role="tab"
+								aria-controls="createdproject"
+								aria-selected="false"
+								class="inline-block p-4 text-gray-600 hover:text-gray-300"
+							>
+								Projects I created
+							</button>
+						</li>
+						<li class="me-2">
+							<button
+								id="completedproject-tab"
+								data-tabs-target="#completedproject"
+								type="button"
+								role="tab"
+								aria-controls="completedproject"
+								aria-selected="false"
+								class="inline-block p-4 text-gray-600 hover:text-gray-300"
+							>
+								Projects completed
+							</button>
+						</li>
+					</ul>
+					<div id="defaultTabContent">
+						<div class="hidden p-4 md:p-8" id="workproject" role="tabpanel" aria-labelledby="workproject-tab">
+							a
+						</div>
+						<div class="hidden p-4 md:p-8" id="createdproject" role="tabpanel" aria-labelledby="createdproject-tab">
+							b
+						</div>
+						<div class="hidden p-4 md:p-8" id="completedproject" role="tabpanel" aria-labelledby="completedproject-tab">
+							c
+						</div>
 					</div>
 				</div>
 			</div>
-
-			<div className="h-40 w-40 tn:min-h-60 tn:min-w-60 relative mx-auto -mt-10 tn:-mt-26 rounded-full">
-				<Image src={user.profilePicture} fill alt="User profile picture" className="rounded-full object-cover border-8 border-base-500" />
-			</div>
-			<div className="text-center mt-2">
-				<h1 className="text-3xl font-semibold mb-4">{user.username}</h1>
-				<p className="text-lg mb-2">{user.description}</p>
-			</div>
-
-			<ul className="p-6">
-				<li className="flex text-gray-600 items-center">
-					<svg className="h-5 w-5 text-gray-400 mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-						<path
-							className=""
-							d="M5.64 16.36a9 9 0 1 1 12.72 0l-5.65 5.66a1 1 0 0 1-1.42 0l-5.65-5.66zm11.31-1.41a7 7 0 1 0-9.9 0L12 19.9l4.95-4.95zM12 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
-						/>
-					</svg>
-					<p className="text-gray-600 my-1">
-						<span className="font-semibold">Location:</span> {user.locationCity}, {user.locationCountry}
-					</p>
-				</li>
-				<li className="flex text-gray-600 items-center">
-					<svg aria-hidden="true" className="h-5 w-5 text-gray-400 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-						<path
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							strokeWidth={2}
-							d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
-						/>
-					</svg>
-					<p className="text-gray-600 my-1">
-						<span className="font-semibold">Company:</span> {user.company}
-					</p>
-				</li>
-				<li className="flex text-gray-600 items-center">
-					<svg aria-hidden="true" className="h-5 w-5 text-gray-400 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-						<path
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							strokeWidth={2}
-							d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"
-						/>
-					</svg>
-					<p className="text-gray-600 my-1">
-						<span className="font-semibold">Languages:</span> {user.languages.join(", ")}
-					</p>
-				</li>
-				<li className="flex text-gray-600 items-center">
-					<svg aria-hidden="true" className="h-4 w-4 text-gray-400 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-						<path
-							strokeLinecap="round"
-							strokeLinejoin="round"
-							strokeWidth={2}
-							d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-						/>
-					</svg>
-					<p className="text-gray-600 my-1/">
-						<span className="font-semibold">Website:</span> {user.website}
-					</p>
-				</li>
-				<li className="flex text-gray-600 items-center">
-					<svg className="h-5 w-5 text-gray-400 mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-						<path
-							className=""
-							d="M5.64 16.36a9 9 0 1 1 12.72 0l-5.65 5.66a1 1 0 0 1-1.42 0l-5.65-5.66zm11.31-1.41a7 7 0 1 0-9.9 0L12 19.9l4.95-4.95zM12 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
-						/>
-					</svg>
-					<p className="text-gray-600 my-1">
-						<span className="font-semibold">Talents:</span> {user.talents.join(", ")}
-					</p>
-				</li>
-				<div className="flex text-gray-600 items-center">
-					<svg className="h-5 w-5 text-gray-400 mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-						<path
-							className=""
-							d="M5.64 16.36a9 9 0 1 1 12.72 0l-5.65 5.66a1 1 0 0 1-1.42 0l-5.65-5.66zm11.31-1.41a7 7 0 1 0-9.9 0L12 19.9l4.95-4.95zM12 14a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
-						/>
-					</svg>
-
-					<p className="text-gray-600 my-1">
-						<span className="font-semibold">Bio:</span> {user.bio}
-					</p>
-				</div>
-			</ul>
-		</div>
+		</>
 	);
 };
 
