@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import moz01 from "../../../../../public/assets/mosaic/moz01.png";
-import { FaRegBuilding, FaRegCommentDots, FaLink } from "react-icons/fa";
-import { FiMapPin } from "react-icons/fi";
+import UserTalentCard from "@/components/Cards/UserTalentCard";
+
 import { IoLocationOutline, IoBusinessOutline, IoChatbubbleEllipsesOutline, IoLinkOutline } from "react-icons/io5";
 
 const UserDescriptionPage = ({ params }) => {
@@ -120,138 +119,48 @@ const UserDescriptionPage = ({ params }) => {
 					<h2 className="text-2xl font-semibold mb-2">My talents</h2>
 					<ul className="py-2 grid md:grid-cols-3 gap-4">
 						<li>
-							<div className="rounded-lg min-w-full shadow-2xl bg-blue-900">
-								<div className="p-4 text-center">
-									<Link href="/users/01">
-										<h2 className="font-semibold text-xl py-1">UX/UI Designer</h2>
-										<p className="py-1">Builder of intuitive digital experiences</p>
-									</Link>
-									<div className="py-2 flex flex-wrap justify-center">
-										<Link href="/tags/ocean">
-											<div className="inline-flex items-center bg-blue-300 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">User research</div>
-										</Link>
-										<Link href="/tags/mecanics">
-											<div className="inline-flex items-center bg-orange-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Wireframing</div>
-										</Link>
-										<Link href="/tags/exploration">
-											<div className="inline-flex items-center bg-green-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Prototyping</div>
-										</Link>
-									</div>
-									<Link href="/users/01" className="italic hover:underline">
-										Read more...
-									</Link>
-								</div>
-							</div>
+							<UserTalentCard />
 						</li>
 						<li>
-							<div className="rounded-lg min-w-full shadow-2xl bg-blue-900">
-								<div className="p-4 text-center">
-									<Link href="/users/01">
-										<h2 className="font-semibold text-xl py-1">UX/UI Designer</h2>
-										<p className="py-1">Builder of intuitive digital experiences</p>
-									</Link>
-									<div className="py-2 flex flex-wrap justify-center">
-										<Link href="/tags/ocean">
-											<div className="inline-flex items-center bg-blue-300 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">User research</div>
-										</Link>
-										<Link href="/tags/mecanics">
-											<div className="inline-flex items-center bg-orange-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Wireframing</div>
-										</Link>
-										<Link href="/tags/exploration">
-											<div className="inline-flex items-center bg-green-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Prototyping</div>
-										</Link>
-									</div>
-									<Link href="/users/01" className="italic hover:underline">
-										Read more...
-									</Link>
-								</div>
-							</div>
+							<UserTalentCard />
 						</li>
 						<li>
-							<div className="rounded-lg min-w-full shadow-2xl bg-blue-900">
-								<div className="p-4 text-center">
-									<Link href="/users/01">
-										<h2 className="font-semibold text-xl py-1">UX/UI Designer</h2>
-										<p className="py-1">Builder of intuitive digital experiences</p>
-									</Link>
-									<div className="py-2 flex flex-wrap justify-center">
-										<Link href="/tags/ocean">
-											<div className="inline-flex items-center bg-blue-300 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">User research</div>
-										</Link>
-										<Link href="/tags/mecanics">
-											<div className="inline-flex items-center bg-orange-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Wireframing</div>
-										</Link>
-										<Link href="/tags/exploration">
-											<div className="inline-flex items-center bg-green-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Prototyping</div>
-										</Link>
-									</div>
-									<Link href="/users/01" className="italic hover:underline">
-										Read more...
-									</Link>
-								</div>
-							</div>
+							<UserTalentCard />
 						</li>
 						<li>
-							<div className="rounded-lg min-w-full shadow-2xl bg-blue-900">
-								<div className="p-4 text-center">
-									<Link href="/users/01">
-										<h2 className="font-semibold text-xl py-1">UX/UI Designer</h2>
-										<p className="py-1">Builder of intuitive digital experiences</p>
-									</Link>
-									<div className="py-2 flex flex-wrap justify-center">
-										<Link href="/tags/ocean">
-											<div className="inline-flex items-center bg-blue-300 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">User research</div>
-										</Link>
-										<Link href="/tags/mecanics">
-											<div className="inline-flex items-center bg-orange-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Wireframing</div>
-										</Link>
-										<Link href="/tags/exploration">
-											<div className="inline-flex items-center bg-green-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Prototyping</div>
-										</Link>
-									</div>
-									<Link href="/users/01" className="italic hover:underline">
-										Read more...
-									</Link>
-								</div>
-							</div>
+							<UserTalentCard />
 						</li>
 						<li>
-							<div className="rounded-lg min-w-full shadow-2xl bg-blue-900">
-								<div className="p-4 text-center">
-									<Link href="/users/01">
-										<h2 className="font-semibold text-xl py-1">UX/UI Designer</h2>
-										<p className="py-1">Builder of intuitive digital experiences</p>
-									</Link>
-									<div className="py-2 flex flex-wrap justify-center">
-										<Link href="/tags/ocean">
-											<div className="inline-flex items-center bg-blue-300 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">User research</div>
-										</Link>
-										<Link href="/tags/mecanics">
-											<div className="inline-flex items-center bg-orange-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Wireframing</div>
-										</Link>
-										<Link href="/tags/exploration">
-											<div className="inline-flex items-center bg-green-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Prototyping</div>
-										</Link>
-									</div>
-									<Link href="/users/01" className="italic hover:underline">
-										Read more...
-									</Link>
-								</div>
-							</div>
+							<UserTalentCard />
+						</li>
+						<li>
+							<UserTalentCard />
+						</li>
+						<li>
+							<UserTalentCard />
+						</li>
+						<li>
+							<UserTalentCard />
+						</li>
+						<li>
+							<UserTalentCard />
+						</li>
+						<li>
+							<UserTalentCard />
 						</li>
 					</ul>
 				</div>
 
 				{/* User card with projects */}
-				<div class="md:col-span-3 bg-base-450 shadow-2xl">
+				<div className="md:col-span-3 bg-base-450 shadow-2xl">
 					{/* Menu top */}
-					<ul class="flex flex-wrap justify-center text-gray-600" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
-						<li class="me-2">
-							<button id="workproject-tab" data-tabs-target="#workproject" type="button" role="tab" aria-controls="workproject" aria-selected="true" class="inline-block p-4 hover:text-gray-300">
+					<ul className="flex flex-wrap justify-center text-gray-600" id="defaultTab" data-tabs-toggle="#defaultTabContent" role="tablist">
+						<li className="me-2">
+							<button id="workproject-tab" data-tabs-target="#workproject" type="button" role="tab" aria-controls="workproject" aria-selected="true" className="inline-block p-4 hover:text-gray-300">
 								Projects I work on
 							</button>
 						</li>
-						<li class="me-2">
+						<li className="me-2">
 							<button
 								id="createdproject-tab"
 								data-tabs-target="#createdproject"
@@ -259,12 +168,12 @@ const UserDescriptionPage = ({ params }) => {
 								role="tab"
 								aria-controls="createdproject"
 								aria-selected="false"
-								class="inline-block p-4 text-gray-600 hover:text-gray-300"
+								className="inline-block p-4 text-gray-600 hover:text-gray-300"
 							>
 								Projects I created
 							</button>
 						</li>
-						<li class="me-2">
+						<li className="me-2">
 							<button
 								id="completedproject-tab"
 								data-tabs-target="#completedproject"
@@ -272,20 +181,20 @@ const UserDescriptionPage = ({ params }) => {
 								role="tab"
 								aria-controls="completedproject"
 								aria-selected="false"
-								class="inline-block p-4 text-gray-600 hover:text-gray-300"
+								className="inline-block p-4 text-gray-600 hover:text-gray-300"
 							>
 								Projects completed
 							</button>
 						</li>
 					</ul>
 					<div id="defaultTabContent">
-						<div class="hidden p-4 md:p-8" id="workproject" role="tabpanel" aria-labelledby="workproject-tab">
+						<div className="hidden p-4 md:p-8" id="workproject" role="tabpanel" aria-labelledby="workproject-tab">
 							a
 						</div>
-						<div class="hidden p-4 md:p-8" id="createdproject" role="tabpanel" aria-labelledby="createdproject-tab">
+						<div className="hidden p-4 md:p-8" id="createdproject" role="tabpanel" aria-labelledby="createdproject-tab">
 							b
 						</div>
-						<div class="hidden p-4 md:p-8" id="completedproject" role="tabpanel" aria-labelledby="completedproject-tab">
+						<div className="hidden p-4 md:p-8" id="completedproject" role="tabpanel" aria-labelledby="completedproject-tab">
 							c
 						</div>
 					</div>

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const TalentCard = () => {
+const UserCard = () => {
 	return (
 		<>
 			<div className="rounded-lg max-w-66 shadow-2xl bg-blue-900">
@@ -32,4 +32,4 @@ const TalentCard = () => {
 	);
 };
 
-export default TalentCard;
+export default UserCard;
