@@ -121,33 +121,6 @@ const UserDescriptionPage = ({ params }) => {
 						<li>
 							<UserTalentCard />
 						</li>
-						<li>
-							<UserTalentCard />
-						</li>
-						<li>
-							<UserTalentCard />
-						</li>
-						<li>
-							<UserTalentCard />
-						</li>
-						<li>
-							<UserTalentCard />
-						</li>
-						<li>
-							<UserTalentCard />
-						</li>
-						<li>
-							<UserTalentCard />
-						</li>
-						<li>
-							<UserTalentCard />
-						</li>
-						<li>
-							<UserTalentCard />
-						</li>
-						<li>
-							<UserTalentCard />
-						</li>
 					</ul>
 				</div>
 
