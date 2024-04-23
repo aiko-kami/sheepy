@@ -12,6 +12,25 @@ module.exports = {
 			tn: "350px",
 		},
 		extend: {
+			colors: {
+				base: {
+					100: "#ffffff",
+					200: "#bcbec5",
+					300: "#7e818d",
+					400: "#38BDF8",
+					450: "#071e34",
+					500: "#002464",
+					550: "#0C1322",
+					600: "#111646",
+					700: "#0a0e19",
+					800: "#05070f",
+					900: "#000000",
+				},
+				bg: "#1E293B", // Background color
+				text: "#0F172A", // Text color
+				"custom-blue-dark": "#111646",
+				"custom-blue-light": "#002464",
+			},
 			spacing: {
 				2: "0.5rem",
 				4: "1rem",
@@ -107,25 +126,6 @@ module.exports = {
 			inset: (theme) => ({
 				...theme("spacing"),
 			}),
-			colors: {
-				base: {
-					100: "#ffffff",
-					200: "#bcbec5",
-					300: "#7e818d",
-					400: "#38BDF8",
-					450: "#071e34",
-					500: "#002464",
-					550: "#0C1322",
-					600: "#111646",
-					700: "#0a0e19",
-					800: "#05070f",
-					900: "#000000",
-				},
-				bg: "#1E293B", // Background color
-				text: "#0F172A", // Text color
-				"custom-blue-dark": "#111646",
-				"custom-blue-light": "#002464",
-			},
 			backgroundOpacity: {
 				10: "0.1",
 				20: "0.2",

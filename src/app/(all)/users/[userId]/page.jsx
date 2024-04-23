@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import UserTalentCard from "@/components/Cards/UserTalentCard/UserTalentCard";
-import ProjectHorizontalCard from "@/components/Cards/ProjectHorizontalCard";
+import ProjectsList from "@/components/UserProfilePublic/ProjectsList";
 
 import { IoLocationOutline, IoBusinessOutline, IoChatbubbleEllipsesOutline, IoLinkOutline } from "react-icons/io5";
 
@@ -135,77 +136,7 @@ const UserDescriptionPage = ({ params }) => {
 				</div>
 
 				{/* User card with projects */}
-				<div className="md:col-span-3 bg-base-450 shadow-2xl pb-4">
-					{/* Menu top */}
-					<ul className="flex flex-wrap justify-center text-gray-600 mb-4" id="default-tab" data-tabs-toggle="#default-tab-content" role="tablist">
-						<li className="me-2" role="presentation">
-							<button
-								id="workproject-tab"
-								data-tabs-target="#workproject"
-								type="button"
-								role="tab"
-								aria-controls="workproject"
-								aria-selected="false"
-								className="inline-block p-4 rounded-t-lg duration-200 transition ease-in-out"
-							>
-								Projects I work on
-							</button>
-						</li>
-						<li className="me-2" role="presentation">
-							<button
-								id="createdproject-tab"
-								data-tabs-target="#createdproject"
-								type="button"
-								role="tab"
-								aria-controls="createdproject"
-								aria-selected="false"
-								className="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:border-gray-300 duration-200 transition ease-in-out"
-							>
-								Projects I created
-							</button>
-						</li>
-						<li className="me-2" role="presentation">
-							<button
-								id="completedproject-tab"
-								data-tabs-target="#completedproject"
-								type="button"
-								role="tab"
-								aria-controls="completedproject"
-								aria-selected="false"
-								className="inline-block p-4 rounded-t-lg hover:text-gray-600 hover:border-gray-300 duration-200 transition ease-in-out"
-							>
-								Projects completed
-							</button>
-						</li>
-					</ul>
-					<div id="defaultTabContent">
-						<div className="hidden p-2" id="workproject" role="tabpanel" aria-labelledby="workproject-tab">
-							<li className="list-none">
-								<ProjectHorizontalCard />
-							</li>
-							<li className="list-none">
-								<ProjectHorizontalCard />
-							</li>
-						</div>
-
-						<div className="hidden p-2" id="createdproject" role="tabpanel" aria-labelledby="createdproject-tab">
-							<li className="list-none">
-								<ProjectHorizontalCard />
-							</li>
-						</div>
-						<div className="hidden p-2" id="completedproject" role="tabpanel" aria-labelledby="completedproject-tab">
-							<li className="list-none">
-								<ProjectHorizontalCard />
-							</li>
-							<li className="list-none">
-								<ProjectHorizontalCard />
-							</li>
-							<li className="list-none">
-								<ProjectHorizontalCard />
-							</li>
-						</div>
-					</div>
-				</div>
+				<ProjectsList />
 			</div>
 		</>
 	);
