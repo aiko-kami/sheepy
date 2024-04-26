@@ -4,7 +4,7 @@ import TabContent from "@/components/Tabs/TabContent";
 import ProjectHorizontalCard from "@/components/Cards/ProjectHorizontalCard";
 import { useState } from "react";
 
-const ProjectsList = () => {
+const ProjectsTabsList = () => {
 	const [activeTab, setActiveTab] = useState("tabProjectWorked");
 
 	const project1 = {
@@ -42,30 +42,30 @@ const ProjectsList = () => {
 	};
 
 	return (
-		<div className="md:col-span-3 bg-base-450 shadow-2xl pb-4">
+		<>
 			{/* Menu nav tabs selection */}
-			<ul className="flex flex-wrap justify-center text-gray-600 mb-4">
+			<ul className="flex flex-wrap justify-center text-gray-600">
 				<li>
-					<button className="me-2 inline-block mx-6 rounded-t-lg duration-200 transition ease-in-out">
+					<button className="me-2 inline-block mx-6 rounded-t-lg">
 						<TabNavItem title="Projects I work on" id="tabProjectWorked" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
 					</button>
 				</li>
 				<li>
-					<button className="me-2 inline-block mx-6 rounded-t-lg duration-200 transition ease-in-out">
+					<button className="me-2 inline-block mx-6 rounded-t-lg">
 						<TabNavItem title="Projects I created" id="tabProjectCreated" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
 					</button>
 				</li>
 				<li>
-					<button className="me-2 inline-block mx-6 rounded-t-lg duration-200 transition ease-in-out">
+					<button className="me-2 inline-block mx-6 rounded-t-lg">
 						<TabNavItem title="Projects completed" id="tabProjectCompleted" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
 					</button>
 				</li>
 			</ul>
 
 			{/* Tabs content */}
-			<div id="defaultTabContent">
+			<div id="defaultTabContent" className="py-4">
 				<TabContent id="tabProjectWorked" activeTab={activeTab}>
-					<ul>
+					<ul className="grid px-4 sm:grid-cols-2 gap-8 md:px-12 md:gap-10">
 						<li>
 							<ProjectHorizontalCard projectData={project1} />
 						</li>
@@ -78,21 +78,21 @@ const ProjectsList = () => {
 					</ul>
 				</TabContent>
 				<TabContent id="tabProjectCreated" activeTab={activeTab}>
-					<ul>
+					<ul className="grid px-4 sm:grid-cols-2 gap-8 md:px-12 md:gap-10">
 						<li>
 							<ProjectHorizontalCard projectData={project2} />
 						</li>
 					</ul>
 				</TabContent>
 				<TabContent id="tabProjectCompleted" activeTab={activeTab}>
-					<ul>
+					<ul className="grid px-4 sm:grid-cols-2 gap-8 md:px-12 md:gap-10">
 						<li>
 							<ProjectHorizontalCard projectData={project3} />
 						</li>
 					</ul>
 				</TabContent>
 			</div>
-		</div>
+		</>
 	);
 };
-export default ProjectsList;
+export default ProjectsTabsList;

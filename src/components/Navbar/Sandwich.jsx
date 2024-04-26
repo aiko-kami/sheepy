@@ -2,29 +2,26 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+
 import "flowbite";
 
 const Sandwich = () => {
+	const [sandwichOpen, setsandwichOpen] = useState(false);
+
 	return (
 		<>
 			<div className="flex h-full m-auto">
 				{/* <!-- Dropdown sandwich button --> */}
 				<div className="inline-flex items-center">
-					<button
-						id="dropdownDefaultButton"
-						data-dropdown-toggle="dropdown"
-						data-dropdown-offset-distance="10"
-						data-dropdown-offset-skidding="60"
-						className="hover:bg-slate-700 rounded-lg p-2 tn:p-4 lg:hidden duration-200 active:text-base-450"
-						type="button"
-					>
+					<button className="hover:bg-slate-700 rounded-lg p-2 tn:p-4 lg:hidden duration-200 active:text-base-450" type="button" onClick={() => setsandwichOpen(!sandwichOpen)}>
 						<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" stroke="currentColor">
 							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
 						</svg>
 					</button>
 
 					{/* <!-- Dropdown menu --> */}
-					<div id="dropdown" className="z-10 hidden bg-white rounded-lg shadow w-36 tn:w-40">
+					<div id="dropdown" className={`z-10 absolute top-16 left-2 bg-white rounded-lg shadow w-36 tn:w-40 ${sandwichOpen ? "inline-block" : "hidden"}`}>
 						<ul className="py-1 text-sm text-gray-700" aria-labelledby="dropdownDefaultButton">
 							<li>
 								<button

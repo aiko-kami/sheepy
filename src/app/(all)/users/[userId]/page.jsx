@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import UserTalentCard from "@/components/Cards/UserTalentCard/UserTalentCard";
-import ProjectsList from "@/components/UserProfilePublic/ProjectsList";
+import ProjectsTabsList from "@/components/UserProfilePublic/ProjectsTabsList";
 
 import { IoLocationOutline, IoBusinessOutline, IoChatbubbleEllipsesOutline, IoLinkOutline } from "react-icons/io5";
 
@@ -29,13 +29,14 @@ const UserDescriptionPage = ({ params }) => {
 						<Image
 							src="https://cdn.futura-sciences.com/cdn-cgi/image/width=1920,quality=50,format=auto/sources/images/cerisier-japon-fuji-min.jpeg"
 							fill
+							sizes="100vw, (min-width: 768px) 200px"
 							alt="Background profile picture"
 							className="object-cover"
 						/>
 					</div>
 					{/* Profile picture */}
 					<div className="h-40 w-40 tn:min-h-60 tn:min-w-60 relative mx-auto -mt-30 rounded-full">
-						<Image src={user.profilePicture} fill alt="User profile picture" className="rounded-full object-cover border-8 border-base-500" />
+						<Image src={user.profilePicture} fill sizes="100vw, (min-width: 768px) 200px" alt="User profile picture" className="rounded-full object-cover border-8 border-base-500" />
 					</div>
 					{/* Username and description */}
 					<div className="text-center my-4">
@@ -119,7 +120,7 @@ const UserDescriptionPage = ({ params }) => {
 				{/* User card with talents */}
 				<div className="md:col-span-2 bg-base-450 shadow-2xl p-6">
 					<h2 className="text-2xl font-semibold mb-2">My talents</h2>
-					<ul className="py-2 grid md:grid-cols-3 gap-4">
+					<ul className="py-2 grid tn:grid-cols-2 md:grid-cols-3 gap-4">
 						<li>
 							<UserTalentCard />
 						</li>
@@ -136,7 +137,12 @@ const UserDescriptionPage = ({ params }) => {
 				</div>
 
 				{/* User card with projects */}
-				<ProjectsList />
+				<div className="md:col-span-3 bg-base-450 shadow-2xl p-6">
+					<h2 className="text-2xl font-semibold mb-1">My Projects</h2>
+					<div className="">
+						<ProjectsTabsList />
+					</div>
+				</div>
 			</div>
 		</>
 	);
