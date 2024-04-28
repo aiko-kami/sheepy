@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Login = () => {
-	const session = false;
+	const session = true;
 	return (
 		<>
 			<div className="flex h-full m-auto">
