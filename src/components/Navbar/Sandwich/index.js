@@ -8,13 +8,13 @@ import { sandwichItemsData } from "./sandwichItemsData";
 import SandwichItems from "./SandwichItems";
 
 const Sandwich = () => {
-	const [sandwichOpen, setsandwichOpen] = useState(false);
+	const [sandwichOpen, setSandwichOpen] = useState(false);
 	let ref = useRef();
 
 	useEffect(() => {
 		const handler = (event) => {
 			if (sandwichOpen && ref.current && !ref.current.contains(event.target)) {
-				setsandwichOpen(false);
+				setSandwichOpen(false);
 			}
 		};
 		document.addEventListener("mousedown", handler);
@@ -26,6 +26,10 @@ const Sandwich = () => {
 		};
 	}, [sandwichOpen]);
 
+	const closeSandwich = () => {
+		sandwichOpen && setSandwichOpen(false);
+	};
+
 	return (
 		<>
 			<div className="flex h-full m-auto" ref={ref}>
@@ -35,7 +39,7 @@ const Sandwich = () => {
 						className="hover:bg-slate-700 rounded-lg p-2 tn:p-4 lg:hidden duration-200 active:text-base-450"
 						type="button"
 						aria-expanded={sandwichOpen ? "true" : "false"}
-						onClick={() => setsandwichOpen(!sandwichOpen)}
+						onClick={() => setSandwichOpen(!sandwichOpen)}
 					>
 						<svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" stroke="currentColor">
 							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" />
@@ -43,10 +47,10 @@ const Sandwich = () => {
 					</button>
 
 					{/* <!-- Dropdown menu --> */}
-					<div id="dropdown" className={`z-10 absolute top-16 left-2 bg-white rounded-lg shadow w-36 tn:w-40 ${sandwichOpen ? "inline-block" : "hidden"}`}>
+					<div className={`z-10 absolute top-16 left-2 bg-white rounded-lg shadow w-36 tn:w-40 ${sandwichOpen ? "inline-block" : "hidden"}`}>
 						<ul className="py-1 text-sm text-gray-700" aria-labelledby="dropdownDefaultButton">
 							{sandwichItemsData.map((menu, index) => {
-								return <SandwichItems items={menu} key={index} />;
+								return <SandwichItems items={menu} key={index} closeSandwich={closeSandwich} />;
 							})}
 						</ul>
 					</div>

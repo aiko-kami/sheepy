@@ -4,7 +4,7 @@ import Link from "next/link";
 import Dropdown from "./Dropdown";
 import { useState, useEffect, useRef } from "react";
 
-const MenuItems = ({ items }) => {
+const SandwichItems = ({ items, closeSandwich }) => {
 	const [dropdown, setDropdown] = useState(false);
 	let ref = useRef();
 
@@ -22,6 +22,7 @@ const MenuItems = ({ items }) => {
 			document.removeEventListener("touchstart", handler);
 		};
 	}, [dropdown]);
+
 	return (
 		<li ref={ref}>
 			{items.submenu ? (
@@ -39,11 +40,11 @@ const MenuItems = ({ items }) => {
 								<path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4" />
 							</svg>
 						</button>
-						<Dropdown submenus={items.submenu} dropdown={dropdown} />
+						<Dropdown submenus={items.submenu} dropdown={dropdown} closeSandwich={closeSandwich} />
 					</div>
 				</>
 			) : (
-				<Link href={items.url} className="block px-4 py-2 hover:bg-gray-200 duration-200 active:text-base-450">
+				<Link href={items.url} onClick={closeSandwich} className="block px-4 py-2 hover:bg-gray-200 duration-200 active:text-base-450">
 					{items.title}
 				</Link>
 			)}
@@ -51,4 +52,4 @@ const MenuItems = ({ items }) => {
 	);
 };
 
-export default MenuItems;
+export default SandwichItems;
