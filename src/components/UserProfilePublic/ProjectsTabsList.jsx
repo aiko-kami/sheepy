@@ -44,7 +44,7 @@ const ProjectsTabsList = () => {
 	return (
 		<>
 			{/* Menu nav tabs selection */}
-			<ul className="flex flex-wrap justify-center text-gray-600">
+			<ul className="flex flex-wrap justify-center text-gray-600 mb-5">
 				<li>
 					<button className="me-2 inline-block mx-6 rounded-t-lg">
 						<TabNavItem title="Projects I work on" id="tabProjectWorked" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
@@ -63,9 +63,9 @@ const ProjectsTabsList = () => {
 			</ul>
 
 			{/* Tabs content */}
-			<div id="defaultTabContent" className="py-4">
+			<div id="defaultTabContent" className="">
 				<TabContent id="tabProjectWorked" activeTab={activeTab}>
-					<ul className="grid px-4 sm:grid-cols-2 gap-8 md:px-12 md:gap-10">
+					<ul className="grid sm:grid-cols-2 gap-4">
 						<li>
 							<ProjectHorizontalCard projectData={project1} />
 						</li>
@@ -78,14 +78,14 @@ const ProjectsTabsList = () => {
 					</ul>
 				</TabContent>
 				<TabContent id="tabProjectCreated" activeTab={activeTab}>
-					<ul className="grid px-4 sm:grid-cols-2 gap-8 md:px-12 md:gap-10">
+					<ul className="grid sm:grid-cols-2 gap-4">
 						<li>
 							<ProjectHorizontalCard projectData={project2} />
 						</li>
 					</ul>
 				</TabContent>
 				<TabContent id="tabProjectCompleted" activeTab={activeTab}>
-					<ul className="grid px-4 sm:grid-cols-2 gap-8 md:px-12 md:gap-10">
+					<ul className="grid sm:grid-cols-2 gap-4">
 						<li>
 							<ProjectHorizontalCard projectData={project3} />
 						</li>

@@ -38,76 +38,79 @@ const UserDescriptionPage = ({ params }) => {
 					<div className="h-40 w-40 tn:min-h-60 tn:min-w-60 relative mx-auto -mt-30 rounded-full">
 						<Image src={user.profilePicture} fill sizes="100vw, (min-width: 768px) 200px" alt="User profile picture" className="rounded-full object-cover border-8 border-base-500" />
 					</div>
-					{/* Username and description */}
-					<div className="text-center my-4">
-						<h1 className="text-3xl font-semibold mb-2">{user.username}</h1>
-						<p className="text-gray-300">{user.description}</p>
-					</div>
-					{/* Projects counters */}
-					<div className="flex justify-evenly my-8 text-gray-300">
+					{/* User card text */}
+					<div className="p-6">
+						{/* Username and description */}
 						<div className="text-center">
-							<span className="text-4xl font-bold block uppercase tracking-wide text-white">3</span>
-							<div className="text-sm ">projects</div>
-							<div className="text-sm">on-going</div>
+							<h1 className="text-3xl font-semibold mb-1">{user.username}</h1>
+							<p className="text-gray-300">{user.description}</p>
 						</div>
-						<div className="text-center">
-							<span className="text-4xl font-bold block uppercase tracking-wide text-white">5</span>
-							<div className="text-sm">projects</div>
-							<div className="text-sm">created</div>
+						{/* Projects counters */}
+						<div className="flex justify-evenly my-5 text-gray-300">
+							<div className="text-center">
+								<span className="text-4xl font-bold block uppercase tracking-wide text-white">3</span>
+								<div className="text-sm ">projects</div>
+								<div className="text-sm">on-going</div>
+							</div>
+							<div className="text-center">
+								<span className="text-4xl font-bold block uppercase tracking-wide text-white">5</span>
+								<div className="text-sm">projects</div>
+								<div className="text-sm">created</div>
+							</div>
+							<div className="text-center">
+								<span className="text-4xl font-bold block uppercase tracking-wide text-white">8</span>
+								<div className="text-sm">projects</div>
+								<div className="text-sm">completed</div>
+							</div>
 						</div>
-						<div className="text-center">
-							<span className="text-4xl font-bold block uppercase tracking-wide text-white">8</span>
-							<div className="text-sm">projects</div>
-							<div className="text-sm">completed</div>
+						{/* User details */}
+						<div>
+							<p className="text-2xl font-semibold mb-4">More about me...</p>
+							<ul>
+								<li className="flex mt-4">
+									<div>
+										<IoLocationOutline className="text-gray-400 mr-2 text-2xl" />
+									</div>
+									<p className="">
+										<span className="font-semibold text-gray-400">Location:</span> {user.locationCity}, {user.locationCountry}
+									</p>
+								</li>
+								<li className="flex mt-4">
+									<div>
+										<IoBusinessOutline className="text-gray-400 mr-2 text-2xl" />
+									</div>
+									<p className="">
+										<span className="font-semibold text-gray-400">Company:</span> {user.company}
+									</p>
+								</li>
+								<li className="flex mt-4">
+									<div>
+										<IoChatbubbleEllipsesOutline className="text-gray-400 mr-2 text-2xl" />
+									</div>
+									<p className="">
+										<span className="font-semibold text-gray-400">Languages:</span> {user.languages.join(", ")}
+									</p>
+								</li>
+								<li className="flex mt-4">
+									<div>
+										<IoLinkOutline className="text-gray-400 mr-2 text-2xl" />
+									</div>
+									<p className="">
+										<span className="font-semibold text-gray-400">Website:</span>{" "}
+										<a href={user.website} className="italic hover:underline">
+											{user.website}
+										</a>
+									</p>
+								</li>
+							</ul>
 						</div>
-					</div>
-					{/* User details */}
-					<div className="px-4">
-						<p className="text-2xl font-semibold">More about me...</p>
-						<ul className="px-1">
-							<li className="flex my-4">
-								<div>
-									<IoLocationOutline className="text-gray-400 mr-2 text-2xl" />
-								</div>
-								<p className="">
-									<span className="font-semibold text-gray-400">Location:</span> {user.locationCity}, {user.locationCountry}
-								</p>
-							</li>
-							<li className="flex my-4">
-								<div>
-									<IoBusinessOutline className="text-gray-400 mr-2 text-2xl" />
-								</div>
-								<p className="">
-									<span className="font-semibold text-gray-400">Company:</span> {user.company}
-								</p>
-							</li>
-							<li className="flex my-4">
-								<div>
-									<IoChatbubbleEllipsesOutline className="text-gray-400 mr-2 text-2xl" />
-								</div>
-								<p className="">
-									<span className="font-semibold text-gray-400">Languages:</span> {user.languages.join(", ")}
-								</p>
-							</li>
-							<li className="flex my-4">
-								<div>
-									<IoLinkOutline className="text-gray-400 mr-2 text-2xl" />
-								</div>
-								<p className="">
-									<span className="font-semibold text-gray-400">Website:</span>{" "}
-									<a href={user.website} className="italic hover:underline">
-										{user.website}
-									</a>
-								</p>
-							</li>
-						</ul>
 					</div>
 				</div>
 
 				{/* User card with bio */}
 				<div className="md:col-span-2 bg-base-450 shadow-2xl p-6">
-					<h2 className="text-2xl font-semibold mb-2">My Bio</h2>
-					<p className="p-1 text-justify">
+					<h2 className="text-2xl font-semibold mb-4">My Bio</h2>
+					<p className="text-justify">
 						{user.bio}
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates tempore vitae enim aut, quam quas consectetur voluptatum provident quisquam maiores repudiandae amet, omnis, atque
 						voluptatem aliquam similique voluptas quibusdam culpa aspernatur quod. Tempora fuga nobis hic? Nemo architecto placeat culpa tempora ipsa alias. Distinctio est provident inventore labore?
@@ -119,8 +122,8 @@ const UserDescriptionPage = ({ params }) => {
 
 				{/* User card with talents */}
 				<div className="md:col-span-2 bg-base-450 shadow-2xl p-6">
-					<h2 className="text-2xl font-semibold mb-2">My talents</h2>
-					<ul className="py-2 grid tn:grid-cols-2 md:grid-cols-3 gap-4">
+					<h2 className="text-2xl font-semibold mb-4">My talents</h2>
+					<ul className="grid tn:grid-cols-2 md:grid-cols-3 gap-4">
 						<li>
 							<UserTalentCard />
 						</li>
@@ -138,10 +141,8 @@ const UserDescriptionPage = ({ params }) => {
 
 				{/* User card with projects */}
 				<div className="md:col-span-3 bg-base-450 shadow-2xl p-6">
-					<h2 className="text-2xl font-semibold mb-1">My Projects</h2>
-					<div className="">
-						<ProjectsTabsList />
-					</div>
+					<h2 className="text-2xl font-semibold mb-4">My Projects</h2>
+					<ProjectsTabsList />
 				</div>
 			</div>
 		</>
