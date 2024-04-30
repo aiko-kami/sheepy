@@ -82,10 +82,43 @@ const ProjectsTabsList = () => {
 						<li>
 							<ProjectHorizontalCard projectData={project2} />
 						</li>
+						<li>
+							<ProjectHorizontalCard projectData={project2} />
+						</li>
+						<li>
+							<ProjectHorizontalCard projectData={project2} />
+						</li>
+						<li>
+							<ProjectHorizontalCard projectData={project2} />
+						</li>
+						<li>
+							<ProjectHorizontalCard projectData={project2} />
+						</li>
 					</ul>
 				</TabContent>
 				<TabContent id="tabProjectCompleted" activeTab={activeTab}>
 					<ul className="grid sm:grid-cols-2 gap-4">
+						<li>
+							<ProjectHorizontalCard projectData={project3} />
+						</li>
+						<li>
+							<ProjectHorizontalCard projectData={project3} />
+						</li>
+						<li>
+							<ProjectHorizontalCard projectData={project3} />
+						</li>
+						<li>
+							<ProjectHorizontalCard projectData={project3} />
+						</li>
+						<li>
+							<ProjectHorizontalCard projectData={project3} />
+						</li>
+						<li>
+							<ProjectHorizontalCard projectData={project3} />
+						</li>
+						<li>
+							<ProjectHorizontalCard projectData={project3} />
+						</li>
 						<li>
 							<ProjectHorizontalCard projectData={project3} />
 						</li>
