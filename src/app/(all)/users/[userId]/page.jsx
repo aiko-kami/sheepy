@@ -1,10 +1,7 @@
-import Image from "next/image";
-import Link from "next/link";
-
-import UserTalentCard from "@/components/Cards/UserTalentCard/UserTalentCard";
-import ProjectsTabsList from "@/components/UserProfilePublic/ProjectsTabsList";
-
-import { IoLocationOutline, IoBusinessOutline, IoChatbubbleEllipsesOutline, IoLinkOutline } from "react-icons/io5";
+import UserCardAboutMe from "@/components/UserProfilePublic/UserCardAboutMe";
+import UserCardBio from "@/components/UserProfilePublic/UserCardBio";
+import UserCardTalents from "@/components/UserProfilePublic/UserCardTalents";
+import UserCardProjects from "@/components/UserProfilePublic/UserCardProjects";
 
 const UserDescriptionPage = ({ params }) => {
 	const user = {
@@ -23,127 +20,16 @@ const UserDescriptionPage = ({ params }) => {
 		<>
 			<div className="grid md:grid-cols-3 gap-8 my-8">
 				{/* User card with picture */}
-				<div className="md:row-span-2 bg-base-450 shadow-2xl relative">
-					{/* background picture */}
-					<div className="h-46 relative">
-						<Image
-							src="https://cdn.futura-sciences.com/cdn-cgi/image/width=1920,quality=50,format=auto/sources/images/cerisier-japon-fuji-min.jpeg"
-							fill
-							sizes="100vw, (min-width: 768px) 200px"
-							alt="Background profile picture"
-							className="object-cover"
-						/>
-					</div>
-					{/* Profile picture */}
-					<div className="h-40 w-40 tn:min-h-60 tn:min-w-60 relative mx-auto -mt-30 rounded-full">
-						<Image src={user.profilePicture} fill sizes="100vw, (min-width: 768px) 200px" alt="User profile picture" className="rounded-full object-cover border-8 border-base-500" />
-					</div>
-					{/* User card text */}
-					<div className="p-6">
-						{/* Username and description */}
-						<div className="text-center">
-							<h1 className="text-3xl font-semibold mb-1">{user.username}</h1>
-							<p className="text-gray-300">{user.description}</p>
-						</div>
-						{/* Projects counters */}
-						<div className="flex justify-evenly my-5 text-gray-300">
-							<div className="text-center">
-								<span className="text-4xl font-bold block uppercase tracking-wide text-white">3</span>
-								<div className="text-sm ">projects</div>
-								<div className="text-sm">on-going</div>
-							</div>
-							<div className="text-center">
-								<span className="text-4xl font-bold block uppercase tracking-wide text-white">5</span>
-								<div className="text-sm">projects</div>
-								<div className="text-sm">created</div>
-							</div>
-							<div className="text-center">
-								<span className="text-4xl font-bold block uppercase tracking-wide text-white">8</span>
-								<div className="text-sm">projects</div>
-								<div className="text-sm">completed</div>
-							</div>
-						</div>
-						{/* User details */}
-						<div>
-							<p className="text-2xl font-semibold mb-4">More about me...</p>
-							<ul>
-								<li className="flex mt-4">
-									<div>
-										<IoLocationOutline className="text-gray-400 mr-2 text-2xl" />
-									</div>
-									<p className="">
-										<span className="font-semibold text-gray-400">Location:</span> {user.locationCity}, {user.locationCountry}
-									</p>
-								</li>
-								<li className="flex mt-4">
-									<div>
-										<IoBusinessOutline className="text-gray-400 mr-2 text-2xl" />
-									</div>
-									<p className="">
-										<span className="font-semibold text-gray-400">Company:</span> {user.company}
-									</p>
-								</li>
-								<li className="flex mt-4">
-									<div>
-										<IoChatbubbleEllipsesOutline className="text-gray-400 mr-2 text-2xl" />
-									</div>
-									<p className="">
-										<span className="font-semibold text-gray-400">Languages:</span> {user.languages.join(", ")}
-									</p>
-								</li>
-								<li className="flex mt-4">
-									<div>
-										<IoLinkOutline className="text-gray-400 mr-2 text-2xl" />
-									</div>
-									<p className="">
-										<span className="font-semibold text-gray-400">Website:</span>{" "}
-										<a href={user.website} className="italic hover:underline">
-											{user.website}
-										</a>
-									</p>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
+				<UserCardAboutMe user={user} />
 
 				{/* User card with bio */}
-				<div className="md:col-span-2 bg-base-450 shadow-2xl p-6">
-					<h2 className="text-2xl font-semibold mb-4">My Bio</h2>
-					<p className="text-justify">
-						{user.bio}
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates tempore vitae enim aut, quam quas consectetur voluptatum provident quisquam maiores repudiandae amet, omnis, atque
-						voluptatem aliquam similique voluptas quibusdam culpa aspernatur quod. Tempora fuga nobis hic? Nemo architecto placeat culpa tempora ipsa alias. Distinctio est provident inventore labore?
-						Iure accusantium omnis sed dolorum laudantium in consectetur laboriosam illum. Doloremque et alias ipsam sunt. Facilis ullam, nihil qui dignissimos corporis obcaecati? Labore, blanditiis
-						placeat cum reprehenderit libero eveniet non rerum quaerat cupiditate expedita possimus nemo nihil minus neque omnis error aspernatur praesentium ipsum, ipsam delectus provident quis
-						deserunt mollitia reiciendis. Nam!
-					</p>
-				</div>
+				<UserCardBio userBio={user.bio} />
 
 				{/* User card with talents */}
-				<div className="md:col-span-2 bg-base-450 shadow-2xl p-6">
-					<h2 className="text-2xl font-semibold mb-4">My talents</h2>
-					<ul className="grid tn:grid-cols-2 md:grid-cols-3 gap-4">
-						<li>
-							<UserTalentCard />
-						</li>
-						<li>
-							<UserTalentCard />
-						</li>
-						<li>
-							<UserTalentCard />
-						</li>
-						<li>
-							<UserTalentCard />
-						</li>
-					</ul>
-				</div>
+				<UserCardTalents />
 
 				{/* User card with projects */}
-				<div className="md:col-span-3 bg-base-450 shadow-2xl p-6">
-					<h2 className="text-2xl font-semibold mb-4">My Projects</h2>
-					<ProjectsTabsList />
-				</div>
+				<UserCardProjects />
 			</div>
 		</>
 	);
