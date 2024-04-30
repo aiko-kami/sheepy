@@ -19,7 +19,7 @@ const UserDescriptionPage = ({ params }) => {
 	return (
 		<>
 			<div className="grid md:grid-cols-3 gap-8 my-8">
-				{/* User card with picture */}
+				{/* User card with pictures and about me */}
 				<UserCardAboutMe user={user} />
 
 				{/* User card with bio */}
