@@ -1,7 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import BadgeCategory from "@/components/Badges/BadgeCategory";
 
 const ProjectCard = () => {
+	const category = {
+		name: "Nature",
+		link: "/categories/nature",
+		bgColor: "bg-green-600",
+		bgColorHover: "bg-green-500",
+	};
+
 	return (
 		<>
 			<div className="rounded-lg max-w-72 shadow-2xl">
@@ -9,11 +17,9 @@ const ProjectCard = () => {
 					<Link href="/projects/01">
 						<Image src="https://superawesomevectors.com/wp-content/uploads/2021/04/yellow-submarine-vector.jpg" className="rounded-t-lg" alt="Card" width={600} height={225} />
 					</Link>
-					<Link href="/categories/nature">
-						<span className="absolute bottom-2 right-2 text-xs inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline font-bold bg-green-600 hover:bg-green-500 duration-200 text-white rounded">
-							Nature
-						</span>
-					</Link>
+					<div className="absolute bottom-2 right-2">
+						<BadgeCategory category={category} />
+					</div>
 				</div>
 				<div className="p-4 bg-blue-900 rounded-b-lg">
 					<Link href="/projects/01">
