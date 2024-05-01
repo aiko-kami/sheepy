@@ -2,12 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import projects from "@/projects.json";
 
-import moz01 from "../../../public/assets/mosaic/moz01.png";
-import moz02 from "../../../public/assets/mosaic/moz02.png";
-import moz03 from "../../../public/assets/mosaic/moz03.png";
-import moz04 from "../../../public/assets/mosaic/moz04.png";
-import moz05 from "../../../public/assets/mosaic/moz05.png";
-import moz06 from "../../../public/assets/mosaic/moz06.png";
 import BadgeCategory from "@/components/Badges/BadgeCategory";
 
 const Mosaic = () => {
