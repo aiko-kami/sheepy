@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import Dropdown from "./Dropdown";
+import user from "@/user.json";
 
 const Login = () => {
 	const session = true;
@@ -54,10 +55,11 @@ const Login = () => {
 								onClick={() => setDropdownOpen(!dropdownOpen)}
 							>
 								<span className="sr-only">Open user menu</span>
-								<img className="rounded-full" src="/images/android-chrome-512x512.png" alt="user photo" />
+
+								<Image className="rounded-full object-cover w-12 h-12" src={user.profilePicture} alt="user picture" height={0} width={0} sizes="100vw" />
 							</button>
 							{/* <!-- Dropdown menu --> */}
-							<Dropdown dropdownOpen={dropdownOpen} closeDropdown={closeDropdown} />
+							<Dropdown username={user.username} userId={user.userId} dropdownOpen={dropdownOpen} closeDropdown={closeDropdown} />
 						</div>
 					</>
 				)}

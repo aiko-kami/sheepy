@@ -1,14 +1,14 @@
 import Link from "next/link";
 
-const Dropdown = ({ dropdownOpen, closeDropdown }) => {
+const Dropdown = ({ username, userId, dropdownOpen, closeDropdown }) => {
 	return (
 		<div className={`z-10 absolute top-16 right-2 bg-white rounded-lg shadow w-36 tn:w-44 divide-y text-sm text-center divide-gray-300 ${dropdownOpen ? "inline-block" : "hidden"}`}>
 			<div className="py-1 text-gray-900">
-				<div className="font-semibold truncate py-2">Shippy001</div>
+				<div className="font-semibold truncate py-2">{username}</div>
 			</div>
 			<ul className="py-1 text-gray-700">
 				<li>
-					<Link href="#" onClick={closeDropdown} className="block py-2 hover:bg-gray-200 duration-200 active:text-base-450">
+					<Link href={`users/${userId}`} onClick={closeDropdown} className="block py-2 hover:bg-gray-200 duration-200 active:text-base-450">
 						My profile
 					</Link>
 				</li>

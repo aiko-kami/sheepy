@@ -8,37 +8,55 @@ const ProjectsTabsList = () => {
 	const [activeTab, setActiveTab] = useState("tabProjectWorked");
 
 	const project1 = {
-		projectTitle: "Project 01",
-		projectSummary: "Create a compelling indie film with a unique storyline.",
-		projectCover: "https://tailwindcss.com/_next/static/media/headlessui@75.c1d50bc1.jpg",
-		projectLikes: 147,
-		projectCategory: "Art",
-		projectSubCategory: "Cinema",
-		projectLocation: "San Fransokyo, USA",
-		projectTags: ["indie_film", "cinematography", "screenwriting"],
-		projectStatus: "Active",
+		title: "Project 01",
+		summary: "Create a compelling indie film with a unique storyline.",
+		cover: "https://tailwindcss.com/_next/static/media/headlessui@75.c1d50bc1.jpg",
+		likes: 147,
+		category: {
+			name: "Culture",
+			link: "/categories/culture",
+			bgColor: "bg-blue-600",
+			bgColorHover: "bg-blue-500",
+			size: "sm",
+		},
+		subCategory: "Cinema",
+		location: "San Fransokyo, USA",
+		tags: ["indie_film", "cinematography", "screenwriting"],
+		status: "Active",
 	};
 	const project2 = {
-		projectTitle: "Project 2",
-		projectSummary: "Create a compelling indie film with a unique storyline.",
-		projectCover: "https://tailwindcss.com/_next/static/media/heroicons@75.4a558f35.jpg",
-		projectLikes: 147,
-		projectCategory: "Art",
-		projectSubCategory: "Cinema",
-		projectLocation: "San Fransokyo, USA",
-		projectTags: ["indie_film", "cinematography", "screenwriting"],
-		projectStatus: "Active",
+		title: "Project 2",
+		summary: "Create a compelling indie film with a unique storyline.",
+		cover: "https://tailwindcss.com/_next/static/media/heroicons@75.4a558f35.jpg",
+		likes: 147,
+		category: {
+			name: "Art",
+			link: "/categories/art",
+			bgColor: "bg-black",
+			bgColorHover: "bg-gray-800",
+			size: "sm",
+		},
+		subCategory: "Cinema",
+		location: "San Fransokyo, USA",
+		tags: ["indie_film", "cinematography", "screenwriting"],
+		status: "Active",
 	};
 	const project3 = {
-		projectTitle: "Project 3",
-		projectSummary: "Create a compelling indie film with a unique storyline.",
-		projectCover: "https://tailwindcss.com/_next/static/media/heropatterns@75.82a09697.jpg",
-		projectLikes: 147,
-		projectCategory: "Art",
-		projectSubCategory: "Cinema",
-		projectLocation: "San Fransokyo, USA",
-		projectTags: ["indie_film", "cinematography", "screenwriting"],
-		projectStatus: "Active",
+		title: "Project 3",
+		summary: "Create a compelling indie film with a unique storyline.",
+		cover: "https://tailwindcss.com/_next/static/media/heropatterns@75.82a09697.jpg",
+		likes: 147,
+		category: {
+			name: "Music",
+			link: "/categories/music",
+			bgColor: "bg-purple-800",
+			bgColorHover: "bg-purple-500",
+			size: "sm",
+		},
+		subCategory: "Cinema",
+		location: "San Fransokyo, USA",
+		tags: ["indie_film", "cinematography", "screenwriting"],
+		status: "Active",
 	};
 
 	return (
@@ -67,60 +85,60 @@ const ProjectsTabsList = () => {
 				<TabContent id="tabProjectWorked" activeTab={activeTab}>
 					<ul className="grid sm:grid-cols-2 gap-4">
 						<li>
-							<ProjectHorizontalCard projectData={project1} />
+							<ProjectHorizontalCard project={project1} />
 						</li>
 						<li>
-							<ProjectHorizontalCard projectData={project1} />
+							<ProjectHorizontalCard project={project1} />
 						</li>
 						<li>
-							<ProjectHorizontalCard projectData={project1} />
+							<ProjectHorizontalCard project={project1} />
 						</li>
 					</ul>
 				</TabContent>
 				<TabContent id="tabProjectCreated" activeTab={activeTab}>
 					<ul className="grid sm:grid-cols-2 gap-4">
 						<li>
-							<ProjectHorizontalCard projectData={project2} />
+							<ProjectHorizontalCard project={project2} />
 						</li>
 						<li>
-							<ProjectHorizontalCard projectData={project2} />
+							<ProjectHorizontalCard project={project2} />
 						</li>
 						<li>
-							<ProjectHorizontalCard projectData={project2} />
+							<ProjectHorizontalCard project={project2} />
 						</li>
 						<li>
-							<ProjectHorizontalCard projectData={project2} />
+							<ProjectHorizontalCard project={project2} />
 						</li>
 						<li>
-							<ProjectHorizontalCard projectData={project2} />
+							<ProjectHorizontalCard project={project2} />
 						</li>
 					</ul>
 				</TabContent>
 				<TabContent id="tabProjectCompleted" activeTab={activeTab}>
 					<ul className="grid sm:grid-cols-2 gap-4">
 						<li>
-							<ProjectHorizontalCard projectData={project3} />
+							<ProjectHorizontalCard project={project3} />
 						</li>
 						<li>
-							<ProjectHorizontalCard projectData={project3} />
+							<ProjectHorizontalCard project={project3} />
 						</li>
 						<li>
-							<ProjectHorizontalCard projectData={project3} />
+							<ProjectHorizontalCard project={project3} />
 						</li>
 						<li>
-							<ProjectHorizontalCard projectData={project3} />
+							<ProjectHorizontalCard project={project3} />
 						</li>
 						<li>
-							<ProjectHorizontalCard projectData={project3} />
+							<ProjectHorizontalCard project={project3} />
 						</li>
 						<li>
-							<ProjectHorizontalCard projectData={project3} />
+							<ProjectHorizontalCard project={project3} />
 						</li>
 						<li>
-							<ProjectHorizontalCard projectData={project3} />
+							<ProjectHorizontalCard project={project3} />
 						</li>
 						<li>
-							<ProjectHorizontalCard projectData={project3} />
+							<ProjectHorizontalCard project={project3} />
 						</li>
 					</ul>
 				</TabContent>

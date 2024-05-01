@@ -1,42 +1,37 @@
 import Image from "next/image";
 import Link from "next/link";
 import BadgeCategory from "@/components/Badges/BadgeCategory";
+import BadgeTag from "@/components/Badges/BadgeTag";
 
-const ProjectCard = () => {
-	const category = {
-		name: "Nature",
-		link: "/categories/nature",
-		bgColor: "bg-green-600",
-		bgColorHover: "bg-green-500",
-	};
+const ProjectCard = ({ project }) => {
+	const { id, title, summary, cover, category, tags } = project;
 
 	return (
 		<>
-			<div className="rounded-lg max-w-72 shadow-2xl">
+			<div className="rounded-lg max-w-72 shadow-2xl my-auto overflow-hidden">
+				{/* Card image and category */}
 				<div className="relative w-full">
-					<Link href="/projects/01">
-						<Image src="https://superawesomevectors.com/wp-content/uploads/2021/04/yellow-submarine-vector.jpg" className="rounded-t-lg" alt="Card" width={600} height={225} />
+					<Link href={`/projects/${id}`}>
+						<Image src={cover} className="w-full h-62 object-cover rounded-t-lg" alt="Card" height={0} width={0} sizes="100vw" />
 					</Link>
 					<div className="absolute bottom-2 right-2">
 						<BadgeCategory category={category} />
 					</div>
 				</div>
-				<div className="p-4 bg-blue-900 rounded-b-lg">
-					<Link href="/projects/01">
-						<h2 className="font-semibold text-xl py-1">Create a submarine</h2>
-						<p className="py-1">Hello! I am looking for people who want to explore the ocean.</p>
-					</Link>
-					<div className="py-2 flex flex-wrap justify-end">
-						<Link href="/tags/ocean">
-							<div className="inline-flex items-center bg-blue-300 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Ocean</div>
-						</Link>
-						<Link href="/tags/mecanics">
-							<div className="inline-flex items-center bg-orange-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Mecs</div>
-						</Link>
-						<Link href="/tags/exploration">
-							<div className="inline-flex items-center bg-green-400 text-blue-800 text-xs font-medium mx-1 my-2 px-2.5 py-0.5 rounded-full">Exploration</div>
-						</Link>
+
+				{/* Card body */}
+				<div className="px-4 py-2 bg-blue-900 h-54 rounded-b-lg">
+					<div className="flex flex-wrap justify-center h-12 overflow-hidden">
+						{tags.map((tag, index) => (
+							<div key={index} className="mx-1 my-2">
+								<BadgeTag tag={tag} />
+							</div>
+						))}
 					</div>
+					<Link href={`/projects/${id}`}>
+						<h2 className="font-semibold text-xl line-clamp-2 mb-4">{title}</h2>
+						<p className="line-clamp-3">{summary}</p>
+					</Link>
 				</div>
 			</div>
 		</>
