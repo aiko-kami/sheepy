@@ -114,8 +114,8 @@ const RecentProjects = () => {
 		category: {
 			name: "Community",
 			link: "/categories/community",
-			bgColor: "bg-red-500",
-			bgColorHover: "bg-red-400",
+			bgColor: "bg-pink-600",
+			bgColorHover: "bg-pink-500",
 			size: "sm",
 		},
 		subCategory: "Social Cause",
