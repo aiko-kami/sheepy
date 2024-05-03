@@ -1,11 +1,11 @@
 import UserCard from "./UserCard";
-import RecentUsers from "@/RecentUsers.json";
+import UsersYouNeed from "@/UsersYouNeed.json";
 
-const RecentTalents = () => {
+const TalentsYouNeed = () => {
 	return (
 		<>
 			<div className="my-4 flex flex-wrap justify-center gap-6">
-				{RecentUsers.map((user, index) => (
+				{UsersYouNeed.map((user, index) => (
 					<UserCard key={index} user={user} />
 				))}
 			</div>
@@ -13,4 +13,4 @@ const RecentTalents = () => {
 	);
 };
 
-export default RecentTalents;
+export default TalentsYouNeed;

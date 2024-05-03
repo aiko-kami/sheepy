@@ -2,6 +2,8 @@ import Mosaic from "@/components/Cards/Mosaic";
 import PresentationBanner from "@/components/PresentationBanner";
 import RecentProjects from "@/components/Cards/RecentProjects";
 import RecentTalents from "@/components/Cards/RecentTalents";
+import TalentsYouNeed from "@/components/Cards/TalentsYouNeed";
+import Link from "next/link";
 
 const HomePage = () => {
 	return (
@@ -9,12 +11,29 @@ const HomePage = () => {
 			<h2 className="font-semibold text-xl">Selected projects</h2>
 			<Mosaic />
 			<PresentationBanner />
-			<h2 className="font-semibold text-xl">Recent projects</h2>
+			<div className="inline-flex">
+				<h2 className="font-semibold text-xl mr-4">Recent projects</h2>
+				<Link href="/projects/01" className="text-xs mt-2.5">
+					See more...
+				</Link>
+			</div>
 			<RecentProjects />
-			<h2 className="font-semibold text-xl">New Talents</h2>
+			<div className="inline-flex">
+				<h2 className="font-semibold text-xl mr-4">New Talents</h2>
+				<Link href="/users/01" className="text-xs mt-2.5">
+					See more...
+				</Link>
+			</div>
+
 			<RecentTalents />
-			<h2 className="font-semibold text-xl">Talents you need</h2>
-			<RecentTalents />
+			<div className="inline-flex">
+				<h2 className="font-semibold text-xl mr-4">Talents you need</h2>
+				<Link href="/users/01" className="text-xs mt-2.5">
+					See more...
+				</Link>
+			</div>
+
+			<TalentsYouNeed />
 		</div>
 	);
 };

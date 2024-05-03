@@ -1,0 +1,110 @@
+[
+	{
+		"userId": "890",
+		"username": "Elena",
+		"profilePicture": "https://images.pexels.com/photos/2035757/pexels-photo-2035757.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+		"description": "Hi there! I'm a UI/UX designer passionate about creating intuitive and user-friendly digital experiences that delight users.",
+		"talents": ["UI/UX Design", "User Research", "Wireframing"],
+		"tags": [
+			{
+				"name": "UI/UX Design",
+				"link": "/tags/ui-ux-design",
+				"bgColor": "bg-purple-400",
+				"size": "xs"
+			},
+			{
+				"name": "User Research",
+				"link": "/tags/user-research",
+				"bgColor": "bg-purple-400",
+				"size": "xs"
+			},
+			{
+				"name": "Wireframing",
+				"link": "/tags/wireframing",
+				"bgColor": "bg-purple-400",
+				"size": "xs"
+			}
+		]
+	},
+	{
+		"userId": "678",
+		"username": "Lucas",
+		"profilePicture": "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+		"description": "Greetings! I'm a software engineer passionate about building scalable and robust applications using cutting-edge technologies.",
+		"talents": ["Software", "Web", "Backend"],
+		"tags": [
+			{
+				"name": "Software",
+				"link": "/tags/software",
+				"bgColor": "bg-indigo-400",
+				"size": "xs"
+			},
+			{
+				"name": "Web",
+				"link": "/tags/web",
+				"bgColor": "bg-indigo-400",
+				"size": "xs"
+			},
+			{
+				"name": "Backend",
+				"link": "/tags/backend",
+				"bgColor": "bg-indigo-400",
+				"size": "xs"
+			}
+		]
+	},
+	{
+		"userId": "345",
+		"username": "Diana",
+		"profilePicture": "https://images.pexels.com/photos/2690323/pexels-photo-2690323.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+		"description": "Hello everyone! I'm a passionate musician, skilled in playing various instruments and bringing melodies to life.",
+		"talents": ["Guitar", "Piano", "Melody"],
+		"tags": [
+			{
+				"name": "Guitar",
+				"link": "/tags/guitar",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			},
+			{
+				"name": "Piano",
+				"link": "/tags/piano",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			},
+			{
+				"name": "Melody",
+				"link": "/tags/melody",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			}
+		]
+	},
+	{
+		"userId": "101",
+		"username": "Grace",
+		"profilePicture": "https://images.pexels.com/photos/415263/pexels-photo-415263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+		"description": "Hey everyone! I'm a filmmaker dedicated to creating compelling and visually stunning stories through film.",
+		"talents": ["Filmmaking", "Storytelling", "Cinema"],
+		"tags": [
+			{
+				"name": "Filmmaking",
+				"link": "/tags/filmmaking",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			},
+			{
+				"name": "Storytelling",
+				"link": "/tags/storytelling",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			},
+			{
+				"name": "Cinema",
+				"link": "/tags/cinema",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			}
+		]
+	}
+]

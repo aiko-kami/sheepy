@@ -10,7 +10,7 @@ const UserCard = ({ user }) => {
 			<div className="rounded-lg max-w-66 shadow-2xl bg-blue-900 p-4">
 				<div className="flex flex-col items-center mb-2">
 					<Link href={`/users/${userId}`}>
-						<Image src={profilePicture} className="rounded-full" alt="Card" width={300} height={300} />
+						<Image src={profilePicture} className="object-cover rounded-full w-58 h-58" alt="Card" height={0} width={0} sizes="100vw" />
 					</Link>
 				</div>
 				<div className="px-4 text-center">
@@ -26,7 +26,7 @@ const UserCard = ({ user }) => {
 							))}
 						</div>
 					</div>
-					<p className="pb-2">{description}</p>
+					<p className="pb-1 line-clamp-4">{description}</p>
 				</div>
 			</div>
 		</>

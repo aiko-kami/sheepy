@@ -1,0 +1,110 @@
+[
+	{
+		"userId": "463",
+		"username": "Marine",
+		"profilePicture": "https://picsum.photos/id/64/300/300",
+		"description": "Hello! I am a web designer ready to help you with your project ideas.",
+		"talents": ["Dev", "Web", "Frontend"],
+		"tags": [
+			{
+				"name": "Dev",
+				"link": "/tags/dev",
+				"bgColor": "bg-pink-400",
+				"size": "xs"
+			},
+			{
+				"name": "Web",
+				"link": "/tags/web",
+				"bgColor": "bg-pink-400",
+				"size": "xs"
+			},
+			{
+				"name": "Frontend",
+				"link": "/tags/frontend",
+				"bgColor": "bg-pink-400",
+				"size": "xs"
+			}
+		]
+	},
+	{
+		"userId": "234",
+		"username": "Josh",
+		"profilePicture": "https://images.pexels.com/photos/936119/pexels-photo-936119.jpeg",
+		"description": "Hey there! I'm a graphic designer passionate about creating visually stunning designs for businesses and individuals.",
+		"talents": ["Design", "Graphic Design", "Illustration"],
+		"tags": [
+			{
+				"name": "Design",
+				"link": "/tags/design",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			},
+			{
+				"name": "Graphic Design",
+				"link": "/tags/graphic-design",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			},
+			{
+				"name": "Illustration",
+				"link": "/tags/illustration",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			}
+		]
+	},
+	{
+		"userId": "789",
+		"username": "Ryan",
+		"profilePicture": "https://images.pexels.com/photos/1097456/pexels-photo-1097456.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+		"description": "Hi! I'm a photographer specializing in capturing breathtaking landscapes and vibrant cityscapes.",
+		"talents": ["Photography", "Landscapes", "Cityscapes"],
+		"tags": [
+			{
+				"name": "Photography",
+				"link": "/tags/photography",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			},
+			{
+				"name": "Landscapes",
+				"link": "/tags/landscapes",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			},
+			{
+				"name": "Cityscapes",
+				"link": "/tags/cityscapes",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			}
+		]
+	},
+	{
+		"userId": "567",
+		"username": "Sophie",
+		"profilePicture": "https://images.pexels.com/photos/2051956/pexels-photo-2051956.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+		"description": "Hey everyone! I'm an adventurer exploring the world and seeking thrilling experiences!",
+		"talents": ["Exploration", "Survival Skills", "Adaptability"],
+		"tags": [
+			{
+				"name": "Exploration",
+				"link": "/tags/exploration",
+				"bgColor": "bg-orange-400",
+				"size": "xs"
+			},
+			{
+				"name": "Survival Skills",
+				"link": "/tags/survival-skills",
+				"bgColor": "bg-orange-400",
+				"size": "xs"
+			},
+			{
+				"name": "Adaptability",
+				"link": "/tags/adaptability",
+				"bgColor": "bg-orange-400",
+				"size": "xs"
+			}
+		]
+	}
+]
