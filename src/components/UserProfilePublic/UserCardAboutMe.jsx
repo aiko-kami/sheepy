@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { IoLocationOutline, IoBusinessOutline, IoChatbubbleEllipsesOutline, IoLinkOutline } from "react-icons/io5";
 

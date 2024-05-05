@@ -8,7 +8,7 @@ const ProjectCard = ({ project }) => {
 
 	return (
 		<>
-			<div className="rounded-lg max-w-72 shadow-2xl my-auto overflow-hidden">
+			<div className="rounded-lg max-w-72 shadow-2xl my-auto overflow-hidden duration-100 transform hover:-translate-y-2 transition ease-in">
 				{/* Card image and category */}
 				<div className="relative w-full">
 					<Link href={`/projects/${id}`}>

@@ -1,6 +1,7 @@
 {
 	"userId": "12345",
 	"username": "Captain_Picard",
+	"email": "captain.picard@mail.com",
 	"description": "Seasoned Starfleet Captain, Diplomat, and Explorer",
 	"profilePicture": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Jean-Luc_Picard_2.jpg",
 	"locationCity": "USS Enterprise",

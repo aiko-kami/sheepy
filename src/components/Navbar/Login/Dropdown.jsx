@@ -8,7 +8,7 @@ const Dropdown = ({ username, userId, dropdownOpen, closeDropdown }) => {
 			</div>
 			<ul className="py-1 text-gray-700">
 				<li>
-					<Link href={`users/${userId}`} onClick={closeDropdown} className="block py-2 hover:bg-gray-200 duration-200 active:text-base-450">
+					<Link href={`/users/my-profile`} onClick={closeDropdown} className="block py-2 hover:bg-gray-200 duration-200 active:text-base-450">
 						My profile
 					</Link>
 				</li>
