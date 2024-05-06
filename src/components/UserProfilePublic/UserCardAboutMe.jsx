@@ -52,7 +52,7 @@ const UserCardAboutMe = ({ user }) => {
 							<div>
 								<IoLocationOutline className="text-gray-400 mr-2 text-2xl" />
 							</div>
-							<p className="">
+							<p>
 								<span className="font-semibold text-gray-400">Location:</span> {user.locationCity}, {user.locationCountry}
 							</p>
 						</li>
@@ -60,7 +60,7 @@ const UserCardAboutMe = ({ user }) => {
 							<div>
 								<IoBusinessOutline className="text-gray-400 mr-2 text-2xl" />
 							</div>
-							<p className="">
+							<p>
 								<span className="font-semibold text-gray-400">Company:</span> {user.company}
 							</p>
 						</li>
@@ -68,7 +68,7 @@ const UserCardAboutMe = ({ user }) => {
 							<div>
 								<IoChatbubbleEllipsesOutline className="text-gray-400 mr-2 text-2xl" />
 							</div>
-							<p className="">
+							<p>
 								<span className="font-semibold text-gray-400">Languages:</span> {user.languages.join(", ")}
 							</p>
 						</li>
@@ -76,7 +76,7 @@ const UserCardAboutMe = ({ user }) => {
 							<div>
 								<IoLinkOutline className="text-gray-400 mr-2 text-2xl" />
 							</div>
-							<p className="">
+							<p>
 								<span className="font-semibold text-gray-400">Website:</span>{" "}
 								<a href={user.website} className="italic hover:underline">
 									{user.website}

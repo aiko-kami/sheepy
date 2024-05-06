@@ -1,5 +1,6 @@
 "use client";
 
+import ButtonBlue from "../Buttons/ButtonBlue";
 import FormField from "../Forms/FormField";
 
 import { IoLocationOutline, IoEarthOutline, IoBusinessOutline, IoChatbubbleEllipsesOutline, IoLinkOutline, IoAtOutline, IoMailOutline } from "react-icons/io5";
@@ -49,14 +50,7 @@ const UserCardDetails = ({ user }) => {
 						</div>
 						{/* Button Update profile (submit form) */}
 						<div className="relative z-0 w-full text-center">
-							<button
-								type="submit"
-								className="inline-block px-5 py-2 bg-blue-600 text-white text-sm leading-snug rounded hover:bg-blue-700 hover:shadow-lg active:bg-blue-800 transition duration-150 ease-in-out"
-								data-mdb-ripple="true"
-								data-mdb-ripple-color="light"
-							>
-								Update my details
-							</button>
+							<ButtonBlue btnSize={"std"}>Update my details</ButtonBlue>
 						</div>
 					</form>
 				</div>

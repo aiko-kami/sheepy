@@ -1,12 +1,17 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 
-import { IoColorWandOutline, IoTrashOutline } from "react-icons/io5";
+import { IoColorWandOutline, IoTrashOutline, IoImageOutline, IoCameraReverseOutline, IoClose } from "react-icons/io5";
+import Popover from "@/components/Popover";
 
 const UserCardPictureBio = ({ user }) => {
+	const [displayPopover, setDisplayPopover] = useState(true);
 	const onSubmit = () => {};
 	const onChange = () => {};
+
 	return (
 		<div className="bg-base-450 shadow-2xl relative">
 			{/* background picture */}
@@ -22,9 +27,45 @@ const UserCardPictureBio = ({ user }) => {
 			{/* Profile picture */}
 			<div className="h-40 w-40 tn:min-h-60 tn:min-w-60 relative mx-auto -mt-30">
 				<Image src={user.profilePicture} fill sizes="100vw, (min-width: 768px) 200px" alt="User profile picture" className="rounded-full object-cover border-5 border-base-500" />
-				<div className="absolute right-2 bottom-2">
-					<IoColorWandOutline className="w-7 h-7" />
+				{/* Icon update pictures */}
+				<div className="absolute right-0 bottom-0 tn:right-1 tn:bottom-1" onClick={() => setDisplayPopover(!displayPopover)} onMouseLeave={() => setDisplayPopover(false)}>
+					<div className="relative">
+						<IoColorWandOutline className="w-6 h-6 tn:w-7 tn:h-7" />
+						<div className="relative">
+							<Popover displayPopover={displayPopover}>
+								<ul className="py-1">
+									<li className="text-sm hover:bg-gray-200 duration-200 active:text-base-450 block p-2 pl-1">
+										<div className="flex">
+											<IoCameraReverseOutline className="w-5 h-5 mr-1" />
+											<Link href="#">Change profile picture</Link>
+										</div>
+									</li>
+									<li className="text-sm hover:bg-gray-200 duration-200 active:text-base-450 block p-2 pl-1">
+										<div className="flex">
+											<IoClose className="w-5 h-5 mr-1" />
+											<Link href="#">Remove profile picture</Link>
+										</div>
+									</li>
+									<li className="text-sm hover:bg-gray-200 duration-200 active:text-base-450 block p-2 pl-1">
+										<div className="flex">
+											<IoImageOutline className="w-5 h-5 mr-1" />
+											<Link href="#">Change background</Link>
+										</div>
+									</li>
+									<li className="text-sm hover:bg-gray-200 duration-200 active:text-base-450 block p-2 pl-1">
+										<div className="flex">
+											<IoClose className="w-5 h-5 mr-1" />
+											<Link href="#">Remove background</Link>
+										</div>
+									</li>
+								</ul>
+							</Popover>
+						</div>
+					</div>
 				</div>
+				{/*<div className="absolute -right-9 top-32">
+					<IoColorWandOutline className="w-7 h-7" />
+				</div>*/}
 			</div>
 			{/* User card text */}
 			<div className="p-6">
