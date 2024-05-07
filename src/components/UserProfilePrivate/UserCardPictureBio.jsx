@@ -32,7 +32,7 @@ const UserCardPictureBio = ({ user }) => {
 					<div className="relative">
 						<IoColorWandOutline className="w-6 h-6 tn:w-7 tn:h-7" />
 						<div className="relative">
-							<Popover displayPopover={displayPopover}>
+							<Popover displayPopover={displayPopover} position={"-mx-43 -my-8 sm:mx-7"}>
 								<ul className="py-1">
 									<li className="text-sm hover:bg-gray-200 duration-200 active:text-base-450 block p-2 pl-1">
 										<div>
