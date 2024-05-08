@@ -34,7 +34,7 @@ const UserCardPictureBio = ({ user }) => {
 						<div className="relative">
 							<Popover displayPopover={displayPopover} position={"-mx-43 -my-8 sm:mx-7"}>
 								<ul className="py-1">
-									<li className="text-sm hover:bg-gray-200 duration-200 active:text-base-450 block p-2 pl-1">
+									<li className="text-sm hover:bg-gray-200 duration-200 hover:rounded-md active:text-base-450 block p-2 pl-1">
 										<div>
 											<Link href="#" className="flex">
 												<IoCameraReverseOutline className="w-5 h-5 mr-1" />
@@ -42,7 +42,7 @@ const UserCardPictureBio = ({ user }) => {
 											</Link>
 										</div>
 									</li>
-									<li className="text-sm hover:bg-gray-200 duration-200 active:text-base-450 block p-2 pl-1">
+									<li className="text-sm hover:bg-gray-200 duration-200 hover:rounded-md active:text-base-450 block p-2 pl-1">
 										<div>
 											<Link href="#" className="flex">
 												<IoClose className="w-5 h-5 mr-1" />
@@ -50,7 +50,7 @@ const UserCardPictureBio = ({ user }) => {
 											</Link>
 										</div>
 									</li>
-									<li className="text-sm hover:bg-gray-200 duration-200 active:text-base-450 block p-2 pl-1">
+									<li className="text-sm hover:bg-gray-200 duration-200 hover:rounded-md active:text-base-450 block p-2 pl-1">
 										<div>
 											<Link href="#" className="flex">
 												<IoImageOutline className="w-5 h-5 mr-1" />
@@ -58,7 +58,7 @@ const UserCardPictureBio = ({ user }) => {
 											</Link>
 										</div>
 									</li>
-									<li className="text-sm hover:bg-gray-200 duration-200 active:text-base-450 block p-2 pl-1">
+									<li className="text-sm hover:bg-gray-200 duration-200 hover:rounded-md active:text-base-450 block p-2 pl-1">
 										<div>
 											<Link href="#" className="flex">
 												<IoClose className="w-5 h-5 mr-1" />
