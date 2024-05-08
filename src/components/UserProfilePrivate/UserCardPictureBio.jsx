@@ -8,7 +8,7 @@ import { IoColorWandOutline, IoTrashOutline, IoImageOutline, IoCameraReverseOutl
 import Popover from "@/components/Popover";
 
 const UserCardPictureBio = ({ user }) => {
-	const [displayPopover, setDisplayPopover] = useState(true);
+	const [displayPopover, setDisplayPopover] = useState(false);
 	const onSubmit = () => {};
 	const onChange = () => {};
 
