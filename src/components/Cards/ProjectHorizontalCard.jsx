@@ -20,11 +20,7 @@ const ProjectHorizontalCard = ({ project }) => {
 					<div className="inline-block">
 						<BadgeCategory category={category} />
 					</div>
-					<p className="line-clamp-2">
-						{summary} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus labore odio praesentium vel odit repellat assumenda, nulla necessitatibus ipsa iure rerum perferendis ex
-						at perspiciatis deleniti aut ea sed molestias aperiam consectetur vero. Nobis dolore repellat, iusto aliquid voluptates a optio, sapiente magnam impedit mollitia unde laborum, maiores
-						labore.
-					</p>
+					<p className="line-clamp-2">{summary}</p>
 				</div>
 			</div>
 		</>

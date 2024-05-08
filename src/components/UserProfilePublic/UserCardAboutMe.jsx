@@ -1,10 +1,11 @@
 import Image from "next/image";
 
 import { IoLocationOutline, IoBusinessOutline, IoChatbubbleEllipsesOutline, IoLinkOutline } from "react-icons/io5";
+import ProjectCounter from "@/components/Common/ProjectCounter";
 
 const UserCardAboutMe = ({ user }) => {
 	return (
-		<div className="md:row-span-2 bg-base-450 shadow-2xl relative">
+		<div className="md:row-span-2 bg-base-450 shadow-2xl relative pb-8">
 			{/* background picture */}
 			<div className="h-46 relative">
 				<Image
@@ -16,37 +17,21 @@ const UserCardAboutMe = ({ user }) => {
 				/>
 			</div>
 			{/* Profile picture */}
-			<div className="h-40 w-40 tn:min-h-60 tn:min-w-60 relative mx-auto -mt-30 rounded-full">
-				<Image src={user.profilePicture} fill sizes="100vw, (min-width: 768px) 200px" alt="User profile picture" className="rounded-full object-cover border-8 border-base-500" />
+			<div className="h-40 w-40 tn:min-h-60 tn:min-w-60 relative mx-auto -mt-30">
+				<Image src={user.profilePicture} fill sizes="100vw, (min-width: 768px) 200px" alt="User profile picture" className="rounded-full object-cover border-5 border-base-500" />
 			</div>
 			{/* User card text */}
-			<div className="p-6">
+			<div className="px-6">
 				{/* Username and description */}
-				<div className="text-center">
+				<div className="text-center my-5">
 					<h1 className="text-3xl font-semibold mb-1">{user.username}</h1>
 					<p className="text-gray-300">{user.description}</p>
 				</div>
 				{/* Projects counters */}
-				<div className="flex justify-evenly my-5 text-gray-300">
-					<div className="text-center">
-						<span className="text-4xl font-bold block uppercase tracking-wide text-white">3</span>
-						<div className="text-sm ">projects</div>
-						<div className="text-sm">on-going</div>
-					</div>
-					<div className="text-center">
-						<span className="text-4xl font-bold block uppercase tracking-wide text-white">5</span>
-						<div className="text-sm">projects</div>
-						<div className="text-sm">created</div>
-					</div>
-					<div className="text-center">
-						<span className="text-4xl font-bold block uppercase tracking-wide text-white">8</span>
-						<div className="text-sm">projects</div>
-						<div className="text-sm">completed</div>
-					</div>
-				</div>
+				<ProjectCounter projectCount={user.projects.projectCount} />
 				{/* User details */}
 				<div>
-					<p className="text-2xl font-semibold mb-4">More about me...</p>
+					<h2 className="text-2xl font-semibold mb-4">More about me...</h2>
 					<ul>
 						<li className="flex mt-4">
 							<div>

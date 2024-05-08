@@ -4,8 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-import { IoColorWandOutline, IoTrashOutline, IoImageOutline, IoCameraReverseOutline, IoClose } from "react-icons/io5";
+import { IoColorWandOutline } from "react-icons/io5";
 import Popover from "@/components/Popover";
+import ButtonBlue from "@/components/Buttons/ButtonBlue";
+import PopoverContent from "./PopoverContent";
+import ProjectCounter from "@/components/Common/ProjectCounter";
 
 const UserCardPictureBio = ({ user }) => {
 	const [displayPopover, setDisplayPopover] = useState(false);
@@ -13,7 +16,7 @@ const UserCardPictureBio = ({ user }) => {
 	const onChange = () => {};
 
 	return (
-		<div className="bg-base-450 shadow-2xl relative">
+		<div className="row-span-2 bg-base-450 shadow-2xl relative pb-8">
 			{/* background picture */}
 			<div className="h-46 relative">
 				<Image
@@ -33,40 +36,7 @@ const UserCardPictureBio = ({ user }) => {
 						<IoColorWandOutline className="w-6 h-6 tn:w-7 tn:h-7" />
 						<div className="relative">
 							<Popover displayPopover={displayPopover} position={"-mx-43 -my-8 sm:mx-7"}>
-								<ul className="py-1">
-									<li className="text-sm hover:bg-gray-200 duration-200 hover:rounded-md active:text-base-450 block p-2 pl-1">
-										<div>
-											<Link href="#" className="flex">
-												<IoCameraReverseOutline className="w-5 h-5 mr-1" />
-												Change profile picture
-											</Link>
-										</div>
-									</li>
-									<li className="text-sm hover:bg-gray-200 duration-200 hover:rounded-md active:text-base-450 block p-2 pl-1">
-										<div>
-											<Link href="#" className="flex">
-												<IoClose className="w-5 h-5 mr-1" />
-												Remove profile picture
-											</Link>
-										</div>
-									</li>
-									<li className="text-sm hover:bg-gray-200 duration-200 hover:rounded-md active:text-base-450 block p-2 pl-1">
-										<div>
-											<Link href="#" className="flex">
-												<IoImageOutline className="w-5 h-5 mr-1" />
-												Change background
-											</Link>
-										</div>
-									</li>
-									<li className="text-sm hover:bg-gray-200 duration-200 hover:rounded-md active:text-base-450 block p-2 pl-1">
-										<div>
-											<Link href="#" className="flex">
-												<IoClose className="w-5 h-5 mr-1" />
-												Remove background
-											</Link>
-										</div>
-									</li>
-								</ul>
+								<PopoverContent />
 							</Popover>
 						</div>
 					</div>
@@ -76,34 +46,18 @@ const UserCardPictureBio = ({ user }) => {
 				</div>*/}
 			</div>
 			{/* User card text */}
-			<div className="p-6">
+			<div className="px-6">
 				{/* Username and description */}
-				<div className="text-center">
+				<div className="text-center my-5">
 					<h1 className="text-3xl font-semibold">{user.username}</h1>
 				</div>
 				{/* Projects counters */}
-				<div className="flex justify-evenly my-5 text-gray-300">
-					<div className="text-center">
-						<span className="text-4xl font-bold block uppercase tracking-wide text-white">3</span>
-						<div className="text-sm ">projects</div>
-						<div className="text-sm">on-going</div>
-					</div>
-					<div className="text-center">
-						<span className="text-4xl font-bold block uppercase tracking-wide text-white">5</span>
-						<div className="text-sm">projects</div>
-						<div className="text-sm">created</div>
-					</div>
-					<div className="text-center">
-						<span className="text-4xl font-bold block uppercase tracking-wide text-white">8</span>
-						<div className="text-sm">projects</div>
-						<div className="text-sm">completed</div>
-					</div>
-				</div>
+				<ProjectCounter projectCount={user.projects.projectCount} />
 				{/* User details */}
 				<div>
-					<p className="text-2xl font-semibold mb-4">About me</p>
-					{/* Profile infos section */}
-					<div className="mx-6 mb-4 md:mb-0 md:mx-0">
+					<h2 className="text-2xl font-semibold mb-4">About me</h2>
+					{/* Profile introduction section */}
+					<div>
 						<form onSubmit={onSubmit}>
 							{/* Description */}
 							<div className="relative z-0 mb-6 w-full">
@@ -123,7 +77,7 @@ const UserCardPictureBio = ({ user }) => {
 							</div>
 
 							{/* Bio */}
-							<div className="relative z-0 mb-6 w-full">
+							<div className="relative z-0 mb-10 w-full">
 								<label htmlFor="bio" className="block mb-2 text-sm font-medium text-gray-400">
 									Bio
 								</label>
@@ -133,10 +87,14 @@ const UserCardPictureBio = ({ user }) => {
 									className="block p-2 w-full text-sm bg-gray-700 rounded-lg border border-gray-600 placeholder-gray-400"
 									placeholder="Add your bio or resumé..."
 									maxLength={700}
-									rows="10"
+									rows="8"
 									value={user.bio}
 									onChange={onChange}
 								></textarea>
+							</div>
+							{/* Button Update profile (submit form) */}
+							<div className="text-center">
+								<ButtonBlue btnSize={"std"}>Update my introduction</ButtonBlue>
 							</div>
 						</form>
 					</div>

@@ -16,10 +16,10 @@ const UserDescriptionPage = ({ params }) => {
 				<UserCardBio userBio={user.bio} />
 
 				{/* User card with talents */}
-				<UserCardTalents />
+				<UserCardTalents talents={user.talents} />
 
 				{/* User card with projects */}
-				<UserCardProjects />
+				<UserCardProjects projects={user.projects} />
 			</div>
 		</>
 	);

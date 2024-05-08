@@ -1,10 +1,10 @@
 import ProjectsTabsList from "@/components/UserProfilePublic/ProjectsTabsList";
 
-const UserCardProjects = () => {
+const UserCardProjects = ({ projects }) => {
 	return (
-		<div className="md:col-span-3 bg-base-450 shadow-2xl p-6">
+		<div className="md:col-span-3 bg-base-450 shadow-2xl p-6 pb-8">
 			<h2 className="text-2xl font-semibold mb-4">My Projects</h2>
-			<ProjectsTabsList />
+			<ProjectsTabsList projects={projects} />
 		</div>
 	);
 };

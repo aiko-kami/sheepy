@@ -4,26 +4,9 @@ import TabContent from "@/components/Tabs/TabContent";
 import ProjectHorizontalCard from "@/components/Cards/ProjectHorizontalCard";
 import { useState } from "react";
 
-const ProjectsTabsList = () => {
+const ProjectsTabsList = ({ projects }) => {
 	const [activeTab, setActiveTab] = useState("tabProjectWorked");
 
-	const project1 = {
-		title: "Project 01",
-		summary: "Create a compelling indie film with a unique storyline.",
-		cover: "https://tailwindcss.com/_next/static/media/headlessui@75.c1d50bc1.jpg",
-		likes: 147,
-		category: {
-			name: "Culture",
-			link: "/categories/culture",
-			bgColor: "bg-blue-600",
-			bgColorHover: "bg-blue-500",
-			size: "sm",
-		},
-		subCategory: "Cinema",
-		location: "San Fransokyo, USA",
-		tags: ["indie_film", "cinematography", "screenwriting"],
-		status: "Active",
-	};
 	const project2 = {
 		title: "Project 2",
 		summary: "Create a compelling indie film with a unique storyline.",
@@ -64,18 +47,25 @@ const ProjectsTabsList = () => {
 			{/* Menu nav tabs selection */}
 			<ul className="flex flex-wrap justify-center text-gray-600 mb-5">
 				<li>
-					<button className="me-2 inline-block mx-6 rounded-t-lg">
-						<TabNavItem title="Projects I work on" id="tabProjectWorked" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
+					<button className="inline-block mx-2">
+						<TabNavItem title="Projects I work on" projectCount={projects.projectCount.onGoing} id="tabProjectWorked" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
 					</button>
 				</li>
 				<li>
-					<button className="me-2 inline-block mx-6 rounded-t-lg">
-						<TabNavItem title="Projects I created" id="tabProjectCreated" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
+					<button className="inline-block mx-2">
+						<TabNavItem title="Projects I created" projectCount={projects.projectCount.created} id="tabProjectCreated" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
 					</button>
 				</li>
 				<li>
-					<button className="me-2 inline-block mx-6 rounded-t-lg">
-						<TabNavItem title="Projects completed" id="tabProjectCompleted" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
+					<button className="inline-block mx-2">
+						<TabNavItem
+							title="Projects completed"
+							projectCount={projects.projectCount.completed}
+							id="tabProjectCompleted"
+							activeTab={activeTab}
+							setActiveTab={setActiveTab}
+							activeClass="text-blue-600"
+						/>
 					</button>
 				</li>
 			</ul>
@@ -84,62 +74,29 @@ const ProjectsTabsList = () => {
 			<div id="defaultTabContent" className="">
 				<TabContent id="tabProjectWorked" activeTab={activeTab}>
 					<ul className="grid sm:grid-cols-2 gap-4">
-						<li>
-							<ProjectHorizontalCard project={project1} />
-						</li>
-						<li>
-							<ProjectHorizontalCard project={project1} />
-						</li>
-						<li>
-							<ProjectHorizontalCard project={project1} />
-						</li>
+						{projects.projectsOnGoing.map((project, index) => (
+							<li key={index}>
+								<ProjectHorizontalCard project={project} />
+							</li>
+						))}
 					</ul>
 				</TabContent>
 				<TabContent id="tabProjectCreated" activeTab={activeTab}>
 					<ul className="grid sm:grid-cols-2 gap-4">
-						<li>
-							<ProjectHorizontalCard project={project2} />
-						</li>
-						<li>
-							<ProjectHorizontalCard project={project2} />
-						</li>
-						<li>
-							<ProjectHorizontalCard project={project2} />
-						</li>
-						<li>
-							<ProjectHorizontalCard project={project2} />
-						</li>
-						<li>
-							<ProjectHorizontalCard project={project2} />
-						</li>
+						{projects.projectsCreated.map((project, index) => (
+							<li key={index}>
+								<ProjectHorizontalCard project={project} />
+							</li>
+						))}
 					</ul>
 				</TabContent>
 				<TabContent id="tabProjectCompleted" activeTab={activeTab}>
 					<ul className="grid sm:grid-cols-2 gap-4">
-						<li>
-							<ProjectHorizontalCard project={project3} />
-						</li>
-						<li>
-							<ProjectHorizontalCard project={project3} />
-						</li>
-						<li>
-							<ProjectHorizontalCard project={project3} />
-						</li>
-						<li>
-							<ProjectHorizontalCard project={project3} />
-						</li>
-						<li>
-							<ProjectHorizontalCard project={project3} />
-						</li>
-						<li>
-							<ProjectHorizontalCard project={project3} />
-						</li>
-						<li>
-							<ProjectHorizontalCard project={project3} />
-						</li>
-						<li>
-							<ProjectHorizontalCard project={project3} />
-						</li>
+						{projects.projectsCompleted.map((project, index) => (
+							<li key={index}>
+								<ProjectHorizontalCard project={project} />
+							</li>
+						))}
 					</ul>
 				</TabContent>
 			</div>

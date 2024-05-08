@@ -3,7 +3,7 @@
 import ButtonBlue from "../Buttons/ButtonBlue";
 import FormField from "../Forms/FormField";
 
-import { IoLocationOutline, IoEarthOutline, IoBusinessOutline, IoChatbubbleEllipsesOutline, IoLinkOutline, IoAtOutline, IoMailOutline } from "react-icons/io5";
+import { IoLocationOutline, IoEarthOutline, IoBusinessOutline, IoChatbubbleEllipsesOutline, IoLinkOutline } from "react-icons/io5";
 
 const UserCardDetails = ({ user }) => {
 	const onSubmit = () => {};
@@ -19,37 +19,32 @@ const UserCardDetails = ({ user }) => {
 						{/* List of fields */}
 						<div className="mb-10">
 							{/* City */}
-							<FormField inputName={"city"} label={"City"} inputValue={user.locationCity}>
+							<FormField inputName={"city"} inputType={"text"} label={"City"} inputValue={user.locationCity}>
 								<IoLocationOutline className="w-5 h-5 text-gray-400" />
 							</FormField>
 
 							{/* Country */}
-							<FormField inputName={"country"} label={"Country"} inputValue={user.locationCountry}>
+							<FormField inputName={"country"} inputType={"text"} label={"Country"} inputValue={user.locationCountry}>
 								<IoEarthOutline className="w-5 h-5 text-gray-400" />
 							</FormField>
 
 							{/* Language */}
-							<FormField inputName={"languages"} label={"Languages"} inputValue={user.languages.join(", ")}>
+							<FormField inputName={"languages"} inputType={"text"} label={"Languages"} inputValue={user.languages.join(", ")}>
 								<IoChatbubbleEllipsesOutline className="w-5 h-5 text-gray-400" />
 							</FormField>
 
 							{/* Company */}
-							<FormField inputName={"company"} label={"Company"} inputValue={user.company}>
+							<FormField inputName={"company"} inputType={"text"} label={"Company"} inputValue={user.company}>
 								<IoBusinessOutline className="w-5 h-5 text-gray-400" />
 							</FormField>
 
 							{/* Website */}
-							<FormField inputName={"website"} label={"Website"} inputValue={user.website}>
+							<FormField inputName={"website"} inputType={"text"} label={"Website"} inputValue={user.website}>
 								<IoLinkOutline className="w-5 h-5 text-gray-400" />
-							</FormField>
-
-							{/* Email */}
-							<FormField inputName={"email"} label={"Email"} inputValue={user.email}>
-								<IoAtOutline className="w-5 h-5 text-gray-400" />
 							</FormField>
 						</div>
 						{/* Button Update profile (submit form) */}
-						<div className="relative z-0 w-full text-center">
+						<div className="text-center">
 							<ButtonBlue btnSize={"std"}>Update my details</ButtonBlue>
 						</div>
 					</form>

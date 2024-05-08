@@ -1,13 +1,13 @@
-const FormField = ({ inputName, label, inputValue, children }) => {
+const FormField = ({ inputName, inputType, label, inputValue, children }) => {
 	const onSubmit = () => {};
 	const onChange = () => {};
 
 	return (
 		<div className="relative z-0 mb-6 w-full">
-			{/* Language icon */}
+			{/* icon on the left of the field */}
 			<div className="flex absolute inset-y-6 -left-11 items-center pl-3 pointer-events-none">{children}</div>
 			<input
-				type="text"
+				type={inputType}
 				name={inputName}
 				id={inputName}
 				value={inputValue}
