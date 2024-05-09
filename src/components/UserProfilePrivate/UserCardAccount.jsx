@@ -1,7 +1,7 @@
 "use client";
 
-import ButtonBlue from "../Buttons/ButtonBlue";
-import FormField from "../Forms/FormField";
+import ButtonBlue from "@/components/Buttons/ButtonBlue";
+import FormField from "@/components/Forms/FormField";
 
 import { IoAtOutline, IoLockClosed } from "react-icons/io5";
 

@@ -66,7 +66,7 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 - [] Project description private page
 - [] Project edition page
 - [] Project creation page
-- [] User profile update page
+- [x] User profile update page
 - [x] User profile public page
 - [] View my profile page
 - [] Search projects page

@@ -1,8 +1,16 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
+
 import SubmenuStart from "./SubmenuStart";
 import SubmenuHowItWorks from "./SubmenuHowItWorks";
+import Popover from "@/components/Popover";
+import PopoverSearch from "@/components/Search/PopoverSearch";
 
 const Menu = () => {
+	const [displayPopover, setDisplayPopover] = useState(false);
+
 	return (
 		<>
 			<div className="flex h-full m-auto">
@@ -31,9 +39,12 @@ const Menu = () => {
 				<Link href="/discover" className="inline-flex items-center duration-200 active:text-base-450 px-10 py-1.5 tn:m-2">
 					Discover
 				</Link>
-				<Link href="/login" className="inline-flex items-center duration-200 active:text-base-450 px-10 py-1.5 tn:m-2">
+				<button className="inline-flex relative items-center duration-200 active:text-base-450 px-10 py-1.5 tn:m-2" onClick={() => setDisplayPopover(!displayPopover)}>
 					Search
-				</Link>
+					<Popover displayPopover={displayPopover} position={"mt-40 -mx-50"}>
+						<PopoverSearch />
+					</Popover>
+				</button>
 			</div>
 		</>
 	);
