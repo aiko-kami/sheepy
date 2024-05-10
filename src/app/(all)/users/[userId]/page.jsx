@@ -3,7 +3,7 @@ import UserCardBio from "@/components/UserProfilePublic/UserCardBio";
 import UserCardTalents from "@/components/UserProfilePublic/UserCardTalents";
 import UserCardProjects from "@/components/UserProfilePublic/UserCardProjects";
 
-import user from "@/user.json";
+import user from "@/mock/user.json";
 
 const UserDescriptionPage = ({ params }) => {
 	return (

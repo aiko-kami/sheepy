@@ -2,14 +2,14 @@ import Sandwich from "@/components/Navbar/Sandwich";
 import Menu from "@/components/Navbar/Menu";
 import Login from "@/components/Navbar/Login";
 
-const Header = ({ isHomePage }) => {
+const Header = ({ isHomePage = false, displaySearchButton }) => {
 	return (
 		<header className={`sticky p-2 z-50 flex justify-between ${isHomePage && "bg-custom-blue-dark"}`}>
 			<div className="">
 				<Sandwich />
 			</div>
 			<div className="hidden lg:flex">
-				<Menu />
+				<Menu displaySearchButton={displaySearchButton} />
 			</div>
 			<div className="">
 				<Login />

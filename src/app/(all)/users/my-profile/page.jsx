@@ -2,7 +2,7 @@ import UserCardPictureBio from "@/components/UserProfilePrivate/UserCardPictureB
 import UserCardDetails from "@/components/UserProfilePrivate/UserCardDetails";
 import UserCardAccount from "@/components/UserProfilePrivate/UserCardAccount";
 
-import user from "@/user.json";
+import user from "@/mock/user.json";
 
 const MyProfilePage = ({ params }) => {
 	return (

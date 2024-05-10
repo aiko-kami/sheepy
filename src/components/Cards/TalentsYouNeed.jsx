@@ -1,5 +1,5 @@
 import UserCard from "./UserCard";
-import UsersYouNeed from "@/UsersYouNeed.json";
+import UsersYouNeed from "@/mock/UsersYouNeed.json";
 
 const TalentsYouNeed = () => {
 	return (

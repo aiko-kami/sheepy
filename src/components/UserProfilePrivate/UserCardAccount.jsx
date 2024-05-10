@@ -9,7 +9,14 @@ const UserCardDetails = ({ user }) => {
 	let oldPassword = "";
 	let newPassword = "";
 	let repeatNewPassword = "";
-	const onSubmit = () => {};
+
+	// Handle form submission
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		// You can perform actions like searching here
+		console.log("Search string:", searchInput);
+	};
+
 	const onChange = () => {};
 
 	return (
@@ -17,7 +24,7 @@ const UserCardDetails = ({ user }) => {
 			<h2 className="text-2xl font-semibold mb-6">My account</h2>
 			{/* User account information */}
 			<div className="mx-0 px-6 pl-8">
-				<form onSubmit={onSubmit}>
+				<form onSubmit={handleSubmit}>
 					{/* List of fields */}
 					<div className="mb-10">
 						{/* Email */}

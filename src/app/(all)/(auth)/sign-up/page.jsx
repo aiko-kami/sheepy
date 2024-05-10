@@ -25,12 +25,19 @@ const SignUpPage = () => {
 		}));
 	};
 
+	// Handle form submission
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		// You can perform actions like searching here
+		console.log("Register inputs:", formData);
+	};
+
 	return (
 		<>
 			<div className="flex flex-col-reverse py-20 md:flex-row justify-evenly items-center flex-wrap h-full">
 				<div className="md:w-3/5 w-full max-w-md px-10">
 					<h1 className="text-center text-2xl mb-4">Create an account</h1>
-					<form>
+					<form onSubmit={handleSubmit}>
 						<div>
 							{/* Username input */}
 							<div className="relative z-0 mb-6 w-full group">

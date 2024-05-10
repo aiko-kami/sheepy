@@ -21,6 +21,13 @@ const LoginPage = () => {
 		}));
 	};
 
+	// Handle form submission
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		// You can perform actions like searching here
+		console.log("Login submitted:", formData);
+	};
+
 	const { login, password } = formData;
 	return (
 		<>
@@ -31,7 +38,7 @@ const LoginPage = () => {
 				</div>
 				<div className="md:w-3/5 w-full max-w-md px-10">
 					<h1 className="text-center text-2xl mb-4">Log in</h1>
-					<form>
+					<form onSubmit={handleSubmit}>
 						{/* Email input */}
 						<div className="relative z-0 mb-6 w-full group">
 							<input

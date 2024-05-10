@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import Dropdown from "./Dropdown";
-import user from "@/user.json";
+import user from "@/mock/user.json";
 
 const Login = () => {
 	const session = true;

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import projects from "@/projects.json";
+import projects from "@/mock/projects.json";
 
 import BadgeCategory from "@/components/Badges/BadgeCategory";
 

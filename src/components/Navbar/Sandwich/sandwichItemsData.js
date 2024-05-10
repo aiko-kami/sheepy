@@ -45,6 +45,6 @@ export const sandwichItemsData = [
 	},
 	{
 		title: "Search",
-		url: "/",
+		url: "/search",
 	},
 ];

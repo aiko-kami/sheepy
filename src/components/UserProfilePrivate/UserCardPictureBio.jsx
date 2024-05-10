@@ -35,7 +35,7 @@ const UserCardPictureBio = ({ user }) => {
 					<div className="relative">
 						<IoColorWandOutline className="w-6 h-6 tn:w-7 tn:h-7" />
 						<div className="relative">
-							<Popover displayPopover={displayPopover} position={"-mx-43 -my-8 sm:mx-7"}>
+							<Popover displayPopover={displayPopover} position={"-mx-43 -my-8 sm:mx-7"} style={"text-gray-900 whitespace-nowrap bg-white rounded-sm shadow px-1"}>
 								<PopoverContent />
 							</Popover>
 						</div>

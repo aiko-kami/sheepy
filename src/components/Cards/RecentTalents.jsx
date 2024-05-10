@@ -1,5 +1,5 @@
 import UserCard from "./UserCard";
-import RecentUsers from "@/RecentUsers.json";
+import RecentUsers from "@/mock/RecentUsers.json";
 
 const RecentTalents = () => {
 	return (

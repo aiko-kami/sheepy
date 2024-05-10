@@ -15,7 +15,7 @@ const HomePage = () => {
 
 			<div className="inline-flex">
 				<h2 className="font-semibold text-xl mr-4">Recent projects</h2>
-				<Link href="/projects/01" className="text-xs mt-2.5">
+				<Link href="/projects/01" className="text-xs mt-2.5 hover:underline">
 					See more...
 				</Link>
 			</div>
@@ -23,7 +23,7 @@ const HomePage = () => {
 
 			<div className="inline-flex">
 				<h2 className="font-semibold text-xl mr-4">New Talents</h2>
-				<Link href="/users/01" className="text-xs mt-2.5">
+				<Link href="/users/01" className="text-xs mt-2.5 hover:underline">
 					See more...
 				</Link>
 			</div>
@@ -31,7 +31,7 @@ const HomePage = () => {
 
 			<div className="inline-flex">
 				<h2 className="font-semibold text-xl mr-4">Talents you need</h2>
-				<Link href="/users/01" className="text-xs mt-2.5">
+				<Link href="/users/01" className="text-xs mt-2.5 hover:underline">
 					See more...
 				</Link>
 			</div>

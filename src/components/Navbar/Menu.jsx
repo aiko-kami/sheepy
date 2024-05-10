@@ -2,14 +2,32 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import SubmenuStart from "./SubmenuStart";
 import SubmenuHowItWorks from "./SubmenuHowItWorks";
 import Popover from "@/components/Popover";
-import PopoverSearch from "@/components/Search/PopoverSearch";
+import SearchBar from "@/components/Search/SearchBar";
 
-const Menu = () => {
+const Menu = ({ displaySearchButton = true }) => {
 	const [displayPopover, setDisplayPopover] = useState(false);
+	const [searchInput, setSearchInput] = useState("");
+
+	const router = useRouter();
+
+	// Handle search input change
+	const handleInputChange = (e) => {
+		setSearchInput(e.target.value);
+	};
+
+	// Handle form submission
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		setSearchInput("");
+		setDisplayPopover(false);
+		const path = `/search?search=${searchInput}`;
+		router.push(path);
+	};
 
 	return (
 		<>
@@ -39,12 +57,16 @@ const Menu = () => {
 				<Link href="/discover" className="inline-flex items-center duration-200 active:text-base-450 px-10 py-1.5 tn:m-2">
 					Discover
 				</Link>
-				<button className="inline-flex relative items-center duration-200 active:text-base-450 px-10 py-1.5 tn:m-2" onClick={() => setDisplayPopover(!displayPopover)}>
-					Search
-					<Popover displayPopover={displayPopover} position={"mt-40 -mx-50"}>
-						<PopoverSearch />
-					</Popover>
-				</button>
+				{displaySearchButton && (
+					<>
+						<button className="inline-flex relative items-center duration-200 active:text-base-450 px-10 py-1.5 tn:m-2" onClick={() => setDisplayPopover(!displayPopover)}>
+							Search
+						</button>
+						<Popover displayPopover={displayPopover} position={"mt-12 ml-100"} style="w-100 whitespace-nowrap shadow">
+							<SearchBar searchInput={searchInput} handleInputChange={handleInputChange} handleSubmit={handleSubmit} />
+						</Popover>
+					</>
+				)}
 			</div>
 		</>
 	);

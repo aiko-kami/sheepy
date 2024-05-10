@@ -48,24 +48,17 @@ const ProjectsTabsList = ({ projects }) => {
 			<ul className="flex flex-wrap justify-center text-gray-600 mb-5">
 				<li>
 					<button className="inline-block mx-2">
-						<TabNavItem title="Projects I work on" projectCount={projects.projectCount.onGoing} id="tabProjectWorked" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
+						<TabNavItem title={`Projects I work on (${projects.projectCount.onGoing})`} id="tabProjectWorked" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
 					</button>
 				</li>
 				<li>
 					<button className="inline-block mx-2">
-						<TabNavItem title="Projects I created" projectCount={projects.projectCount.created} id="tabProjectCreated" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
+						<TabNavItem title={`Projects I created (${projects.projectCount.created})`} id="tabProjectCreated" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
 					</button>
 				</li>
 				<li>
 					<button className="inline-block mx-2">
-						<TabNavItem
-							title="Projects completed"
-							projectCount={projects.projectCount.completed}
-							id="tabProjectCompleted"
-							activeTab={activeTab}
-							setActiveTab={setActiveTab}
-							activeClass="text-blue-600"
-						/>
+						<TabNavItem title={`Projects completed (${projects.projectCount.completed})`} id="tabProjectCompleted" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
 					</button>
 				</li>
 			</ul>

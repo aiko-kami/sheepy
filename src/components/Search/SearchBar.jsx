@@ -1,27 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import { IoSearch } from "react-icons/io5";
-import { useRouter } from "next/navigation";
 
-const SearchPopover = ({ setDisplayPopover }) => {
-	const [searchInput, setSearchInput] = useState("");
-
-	const router = useRouter();
-
-	// Handle search input change
-	const handleInputChange = (e) => {
-		setSearchInput(e.target.value);
-	};
-
-	// Handle form submission
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		setDisplayPopover(false);
-		const path = `/search?search=${searchInput}`;
-		router.push(path);
-	};
-
+const SearchBar = ({ searchInput, handleInputChange, handleSubmit }) => {
 	return (
 		<form onSubmit={handleSubmit}>
 			<label htmlFor="default-search" className="mb-2 text-sm font-medium sr-only text-white">
@@ -39,7 +20,7 @@ const SearchPopover = ({ setDisplayPopover }) => {
 					className="block w-full p-4 ps-10 text-sm border border-gray-600 rounded-lg bg-gray-700 placeholder-gray-400 text-white pr-22"
 					placeholder="Search projects, categories, location..."
 					required
-					value={searchInput}
+					value={searchInput || ""}
 					onChange={handleInputChange}
 				/>
 				<button type="submit" className="text-white absolute end-2.5 bottom-2.5 bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-4 py-2">
@@ -49,4 +30,4 @@ const SearchPopover = ({ setDisplayPopover }) => {
 		</form>
 	);
 };
-export default SearchPopover;
+export default SearchBar;
