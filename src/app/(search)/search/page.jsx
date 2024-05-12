@@ -1,12 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 import SearchBar from "@/components/Search/SearchBar";
 import SearchResultsTabsList from "@/components/Search/SearchResultsTabsList";
 
-const SearchPage = () => {
+const SearchPModule = () => {
 	const searchParams = useSearchParams();
 	const search = searchParams.get("search");
 
@@ -42,3 +42,12 @@ const SearchPage = () => {
 	);
 };
 export default SearchPage;
+
+export function SearchPage() {
+	return (
+		// You could have a loading skeleton as the `fallback` too
+		<Suspense>
+			<SearchPModule />
+		</Suspense>
+	);
+}
