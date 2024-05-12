@@ -1,7 +1,7 @@
 "use client";
 import TabNavItem from "@/components/Tabs/TabNavItem";
 import TabContent from "@/components/Tabs/TabContent";
-import ProjectHorizontalCard from "@/components/Cards/ProjectHorizontalCard";
+import ProjectHorizontalCard from "@/components/Cards/Projects/ProjectHorizontalCard";
 import { useState } from "react";
 
 const ProjectsTabsList = ({ projects }) => {

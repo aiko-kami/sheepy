@@ -7,7 +7,7 @@ const ProjectHorizontalCard = ({ project }) => {
 
 	return (
 		<>
-			<div className="relative grid grid-cols-4 items-center shadow-xl rounded-lg bg-blue-900">
+			<div className="relative grid grid-cols-4 items-center shadow-xl rounded-lg bg-blue-900 hover:-translate-y-1 transition ease-in duration-75">
 				<div className="col-span-1 relative min-h-40 h-full">
 					<Link href="/projects/01">
 						<Image src={cover} fill alt="Project picture" className="object-cover h-full shadow-md rounded-l-lg" />

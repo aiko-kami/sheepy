@@ -1,8 +1,8 @@
-import Mosaic from "@/components/Cards/Mosaic";
+import Mosaic from "@/components/Cards/Projects/Mosaic";
 import PresentationBanner from "@/components/PresentationBanner";
-import RecentProjects from "@/components/Cards/RecentProjects";
-import RecentTalents from "@/components/Cards/RecentTalents";
-import TalentsYouNeed from "@/components/Cards/TalentsYouNeed";
+import RecentProjects from "@/components/Cards/Projects/RecentProjects";
+import RecentTalents from "@/components/Cards/Talents/RecentTalents";
+import TalentsYouNeed from "@/components/Cards/Talents/TalentsYouNeed";
 import Link from "next/link";
 
 const HomePage = () => {

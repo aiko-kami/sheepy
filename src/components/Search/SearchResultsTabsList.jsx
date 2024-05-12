@@ -1,7 +1,7 @@
 "use client";
 import TabNavItem from "@/components/Tabs/TabNavItem";
 import TabContent from "@/components/Tabs/TabContent";
-import ProjectHorizontalCard from "@/components/Cards/ProjectHorizontalCard";
+import ProjectHorizontalCard from "@/components/Cards/Projects/ProjectHorizontalCard";
 import { useState } from "react";
 
 const SearchResultsTabsList = () => {
@@ -83,9 +83,18 @@ const SearchResultsTabsList = () => {
 			{/* Tabs content */}
 			<div id="defaultTabContent" className="">
 				<TabContent id="tabProjects" activeTab={activeTab}>
-					<ul className="grid gap-8">
+					<ul className="grid gap-4">
 						<li>
 							<ProjectHorizontalCard project={project2} />
+						</li>
+						<li>
+							<ProjectHorizontalCard project={project3} />
+						</li>
+						<li>
+							<ProjectHorizontalCard project={project2} />
+						</li>
+						<li>
+							<ProjectHorizontalCard project={project3} />
 						</li>
 					</ul>
 				</TabContent>
