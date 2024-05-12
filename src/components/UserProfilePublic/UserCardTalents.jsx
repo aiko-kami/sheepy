@@ -1,4 +1,4 @@
-import UserTalentCard from "@/components/Cards/UserTalentCard/UserTalentCard";
+import UserTalentCard from "@/components/Cards/Talents/UserTalentCard/UserTalentCard";
 
 const UserCardTalents = ({ talents }) => {
 	return (

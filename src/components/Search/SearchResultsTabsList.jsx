@@ -99,35 +99,35 @@ const SearchResultsTabsList = () => {
 					</ul>
 				</TabContent>
 				<TabContent id="tabTalents" activeTab={activeTab}>
-					<ul className="grid gap-8">
+					<ul className="grid gap-4">
 						<li>
 							<ProjectHorizontalCard project={project3} />
 						</li>
 					</ul>
 				</TabContent>
 				<TabContent id="tabCategories" activeTab={activeTab}>
-					<ul className="grid gap-8">
+					<ul className="grid gap-4">
 						<li>
 							<ProjectHorizontalCard project={project2} />
 						</li>
 					</ul>
 				</TabContent>
 				<TabContent id="tabsubCategories" activeTab={activeTab}>
-					<ul className="grid gap-8">
+					<ul className="grid gap-4">
 						<li>
 							<ProjectHorizontalCard project={project3} />
 						</li>
 					</ul>
 				</TabContent>
 				<TabContent id="tabLocations" activeTab={activeTab}>
-					<ul className="grid gap-8">
+					<ul className="grid gap-4">
 						<li>
 							<ProjectHorizontalCard project={project2} />
 						</li>
 					</ul>
 				</TabContent>
 				<TabContent id="tabTags" activeTab={activeTab}>
-					<ul className="grid gap-8">
+					<ul className="grid gap-4">
 						<li>
 							<ProjectHorizontalCard project={project3} />
 						</li>
