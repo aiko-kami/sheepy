@@ -41,9 +41,8 @@ const SearchPModule = () => {
 		</>
 	);
 };
-export default SearchPage;
 
-export function SearchPage() {
+export default function SearchPage() {
 	return (
 		// You could have a loading skeleton as the `fallback` too
 		<Suspense>
