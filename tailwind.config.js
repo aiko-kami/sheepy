@@ -31,13 +31,13 @@ module.exports = {
 		extend: {
 			keyframes: {
 				slidein: {
-					"0%": { opacity: 0, "margin-top": "1rem" },
+					"0%": { opacity: 0, "margin-top": "2rem" },
 					"50%": { opacity: 20 },
 					"100%": { opacity: 100 },
 				},
 			},
 			animation: {
-				slidein: "slidein 0.5s",
+				slidein: "slidein 0.2s",
 			},
 			colors: {
 				base: {
@@ -285,8 +285,12 @@ module.exports = {
 		"bg-yellow-500",
 		"hover:bg-blue-500",
 		"hover:bg-gray-800",
+		"hover:bg-green-300",
 		"hover:bg-green-500",
+		"hover:bg-pink-300",
 		"hover:bg-pink-500",
+		"hover:bg-pink-600",
+		"hover:bg-purple-300",
 		"hover:bg-purple-400",
 		"hover:bg-purple-500",
 		"hover:bg-red-500",

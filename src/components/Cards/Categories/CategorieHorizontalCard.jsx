@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import BadgeCategory from "@/components/Badges/BadgeCategory";
+import Badge from "@/components/Badges/Badge";
 
 const CategorieHorizontalCard = ({ category }) => {
 	const { title, summary, cover, logo } = category;
@@ -18,7 +18,7 @@ const CategorieHorizontalCard = ({ category }) => {
 						<h3 className="font-semibold text-2xl pb-1">{title}</h3>
 					</Link>
 					<div className="inline-block">
-						<BadgeCategory category={logo} />
+						<Badge badge={logo} />
 					</div>
 					<p className="line-clamp-2">{summary}</p>
 				</div>

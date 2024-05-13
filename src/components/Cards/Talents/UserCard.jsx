@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import BadgeTag from "@/components/Badges/BadgeTag";
+import BadgeRounded from "@/components/Badges/BadgeRounded";
 
 const UserCard = ({ user }) => {
 	const { userId, username, profilePicture, description, talents, tags } = user;
@@ -17,14 +17,12 @@ const UserCard = ({ user }) => {
 					<Link href={`/users/${userId}`}>
 						<h2 className="font-semibold text-xl pb-1">{username}</h2>
 					</Link>
-					<div className="flex flex-wrap justify-center">
-						<div className="flex flex-wrap justify-center h-8 overflow-hidden">
-							{tags.map((tag, index) => (
-								<div key={index} className="mx-1 my-1">
-									<BadgeTag tag={tag} />
-								</div>
-							))}
-						</div>
+					<div className="flex flex-wrap justify-center h-8 overflow-hidden">
+						{tags.map((tag, index) => (
+							<div key={index} className="mx-1 my-1">
+								<BadgeRounded badge={tag} />
+							</div>
+						))}
 					</div>
 					<p className="pb-1 line-clamp-4">{description}</p>
 				</div>

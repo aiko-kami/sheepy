@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-const BadgeTag = ({ tag }) => {
+const BadgeRounded = ({ badge }) => {
 	let textSizeClass;
-	switch (tag.size) {
+	switch (badge.size) {
 		case "xs":
 			textSizeClass = "text-xs";
 			break;
@@ -20,9 +20,9 @@ const BadgeTag = ({ tag }) => {
 	}
 
 	return (
-		<Link href={tag.link}>
-			<span className={`py-0.5 px-2.5 text-blue-800 font-medium rounded-full ${textSizeClass} ${tag.bgColor}`}>{tag.name}</span>
+		<Link href={badge.link || "#"}>
+			<span className={`py-1 px-2.5 text-blue-800 font-medium duration-200 rounded-full ${textSizeClass} ${badge.bgColor} hover:${badge.bgColorHover}`}>{badge.name}</span>
 		</Link>
 	);
 };
-export default BadgeTag;
+export default BadgeRounded;

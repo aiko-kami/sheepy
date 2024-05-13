@@ -16,7 +16,11 @@
 			"skills": ["User research", "Wireframing", "Prototyping"],
 			"experience": "",
 			"portfolio": "",
-			"certifications": ""
+			"certifications": "",
+			"link": "/tags/ui-ux-design",
+			"bgColor": "bg-purple-400",
+			"bgColorHover": "bg-purple-300",
+			"size": "xs"
 		},
 		{
 			"name": "Strategic Leadership",
@@ -24,7 +28,11 @@
 			"skills": ["User research", "Wireframing", "Prototyping"],
 			"experience": "",
 			"portfolio": "",
-			"certifications": ""
+			"certifications": "",
+			"link": "/tags/user-research",
+			"bgColor": "bg-purple-400",
+			"bgColorHover": "bg-purple-300",
+			"size": "xs"
 		},
 		{
 			"name": "Diplomacy",
@@ -32,7 +40,11 @@
 			"skills": ["User research", "Wireframing", "Prototyping"],
 			"experience": "",
 			"portfolio": "",
-			"certifications": ""
+			"certifications": "",
+			"link": "/tags/user-research",
+			"bgColor": "bg-purple-400",
+			"bgColorHover": "bg-purple-300",
+			"size": "xs"
 		},
 		{
 			"name": "Tactical Command",
@@ -40,7 +52,10 @@
 			"skills": ["User research", "Wireframing", "Prototyping"],
 			"experience": "",
 			"portfolio": "",
-			"certifications": ""
+			"certifications": "",
+			"link": "/tags/user-research",
+			"bgColor": "bg-purple-400",
+			"size": "xs"
 		}
 	],
 	"bio": "I am Captain Jean-Luc Picard of the USS Enterprise. As a dedicated Starfleet officer, I have spent my career boldly going where no one has gone before, exploring the far reaches of space, seeking out new life and civilizations, and upholding the principles of peace, diplomacy, and justice.",

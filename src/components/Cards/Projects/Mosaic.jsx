@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import projects from "@/mock/projects.json";
 
-import BadgeCategory from "@/components/Badges/BadgeCategory";
+import Badge from "@/components/Badges/Badge";
 
 const Mosaic = () => {
 	return (
@@ -14,7 +14,7 @@ const Mosaic = () => {
 							<Image src={projects[0].cover} height={0} width={0} sizes="100vw" alt="Project picture" className="object-cover w-full max-h-96" />
 						</Link>
 						<div className="absolute top-2 right-2">
-							<BadgeCategory category={projects[0].category} />
+							<Badge badge={projects[0].category} />
 						</div>
 					</div>
 					<Link href={`/projects/${projects[0].projectId}`}>
@@ -28,7 +28,7 @@ const Mosaic = () => {
 							<Image src={projects[1].cover} height={0} width={0} sizes="100vw" alt="Project picture" className="object-cover h-full w-full" />
 						</Link>
 						<div className="absolute top-2 right-2">
-							<BadgeCategory category={projects[1].category} />
+							<Badge badge={projects[1].category} />
 						</div>
 					</div>
 					<Link href={`/projects/${projects[1].projectId}`} className="w-3/5">
@@ -42,7 +42,7 @@ const Mosaic = () => {
 							<Image src={projects[2].cover} height={0} width={0} sizes="100vw" alt="Project picture" className="object-cover h-full w-full" />
 						</Link>
 						<div className="absolute top-2 right-2">
-							<BadgeCategory category={projects[2].category} />
+							<Badge badge={projects[2].category} />
 						</div>
 					</div>
 					<Link href={`/projects/${projects[2].projectId}`} className="w-3/5">
@@ -55,7 +55,7 @@ const Mosaic = () => {
 						<Image src={projects[3].cover} height={0} width={0} sizes="100vw" alt="Project picture" className="object-cover h-full w-full" />
 					</Link>
 					<div className="absolute top-2 right-2">
-						<BadgeCategory category={projects[3].category} />
+						<Badge badge={projects[3].category} />
 					</div>
 					<Link href={`/projects/${projects[3].projectId}`} className="absolute bottom-1.5 left-2 m-1">
 						<h2 className="font-semibold text-xl">{projects[3].title}</h2>
@@ -66,7 +66,7 @@ const Mosaic = () => {
 						<Image src={projects[4].cover} height={0} width={0} sizes="100vw" alt="Project picture" className="object-cover h-full w-full" />
 					</Link>
 					<div className="absolute top-2 right-2">
-						<BadgeCategory category={projects[4].category} />
+						<Badge badge={projects[4].category} />
 					</div>
 					<Link href={`/projects/${projects[4].projectId}`} className="absolute bottom-1.5 left-2 m-1">
 						<h2 className="font-semibold text-xl">{projects[4].title}</h2>
@@ -78,7 +78,7 @@ const Mosaic = () => {
 							<Image src={projects[5].cover} height={0} width={0} sizes="100vw" alt="Project picture" className="object-cover h-full w-full" />
 						</Link>
 						<div className="absolute top-2 right-2">
-							<BadgeCategory category={projects[5].category} />
+							<Badge badge={projects[5].category} />
 						</div>
 					</div>
 					<Link href={`/projects/${projects[5].projectId}`} className="w-3/5">

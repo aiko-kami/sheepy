@@ -68,7 +68,7 @@ const SearchResultsTabsList = ({ searchInput }) => {
 						<ul className="grid gap-4">
 							{searchResults.users.map((user, index) => (
 								<li key={index} className="flex justify-center">
-									<TalentHorizontalCard talent={user} />
+									<TalentHorizontalCard user={user} />
 								</li>
 							))}
 						</ul>
@@ -120,7 +120,7 @@ const SearchResultsTabsList = ({ searchInput }) => {
 						<ul className="grid gap-4">
 							{searchResults.tags.map((tag, index) => (
 								<li key={index}>
-									<TalentHorizontalCard tag={tag} />
+									<TalentHorizontalCard badge={tag} />
 								</li>
 							))}
 						</ul>

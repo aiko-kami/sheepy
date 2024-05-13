@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import BadgeCategory from "@/components/Badges/BadgeCategory";
-import BadgeTag from "@/components/Badges/BadgeTag";
+import Badge from "@/components/Badges/Badge";
+import BadgeRounded from "@/components/Badges/BadgeRounded";
 
 const ProjectCard = ({ project }) => {
 	const { id, title, summary, cover, category, tags } = project;
@@ -15,7 +15,7 @@ const ProjectCard = ({ project }) => {
 						<Image src={cover} className="w-full h-62 object-cover rounded-t-lg" alt="Card" height={0} width={0} sizes="100vw" />
 					</Link>
 					<div className="absolute bottom-2 right-2">
-						<BadgeCategory category={category} />
+						<Badge badge={category} />
 					</div>
 				</div>
 
@@ -24,7 +24,7 @@ const ProjectCard = ({ project }) => {
 					<div className="flex flex-wrap justify-center h-12 overflow-hidden">
 						{tags.map((tag, index) => (
 							<div key={index} className="mx-1 my-2">
-								<BadgeTag tag={tag} />
+								<BadgeRounded badge={tag} />
 							</div>
 						))}
 					</div>
