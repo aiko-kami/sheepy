@@ -62,7 +62,7 @@ const Menu = ({ displaySearchButton = true }) => {
 						<button className="inline-flex relative items-center duration-200 active:text-base-450 px-10 py-1.5 tn:m-2" onClick={() => setDisplayPopover(!displayPopover)}>
 							Search
 						</button>
-						<Popover displayPopover={displayPopover} position={"mt-12 ml-100"} style="w-100 whitespace-nowrap shadow">
+						<Popover displayPopover={displayPopover} position={"mt-12 ml-100"} style="w-100 whitespace-nowrap shadow animate-slidein">
 							<SearchBar searchInput={searchInput} handleInputChange={handleInputChange} handleSubmit={handleSubmit} />
 						</Popover>
 					</>

@@ -29,6 +29,16 @@ module.exports = {
 			12: "12px",
 		},
 		extend: {
+			keyframes: {
+				slidein: {
+					"0%": { opacity: 0, "margin-top": "1rem" },
+					"50%": { opacity: 20 },
+					"100%": { opacity: 100 },
+				},
+			},
+			animation: {
+				slidein: "slidein 0.5s",
+			},
 			colors: {
 				base: {
 					100: "#ffffff",

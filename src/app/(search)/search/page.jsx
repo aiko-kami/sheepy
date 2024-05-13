@@ -6,7 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import SearchBar from "@/components/Search/SearchBar";
 import SearchResultsTabsList from "@/components/Search/SearchResultsTabsList";
 
-const SearchPModule = () => {
+const SearchModule = () => {
 	const searchParams = useSearchParams();
 	const search = searchParams.get("search");
 
@@ -28,7 +28,7 @@ const SearchPModule = () => {
 
 	return (
 		<>
-			<div className="my-8">
+			<div className="my-8 mb-24">
 				{/* Search bar */}
 				<div className="flex justify-center mb-8">
 					<div className="min-w-4/5 md:min-w-3/5">
@@ -36,7 +36,7 @@ const SearchPModule = () => {
 					</div>
 				</div>
 				{/* Search results */}
-				<SearchResultsTabsList />
+				<SearchResultsTabsList searchInput={searchInput} />
 			</div>
 		</>
 	);
@@ -46,7 +46,7 @@ export default function SearchPage() {
 	return (
 		// You could have a loading skeleton as the `fallback` too
 		<Suspense>
-			<SearchPModule />
+			<SearchModule />
 		</Suspense>
 	);
 }
