@@ -888,7 +888,7 @@
 		},
 		{
 			"userId": "98765",
-			"username": "Mabel_Pines",
+			"username": "Mabel",
 			"email": "mabel.pines@mail.com",
 			"description": "Eccentric and creative fashionista with a love for glitter and rainbows",
 			"profilePicture": "https://static.wikia.nocookie.net/gravityfalls/images/4/4b/Mabel_Pines.png/revision/latest?cb=20231121154114&path-prefix=fr",
@@ -936,6 +936,346 @@
 				}
 			],
 			"bio": "Hey there! I'm Mabel Pines, the most fashionable girl in Gravity Falls! I love glitter, rainbows, and anything that sparkles. When I'm not designing fabulous sweaters or crafting adorable knick-knacks, you can find me spreading joy and laughter wherever I go. Let's make some memories together!",
+			"projects": {
+				"projectCount": {
+					"onGoing": 3,
+					"created": 4,
+					"completed": 2
+				},
+				"projectsOnGoing": [
+					{
+						"projectId": 48,
+						"title": "Write a Fiction Novel",
+						"summary": "Embark on an exciting journey to write a captivating fiction novel! Join our community of aspiring writers, editors, and literary enthusiasts.",
+						"cover": "https://images.pexels.com/photos/256514/pexels-photo-256514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+						"likes": 18,
+						"category": {
+							"name": "Culture",
+							"link": "/categories/culture",
+							"bgColor": "bg-blue-600",
+							"bgColorHover": "bg-blue-500",
+							"size": "xs"
+						},
+						"subCategory": "Writing",
+						"location": "Global",
+						"tags": [
+							{
+								"name": "Writing",
+								"link": "/tags/writing",
+								"bgColor": "bg-green-400",
+								"size": "xs"
+							},
+							{
+								"name": "Fiction",
+								"link": "/tags/fiction",
+								"bgColor": "bg-blue-400",
+								"size": "xs"
+							}
+						],
+						"status": "Active"
+					},
+					{
+						"projectId": 479,
+						"title": "Planting Trees Initiative",
+						"summary": "Join our movement to plant trees and restore our planet's greenery! Together, we can make a significant impact on the environment and combat climate change.",
+						"cover": "https://images.pexels.com/photos/38136/pexels-photo-38136.jpeg",
+						"likes": 12,
+						"category": {
+							"name": "Nature",
+							"link": "/categories/nature",
+							"bgColor": "bg-green-600",
+							"bgColorHover": "bg-green-500",
+							"size": "xs"
+						},
+						"subCategory": "Environment",
+						"location": "Global",
+						"tags": [
+							{
+								"name": "Environmental Conservation",
+								"link": "/tags/environmental-conservation",
+								"bgColor": "bg-green-300",
+								"size": "xs"
+							},
+							{
+								"name": "Climate Change",
+								"link": "/tags/climate-change",
+								"bgColor": "bg-blue-300",
+								"size": "xs"
+							}
+						],
+						"status": "Active"
+					},
+					{
+						"projectId": 27,
+						"title": "Creating a Video Game",
+						"summary": "Join our team of game developers and designers to create an immersive and thrilling video game experience! Let your creativity soar as we bring this project to life.",
+						"cover": "https://images.pexels.com/photos/21067/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+						"likes": 23,
+						"category": {
+							"name": "Video Games",
+							"link": "/categories/video-games",
+							"bgColor": "bg-red-600",
+							"bgColorHover": "bg-red-500",
+							"size": "xs"
+						},
+						"subCategory": "Gaming",
+						"location": "Global",
+						"tags": [
+							{
+								"name": "Game Development",
+								"link": "/tags/game-development",
+								"bgColor": "bg-yellow-400",
+								"size": "xs"
+							},
+							{
+								"name": "Creativity",
+								"link": "/tags/creativity",
+								"bgColor": "bg-red-400",
+								"size": "xs"
+							}
+						],
+						"status": "Active"
+					}
+				],
+				"projectsCreated": [
+					{
+						"projectId": 12,
+						"title": "Kids' Painting Activities Program",
+						"summary": "Ignite your child's creativity with our fun and educational painting activities program! Join us as we explore colors, shapes, and artistic expression.",
+						"cover": "https://images.pexels.com/photos/542556/pexels-photo-542556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+						"likes": 8,
+						"category": {
+							"name": "Art",
+							"link": "/categories/art",
+							"bgColor": "bg-black",
+							"bgColorHover": "bg-gray-800",
+							"size": "xs"
+						},
+						"subCategory": "Arts & Crafts",
+						"location": "Global",
+						"tags": [
+							{
+								"name": "Kids' Activities",
+								"link": "/tags/kids-activities",
+								"bgColor": "bg-pink-400",
+								"size": "xs"
+							},
+							{
+								"name": "Art Education",
+								"link": "/tags/art-education",
+								"bgColor": "bg-orange-400",
+								"size": "xs"
+							}
+						],
+						"status": "Active"
+					},
+					{
+						"projectId": 6,
+						"title": "Recording a Music Album",
+						"summary": "Calling all musicians and music enthusiasts! Let's collaborate to produce an exceptional music album that resonates with audiences worldwide.",
+						"cover": "https://images.pexels.com/photos/1389429/pexels-photo-1389429.jpeg",
+						"likes": 15,
+						"category": {
+							"name": "Music",
+							"link": "/categories/music",
+							"bgColor": "bg-purple-800",
+							"bgColorHover": "bg-purple-500",
+							"size": "xs"
+						},
+						"subCategory": "Music",
+						"location": "Global",
+						"tags": [
+							{
+								"name": "Music Production",
+								"link": "/tags/music-production",
+								"bgColor": "bg-purple-400",
+								"size": "xs"
+							},
+							{
+								"name": "Collaboration",
+								"link": "/tags/collaboration",
+								"bgColor": "bg-green-400",
+								"size": "xs"
+							}
+						],
+						"status": "Active"
+					},
+					{
+						"projectId": 89,
+						"title": "LGBTQ+ Discussion Group",
+						"summary": "Join our safe and inclusive space for open discussions on LGBTQ+ topics, issues, and experiences. Let's foster understanding, acceptance, and support within the community.",
+						"cover": "https://images.pexels.com/photos/4557464/pexels-photo-4557464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+						"likes": 10,
+						"category": {
+							"name": "Community",
+							"link": "/categories/community",
+							"bgColor": "bg-pink-600",
+							"bgColorHover": "bg-pink-500",
+							"size": "xs"
+						},
+						"subCategory": "LGBTQ+",
+						"location": "Global",
+						"tags": [
+							{
+								"name": "Community Support",
+								"link": "/tags/community-support",
+								"bgColor": "bg-yellow-400",
+								"size": "xs"
+							},
+							{
+								"name": "Inclusivity",
+								"link": "/tags/inclusivity",
+								"bgColor": "bg-green-400",
+								"size": "xs"
+							}
+						],
+						"status": "Active"
+					},
+					{
+						"projectId": 27,
+						"title": "Creating a Video Game",
+						"summary": "Join our team of game developers and designers to create an immersive and thrilling video game experience! Let your creativity soar as we bring this project to life.",
+						"cover": "https://images.pexels.com/photos/21067/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+						"likes": 23,
+						"category": {
+							"name": "Video Games",
+							"link": "/categories/video-games",
+							"bgColor": "bg-red-600",
+							"bgColorHover": "bg-red-500",
+							"size": "xs"
+						},
+						"subCategory": "Gaming",
+						"location": "Global",
+						"tags": [
+							{
+								"name": "Game Development",
+								"link": "/tags/game-development",
+								"bgColor": "bg-yellow-400",
+								"size": "xs"
+							},
+							{
+								"name": "Creativity",
+								"link": "/tags/creativity",
+								"bgColor": "bg-red-400",
+								"size": "xs"
+							}
+						],
+						"status": "Active"
+					}
+				],
+				"projectsCompleted": [
+					{
+						"projectId": 479,
+						"title": "Planting Trees Initiative",
+						"summary": "Join our movement to plant trees and restore our planet's greenery! Together, we can make a significant impact on the environment and combat climate change.",
+						"cover": "https://images.pexels.com/photos/38136/pexels-photo-38136.jpeg",
+						"likes": 12,
+						"category": {
+							"name": "Nature",
+							"link": "/categories/nature",
+							"bgColor": "bg-green-600",
+							"bgColorHover": "bg-green-500",
+							"size": "xs"
+						},
+						"subCategory": "Environment",
+						"location": "Global",
+						"tags": [
+							{
+								"name": "Environmental Conservation",
+								"link": "/tags/environmental-conservation",
+								"bgColor": "bg-green-300",
+								"size": "xs"
+							},
+							{
+								"name": "Climate Change",
+								"link": "/tags/climate-change",
+								"bgColor": "bg-blue-300",
+								"size": "xs"
+							}
+						],
+						"status": "Active"
+					},
+					{
+						"projectId": 27,
+						"title": "Creating a Video Game",
+						"summary": "Join our team of game developers and designers to create an immersive and thrilling video game experience! Let your creativity soar as we bring this project to life.",
+						"cover": "https://images.pexels.com/photos/21067/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+						"likes": 23,
+						"category": {
+							"name": "Video Games",
+							"link": "/categories/video-games",
+							"bgColor": "bg-red-600",
+							"bgColorHover": "bg-red-500",
+							"size": "xs"
+						},
+						"subCategory": "Gaming",
+						"location": "Global",
+						"tags": [
+							{
+								"name": "Game Development",
+								"link": "/tags/game-development",
+								"bgColor": "bg-yellow-400",
+								"size": "xs"
+							},
+							{
+								"name": "Creativity",
+								"link": "/tags/creativity",
+								"bgColor": "bg-red-400",
+								"size": "xs"
+							}
+						],
+						"status": "Active"
+					}
+				]
+			}
+		},
+		{
+			"userId": "76543",
+			"username": "EmmaWatson",
+			"email": "emma.watson@example.com",
+			"description": "Actress, activist, and advocate for gender equality",
+			"profilePicture": "https://www.novethic.fr/wp-content/uploads/fileadmin/emma-watson-integre-le-ca-de-kering.jpg",
+			"locationCity": "London",
+			"locationCountry": "United Kingdom",
+			"company": "Hollywood",
+			"languages": ["English", "French"],
+			"website": "https://en.wikipedia.org/wiki/Emma_Watson",
+			"talents": [
+				{
+					"name": "Acting",
+					"description": "Versatile performer with a passion for storytelling",
+					"skills": ["Drama", "Comedy", "Voice Acting"],
+					"experience": "20 years",
+					"portfolio": "https://www.imdb.com/name/nm0914612/",
+					"certifications": "",
+					"link": "/tags/acting",
+					"bgColor": "bg-red-400",
+					"size": "xs"
+				},
+				{
+					"name": "Activism",
+					"description": "Dedicated advocate for human rights and environmental issues",
+					"skills": ["Advocacy", "Public Speaking", "Community Organizing"],
+					"experience": "10 years",
+					"portfolio": "",
+					"certifications": "",
+					"link": "/tags/activism",
+					"bgColor": "bg-red-400",
+					"size": "xs"
+				},
+				{
+					"name": "Fashion",
+					"description": "Fashion icon and sustainable fashion advocate",
+					"skills": ["Fashion Design", "Sustainable Fashion", "Style Consulting"],
+					"experience": "5 years",
+					"portfolio": "",
+					"certifications": "",
+					"link": "/tags/fashion",
+					"bgColor": "bg-red-400",
+					"size": "xs"
+				}
+			],
+			"bio": "Hi there! I'm Emma Watson, an actress known for my roles in the Harry Potter series, The Perks of Being a Wallflower, and Beauty and the Beast. Beyond acting, I'm passionate about using my platform to advocate for gender equality and environmental sustainability. When I'm not on set, you can find me speaking at United Nations conferences, supporting various NGOs, or promoting sustainable fashion initiatives. Let's work together to create a better world!",
 			"projects": {
 				"projectCount": {
 					"onGoing": 3,

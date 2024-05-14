@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 const BadgeRounded = ({ badge }) => {
+	const link = `/search?search=${badge.name.toLowerCase()}&tab=tabTags`;
+
 	let textSizeClass;
 	switch (badge.size) {
 		case "xs":
@@ -20,7 +22,7 @@ const BadgeRounded = ({ badge }) => {
 	}
 
 	return (
-		<Link href={badge.link || "#"}>
+		<Link href={link || "#"}>
 			<span className={`py-1 px-2.5 text-blue-800 font-medium duration-200 rounded-full ${textSizeClass} ${badge.bgColor} hover:${badge.bgColorHover}`}>{badge.name}</span>
 		</Link>
 	);

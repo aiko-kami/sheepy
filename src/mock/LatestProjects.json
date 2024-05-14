@@ -17,19 +17,16 @@
 		"tags": [
 			{
 				"name": "Ocean",
-				"link": "/tags/ocean",
 				"bgColor": "bg-blue-300",
 				"size": "xs"
 			},
 			{
 				"name": "Mecanics",
-				"link": "/tags/mecanics",
 				"bgColor": "bg-orange-400",
 				"size": "xs"
 			},
 			{
 				"name": "Exploration",
-				"link": "/tags/exploration",
 				"bgColor": "bg-green-400",
 				"size": "xs"
 			}
@@ -53,13 +50,11 @@
 		"tags": [
 			{
 				"name": "Home Improvement",
-				"link": "/tags/diy",
 				"bgColor": "bg-stone-400",
 				"size": "xs"
 			},
 			{
 				"name": "Nature",
-				"link": "/tags/nature",
 				"bgColor": "bg-green-400",
 				"size": "xs"
 			}
@@ -83,19 +78,16 @@
 		"tags": [
 			{
 				"name": "Podcast",
-				"link": "/tags/podcast",
 				"bgColor": "bg-blue-400",
 				"size": "xs"
 			},
 			{
 				"name": "Tech",
-				"link": "/tags/tech",
 				"bgColor": "bg-indigo-400",
 				"size": "xs"
 			},
 			{
 				"name": "Society",
-				"link": "/tags/society",
 				"bgColor": "bg-purple-400",
 				"size": "xs"
 			}
@@ -119,13 +111,11 @@
 		"tags": [
 			{
 				"name": "Charity",
-				"link": "/tags/charity",
 				"bgColor": "bg-pink-400",
 				"size": "xs"
 			},
 			{
 				"name": "Volunteering",
-				"link": "/tags/volunteering",
 				"bgColor": "bg-yellow-400",
 				"size": "xs"
 			}

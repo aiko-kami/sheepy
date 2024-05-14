@@ -1,16 +1,19 @@
 "use client";
 
 import { useState, Suspense } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import SearchBar from "@/components/Search/SearchBar";
 import SearchResultsTabsList from "@/components/Search/SearchResultsTabsList";
 
 const SearchModule = () => {
+	const pathname = usePathname();
 	const searchParams = useSearchParams();
 	const search = searchParams.get("search");
+	const tab = searchParams.get("tab");
 
 	const [searchInput, setSearchInput] = useState(search);
+	const [url, setUrl] = useState(`${pathname}?search=${searchInput}&tab=`);
 
 	const router = useRouter();
 
@@ -22,7 +25,7 @@ const SearchModule = () => {
 	// Handle form submission
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const path = `/search?search=${searchInput}`;
+		const path = `/search?search=${searchInput}&tab=${tab}`;
 		router.push(path);
 	};
 
@@ -36,7 +39,7 @@ const SearchModule = () => {
 					</div>
 				</div>
 				{/* Search results */}
-				<SearchResultsTabsList searchInput={searchInput} />
+				<SearchResultsTabsList searchInput={searchInput} tab={tab} url={url} />
 			</div>
 		</>
 	);

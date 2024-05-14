@@ -17,7 +17,6 @@
 			"experience": "",
 			"portfolio": "",
 			"certifications": "",
-			"link": "/tags/ui-ux-design",
 			"bgColor": "bg-purple-400",
 			"bgColorHover": "bg-purple-300",
 			"size": "xs"
@@ -29,7 +28,6 @@
 			"experience": "",
 			"portfolio": "",
 			"certifications": "",
-			"link": "/tags/user-research",
 			"bgColor": "bg-purple-400",
 			"bgColorHover": "bg-purple-300",
 			"size": "xs"
@@ -41,7 +39,6 @@
 			"experience": "",
 			"portfolio": "",
 			"certifications": "",
-			"link": "/tags/user-research",
 			"bgColor": "bg-purple-400",
 			"bgColorHover": "bg-purple-300",
 			"size": "xs"
@@ -53,7 +50,6 @@
 			"experience": "",
 			"portfolio": "",
 			"certifications": "",
-			"link": "/tags/user-research",
 			"bgColor": "bg-purple-400",
 			"size": "xs"
 		}

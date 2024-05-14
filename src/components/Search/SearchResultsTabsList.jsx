@@ -9,8 +9,8 @@ import TalentHorizontalCard from "@/components/Cards/Talents/TalentHorizontalCar
 
 import searchResults from "@/mock/searchResults.json";
 
-const SearchResultsTabsList = ({ searchInput }) => {
-	const [activeTab, setActiveTab] = useState("tabProjects");
+const SearchResultsTabsList = ({ searchInput, tab, url }) => {
+	const [activeTab, setActiveTab] = useState(tab || "tabProjects");
 
 	return (
 		<>
@@ -18,32 +18,32 @@ const SearchResultsTabsList = ({ searchInput }) => {
 			<ul className="flex flex-wrap justify-center text-gray-600 my-10">
 				<li>
 					<button className="inline-block mx-2 text-xs">
-						<TabNavItem title="Projects" id="tabProjects" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
+						<TabNavItem title="Projects" id="tabProjects" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" url={url} />
 					</button>
 				</li>
 				<li>
 					<button className="inline-block mx-2">
-						<TabNavItem title="Talents" id="tabTalents" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
+						<TabNavItem title="Talents" id="tabTalents" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" url={url} />
 					</button>
 				</li>
 				<li>
 					<button className="inline-block mx-2">
-						<TabNavItem title="Categories" id="tabCategories" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
+						<TabNavItem title="Categories" id="tabCategories" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" url={url} />
 					</button>
 				</li>
 				<li>
 					<button className="inline-block mx-2">
-						<TabNavItem title="sub-categories" id="tabsubCategories" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
+						<TabNavItem title="sub-categories" id="tabsubCategories" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" url={url} />
 					</button>
 				</li>
 				<li>
 					<button className="inline-block mx-2">
-						<TabNavItem title="Locations" id="tabLocations" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
+						<TabNavItem title="Locations" id="tabLocations" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" url={url} />
 					</button>
 				</li>
 				<li>
 					<button className="inline-block mx-2">
-						<TabNavItem title="Tags" id="tabTags" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
+						<TabNavItem title="Tags" id="tabTags" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" url={url} />
 					</button>
 				</li>
 			</ul>

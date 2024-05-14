@@ -25,7 +25,7 @@ const Menu = ({ displaySearchButton = true }) => {
 		e.preventDefault();
 		setSearchInput("");
 		setDisplayPopover(false);
-		const path = `/search?search=${searchInput}`;
+		const path = `/search?search=${searchInput}&tab=tabProjects`;
 		router.push(path);
 	};
 
