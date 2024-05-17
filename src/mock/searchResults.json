@@ -1231,7 +1231,7 @@
 		},
 		{
 			"userId": "76543",
-			"username": "EmmaWatson",
+			"username": "Emmaaz",
 			"email": "emma.watson@example.com",
 			"description": "Actress, activist, and advocate for gender equality",
 			"profilePicture": "https://www.novethic.fr/wp-content/uploads/fileadmin/emma-watson-integre-le-ca-de-kering.jpg",
@@ -1568,6 +1568,140 @@
 					}
 				]
 			}
+		}
+	],
+	"categories": [
+		{
+			"name": "Culture",
+			"description": "This is the category for culture",
+			"cover": "https://www.nipissingu.ca/sites/default/files/styles/crop_featured/public/philosophySlider2.jpg?itok=DO3UEe5M",
+			"logo": "https://www.shutterstock.com/image-vector/people-logo-team-icon-partner-600nw-1103715440.jpg",
+			"link": "/categories/culture",
+			"subCategories": [
+				{
+					"name": "Museum",
+					"link": "/tags/museums",
+					"bgColor": "bg-purple-400",
+					"bgColorHover": "bg-purple-300",
+					"size": "xs"
+				},
+				{
+					"name": "Cultural Preservation",
+					"link": "/tags/cultural-preservation",
+					"bgColor": "bg-purple-400",
+					"bgColorHover": "bg-purple-300",
+					"size": "xs"
+				},
+				{
+					"name": "Philosophy",
+					"link": "/tags/philosophy",
+					"bgColor": "bg-purple-400",
+					"bgColorHover": "bg-purple-300",
+					"size": "xs"
+				},
+				{
+					"name": "Philosophy",
+					"link": "/tags/philosophy",
+					"bgColor": "bg-purple-400",
+					"bgColorHover": "bg-purple-300",
+					"size": "xs"
+				},
+				{
+					"name": "Language",
+					"link": "/tags/language",
+					"bgColor": "bg-purple-400",
+					"bgColorHover": "bg-purple-300",
+					"size": "xs"
+				}
+			]
+		},
+		{
+			"name": "Arts",
+			"description": "This category celebrates the human imagination through various forms of artistic endeavors",
+			"cover": "https://media.cntraveler.com/photos/5bbfc004c0b2432daa533e1c/16:9/w_2560,c_limit/Meadows-Museum_Dimitirs-Skliris_S3A9314.jpg",
+			"logo": "https://www.shutterstock.com/image-vector/people-logo-team-icon-partner-600nw-1103715440.jpg",
+			"link": "/categories/arts",
+			"subCategories": [
+				{
+					"name": "Cinema",
+					"link": "/tags/cinema",
+					"bgColor": "bg-purple-400",
+					"bgColorHover": "bg-purple-300",
+					"size": "xs"
+				},
+				{
+					"name": "Painting",
+					"link": "/tags/painting",
+					"bgColor": "bg-purple-400",
+					"bgColorHover": "bg-purple-300",
+					"size": "xs"
+				},
+				{
+					"name": "Drawing",
+					"link": "/tags/drawing",
+					"bgColor": "bg-purple-400",
+					"bgColorHover": "bg-purple-300",
+					"size": "xs"
+				},
+				{
+					"name": "Sculpture",
+					"link": "/tags/sculpture",
+					"bgColor": "bg-purple-400",
+					"bgColorHover": "bg-purple-300",
+					"size": "xs"
+				},
+				{
+					"name": "Photography",
+					"link": "/tags/photography",
+					"bgColor": "bg-purple-400",
+					"bgColorHover": "bg-purple-300",
+					"size": "xs"
+				},
+				{
+					"name": "Mixed Media",
+					"link": "/tags/mixed-media",
+					"bgColor": "bg-purple-400",
+					"bgColorHover": "bg-purple-300",
+					"size": "xs"
+				},
+				{
+					"name": "Digital Art",
+					"link": "/tags/digital-art",
+					"bgColor": "bg-purple-400",
+					"bgColorHover": "bg-purple-300",
+					"size": "xs"
+				}
+			]
+		},
+		{
+			"name": "Nature",
+			"description": "This is the category for arts",
+			"cover": "https://static.vecteezy.com/system/resources/thumbnails/026/365/937/small_2x/beautiful-blurred-green-nature-background-ai-generated-photo.jpg",
+			"logo": "https://www.shutterstock.com/image-vector/people-logo-team-icon-partner-600nw-1103715440.jpg",
+			"link": "/categories/nature",
+			"subCategories": [
+				{
+					"name": "Flora and Fauna",
+					"link": "/tags/flora-and-fauna",
+					"bgColor": "bg-purple-400",
+					"bgColorHover": "bg-purple-300",
+					"size": "xs"
+				},
+				{
+					"name": "Outdoor Activities",
+					"link": "/tags/outdoor-activities",
+					"bgColor": "bg-purple-400",
+					"bgColorHover": "bg-purple-300",
+					"size": "xs"
+				},
+				{
+					"name": "Ecology",
+					"link": "/tags/ecology",
+					"bgColor": "bg-purple-400",
+					"bgColorHover": "bg-purple-300",
+					"size": "xs"
+				}
+			]
 		}
 	]
 }

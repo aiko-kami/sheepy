@@ -6,6 +6,8 @@ import TabNavItem from "@/components/Tabs/TabNavItem";
 import TabContent from "@/components/Tabs/TabContent";
 import ProjectHorizontalCard from "@/components/Cards/Projects/ProjectHorizontalCard";
 import TalentHorizontalCard from "@/components/Cards/Talents/TalentHorizontalCard";
+import CategoryHorizontalCard from "@/components/Cards/Categories/CategoryHorizontalCard";
+import SubCategoryHorizontalCard from "@/components/Cards/Categories/SubCategoryHorizontalCard";
 
 import searchResults from "@/mock/searchResults.json";
 
@@ -78,10 +80,10 @@ const SearchResultsTabsList = ({ searchInput, tab, url }) => {
 				</TabContent>
 				<TabContent id="tabCategories" activeTab={activeTab}>
 					{searchResults.categories && searchResults.categories.length !== 0 ? (
-						<ul className="grid gap-4">
+						<ul className="grid gap-8 sm:grid-cols-2 lg:mx-auto max-w-220">
 							{searchResults.categories.map((category, index) => (
-								<li key={index}>
-									<TalentHorizontalCard category={category} />
+								<li key={index} className="flex justify-center">
+									<CategoryHorizontalCard category={category} />
 								</li>
 							))}
 						</ul>
