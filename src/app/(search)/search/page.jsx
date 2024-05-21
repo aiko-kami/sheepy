@@ -35,7 +35,7 @@ const SearchModule = () => {
 				{/* Search bar */}
 				<div className="flex justify-center mb-8">
 					<div className="min-w-4/5 md:min-w-3/5">
-						<SearchBar searchInput={searchInput} handleInputChange={handleInputChange} handleSubmit={handleSubmit} />
+						<SearchBar searchInput={searchInput} handleInputChange={handleInputChange} handleSubmit={handleSubmit} includeDropdown={true} />
 					</div>
 				</div>
 				{/* Search results */}

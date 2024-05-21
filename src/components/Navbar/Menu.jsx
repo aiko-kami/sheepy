@@ -63,7 +63,7 @@ const Menu = ({ displaySearchButton = true }) => {
 							Search
 						</button>
 						<Popover displayPopover={displayPopover} position={"mt-12 ml-100"} style="w-100 whitespace-nowrap shadow animate-slidein">
-							<SearchBar searchInput={searchInput} handleInputChange={handleInputChange} handleSubmit={handleSubmit} />
+							<SearchBar searchInput={searchInput} handleInputChange={handleInputChange} handleSubmit={handleSubmit} includeDropdown={false} />
 						</Popover>
 					</>
 				)}
