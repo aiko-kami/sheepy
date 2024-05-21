@@ -1,6 +1,4 @@
-import Link from "next/link";
-
-const Dropdown = ({ searchDropdownOpen, closeSearchDropdown, handleFilterSelect }) => {
+const SearchDropdown = ({ searchDropdownOpen, closeSearchDropdown, handleFilterSelect }) => {
 	return (
 		<>
 			<div className="relative">
@@ -46,4 +44,4 @@ const Dropdown = ({ searchDropdownOpen, closeSearchDropdown, handleFilterSelect 
 		</>
 	);
 };
-export default Dropdown;
+export default SearchDropdown;

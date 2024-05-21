@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import Dropdown from "./Dropdown";
+import SearchDropdown from "./SearchDropdown";
 
 const SearchBar = ({ searchInput, handleInputChange, handleSubmit, includeDropdown }) => {
 	const [searchDropdownOpen, setSearchDropdownOpen] = useState(false);
@@ -53,7 +53,7 @@ const SearchBar = ({ searchInput, handleInputChange, handleSubmit, includeDropdo
 						</button>
 
 						{/* <!-- Dropdown menu --> */}
-						<Dropdown searchDropdownOpen={searchDropdownOpen} closeSearchDropdown={closeSearchDropdown} handleFilterSelect={handleFilterSelect} />
+						<SearchDropdown searchDropdownOpen={searchDropdownOpen} closeSearchDropdown={closeSearchDropdown} handleFilterSelect={handleFilterSelect} />
 					</>
 				)}
 
