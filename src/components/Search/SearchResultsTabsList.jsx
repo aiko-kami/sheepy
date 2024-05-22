@@ -62,7 +62,7 @@ const SearchResultsTabsList = ({ searchInput, tab, url }) => {
 							))}
 						</ul>
 					) : (
-						<p className=" text-xl text-center pt-10"> No result found 😕</p>
+						<p className=" text-xl text-center pt-10"> No project found 😕</p>
 					)}
 				</TabContent>
 				<TabContent id="tabTalents" activeTab={activeTab}>
@@ -75,7 +75,7 @@ const SearchResultsTabsList = ({ searchInput, tab, url }) => {
 							))}
 						</ul>
 					) : (
-						<p className=" text-xl text-center pt-10"> No result found 😕</p>
+						<p className=" text-xl text-center pt-10"> No talent found 😕</p>
 					)}
 				</TabContent>
 				<TabContent id="tabCategories" activeTab={activeTab}>
@@ -88,7 +88,7 @@ const SearchResultsTabsList = ({ searchInput, tab, url }) => {
 							))}
 						</ul>
 					) : (
-						<p className=" text-xl text-center pt-10"> No result found 😕</p>
+						<p className=" text-xl text-center pt-10"> No category found 😕</p>
 					)}
 				</TabContent>
 				<TabContent id="tabsubCategories" activeTab={activeTab}>
@@ -101,7 +101,7 @@ const SearchResultsTabsList = ({ searchInput, tab, url }) => {
 							))}
 						</ul>
 					) : (
-						<p className=" text-xl text-center pt-10"> No result found 😕</p>
+						<p className=" text-xl text-center pt-10"> No sub-category found 😕</p>
 					)}
 				</TabContent>
 				<TabContent id="tabLocations" activeTab={activeTab}>
@@ -114,7 +114,7 @@ const SearchResultsTabsList = ({ searchInput, tab, url }) => {
 							))}
 						</ul>
 					) : (
-						<p className=" text-xl text-center pt-10"> No result found 😕</p>
+						<p className=" text-xl text-center pt-10"> No location found 😕</p>
 					)}
 				</TabContent>
 				<TabContent id="tabTags" activeTab={activeTab}>
@@ -127,7 +127,7 @@ const SearchResultsTabsList = ({ searchInput, tab, url }) => {
 							))}
 						</ul>
 					) : (
-						<p className=" text-xl text-center pt-10"> No result found 😕</p>
+						<p className=" text-xl text-center pt-10"> No tag found 😕</p>
 					)}
 				</TabContent>
 			</div>
