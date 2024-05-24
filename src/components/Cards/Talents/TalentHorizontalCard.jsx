@@ -19,7 +19,7 @@ const TalentHorizontalCard = ({ user }) => {
 				<div className="tn:px-5 col-span-4 sm:col-span-3">
 					{/* Username */}
 					<Link href="/users/01">
-						<h3 className="font-semibold text-center tn:text-left text-xl tn:text-3xl mb-1 tn:mb-2 overflow-hidden text-ellipsis">{username}</h3>
+						<h3 className="inline-block font-semibold text-center tn:text-left text-xl tn:text-3xl mb-1 overflow-hidden text-ellipsis">{username}</h3>
 					</Link>
 					{/* Location */}
 					<div className="flex mb-1 tn:mb-2">

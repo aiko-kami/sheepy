@@ -1703,5 +1703,77 @@
 				}
 			]
 		}
+	],
+	"locations": [
+		{
+			"city": "London",
+			"country": "United Kingdom",
+			"nbProjects": 18,
+			"nbTalents": 21,
+			"map": "https://i0.wp.com/www.cssscript.com/wp-content/uploads/2018/03/Simple-Location-Picker.png?fit=561%2C421&ssl=1"
+		},
+		{
+			"city": "Nice",
+			"country": "France",
+			"nbProjects": 12,
+			"nbTalents": 17,
+			"map": "https://i0.wp.com/www.cssscript.com/wp-content/uploads/2018/03/Simple-Location-Picker.png?fit=561%2C421&ssl=1"
+		},
+		{
+			"city": "Los Angeles",
+			"country": "United States",
+			"nbProjects": 25,
+			"nbTalents": 30,
+			"map": "https://i0.wp.com/www.cssscript.com/wp-content/uploads/2018/03/Simple-Location-Picker.png?fit=561%2C421&ssl=1"
+		},
+		{
+			"city": "Sydney",
+			"country": "Australia",
+			"nbProjects": 22,
+			"nbTalents": 28,
+			"map": "https://i0.wp.com/www.cssscript.com/wp-content/uploads/2018/03/Simple-Location-Picker.png?fit=561%2C421&ssl=1"
+		},
+		{
+			"city": "Busan",
+			"country": "South Korea",
+			"nbProjects": 15,
+			"nbTalents": 20,
+			"map": "https://i0.wp.com/www.cssscript.com/wp-content/uploads/2018/03/Simple-Location-Picker.png?fit=561%2C421&ssl=1"
+		},
+		{
+			"city": "Osaka",
+			"country": "Japan",
+			"nbProjects": 18,
+			"nbTalents": 22,
+			"map": "https://i0.wp.com/www.cssscript.com/wp-content/uploads/2018/03/Simple-Location-Picker.png?fit=561%2C421&ssl=1"
+		},
+		{
+			"city": "New York",
+			"country": "United States",
+			"nbProjects": 30,
+			"nbTalents": 35,
+			"map": "https://i0.wp.com/www.cssscript.com/wp-content/uploads/2018/03/Simple-Location-Picker.png?fit=561%2C421&ssl=1"
+		},
+		{
+			"city": "Berlin",
+			"country": "Germany",
+			"nbProjects": 14,
+			"nbTalents": 19,
+			"map": "https://i0.wp.com/www.cssscript.com/wp-content/uploads/2018/03/Simple-Location-Picker.png?fit=561%2C421&ssl=1"
+		},
+		{
+			"city": "Toronto",
+			"country": "Canada",
+			"nbProjects": 20,
+			"nbTalents": 25,
+			"map": "https://i0.wp.com/www.cssscript.com/wp-content/uploads/2018/03/Simple-Location-Picker.png?fit=561%2C421&ssl=1"
+		},
+		{
+			"city": "Barcelona",
+			"country": "Spain",
+			"nbProjects": 16,
+			"nbTalents": 23,
+			"map": "https://i0.wp.com/www.cssscript.com/wp-content/uploads/2018/03/Simple-Location-Picker.png?fit=561%2C421&ssl=1"
+		}
 	]
 }

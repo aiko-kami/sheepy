@@ -8,6 +8,7 @@ import ProjectHorizontalCard from "@/components/Cards/Projects/ProjectHorizontal
 import TalentHorizontalCard from "@/components/Cards/Talents/TalentHorizontalCard";
 import CategoryHorizontalCard from "@/components/Cards/Categories/CategoryHorizontalCard";
 import SubCategoryHorizontalCard from "@/components/Cards/Categories/SubCategoryHorizontalCard";
+import LocationHorizontalCard from "@/components/Cards/Locations/LocationHorizontalCard";
 
 import searchResults from "@/mock/searchResults.json";
 
@@ -106,10 +107,10 @@ const SearchResultsTabsList = ({ searchInput, tab, url }) => {
 				</TabContent>
 				<TabContent id="tabLocations" activeTab={activeTab}>
 					{searchResults.locations && searchResults.locations.length !== 0 ? (
-						<ul className="grid gap-4">
+						<ul className="grid gap-5 tn:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:mx-auto max-w-320">
 							{searchResults.locations.map((location, index) => (
-								<li key={index}>
-									<TalentHorizontalCard location={location} />
+								<li key={index} className="flex justify-center">
+									<LocationHorizontalCard location={location} />
 								</li>
 							))}
 						</ul>

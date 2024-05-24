@@ -15,9 +15,9 @@ const ProjectHorizontalCard = ({ project }) => {
 				</div>
 				<div className="px-6 col-span-3 h-full py-8 relative">
 					<Link href="/projects/01">
-						<h3 className="font-semibold text-2xl pb-1">{title}</h3>
+						<h3 className="inline-block font-semibold text-2xl">{title}</h3>
 					</Link>
-					<div className="inline-block">
+					<div className="py-2">
 						<Badge badge={category} />
 					</div>
 					<p className="line-clamp-2">{summary}</p>
