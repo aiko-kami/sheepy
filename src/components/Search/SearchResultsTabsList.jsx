@@ -95,7 +95,7 @@ const SearchResultsTabsList = ({ searchInput, tab, url }) => {
 				<TabContent id="tabsubCategories" activeTab={activeTab}>
 					{searchResults.subCategories && searchResults.subCategories.length !== 0 ? (
 						<ul className="grid gap-4">
-							{searchResults.subCategories.map((category, index) => (
+							{searchResults.subCategories.map((subCategory, index) => (
 								<li key={index}>
 									<SubCategoryHorizontalCard subCategory={subCategory} />
 								</li>

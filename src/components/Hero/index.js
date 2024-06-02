@@ -53,7 +53,7 @@ const Hero = () => {
 				<Link href="/start/start-my-project">
 					<button
 						type="button"
-						className="text-white text-lg bg-green-500 hover:bg-green-600 active:bg-green-900 transition duration-300 font-medium rounded-xl px-5 py-2.5 text-center absolute left-1/2 -translate-x-1/2 bottom-38"
+						className="text-white text-lg bg-green-500 hover:bg-green-600 active:bg-green-900 transition duration-300 font-medium rounded-xl px-5 pt-2 pb-3 text-center absolute left-1/2 -translate-x-1/2 bottom-38"
 					>
 						Start my project
 					</button>
@@ -99,7 +99,7 @@ const Hero = () => {
 				<Link href="/start/start-my-project">
 					<button
 						type="button"
-						className="text-white text-3xl bg-green-500 hover:bg-green-600 active:bg-green-900 transition duration-300 font-medium rounded-full px-7 py-4 text-center m-4 absolute left-1/2 -translate-x-1/2 bottom-20"
+						className="text-white text-3xl bg-green-500 hover:bg-green-600 active:bg-green-900 transition duration-300 font-medium rounded-full px-7 pt-3 pb-5 text-center m-4 absolute left-1/2 -translate-x-1/2 bottom-20"
 					>
 						Start my project
 					</button>
