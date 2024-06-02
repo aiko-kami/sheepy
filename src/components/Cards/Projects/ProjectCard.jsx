@@ -3,12 +3,15 @@ import Link from "next/link";
 import Badge from "@/components/Badges/Badge";
 import BadgeRounded from "@/components/Badges/BadgeRounded";
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, animate }) => {
 	const { id, title, summary, cover, category, tags } = project;
+
+	// Conditional classes for animation
+	const animationClasses = animate ? "duration-100 transform hover:-translate-y-2 transition ease-in" : "";
 
 	return (
 		<>
-			<div className="rounded-lg max-w-72 shadow-2xl my-auto overflow-hidden duration-100 transform hover:-translate-y-2 transition ease-in">
+			<div className={`rounded-lg max-w-72 shadow-2xl my-auto overflow-hidden ${animationClasses}`}>
 				{/* Card image and category */}
 				<div className="relative w-full">
 					<Link href={`/projects/${id}`}>

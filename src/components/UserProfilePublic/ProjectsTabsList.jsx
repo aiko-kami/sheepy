@@ -7,41 +7,6 @@ import { useState } from "react";
 const ProjectsTabsList = ({ projects }) => {
 	const [activeTab, setActiveTab] = useState("tabProjectWorked");
 
-	const project2 = {
-		title: "Project 2",
-		summary: "Create a compelling indie film with a unique storyline.",
-		cover: "https://tailwindcss.com/_next/static/media/heroicons@75.4a558f35.jpg",
-		likes: 147,
-		category: {
-			name: "Art",
-			link: "/categories/art",
-			bgColor: "bg-black",
-			bgColorHover: "bg-gray-800",
-			size: "sm",
-		},
-		subCategory: "Cinema",
-		location: "San Fransokyo, USA",
-		tags: ["indie_film", "cinematography", "screenwriting"],
-		status: "Active",
-	};
-	const project3 = {
-		title: "Project 3",
-		summary: "Create a compelling indie film with a unique storyline.",
-		cover: "https://tailwindcss.com/_next/static/media/heropatterns@75.82a09697.jpg",
-		likes: 147,
-		category: {
-			name: "Music",
-			link: "/categories/music",
-			bgColor: "bg-purple-800",
-			bgColorHover: "bg-purple-500",
-			size: "sm",
-		},
-		subCategory: "Cinema",
-		location: "San Fransokyo, USA",
-		tags: ["indie_film", "cinematography", "screenwriting"],
-		status: "Active",
-	};
-
 	return (
 		<>
 			{/* Menu nav tabs selection */}
@@ -69,7 +34,7 @@ const ProjectsTabsList = ({ projects }) => {
 					<ul className="grid sm:grid-cols-2 gap-4">
 						{projects.projectsOnGoing.map((project, index) => (
 							<li key={index}>
-								<ProjectHorizontalCard project={project} />
+								<ProjectHorizontalCard project={project} animate={true} />
 							</li>
 						))}
 					</ul>
@@ -78,7 +43,7 @@ const ProjectsTabsList = ({ projects }) => {
 					<ul className="grid sm:grid-cols-2 gap-4">
 						{projects.projectsCreated.map((project, index) => (
 							<li key={index}>
-								<ProjectHorizontalCard project={project} />
+								<ProjectHorizontalCard project={project} animate={true} />
 							</li>
 						))}
 					</ul>
@@ -87,7 +52,7 @@ const ProjectsTabsList = ({ projects }) => {
 					<ul className="grid sm:grid-cols-2 gap-4">
 						{projects.projectsCompleted.map((project, index) => (
 							<li key={index}>
-								<ProjectHorizontalCard project={project} />
+								<ProjectHorizontalCard project={project} animate={true} />
 							</li>
 						))}
 					</ul>

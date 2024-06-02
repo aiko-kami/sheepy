@@ -6,7 +6,7 @@ const RecentProjects = () => {
 		<>
 			<div className="my-4 flex flex-wrap justify-center gap-6">
 				{LatestProjects.map((project, index) => (
-					<ProjectCard key={index} project={project} />
+					<ProjectCard key={index} project={project} animate={true} />
 				))}
 			</div>
 		</>

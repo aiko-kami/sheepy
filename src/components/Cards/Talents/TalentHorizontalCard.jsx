@@ -3,12 +3,15 @@ import Link from "next/link";
 import BadgeRounded from "@/components/Badges/BadgeRounded";
 import { IoLocationOutline } from "react-icons/io5";
 
-const TalentHorizontalCard = ({ user }) => {
+const TalentHorizontalCard = ({ user, animate }) => {
 	const { userId, username, profilePicture, description, talents } = user;
+
+	// Conditional classes for animation
+	const animationClasses = animate ? "hover:-translate-y-1 transition ease-in duration-75" : "";
 
 	return (
 		<>
-			<div className="grid grid-cols-4 p-2 items-center shadow-xl rounded-lg bg-blue-900 hover:-translate-y-1 transition ease-in duration-75 w-full sm:w-200">
+			<div className={`grid grid-cols-4 p-2 items-center shadow-xl rounded-lg bg-blue-900 w-full sm:w-200 ${animationClasses}`}>
 				{/* Profile picture */}
 				<div className="hidden sm:flex col-span-1 justify-center">
 					<Link href="/users/01" className="">

@@ -6,7 +6,7 @@ const RecentTalents = () => {
 		<>
 			<div className="my-4 flex flex-wrap justify-center gap-6">
 				{RecentUsers.map((user, index) => (
-					<UserCard key={index} user={user} />
+					<UserCard key={index} user={user} animate={true} />
 				))}
 			</div>
 		</>

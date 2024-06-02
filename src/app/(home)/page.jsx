@@ -1,5 +1,6 @@
 import Mosaic from "@/components/Cards/Projects/Mosaic";
 import PresentationBanner from "@/components/PresentationBanner";
+import CarouselProjects from "@/components/Carousel/CarouselProjects";
 import RecentProjects from "@/components/Cards/Projects/RecentProjects";
 import RecentTalents from "@/components/Cards/Talents/RecentTalents";
 import TalentsYouNeed from "@/components/Cards/Talents/TalentsYouNeed";
@@ -12,6 +13,7 @@ const HomePage = () => {
 			<Mosaic />
 
 			<PresentationBanner />
+			<CarouselProjects />
 
 			<div className="inline-flex">
 				<h2 className="font-semibold text-xl mr-4">Recent projects</h2>

@@ -58,7 +58,7 @@ const SearchResultsTabsList = ({ searchInput, tab, url }) => {
 						<ul className="grid gap-4">
 							{searchResults.projects.map((project, index) => (
 								<li key={index}>
-									<ProjectHorizontalCard project={project} />
+									<ProjectHorizontalCard project={project} animate={true} />
 								</li>
 							))}
 						</ul>
@@ -71,7 +71,7 @@ const SearchResultsTabsList = ({ searchInput, tab, url }) => {
 						<ul className="grid gap-4">
 							{searchResults.users.map((user, index) => (
 								<li key={index} className="flex justify-center">
-									<TalentHorizontalCard user={user} />
+									<TalentHorizontalCard user={user} animate={true} />
 								</li>
 							))}
 						</ul>

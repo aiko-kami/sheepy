@@ -2,12 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import Badge from "@/components/Badges/Badge";
 
-const ProjectHorizontalCard = ({ project }) => {
+const ProjectHorizontalCard = ({ project, animate }) => {
 	const { title, summary, cover, likes, category, subCategory, location, tags, status } = project;
+
+	// Conditional classes for animation
+	const animationClasses = animate ? "hover:-translate-y-1 transition ease-in duration-75" : "";
 
 	return (
 		<>
-			<div className="relative grid grid-cols-4 items-center shadow-xl rounded-lg bg-blue-900 hover:-translate-y-1 transition ease-in duration-75">
+			<div className={`relative grid grid-cols-4 items-center shadow-xl rounded-lg bg-blue-900 ${animationClasses}`}>
 				<div className="col-span-1 relative min-h-40 h-full">
 					<Link href="/projects/01">
 						<Image src={cover} fill alt="Project picture" className="object-cover h-full shadow-md rounded-l-lg" />

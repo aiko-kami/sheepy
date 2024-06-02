@@ -2,12 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import BadgeRounded from "@/components/Badges/BadgeRounded";
 
-const UserCard = ({ user }) => {
+const UserCard = ({ user, animate }) => {
 	const { userId, username, profilePicture, description, talents, tags } = user;
+
+	// Conditional classes for animation
+	const animationClasses = animate ? "duration-100 transform hover:-translate-y-2 transition ease-in" : "";
 
 	return (
 		<>
-			<div className="rounded-lg max-w-66 shadow-2xl bg-blue-900 p-4 duration-100 transform hover:-translate-y-2 transition ease-in">
+			<div className={`rounded-lg max-w-66 shadow-2xl bg-blue-900 p-4 ${animationClasses}`}>
 				<div className="flex flex-col items-center mb-2">
 					<Link href={`/users/${userId}`}>
 						<Image src={profilePicture} className="object-cover rounded-full w-58 h-58" alt="Card" height={0} width={0} sizes="100vw" />
