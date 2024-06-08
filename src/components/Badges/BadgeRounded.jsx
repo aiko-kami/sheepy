@@ -25,7 +25,7 @@ const BadgeRounded = ({ badge }) => {
 
 	return (
 		<Link href={link || "#"}>
-			<span className={`py-1 px-2.5 text-blue-800 font-medium duration-200 rounded-full ${textSizeClass} ${bgColor} hover:${bgColorHover}`}>{name}</span>
+			<span className={`pt-1 pb-1.5 px-2.5 text-blue-800 font-medium duration-200 rounded-full ${textSizeClass} ${bgColor} hover:${bgColorHover}`}>{name}</span>
 		</Link>
 	);
 };
