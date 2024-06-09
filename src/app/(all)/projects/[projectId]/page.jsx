@@ -26,7 +26,13 @@ const ProjectDescriptionPage = ({ params }) => {
 			bgColorHover: "bg-gray-800",
 			size: "xs",
 		},
-		subCategory: "Cinema",
+		subCategory: {
+			name: "Cinema",
+			link: "/search?search=cinema&tab=tabsubCategories",
+			bgColor: "bg-orange-600",
+			bgColorHover: "bg-orange-500",
+			size: "std",
+		},
 		tags: [
 			{
 				name: "Indie film",
@@ -138,9 +144,9 @@ const ProjectDescriptionPage = ({ params }) => {
 	return (
 		<div className="container mx-auto py-8">
 			{/* Title */}
-			<h1 className="text-5xl sm:text-7xl font-semibold mb-4 text-center">{project.title}</h1>
+			<h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold mb-4 text-center">{project.title}</h1>
 			{/* Summary */}
-			<p className="mb-2 text-lg mx-1/7 text-justify">{project.summary}</p>
+			<p className="mb-2 text-lg lg:mx-1/7 text-justify">{project.summary}</p>
 			{/* Creator */}
 			<div className="text-gray-300 text-lg mb-12 flex items-center justify-center">
 				<span className="">by</span>
@@ -154,15 +160,15 @@ const ProjectDescriptionPage = ({ params }) => {
 			{/* Project cover */}
 			<Image src={project.cover} className="w-full h-100 object-cover rounded-3xl mb-3" alt="Card" width={0} height={0} sizes="100vw" />
 			{/* Category, location, likes, project status */}
-			<ul className="sm:flex mb-12 pl-26">
-				<li className="flex">
+			<ul className="sm:flex mb-4 sm:mb-12 lg:pl-26">
+				<li className="flex mb-2 sm:mb-0">
 					<Badge badge={project.category} />
 				</li>
-				<li className="flex sm:ml-4">
+				<li className="flex mb-2 sm:mb-0 sm:ml-4">
 					<IoLocationOutline className="text-gray-400 mr-1 text-2xl" />
 					<p>{project.location}</p>
 				</li>
-				<li className="flex sm:ml-4">
+				<li className="flex mb-2 sm:mb-0 sm:ml-4">
 					<IoHeartOutline className="text-pink-600 mr-1 text-2xl" />
 					<p>{project.likes} likes</p>
 				</li>
@@ -171,8 +177,8 @@ const ProjectDescriptionPage = ({ params }) => {
 					<p className="text-green-600 font-semibold">{project.status}</p>
 				</li>
 			</ul>
-			<div className="grid grid-cols-3">
-				<div className="col-span-2 px-26">
+			<div className="grid sm:grid-cols-3">
+				<div className="sm:col-span-2 sm:pr-8 lg:px-26 mb-4 sm:mb-0">
 					{/* About the project */}
 					<h2 className="font-semibold text-3xl mb-4">The project in details</h2>
 					<p className="mb-2 text-justify">{project.description}</p>
@@ -196,7 +202,9 @@ const ProjectDescriptionPage = ({ params }) => {
 					{/* Sub-category */}
 					<h2 className="font-semibold text-3xl mb-3">Sub-category</h2>
 					<hr class="h-px mb-3 bg-gray-200 border-0 dark:bg-gray-700" />
-					<p className="mb-8 text-justify">{project.subCategory}</p>
+					<div className="mb-8 text-justify">
+						<Badge badge={project.subCategory} />
+					</div>
 					{/* Tags */}
 					<h2 className="font-semibold text-3xl mb-3">Tags</h2>
 					<hr class="h-px mb-3 bg-gray-200 border-0 dark:bg-gray-700" />
