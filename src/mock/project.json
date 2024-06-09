@@ -1,0 +1,137 @@
+{
+	"title": "My Film Project",
+	"goal": "Produce an independent film esse cum autem quasi et placeat natus sit earum, id odit aperiam nemo vel. Saepe facere fugit dignissimos nostrum tempore vero.",
+	"summary": "Create a compelling indie film with a unique storyline. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delectus exercitationem! Dicta corrupti, architecto provident commodi quas ad quo segh aeio ghalir gauhrlg iahr gal eraiu ghalierg.",
+	"description": "This project aims to produce an independent film that explores a thought-provoking storyline and showcases talented actors and crew members. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus velit ea itaque quo iste aut quibusdam labore cumque ab sequi animi, odit aliquam cum recusandae eveniet culpa aperiam adipisci quasi? Ad ab perferendis veritatis iste libero molestiae exercitationem repudiandae esse cum autem quasi et placeat natus sit earum, id odit aperiam nemo vel. Saepe facere fugit dignissimos nostrum tempore vero, sequi voluptate minima suscipit eum obcaecati quibusdam beatae aut provident repellat blanditiis voluptatum recusandae dolores id laborum adipisci ullam! Magnam nostrum placeat ut illo. Fugiat, unde assumenda veniam dolorem cum esse sapiente nulla atque expedita a consequatur, quasi possimus sed corrupti rerum earum! Atque asperiores fuga repellendus laboriosam porro! Numquam inventore reiciendis minus tempore ipsum dolore veritatis quod velit ducimus eius magnam, maiores similique consequuntur est veniam omnis quidem harum nihil incidunt architecto! Vitae nesciunt nam, laboriosam quibusdam sequi facilis ducimus tempora hic voluptate enim quas esse tempore magni consequuntur culpa atque at. Animi nulla dicta ex cum repellendus facilis? Perspiciatis aliquam optio facere omnis rerum corrupti at laborum ratione! Velit nam impedit consectetur ad quam eos repellendus debitis! Non perferendis excepturi id error mollitia debitis nisi? Asperiores maiores nihil architecto totam, magnam soluta amet reprehenderit fugiat voluptate placeat velit! Lorem ipsum dolor sit amet consectetur adipisicing elitro minus hic ut repellat, repellendus recusandae asperiores voluptas distinctio exercitationem eum consectetur tempora? Vel placeat reprehenderit ullam dignissimos! Est aspernatur vero asperiores, iusto dolores sequi unde cumque iure? Quasi reprehenderit vel ratione ut eaque, pariatur doloribus ipsam. Cupiditate, error voluptatum laboriosam quo voluptate fugit assumenda tenetur eum, aliquid vel consequuntur minima accusantium dolore nobis doloremque eos repellendus ea vitae officiis quis. Officiis, molestias obcaecati beatae distinctio sint non.",
+	"cover": "https://images.pexels.com/photos/7319068/pexels-photo-7319068.jpeg",
+	"coverDescription": "https://crypticrock.com/wp-content/uploads/2023/02/brad-anderson-on-set-blood.jpg",
+	"likes": 147,
+	"category": {
+		"name": "Art",
+		"link": "/categories/art",
+		"bgColor": "bg-black",
+		"bgColorHover": "bg-gray-800",
+		"size": "xs"
+	},
+	"subCategory": {
+		"name": "Cinema",
+		"link": "/search?search=cinema&tab=tabsubCategories",
+		"bgColor": "bg-orange-600",
+		"bgColorHover": "bg-orange-500",
+		"size": "std"
+	},
+	"tags": [
+		{
+			"name": "Indie film",
+			"link": "/tags/indie_film",
+			"bgColor": "border-2 border-gray-500 text-white",
+			"size": "xs"
+		},
+		{
+			"name": "Fiction",
+			"link": "/tags/fiction",
+			"bgColor": "border-2 border-gray-500 text-white",
+			"size": "xs"
+		},
+		{
+			"name": "Cinematography",
+			"link": "/tags/cinematography",
+			"bgColor": "border-2 border-gray-500 text-white",
+			"size": "xs"
+		},
+		{
+			"name": "Sci-Fi",
+			"link": "/tags/sci-fi",
+			"bgColor": "border-2 border-gray-500 text-white",
+			"size": "xs"
+		},
+		{
+			"name": "Editing",
+			"link": "/tags/editing",
+			"bgColor": "border-2 border-gray-500 text-white",
+			"size": "xs"
+		},
+		{
+			"name": "Time travel",
+			"link": "/tags/time_travel",
+			"bgColor": "border-2 border-gray-500 text-white",
+			"size": "xs"
+		},
+		{
+			"name": "Acting",
+			"link": "/tags/acting",
+			"bgColor": "border-2 border-gray-500 text-white",
+			"size": "xs"
+		},
+		{
+			"name": "Cyberpunk",
+			"link": "/tags/cyberpunk",
+			"bgColor": "border-2 border-gray-500 text-white",
+			"size": "xs"
+		},
+		{
+			"name": "Directing",
+			"link": "/tags/directing",
+			"bgColor": "border-2 border-gray-500 text-white",
+			"size": "xs"
+		},
+		{
+			"name": "Visual effects ",
+			"link": "/tags/visual_effects",
+			"bgColor": "border-2 border-gray-500 text-white",
+			"size": "xs"
+		},
+		{
+			"name": "screenwriting",
+			"link": "/tags/screenwriting",
+			"bgColor": "border-2 border-gray-500 text-white",
+			"size": "xs"
+		}
+	],
+	"location": "San Fransokyo, USA",
+	"locationCity": "San Fransokyo",
+	"locationCountry": "USA",
+	"talentsNeeded": [
+		{
+			"role": "Director"
+		},
+		{
+			"role": "Screenwriter"
+		},
+		{
+			"role": "Cinematographer"
+		}
+	],
+	"talentProfilePicture": "https://p7.hiclipart.com/preview/355/848/997/computer-icons-user-profile-google-account-photos-icon-account.jpg",
+	"qnas": [
+		{
+			"question": "Q1: Lorem ipsum?",
+			"answer": "A1: Lorem ipsum dolor sit amet."
+		}
+	],
+	"status": "Project active",
+	"creator": "Brad Anderson",
+	"creatorProfilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU",
+	"userId": "12345",
+	"members": [
+		{
+			"userId": "12345",
+			"username": "Brad Anderson",
+			"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU",
+			"role": "Director"
+		},
+		{
+			"userId": "1745",
+			"username": "Scott Kosar",
+			"profilePicture": "https://static.wikia.nocookie.net/headhuntershorrorhouse/images/2/20/Scott_Kosar.jpg/revision/latest?cb=20101120165807",
+			"role": "Screenwriter"
+		},
+		{
+			"userId": "56468",
+			"username": "Carlos Fernández",
+			"profilePicture": "https://media.licdn.com/dms/image/C4D22AQFMBGih4742dw/feedshare-shrink_800/0/1557307992723?e=2147483647&v=beta&t=7cQShBw07SJxBvKtDRzF2Tu659wVKJPgrixxtCK9Mo0",
+			"role": "Producer"
+		}
+	],
+	"comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+}
