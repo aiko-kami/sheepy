@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import { IoLocationOutline, IoHeartOutline, IoFitness, IoArrowForward } from "react-icons/io5";
+import { IoLocationOutline, IoHeartOutline, IoFitness, IoArrowForward, IoBookmarkOutline, IoShareSocialOutline } from "react-icons/io5";
 
 import Badge from "@/components/Badges/Badge";
 import BadgeRounded from "@/components/Badges/BadgeRounded";
 import ButtonBlue from "@/components/Buttons/ButtonBlue";
+import ButtonRound from "@/components/Buttons/ButtonRound";
 
 import project from "@/mock/project.json";
 
@@ -60,10 +61,24 @@ const ProjectDescriptionPage = ({ params }) => {
 					{/* Button join project */}
 					<div className="text-center mb-8">
 						<ButtonBlue btnSize={"xl"}>
-							<div className="flex">
+							<div className="flex items-center">
 								Apply for this project <IoArrowForward className="text-2xl ml-2 mt-1" />
 							</div>
 						</ButtonBlue>
+					</div>
+					{/* Buttons Like and Share */}
+					<div className="flex justify-center gap-8 mb-8">
+						<ButtonRound btnSize={"xl"}>
+							<div className="flex">
+								<IoBookmarkOutline className="text-2xl mt-1" />
+							</div>
+						</ButtonRound>
+
+						<ButtonRound btnSize={"xl"}>
+							<div className="flex">
+								<IoShareSocialOutline className="text-2xl mt-1" />
+							</div>
+						</ButtonRound>
 					</div>
 					{/* Goal */}
 					<h2 className="font-semibold text-3xl mb-3">Goal</h2>
