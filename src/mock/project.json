@@ -18,73 +18,73 @@
 		"link": "/search?search=cinema&tab=tabsubCategories",
 		"bgColor": "bg-orange-600",
 		"bgColorHover": "bg-orange-500",
-		"size": "std"
+		"size": "xs"
 	},
 	"tags": [
 		{
 			"name": "Indie film",
 			"link": "/tags/indie_film",
-			"bgColor": "border-2 border-gray-500 text-white",
+			"bgColor": "border border-2 border-gray-500 text-white",
 			"size": "xs"
 		},
 		{
 			"name": "Fiction",
 			"link": "/tags/fiction",
-			"bgColor": "border-2 border-gray-500 text-white",
+			"bgColor": "border border-2 border-gray-500 text-white",
 			"size": "xs"
 		},
 		{
 			"name": "Cinematography",
 			"link": "/tags/cinematography",
-			"bgColor": "border-2 border-gray-500 text-white",
+			"bgColor": "border border-2 border-gray-500 text-white",
 			"size": "xs"
 		},
 		{
 			"name": "Sci-Fi",
 			"link": "/tags/sci-fi",
-			"bgColor": "border-2 border-gray-500 text-white",
+			"bgColor": "border border-2 border-gray-500 text-white",
 			"size": "xs"
 		},
 		{
 			"name": "Editing",
 			"link": "/tags/editing",
-			"bgColor": "border-2 border-gray-500 text-white",
+			"bgColor": "border border-2 border-gray-500 text-white",
 			"size": "xs"
 		},
 		{
 			"name": "Time travel",
 			"link": "/tags/time_travel",
-			"bgColor": "border-2 border-gray-500 text-white",
+			"bgColor": "border border-2 border-gray-500 text-white",
 			"size": "xs"
 		},
 		{
 			"name": "Acting",
 			"link": "/tags/acting",
-			"bgColor": "border-2 border-gray-500 text-white",
+			"bgColor": "border border-2 border-gray-500 text-white",
 			"size": "xs"
 		},
 		{
 			"name": "Cyberpunk",
 			"link": "/tags/cyberpunk",
-			"bgColor": "border-2 border-gray-500 text-white",
+			"bgColor": "border border-2 border-gray-500 text-white",
 			"size": "xs"
 		},
 		{
 			"name": "Directing",
 			"link": "/tags/directing",
-			"bgColor": "border-2 border-gray-500 text-white",
+			"bgColor": "border border-2 border-gray-500 text-white",
 			"size": "xs"
 		},
 		{
 			"name": "Visual effects ",
 			"link": "/tags/visual_effects",
-			"bgColor": "border-2 border-gray-500 text-white",
+			"bgColor": "border border-2 border-gray-500 text-white",
 			"size": "xs"
 		},
 		{
 			"name": "screenwriting",
 			"link": "/tags/screenwriting",
-			"bgColor": "border-2 border-gray-500 text-white",
+			"bgColor": "border border-1 border-gray-500 text-white",
 			"size": "xs"
 		}
 	],

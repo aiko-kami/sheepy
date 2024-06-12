@@ -2,16 +2,16 @@ const ButtonBlue = ({ children, btnSize }) => {
 	let textSizeClass;
 	switch (btnSize) {
 		case "xs":
-			textSizeClass = "text-xs";
+			textSizeClass = "text-xs pb-2";
 			break;
 		case "sm":
-			textSizeClass = "text-sm";
+			textSizeClass = "text-sm pb-2";
 			break;
 		case "std":
-			textSizeClass = "text-base";
+			textSizeClass = "text-base pb-2";
 			break;
 		case "xl":
-			textSizeClass = "text-xl";
+			textSizeClass = "text-xl pb-2.5";
 			break;
 		default:
 			textSizeClass = "text-base";
@@ -20,7 +20,7 @@ const ButtonBlue = ({ children, btnSize }) => {
 	return (
 		<button
 			type="submit"
-			className={`px-5 py-2 bg-blue-600 text-white ${textSizeClass} leading-snug rounded hover:bg-blue-700 hover:shadow-lg active:bg-blue-800 transition duration-150 ease-in-out`}
+			className={`px-4 pt-2 bg-blue-600 text-white ${textSizeClass} leading-snug rounded hover:bg-blue-700 hover:shadow-lg active:bg-blue-800 transition duration-150 ease-in-out`}
 			data-mdb-ripple="true"
 			data-mdb-ripple-color="light"
 		>
