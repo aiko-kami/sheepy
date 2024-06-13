@@ -1,4 +1,4 @@
-const ButtonBlue = ({ children, btnSize }) => {
+const ButtonRoundGray = ({ children, btnSize }) => {
 	let textSizeClass;
 	switch (btnSize) {
 		case "xs":
@@ -28,4 +28,4 @@ const ButtonBlue = ({ children, btnSize }) => {
 		</button>
 	);
 };
-export default ButtonBlue;
+export default ButtonRoundGray;

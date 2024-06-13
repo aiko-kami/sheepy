@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import ButtonLargeGreen from "@/components/Buttons/ButtonLargeGreen";
+
 import spaceship from "../../../public/assets/hero/spaceship.png";
 import sun from "../../../public/assets/hero/sun.png";
 import galaxy from "../../../public/assets/hero/galaxy.png";
@@ -51,12 +53,7 @@ const Hero = () => {
 					<h2 className="text-center text-2xl font-oldenburg">by finding the best talents</h2>
 				</div>
 				<Link href="/start/start-my-project">
-					<button
-						type="button"
-						className="text-white text-lg bg-green-500 hover:bg-green-600 active:bg-green-900 transition duration-300 font-medium rounded-xl px-5 pt-2 pb-3 text-center absolute left-1/2 -translate-x-1/2 bottom-38"
-					>
-						Start my project
-					</button>
+					<ButtonLargeGreen btnProps={{ classes: "text-lg rounded-xl px-5 pt-2 pb-3 bottom-38", type: "button" }}>Start my project</ButtonLargeGreen>
 				</Link>
 			</div>
 
@@ -97,12 +94,7 @@ const Hero = () => {
 					<h2 className="text-center text-4xl font-oldenburg">by finding the best talents</h2>
 				</div>
 				<Link href="/start/start-my-project">
-					<button
-						type="button"
-						className="text-white text-3xl bg-green-500 hover:bg-green-600 active:bg-green-900 transition duration-300 font-medium rounded-full px-7 pt-3 pb-5 text-center m-4 absolute left-1/2 -translate-x-1/2 bottom-20"
-					>
-						Start my project
-					</button>
+					<ButtonLargeGreen btnProps={{ classes: "text-3xl rounded-full px-7 pt-3 pb-5 m-4 bottom-20", type: "button" }}>Start my project</ButtonLargeGreen>
 				</Link>
 			</div>
 		</>

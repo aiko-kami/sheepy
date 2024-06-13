@@ -1,11 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 import { IoLocationOutline, IoHeartOutline, IoFitness, IoArrowForward, IoBookmarkOutline, IoShareSocialOutline } from "react-icons/io5";
 
 import Badge from "@/components/Badges/Badge";
 import BadgeRounded from "@/components/Badges/BadgeRounded";
 import ButtonBlue from "@/components/Buttons/ButtonBlue";
-import ButtonRound from "@/components/Buttons/ButtonRound";
+import ButtonRoundGray from "@/components/Buttons/ButtonRoundGray";
 
 import project from "@/mock/project.json";
 
@@ -15,6 +16,7 @@ const ProjectDescriptionPage = ({ params }) => {
 			{/* Title */}
 			<h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold mb-4 text-center">{project.title}</h1>
 			{/* Summary */}
+			<p className="mb-2 text-lg lg:mx-1/7 text-justify">This is project {params.projectId}.</p>
 			<p className="mb-2 text-lg lg:mx-1/7 text-justify">{project.summary}</p>
 			{/* Creator */}
 			<div className="text-gray-300 text-lg mb-6 flex items-center justify-center">
@@ -60,37 +62,51 @@ const ProjectDescriptionPage = ({ params }) => {
 				<div>
 					{/* Button join project */}
 					<div className="text-center mb-8">
+						<button
+							type="submit"
+							className={`text-2xl pb-2.5 px-4 pt-2 bg-blue-600 text-white leading-snug rounded hover:bg-blue-700 hover:shadow-lg active:bg-blue-800 transition duration-150 ease-in-out`}
+							data-mdb-ripple="true"
+							data-mdb-ripple-color="light"
+						>
+							<div className="flex items-center">
+								Apply for this project <IoArrowForward className="text-2xl ml-2 mt-2" />
+							</div>
+						</button>
+
 						<ButtonBlue btnSize={"xl"}>
 							<div className="flex items-center">
 								Apply for this project <IoArrowForward className="text-2xl ml-2 mt-1" />
 							</div>
 						</ButtonBlue>
 					</div>
+
 					{/* Buttons Like and Share */}
-					<div className="flex justify-center gap-8 mb-8">
-						<ButtonRound btnSize={"xl"}>
+					<div className="flex justify-center gap-8 mb-2">
+						<ButtonRoundGray btnSize={"xl"}>
 							<div className="flex">
 								<IoBookmarkOutline className="text-2xl mt-1" />
 							</div>
-						</ButtonRound>
+						</ButtonRoundGray>
 
-						<ButtonRound btnSize={"xl"}>
+						<ButtonRoundGray btnSize={"xl"}>
 							<div className="flex">
 								<IoShareSocialOutline className="text-2xl mt-1" />
 							</div>
-						</ButtonRound>
+						</ButtonRoundGray>
 					</div>
+
 					{/* Goal */}
 					<h2 className="font-semibold text-3xl mb-3">Goal</h2>
 					<hr className="h-px mb-3 bg-gray-200 border-0 dark:bg-gray-700" />
 					<p className="mb-8 text-justify">{project.goal}</p>
+
 					{/* Talents needed */}
 					<h2 className="font-semibold text-3xl mb-3">Talents needed</h2>
 					<hr className="h-px mb-3 bg-gray-200 border-0 dark:bg-gray-700" />
-					<div className="mt-5 mb-8 grid grid-cols-3 sm:grid-cols-1 md:grid-cols-3">
+					<div className="mt-5 mb-0 grid grid-cols-3 sm:grid-cols-1 md:grid-cols-3 lg:mx-8">
 						{project.talentsNeeded.map((talent, index) => (
-							<>
-								<div key={index} className="text-gray-300 text-lg mb-10 mr-2 flex items-center h-full col-span-2">
+							<React.Fragment key={index}>
+								<div className="text-gray-300 text-lg mb-8 mr-2 flex items-center h-full col-span-2">
 									<Image src={project.talentProfilePicture} className="object-cover rounded-full w-10 h-10 mr-3" alt="talent profile picture" height={0} width={0} sizes="100vw" />
 									<p className="overflow-auto hyphens-auto ">{talent.role}</p>
 								</div>
@@ -102,7 +118,7 @@ const ProjectDescriptionPage = ({ params }) => {
 										</div>
 									</ButtonBlue>
 								</div>
-							</>
+							</React.Fragment>
 						))}
 					</div>
 
