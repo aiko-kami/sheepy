@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Badge from "@/components/Badges/Badge";
-import BadgeRounded from "@/components/Badges/BadgeRounded";
+import { Badge, BadgeRounded } from "@/components/Badges/Badges";
 
 const ProjectCard = ({ project, animate }) => {
 	const { id, title, summary, cover, category, tags } = project;

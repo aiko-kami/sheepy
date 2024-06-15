@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import ButtonLargeGreen from "@/components/Buttons/ButtonLargeGreen";
+import { Button } from "@/components/Buttons/Buttons";
 
 import spaceship from "../../../public/assets/hero/spaceship.png";
 import sun from "../../../public/assets/hero/sun.png";
@@ -53,7 +53,9 @@ const Hero = () => {
 					<h2 className="text-center text-2xl font-oldenburg">by finding the best talents</h2>
 				</div>
 				<Link href="/start/start-my-project">
-					<ButtonLargeGreen btnProps={{ classes: "text-lg rounded-xl px-5 pt-2 pb-3 bottom-38", type: "button" }}>Start my project</ButtonLargeGreen>
+					<div className="absolute left-1/2 -translate-x-1/2 bottom-38">
+						<Button btnProps={{ btnSize: "xl", type: "button", btnColor: "green", btnRounded: "full" }}>Start my project</Button>
+					</div>
 				</Link>
 			</div>
 
@@ -94,7 +96,9 @@ const Hero = () => {
 					<h2 className="text-center text-4xl font-oldenburg">by finding the best talents</h2>
 				</div>
 				<Link href="/start/start-my-project">
-					<ButtonLargeGreen btnProps={{ classes: "text-3xl rounded-full px-7 pt-3 pb-5 m-4 bottom-20", type: "button" }}>Start my project</ButtonLargeGreen>
+					<div className="absolute left-1/2 -translate-x-1/2 bottom-14 m-4">
+						<Button btnProps={{ btnSize: "3xl", type: "button", btnColor: "green", btnRounded: "full" }}>Start my project</Button>
+					</div>
 				</Link>
 			</div>
 		</>

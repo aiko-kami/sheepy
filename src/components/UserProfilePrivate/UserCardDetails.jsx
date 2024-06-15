@@ -1,6 +1,6 @@
 "use client";
 
-import ButtonBlue from "../Buttons/ButtonBlue";
+import { Button } from "../Buttons/Buttons";
 import FormField from "../Forms/FormField";
 
 import { IoLocationOutline, IoEarthOutline, IoBusinessOutline, IoChatbubbleEllipsesOutline, IoLinkOutline } from "react-icons/io5";
@@ -45,7 +45,7 @@ const UserCardDetails = ({ user }) => {
 						</div>
 						{/* Button Update profile (submit form) */}
 						<div className="text-center">
-							<ButtonBlue btnSize={"std"}>Update my details</ButtonBlue>
+							<Button btnProps={{ type: "submit" }}>Update my details</Button>
 						</div>
 					</form>
 				</div>

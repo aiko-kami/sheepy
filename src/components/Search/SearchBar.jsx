@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import SearchDropdown from "./SearchDropdown";
+import { Button } from "@/components/Buttons/Buttons";
 
 const SearchBar = ({ searchInput, handleInputChange, handleSubmit, includeDropdown }) => {
 	const [searchDropdownOpen, setSearchDropdownOpen] = useState(false);
@@ -78,9 +79,9 @@ const SearchBar = ({ searchInput, handleInputChange, handleSubmit, includeDropdo
 						onChange={handleInputChange}
 					/>
 					{/* <!-- Search button --> */}
-					<button type="submit" className="text-white absolute end-2.5 bottom-2.5 bg-blue-600 hover:bg-blue-700 font-medium rounded-lg text-sm px-4 py-2">
-						Search
-					</button>
+					<div className="absolute end-2.5 bottom-2.5">
+						<Button btnProps={{ btnSize: "sm", type: "submit", btnRounded: "lg" }}>Search</Button>
+					</div>
 				</div>
 			</div>
 		</form>

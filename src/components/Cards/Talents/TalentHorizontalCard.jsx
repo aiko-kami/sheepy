@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import BadgeRounded from "@/components/Badges/BadgeRounded";
+import { BadgeRounded } from "@/components/Badges/Badges";
 import { IoLocationOutline } from "react-icons/io5";
 
 const TalentHorizontalCard = ({ user, animate }) => {

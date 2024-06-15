@@ -1,27 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const UserTalentCardModal = ({ modalDisplay, closeModal }) => {
-	if (!modalDisplay) return null;
-
+const UserTalentCardModal = ({ closeModal }) => {
 	return (
 		<>
-			{/* Remove the scroll bar from the whole page */}
-			<style jsx global>{`
-				body {
-					overflow: hidden;
-				}
-			`}</style>
-
-			{/* background blur */}
-			<div
-				id="default-modal"
-				tabIndex="-1"
-				aria-hidden="true"
-				className="fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-full bg-black bg-opacity-25 backdrop-blur-sm"
-				onClick={closeModal}
-			></div>
-
 			{/* Modal window */}
 			<div className="fixed z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-7/8 md:w-full md:max-w-2/3 rounded-lg shadow bg-gray-700">
 				{/* Modal title and cross button */}
@@ -41,7 +23,7 @@ const UserTalentCardModal = ({ modalDisplay, closeModal }) => {
 				</div>
 
 				{/* Modal content */}
-				<div className="max-h-96 overflow-y-scroll">
+				<div className="max-h-96 overflow-y-auto">
 					<div className="px-4 md:px-5 pb-8">
 						<h4 className="text-xl font-semibold text-white mx-auto pb-4">My experience</h4>
 						<div className="space-y-4">

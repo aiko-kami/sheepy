@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import BadgeRounded from "@/components/Badges/BadgeRounded";
+import { BadgeRounded } from "@/components/Badges/Badges";
 
 const UserCard = ({ user, animate }) => {
 	const { userId, username, profilePicture, description, talents, tags } = user;

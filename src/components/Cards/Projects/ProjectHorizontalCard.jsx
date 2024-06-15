@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Badge from "@/components/Badges/Badge";
+import { Badge } from "@/components/Badges/Badges";
 
 const ProjectHorizontalCard = ({ project, animate }) => {
 	const { title, summary, cover, likes, category, subCategory, location, tags, status } = project;

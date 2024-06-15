@@ -1,6 +1,6 @@
 "use client";
 
-import ButtonBlue from "@/components/Buttons/ButtonBlue";
+import { Button } from "@/components/Buttons/Buttons";
 import FormField from "@/components/Forms/FormField";
 
 import { IoAtOutline, IoLockClosed } from "react-icons/io5";
@@ -45,7 +45,7 @@ const UserCardDetails = ({ user }) => {
 					</div>
 					{/* Button Update account (submit form) */}
 					<div className="text-center">
-						<ButtonBlue btnSize={"std"}>Update my account</ButtonBlue>
+						<Button btnProps={{ type: "submit" }}>Update my account</Button>
 					</div>
 				</form>
 			</div>

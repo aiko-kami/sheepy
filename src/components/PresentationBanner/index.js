@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import explore from "../../../public/assets/svg/features/explore.svg";
 import award from "../../../public/assets/svg/features/award.svg";

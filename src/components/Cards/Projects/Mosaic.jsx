@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import projects from "@/mock/projects.json";
 
-import Badge from "@/components/Badges/Badge";
+import { Badge } from "@/components/Badges/Badges";
 
 const Mosaic = () => {
 	return (

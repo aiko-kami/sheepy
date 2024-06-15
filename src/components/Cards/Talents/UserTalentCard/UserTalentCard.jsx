@@ -1,8 +1,9 @@
 "use client";
 
-import UserTalentCardModal from "./UserTalentCardModal";
-import Link from "next/link";
 import { useState } from "react";
+
+import UserTalentCardModal from "@/components/Modals/UserTalentCardModal";
+import Modal from "@/components/Modals/Modal";
 
 const UserTalentCard = ({ talent }) => {
 	const [modalDisplay, setModalDisplay] = useState(false);
@@ -25,7 +26,9 @@ const UserTalentCard = ({ talent }) => {
 					</button>
 				</div>
 			</div>
-			<UserTalentCardModal modalDisplay={modalDisplay} closeModal={closeModal} />
+			<Modal modalDisplay={modalDisplay} closeModalWithBackground={closeModal}>
+				<UserTalentCardModal closeModal={closeModal} />
+			</Modal>
 		</>
 	);
 };

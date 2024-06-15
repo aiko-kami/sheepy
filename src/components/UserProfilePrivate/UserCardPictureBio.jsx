@@ -6,7 +6,7 @@ import { useState } from "react";
 
 import { IoColorWandOutline } from "react-icons/io5";
 import Popover from "@/components/Popover";
-import ButtonBlue from "@/components/Buttons/ButtonBlue";
+import { Button } from "@/components/Buttons/Buttons";
 import PopoverContent from "./PopoverContent";
 import ProjectCounter from "@/components/Common/ProjectCounter";
 
@@ -94,7 +94,7 @@ const UserCardPictureBio = ({ user }) => {
 							</div>
 							{/* Button Update profile (submit form) */}
 							<div className="text-center">
-								<ButtonBlue btnSize={"std"}>Update my introduction</ButtonBlue>
+								<Button btnProps={{ type: "submit" }}>Update my introduction</Button>
 							</div>
 						</form>
 					</div>

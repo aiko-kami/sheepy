@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Badge from "@/components/Badges/Badge";
+import { Badge } from "@/components/Badges/Badges";
 
 const SubCategorieHorizontalCard = ({ category }) => {
 	const { title, summary, cover, logo } = category;
