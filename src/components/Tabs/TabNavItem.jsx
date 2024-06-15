@@ -13,7 +13,7 @@ const TabNavItem = ({ id, title, activeTab, setActiveTab, activeClass, url }) =>
 	};
 
 	return (
-		<div onClick={handleClick} className={`text-sm sm:text-base sm:px-4 ${activeTab === id ? activeClass : ""}`}>
+		<div onClick={handleClick} className={`pb-2 sm:px-4 ${activeTab === id ? activeClass : ""}`}>
 			{title}
 		</div>
 	);

@@ -18,35 +18,35 @@ const SearchResultsTabsList = ({ searchInput, tab, url }) => {
 	return (
 		<>
 			{/* Menu nav tabs selection */}
-			<ul className="flex flex-wrap justify-center text-gray-600 my-10">
+			<ul className="flex flex-wrap justify-center text-sm sm:text-base text-gray-600 my-10">
 				<li>
-					<button className="inline-block mx-2 text-xs">
-						<TabNavItem title="Projects" id="tabProjects" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" url={url} />
+					<button className="inline-block mx-2">
+						<TabNavItem title="Projects" id="tabProjects" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600 border-b-1 border-blue-600" url={url} />
 					</button>
 				</li>
 				<li>
 					<button className="inline-block mx-2">
-						<TabNavItem title="Talents" id="tabTalents" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" url={url} />
+						<TabNavItem title="Talents" id="tabTalents" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600 border-b-1 border-blue-600" url={url} />
 					</button>
 				</li>
 				<li>
 					<button className="inline-block mx-2">
-						<TabNavItem title="Categories" id="tabCategories" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" url={url} />
+						<TabNavItem title="Categories" id="tabCategories" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600 border-b-1 border-blue-600" url={url} />
 					</button>
 				</li>
 				<li>
 					<button className="inline-block mx-2">
-						<TabNavItem title="sub-categories" id="tabsubCategories" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" url={url} />
+						<TabNavItem title="sub-categories" id="tabsubCategories" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600 border-b-1 border-blue-600" url={url} />
 					</button>
 				</li>
 				<li>
 					<button className="inline-block mx-2">
-						<TabNavItem title="Locations" id="tabLocations" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" url={url} />
+						<TabNavItem title="Locations" id="tabLocations" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600 border-b-1 border-blue-600" url={url} />
 					</button>
 				</li>
 				<li>
 					<button className="inline-block mx-2">
-						<TabNavItem title="Tags" id="tabTags" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" url={url} />
+						<TabNavItem title="Tags" id="tabTags" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600 border-b-1 border-blue-600" url={url} />
 					</button>
 				</li>
 			</ul>

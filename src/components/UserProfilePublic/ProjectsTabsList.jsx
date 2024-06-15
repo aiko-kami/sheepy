@@ -1,8 +1,9 @@
 "use client";
+import { useState } from "react";
+
 import TabNavItem from "@/components/Tabs/TabNavItem";
 import TabContent from "@/components/Tabs/TabContent";
 import ProjectHorizontalCard from "@/components/Cards/Projects/ProjectHorizontalCard";
-import { useState } from "react";
 
 const ProjectsTabsList = ({ projects }) => {
 	const [activeTab, setActiveTab] = useState("tabProjectWorked");
@@ -10,20 +11,38 @@ const ProjectsTabsList = ({ projects }) => {
 	return (
 		<>
 			{/* Menu nav tabs selection */}
-			<ul className="flex flex-wrap justify-center text-gray-600 mb-5">
+			<ul className="flex flex-wrap justify-center text-sm sm:text-base text-gray-600 mb-5">
 				<li>
 					<button className="inline-block mx-2">
-						<TabNavItem title={`Projects I work on (${projects.projectCount.onGoing})`} id="tabProjectWorked" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
+						<TabNavItem
+							title={`Projects I work on (${projects.projectCount.onGoing})`}
+							id="tabProjectWorked"
+							activeTab={activeTab}
+							setActiveTab={setActiveTab}
+							activeClass="text-blue-600 border-b-1 border-blue-600"
+						/>
 					</button>
 				</li>
 				<li>
 					<button className="inline-block mx-2">
-						<TabNavItem title={`Projects I created (${projects.projectCount.created})`} id="tabProjectCreated" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
+						<TabNavItem
+							title={`Projects I created (${projects.projectCount.created})`}
+							id="tabProjectCreated"
+							activeTab={activeTab}
+							setActiveTab={setActiveTab}
+							activeClass="text-blue-600 border-b-1 border-blue-600"
+						/>
 					</button>
 				</li>
 				<li>
 					<button className="inline-block mx-2">
-						<TabNavItem title={`Projects completed (${projects.projectCount.completed})`} id="tabProjectCompleted" activeTab={activeTab} setActiveTab={setActiveTab} activeClass="text-blue-600" />
+						<TabNavItem
+							title={`Projects completed (${projects.projectCount.completed})`}
+							id="tabProjectCompleted"
+							activeTab={activeTab}
+							setActiveTab={setActiveTab}
+							activeClass="text-blue-600 border-b-1 border-blue-600"
+						/>
 					</button>
 				</li>
 			</ul>

@@ -22,9 +22,9 @@ const HeadSection = ({ project }) => {
 		<>
 			{/* Button join project */}
 			<div className="text-center mb-8">
-				<Button btnProps={{ btnSize: "2xl", type: "button", action: showModal }}>
+				<Button btnProps={{ btnSize: "std", type: "button", action: showModal }}>
 					<div className="flex items-center">
-						Apply for this project <IoArrowForward className="text-3xl ml-2 mt-1.5" />
+						Apply for this project <IoArrowForward className="text-2xl ml-2 mt-0.5" />
 					</div>
 				</Button>
 			</div>

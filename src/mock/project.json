@@ -103,6 +103,7 @@
 		}
 	],
 	"talentProfilePicture": "https://p7.hiclipart.com/preview/355/848/997/computer-icons-user-profile-google-account-photos-icon-account.jpg",
+	"qnasCount": 27,
 	"qnas": [
 		{
 			"question": "Q1: Lorem ipsum?",
@@ -133,5 +134,6 @@
 			"role": "Producer"
 		}
 	],
-	"comments": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+	"commentsCount": 2,
+	"comments": ["Lorem ipsum dolor sit amet, consectetur adipiscing elit."]
 }

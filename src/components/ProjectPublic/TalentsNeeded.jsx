@@ -35,10 +35,10 @@ const TalentsNeeded = ({ project }) => {
 							<p className="overflow-auto hyphens-auto ">{talent.role}</p>
 						</div>
 						<div className="flex items-center">
-							<Button btnProps={{ type: "button", action: () => showModal(talent.role) }}>
+							<Button btnProps={{ btnSize: "sm", type: "button", action: () => showModal(talent.role) }}>
 								<div className="flex">
 									Apply
-									<IoArrowForward className="text-2xl ml-2 mt-0.5" />
+									<IoArrowForward className="text-lg ml-1 mt-0.5" />
 								</div>
 							</Button>
 						</div>
