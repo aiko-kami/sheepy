@@ -47,7 +47,7 @@ const QAComments = ({ project }) => {
 			</ul>
 
 			{/* Tabs content */}
-			<div id="defaultTabContent" className="">
+			<div id="defaultTabContent">
 				<TabContent id="tabQAs" activeTab={activeTab}>
 					<ul className="grid sm:grid-cols-2 gap-4">
 						{project.qnas.map((qna, index) => (
