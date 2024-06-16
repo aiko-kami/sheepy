@@ -8,43 +8,42 @@ import ProjectHorizontalCard from "@/components/Cards/Projects/ProjectHorizontal
 const ProjectsTabsList = ({ projects }) => {
 	const [activeTab, setActiveTab] = useState("tabProjectWorked");
 
+	const tabData = [
+		{
+			id: "tabProjectWorked",
+			label: "Projects I work on",
+			count: projects.projectCount.onGoing,
+		},
+		{
+			id: "tabProjectCreated",
+			label: "Projects I created",
+			count: projects.projectCount.created,
+		},
+		{
+			id: "tabProjectCompleted",
+			label: "Projects completed",
+			count: projects.projectCount.completed,
+		},
+	];
+
 	return (
 		<>
 			{/* Menu nav tabs selection */}
-			<ul className="flex flex-wrap justify-center text-sm sm:text-base text-gray-600 mb-5">
-				<li>
-					<button className="inline-block mx-2">
+			<ul className="max-w-150 mx-auto flex flex-wrap text-sm sm:text-base text-center text-gray-600 mb-5">
+				{tabData.map(({ id, label, count }) => (
+					<li key={id} className="w-1/3 flex justify-center cursor-pointer">
 						<TabNavItem
-							title={`Projects I work on (${projects.projectCount.onGoing})`}
-							id="tabProjectWorked"
+							id={id}
 							activeTab={activeTab}
 							setActiveTab={setActiveTab}
-							activeClass="text-blue-600 border-b-1 border-blue-600"
-						/>
-					</button>
-				</li>
-				<li>
-					<button className="inline-block mx-2">
-						<TabNavItem
-							title={`Projects I created (${projects.projectCount.created})`}
-							id="tabProjectCreated"
-							activeTab={activeTab}
-							setActiveTab={setActiveTab}
-							activeClass="text-blue-600 border-b-1 border-blue-600"
-						/>
-					</button>
-				</li>
-				<li>
-					<button className="inline-block mx-2">
-						<TabNavItem
-							title={`Projects completed (${projects.projectCount.completed})`}
-							id="tabProjectCompleted"
-							activeTab={activeTab}
-							setActiveTab={setActiveTab}
-							activeClass="text-blue-600 border-b-1 border-blue-600"
-						/>
-					</button>
-				</li>
+							stdClass="pb-2 sm:px-4 w-full flex justify-center"
+							activeClass="text-blue-600 border-b-2 border-blue-600"
+							inactiveClass="border-b-1 border-gray-600"
+						>
+							{label} ({count})
+						</TabNavItem>
+					</li>
+				))}
 			</ul>
 
 			{/* Tabs content */}

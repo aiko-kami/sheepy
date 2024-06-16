@@ -2,8 +2,9 @@
 
 import { useRouter } from "next/navigation";
 
-const TabNavItem = ({ id, title, activeTab, setActiveTab, activeClass, url }) => {
+const TabNavItem = ({ children, id, activeTab, setActiveTab, stdClass, inactiveClass, activeClass, url }) => {
 	const router = useRouter();
+
 	const handleClick = () => {
 		if (url) {
 			setActiveTab(id);
@@ -13,8 +14,8 @@ const TabNavItem = ({ id, title, activeTab, setActiveTab, activeClass, url }) =>
 	};
 
 	return (
-		<div onClick={handleClick} className={`pb-2 sm:px-4 ${activeTab === id ? activeClass : ""}`}>
-			{title}
+		<div onClick={handleClick} className={`${stdClass} ${activeTab === id ? activeClass : inactiveClass}`}>
+			{children}
 		</div>
 	);
 };
