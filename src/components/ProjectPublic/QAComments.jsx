@@ -4,6 +4,8 @@ import { IoChatboxEllipsesOutline, IoHelpCircleOutline } from "react-icons/io5";
 
 import TabNavItem from "@/components/Tabs/TabNavItem";
 import TabContent from "@/components/Tabs/TabContent";
+import QAs from "@/components/ProjectPublic/QAs";
+import Comments from "@/components/ProjectPublic/Comments";
 
 const QAComments = ({ project }) => {
 	const [activeTab, setActiveTab] = useState("tabQAs");
@@ -39,7 +41,12 @@ const QAComments = ({ project }) => {
 						>
 							<div className="flex items-center">
 								<Icon className="text-3xl mr-3 mt-1" />
-								{label} ({count})
+								{label}
+							</div>
+							<div className="relative">
+								<div className="absolute inline-flex items-center justify-center px-2 pb-0.5 h-7 text-sm font-bold text-white bg-red-500 border-2 border-base-500 rounded-full -top-1 -left-1">
+									{count}
+								</div>
 							</div>
 						</TabNavItem>
 					</li>
@@ -49,18 +56,10 @@ const QAComments = ({ project }) => {
 			{/* Tabs content */}
 			<div id="defaultTabContent">
 				<TabContent id="tabQAs" activeTab={activeTab}>
-					<ul className="grid sm:grid-cols-2 gap-4">
-						{project.qnas.map((qna, index) => (
-							<li key={index}>{`${qna.question} ${qna.answer}`}</li>
-						))}
-					</ul>
+					<QAs qnas={project.qnas} />
 				</TabContent>
 				<TabContent id="tabComments" activeTab={activeTab}>
-					<ul className="grid sm:grid-cols-2 gap-4">
-						{project.comments.map((comment, index) => (
-							<li key={index}>{`${comment}`}</li>
-						))}
-					</ul>
+					<Comments comments={project.comments} />
 				</TabContent>
 			</div>
 		</>
