@@ -44,7 +44,7 @@ const QAComments = ({ project }) => {
 								{label}
 							</div>
 							<div className="relative">
-								<div className="absolute inline-flex items-center justify-center px-2 pb-0.5 h-7 text-sm font-bold text-white bg-red-500 border-2 border-base-500 rounded-full -top-1 -left-1">
+								<div className="absolute inline-flex items-center justify-center px-2 pb-0.5 h-7 text-sm font-bold text-white bg-gray-600 border-2 border-base-500 rounded-full -top-1 -left-1">
 									{count}
 								</div>
 							</div>
