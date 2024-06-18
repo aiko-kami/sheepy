@@ -107,63 +107,86 @@
 	"qnas": [
 		{
 			"question": "What is the purpose of this project?",
-			"answer": "The purpose of this project is to produce an independent film that explores a thought-provoking and complex storyline. The film aims to highlight the talents of emerging actors and crew members, providing them a platform to showcase their skills. Through this project, we hope to create a cinematic experience that resonates deeply with audiences and sparks conversations about the themes it explores."
+			"response": "The purpose of this project is to produce an independent film that explores a thought-provoking and complex storyline. The film aims to highlight the talents of emerging actors and crew members, providing them a platform to showcase their skills. Through this project, we hope to create a cinematic experience that resonates deeply with audiences and sparks conversations about the themes it explores."
 		},
 		{
 			"question": "What is?",
-			"answer": "The purpose of this."
+			"response": "The purpose of this."
 		},
 		{
 			"question": "Who is the target audience for this film?",
-			"answer": "The target audience for this film includes indie film enthusiasts who appreciate unique and experimental storytelling. Additionally, sci-fi fans who are intrigued by innovative concepts and imaginative worlds will find the film captivating. We also aim to reach a broader audience who enjoys thought-provoking narratives that challenge conventional perspectives and offer fresh insights into human experiences."
+			"response": "The target audience for this film includes indie film enthusiasts who appreciate unique and experimental storytelling. Additionally, sci-fi fans who are intrigued by innovative concepts and imaginative worlds will find the film captivating. We also aim to reach a broader audience who enjoys thought-provoking narratives that challenge conventional perspectives and offer fresh insights into human experiences."
 		},
 		{
 			"question": "What are the main themes of the film?",
-			"answer": "The main themes of the film revolve around the complexities of time travel and its implications on human life. It delves into the consequences of our actions, exploring how they ripple through time and affect alternate realities. The film also examines the ethical dilemmas faced by characters when confronted with the power to alter events, questioning the morality of their decisions and the impact on their futures."
+			"response": "The main themes of the film revolve around the complexities of time travel and its implications on human life. It delves into the consequences of our actions, exploring how they ripple through time and affect alternate realities. The film also examines the ethical dilemmas faced by characters when confronted with the power to alter events, questioning the morality of their decisions and the impact on their futures."
 		},
 		{
 			"question": "Who are the main characters?",
-			"answer": "The main characters include a seasoned time traveler grappling with the burdens of their journeys, a brilliant but conflicted scientist who questions the ethical ramifications of their experiments, and a rogue AI with its own mysterious agenda. Each character brings a unique perspective and personal struggles to the narrative, creating a dynamic interplay of motivations and conflicts that drive the story forward."
+			"response": "The main characters include a seasoned time traveler grappling with the burdens of their journeys, a brilliant but conflicted scientist who questions the ethical ramifications of their experiments, and a rogue AI with its own mysterious agenda. Each character brings a unique perspective and personal struggles to the narrative, creating a dynamic interplay of motivations and conflicts that drive the story forward."
 		},
 		{
 			"question": "Lorem ipsum? Eoriu lq ehoighes re lrihg erilughaer ilghailru ghilrghli gha?",
-			"answer": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt saepe, reiciendis repudiandae dolore alias et cupiditate exercitationem maiores pariatur fugit amet dolorum repellendus quibusdam deserunt nobis nulla. In excepturi at debitis facere quasi ad asperiores laudantium culpa porro blanditiis. Dolore commodi, ea, soluta consectetur voluptatem obcaecati error molestias atque earum accusantium alias nihil minima deserunt numquam, ipsum optio dolor. Blanditiis assumenda impedit voluptates aut quis in provident et, ipsa facilis."
+			"response": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt saepe, reiciendis repudiandae dolore alias et cupiditate exercitationem maiores pariatur fugit amet dolorum repellendus quibusdam deserunt nobis nulla. In excepturi at debitis facere quasi ad asperiores laudantium culpa porro blanditiis. Dolore commodi, ea, soluta consectetur voluptatem obcaecati error molestias atque earum accusantium alias nihil minima deserunt numquam, ipsum optio dolor. Blanditiis assumenda impedit voluptates aut quis in provident et, ipsa facilis."
 		},
 		{
 			"question": "Rwefijawo eifh o aweo fihajweo ferg?",
-			"answer": "Similique cum ullam minus, in hic voluptates vel harum delectus molestias, incidunt quam voluptatem ab quae illo voluptatibus, recusandae natus expedita? Veritatis unde suscipit nisi, numquam totam in maxime id labore perspiciatis dolorum ut tempore voluptates ea repellat accusantium voluptas doloremque incidunt porro quidem explicabo, odio dolorem? Voluptatum enim labore, vitae officia numquam est illum, accusamus sapiente nesciunt earum culpa temporibus."
+			"response": "Similique cum ullam minus, in hic voluptates vel harum delectus molestias, incidunt quam voluptatem ab quae illo voluptatibus, recusandae natus expedita? Veritatis unde suscipit nisi, numquam totam in maxime id labore perspiciatis dolorum ut tempore voluptates ea repellat accusantium voluptas doloremque incidunt porro quidem explicabo, odio dolorem? Voluptatum enim labore, vitae officia numquam est illum, accusamus sapiente nesciunt earum culpa temporibus."
 		},
 		{
 			"question": "Animi, at excepturi vero enim tempore dolorem voluptatem delectus architecto quos, sunt assumenda necessitatibus? Corporis quam quasi recusandae nobis sunt aliquid dolore at eum?",
-			"answer": "Eligendi similique autem qui nam sit excepturi, magni dolorum alias dolores illum aliquam. Provident recusandae, dicta non natus explicabo magnam nemo corporis odio soluta aspernatur quae, voluptatum deserunt laborum vitae? Dolorum accusamus quisquam, voluptatibus officiis vel quia fuga ipsum ducimus delectus asperiores repudiandae magni, dicta repellat quam excepturi, tempora perferendis explicabo fugiat sint nihil amet nostrum impedit? Magnam ab perferendis sunt a non, nesciunt maiores tempore sint earum ea corporis odio provident iste ratione consectetur, ex tenetur neque molestias facere quos quibusdam quidem. Culpa fuga a distinctio accusamus consectetur est incidunt eveniet quae ipsum. Illo quam molestias excepturi magnam veritatis iusto mollitia."
+			"response": "Eligendi similique autem qui nam sit excepturi, magni dolorum alias dolores illum aliquam. Provident recusandae, dicta non natus explicabo magnam nemo corporis odio soluta aspernatur quae, voluptatum deserunt laborum vitae? Dolorum accusamus quisquam, voluptatibus officiis vel quia fuga ipsum ducimus delectus asperiores repudiandae magni, dicta repellat quam excepturi, tempora perferendis explicabo fugiat sint nihil amet nostrum impedit? Magnam ab perferendis sunt a non, nesciunt maiores tempore sint earum ea corporis odio provident iste ratione consectetur, ex tenetur neque molestias facere quos quibusdam quidem. Culpa fuga a distinctio accusamus consectetur est incidunt eveniet quae ipsum. Illo quam molestias excepturi magnam veritatis iusto mollitia."
 		},
 		{
 			"question": "How will the film be distributed?",
-			"answer": "The film will be distributed through a multi-faceted approach, starting with indie film festivals where it can gain critical acclaim and attract attention from distributors. Following the festival circuit, the film will be available on popular online streaming platforms, making it accessible to a global audience. Additionally, we plan to arrange limited theatrical releases in key cities to provide an immersive viewing experience for cinema lovers."
+			"response": "The film will be distributed through a multi-faceted approach, starting with indie film festivals where it can gain critical acclaim and attract attention from distributors. Following the festival circuit, the film will be available on popular online streaming platforms, making it accessible to a global audience. Additionally, we plan to arrange limited theatrical releases in key cities to provide an immersive viewing experience for cinema lovers."
 		},
 		{
 			"question": "What is the estimated budget for the film?",
-			"answer": "The estimated budget for the film is set at $500,000. This budget covers a wide range of expenses including pre-production planning, production costs such as location fees, equipment rentals, and talent compensation. Post-production will involve editing, special effects, and sound design to ensure a polished final product. Marketing efforts will focus on generating buzz and reaching our target audience effectively."
+			"response": "The estimated budget for the film is set at $500,000. This budget covers a wide range of expenses including pre-production planning, production costs such as location fees, equipment rentals, and talent compensation. Post-production will involve editing, special effects, and sound design to ensure a polished final product. Marketing efforts will focus on generating buzz and reaching our target audience effectively."
 		},
 		{
 			"question": "Who are the key members of the production team?",
-			"answer": "The key members of the production team include Brad Anderson, who brings his visionary direction and extensive experience in indie filmmaking. Scott Kosar, an accomplished screenwriter known for his engaging and intricate scripts, will craft the film's narrative. Carlos Fernández, our producer, has a track record of successful projects and will oversee the production logistics, ensuring everything runs smoothly and on budget."
+			"response": "The key members of the production team include Brad Anderson, who brings his visionary direction and extensive experience in indie filmmaking. Scott Kosar, an accomplished screenwriter known for his engaging and intricate scripts, will craft the film's narrative. Carlos Fernández, our producer, has a track record of successful projects and will oversee the production logistics, ensuring everything runs smoothly and on budget."
 		},
 		{
 			"question": "What are the filming locations?",
-			"answer": "Filming locations have been carefully selected to enhance the film's futuristic yet relatable setting. We will primarily shoot in various urban areas of San Fransokyo, USA, utilizing its unique architecture and cityscape to create a visually compelling backdrop. These locations will help convey the film's themes of modernity clashing with the unknown and provide a tangible context for the narrative."
+			"response": "Filming locations have been carefully selected to enhance the film's futuristic yet relatable setting. We will primarily shoot in various urban areas of San Fransokyo, USA, utilizing its unique architecture and cityscape to create a visually compelling backdrop. These locations will help convey the film's themes of modernity clashing with the unknown and provide a tangible context for the narrative."
 		},
 		{
 			"question": "How long will the production take?",
-			"answer": "The production is projected to span approximately six months. This timeline includes pre-production activities such as casting, location scouting, and set design, followed by the actual filming phase. After wrapping up production, an additional three months will be dedicated to post-production tasks, including editing, visual effects integration, and sound mixing, to ensure the final product meets our high standards."
+			"response": "The production is projected to span approximately six months. This timeline includes pre-production activities such as casting, location scouting, and set design, followed by the actual filming phase. After wrapping up production, an additional three months will be dedicated to post-production tasks, including editing, visual effects integration, and sound mixing, to ensure the final product meets our high standards."
 		},
 		{
 			"question": "What makes this film unique?",
-			"answer": "This film stands out due to its innovative take on time travel and its multifaceted characters. Unlike typical sci-fi films, it emphasizes the psychological and ethical dimensions of time manipulation, creating a narrative rich in emotional and intellectual depth. The combination of high-quality production values and a compelling story crafted on a modest budget showcases the team's creativity and resourcefulness, making it a unique entry in the indie film scene."
+			"response": "This film stands out due to its innovative take on time travel and its multifaceted characters. Unlike typical sci-fi films, it emphasizes the psychological and ethical dimensions of time manipulation, creating a narrative rich in emotional and intellectual depth. The combination of high-quality production values and a compelling story crafted on a modest budget showcases the team's creativity and resourcefulness, making it a unique entry in the indie film scene."
 		},
 		{
 			"question": "How can I get involved or support the project?",
-			"answer": "You can support the project in several ways. Following our social media channels and sharing our content helps increase visibility and reach a wider audience. Additionally, contributing to our crowdfunding campaign will directly fund the film's production and post-production phases. Volunteers with relevant skills are welcome to join the team, and attending screenings or events will also show your support and help create buzz around the film."
+			"response": "You can support the project in several ways. Following our social media channels and sharing our content helps increase visibility and reach a wider audience. Additionally, contributing to our crowdfunding campaign will directly fund the film's production and post-production phases. Volunteers with relevant skills are welcome to join the team, and attending screenings or events will also show your support and help create buzz around the film."
+		}
+	],
+	"stepsCount": 4,
+	"steps": [
+		{
+			"title": "Pre-Production Planning",
+			"details": "This initial phase involves extensive planning and preparation to ensure a smooth production process. Key activities include developing a detailed script, creating a production schedule, and assembling the core production team. Location scouting and securing necessary permits are also crucial at this stage. The goal is to lay a solid foundation by addressing potential challenges and setting clear objectives for the project.",
+			"status": "completed"
+		},
+		{
+			"title": "Casting and Rehearsals",
+			"details": "During this phase, we focus on selecting the right talent to bring the characters to life. Casting calls and auditions will be conducted to find actors who best fit the roles. Once the cast is finalized, rehearsals will begin to help actors understand their characters and develop chemistry with each other. This stage is essential for refining performances and ensuring everyone is well-prepared before filming starts.",
+			"status": "on-going"
+		},
+		{
+			"title": "Production",
+			"details": "The production phase involves the actual filming of the movie. This includes setting up scenes, capturing footage, and managing on-set logistics. The production team will work closely to follow the shooting schedule, making adjustments as needed to stay on track. Attention to detail is critical, as this phase determines the visual and narrative quality of the film. Daily reviews of footage help ensure everything aligns with the director's vision.",
+			"status": "not started"
+		},
+		{
+			"title": "Post-Production",
+			"details": "In the post-production phase, the focus shifts to editing and finalizing the film. This includes cutting and assembling the footage, adding visual effects, sound design, and music scoring. Color correction and sound mixing enhance the film's aesthetic and auditory appeal. Once the final cut is approved, the film is prepared for distribution, which involves creating marketing materials and organizing premiere events or festival submissions.",
+			"status": "not started"
 		}
 	],
 	"status": "Project active",

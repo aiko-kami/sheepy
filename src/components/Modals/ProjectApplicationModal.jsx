@@ -7,15 +7,29 @@ import Link from "next/link";
 import { Button, ButtonCircle } from "@/components/Buttons/Buttons";
 
 const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) => {
-	const [selectedRole, setSelectedRole] = useState("");
+	const [formState, setFormState] = useState({
+		selectedRole: "",
+		message: "",
+	});
+
+	const onSaveDraft = (event) => {
+		event.preventDefault();
+		closeModal();
+		// Handle form submission
+	};
 
 	const onSubmit = (event) => {
 		event.preventDefault();
+		closeModal();
 		// Handle form submission
 	};
 
 	const onChange = (event) => {
-		setSelectedRole(event.target.value);
+		const { name, value } = event.target;
+		setFormState((prevState) => ({
+			...prevState,
+			[name]: value,
+		}));
 	};
 
 	useEffect(() => {
@@ -57,12 +71,15 @@ const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) =>
 									</label>
 									<select
 										id="role"
-										value={selectedRole}
+										name="selectedRole"
+										value={formState.selectedRole}
 										onChange={onChange}
-										class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+										class="bg-gray-700 focus:bg-gray-600 border border-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
 									>
 										{talentsNeeded.map((talent, index) => (
-											<option key={index}>{talent.role}</option>
+											<option key={index} className="" value={talent.role}>
+												{talent.role}
+											</option>
 										))}
 									</select>
 								</div>
@@ -73,20 +90,20 @@ const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) =>
 										Describe why you want to join this project:
 									</label>
 									<textarea
-										name="description"
-										id="description"
-										className="block p-2 w-full text-sm bg-gray-700 rounded-lg border border-gray-600 placeholder-gray-400"
+										name="message"
+										id="message"
+										className="block p-2 w-full text-sm bg-gray-700 focus:bg-gray-600 rounded-lg border border-gray-600 placeholder-gray-400"
 										placeholder="Share your motivation for joining this project and introduce yourself briefly..."
 										maxLength={100}
 										rows="8"
-										value={""}
+										value={formState.message}
 										onChange={onChange}
 									></textarea>
 								</div>
 
 								{/* Button Send application (submit form) */}
 								<div className="flex gap-8 justify-center">
-									<Button btnProps={{ type: "button", btnColor: "grayBorder" }}>Save draft</Button>
+									<Button btnProps={{ type: "button", btnColor: "grayBorder", action: onSaveDraft }}>Save draft</Button>
 									<Button btnProps={{ type: "submit" }}>Send my application</Button>
 								</div>
 							</form>

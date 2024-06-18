@@ -1,16 +1,23 @@
 "use client";
 import { useState } from "react";
-import { IoChatboxEllipsesOutline, IoHelpCircleOutline } from "react-icons/io5";
+import { IoExtensionPuzzleOutline, IoChatboxEllipsesOutline, IoHelpCircleOutline } from "react-icons/io5";
 
 import TabNavItem from "@/components/Tabs/TabNavItem";
 import TabContent from "@/components/Tabs/TabContent";
+import Steps from "@/components/ProjectPublic/Steps";
 import QAs from "@/components/ProjectPublic/QAs";
 import Comments from "@/components/ProjectPublic/Comments";
 
-const QAComments = ({ project }) => {
-	const [activeTab, setActiveTab] = useState("tabQAs");
+const StepsQAComments = ({ project }) => {
+	const [activeTab, setActiveTab] = useState("tabSteps");
 
 	const tabData = [
+		{
+			id: "tabSteps",
+			label: "Steps",
+			count: project.stepsCount,
+			icon: IoExtensionPuzzleOutline,
+		},
 		{
 			id: "tabQAs",
 			label: "Q&A",
@@ -28,23 +35,23 @@ const QAComments = ({ project }) => {
 	return (
 		<>
 			{/* Menu nav tabs selection */}
-			<ul className="flex flex-wrap font-semibold sm:text-3xl mb-5">
+			<ul className="flex flex-wrap justify-center font-semibold text-xl sm:text-3xl px-4 sm:px-0">
 				{tabData.map(({ id, label, count, icon: Icon }) => (
-					<li key={id} className="w-1/2 flex justify-center cursor-pointer">
+					<li key={id} className="tn:w-1/3 justify-center cursor-pointer mb-5">
 						<TabNavItem
 							id={id}
 							activeTab={activeTab}
 							setActiveTab={setActiveTab}
-							stdClass="pb-2 sm:px-4 w-full flex justify-center"
+							stdClass="pb-2 px-4 w-full flex justify-center"
 							activeClass="w-full text-blue-600 border-b-2 border-blue-600"
 							inactiveClass="border-b-1 border-gray-600"
 						>
-							<div className="flex items-center">
-								<Icon className="text-3xl mr-3 mt-1" />
+							<div className="flex flex-col justify-center items-center">
+								<Icon className="text-3xl mt-1" />
 								{label}
 							</div>
 							<div className="relative">
-								<div className="absolute inline-flex items-center justify-center px-2 pb-0.5 h-7 text-sm font-bold text-white bg-gray-600 border-2 border-base-500 rounded-full -top-1 -left-1">
+								<div className="absolute inline-flex items-center justify-center px-2 pb-0.5 h-7 text-sm font-bold text-white bg-gray-600 border-2 border-base-500 rounded-full top-6 -left-1 sm:left-0">
 									{count}
 								</div>
 							</div>
@@ -54,7 +61,10 @@ const QAComments = ({ project }) => {
 			</ul>
 
 			{/* Tabs content */}
-			<div id="defaultTabContent">
+			<div id="defaultTabContent" className="lg:px-8">
+				<TabContent id="tabSteps" activeTab={activeTab}>
+					<Steps steps={project.steps} />
+				</TabContent>
 				<TabContent id="tabQAs" activeTab={activeTab}>
 					<QAs qnas={project.qnas} />
 				</TabContent>
@@ -65,4 +75,4 @@ const QAComments = ({ project }) => {
 		</>
 	);
 };
-export default QAComments;
+export default StepsQAComments;

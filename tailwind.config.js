@@ -11,7 +11,6 @@ module.exports = {
 			"2xl": "1536px",
 			tn: "350px",
 		},
-
 		borderWidth: {
 			DEFAULT: "1px",
 			0: "0",
@@ -38,6 +37,11 @@ module.exports = {
 			},
 			animation: {
 				slidein: "slidein 0.2s",
+			},
+			ringWidth: {
+				5: "5px",
+				6: "6px",
+				7: "7px",
 			},
 			colors: {
 				base: {

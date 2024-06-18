@@ -6,7 +6,7 @@ import ProjectGoal from "@/components/ProjectPublic/ProjectGoal";
 import TalentsNeeded from "@/components/ProjectPublic/TalentsNeeded";
 import ProjectTags from "@/components/ProjectPublic/ProjectTags";
 import ProjectMembers from "@/components/ProjectPublic/ProjectMembers";
-import QAComments from "@/components/ProjectPublic/QAComments";
+import StepsQAComments from "@/components/ProjectPublic/StepsQAComments";
 
 import project from "@/mock/project.json";
 
@@ -43,7 +43,7 @@ const ProjectPublicPage = ({ params }) => {
 					</div>
 				</div>
 				{/* Q&A and comments */}
-				<QAComments project={project} />
+				<StepsQAComments project={project} />
 			</div>
 		</div>
 	);
