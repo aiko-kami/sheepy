@@ -35,9 +35,9 @@ const StepsQAComments = ({ project }) => {
 	return (
 		<>
 			{/* Menu nav tabs selection */}
-			<ul className="flex flex-wrap justify-center font-semibold text-xl sm:text-3xl px-4 sm:px-0">
+			<ul className="flex flex-wrap justify-center font-semibold text-xl sm:text-3xl px-4 sm:px-0 mb-10">
 				{tabData.map(({ id, label, count, icon: Icon }) => (
-					<li key={id} className="tn:w-1/3 justify-center cursor-pointer mb-5">
+					<li key={id} className="tn:w-1/3 justify-center cursor-pointer mt-2 sm:mt-0">
 						<TabNavItem
 							id={id}
 							activeTab={activeTab}
