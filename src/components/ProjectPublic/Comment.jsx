@@ -11,12 +11,12 @@ const Comment = ({ comment }) => {
 			<div class="flex-col mt-1">
 				<div class="flex items-end px-4 mb-2 font-bold text-gray-800">
 					{username}
-					{isOwner && (
-						<span class="ml-1">
-							<Badge badge={{ name: "Project Owner", size: "xs", bgColor: "bg-base-500", bgColorHover: "bg-gray-800" }} />
-						</span>
-					)}
 					<span class="ml-2 text-sm font-normal text-gray-500">{relativeDate}</span>
+					{isOwner && (
+						<div class="ml-2">
+							<Badge badge={{ name: "Project Owner", size: "xs", bgColor: "bg-base-500", bgColorHover: "bg-gray-800" }} />
+						</div>
+					)}
 				</div>
 				<p class="ml-2 mb-3 p-3 text-sm font-medium bg-gray-100 text-gray-600 rounded-md">{message}</p>
 				<button class="inline-flex items-center ml-4 flex-column">
