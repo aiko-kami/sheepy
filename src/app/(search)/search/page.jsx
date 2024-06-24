@@ -5,17 +5,23 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 import SearchBar from "@/components/Search/SearchBar";
 import SearchResultsTabsList from "@/components/Search/SearchResultsTabsList";
+import { updateUrlParameters } from "@/utils/urlParameter";
 
 const SearchModule = () => {
+	//Get current path
 	const pathname = usePathname();
+
+	//Get current URL search parameters
 	const searchParams = useSearchParams();
+	const currentParams = new URLSearchParams(searchParams);
+
+	const router = useRouter();
+
 	const search = searchParams.get("search");
 	const tab = searchParams.get("tab");
 
 	const [searchInput, setSearchInput] = useState(search);
 	const [url, setUrl] = useState(`${pathname}?search=${searchInput}&tab=`);
-
-	const router = useRouter();
 
 	// Handle search input change
 	const handleInputChange = (e) => {
@@ -25,8 +31,7 @@ const SearchModule = () => {
 	// Handle form submission
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const path = `/search?search=${searchInput}&tab=${tab}`;
-		router.push(path);
+		updateUrlParameters(router, pathname, currentParams, { search: searchInput, tab });
 	};
 
 	return (

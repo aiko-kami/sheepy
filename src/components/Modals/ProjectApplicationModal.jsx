@@ -34,7 +34,10 @@ const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) =>
 
 	useEffect(() => {
 		if (roleSelected) {
-			setSelectedRole(roleSelected);
+			setFormState((prevState) => ({
+				...prevState,
+				selectedRole: roleSelected,
+			}));
 		}
 	}, [roleSelected]);
 
@@ -66,7 +69,7 @@ const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) =>
 							<form onSubmit={onSubmit}>
 								{/* Role */}
 								<div className="mb-6">
-									<label for="role" class="block mb-2">
+									<label htmlFor="role" className="block mb-2">
 										Select the role you want:
 									</label>
 									<select
@@ -74,7 +77,7 @@ const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) =>
 										name="selectedRole"
 										value={formState.selectedRole}
 										onChange={onChange}
-										class="bg-gray-700 focus:bg-gray-600 border border-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+										className="bg-gray-700 focus:bg-gray-600 border border-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
 									>
 										{talentsNeeded.map((talent, index) => (
 											<option key={index} className="" value={talent.role}>

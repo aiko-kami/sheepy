@@ -10,21 +10,22 @@ const Comments = ({ comments = [] }) => {
 			{comments.length === 0 ? (
 				<p className="py-8 text-center">Currently, no comments have been posted. Be the first to ask!</p>
 			) : (
-				<div className="container">
+				<div className="container w-full mx-auto lg:max-w-7/8">
 					{comments.map((comment, index) => (
-						<div key={index} class="flex-col mx-auto w-full bg-white p-4 pr-6 rounded-md shadow-lg mb-1 lg:max-w-7/8">
-							<div class="flex flex-row">
+						<div key={index} className="flex-col">
+							<div className="flex flex-row">
 								<Comment comment={comment} />
 							</div>
 							{comment.answers.length !== 0 &&
 								comment.answers.map((answer, index) => (
 									<React.Fragment key={index}>
-										<hr class="my-1 ml-16 border-gray-200" />
-										<div class="flex flex-row pt-1 ml-12">
+										<hr className="my-5 ml-16 border-gray-500" />
+										<div className="flex flex-row ml-12">
 											<Comment comment={answer} />
 										</div>
 									</React.Fragment>
 								))}
+							{index !== comments.length - 1 && <hr className="my-5 ml-4 border-gray-500" />}
 						</div>
 					))}
 				</div>
