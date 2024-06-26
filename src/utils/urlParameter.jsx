@@ -28,7 +28,7 @@ const updateUrlParameters = (router, pathname, formerParams, newParams) => {
 	const queryString = new URLSearchParams(params).toString();
 	const newPath = `${pathname}?${queryString}`;
 	// Update the URL with the new query object
-	router.push(newPath);
+	router.push(newPath, { scroll: false });
 };
 
 export { updateUrlParameters };

@@ -51,6 +51,7 @@ const UserTalentCardModal = ({ closeModal }) => {
 					<div className="px-4 md:px-5 pb-8">
 						<h4 className="text-xl font-semibold text-white mx-auto pb-4">My portfolio</h4>
 						<p className="leading-relaxed text-gray-300">
+							{/* {" "} to be kept */}
 							Visit my{" "}
 							<span className="underline">
 								<a
@@ -60,6 +61,7 @@ const UserTalentCardModal = ({ closeModal }) => {
 								>
 									website
 								</a>
+								{/* {" "} to be kept */}
 							</span>{" "}
 							for more details about me
 						</p>

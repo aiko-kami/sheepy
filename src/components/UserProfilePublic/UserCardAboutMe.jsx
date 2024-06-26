@@ -62,6 +62,7 @@ const UserCardAboutMe = ({ user }) => {
 								<IoLinkOutline className="text-gray-400 mr-2 text-2xl" />
 							</div>
 							<p>
+								{/* {" "} to be kept after the span */}
 								<span className="font-semibold text-gray-400">Website:</span>{" "}
 								<a href={user.website} className="italic hover:underline">
 									{user.website}

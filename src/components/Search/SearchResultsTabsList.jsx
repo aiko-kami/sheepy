@@ -12,26 +12,26 @@ import LocationHorizontalCard from "@/components/Cards/Locations/LocationHorizon
 
 import searchResults from "@/mock/searchResults.json";
 
-const SearchResultsTabsList = ({ searchInput, tab, url }) => {
+const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 	const [activeTab, setActiveTab] = useState(tab || "tabProjects");
 
 	const tabData = [
-		{ id: "tabProjects", label: "Projects" },
-		{ id: "tabTalents", label: "Talents" },
-		{ id: "tabCategories", label: "Categories" },
-		{ id: "tabsubCategories", label: "Sub-categories" },
-		{ id: "tabLocations", label: "Locations" },
-		{ id: "tabTags", label: "Tags" },
+		{ tabId: "tabProjects", label: "Projects" },
+		{ tabId: "tabTalents", label: "Talents" },
+		{ tabId: "tabCategories", label: "Categories" },
+		{ tabId: "tabsubCategories", label: "Sub-categories" },
+		{ tabId: "tabLocations", label: "Locations" },
+		{ tabId: "tabTags", label: "Tags" },
 	];
 
 	return (
 		<>
 			{/* Menu nav tabs selection */}
 			<ul className="flex flex-wrap justify-center text-sm sm:text-base text-gray-600 my-10">
-				{tabData.map(({ id, label }) => (
-					<li key={id}>
+				{tabData.map(({ tabId, label }) => (
+					<li key={tabId}>
 						<button className="inline-block mx-2">
-							<TabNavItem id={id} activeTab={activeTab} setActiveTab={setActiveTab} stdClass="pb-2 sm:px-4" activeClass="text-blue-600 border-b-1 border-blue-600" url={url}>
+							<TabNavItem id={tabId} activeTab={activeTab} setActiveTab={setActiveTab} stdClass="pb-2 sm:px-4" activeClass="text-blue-600 border-b-1 border-blue-600" updateUrl={updateUrl}>
 								{label}
 							</TabNavItem>
 						</button>

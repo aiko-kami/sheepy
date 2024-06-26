@@ -21,7 +21,6 @@ const SearchModule = () => {
 	const tab = searchParams.get("tab");
 
 	const [searchInput, setSearchInput] = useState(search);
-	const [url, setUrl] = useState(`${pathname}?search=${searchInput}&tab=`);
 
 	// Handle search input change
 	const handleInputChange = (e) => {
@@ -44,7 +43,7 @@ const SearchModule = () => {
 					</div>
 				</div>
 				{/* Search results */}
-				<SearchResultsTabsList searchInput={searchInput} tab={tab} url={url} />
+				<SearchResultsTabsList searchInput={searchInput} tab={tab} updateUrl={true} />
 			</div>
 		</>
 	);
@@ -52,7 +51,6 @@ const SearchModule = () => {
 
 export default function SearchPage() {
 	return (
-		// You could have a loading skeleton as the `fallback` too
 		<Suspense>
 			<SearchModule />
 		</Suspense>

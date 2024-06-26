@@ -26,7 +26,7 @@ const Menu = ({ displaySearchButton = true }) => {
 		setSearchInput("");
 		setDisplayPopover(false);
 		const path = `/search?search=${searchInput}&tab=tabProjects`;
-		router.push(path);
+		router.push(path, { scroll: false });
 	};
 
 	return (
