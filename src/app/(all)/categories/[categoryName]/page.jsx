@@ -1,6 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import moz01 from "../../../../../public/assets/mosaic/moz01.png";
+import moz01 from "@/public/assets/mosaic/moz01.png";
+
+export const metadata = {
+	title: "Category - Sheepy",
+	description: "Category page with projects linked to the category",
+};
 
 const ProjectDescriptionPage = ({ params }) => {
 	return (

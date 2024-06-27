@@ -4,6 +4,11 @@ import UserCardAccount from "@/components/UserProfilePrivate/UserCardAccount";
 
 import user from "@/mock/user.json";
 
+export const metadata = {
+	title: "My profile - Sheepy",
+	description: "User personal profile page",
+};
+
 const MyProfilePage = ({ params }) => {
 	return (
 		<>

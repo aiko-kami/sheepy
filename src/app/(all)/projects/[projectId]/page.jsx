@@ -10,6 +10,11 @@ import StepsQAComments from "@/components/ProjectPublic/StepsQAComments";
 
 import project from "@/mock/project.json";
 
+export const metadata = {
+	title: "Project - Sheepy",
+	description: "Project public page",
+};
+
 const ProjectPublicPage = ({ params }) => {
 	return (
 		<div className="container mx-auto py-8 hyphens-auto">

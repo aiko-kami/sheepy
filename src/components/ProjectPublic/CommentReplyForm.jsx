@@ -1,4 +1,4 @@
-import { IoArrowUndoOutline, IoAlertOutline } from "react-icons/io5";
+import { IoHappy } from "react-icons/io5";
 
 import { Badge } from "@/components/Badges/Badges";
 
@@ -26,11 +26,9 @@ const CommentReplyForm = ({ displayReply, handleReplySubmit }) => {
 								></textarea>
 							</div>
 							<div className="flex items-center justify-between px-2 py-2 border-t border-gray-600">
-								<div className="flex space-x-1 rtl:space-x-reverse ps-0 sm:ps-2">
-									<button type="button" className="inline-flex justify-center items-center p-2 text-gray-400 rounded cursor-pointer hover:text-white hover:bg-gray-600">
-										<svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-											<path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM13.5 6a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm-7 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3Zm3.5 9.5A5.5 5.5 0 0 1 4.6 11h10.81A5.5 5.5 0 0 1 10 15.5Z" />
-										</svg>
+								<div className="flex">
+									<button type="button" className="inline-flex justify-center items-center p-2 text-gray-400 rounded hover:text-white hover:bg-gray-600">
+										<IoHappy className="w-5 h-5 text-gray-400" />
 										<span class="sr-only">Add emoji</span>
 									</button>
 								</div>

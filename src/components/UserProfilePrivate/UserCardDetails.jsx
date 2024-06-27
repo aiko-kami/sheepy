@@ -1,7 +1,7 @@
 "use client";
 
-import { Button } from "../Buttons/Buttons";
-import FormField from "../Forms/FormField";
+import { Button } from "@/components/Buttons/Buttons";
+import FormField from "@/components/Forms/FormField";
 
 import { IoLocationOutline, IoEarthOutline, IoBusinessOutline, IoChatbubbleEllipsesOutline, IoLinkOutline } from "react-icons/io5";
 

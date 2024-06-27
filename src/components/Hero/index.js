@@ -3,15 +3,15 @@ import Link from "next/link";
 
 import { Button } from "@/components/Buttons/Buttons";
 
-import spaceship from "../../../public/assets/hero/spaceship.png";
-import sun from "../../../public/assets/hero/sun.png";
-import galaxy from "../../../public/assets/hero/galaxy.png";
-import comet from "../../../public/assets/hero/comet.png";
-import planetRed from "../../../public/assets/hero/planetRed.png";
-import planetBlue from "../../../public/assets/hero/planetBlue.png";
-import saturn from "../../../public/assets/hero/saturn.png";
-import spaceman from "../../../public/assets/hero/spaceman.png";
-import satellite from "../../../public/assets/hero/satellite.png";
+import spaceship from "@/public/assets/hero/spaceship.png";
+import sun from "@/public/assets/hero/sun.png";
+import galaxy from "@/public/assets/hero/galaxy.png";
+import comet from "@/public/assets/hero/comet.png";
+import planetRed from "@/public/assets/hero/planetRed.png";
+import planetBlue from "@/public/assets/hero/planetBlue.png";
+import saturn from "@/public/assets/hero/saturn.png";
+import spaceman from "@/public/assets/hero/spaceman.png";
+import satellite from "@/public/assets/hero/satellite.png";
 
 const Hero = () => {
 	return (

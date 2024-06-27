@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-import explore from "../../../public/assets/svg/features/explore.svg";
-import award from "../../../public/assets/svg/features/award.svg";
-import conversation from "../../../public/assets/svg/features/conversation.svg";
-import heart from "../../../public/assets/svg/features/heart.svg";
+import explore from "@/public/assets/svg/features/explore.svg";
+import award from "@/public/assets/svg/features/award.svg";
+import conversation from "@/public/assets/svg/features/conversation.svg";
+import heart from "@/public/assets/svg/features/heart.svg";
 
 const PresentationBanner = () => {
 	return (

@@ -62,15 +62,15 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 
 ### Pages
 
-- [] Project description public page
+- [x] User profile public page
+- [x] User profile update page
+- [x] Project description public page
+- [x] Search projects page
+- [x] Search talents page
 - [] Project description private page
 - [] Project edition page
 - [] Project creation page
-- [x] User profile update page
-- [x] User profile public page
 - [] View my profile page
-- [] Search projects page
-- [] Search talents page
 
 ### Components
 

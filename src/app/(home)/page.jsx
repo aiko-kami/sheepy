@@ -6,6 +6,11 @@ import RecentTalents from "@/components/Cards/Talents/RecentTalents";
 import TalentsYouNeed from "@/components/Cards/Talents/TalentsYouNeed";
 import Link from "next/link";
 
+export const metadata = {
+	title: "Sheepy",
+	description: "Home page",
+};
+
 const HomePage = () => {
 	return (
 		<div className="relative">
