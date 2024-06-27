@@ -14,8 +14,6 @@ const Comment = ({ comment }) => {
 
 	const [displayReply, setDisplayReply] = useState(false);
 
-	console.log("🚀 ~ Comment ~ displayReply:", displayReply);
-
 	const handleReplyClick = () => {
 		setDisplayReply((prevDisplayReply) => !prevDisplayReply);
 	};

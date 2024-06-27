@@ -29,7 +29,7 @@ const CommentReplyForm = ({ displayReply, handleReplySubmit }) => {
 								<div className="flex">
 									<button type="button" className="inline-flex justify-center items-center p-2 text-gray-400 rounded hover:text-white hover:bg-gray-600">
 										<IoHappy className="w-5 h-5 text-gray-400" />
-										<span class="sr-only">Add emoji</span>
+										<span className="sr-only">Add emoji</span>
 									</button>
 								</div>
 								<button
