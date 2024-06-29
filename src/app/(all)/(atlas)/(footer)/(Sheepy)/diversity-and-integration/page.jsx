@@ -1,9 +1,8 @@
 const DiversityAndIntegrationPage = () => {
 	return (
 		<>
-			<div>This is the Diversity and Integration Page</div>
-			<div class="container mx-auto p-8">
-				<h1 class="text-4xl font-bold mb-6">Diversity and Integration</h1>
+			<div class="container mx-auto p-8 text-justify">
+				<h1 class="text-7xl mt-12 mb-20 text-center">Diversity and Integration</h1>
 				<p class="mb-4">
 					At Sheepy, we believe that diversity is the key to unlocking creativity and innovation. Our mission is to help you bring your projects to life, and we know that the best projects are built
 					by diverse teams with a wide range of perspectives, experiences, and skills.
