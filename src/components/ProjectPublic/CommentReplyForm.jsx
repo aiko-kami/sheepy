@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 
 import { IoHappy } from "react-icons/io5";
 import EmojiPicker from "emoji-picker-react";
+import { Button } from "../Buttons/Buttons";
 
 const CommentReplyForm = ({ displayReply, handleReplySubmit }) => {
 	const [showEmojiPicker, setShowEmojiPicker] = useState(false);
@@ -57,8 +58,8 @@ const CommentReplyForm = ({ displayReply, handleReplySubmit }) => {
 									required
 								></textarea>
 							</div>
-							<div className="flex items-center justify-between px-2 py-2 border-t border-gray-600 relative">
-								<div className="flex" ref={emojiPickerRef}>
+							<div className="flex items-center justify-end sm:justify-between px-2 py-2 border-t border-gray-600 relative">
+								<div className="hidden sm:flex" ref={emojiPickerRef}>
 									<button
 										type="button"
 										className="inline-flex justify-center items-center p-2 text-gray-400 rounded hover:text-white hover:bg-gray-600"
@@ -73,12 +74,8 @@ const CommentReplyForm = ({ displayReply, handleReplySubmit }) => {
 										</div>
 									)}
 								</div>
-								<button
-									type="submit"
-									className="inline-flex items-center py-2.5 px-4 text-xs font-medium text-center text-white bg-blue-700 rounded-lg focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900 hover:bg-blue-800"
-								>
-									Post comment
-								</button>
+								{/* Post comment (submit form) */}
+								<Button btnProps={{ btnSize: "sm", type: "submit", btnColor: "blue" }}>Post comment</Button>
 							</div>
 						</div>
 					</form>

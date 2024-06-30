@@ -56,7 +56,7 @@ const Sandwich = () => {
 					</div>
 				</div>
 				<div className="inline-flex items-center">
-					<Link href="/" className="text-xl font-semibold inline-flex items-center hover:bg-slate-700 transition duration-300 rounded-lg px-4 py-1.5">
+					<Link href="/" scroll={false} className="text-xl font-semibold inline-flex items-center hover:bg-slate-700 transition duration-300 rounded-lg px-4 py-1.5">
 						<Image src="/sheepyLogo.png" alt="Sheepy Logo" width={40} height={40} className="mr-1" />
 						<span className="hidden tn:inline-block">Sheepy</span>
 					</Link>

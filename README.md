@@ -93,6 +93,53 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 
 ---
 
+### Project creation form organisation
+
+**Step 1️⃣**
+
+|               |                     |                          |       |
+| ------------- | ------------------- | ------------------------ | ----- |
+| Project title | Mandatory for draft | Mandatory for submission | 4-100 |
+| Category      | Mandatory for draft | Mandatory for submission | /     |
+| Sub-category  | Optional for draft  | Mandatory for submission | /     |
+
+**Step 2️⃣**
+
+|                     |                    |                          |        |
+| ------------------- | ------------------ | ------------------------ | ------ |
+| Goal                | Optional for draft | Mandatory for submission | 10-500 |
+| Creator motivations | Optional for draft | Optional for submission  | /      |
+| Objectives          | Optional for draft | Optional for submission  | /      |
+
+**Step 3️⃣**
+
+|             |                    |                          |         |
+| ----------- | ------------------ | ------------------------ | ------- |
+| Description | Optional for draft | Mandatory for submission | 20-2000 |
+
+**Step 4️⃣**
+
+|         |                    |                          |        |
+| ------- | ------------------ | ------------------------ | ------ |
+| Summary | Optional for draft | Mandatory for submission | 10-300 |
+| Tags    | Optional for draft | Optional for submission  | /      |
+
+**Step 5️⃣**
+
+|            |                    |                          |       |
+| ---------- | ------------------ | ------------------------ | ----- |
+| Location   | Optional for draft | Mandatory for submission | 4-100 |
+| Start date | Optional for draft | Optional for submission  | /     |
+| Visibility | Optional for draft | Mandatory for submission | /     |
+
+**Step 6️⃣**
+
+|                |                    |                          |       |
+| -------------- | ------------------ | ------------------------ | ----- |
+| Talents needed | Optional for draft | Mandatory for submission | 4-100 |
+
+---
+
 ### ❤ Last required improvements
 
 - [] xxxxxxxx

@@ -15,13 +15,15 @@ const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) =>
 	const onSaveDraft = (event) => {
 		event.preventDefault();
 		closeModal();
-		// Handle form submission
+		// Handle form save draft
+		console.log("🚀 ~ onSaveDraft ~ form data:", formState);
 	};
 
 	const onSubmit = (event) => {
 		event.preventDefault();
 		closeModal();
 		// Handle form submission
+		console.log("🚀 ~ onSubmit ~ form data:", formState);
 	};
 
 	const onChange = (event) => {
