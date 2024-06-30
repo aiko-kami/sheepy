@@ -1,20 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 
 import { IoHappy } from "react-icons/io5";
 import EmojiPicker from "emoji-picker-react";
-
-import { Badge } from "@/components/Badges/Badges";
 
 const CommentReplyForm = ({ displayReply, handleReplySubmit }) => {
 	const [showEmojiPicker, setShowEmojiPicker] = useState(false);
 	const [comment, setComment] = useState("");
 
+	let emojiPickerRef = useRef();
+
 	const onEmojiClick = (event) => {
 		setComment((prevComment) => prevComment + event.emoji);
-		setShowEmojiPicker(false);
 	};
+
+	useEffect(() => {
+		const handler = (event) => {
+			if (showEmojiPicker && emojiPickerRef.current && !emojiPickerRef.current.contains(event.target)) {
+				setShowEmojiPicker(false);
+			}
+		};
+		document.addEventListener("mousedown", handler);
+		document.addEventListener("touchstart", handler);
+		return () => {
+			// Cleanup the event listener
+			document.removeEventListener("mousedown", handler);
+			document.removeEventListener("touchstart", handler);
+		};
+	}, [showEmojiPicker]);
 
 	const onSubmit = (event) => {
 		event.preventDefault();
@@ -44,7 +58,7 @@ const CommentReplyForm = ({ displayReply, handleReplySubmit }) => {
 								></textarea>
 							</div>
 							<div className="flex items-center justify-between px-2 py-2 border-t border-gray-600 relative">
-								<div className="flex">
+								<div className="flex" ref={emojiPickerRef}>
 									<button
 										type="button"
 										className="inline-flex justify-center items-center p-2 text-gray-400 rounded hover:text-white hover:bg-gray-600"
