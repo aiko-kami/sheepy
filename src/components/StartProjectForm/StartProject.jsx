@@ -1,5 +1,5 @@
 import { Button } from "@/components/Buttons/Buttons";
-import Link from "next/link";
+import { IoArrowForward } from "react-icons/io5";
 
 const StartProject = ({ goToStep }) => {
 	return (
@@ -12,7 +12,11 @@ const StartProject = ({ goToStep }) => {
 				</p>
 			</div>
 			<div className="flex justify-center">
-				<Button btnProps={{ btnSize: "xl", type: "button", btnColor: "green", btnRounded: "full", action: () => goToStep(1) }}>Start with step 1</Button>
+				<Button btnProps={{ btnSize: "xl", type: "button", btnColor: "green", btnRounded: "full", action: () => goToStep(1) }}>
+					<div className="flex">
+						Start with step 1 <IoArrowForward className="text-2xl ml-2 mt-0.5" />
+					</div>
+				</Button>
 			</div>
 		</>
 	);

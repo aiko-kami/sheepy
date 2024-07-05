@@ -11,6 +11,7 @@ import StepSix from "@/components/StartProjectForm/Step6";
 import StepFinalValidation from "@/components/StartProjectForm/StepFinalValidation";
 import StepProjectSubmitted from "@/components/StartProjectForm/StepProjectSubmitted";
 import ProgressBar from "@/components/StartProjectForm/ProgressBar";
+import ButtonsNavigation from "@/components/StartProjectForm/ButtonsNavigation";
 
 const StepManager = () => {
 	const [currentStep, setCurrentStep] = useState(0);
@@ -35,14 +36,15 @@ const StepManager = () => {
 		<>
 			{currentStep > 0 && currentStep <= totalSteps && <ProgressBar currentStep={currentStep} percent={percent} />}
 			{currentStep === 0 && <StartProject goToStep={goToStep} />}
-			{currentStep === 1 && <StepOne goToStep={goToStep} />}
-			{currentStep === 2 && <StepTwo goToStep={goToStep} />}
-			{currentStep === 3 && <StepThree goToStep={goToStep} />}
-			{currentStep === 4 && <StepFour goToStep={goToStep} />}
-			{currentStep === 5 && <StepFive goToStep={goToStep} />}
-			{currentStep === 6 && <StepSix goToStep={goToStep} />}
-			{currentStep === totalSteps && <StepFinalValidation goToStep={goToStep} />}
+			{currentStep === 1 && <StepOne />}
+			{currentStep === 2 && <StepTwo />}
+			{currentStep === 3 && <StepThree />}
+			{currentStep === 4 && <StepFour />}
+			{currentStep === 5 && <StepFive />}
+			{currentStep === 6 && <StepSix />}
+			{currentStep === totalSteps && <StepFinalValidation />}
 			{currentStep === 8 && <StepProjectSubmitted goToStep={goToStep} />}
+			<ButtonsNavigation goToStep={goToStep} currentStep={currentStep} totalSteps={totalSteps} />
 		</>
 	);
 };
