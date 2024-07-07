@@ -10,7 +10,7 @@ const NotFoundPage = () => {
 	return (
 		<>
 			<Navbar isHomePage={false} />
-			<main className="relative my-auto mx-2 md:mx-10 xl:mx-36">
+			<main className="relative my-auto mx-2 md:mx-10 lg:mx-36">
 				<section className="flex-grow">
 					<div className="container m-auto py-12">
 						<div className="px-6 py-24 mb-4 m-4 md:m-0">

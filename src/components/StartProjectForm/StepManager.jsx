@@ -13,7 +13,7 @@ import StepProjectSubmitted from "@/components/StartProjectForm/StepProjectSubmi
 import ProgressBar from "@/components/StartProjectForm/ProgressBar";
 import ButtonsNavigation from "@/components/StartProjectForm/ButtonsNavigation";
 
-const StepManager = () => {
+const StepManager = ({ projectForm }) => {
 	const [currentStep, setCurrentStep] = useState(0);
 	const [percent, setPercent] = useState(0);
 	const totalSteps = 7; // Total number of steps
@@ -36,7 +36,7 @@ const StepManager = () => {
 		<>
 			{currentStep > 0 && currentStep <= totalSteps && <ProgressBar currentStep={currentStep} percent={percent} />}
 			{currentStep === 0 && <StartProject goToStep={goToStep} />}
-			{currentStep === 1 && <StepOne />}
+			{currentStep === 1 && <StepOne categories={projectForm.categories} />}
 			{currentStep === 2 && <StepTwo />}
 			{currentStep === 3 && <StepThree />}
 			{currentStep === 4 && <StepFour />}

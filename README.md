@@ -97,46 +97,46 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 
 **Step 1️⃣**
 
-|               |                     |                          |       |
-| ------------- | ------------------- | ------------------------ | ----- |
-| Project title | Mandatory for draft | Mandatory for submission | 4-100 |
-| Category      | Mandatory for draft | Mandatory for submission | /     |
-| Sub-category  | Optional for draft  | Mandatory for submission | /     |
+|               |                     |                          |       |                 |
+| ------------- | ------------------- | ------------------------ | ----- | --------------- |
+| Project title | Mandatory for draft | Mandatory for submission | 4-100 | Input text      |
+| Category      | Mandatory for draft | Mandatory for submission | /     | Dropdown select |
+| Sub-category  | Optional for draft  | Mandatory for submission | /     | Dropdown select |
 
 **Step 2️⃣**
 
-|                     |                    |                          |        |
-| ------------------- | ------------------ | ------------------------ | ------ |
-| Goal                | Optional for draft | Mandatory for submission | 10-500 |
-| Creator motivations | Optional for draft | Optional for submission  | /      |
-| Objectives          | Optional for draft | Optional for submission  | /      |
+|                     |                    |                          |        |           |
+| ------------------- | ------------------ | ------------------------ | ------ | --------- |
+| Goal                | Optional for draft | Mandatory for submission | 10-500 | Text area |
+| Creator motivations | Optional for draft | Optional for submission  | /      | Text area |
+| Objectives          | Optional for draft | Optional for submission  | /      | Text area |
 
 **Step 3️⃣**
 
-|             |                    |                          |         |
-| ----------- | ------------------ | ------------------------ | ------- |
-| Description | Optional for draft | Mandatory for submission | 20-2000 |
+|             |                    |                          |         |           |
+| ----------- | ------------------ | ------------------------ | ------- | --------- |
+| Description | Optional for draft | Mandatory for submission | 20-2000 | Text area |
 
 **Step 4️⃣**
 
-|         |                    |                          |        |
-| ------- | ------------------ | ------------------------ | ------ |
-| Summary | Optional for draft | Mandatory for submission | 10-300 |
-| Tags    | Optional for draft | Optional for submission  | /      |
+|         |                    |                          |        |                            |
+| ------- | ------------------ | ------------------------ | ------ | -------------------------- |
+| Summary | Optional for draft | Mandatory for submission | 10-300 | Text area                  |
+| Tags    | Optional for draft | Optional for submission  | /      | Input text with add button |
 
 **Step 5️⃣**
 
-|            |                    |                          |       |
-| ---------- | ------------------ | ------------------------ | ----- |
-| Location   | Optional for draft | Mandatory for submission | 4-100 |
-| Start date | Optional for draft | Optional for submission  | /     |
-| Visibility | Optional for draft | Mandatory for submission | /     |
+|            |                    |                          |       |               |
+| ---------- | ------------------ | ------------------------ | ----- | ------------- |
+| Location   | Optional for draft | Mandatory for submission | 4-100 | Input text    |
+| Start date | Optional for draft | Optional for submission  | /     | Calendar      |
+| Visibility | Optional for draft | Mandatory for submission | /     | Toggle select |
 
 **Step 6️⃣**
 
-|                |                    |                          |       |
-| -------------- | ------------------ | ------------------------ | ----- |
-| Talents needed | Optional for draft | Mandatory for submission | 4-100 |
+|                |                    |                          |       |                            |
+| -------------- | ------------------ | ------------------------ | ----- | -------------------------- |
+| Talents needed | Optional for draft | Mandatory for submission | 4-100 | Input text with add button |
 
 ---
 

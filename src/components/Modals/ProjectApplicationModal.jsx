@@ -2,9 +2,7 @@
 
 import { useState, useEffect } from "react";
 
-import Image from "next/image";
-import Link from "next/link";
-import { Button, ButtonCircle } from "@/components/Buttons/Buttons";
+import { Button } from "@/components/Buttons/Buttons";
 
 const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) => {
 	const [formState, setFormState] = useState({
