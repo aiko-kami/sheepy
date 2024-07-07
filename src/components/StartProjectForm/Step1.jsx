@@ -52,7 +52,7 @@ const StepOne = ({ categories }) => {
 	return (
 		<>
 			<div className="container min-w-full mx-auto md:px-8 mt-12 mb-20 text-justify md:grid grid-cols-3">
-				<p className="mb-4 text-center">Content of step 1</p>
+				<p className="mb-4 text-center">Presentation of step 1</p>
 				<form onSubmit={handleSubmit} className="col-span-2">
 					{/* List of fields */}
 					<div className="flex justify-center items-center">
