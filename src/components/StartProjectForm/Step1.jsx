@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/Buttons/Buttons";
-import FormField from "@/components/Forms/FormField";
+import FormInputField from "@/components/Forms/FormInputField";
 
 const StepOne = ({ categories }) => {
 	const [formInputs, setFormInputs] = useState({
@@ -51,14 +50,14 @@ const StepOne = ({ categories }) => {
 
 	return (
 		<>
-			<div className="container min-w-full mx-auto md:px-8 mt-12 mb-20 text-justify md:grid grid-cols-3">
-				<p className="mb-4 text-center">Presentation of step 1</p>
+			<div className="container min-w-full mx-auto lg:px-8 mb-20 text-justify xl:grid grid-cols-3 gap-8">
+				<p className="mb-8 text-center">Presentation of step 1</p>
 				<form onSubmit={handleSubmit} className="col-span-2">
 					{/* List of fields */}
 					<div className="flex justify-center items-center">
 						<div className="mb-10 w-full md:w-200">
 							{/* Project title */}
-							<FormField inputName="projectTitle" inputType="text" label="Project title" inputValue={formInputs.projectTitle} onChange={onChange}></FormField>
+							<FormInputField inputName="projectTitle" inputType="text" label="Project title" inputValue={formInputs.projectTitle} onChange={onChange}></FormInputField>
 							<div className="flex flex-col lg:flex-row justify-between">
 								{/* Project category */}
 								<div className="flex-1 mb-6 lg:mb-0 lg:mr-2">
@@ -70,7 +69,7 @@ const StepOne = ({ categories }) => {
 										name="selectedCategory"
 										value={formInputs.selectedCategory}
 										onChange={onChange}
-										className={`block py-2.5 px-2 w-full bg-transparent border-0 border-b-2 border-gray-600 focus:outline-none ${formInputs.selectedCategory === "" ? "text-gray-400" : "text-white"}`}
+										className={`block py-3 px-1 w-full bg-transparent border-0 border-b-2 border-gray-600 focus:outline-none ${formInputs.selectedCategory === "" ? "text-gray-400" : "text-white"}`}
 									>
 										<option value="" className="bg-gray-700 text-gray-400">
 											Choose a category for your project
@@ -94,7 +93,7 @@ const StepOne = ({ categories }) => {
 												name="selectedSubCategory"
 												value={formInputs.selectedSubCategory}
 												onChange={onChange}
-												className={`block py-2.5 px-2 w-full bg-transparent border-0 border-b-2 border-gray-600 focus:outline-none ${
+												className={`block py-3 px-1 w-full bg-transparent border-0 border-b-2 border-gray-600 focus:outline-none ${
 													formInputs.selectedSubCategory === "" ? "text-gray-400" : "text-white"
 												}`}
 											>

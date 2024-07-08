@@ -105,11 +105,10 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 
 **Step 2️⃣**
 
-|                     |                    |                          |        |           |
-| ------------------- | ------------------ | ------------------------ | ------ | --------- |
-| Goal                | Optional for draft | Mandatory for submission | 10-500 | Text area |
-| Creator motivations | Optional for draft | Optional for submission  | /      | Text area |
-| Objectives          | Optional for draft | Optional for submission  | /      | Text area |
+|         |                    |                          |        |           |
+| ------- | ------------------ | ------------------------ | ------ | --------- |
+| Summary | Optional for draft | Mandatory for submission | 10-300 | Text area |
+| Goal    | Optional for draft | Mandatory for submission | 10-500 | Text area |
 
 **Step 3️⃣**
 
@@ -119,18 +118,19 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 
 **Step 4️⃣**
 
-|         |                    |                          |        |                            |
-| ------- | ------------------ | ------------------------ | ------ | -------------------------- |
-| Summary | Optional for draft | Mandatory for submission | 10-300 | Text area                  |
-| Tags    | Optional for draft | Optional for submission  | /      | Input text with add button |
+|                     |                    |                         |     |           |
+| ------------------- | ------------------ | ----------------------- | --- | --------- |
+| Creator motivations | Optional for draft | Optional for submission | /   | Text area |
+| Objectives          | Optional for draft | Optional for submission | /   | Text area |
 
 **Step 5️⃣**
 
-|            |                    |                          |       |               |
-| ---------- | ------------------ | ------------------------ | ----- | ------------- |
-| Location   | Optional for draft | Mandatory for submission | 4-100 | Input text    |
-| Start date | Optional for draft | Optional for submission  | /     | Calendar      |
-| Visibility | Optional for draft | Mandatory for submission | /     | Toggle select |
+|            |                    |                          |       |                            |
+| ---------- | ------------------ | ------------------------ | ----- | -------------------------- |
+| Location   | Optional for draft | Mandatory for submission | 4-100 | Input text                 |
+| Tags       | Optional for draft | Optional for submission  | /     | Input text with add button |
+| Start date | Optional for draft | Optional for submission  | /     | Calendar                   |
+| Visibility | Optional for draft | Mandatory for submission | /     | Toggle select              |
 
 **Step 6️⃣**
 

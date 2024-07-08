@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/Buttons/Buttons";
-import FormField from "@/components/Forms/FormField";
+import FormInputField from "@/components/Forms/FormInputField";
 
 import { IoAtOutline, IoLockClosed } from "react-icons/io5";
 
@@ -28,20 +28,20 @@ const UserCardDetails = ({ user }) => {
 					{/* List of fields */}
 					<div className="mb-10">
 						{/* Email */}
-						<FormField inputName={"email"} inputType={"email"} label={"Email"} inputValue={user.email}>
+						<FormInputField inputName={"email"} inputType={"email"} label={"Email"} inputValue={user.email}>
 							<IoAtOutline className="w-5 h-5 text-gray-400" />
-						</FormField>
+						</FormInputField>
 
 						{/* Old password */}
-						<FormField inputName={"oldPassword"} inputType={"password"} label={"Old Password"} inputValue={oldPassword}>
+						<FormInputField inputName={"oldPassword"} inputType={"password"} label={"Old Password"} inputValue={oldPassword}>
 							<IoLockClosed className="w-5 h-5 text-gray-400" />
-						</FormField>
+						</FormInputField>
 
 						{/* New password */}
-						<FormField inputName={"newPassword"} inputType={"password"} label={"New password"} inputValue={newPassword}></FormField>
+						<FormInputField inputName={"newPassword"} inputType={"password"} label={"New password"} inputValue={newPassword}></FormInputField>
 
 						{/* Repeat new password */}
-						<FormField inputName={"repeatNewPassword"} inputType={"password"} label={"Repeat new password"} inputValue={repeatNewPassword}></FormField>
+						<FormInputField inputName={"repeatNewPassword"} inputType={"password"} label={"Repeat new password"} inputValue={repeatNewPassword}></FormInputField>
 					</div>
 					{/* Button Update account (submit form) */}
 					<div className="text-center">

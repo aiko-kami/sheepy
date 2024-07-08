@@ -1,4 +1,4 @@
-const FormField = ({ inputName, inputType, label, inputValue, onChange, children }) => {
+const FormInputField = ({ inputName, inputType, label, inputValue, onChange, children }) => {
 	return (
 		<div className="relative z-0 mb-6 w-full">
 			{/* icon on the left of the field */}
@@ -21,4 +21,4 @@ const FormField = ({ inputName, inputType, label, inputValue, onChange, children
 		</div>
 	);
 };
-export default FormField;
+export default FormInputField;

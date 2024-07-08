@@ -1,13 +1,32 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/Buttons/Buttons";
-import FormField from "@/components/Forms/FormField";
+import FormInputField from "@/components/Forms/FormInputField";
 
 import { IoLocationOutline, IoEarthOutline, IoBusinessOutline, IoChatbubbleEllipsesOutline, IoLinkOutline } from "react-icons/io5";
 
 const UserCardDetails = ({ user }) => {
-	const onSubmit = () => {};
-	const onChange = () => {};
+	const [formInputs, setFormInputs] = useState({
+		locationCity: user.locationCity,
+		locationCountry: user.locationCountry,
+		languages: user.languages.join(", "),
+		company: user.company,
+		website: user.website,
+	});
+
+	const onChange = (e) => {
+		const { name, value } = e.target;
+		setFormInputs((prevState) => ({
+			...prevState,
+			[name]: value,
+		}));
+	};
+	// Handle form submission
+	const onSubmit = (e) => {
+		e.preventDefault();
+		console.log("Form data:", formInputs);
+	};
 
 	return (
 		<div>
@@ -19,29 +38,25 @@ const UserCardDetails = ({ user }) => {
 						{/* List of fields */}
 						<div className="mb-10">
 							{/* City */}
-							<FormField inputName={"city"} inputType={"text"} label={"City"} inputValue={user.locationCity}>
+							<FormInputField inputName={"city"} inputType={"text"} label={"City"} inputValue={formInputs.locationCity} onChange={onChange}>
 								<IoLocationOutline className="w-5 h-5 text-gray-400" />
-							</FormField>
-
+							</FormInputField>
 							{/* Country */}
-							<FormField inputName={"country"} inputType={"text"} label={"Country"} inputValue={user.locationCountry}>
+							<FormInputField inputName={"country"} inputType={"text"} label={"Country"} inputValue={formInputs.locationCountry} onChange={onChange}>
 								<IoEarthOutline className="w-5 h-5 text-gray-400" />
-							</FormField>
-
+							</FormInputField>
 							{/* Language */}
-							<FormField inputName={"languages"} inputType={"text"} label={"Languages"} inputValue={user.languages.join(", ")}>
+							<FormInputField inputName={"languages"} inputType={"text"} label={"Languages"} inputValue={formInputs.languages} onChange={onChange}>
 								<IoChatbubbleEllipsesOutline className="w-5 h-5 text-gray-400" />
-							</FormField>
-
+							</FormInputField>
 							{/* Company */}
-							<FormField inputName={"company"} inputType={"text"} label={"Company"} inputValue={user.company}>
+							<FormInputField inputName={"company"} inputType={"text"} label={"Company"} inputValue={formInputs.company} onChange={onChange}>
 								<IoBusinessOutline className="w-5 h-5 text-gray-400" />
-							</FormField>
-
+							</FormInputField>
 							{/* Website */}
-							<FormField inputName={"website"} inputType={"text"} label={"Website"} inputValue={user.website}>
+							<FormInputField inputName={"website"} inputType={"text"} label={"Website"} inputValue={formInputs.website} onChange={onChange}>
 								<IoLinkOutline className="w-5 h-5 text-gray-400" />
-							</FormField>
+							</FormInputField>
 						</div>
 						{/* Button Update profile (submit form) */}
 						<div className="text-center">
