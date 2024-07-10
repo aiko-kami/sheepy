@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/Buttons/Buttons";
-import FormInputField from "@/components/Forms/FormInputField";
+import InputField from "@/components/Forms/InputField";
 
 import { IoLocationOutline, IoEarthOutline, IoBusinessOutline, IoChatbubbleEllipsesOutline, IoLinkOutline } from "react-icons/io5";
 
@@ -38,25 +38,25 @@ const UserCardDetails = ({ user }) => {
 						{/* List of fields */}
 						<div className="mb-10">
 							{/* City */}
-							<FormInputField inputName={"city"} inputType={"text"} label={"City"} inputValue={formInputs.locationCity} onChange={onChange}>
+							<InputField inputName={"locationCity"} inputType={"text"} label={"City"} inputValue={formInputs.locationCity} onChange={onChange}>
 								<IoLocationOutline className="w-5 h-5 text-gray-400" />
-							</FormInputField>
+							</InputField>
 							{/* Country */}
-							<FormInputField inputName={"country"} inputType={"text"} label={"Country"} inputValue={formInputs.locationCountry} onChange={onChange}>
+							<InputField inputName={"locationCountry"} inputType={"text"} label={"Country"} inputValue={formInputs.locationCountry} onChange={onChange}>
 								<IoEarthOutline className="w-5 h-5 text-gray-400" />
-							</FormInputField>
+							</InputField>
 							{/* Language */}
-							<FormInputField inputName={"languages"} inputType={"text"} label={"Languages"} inputValue={formInputs.languages} onChange={onChange}>
+							<InputField inputName={"languages"} inputType={"text"} label={"Languages"} inputValue={formInputs.languages} onChange={onChange}>
 								<IoChatbubbleEllipsesOutline className="w-5 h-5 text-gray-400" />
-							</FormInputField>
+							</InputField>
 							{/* Company */}
-							<FormInputField inputName={"company"} inputType={"text"} label={"Company"} inputValue={formInputs.company} onChange={onChange}>
+							<InputField inputName={"company"} inputType={"text"} label={"Company"} inputValue={formInputs.company} onChange={onChange}>
 								<IoBusinessOutline className="w-5 h-5 text-gray-400" />
-							</FormInputField>
+							</InputField>
 							{/* Website */}
-							<FormInputField inputName={"website"} inputType={"text"} label={"Website"} inputValue={formInputs.website} onChange={onChange}>
+							<InputField inputName={"website"} inputType={"text"} label={"Website"} inputValue={formInputs.website} onChange={onChange}>
 								<IoLinkOutline className="w-5 h-5 text-gray-400" />
-							</FormInputField>
+							</InputField>
 						</div>
 						{/* Button Update profile (submit form) */}
 						<div className="text-center">

@@ -9,11 +9,28 @@ import Popover from "@/components/Popover";
 import { Button } from "@/components/Buttons/Buttons";
 import PopoverContent from "./PopoverContent";
 import ProjectCounter from "@/components/Common/ProjectCounter";
+import TextAreaField from "@/components/Forms/TextAreaField";
 
 const UserCardPictureBio = ({ user }) => {
+	const [formInputs, setFormInputs] = useState({
+		description: user.description || "",
+		bio: user.bio || "",
+	});
+
 	const [displayPopover, setDisplayPopover] = useState(false);
-	const onSubmit = () => {};
-	const onChange = () => {};
+
+	const onChange = (e) => {
+		const { name, value } = e.target;
+		setFormInputs((prevState) => ({
+			...prevState,
+			[name]: value,
+		}));
+	};
+
+	const onSubmit = (e) => {
+		e.preventDefault();
+		console.log("Form data:", formInputs);
+	};
 
 	return (
 		<div className="row-span-2 bg-base-450 shadow-2xl relative pb-8">
@@ -61,36 +78,32 @@ const UserCardPictureBio = ({ user }) => {
 						<form onSubmit={onSubmit}>
 							{/* Description */}
 							<div className="relative z-0 mb-6 w-full">
-								<label htmlFor="description" className="block mb-2 text-sm font-medium text-gray-400">
-									Description
-								</label>
-								<textarea
-									name="description"
-									id="description"
-									className="block p-2 w-full text-sm bg-gray-700 rounded-lg border border-gray-600 placeholder-gray-400"
+								<TextAreaField
+									label="Description"
+									labelStyle="block mb-2 text-sm font-medium text-gray-400"
+									inputName="description"
+									inputValue={formInputs.description}
+									onChange={onChange}
 									placeholder="Say few words about yourself with 100 characters maximum..."
 									maxLength={100}
 									rows="2"
-									value={user.description}
-									onChange={onChange}
-								></textarea>
+									required={false}
+								/>
 							</div>
 
 							{/* Bio */}
 							<div className="relative z-0 mb-10 w-full">
-								<label htmlFor="bio" className="block mb-2 text-sm font-medium text-gray-400">
-									Bio
-								</label>
-								<textarea
-									name="bio"
-									id="bio"
-									className="block p-2 w-full text-sm bg-gray-700 rounded-lg border border-gray-600 placeholder-gray-400"
+								<TextAreaField
+									label="Bio"
+									labelStyle="block mb-2 text-sm font-medium text-gray-400"
+									inputName="bio"
+									inputValue={formInputs.bio}
+									onChange={onChange}
 									placeholder="Add your bio or resumé..."
 									maxLength={700}
 									rows="8"
-									value={user.bio}
-									onChange={onChange}
-								></textarea>
+									required={false}
+								/>
 							</div>
 							{/* Button Update profile (submit form) */}
 							<div className="text-center">

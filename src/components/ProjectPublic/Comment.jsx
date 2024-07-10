@@ -6,7 +6,7 @@ import { DateTime } from "luxon";
 import { IoArrowUndoOutline, IoClose } from "react-icons/io5";
 
 import { Badge } from "@/components/Badges/Badges";
-import CommentReplyForm from "@/components/ProjectPublic/CommentReplyForm";
+import CommentReplyForm from "@/components/Forms/CommentReplyForm";
 
 const Comment = ({ comment }) => {
 	const { username, userId, profilePicture, dateTime, message, isOwner, answers } = comment;

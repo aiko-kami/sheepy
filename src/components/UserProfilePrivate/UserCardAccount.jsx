@@ -1,23 +1,32 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/Buttons/Buttons";
-import FormInputField from "@/components/Forms/FormInputField";
+import InputField from "@/components/Forms/InputField";
 
 import { IoAtOutline, IoLockClosed } from "react-icons/io5";
 
 const UserCardDetails = ({ user }) => {
-	let oldPassword = "";
-	let newPassword = "";
-	let repeatNewPassword = "";
+	const [formInputs, setFormInputs] = useState({
+		email: user.email,
+		oldPassword: "",
+		newPassword: "",
+		repeatNewPassword: "",
+	});
+
+	const onChange = (e) => {
+		const { name, value } = e.target;
+		setFormInputs((prevState) => ({
+			...prevState,
+			[name]: value,
+		}));
+	};
 
 	// Handle form submission
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		// You can perform actions like searching here
-		console.log("Search string:", searchInput);
+		console.log("Form data:", formInputs);
 	};
-
-	const onChange = () => {};
 
 	return (
 		<div className="bg-base-450 shadow-2xl p-6 pb-8">
@@ -28,20 +37,24 @@ const UserCardDetails = ({ user }) => {
 					{/* List of fields */}
 					<div className="mb-10">
 						{/* Email */}
-						<FormInputField inputName={"email"} inputType={"email"} label={"Email"} inputValue={user.email}>
+						<InputField inputName={"email"} inputType={"email"} label={"Email"} inputValue={formInputs.email} onChange={onChange}>
 							<IoAtOutline className="w-5 h-5 text-gray-400" />
-						</FormInputField>
+						</InputField>
 
 						{/* Old password */}
-						<FormInputField inputName={"oldPassword"} inputType={"password"} label={"Old Password"} inputValue={oldPassword}>
+						<InputField inputName="oldPassword" inputType="password" label="Old Password" inputValue={formInputs.oldPassword} onChange={onChange}>
 							<IoLockClosed className="w-5 h-5 text-gray-400" />
-						</FormInputField>
+						</InputField>
 
 						{/* New password */}
-						<FormInputField inputName={"newPassword"} inputType={"password"} label={"New password"} inputValue={newPassword}></FormInputField>
+						<InputField inputName="newPassword" inputType="password" label="New Password" inputValue={formInputs.newPassword} onChange={onChange}>
+							<IoLockClosed className="w-5 h-5 text-gray-400" />
+						</InputField>
 
 						{/* Repeat new password */}
-						<FormInputField inputName={"repeatNewPassword"} inputType={"password"} label={"Repeat new password"} inputValue={repeatNewPassword}></FormInputField>
+						<InputField inputName="repeatNewPassword" inputType="password" label="Repeat New Password" inputValue={formInputs.repeatNewPassword} onChange={onChange}>
+							<IoLockClosed className="w-5 h-5 text-gray-400" />
+						</InputField>
 					</div>
 					{/* Button Update account (submit form) */}
 					<div className="text-center">

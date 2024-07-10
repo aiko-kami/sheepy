@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import FormInputField from "@/components/Forms/FormInputField";
+import InputField from "@/components/Forms/InputField";
 
 const StepTwo = () => {
 	const [formInputs, setFormInputs] = useState({
@@ -31,9 +31,9 @@ const StepTwo = () => {
 					<div className="flex justify-center items-center">
 						<div className="mb-10 w-full md:w-200">
 							{/* Project summary */}
-							<FormInputField inputName="projectSummary" inputType="text" label="Project summary" inputValue={formInputs.projectSummary} onChange={onChange}></FormInputField>
+							<InputField inputName="projectSummary" inputType="text" label="Project summary" inputValue={formInputs.projectSummary} onChange={onChange}></InputField>
 							{/* Project goal */}
-							<FormInputField inputName="projectGoal" inputType="text" label="Project goal" inputValue={formInputs.projectGoal} onChange={onChange}></FormInputField>
+							<InputField inputName="projectGoal" inputType="text" label="Project goal" inputValue={formInputs.projectGoal} onChange={onChange}></InputField>
 						</div>
 					</div>
 				</form>

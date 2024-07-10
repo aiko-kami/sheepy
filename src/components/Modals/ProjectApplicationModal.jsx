@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 
 import { Button } from "@/components/Buttons/Buttons";
+import TextAreaField from "@/components/Forms/TextAreaField";
 
 const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) => {
 	const [formState, setFormState] = useState({
@@ -89,19 +90,17 @@ const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) =>
 
 								{/* Message */}
 								<div className="relative z-0 mb-6 w-full">
-									<label htmlFor="description" className="block mb-2">
-										Describe why you want to join this project:
-									</label>
-									<textarea
-										name="message"
-										id="message"
-										className="block p-2 w-full text-sm bg-gray-700 focus:bg-gray-600 rounded-lg border border-gray-600 placeholder-gray-400"
-										placeholder="Share your motivation for joining this project and introduce yourself briefly..."
-										maxLength={100}
-										rows="8"
-										value={formState.message}
+									<TextAreaField
+										label="Describe why you want to join this project:"
+										labelStyle="block mb-2"
+										inputName="message"
+										inputValue={formState.message}
 										onChange={onChange}
-									></textarea>
+										placeholder="Share your motivation for joining this project and introduce yourself briefly..."
+										maxLength={4000}
+										rows="8"
+										required={true}
+									/>
 								</div>
 
 								{/* Button Send application (submit form) */}

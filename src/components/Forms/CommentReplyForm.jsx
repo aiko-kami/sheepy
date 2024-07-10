@@ -49,13 +49,15 @@ const CommentReplyForm = ({ displayReply, handleReplySubmit }) => {
 									Your comment
 								</label>
 								<textarea
+									name="comment"
 									id="comment"
 									value={comment}
 									onChange={(e) => setComment(e.target.value)}
-									rows="4"
 									className="w-full resize-none rounded-t-lg p-2 bg-gray-800 border-0 focus:ring-0 placeholder-gray-400"
 									placeholder="Write a comment..."
-									required
+									maxLength={1000}
+									rows="4"
+									required={true}
 								></textarea>
 							</div>
 							<div className="flex items-center justify-end sm:justify-between px-2 py-2 border-t border-gray-600 relative">
