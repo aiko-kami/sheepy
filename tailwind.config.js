@@ -43,6 +43,12 @@ module.exports = {
 				6: "6px",
 				7: "7px",
 			},
+			resize: {
+				none: "none",
+				x: "horizontal",
+				y: "vertical",
+				both: "both",
+			},
 			colors: {
 				base: {
 					100: "#ffffff",

@@ -9,7 +9,7 @@ export const metadata = {
 const StartMyProject = () => {
 	return (
 		<>
-			<div className="container min-w-full mx-auto px-2 md:px-8 mt-6 text-justify">
+			<div className="container min-w-full mx-auto px-2 md:px-8 text-justify">
 				<StepManager projectForm={projectForm} />
 			</div>
 		</>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import InputField from "@/components/Forms/InputField";
+import TextAreaField from "@/components/Forms/TextAreaField";
 
 const StepTwo = () => {
 	const [formInputs, setFormInputs] = useState({
@@ -24,16 +24,41 @@ const StepTwo = () => {
 
 	return (
 		<>
-			<div className="container min-w-full mx-auto lg:px-8 mb-20 text-justify xl:grid grid-cols-3 gap-8">
-				<p className="mb-8 text-center">Presentation of step 2</p>
-				<form onSubmit={handleSubmit} className="col-span-2">
+			<div className="container min-w-full mx-auto lg:px-8 mb-8 md:mb-20 text-justify xl:grid grid-cols-5 gap-8">
+				<div className="col-span-2 xl:pl-14">
+					<p className="text-xl mb-2 text-center">Let's add some details to your project!</p>
+					<p className="mb-6 text-justify xl:text-center">Give a brief summary and set a goal for your project.</p>
+				</div>
+				<form onSubmit={handleSubmit} className="col-span-3">
 					{/* List of fields */}
-					<div className="flex justify-center items-center">
-						<div className="mb-10 w-full md:w-200">
-							{/* Project summary */}
-							<InputField inputName="projectSummary" inputType="text" label="Project summary" inputValue={formInputs.projectSummary} onChange={onChange}></InputField>
+					<div className="flex justify-end items-center">
+						<div className="w-full md:w-200">
+							<div className="mb-4">
+								{/* Project summary */}
+								<TextAreaField
+									label="Project summary:"
+									labelStyle="block mb-2"
+									inputName="projectSummary"
+									inputValue={formInputs.projectSummary}
+									onChange={onChange}
+									placeholder="Summarize your project in a few sentences... (300 characters max)"
+									maxLength={300}
+									rows="6"
+									required={true}
+								/>
+							</div>
 							{/* Project goal */}
-							<InputField inputName="projectGoal" inputType="text" label="Project goal" inputValue={formInputs.projectGoal} onChange={onChange}></InputField>
+							<TextAreaField
+								label="Project goal:"
+								labelStyle="block mb-2"
+								inputName="projectGoal"
+								inputValue={formInputs.projectGoal}
+								onChange={onChange}
+								placeholder="What are the main goals of your project?... (500 characters max)"
+								maxLength={500}
+								rows="6"
+								required={true}
+							/>
 						</div>
 					</div>
 				</form>

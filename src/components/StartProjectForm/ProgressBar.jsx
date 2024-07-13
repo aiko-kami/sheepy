@@ -1,7 +1,7 @@
 const ProgressBar = ({ currentStep, percent }) => {
 	return (
 		<>
-			<div className="flex justify-between md:mx-4 relative">
+			<div className="flex justify-between md:mx-4 pt-3 md:pt-6 relative">
 				<span className="text-2xl lg:text-4xl mb-1 lg:mb-3 font-medium text-white">Step {currentStep}</span>
 				<span className="text-2xl mb-1 absolute right-0 bottom-0 text-white">{percent}%</span>
 			</div>

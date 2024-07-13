@@ -1,10 +1,69 @@
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
+import TextAreaField from "@/components/Forms/TextAreaField";
 
 const StepFour = () => {
+	const [formInputs, setFormInputs] = useState({
+		creatorMotivations: "",
+		projectObjectives: "",
+	});
+
+	const onChange = (e) => {
+		const { name, value } = e.target;
+		setFormInputs((prevState) => ({
+			...prevState,
+			[name]: value,
+		}));
+	};
+	// Handle form submission
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		console.log("Form data:", formInputs);
+	};
+
 	return (
 		<>
-			<div className="container mx-auto p-8 mt-12 mb-20 text-justify">
-				<p className="mb-4 mx-1/5 text-center">Content of step 4</p>
+			<div className="container min-w-full mx-auto lg:px-8 mb-8 md:mb-20 text-justify xl:grid grid-cols-5 gap-8">
+				<div className="col-span-2 xl:pl-14">
+					<p className="text-xl mb-2 text-center">Let's dive even deeper into your project!</p>
+					<p className="mb-6 text-justify">
+						This step is optional. Share what motivates you and what you aim to accomplish with your project. Providing this information can give valuable insight into your vision and goals.
+					</p>
+				</div>
+				<form onSubmit={handleSubmit} className="col-span-3">
+					{/* List of fields */}
+					<div className="flex justify-end items-center">
+						<div className="w-full md:w-200">
+							<div className="mb-4">
+								{/* Project summary */}
+								<TextAreaField
+									label="Your motivations:"
+									labelStyle="block mb-2"
+									inputName="creatorMotivations"
+									inputValue={formInputs.creatorMotivations}
+									onChange={onChange}
+									placeholder="What inspired you to start this project?... (Optional)"
+									maxLength={500}
+									rows="4"
+									required={false}
+								/>
+							</div>
+							{/* Project goal */}
+							<TextAreaField
+								label="Objectives:"
+								labelStyle="block mb-2"
+								inputName="projectObjectives"
+								inputValue={formInputs.projectObjectives}
+								onChange={onChange}
+								placeholder="What are the key goals you're aiming to achieve?... (Optional)"
+								maxLength={500}
+								rows="5"
+								required={false}
+							/>
+						</div>
+					</div>
+				</form>
 			</div>
 		</>
 	);

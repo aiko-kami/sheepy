@@ -50,11 +50,14 @@ const StepOne = ({ categories }) => {
 
 	return (
 		<>
-			<div className="container min-w-full mx-auto lg:px-8 mb-20 text-justify xl:grid grid-cols-3 gap-8">
-				<p className="mb-8 text-center">Presentation of step 1</p>
-				<form onSubmit={handleSubmit} className="col-span-2">
+			<div className="container min-w-full mx-auto lg:px-8 mb-8 md:mb-20 text-justify xl:grid grid-cols-5 gap-8">
+				<div className="col-span-2 xl:pl-14">
+					<p className="text-xl mb-2 text-center">Let's start with the basics!</p>
+					<p className="mb-6 text-justify">Give your project a cool title and pick a category and a sub-category that best describe it. This helps people know what your project is all about.</p>
+				</div>
+				<form onSubmit={handleSubmit} className="col-span-3">
 					{/* List of fields */}
-					<div className="flex justify-center items-center">
+					<div className="flex justify-end items-center">
 						<div className="mb-10 w-full md:w-200">
 							{/* Project title */}
 							<InputField inputName="projectTitle" inputType="text" label="Project title" inputValue={formInputs.projectTitle} onChange={onChange}></InputField>

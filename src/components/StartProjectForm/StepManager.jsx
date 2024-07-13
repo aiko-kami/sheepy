@@ -34,16 +34,18 @@ const StepManager = ({ projectForm }) => {
 
 	return (
 		<>
-			{currentStep > 0 && currentStep <= totalSteps && <ProgressBar currentStep={currentStep} percent={percent} />}
 			{currentStep === 0 && <StartProject goToStep={goToStep} />}
-			{currentStep === 1 && <StepOne categories={projectForm.categories} />}
-			{currentStep === 2 && <StepTwo />}
-			{currentStep === 3 && <StepThree />}
-			{currentStep === 4 && <StepFour />}
-			{currentStep === 5 && <StepFive />}
-			{currentStep === 6 && <StepSix />}
-			{currentStep === totalSteps && <StepFinalValidation />}
-			{currentStep === 8 && <StepProjectSubmitted goToStep={goToStep} />}
+			{currentStep > 0 && currentStep <= totalSteps && <ProgressBar currentStep={currentStep} percent={percent} />}
+			<div className="h-160 overflow-auto flex items-center mb-4">
+				{currentStep === 1 && <StepOne categories={projectForm.categories} />}
+				{currentStep === 2 && <StepTwo />}
+				{currentStep === 3 && <StepThree />}
+				{currentStep === 4 && <StepFour />}
+				{currentStep === 5 && <StepFive />}
+				{currentStep === 6 && <StepSix />}
+				{currentStep === totalSteps && <StepFinalValidation />}
+				{currentStep === 8 && <StepProjectSubmitted goToStep={goToStep} />}
+			</div>
 			<ButtonsNavigation goToStep={goToStep} currentStep={currentStep} totalSteps={totalSteps} />
 		</>
 	);
