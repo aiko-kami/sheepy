@@ -1,4 +1,4 @@
-const InputField = ({ inputName, inputType, label, inputValue, onChange, children }) => {
+const InputField = ({ inputName, inputType, label, inputValue, onChange, disabled = false, children }) => {
 	return (
 		<div className="relative z-0 mb-6 w-full">
 			{/* icon on the left of the field */}
@@ -9,12 +9,17 @@ const InputField = ({ inputName, inputType, label, inputValue, onChange, childre
 				id={inputName}
 				value={inputValue}
 				onChange={onChange}
-				className="block py-2.5 px-0 w-full text-white bg-transparent border-0 border-b-2 border-gray-600 appearance-none focus:outline-none hover:shadow-lg focus:ring-0 focus:border-blue-500 peer"
+				className={`block py-2.5 px-0 w-full text-white bg-transparent border-0 border-b-2 border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-500 peer ${
+					disabled ? "" : "hover:shadow-lg"
+				}`}
 				placeholder=" "
+				disabled={disabled}
 			/>
 			<label
 				htmlFor={label}
-				className="peer-focus:font-medium absolute text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+				className={`peer-focus:font-medium absolute duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 ${
+					disabled ? "text-gray-500 line-through" : "text-gray-200"
+				}`}
 			>
 				{label}
 			</label>

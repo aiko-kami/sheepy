@@ -9,7 +9,7 @@ const Button = ({ children, btnProps }) => {
 			size = "text-xs px-3.5 py-1.5";
 			break;
 		case "sm":
-			size = "text-sm font-medium px-4 py-2";
+			size = "text-sm font-medium px-3 py-2";
 			break;
 		case "std":
 			size = "text-base px-4 py-2";

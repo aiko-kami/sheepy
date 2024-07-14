@@ -33,7 +33,7 @@ const StepTwo = () => {
 					{/* List of fields */}
 					<div className="flex justify-end items-center">
 						<div className="w-full md:w-200">
-							<div className="mb-4">
+							<div className="mb-4 xl:mb-8">
 								{/* Project summary */}
 								<TextAreaField
 									label="Project summary:"

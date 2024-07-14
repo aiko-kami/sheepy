@@ -128,9 +128,9 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 |            |                    |                          |       |                            |
 | ---------- | ------------------ | ------------------------ | ----- | -------------------------- |
 | Location   | Optional for draft | Mandatory for submission | 4-100 | Input text                 |
-| Tags       | Optional for draft | Optional for submission  | /     | Input text with add button |
-| Start date | Optional for draft | Optional for submission  | /     | Calendar                   |
 | Visibility | Optional for draft | Mandatory for submission | /     | Toggle select              |
+| Start date | Optional for draft | Optional for submission  | /     | Calendar                   |
+| Tags       | Optional for draft | Optional for submission  | /     | Input text with add button |
 
 **Step 6️⃣**
 

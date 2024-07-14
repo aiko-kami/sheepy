@@ -35,8 +35,8 @@ const StepFour = () => {
 					{/* List of fields */}
 					<div className="flex justify-end items-center">
 						<div className="w-full md:w-200">
-							<div className="mb-4">
-								{/* Project summary */}
+							<div className="mb-4 xl:mb-8">
+								{/* Creator motivations */}
 								<TextAreaField
 									label="Your motivations:"
 									labelStyle="block mb-2"
@@ -49,7 +49,7 @@ const StepFour = () => {
 									required={false}
 								/>
 							</div>
-							{/* Project goal */}
+							{/* Project objectives */}
 							<TextAreaField
 								label="Objectives:"
 								labelStyle="block mb-2"
