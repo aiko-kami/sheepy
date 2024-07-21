@@ -25,7 +25,7 @@ const StepThree = () => {
 		<>
 			<div className="container min-w-full mx-auto lg:px-8 mb-8 md:mb-20 text-justify xl:grid grid-cols-5 gap-8">
 				<div className="col-span-2 xl:pl-14">
-					<p className="text-xl mb-2 text-center">Now it’s time to dive into the details!</p>
+					<p className="text-xl mb-4 text-center">Now it’s time to dive into the details!</p>
 					<p className="mb-6 text-justify">Share a complete description of your project to give others a clear understanding of what it's all about.</p>
 				</div>
 				<form onSubmit={handleSubmit} className="col-span-3">
@@ -40,9 +40,9 @@ const StepThree = () => {
 									inputName="projectDescription"
 									inputValue={formInputs.projectDescription}
 									onChange={onChange}
-									placeholder="What's the story behind your project?... (2000 characters max)"
-									maxLength={2000}
-									rows="16"
+									placeholder="What's the story behind your project?... (10 000 characters max)"
+									maxLength={10000}
+									rows="20"
 									required={true}
 								/>
 							</div>

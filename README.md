@@ -67,9 +67,9 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 - [x] Project description public page
 - [x] Search projects page
 - [x] Search talents page
+- [] Project creation page
 - [] Project description private page
 - [] Project edition page
-- [] Project creation page
 - [] View my profile page
 
 ### Components
@@ -77,19 +77,19 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 - [x] Tabs
 - [x] Modal
 - [x] Talent card
+- [x] Project card for search
+- [x] Talent card for search
+- [x] List of categories (buttons)
 - [] Other mosaic
-- [] Project card for search
 - [] Project table for search
-- [] Talent card for search
 - [] Talent table for search
-- [] List of categories (buttons)
 - [] Carousel with profiles or projects
 - [] Video presentation
 
 ### Other
 
-- [] Add button "See more" on the home page
-- [] Add project details (category, tags...) in project horizontal card
+- [x] Add button "See more" on the home page
+- [x] Add project details (category) in project horizontal card
 
 ---
 

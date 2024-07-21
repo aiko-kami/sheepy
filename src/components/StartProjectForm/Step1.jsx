@@ -52,8 +52,8 @@ const StepOne = ({ categories }) => {
 		<>
 			<div className="container min-w-full mx-auto lg:px-8 mb-8 md:mb-20 text-justify xl:grid grid-cols-5 gap-8">
 				<div className="col-span-2 xl:pl-14">
-					<p className="text-xl mb-2 text-center">Let's start with the basics!</p>
-					<p className="mb-6 text-justify">Give your project a cool title and pick a category and a sub-category that best describe it. This helps people know what your project is all about.</p>
+					<p className="text-xl mb-4 text-center">Let's start with the basics!</p>
+					<p className="mb-6 text-justify">Give your project a cool title and pick a category and sub-category that best suit your project.</p>
 				</div>
 				<form onSubmit={handleSubmit} className="col-span-3">
 					{/* List of fields */}
@@ -65,7 +65,7 @@ const StepOne = ({ categories }) => {
 								{/* Project category */}
 								<div className="flex-1 mb-6 lg:mb-0 lg:mr-2">
 									<label htmlFor="category" className="sr-only">
-										Choose a category for your project:
+										Choose a category:
 									</label>
 									<select
 										id="category"
@@ -75,7 +75,7 @@ const StepOne = ({ categories }) => {
 										className={`block py-3 px-1 w-full bg-transparent border-0 border-b-2 border-gray-600 focus:outline-none ${formInputs.selectedCategory === "" ? "text-gray-400" : "text-white"}`}
 									>
 										<option value="" className="bg-gray-700 text-gray-400">
-											Choose a category for your project
+											Choose a category
 										</option>
 										{categories.map((category, index) => (
 											<option key={index} className="bg-gray-700 text-gray-400" value={category.name}>
@@ -89,7 +89,7 @@ const StepOne = ({ categories }) => {
 									{formInputs.selectedCategory && subCategories.length > 0 && (
 										<>
 											<label htmlFor="subCategory" className="sr-only">
-												Choose a sub-category for your project
+												Choose a sub-category
 											</label>
 											<select
 												id="subCategory"
@@ -105,7 +105,7 @@ const StepOne = ({ categories }) => {
 												</option>
 												{subCategories.map((subCategory, index) => (
 													<option key={index} className="bg-gray-700 text-gray-400" value={subCategory.name}>
-														{subCategory.name}
+														{subCategory.name} {subCategory.symbol}
 													</option>
 												))}
 											</select>

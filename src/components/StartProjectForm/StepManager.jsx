@@ -24,7 +24,9 @@ const StepManager = ({ projectForm }) => {
 
 	useEffect(() => {
 		let newPercent;
-		if (currentStep === totalSteps) {
+		if (currentStep === 1) {
+			newPercent = 1; // Special case for final step validation
+		} else if (currentStep === totalSteps) {
 			newPercent = 99; // Special case for final step validation
 		} else {
 			newPercent = (((currentStep - 1) / (totalSteps - 1)) * 100).toFixed(0);
