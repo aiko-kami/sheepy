@@ -13,7 +13,7 @@ const StepFinalValidation = ({ formInputs }) => {
 
 	return (
 		<>
-			<div className="container min-w-full m-auto lg:px-8 text-justify">
+			<div className="container min-w-full m-auto pr-2 lg:px-8 text-justify">
 				<h1 className="text-4xl md:text-7xl pt-4 md:pt-6 mb-8 md:mb-20 text-center">Final step</h1>
 				<p className="mb-20">
 					Before you submit your project, please take a moment to review all the information you have provided. Carefully check each field for any errors or omissions. Make sure that your project

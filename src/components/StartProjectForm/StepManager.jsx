@@ -118,7 +118,7 @@ const StepManager = ({ projectForm }) => {
 		<>
 			{currentStep === 0 && <StartProject goToStep={goToStep} />}
 			{currentStep > 0 && currentStep <= totalSteps && <ProgressBar currentStep={currentStep} percent={percent} />}
-			<div className="h-160 test2 overflow-y-auto flex items-center mb-4 py-1">
+			<div className={`${currentStep > 0 ? "h-160" : ""} overflow-y-auto flex items-center mb-4 py-1`}>
 				{/* Step 1: Fill in the project title, category, and sub-category */}
 				{currentStep === 1 && <StepOne formInputs={formInputs} onChange={onChange} categories={projectForm.categories} />}
 

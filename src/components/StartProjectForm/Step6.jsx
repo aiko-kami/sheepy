@@ -9,7 +9,7 @@ import { IoAddCircleOutline, IoCloseCircleOutline } from "react-icons/io5";
 const StepSix = ({ formInputs, talentNeededInput, addTalentNeeded, removeTalentNeeded, handleTalentNeededInputChange, talentNeededProfilePicture }) => {
 	return (
 		<>
-			<div className="container min-w-full m-auto lg:px-8 text-justify xl:grid grid-cols-5 gap-8">
+			<div className="container min-w-full m-auto pr-2 lg:px-8 text-justify xl:grid grid-cols-5 gap-8">
 				<div className="col-span-2 xl:pl-14">
 					<p className="text-xl mb-4 text-center">You reached the last step!</p>
 					<p className="mb-6 text-justify">Now the most important, list all the talents required to bring your project to life.</p>

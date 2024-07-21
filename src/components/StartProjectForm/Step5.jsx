@@ -10,7 +10,7 @@ import DatePickerField from "@/components/Forms/DatePickerField";
 const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTagInputChange, setProjectStartDate }) => {
 	return (
 		<>
-			<div className="container min-w-full m-auto lg:px-8 text-justify xl:grid grid-cols-5 gap-8">
+			<div className="container min-w-full m-auto pr-2 lg:px-8 text-justify xl:grid grid-cols-5 gap-8">
 				<div className="col-span-2 xl:pl-14">
 					<p className="text-xl mb-4 text-center">Your project creation is almost complete! Just a few more details to finalize.</p>
 					<p className="mb-6 text-justify">
