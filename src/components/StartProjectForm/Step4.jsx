@@ -1,30 +1,11 @@
 "use client";
 
-import { useState } from "react";
 import TextAreaField from "@/components/Forms/TextAreaField";
 
-const StepFour = () => {
-	const [formInputs, setFormInputs] = useState({
-		creatorMotivations: "",
-		projectObjectives: "",
-	});
-
-	const onChange = (e) => {
-		const { name, value } = e.target;
-		setFormInputs((prevState) => ({
-			...prevState,
-			[name]: value,
-		}));
-	};
-	// Handle form submission
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		console.log("Form data:", formInputs);
-	};
-
+const StepFour = ({ formInputs, onChange }) => {
 	return (
 		<>
-			<div className="container min-w-full mx-auto lg:px-8 mb-8 md:mb-20 text-justify xl:grid grid-cols-5 gap-8">
+			<div className="container min-w-full m-auto lg:px-8 text-justify xl:grid grid-cols-5 gap-8">
 				<div className="col-span-2 xl:pl-14">
 					<p className="text-xl mb-4 text-center">Let's dive even deeper into your project!</p>
 					<p className="mb-6 text-justify">
@@ -32,7 +13,7 @@ const StepFour = () => {
 						your vision and goals.
 					</p>
 				</div>
-				<form onSubmit={handleSubmit} className="col-span-3">
+				<div className="col-span-3">
 					{/* List of fields */}
 					<div className="flex justify-end items-center">
 						<div className="w-full md:w-200">
@@ -64,7 +45,7 @@ const StepFour = () => {
 							/>
 						</div>
 					</div>
-				</form>
+				</div>
 			</div>
 		</>
 	);

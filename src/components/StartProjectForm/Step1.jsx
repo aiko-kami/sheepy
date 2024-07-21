@@ -1,61 +1,40 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import InputField from "@/components/Forms/InputField";
 
-const StepOne = ({ categories }) => {
-	const [formInputs, setFormInputs] = useState({
-		projectTitle: "",
-		selectedCategory: "",
-		selectedSubCategory: "",
-	});
-
+const StepOne = ({ categories, formInputs, onChange }) => {
 	const [subCategories, setSubCategories] = useState([]);
 
-	const onChange = (e) => {
+	// Set sub-categories when the component mounts and when selectedCategory changes
+	useEffect(() => {
+		const selectedSubCategories = getSubCategories(formInputs.selectedCategory);
+		setSubCategories(selectedSubCategories);
+	}, [formInputs.selectedCategory]);
+
+	// Update the state when the category changes
+	const handleCategoryChange = (e) => {
 		const { name, value } = e.target;
-		setFormInputs((prevState) => ({
-			...prevState,
-			[name]: value,
-		}));
-
-		if (name === "selectedCategory") {
-			setSubCategories(getSubCategories(value));
-			setFormInputs((prevState) => ({
-				...prevState,
-				selectedSubCategory: "",
-			}));
-		}
-
-		if (name === "selectedCategory") {
-			const selectedSubCategories = getSubCategories(value);
-			setSubCategories(selectedSubCategories);
-			setFormInputs((prevState) => ({
-				...prevState,
-				selectedSubCategory: "",
-			}));
-		}
+		onChange(e); // Update the main form state
+		const selectedSubCategories = getSubCategories(value);
+		setSubCategories(selectedSubCategories);
+		onChange({ target: { name: "selectedSubCategory", value: "" } }); // Reset the sub-category
 	};
+
 	// Get sub-categories for the selected category
 	const getSubCategories = (categoryName) => {
 		const category = categories.find((cat) => cat.name === categoryName);
 		return category ? category.subCategories : [];
 	};
 
-	// Handle form submission
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		console.log("Form data:", formInputs);
-	};
-
 	return (
 		<>
-			<div className="container min-w-full mx-auto lg:px-8 mb-8 md:mb-20 text-justify xl:grid grid-cols-5 gap-8">
+			<div className="container min-w-full m-auto lg:px-8 text-justify xl:grid grid-cols-5 gap-8">
 				<div className="col-span-2 xl:pl-14">
 					<p className="text-xl mb-4 text-center">Let's start with the basics!</p>
 					<p className="mb-6 text-justify">Give your project a cool title and pick a category and sub-category that best suit your project.</p>
 				</div>
-				<form onSubmit={handleSubmit} className="col-span-3">
+				<div className="col-span-3">
 					{/* List of fields */}
 					<div className="flex justify-end items-center">
 						<div className="mb-10 w-full md:w-200">
@@ -71,7 +50,7 @@ const StepOne = ({ categories }) => {
 										id="category"
 										name="selectedCategory"
 										value={formInputs.selectedCategory}
-										onChange={onChange}
+										onChange={handleCategoryChange}
 										className={`block py-3 px-1 w-full bg-transparent border-0 border-b-2 border-gray-600 focus:outline-none ${formInputs.selectedCategory === "" ? "text-gray-400" : "text-white"}`}
 									>
 										<option value="" className="bg-gray-700 text-gray-400">
@@ -115,7 +94,7 @@ const StepOne = ({ categories }) => {
 							</div>
 						</div>
 					</div>
-				</form>
+				</div>
 			</div>
 		</>
 	);

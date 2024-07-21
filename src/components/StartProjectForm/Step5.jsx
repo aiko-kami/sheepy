@@ -7,58 +7,10 @@ import { Button } from "@/components/Buttons/Buttons";
 import { IoAddCircleOutline, IoCloseCircleOutline } from "react-icons/io5";
 import DatePickerField from "@/components/Forms/DatePickerField";
 
-const StepFive = () => {
-	const [formInputs, setFormInputs] = useState({
-		locationOnlineOnly: false,
-		locationCountry: "",
-		locationCity: "",
-		projectVisibility: "",
-		projectStartDate: "",
-		projectStartDate: "",
-		tags: [],
-	});
-
-	const [selectedDate, setSelectedDate] = useState(null);
-	const [tagInput, setTagInput] = useState("");
-
-	const onChange = (e) => {
-		const { name, value, type, checked } = e.target;
-		const inputValue = type === "checkbox" ? checked : value;
-		setFormInputs((prevState) => ({
-			...prevState,
-			[name]: inputValue,
-		}));
-	};
-
-	const handleTagInputChange = (e) => {
-		setTagInput(e.target.value);
-	};
-
-	const addTag = () => {
-		if (tagInput && !formInputs.tags.includes(tagInput) && formInputs.tags.length < 8) {
-			setFormInputs((prevState) => ({
-				...prevState,
-				tags: [...prevState.tags, tagInput],
-			}));
-			setTagInput("");
-		}
-	};
-
-	const removeTag = (tagToRemove) => {
-		setFormInputs((prevState) => ({
-			...prevState,
-			tags: prevState.tags.filter((tag) => tag !== tagToRemove),
-		}));
-	};
-
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		console.log("Form data:", formInputs);
-	};
-
+const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTagInputChange, setProjectStartDate }) => {
 	return (
 		<>
-			<div className="container min-w-full mx-auto lg:px-8 mb-8 md:mb-20 text-justify xl:grid grid-cols-5 gap-8">
+			<div className="container min-w-full m-auto lg:px-8 text-justify xl:grid grid-cols-5 gap-8">
 				<div className="col-span-2 xl:pl-14">
 					<p className="text-xl mb-4 text-center">Your project creation is almost complete! Just a few more details to finalize.</p>
 					<p className="mb-6 text-justify">
@@ -67,7 +19,7 @@ const StepFive = () => {
 							<li className="mb-4">If the project is not online-only, provide the project's location.</li>
 							<li className="mb-4">
 								Set the visibility of the project:
-								<ul className="list-disc list-inside ml-4">
+								<ul className="list-['-__'] list-inside ml-4 text-left">
 									<li>Public projects are accessible to everyone.</li>
 									<li>Private projects are only visible to a selected audience.</li>
 								</ul>
@@ -77,7 +29,7 @@ const StepFive = () => {
 						</ul>
 					</p>
 				</div>
-				<form onSubmit={handleSubmit} className="col-span-3">
+				<div className="col-span-3">
 					{/* List of fields */}
 					<div className="flex justify-end items-center">
 						<div className="flex flex-col items-center w-full">
@@ -109,7 +61,7 @@ const StepFive = () => {
 									</option>
 								</select>
 								{/* Start date picker */}
-								<DatePickerField label="Set a start date (optional)" value={selectedDate} onChange={(newValue) => setSelectedDate(newValue)} />
+								<DatePickerField label="Set a start date (optional)" value={formInputs.projectStartDate} onChange={(newValue) => setProjectStartDate(newValue)} />
 								{/* Tag input field */}
 								<div className="flex items-center mt-6">
 									<div className="w-full mr-2">
@@ -141,7 +93,7 @@ const StepFive = () => {
 							</div>
 						</div>
 					</div>
-				</form>
+				</div>
 			</div>
 		</>
 	);

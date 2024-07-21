@@ -4,7 +4,7 @@ import { IoArrowForward } from "react-icons/io5";
 const StartProject = ({ goToStep }) => {
 	return (
 		<>
-			<div className="container min-w-full mx-auto lg:px-8 mb-12 text-justify">
+			<div className="container h-full min-w-full mx-auto lg:px-8 mb-12 text-justify">
 				<h1 className="text-4xl md:text-7xl pt-4 md:pt-6 mb-8 md:mb-20 text-center">Start my project</h1>
 				<p>
 					You're about to start your journey! During your project creation, you'll be guided through a series of steps to provide the necessary details about your project. Each step will help ensure
