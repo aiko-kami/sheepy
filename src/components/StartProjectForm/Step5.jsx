@@ -13,7 +13,7 @@ const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTag
 			<div className="container min-w-full m-auto pr-2 lg:px-8 text-justify xl:grid grid-cols-5 gap-8">
 				<div className="col-span-2 xl:pl-14">
 					<p className="text-xl mb-4 text-center">Your project creation is almost complete! Just a few more details to finalize.</p>
-					<p className="mb-6 text-justify">
+					<div className="mb-6 text-justify">
 						<ul className="list-disc list-inside">
 							<li className="mb-4">Specify whether the project is online-only, meaning it doesn't require a physical location and participants can join remotely from anywhere.</li>
 							<li className="mb-4">If the project is not online-only, provide the project's location.</li>
@@ -27,7 +27,7 @@ const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTag
 							<li className="mb-4">Choose a start date for your project (Optional).</li>
 							<li className="mb-4">Add relevant tags to help people find your project based on specific keywords (Optional).</li>
 						</ul>
-					</p>
+					</div>
 				</div>
 				<div className="col-span-3">
 					{/* List of fields */}

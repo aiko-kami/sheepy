@@ -99,7 +99,6 @@ const StepManager = ({ projectForm }) => {
 
 	const goToStep = (step) => {
 		setCurrentStep(step);
-		console.log("🚀 ~ StepManager ~ formInputs:", formInputs);
 	};
 
 	useEffect(() => {
@@ -118,7 +117,7 @@ const StepManager = ({ projectForm }) => {
 		<>
 			{currentStep === 0 && <StartProject goToStep={goToStep} />}
 			{currentStep > 0 && currentStep <= totalSteps && <ProgressBar currentStep={currentStep} percent={percent} />}
-			<div className={`${currentStep > 0 ? "h-160" : ""} overflow-y-auto flex items-center mb-4 py-1`}>
+			<div className={`${currentStep > 0 && currentStep <= totalSteps ? "h-160" : "hidden"} overflow-y-auto flex items-center mb-4 py-1`}>
 				{/* Step 1: Fill in the project title, category, and sub-category */}
 				{currentStep === 1 && <StepOne formInputs={formInputs} onChange={onChange} categories={projectForm.categories} />}
 
@@ -158,10 +157,10 @@ const StepManager = ({ projectForm }) => {
 
 				{/* Step 7: (Final Validation): Review and validate all the provided information */}
 				{currentStep === totalSteps && <StepFinalValidation formInputs={formInputs} />}
-
-				{/* Step 8: Show confirmation that the project has been submitted */}
-				{currentStep === 8 && <StepProjectSubmitted goToStep={goToStep} />}
 			</div>
+			{/* Step 8: Show confirmation that the project has been submitted */}
+			{currentStep === 8 && <StepProjectSubmitted goToStep={goToStep} />}
+
 			<ButtonsNavigation goToStep={goToStep} currentStep={currentStep} totalSteps={totalSteps} />
 		</>
 	);
