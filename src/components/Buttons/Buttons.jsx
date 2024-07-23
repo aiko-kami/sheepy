@@ -39,7 +39,7 @@ const Button = ({ children, btnProps }) => {
 			color = "text-white bg-green-500 hover:bg-green-600 active:bg-green-700";
 			break;
 		case "grayBorder":
-			color = "text-white border border-2 box-border border-gray-600 hover:bg-gray-600 active:bg-gray-700";
+			color = "text-white bg-base-500 border border-2 box-border border-gray-600 hover:bg-gray-600 active:bg-gray-700";
 			break;
 		default:
 			color = "text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800";

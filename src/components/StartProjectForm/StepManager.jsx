@@ -156,7 +156,7 @@ const StepManager = ({ projectForm }) => {
 				)}
 
 				{/* Step 7: (Final Validation): Review and validate all the provided information */}
-				{currentStep === totalSteps && <StepFinalValidation formInputs={formInputs} />}
+				{currentStep === totalSteps && <StepFinalValidation formInputs={formInputs} talentNeededProfilePicture={projectForm.talentNeededProfilePicture} />}
 			</div>
 			{/* Step 8: Show confirmation that the project has been submitted */}
 			{currentStep === 8 && <StepProjectSubmitted goToStep={goToStep} />}
