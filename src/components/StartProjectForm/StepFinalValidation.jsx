@@ -15,7 +15,7 @@ const StepFinalValidation = ({ formInputs, talentNeededProfilePicture }) => {
 	return (
 		<>
 			<div className="container min-w-full m-auto pr-2 sm:px-4 xl:px-30 text-justify">
-				<h1 className="text-4xl md:text-7xl pt-4 md:pt-6 mb-8 md:mb-20 text-center">Final step</h1>
+				<h1 className="text-4xl md:text-7xl mb-8 text-center">Final step</h1>
 				<p className="mb-8">
 					Before you submit your project, please take a moment to review all the information you have provided. Carefully check each field for any errors or omissions. Make sure that your project
 					description is clear, your goals are well-defined, and all necessary details are included. This final review is crucial to ensure that your project has the best chance of success. Once
