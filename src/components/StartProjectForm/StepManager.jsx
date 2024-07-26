@@ -113,55 +113,66 @@ const StepManager = ({ projectForm }) => {
 		setPercent(newPercent);
 	}, [currentStep]);
 
+	// Handle form submission
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		// You can perform actions like searching here
+		console.log("🚀 ~ handleSubmit ~ Project inputs:", formInputs);
+		goToStep(totalSteps + 1);
+	};
+
 	return (
 		<>
 			{currentStep === 0 && <StartProject goToStep={goToStep} />}
 			{currentStep > 0 && currentStep <= totalSteps && <ProgressBar currentStep={currentStep} percent={percent} />}
-			<div className={`${currentStep > 0 && currentStep <= totalSteps ? "h-160" : "hidden"} overflow-y-auto mb-4 py-1 xl:pt-20`}>
-				{/* Step 1: Fill in the project title, category, and sub-category */}
-				{currentStep === 1 && <StepOne formInputs={formInputs} onChange={onChange} categories={projectForm.categories} />}
+			<form onSubmit={handleSubmit}>
+				<div className={`${currentStep > 0 && currentStep < totalSteps ? "h-160" : "hidden"} overflow-y-auto mb-4 py-1 xl:pt-20`}>
+					{/* Step 1: Fill in the project title, category, and sub-category */}
+					{currentStep === 1 && <StepOne formInputs={formInputs} onChange={onChange} categories={projectForm.categories} />}
 
-				{/* Step 2: Fill in the project summary and goal */}
-				{currentStep === 2 && <StepTwo formInputs={formInputs} onChange={onChange} />}
+					{/* Step 2: Fill in the project summary and goal */}
+					{currentStep === 2 && <StepTwo formInputs={formInputs} onChange={onChange} />}
 
-				{/* Step 3: Fill in the project description */}
-				{currentStep === 3 && <StepThree formInputs={formInputs} onChange={onChange} />}
+					{/* Step 3: Fill in the project description */}
+					{currentStep === 3 && <StepThree formInputs={formInputs} onChange={onChange} />}
 
-				{/* Step 4: Fill in the creator motivations and objectives */}
-				{currentStep === 4 && <StepFour formInputs={formInputs} onChange={onChange} />}
+					{/* Step 4: Fill in the creator motivations and objectives */}
+					{currentStep === 4 && <StepFour formInputs={formInputs} onChange={onChange} />}
 
-				{/* Step 5: Fill in the project project online-only, project location, project privacy, project start date, and tags */}
-				{currentStep === 5 && (
-					<StepFive
-						formInputs={formInputs}
-						onChange={onChange}
-						tagInput={tagInput}
-						addTag={addTag}
-						removeTag={removeTag}
-						handleTagInputChange={handleTagInputChange}
-						setProjectStartDate={setProjectStartDate}
-					/>
-				)}
+					{/* Step 5: Fill in the project project online-only, project location, project privacy, project start date, and tags */}
+					{currentStep === 5 && (
+						<StepFive
+							formInputs={formInputs}
+							onChange={onChange}
+							tagInput={tagInput}
+							addTag={addTag}
+							removeTag={removeTag}
+							handleTagInputChange={handleTagInputChange}
+							setProjectStartDate={setProjectStartDate}
+						/>
+					)}
 
-				{/* Step 6: Fill in the talents needed */}
-				{currentStep === 6 && (
-					<StepSix
-						formInputs={formInputs}
-						talentNeededInput={talentNeededInput}
-						addTalentNeeded={addTalentNeeded}
-						removeTalentNeeded={removeTalentNeeded}
-						handleTalentNeededInputChange={handleTalentNeededInputChange}
-						talentNeededProfilePicture={projectForm.talentNeededProfilePicture}
-					/>
-				)}
+					{/* Step 6: Fill in the talents needed */}
+					{currentStep === 6 && (
+						<StepSix
+							formInputs={formInputs}
+							talentNeededInput={talentNeededInput}
+							addTalentNeeded={addTalentNeeded}
+							removeTalentNeeded={removeTalentNeeded}
+							handleTalentNeededInputChange={handleTalentNeededInputChange}
+							talentNeededProfilePicture={projectForm.talentNeededProfilePicture}
+						/>
+					)}
+				</div>
+				<div className={`${currentStep === totalSteps ? "h-160" : "hidden"} overflow-y-auto mb-4 py-1`}>
+					{/* Step 7: (Final Validation): Review and validate all the provided information */}
+					{currentStep === totalSteps && <StepFinalValidation formInputs={formInputs} talentNeededProfilePicture={projectForm.talentNeededProfilePicture} />}
+				</div>
+				{/* Step 8: Show confirmation that the project has been submitted */}
+				{currentStep === 8 && <StepProjectSubmitted goToStep={goToStep} />}
 
-				{/* Step 7: (Final Validation): Review and validate all the provided information */}
-				{currentStep === totalSteps && <StepFinalValidation formInputs={formInputs} talentNeededProfilePicture={projectForm.talentNeededProfilePicture} />}
-			</div>
-			{/* Step 8: Show confirmation that the project has been submitted */}
-			{currentStep === 8 && <StepProjectSubmitted goToStep={goToStep} />}
-
-			<ButtonsNavigation goToStep={goToStep} currentStep={currentStep} totalSteps={totalSteps} />
+				<ButtonsNavigation goToStep={goToStep} currentStep={currentStep} totalSteps={totalSteps} />
+			</form>
 		</>
 	);
 };

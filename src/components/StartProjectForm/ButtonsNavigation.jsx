@@ -43,7 +43,7 @@ const ButtonsNavigation = ({ goToStep, currentStep, totalSteps }) => {
 						</Button>
 					)}
 					{currentStep === totalSteps && (
-						<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "blue", btnRounded: "std", action: () => goToStep(totalSteps + 1) }}>
+						<Button btnProps={{ btnSize: "sm", type: "submit", btnColor: "blue", btnRounded: "std" }}>
 							<div className="flex">
 								Submit my project <IoCheckmarkCircleOutline className="text-xl ml-2" />
 							</div>
