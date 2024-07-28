@@ -7,6 +7,29 @@ const CustomDatePicker = styled(DatePicker)(({ theme }) => ({
 	"& .MuiIconButton-root": {
 		color: "#d1d5db", // Tailwind gray-600 color
 	},
+	"& .MuiInputLabel-root": {
+		color: "#d1d5db", // Tailwind gray-600 color for label
+	},
+	"& .MuiInputLabel-root.Mui-focused": {
+		color: "#3b82f6", // Tailwind blue-500 color for focused label
+	},
+	"& .MuiInputBase-input": {
+		color: "#ffffff", // Tailwind white color for input text
+	},
+	"& .MuiInputBase-input.Mui-disabled": {
+		color: "#6b7280", // Tailwind gray-500 color for disabled input text
+	},
+	"& .MuiInput-underline:before": {
+		borderBottom: "2px solid #4B5563", // Tailwind gray-700 color for underline
+		transition: "none", // Remove transition for before pseudo-element
+	},
+	"& .MuiInput-underline:hover:before": {
+		borderBottom: "2px solid #4B5563", // Tailwind gray-700 color for underline on hover
+	},
+	"& .MuiInput-underline:after": {
+		borderBottom: "2px solid #3B82F6", // Tailwind blue-500 color for focused underline
+		transition: "none", // Remove transition for after pseudo-element
+	},
 }));
 
 const DatePickerField = ({ label, value, onChange, disabled = false }) => {
@@ -22,12 +45,12 @@ const DatePickerField = ({ label, value, onChange, disabled = false }) => {
 						textField: {
 							variant: "standard",
 							InputProps: {
-								className: `block pt-2.5 pb-1 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-500 peer ${
+								className: `block pb-1 px-0 w-full bg-transparent border-0 appearance-none focus:outline-none focus:ring-0 peer ${
 									disabled ? "text-gray-500 line-through" : "text-white hover:shadow-lg"
 								}`,
 							},
 							InputLabelProps: {
-								className: `peer-focus:font-medium absolute duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 ${
+								className: `peer-focus:font-medium absolute duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6 ${
 									disabled ? "text-gray-500 line-through" : "text-gray-200"
 								}`,
 							},

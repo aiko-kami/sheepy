@@ -61,7 +61,7 @@ const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTag
 									</option>
 								</select>
 								{/* Start date picker */}
-								<div className="w-50">
+								<div className="w-60">
 									<DatePickerField label="Set a start date (optional)" value={formInputs.projectStartDate} onChange={(newValue) => setProjectStartDate(newValue)} />
 								</div>
 								{/* Tag input field */}

@@ -67,7 +67,23 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 - [x] Project description public page
 - [x] Search projects page
 - [x] Search talents page
-- [] Project creation page
+- [x] Project creation page
+
+- [] Projects by categories page
+- [] Projects by sub-categories page
+- [] Projects by locations page
+- [] Projects by tags page
+
+- [] How it works
+
+  - [] Take a tour
+  - [] Initiate a project
+  - [] Join a project
+  - [] Why us
+  - [] Pricing and fees
+
+- [] Discover
+
 - [] Project description private page
 - [] Project edition page
 - [] View my profile page
