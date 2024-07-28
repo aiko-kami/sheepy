@@ -1,0 +1,573 @@
+[
+	{
+		"id": 12345,
+		"title": "Create a submarine",
+		"summary": "Hello! I am looking for people who want to explore the ocean.",
+		"cover": "https://superawesomevectors.com/wp-content/uploads/2021/04/yellow-submarine-vector.jpg",
+		"likes": 5,
+		"category": {
+			"name": "Nature",
+			"link": "/categories/nature",
+			"bgColor": "bg-green-600",
+			"bgColorHover": "bg-green-500",
+			"size": "sm"
+		},
+		"subCategory": "Cinema",
+		"location": "Sydney",
+		"tags": [
+			{
+				"name": "Ocean",
+				"bgColor": "bg-blue-300",
+				"size": "xs"
+			},
+			{
+				"name": "Mechanics",
+				"bgColor": "bg-orange-400",
+				"size": "xs"
+			},
+			{
+				"name": "Exploration",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Build a Treehouse",
+		"summary": "Hey everyone! I'm planning to build a cozy treehouse in my backyard. Join me in this fun project!",
+		"cover": "https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/home-improvement/wp-content/uploads/2023/07/unnamed-5.jpg",
+		"likes": 8,
+		"category": {
+			"name": "DIY",
+			"link": "/categories/diy",
+			"bgColor": "bg-yellow-500",
+			"bgColorHover": "bg-yellow-400",
+			"size": "sm"
+		},
+		"subCategory": "Construction",
+		"location": "Seattle",
+		"tags": [
+			{
+				"name": "Home Improvement",
+				"bgColor": "bg-stone-400",
+				"size": "xs"
+			},
+			{
+				"name": "Nature",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Start a Podcast",
+		"summary": "Hi friends! I'm launching a new podcast series about technology and its impact on society. Join me for some insightful conversations!",
+		"cover": "https://www.thomann.de/blog/wp-content/uploads/2023/01/podcastStart_header_770x425.png",
+		"likes": 12,
+		"category": {
+			"name": "Media",
+			"link": "/categories/media",
+			"bgColor": "bg-purple-500",
+			"bgColorHover": "bg-purple-400",
+			"size": "sm"
+		},
+		"subCategory": "Technology",
+		"location": "San Francisco",
+		"tags": [
+			{
+				"name": "Podcast",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			},
+			{
+				"name": "Tech",
+				"bgColor": "bg-indigo-400",
+				"size": "xs"
+			},
+			{
+				"name": "Society",
+				"bgColor": "bg-purple-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Organize a Charity Event",
+		"summary": "Hello everyone! Let's come together to organize a charity event to support local shelters and food banks. Your help can make a big difference!",
+		"cover": "https://www.eventbrite.com.au/blog/wp-content/uploads/2022/06/Promote-charity-event-1-768x348.png",
+		"likes": 6,
+		"category": {
+			"name": "Community",
+			"link": "/categories/community",
+			"bgColor": "bg-pink-600",
+			"bgColorHover": "bg-pink-500",
+			"size": "sm"
+		},
+		"subCategory": "Social Cause",
+		"location": "New York",
+		"tags": [
+			{
+				"name": "Charity",
+				"bgColor": "bg-pink-400",
+				"size": "xs"
+			},
+			{
+				"name": "Volunteering",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Write a Novel",
+		"summary": "Join me in writing a novel! Whether you're an experienced writer or just starting out, let's create an amazing story together.",
+		"cover": "https://sally-jenkins.com/wp-content/uploads/2011/01/chapter-1-picture.jpg",
+		"likes": 15,
+		"category": {
+			"name": "Literature",
+			"link": "/categories/literature",
+			"bgColor": "bg-green-400",
+			"bgColorHover": "bg-green-300",
+			"size": "sm"
+		},
+		"subCategory": "Fiction",
+		"location": "Chicago",
+		"tags": [
+			{
+				"name": "Writing",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			},
+			{
+				"name": "Storytelling",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Develop a Mobile App",
+		"summary": "Calling all tech enthusiasts! Let's develop a cutting-edge mobile app together. Your skills and creativity are needed.",
+		"cover": "https://opensenmedia.com/wp-content/uploads/2022/02/mobile.png",
+		"likes": 20,
+		"category": {
+			"name": "Technology",
+			"link": "/categories/technology",
+			"bgColor": "bg-gray-400",
+			"bgColorHover": "bg-gray-300",
+			"size": "sm"
+		},
+		"subCategory": "Mobile Apps",
+		"location": "Austin",
+		"tags": [
+			{
+				"name": "Programming",
+				"bgColor": "bg-red-400",
+				"size": "xs"
+			},
+			{
+				"name": "Innovation",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Paint a Mural",
+		"summary": "Let's add some color to our community by painting a mural! Artists of all skill levels are welcome.",
+		"cover": "https://i.ytimg.com/vi/PvHayKjwKbs/maxresdefault.jpg",
+		"likes": 10,
+		"category": {
+			"name": "Art",
+			"link": "/categories/art",
+			"bgColor": "bg-purple-400",
+			"bgColorHover": "bg-purple-300",
+			"size": "sm"
+		},
+		"subCategory": "Painting",
+		"location": "Los Angeles",
+		"tags": [
+			{
+				"name": "Creativity",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			},
+			{
+				"name": "Community",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Start a Band",
+		"summary": "Looking for musicians to start a band! Let's create some amazing music together.",
+		"cover": "https://assets-au-01.kc-usercontent.com/a74cc67d-6861-022b-4d6d-57679e9d331f/8655ccc1-a5cc-4918-a1dc-a32c01a24af3/843b2e40-9c14-4d2b-ba98-e4bae0f3a9c0.jpg",
+		"likes": 18,
+		"category": {
+			"name": "Music",
+			"link": "/categories/music",
+			"bgColor": "bg-blue-400",
+			"bgColorHover": "bg-blue-300",
+			"size": "sm"
+		},
+		"subCategory": "Performing",
+		"location": "Nashville",
+		"tags": [
+			{
+				"name": "Music",
+				"bgColor": "bg-red-400",
+				"size": "xs"
+			},
+			{
+				"name": "Band",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Film a Short Movie",
+		"summary": "Join me in creating a short movie. From scriptwriting to filming, we need creative minds to bring this project to life.",
+		"cover": "https://www.stagemilk.com/wp-content/uploads/2016/07/short-film-630x300.jpeg",
+		"likes": 14,
+		"category": {
+			"name": "Film & Video",
+			"link": "/categories/film-video",
+			"bgColor": "bg-yellow-400",
+			"bgColorHover": "bg-yellow-300",
+			"size": "sm"
+		},
+		"subCategory": "Short Film",
+		"location": "Toronto",
+		"tags": [
+			{
+				"name": "Film",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			},
+			{
+				"name": "Creativity",
+				"bgColor": "bg-red-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Host a Cooking Class",
+		"summary": "Love cooking? Join me in hosting a cooking class where we can share recipes and culinary techniques.",
+		"cover": "https://media.licdn.com/dms/image/C561BAQFq6G0mq1ZEqQ/company-background_10000/0/1584375305611/cookingclass_cover?e=2147483647&v=beta&t=HHQJNqTlYpV9Th3TQtsT1KP7zmMVsTaxO0Op2l0CAX4",
+		"likes": 11,
+		"category": {
+			"name": "Food & Drink",
+			"link": "/categories/food-drink",
+			"bgColor": "bg-orange-400",
+			"bgColorHover": "bg-orange-300",
+			"size": "sm"
+		},
+		"subCategory": "Culinary Arts",
+		"location": "Boston",
+		"tags": [
+			{
+				"name": "Cooking",
+				"bgColor": "bg-red-400",
+				"size": "xs"
+			},
+			{
+				"name": "Food",
+				"bgColor": "bg-orange-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Design a Community Garden",
+		"summary": "Let's create a beautiful community garden to grow fresh vegetables and flowers together.",
+		"cover": "https://www.cnu.org/sites/default/files/3-community-gardens.jpg",
+		"likes": 9,
+		"category": {
+			"name": "Environment",
+			"link": "/categories/environment",
+			"bgColor": "bg-green-600",
+			"bgColorHover": "bg-green-500",
+			"size": "sm"
+		},
+		"subCategory": "Gardening",
+		"location": "Portland",
+		"tags": [
+			{
+				"name": "Gardening",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			},
+			{
+				"name": "Community",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Launch a Robotics Club",
+		"summary": "Join us to build and program robots. All levels of experience are welcome.",
+		"cover": "https://lh6.googleusercontent.com/4t2y0AaLpQKmHKtldcb3y2Gajf2dWNUA23JlVNpukQaDFiIJHDeseHNOtzKix__bOEAGSUUFrLksktSCsBpbyr_zg4vqePWZOezGLcIHKi4vTBZmkK6MeY29dTeysJZcfkuG_mIH2T4",
+		"likes": 13,
+		"category": {
+			"name": "Technology",
+			"link": "/categories/technology",
+			"bgColor": "bg-gray-400",
+			"bgColorHover": "bg-gray-300",
+			"size": "sm"
+		},
+		"subCategory": "Robotics",
+		"location": "San Diego",
+		"tags": [
+			{
+				"name": "Robotics",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			},
+			{
+				"name": "Programming",
+				"bgColor": "bg-red-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Organize a Photography Walk",
+		"summary": "Explore the city and capture its beauty through your lens in a guided photography walk.",
+		"cover": "https://i0.wp.com/digital-photography-school.com/wp-content/uploads/2023/10/photo-walk-photography-12.jpg?resize=1500%2C1000&ssl=1",
+		"likes": 16,
+		"category": {
+			"name": "Art",
+			"link": "/categories/art",
+			"bgColor": "bg-purple-400",
+			"bgColorHover": "bg-purple-300",
+			"size": "sm"
+		},
+		"subCategory": "Photography",
+		"location": "Paris",
+		"tags": [
+			{
+				"name": "Photography",
+				"bgColor": "bg-indigo-400",
+				"size": "xs"
+			},
+			{
+				"name": "Exploration",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Build a Solar-Powered Car",
+		"summary": "Let's work together to build an eco-friendly solar-powered car.",
+		"cover": "https://i.ytimg.com/vi/HGOpltXSZ1g/maxresdefault.jpg",
+		"likes": 21,
+		"category": {
+			"name": "Technology",
+			"link": "/categories/technology",
+			"bgColor": "bg-gray-400",
+			"bgColorHover": "bg-gray-300",
+			"size": "sm"
+		},
+		"subCategory": "Renewable Energy",
+		"location": "Berlin",
+		"tags": [
+			{
+				"name": "Renewable Energy",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			},
+			{
+				"name": "Innovation",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Host a Poetry Slam",
+		"summary": "Come and share your poetry or enjoy listening to others at our community poetry slam.",
+		"cover": "https://www.weareteachers.com/wp-content/uploads/2014/04/how-to-host-your-own-schoolwide-poetry-slam.tmb-570.jpg",
+		"likes": 8,
+		"category": {
+			"name": "Literature",
+			"link": "/categories/literature",
+			"bgColor": "bg-green-400",
+			"bgColorHover": "bg-green-300",
+			"size": "sm"
+		},
+		"subCategory": "Spoken Word",
+		"location": "London",
+		"tags": [
+			{
+				"name": "Poetry",
+				"bgColor": "bg-purple-400",
+				"size": "xs"
+			},
+			{
+				"name": "Performance",
+				"bgColor": "bg-red-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Develop a Board Game",
+		"summary": "Have an idea for a board game? Join us to develop and test it out.",
+		"cover": "https://www.qinprinting.com/blog/wp-content/uploads/2022/08/How-long-does-it-take-to-design-a-board-game-1024x587.jpg",
+		"likes": 17,
+		"category": {
+			"name": "Games",
+			"link": "/categories/games",
+			"bgColor": "bg-orange-400",
+			"bgColorHover": "bg-orange-300",
+			"size": "sm"
+		},
+		"subCategory": "Game Design",
+		"location": "Amsterdam",
+		"tags": [
+			{
+				"name": "Board Games",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			},
+			{
+				"name": "Design",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Plan a Music Festival",
+		"summary": "Let's bring together musicians and music lovers to create an unforgettable music festival.",
+		"cover": "https://events.com/wp-content/uploads/2022/09/BLOG-How-To-Plan-a-Music-Festival-A-Complete-Guide.png",
+		"likes": 25,
+		"category": {
+			"name": "Music",
+			"link": "/categories/music",
+			"bgColor": "bg-blue-400",
+			"bgColorHover": "bg-blue-300",
+			"size": "sm"
+		},
+		"subCategory": "Event Planning",
+		"location": "Barcelona",
+		"tags": [
+			{
+				"name": "Music",
+				"bgColor": "bg-red-400",
+				"size": "xs"
+			},
+			{
+				"name": "Festival",
+				"bgColor": "bg-orange-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Create an Online Course",
+		"summary": "Share your knowledge by creating an online course. All topics are welcome!",
+		"cover": "https://www.hostinger.com/tutorials/wp-content/uploads/sites/2/2023/02/how-to-create-online-course.webp",
+		"likes": 19,
+		"category": {
+			"name": "Education",
+			"link": "/categories/education",
+			"bgColor": "bg-yellow-400",
+			"bgColorHover": "bg-yellow-300",
+			"size": "sm"
+		},
+		"subCategory": "E-Learning",
+		"location": "Remote",
+		"tags": [
+			{
+				"name": "Teaching",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			},
+			{
+				"name": "Online",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Organize a Local Art Fair",
+		"summary": "Let's showcase local artists by organizing a vibrant art fair in our community.",
+		"cover": "https://images.squarespace-cdn.com/content/v1/5f24372b913c1925d9880b2e/1601399400685-GM7Z6VK4RM0WCY1FC1E6/Superfine%21%2BLA%2B2020%2Bsuccessful%2Bvendor%2Bbooth%2Bideas.jpeg",
+		"likes": 14,
+		"category": {
+			"name": "Art",
+			"link": "/categories/art",
+			"bgColor": "bg-purple-400",
+			"bgColorHover": "bg-purple-300",
+			"size": "sm"
+		},
+		"subCategory": "Exhibition",
+		"location": "Melbourne",
+		"tags": [
+			{
+				"name": "Art",
+				"bgColor": "bg-red-400",
+				"size": "xs"
+			},
+			{
+				"name": "Community",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Start a Book Club",
+		"summary": "Join us to discuss and explore a wide range of books. Everyone is welcome!",
+		"cover": "https://www.bramptoncc.org.uk/wp-content/uploads/2022/09/books.jpg",
+		"likes": 11,
+		"category": {
+			"name": "Literature",
+			"link": "/categories/literature",
+			"bgColor": "bg-green-400",
+			"bgColorHover": "bg-green-300",
+			"size": "sm"
+		},
+		"subCategory": "Reading",
+		"location": "Dublin",
+		"tags": [
+			{
+				"name": "Books",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			},
+			{
+				"name": "Discussion",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	}
+]
