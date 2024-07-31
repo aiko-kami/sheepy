@@ -569,5 +569,1013 @@
 			}
 		],
 		"status": "Active"
+	},
+	{
+		"title": "Street Art Tour",
+		"summary": "Join us for a walking tour to discover the hidden street art gems in our city. Learn about the artists and their stories.",
+		"cover": "https://www.touraineloirevalley.com/wp-content/uploads/2022/03/tours_a_velo_street-art-credit_adt_touraine_jc-coutand-2032-22.jpg",
+		"likes": 25,
+		"category": {
+			"name": "Art",
+			"link": "/categories/art",
+			"bgColor": "bg-purple-600",
+			"bgColorHover": "bg-purple-500",
+			"size": "sm"
+		},
+		"subCategory": "Visual Arts",
+		"location": "New York",
+		"tags": [
+			{
+				"name": "Art",
+				"bgColor": "bg-purple-400",
+				"size": "xs"
+			},
+			{
+				"name": "Tour",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Local History Walk",
+		"summary": "Explore the rich history of our town with a guided walk covering historical landmarks and local stories.",
+		"cover": "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/87/a8/61.jpg",
+		"likes": 12,
+		"category": {
+			"name": "History",
+			"link": "/categories/history",
+			"bgColor": "bg-brown-600",
+			"bgColorHover": "bg-brown-500",
+			"size": "sm"
+		},
+		"subCategory": "Local",
+		"location": "Boston",
+		"tags": [
+			{
+				"name": "History",
+				"bgColor": "bg-brown-400",
+				"size": "xs"
+			},
+			{
+				"name": "Tour",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "DIY Home Decor Workshop",
+		"summary": "Learn how to create beautiful home decor items using simple materials. Bring your creativity to life!",
+		"cover": "https://www.us.photojaanic.com/blog/wp-content/uploads/sites/2/2020/04/DIY-Home-Decor-Ideas-1080x720.jpeg",
+		"likes": 30,
+		"category": {
+			"name": "Crafts",
+			"link": "/categories/crafts",
+			"bgColor": "bg-pink-600",
+			"bgColorHover": "bg-pink-500",
+			"size": "sm"
+		},
+		"subCategory": "Handmade",
+		"location": "Los Angeles",
+		"tags": [
+			{
+				"name": "DIY",
+				"bgColor": "bg-pink-400",
+				"size": "xs"
+			},
+			{
+				"name": "Crafts",
+				"bgColor": "bg-purple-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Cooking Class: Italian Cuisine",
+		"summary": "Learn to cook authentic Italian dishes with our expert chef. From pasta to tiramisu, master the art of Italian cooking.",
+		"cover": "https://us.123rf.com/450wm/jovanmandic/jovanmandic2005/jovanmandic200500296/147617891-different-types-of-homemade-pasta-fresh-pasta-homemade-preparation.jpg?ver=6",
+		"likes": 35,
+		"category": {
+			"name": "Food",
+			"link": "/categories/food",
+			"bgColor": "bg-red-600",
+			"bgColorHover": "bg-red-500",
+			"size": "sm"
+		},
+		"subCategory": "Cooking",
+		"location": "Chicago",
+		"tags": [
+			{
+				"name": "Cooking",
+				"bgColor": "bg-red-400",
+				"size": "xs"
+			},
+			{
+				"name": "Food",
+				"bgColor": "bg-orange-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Local Charity Run",
+		"summary": "Participate in our charity run to raise funds for local community projects. All fitness levels are welcome.",
+		"cover": "https://img.freepik.com/premium-photo/group-friends-neighbors-organizing-charity-run-raise-funds-local-cause_1154909-3095.jpg",
+		"likes": 40,
+		"category": {
+			"name": "Community",
+			"link": "/categories/community",
+			"bgColor": "bg-blue-600",
+			"bgColorHover": "bg-blue-500",
+			"size": "sm"
+		},
+		"subCategory": "Events",
+		"location": "Seattle",
+		"tags": [
+			{
+				"name": "Charity",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			},
+			{
+				"name": "Fitness",
+				"bgColor": "bg-red-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Tech Meetup: AI Innovations",
+		"summary": "Join tech enthusiasts to discuss the latest advancements in AI and machine learning. Network with industry professionals.",
+		"cover": "https://imageio.forbes.com/specials-images/imageserve/645a7ae3e53917375944914e/AI-Chatbot-smart-digital-customer-service-application-concept-/960x0.jpg?height=447&width=711&fit=bounds",
+		"likes": 28,
+		"category": {
+			"name": "Technology",
+			"link": "/categories/technology",
+			"bgColor": "bg-gray-600",
+			"bgColorHover": "bg-gray-500",
+			"size": "sm"
+		},
+		"subCategory": "Networking",
+		"location": "San Jose",
+		"tags": [
+			{
+				"name": "Technology",
+				"bgColor": "bg-gray-400",
+				"size": "xs"
+			},
+			{
+				"name": "AI",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Photography Contest",
+		"summary": "Showcase your photography skills by participating in our local contest. Great prizes await the winners!",
+		"cover": "https://www.myrnam.ca/wp-content/uploads/2024/02/image-4-1024x640.png",
+		"likes": 55,
+		"category": {
+			"name": "Photography",
+			"link": "/categories/photography",
+			"bgColor": "bg-yellow-600",
+			"bgColorHover": "bg-yellow-500",
+			"size": "sm"
+		},
+		"subCategory": "Competition",
+		"location": "Austin",
+		"tags": [
+			{
+				"name": "Photography",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			},
+			{
+				"name": "Contest",
+				"bgColor": "bg-red-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Local Farmers Market",
+		"summary": "Support local farmers and artisans by visiting our community farmers market every weekend.",
+		"cover": "https://thepaleodiet.com/wp-content/uploads/2023/05/woman-selling-produce-at-farmers-market.jpg",
+		"likes": 21,
+		"category": {
+			"name": "Food",
+			"link": "/categories/food",
+			"bgColor": "bg-orange-600",
+			"bgColorHover": "bg-orange-500",
+			"size": "sm"
+		},
+		"subCategory": "Market",
+		"location": "Portland",
+		"tags": [
+			{
+				"name": "Food",
+				"bgColor": "bg-red-400",
+				"size": "xs"
+			},
+			{
+				"name": "Local",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Beach Cleanup",
+		"summary": "Join us to clean up our local beach. Help protect marine life and keep our beaches beautiful.",
+		"cover": "https://www.ecowatch.com/wp-content/uploads/2022/07/GettyImages-1353301481-scaled.jpg",
+		"likes": 45,
+		"category": {
+			"name": "Environment",
+			"link": "/categories/environment",
+			"bgColor": "bg-blue-600",
+			"bgColorHover": "bg-blue-500",
+			"size": "sm"
+		},
+		"subCategory": "Volunteer",
+		"location": "Santa Monica",
+		"tags": [
+			{
+				"name": "Environment",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			},
+			{
+				"name": "Volunteer",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Jazz Music Night",
+		"summary": "Enjoy an evening of live jazz music at our local venue. All music lovers are welcome!",
+		"cover": "https://img.freepik.com/vecteurs-premium/live-jazz-music-night-neon_77399-627.jpg",
+		"likes": 37,
+		"category": {
+			"name": "Music",
+			"link": "/categories/music",
+			"bgColor": "bg-purple-600",
+			"bgColorHover": "bg-purple-500",
+			"size": "sm"
+		},
+		"subCategory": "Live Music",
+		"location": "New Orleans",
+		"tags": [
+			{
+				"name": "Music",
+				"bgColor": "bg-purple-400",
+				"size": "xs"
+			},
+			{
+				"name": "Jazz",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "DIY Soap Making Workshop",
+		"summary": "Learn how to make your own natural soaps in this hands-on workshop. Take home your creations!",
+		"cover": "https://cdn.webshopapp.com/shops/164426/files/346078617/image.jpg",
+		"likes": 29,
+		"category": {
+			"name": "Crafts",
+			"link": "/categories/crafts",
+			"bgColor": "bg-pink-600",
+			"bgColorHover": "bg-pink-500",
+			"size": "sm"
+		},
+		"subCategory": "Handmade",
+		"location": "Denver",
+		"tags": [
+			{
+				"name": "DIY",
+				"bgColor": "bg-pink-400",
+				"size": "xs"
+			},
+			{
+				"name": "Crafts",
+				"bgColor": "bg-purple-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Dog Training Classes",
+		"summary": "Bring your dog to our training classes and improve their behavior and obedience.",
+		"cover": "https://www.patriciamcconnell.com/theotherendoftheleash/wp-content/uploads/2017/09/bigstock-Group-Of-Dogs-With-Owners-At-O-96550604.jpg",
+		"likes": 32,
+		"category": {
+			"name": "Pets",
+			"link": "/categories/pets",
+			"bgColor": "bg-green-600",
+			"bgColorHover": "bg-green-500",
+			"size": "sm"
+		},
+		"subCategory": "Training",
+		"location": "San Diego",
+		"tags": [
+			{
+				"name": "Pets",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			},
+			{
+				"name": "Training",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Coding Bootcamp",
+		"summary": "Learn the basics of coding in our weekend bootcamp. No prior experience needed.",
+		"cover": "https://cms-assets.themuse.com/media/lead/_1200x630_crop_center-center_82_none/3000a530-7462-4e3e-bc17-a36c3e56407e.png?mtime=1568865848",
+		"likes": 50,
+		"category": {
+			"name": "Technology",
+			"link": "/categories/technology",
+			"bgColor": "bg-gray-600",
+			"bgColorHover": "bg-gray-500",
+			"size": "sm"
+		},
+		"subCategory": "Education",
+		"location": "Seattle",
+		"tags": [
+			{
+				"name": "Technology",
+				"bgColor": "bg-gray-400",
+				"size": "xs"
+			},
+			{
+				"name": "Coding",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Wine Tasting Tour",
+		"summary": "Explore local wineries and enjoy a variety of wines on our tasting tour.",
+		"cover": "https://media.tacdn.com/media/attractions-splice-spp-674x446/09/c7/c0/80.jpg",
+		"likes": 38,
+		"category": {
+			"name": "Food",
+			"link": "/categories/food",
+			"bgColor": "bg-red-600",
+			"bgColorHover": "bg-red-500",
+			"size": "sm"
+		},
+		"subCategory": "Events",
+		"location": "Napa Valley",
+		"tags": [
+			{
+				"name": "Wine",
+				"bgColor": "bg-purple-400",
+				"size": "xs"
+			},
+			{
+				"name": "Tour",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Knit & Crochet Club",
+		"summary": "Join fellow knitting and crochet enthusiasts to share patterns, tips, and companionship.",
+		"cover": "https://www.cmu.edu/cmwa/images/knitting-900x600.jpg",
+		"likes": 19,
+		"category": {
+			"name": "Crafts",
+			"link": "/categories/crafts",
+			"bgColor": "bg-pink-600",
+			"bgColorHover": "bg-pink-500",
+			"size": "sm"
+		},
+		"subCategory": "Handmade",
+		"location": "Austin",
+		"tags": [
+			{
+				"name": "Knitting",
+				"bgColor": "bg-pink-400",
+				"size": "xs"
+			},
+			{
+				"name": "Crochet",
+				"bgColor": "bg-purple-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Chess Tournament",
+		"summary": "Compete in our local chess tournament and test your strategic skills. All levels welcome.",
+		"cover": "https://nscfchess.org/wp-content/uploads/2022/07/Sunrise-Chess-Champions-2021-7-1.jpg",
+		"likes": 27,
+		"category": {
+			"name": "Games",
+			"link": "/categories/games",
+			"bgColor": "bg-black-600",
+			"bgColorHover": "bg-black-500",
+			"size": "sm"
+		},
+		"subCategory": "Competition",
+		"location": "Chicago",
+		"tags": [
+			{
+				"name": "Chess",
+				"bgColor": "bg-gray-400",
+				"size": "xs"
+			},
+			{
+				"name": "Games",
+				"bgColor": "bg-black-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Astronomy Night",
+		"summary": "Gaze at the stars and learn about constellations at our community astronomy night.",
+		"cover": "https://skyandtelescope.org/wp-content/uploads/2015-04-15_552ec785e77b6_download.jpg",
+		"likes": 34,
+		"category": {
+			"name": "Science",
+			"link": "/categories/science",
+			"bgColor": "bg-blue-600",
+			"bgColorHover": "bg-blue-500",
+			"size": "sm"
+		},
+		"subCategory": "Education",
+		"location": "Phoenix",
+		"tags": [
+			{
+				"name": "Astronomy",
+				"bgColor": "bg-black-400",
+				"size": "xs"
+			},
+			{
+				"name": "Science",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "DIY Birdhouse Workshop",
+		"summary": "Create your own birdhouse using sustainable materials. Perfect for families and bird lovers.",
+		"cover": "https://www.signalsaz.com/wp-content/uploads/2022/04/74413_Birdhouse-Decorating-Workshop.jpg",
+		"likes": 13,
+		"category": {
+			"name": "Crafts",
+			"link": "/categories/crafts",
+			"bgColor": "bg-green-600",
+			"bgColorHover": "bg-green-500",
+			"size": "sm"
+		},
+		"subCategory": "Handmade",
+		"location": "Nashville",
+		"tags": [
+			{
+				"name": "DIY",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			},
+			{
+				"name": "Nature",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Virtual Reality Experience",
+		"summary": "Experience the latest in VR technology. Perfect for gamers and tech enthusiasts.",
+		"cover": "https://img.freepik.com/premium-photo/new-generation-virtual-reality-experience-exploring-digital-world-through-vr-glasses-digital_956369-9537.jpg",
+		"likes": 23,
+		"category": {
+			"name": "Technology",
+			"link": "/categories/technology",
+			"bgColor": "bg-gray-600",
+			"bgColorHover": "bg-gray-500",
+			"size": "sm"
+		},
+		"subCategory": "Entertainment",
+		"location": "Los Angeles",
+		"tags": [
+			{
+				"name": "VR",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			},
+			{
+				"name": "Tech",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Culinary Arts Festival",
+		"summary": "Celebrate culinary arts with live cooking demonstrations, food tastings, and workshops.",
+		"cover": "https://www.arabnews.com/sites/default/files/styles/n_670_395/public/2023/06/11/3860511-585691296.png?itok=XLXXXl2I",
+		"likes": 47,
+		"category": {
+			"name": "Food",
+			"link": "/categories/food",
+			"bgColor": "bg-red-600",
+			"bgColorHover": "bg-red-500",
+			"size": "sm"
+		},
+		"subCategory": "Events",
+		"location": "San Francisco",
+		"tags": [
+			{
+				"name": "Food",
+				"bgColor": "bg-orange-400",
+				"size": "xs"
+			},
+			{
+				"name": "Festival",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Urban Sketching Group",
+		"summary": "Join us for a day of urban sketching. Capture the city's essence with your artistic skills.",
+		"cover": "https://www.lynnechapmanurbansketching.co.uk/wp-content/uploads/2016/02/US-Gallery-9.jpg",
+		"likes": 19,
+		"category": {
+			"name": "Art",
+			"link": "/categories/art",
+			"bgColor": "bg-purple-600",
+			"bgColorHover": "bg-purple-500",
+			"size": "sm"
+		},
+		"subCategory": "Drawing",
+		"location": "Chicago",
+		"tags": [
+			{
+				"name": "Art",
+				"bgColor": "bg-purple-400",
+				"size": "xs"
+			},
+			{
+				"name": "Sketching",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Mindfulness Meditation",
+		"summary": "Practice mindfulness meditation in a peaceful group setting. Suitable for all levels.",
+		"cover": "https://www.verywellmind.com/thmb/lmjACRUlHuZcHijdfo5dYplWQro=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-539661087-58d2e5e65f9b5846830df9aa.jpg",
+		"likes": 34,
+		"category": {
+			"name": "Wellness",
+			"link": "/categories/wellness",
+			"bgColor": "bg-blue-600",
+			"bgColorHover": "bg-blue-500",
+			"size": "sm"
+		},
+		"subCategory": "Health",
+		"location": "Seattle",
+		"tags": [
+			{
+				"name": "Meditation",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			},
+			{
+				"name": "Wellness",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Pottery Making Class",
+		"summary": "Discover the joy of pottery making in our hands-on class. Create and glaze your own pieces.",
+		"cover": "https://i0.wp.com/www.creativehandsstudio.net/wp-content/uploads/2018/01/pottery.jpg?fit=1024%2C698&ssl=1",
+		"likes": 27,
+		"category": {
+			"name": "Crafts",
+			"link": "/categories/crafts",
+			"bgColor": "bg-pink-600",
+			"bgColorHover": "bg-pink-500",
+			"size": "sm"
+		},
+		"subCategory": "Handmade",
+		"location": "Phoenix",
+		"tags": [
+			{
+				"name": "Pottery",
+				"bgColor": "bg-brown-400",
+				"size": "xs"
+			},
+			{
+				"name": "Crafts",
+				"bgColor": "bg-purple-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Local Theater Production",
+		"summary": "Support local talent by attending our community theater's latest production.",
+		"cover": "https://i0.wp.com/usrepresented.com/wp-content/uploads/2014/07/theater-play.jpg?fit=1240%2C826&ssl=1",
+		"likes": 42,
+		"category": {
+			"name": "Entertainment",
+			"link": "/categories/entertainment",
+			"bgColor": "bg-purple-600",
+			"bgColorHover": "bg-purple-500",
+			"size": "sm"
+		},
+		"subCategory": "Theater",
+		"location": "Atlanta",
+		"tags": [
+			{
+				"name": "Theater",
+				"bgColor": "bg-red-400",
+				"size": "xs"
+			},
+			{
+				"name": "Drama",
+				"bgColor": "bg-black-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Charity Bake Sale",
+		"summary": "Bake and sell homemade goods to raise funds for local charities.",
+		"cover": "https://www.helpforheroes.org.uk/media/filer_public_thumbnails/filer_public/10/cf/10cfd1ce-45be-46e2-b762-4018612d670a/how-to-bake-sale-header-image__750x500_q80_crop_progressive_subsampling-2_upscale.jpg",
+		"likes": 30,
+		"category": {
+			"name": "Community",
+			"link": "/categories/community",
+			"bgColor": "bg-yellow-600",
+			"bgColorHover": "bg-yellow-500",
+			"size": "sm"
+		},
+		"subCategory": "Fundraising",
+		"location": "Dallas",
+		"tags": [
+			{
+				"name": "Charity",
+				"bgColor": "bg-red-400",
+				"size": "xs"
+			},
+			{
+				"name": "Bake Sale",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Mountain Hiking Adventure",
+		"summary": "Join us for a day of hiking and exploring scenic mountain trails.",
+		"cover": "https://dev-snowit.ams3.digitaloceanspaces.com/uploads/2023/06/30130308/trekking-montagna.jpg",
+		"likes": 48,
+		"category": {
+			"name": "Adventure",
+			"link": "/categories/adventure",
+			"bgColor": "bg-green-600",
+			"bgColorHover": "bg-green-500",
+			"size": "sm"
+		},
+		"subCategory": "Outdoor",
+		"location": "Denver",
+		"tags": [
+			{
+				"name": "Hiking",
+				"bgColor": "bg-brown-400",
+				"size": "xs"
+			},
+			{
+				"name": "Adventure",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Sustainable Fashion Workshop",
+		"summary": "Learn how to create eco-friendly fashion items using sustainable materials.",
+		"cover": "https://images.squarespace-cdn.com/content/v1/6359438182189a0adf66155e/2f2b635a-fdda-46ac-a8cb-1dd99bdf454e/IMG_3546.JPG",
+		"likes": 26,
+		"category": {
+			"name": "Fashion",
+			"link": "/categories/fashion",
+			"bgColor": "bg-yellow-600",
+			"bgColorHover": "bg-yellow-500",
+			"size": "sm"
+		},
+		"subCategory": "Handmade",
+		"location": "New York",
+		"tags": [
+			{
+				"name": "Fashion",
+				"bgColor": "bg-purple-400",
+				"size": "xs"
+			},
+			{
+				"name": "Sustainability",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Digital Art Exhibition",
+		"summary": "Experience the latest in digital art at our interactive exhibition. Explore immersive installations and cutting-edge digital creations.",
+		"cover": "https://cdn.prod.website-files.com/5ead65b4cd1146b85071bfdf/601d3422dd25e147babbe265_photo_2021-02-05%2013.02.16.jpeg",
+		"likes": 58,
+		"category": {
+			"name": "Art",
+			"link": "/categories/art",
+			"bgColor": "bg-blue-600",
+			"bgColorHover": "bg-blue-500",
+			"size": "sm"
+		},
+		"subCategory": "Exhibition",
+		"location": "San Francisco",
+		"tags": [
+			{
+				"name": "Digital Art",
+				"bgColor": "bg-purple-400",
+				"size": "xs"
+			},
+			{
+				"name": "Interactive",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Neighborhood Clean-Up Drive",
+		"summary": "Join us to clean up and beautify our neighborhood. Help make our community a better place to live.",
+		"cover": "https://t4.ftcdn.net/jpg/04/92/41/71/360_F_492417180_ao0SaxYLlXyGlyYLRzn6RCyf86E21As7.jpg",
+		"likes": 32,
+		"category": {
+			"name": "Community",
+			"link": "/categories/community",
+			"bgColor": "bg-blue-600",
+			"bgColorHover": "bg-blue-500",
+			"size": "sm"
+		},
+		"subCategory": "Volunteering",
+		"location": "Chicago",
+		"tags": [
+			{
+				"name": "Clean-Up",
+				"bgColor": "bg-red-400",
+				"size": "xs"
+			},
+			{
+				"name": "Community",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Cooking Class for Beginners",
+		"summary": "Learn the basics of cooking in this fun and interactive class. Perfect for beginners.",
+		"cover": "https://inmyownkitchen.com/wp-content/uploads/sites/939/2020/06/adult-cooking-class-1.png",
+		"likes": 25,
+		"category": {
+			"name": "Food & Drink",
+			"link": "/categories/food-drink",
+			"bgColor": "bg-red-600",
+			"bgColorHover": "bg-red-500",
+			"size": "sm"
+		},
+		"subCategory": "Classes",
+		"location": "Austin",
+		"tags": [
+			{
+				"name": "Cooking",
+				"bgColor": "bg-orange-400",
+				"size": "xs"
+			},
+			{
+				"name": "Beginner",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Language Exchange Meetup",
+		"summary": "Practice languages with native speakers in a friendly and relaxed environment.",
+		"cover": "https://medellinliving.com/wp-content/uploads/2017/02/Toucan-language-exchange_with-Tedy-750x500.jpg",
+		"likes": 47,
+		"category": {
+			"name": "Education",
+			"link": "/categories/education",
+			"bgColor": "bg-yellow-600",
+			"bgColorHover": "bg-yellow-500",
+			"size": "sm"
+		},
+		"subCategory": "Meetup",
+		"location": "Los Angeles",
+		"tags": [
+			{
+				"name": "Languages",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			},
+			{
+				"name": "Practice",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Yoga in the Park",
+		"summary": "Join us for a relaxing yoga session in the park. All levels are welcome.",
+		"cover": "https://images.squarespace-cdn.com/content/v1/5b0e12a8697a98669b4339eb/1540867709901-GI1CJJEEQP628Q06NV0J/fullsizeoutput_1d44.jpeg",
+		"likes": 53,
+		"category": {
+			"name": "Health & Wellness",
+			"link": "/categories/health-wellness",
+			"bgColor": "bg-purple-600",
+			"bgColorHover": "bg-purple-500",
+			"size": "sm"
+		},
+		"subCategory": "Fitness",
+		"location": "Seattle",
+		"tags": [
+			{
+				"name": "Yoga",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			},
+			{
+				"name": "Relaxation",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Tech Talks & Networking",
+		"summary": "Attend talks by industry experts and network with tech enthusiasts.",
+		"cover": "https://media.licdn.com/dms/image/D5612AQERULrLxL5ESA/article-cover_image-shrink_720_1280/0/1696300946684?e=2147483647&v=beta&t=eMWYi8V8ZlDWO3ZVZHg3rkfh_R5BwttUUkyDpjOF6ks",
+		"likes": 78,
+		"category": {
+			"name": "Technology",
+			"link": "/categories/technology",
+			"bgColor": "bg-gray-600",
+			"bgColorHover": "bg-gray-500",
+			"size": "sm"
+		},
+		"subCategory": "Networking",
+		"location": "San Francisco",
+		"tags": [
+			{
+				"name": "Tech",
+				"bgColor": "bg-red-400",
+				"size": "xs"
+			},
+			{
+				"name": "Networking",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Creative Writing Workshop",
+		"summary": "Improve your writing skills in this hands-on workshop. All levels are welcome.",
+		"cover": "https://www.strathmore.org/media/twtlc1kp/creative-writing-workshop.jpg",
+		"likes": 34,
+		"category": {
+			"name": "Literature",
+			"link": "/categories/literature",
+			"bgColor": "bg-green-600",
+			"bgColorHover": "bg-green-500",
+			"size": "sm"
+		},
+		"subCategory": "Workshop",
+		"location": "Boston",
+		"tags": [
+			{
+				"name": "Writing",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			},
+			{
+				"name": "Creativity",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Weekend Hiking Adventure",
+		"summary": "Join us for a weekend of hiking and exploring nature trails. All levels of hikers are welcome.",
+		"cover": "https://www.fairmont.com/assets/0/104/1821/1826/5036/5037/7c22cdd9-71e0-497d-bc2c-b097f7116761.jpg",
+		"likes": 60,
+		"category": {
+			"name": "Outdoors",
+			"link": "/categories/outdoors",
+			"bgColor": "bg-green-600",
+			"bgColorHover": "bg-green-500",
+			"size": "sm"
+		},
+		"subCategory": "Adventure",
+		"location": "Denver",
+		"tags": [
+			{
+				"name": "Hiking",
+				"bgColor": "bg-brown-400",
+				"size": "xs"
+			},
+			{
+				"name": "Nature",
+				"bgColor": "bg-green-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
+		"title": "Photography Workshop",
+		"summary": "Learn the basics of photography and improve your skills in this interactive workshop.",
+		"cover": "https://content.app-sources.com/s/56253637657728836/uploads/workshops/PHWK-7263767.jpg?format=webp",
+		"likes": 42,
+		"category": {
+			"name": "Arts",
+			"link": "/categories/arts",
+			"bgColor": "bg-purple-600",
+			"bgColorHover": "bg-purple-500",
+			"size": "sm"
+		},
+		"subCategory": "Workshop",
+		"location": "Portland",
+		"tags": [
+			{
+				"name": "Photography",
+				"bgColor": "bg-blue-400",
+				"size": "xs"
+			},
+			{
+				"name": "Workshop",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
 	}
 ]

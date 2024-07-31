@@ -39,17 +39,17 @@ const JoinAProject = () => {
 		<div className="container min-w-full mx-auto py-8 px-2 md:px-8">
 			<h1 className="text-4xl mb-12 text-center">Looking for a project?</h1>
 			<p className="mb-4 text-center">Here are some projects waiting for you to help them...</p>
-			<div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-2 lg:gap-8">
+			<div className="grid justify-evenly grid-cols-2 gap-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-5">
 				{projectsToShow.map((project, index) => {
 					if (projectsToShow.length === index + 1) {
 						return (
-							<div className="embla__slide embla__class-names" ref={lastProjectElementRef} key={index}>
+							<div className="flex justify-center" ref={lastProjectElementRef} key={index}>
 								<ProjectCard key={index} project={project} />
 							</div>
 						);
 					} else {
 						return (
-							<div className="embla__slide embla__class-names" key={index}>
+							<div className="flex justify-center" key={index}>
 								<ProjectCard key={index} project={project} />
 							</div>
 						);
