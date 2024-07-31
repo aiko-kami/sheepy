@@ -22,7 +22,7 @@ const ProjectCard = ({ project, animate }) => {
 				</div>
 
 				{/* Card body */}
-				<div className="px-4 py-2 bg-blue-900 h-54 rounded-b-lg">
+				<div className="px-1 md:px-4 py-2 bg-blue-900 min-h-54 rounded-b-lg">
 					<div className="flex flex-wrap justify-center h-12 overflow-hidden">
 						{tags.map((tag, index) => (
 							<div key={index} className="mx-1 my-2">
@@ -31,8 +31,8 @@ const ProjectCard = ({ project, animate }) => {
 						))}
 					</div>
 					<Link href={`/projects/${id}`}>
-						<h2 className="font-semibold text-xl line-clamp-2 mb-4">{title}</h2>
-						<p className="line-clamp-3">{summary}</p>
+						<h2 className="font-semibold text-lg md:text-xl line-clamp-2 mb-4">{title}</h2>
+						<p className="line-clamp-3 text-sm md:text-base">{summary}</p>
 					</Link>
 				</div>
 			</div>
