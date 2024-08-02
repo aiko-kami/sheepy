@@ -13,7 +13,10 @@ import StepProjectSubmitted from "@/components/StartProjectForm/StepProjectSubmi
 import ProgressBar from "@/components/StartProjectForm/ProgressBar";
 import ButtonsNavigation from "@/components/StartProjectForm/ButtonsNavigation";
 
-const StepManager = ({ projectForm }) => {
+import projectForm from "@/mock/projectForm.json";
+import categories from "@/mock/categories.json";
+
+const StepManager = () => {
 	const [currentStep, setCurrentStep] = useState(0);
 	const [percent, setPercent] = useState(0);
 	const totalSteps = 7; // Total number of steps
@@ -128,7 +131,7 @@ const StepManager = ({ projectForm }) => {
 			<form onSubmit={handleSubmit}>
 				<div className={`${currentStep > 0 && currentStep < totalSteps ? "h-160" : "hidden"} overflow-y-auto mb-4 py-1 xl:pt-20`}>
 					{/* Step 1: Fill in the project title, category, and sub-category */}
-					{currentStep === 1 && <StepOne formInputs={formInputs} onChange={onChange} categories={projectForm.categories} />}
+					{currentStep === 1 && <StepOne formInputs={formInputs} onChange={onChange} categories={categories} />}
 
 					{/* Step 2: Fill in the project summary and goal */}
 					{currentStep === 2 && <StepTwo formInputs={formInputs} onChange={onChange} />}

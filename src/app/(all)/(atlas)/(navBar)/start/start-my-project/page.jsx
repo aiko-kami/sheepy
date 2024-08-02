@@ -10,7 +10,7 @@ const StartMyProject = () => {
 	return (
 		<>
 			<div className="container min-w-full mx-auto px-2 md:px-8 text-justify">
-				<StepManager projectForm={projectForm} />
+				<StepManager />
 			</div>
 		</>
 	);

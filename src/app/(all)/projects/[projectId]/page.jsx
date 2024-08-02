@@ -15,7 +15,7 @@ export const metadata = {
 	description: "Project public page",
 };
 
-const ProjectPublicPage = ({ params }) => {
+const ProjectPublicPage = () => {
 	return (
 		<div className="container mx-auto py-8 hyphens-auto">
 			{/* Project title, summary and creator */}

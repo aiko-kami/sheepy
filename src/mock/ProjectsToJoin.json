@@ -586,7 +586,7 @@
 		"location": "New York",
 		"tags": [
 			{
-				"name": "Art",
+				"name": "Street-art",
 				"bgColor": "bg-purple-400",
 				"size": "xs"
 			},
@@ -606,16 +606,16 @@
 		"category": {
 			"name": "History",
 			"link": "/categories/history",
-			"bgColor": "bg-brown-600",
-			"bgColorHover": "bg-brown-500",
+			"bgColor": "bg-indigo-400",
+			"bgColorHover": "bg-indigo-300",
 			"size": "sm"
 		},
 		"subCategory": "Local",
 		"location": "Boston",
 		"tags": [
 			{
-				"name": "History",
-				"bgColor": "bg-brown-400",
+				"name": "Past",
+				"bgColor": "bg-indigo-400",
 				"size": "xs"
 			},
 			{
@@ -998,8 +998,8 @@
 		"category": {
 			"name": "Games",
 			"link": "/categories/games",
-			"bgColor": "bg-black-600",
-			"bgColorHover": "bg-black-500",
+			"bgColor": "bg-black",
+			"bgColorHover": "bg-gray-800",
 			"size": "sm"
 		},
 		"subCategory": "Competition",
@@ -1012,7 +1012,7 @@
 			},
 			{
 				"name": "Games",
-				"bgColor": "bg-black-400",
+				"bgColor": "bg-black text-gray-200",
 				"size": "xs"
 			}
 		],
@@ -1035,7 +1035,7 @@
 		"tags": [
 			{
 				"name": "Astronomy",
-				"bgColor": "bg-black-400",
+				"bgColor": "bg-blue-700 text-gray-200",
 				"size": "xs"
 			},
 			{
@@ -1203,7 +1203,7 @@
 		"tags": [
 			{
 				"name": "Pottery",
-				"bgColor": "bg-brown-400",
+				"bgColor": "bg-rose-300",
 				"size": "xs"
 			},
 			{
@@ -1236,7 +1236,7 @@
 			},
 			{
 				"name": "Drama",
-				"bgColor": "bg-black-400",
+				"bgColor": "bg-yellow-700",
 				"size": "xs"
 			}
 		],
@@ -1287,7 +1287,7 @@
 		"tags": [
 			{
 				"name": "Hiking",
-				"bgColor": "bg-brown-400",
+				"bgColor": "bg-rose-300",
 				"size": "xs"
 			},
 			{
@@ -1539,7 +1539,7 @@
 		"tags": [
 			{
 				"name": "Hiking",
-				"bgColor": "bg-brown-400",
+				"bgColor": "bg-rose-300",
 				"size": "xs"
 			},
 			{

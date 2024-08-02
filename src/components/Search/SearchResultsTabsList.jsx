@@ -11,6 +11,7 @@ import SubCategoryHorizontalCard from "@/components/Cards/Categories/SubCategory
 import LocationHorizontalCard from "@/components/Cards/Locations/LocationHorizontalCard";
 
 import searchResults from "@/mock/searchResults.json";
+import categories from "@/mock/categories.json";
 
 const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 	const [activeTab, setActiveTab] = useState(tab || "tabProjects");
@@ -68,9 +69,9 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 					)}
 				</TabContent>
 				<TabContent id="tabCategories" activeTab={activeTab}>
-					{searchResults.categories && searchResults.categories.length !== 0 ? (
-						<ul className="grid gap-8 sm:grid-cols-2 lg:mx-auto max-w-220">
-							{searchResults.categories.map((category, index) => (
+					{categories && categories.length !== 0 ? (
+						<ul className="grid gap-8 sm:grid-cols-2 lg:mx-auto max-w-250">
+							{categories.map((category, index) => (
 								<li key={index} className="flex justify-center">
 									<CategoryHorizontalCard category={category} />
 								</li>

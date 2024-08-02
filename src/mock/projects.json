@@ -68,8 +68,8 @@
 		"cover": "https://images.pexels.com/photos/21067/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 		"likes": 23,
 		"category": {
-			"name": "Video Games",
-			"link": "/categories/video-games",
+			"name": "Games",
+			"link": "/categories/games",
 			"bgColor": "bg-red-600",
 			"bgColorHover": "bg-red-500",
 			"size": "xs"

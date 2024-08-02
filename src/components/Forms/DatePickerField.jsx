@@ -20,21 +20,19 @@ const CustomDatePicker = styled(DatePicker)(({ theme }) => ({
 		color: "#6b7280", // Tailwind gray-500 color for disabled input text
 	},
 	"& .MuiInput-underline:before": {
-		borderBottom: "2px solid #4B5563", // Tailwind gray-700 color for underline
-		transition: "none", // Remove transition for before pseudo-element
+		borderBottom: 0, // Tailwind gray-700 color for underline
 	},
 	"& .MuiInput-underline:hover:before": {
-		borderBottom: "2px solid #6b7280", // Tailwind gray-700 color for underline on hover
+		borderBottom: 0, // Tailwind gray-700 color for underline on hover
 	},
 	"& .MuiInput-underline:after": {
-		borderBottom: "2px solid #3B82F6", // Tailwind blue-500 color for focused underline
-		transition: "none", // Remove transition for after pseudo-element
+		borderBottom: 0, // Tailwind blue-500 color for focused underline
 	},
 }));
 
 const DatePickerField = ({ label, value, onChange, disabled = false }) => {
 	return (
-		<div className="relative z-0 mb-6 w-full">
+		<div className="relative z-0 mb-6 w-full border-0 border-b-2 border-gray-600 hover:shadow-lg hover:border-gray-500">
 			<LocalizationProvider dateAdapter={AdapterLuxon}>
 				<CustomDatePicker
 					label={label}

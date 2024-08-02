@@ -39,8 +39,8 @@
 		"cover": "https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/home-improvement/wp-content/uploads/2023/07/unnamed-5.jpg",
 		"likes": 8,
 		"category": {
-			"name": "DIY",
-			"link": "/categories/diy",
+			"name": "Nature",
+			"link": "/categories/nature",
 			"bgColor": "bg-yellow-500",
 			"bgColorHover": "bg-yellow-400",
 			"size": "sm"
@@ -67,10 +67,10 @@
 		"cover": "https://www.thomann.de/blog/wp-content/uploads/2023/01/podcastStart_header_770x425.png",
 		"likes": 12,
 		"category": {
-			"name": "Media",
-			"link": "/categories/media",
-			"bgColor": "bg-purple-500",
-			"bgColorHover": "bg-purple-400",
+			"name": "Community",
+			"link": "/categories/community",
+			"bgColor": "bg-pink-600",
+			"bgColorHover": "bg-pink-500",
 			"size": "sm"
 		},
 		"subCategory": "Technology",
