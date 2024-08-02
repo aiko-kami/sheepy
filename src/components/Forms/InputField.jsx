@@ -10,7 +10,7 @@ const InputField = ({ inputName, inputType, label, inputValue, onChange, disable
 				value={inputValue}
 				onChange={onChange}
 				className={`block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-500 peer ${
-					disabled ? "text-gray-500 line-through" : "text-white hover:shadow-lg"
+					disabled ? "text-gray-500 line-through" : "text-white hover:shadow-lg hover:border-gray-500"
 				}`}
 				placeholder=" "
 				disabled={disabled}

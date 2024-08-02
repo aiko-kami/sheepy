@@ -24,7 +24,7 @@ const CustomDatePicker = styled(DatePicker)(({ theme }) => ({
 		transition: "none", // Remove transition for before pseudo-element
 	},
 	"& .MuiInput-underline:hover:before": {
-		borderBottom: "2px solid #4B5563", // Tailwind gray-700 color for underline on hover
+		borderBottom: "2px solid #6b7280", // Tailwind gray-700 color for underline on hover
 	},
 	"& .MuiInput-underline:after": {
 		borderBottom: "2px solid #3B82F6", // Tailwind blue-500 color for focused underline

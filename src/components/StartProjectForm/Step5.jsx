@@ -46,7 +46,7 @@ const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTag
 									name="projectVisibility"
 									value={formInputs.projectVisibility}
 									onChange={onChange}
-									className={`block mb-6 py-3 px-1 w-full bg-transparent border-0 border-b-2 border-gray-600 focus:outline-none ${
+									className={`block mb-6 py-3 px-1 w-full bg-transparent border-0 border-b-2 border-gray-600 focus:outline-none hover:border-gray-500 hover:shadow-lg ${
 										formInputs.projectVisibility === "" ? "text-gray-400" : "text-white"
 									}`}
 								>

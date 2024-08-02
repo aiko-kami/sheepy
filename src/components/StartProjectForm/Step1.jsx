@@ -51,7 +51,9 @@ const StepOne = ({ categories, formInputs, onChange }) => {
 										name="selectedCategory"
 										value={formInputs.selectedCategory}
 										onChange={handleCategoryChange}
-										className={`block py-3 px-1 w-full bg-transparent border-0 border-b-2 border-gray-600 focus:outline-none ${formInputs.selectedCategory === "" ? "text-gray-400" : "text-white"}`}
+										className={`block py-3 px-1 w-full bg-transparent border-0 border-b-2 border-gray-600 focus:outline-none hover:border-gray-500 hover:shadow-lg ${
+											formInputs.selectedCategory === "" ? "text-gray-400" : "text-white"
+										}`}
 									>
 										<option value="" className="bg-gray-700 text-gray-400">
 											Choose a category

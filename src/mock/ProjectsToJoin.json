@@ -268,10 +268,10 @@
 		"cover": "https://media.licdn.com/dms/image/C561BAQFq6G0mq1ZEqQ/company-background_10000/0/1584375305611/cookingclass_cover?e=2147483647&v=beta&t=HHQJNqTlYpV9Th3TQtsT1KP7zmMVsTaxO0Op2l0CAX4",
 		"likes": 11,
 		"category": {
-			"name": "Food & Drink",
-			"link": "/categories/food-drink",
-			"bgColor": "bg-orange-400",
-			"bgColorHover": "bg-orange-300",
+			"name": "Food",
+			"link": "/categories/food",
+			"bgColor": "bg-red-600",
+			"bgColorHover": "bg-red-500",
 			"size": "sm"
 		},
 		"subCategory": "Culinary Arts",
@@ -578,8 +578,8 @@
 		"category": {
 			"name": "Art",
 			"link": "/categories/art",
-			"bgColor": "bg-purple-600",
-			"bgColorHover": "bg-purple-500",
+			"bgColor": "bg-purple-400",
+			"bgColorHover": "bg-purple-300",
 			"size": "sm"
 		},
 		"subCategory": "Visual Arts",
@@ -718,8 +718,8 @@
 		"category": {
 			"name": "Technology",
 			"link": "/categories/technology",
-			"bgColor": "bg-gray-600",
-			"bgColorHover": "bg-gray-500",
+			"bgColor": "bg-gray-400",
+			"bgColorHover": "bg-gray-300",
 			"size": "sm"
 		},
 		"subCategory": "Networking",
@@ -774,8 +774,8 @@
 		"category": {
 			"name": "Food",
 			"link": "/categories/food",
-			"bgColor": "bg-orange-600",
-			"bgColorHover": "bg-orange-500",
+			"bgColor": "bg-red-600",
+			"bgColorHover": "bg-red-500",
 			"size": "sm"
 		},
 		"subCategory": "Market",
@@ -830,8 +830,8 @@
 		"category": {
 			"name": "Music",
 			"link": "/categories/music",
-			"bgColor": "bg-purple-600",
-			"bgColorHover": "bg-purple-500",
+			"bgColor": "bg-blue-400",
+			"bgColorHover": "bg-blue-300",
 			"size": "sm"
 		},
 		"subCategory": "Live Music",
@@ -914,8 +914,8 @@
 		"category": {
 			"name": "Technology",
 			"link": "/categories/technology",
-			"bgColor": "bg-gray-600",
-			"bgColorHover": "bg-gray-500",
+			"bgColor": "bg-gray-400",
+			"bgColorHover": "bg-gray-300",
 			"size": "sm"
 		},
 		"subCategory": "Education",
@@ -1082,8 +1082,8 @@
 		"category": {
 			"name": "Technology",
 			"link": "/categories/technology",
-			"bgColor": "bg-gray-600",
-			"bgColorHover": "bg-gray-500",
+			"bgColor": "bg-gray-400",
+			"bgColorHover": "bg-gray-300",
 			"size": "sm"
 		},
 		"subCategory": "Entertainment",
@@ -1138,8 +1138,8 @@
 		"category": {
 			"name": "Art",
 			"link": "/categories/art",
-			"bgColor": "bg-purple-600",
-			"bgColorHover": "bg-purple-500",
+			"bgColor": "bg-purple-400",
+			"bgColorHover": "bg-purple-300",
 			"size": "sm"
 		},
 		"subCategory": "Drawing",
@@ -1291,8 +1291,8 @@
 				"size": "xs"
 			},
 			{
-				"name": "Adventure",
-				"bgColor": "bg-blue-400",
+				"name": "Nature",
+				"bgColor": "bg-green-400",
 				"size": "xs"
 			}
 		],
@@ -1334,8 +1334,8 @@
 		"category": {
 			"name": "Art",
 			"link": "/categories/art",
-			"bgColor": "bg-blue-600",
-			"bgColorHover": "bg-blue-500",
+			"bgColor": "bg-purple-400",
+			"bgColorHover": "bg-purple-300",
 			"size": "sm"
 		},
 		"subCategory": "Exhibition",
@@ -1388,8 +1388,8 @@
 		"cover": "https://inmyownkitchen.com/wp-content/uploads/sites/939/2020/06/adult-cooking-class-1.png",
 		"likes": 25,
 		"category": {
-			"name": "Food & Drink",
-			"link": "/categories/food-drink",
+			"name": "Food",
+			"link": "/categories/food",
 			"bgColor": "bg-red-600",
 			"bgColorHover": "bg-red-500",
 			"size": "sm"
@@ -1474,8 +1474,8 @@
 		"category": {
 			"name": "Technology",
 			"link": "/categories/technology",
-			"bgColor": "bg-gray-600",
-			"bgColorHover": "bg-gray-500",
+			"bgColor": "bg-gray-400",
+			"bgColorHover": "bg-gray-300",
 			"size": "sm"
 		},
 		"subCategory": "Networking",
@@ -1502,8 +1502,8 @@
 		"category": {
 			"name": "Literature",
 			"link": "/categories/literature",
-			"bgColor": "bg-green-600",
-			"bgColorHover": "bg-green-500",
+			"bgColor": "bg-green-400",
+			"bgColorHover": "bg-green-300",
 			"size": "sm"
 		},
 		"subCategory": "Workshop",
@@ -1528,8 +1528,8 @@
 		"cover": "https://www.fairmont.com/assets/0/104/1821/1826/5036/5037/7c22cdd9-71e0-497d-bc2c-b097f7116761.jpg",
 		"likes": 60,
 		"category": {
-			"name": "Outdoors",
-			"link": "/categories/outdoors",
+			"name": "Adventure",
+			"link": "/categories/adventure",
 			"bgColor": "bg-green-600",
 			"bgColorHover": "bg-green-500",
 			"size": "sm"
@@ -1556,10 +1556,10 @@
 		"cover": "https://content.app-sources.com/s/56253637657728836/uploads/workshops/PHWK-7263767.jpg?format=webp",
 		"likes": 42,
 		"category": {
-			"name": "Arts",
-			"link": "/categories/arts",
-			"bgColor": "bg-purple-600",
-			"bgColorHover": "bg-purple-500",
+			"name": "Art",
+			"link": "/categories/art",
+			"bgColor": "bg-purple-400",
+			"bgColorHover": "bg-purple-300",
 			"size": "sm"
 		},
 		"subCategory": "Workshop",
