@@ -6,8 +6,8 @@
 		"cover": "https://superawesomevectors.com/wp-content/uploads/2021/04/yellow-submarine-vector.jpg",
 		"likes": 5,
 		"category": {
-			"name": "Nature",
-			"link": "/categories/nature",
+			"name": "Nature & Environment",
+			"link": "/categories/nature-environment",
 			"bgColor": "bg-green-600",
 			"bgColorHover": "bg-green-500",
 			"size": "sm"
@@ -39,10 +39,10 @@
 		"cover": "https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/home-improvement/wp-content/uploads/2023/07/unnamed-5.jpg",
 		"likes": 8,
 		"category": {
-			"name": "DIY",
-			"link": "/categories/diy",
-			"bgColor": "bg-yellow-500",
-			"bgColorHover": "bg-yellow-400",
+			"name": "Nature & Environment",
+			"link": "/categories/nature-environment",
+			"bgColor": "bg-green-600",
+			"bgColorHover": "bg-green-500",
 			"size": "sm"
 		},
 		"subCategory": "Construction",
@@ -67,10 +67,10 @@
 		"cover": "https://www.thomann.de/blog/wp-content/uploads/2023/01/podcastStart_header_770x425.png",
 		"likes": 12,
 		"category": {
-			"name": "Media",
-			"link": "/categories/media",
-			"bgColor": "bg-purple-500",
-			"bgColorHover": "bg-purple-400",
+			"name": "Community",
+			"link": "/categories/community",
+			"bgColor": "bg-pink-600",
+			"bgColorHover": "bg-pink-500",
 			"size": "sm"
 		},
 		"subCategory": "Technology",
@@ -296,8 +296,8 @@
 		"cover": "https://www.cnu.org/sites/default/files/3-community-gardens.jpg",
 		"likes": 9,
 		"category": {
-			"name": "Environment",
-			"link": "/categories/environment",
+			"name": "Nature & Environment",
+			"link": "/categories/nature-environment",
 			"bgColor": "bg-green-600",
 			"bgColorHover": "bg-green-500",
 			"size": "sm"
@@ -604,13 +604,13 @@
 		"cover": "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/87/a8/61.jpg",
 		"likes": 12,
 		"category": {
-			"name": "History",
-			"link": "/categories/history",
+			"name": "Travel",
+			"link": "/categories/travel",
 			"bgColor": "bg-indigo-400",
 			"bgColorHover": "bg-indigo-300",
 			"size": "sm"
 		},
-		"subCategory": "Local",
+		"subCategory": "Guides & Tips",
 		"location": "Boston",
 		"tags": [
 			{
@@ -690,8 +690,8 @@
 		"category": {
 			"name": "Community",
 			"link": "/categories/community",
-			"bgColor": "bg-blue-600",
-			"bgColorHover": "bg-blue-500",
+			"bgColor": "bg-pink-600",
+			"bgColorHover": "bg-pink-500",
 			"size": "sm"
 		},
 		"subCategory": "Events",
@@ -744,13 +744,13 @@
 		"cover": "https://www.myrnam.ca/wp-content/uploads/2024/02/image-4-1024x640.png",
 		"likes": 55,
 		"category": {
-			"name": "Photography",
-			"link": "/categories/photography",
-			"bgColor": "bg-yellow-600",
-			"bgColorHover": "bg-yellow-500",
+			"name": "Art",
+			"link": "/categories/art",
+			"bgColor": "bg-purple-400",
+			"bgColorHover": "bg-purple-300",
 			"size": "sm"
 		},
-		"subCategory": "Competition",
+		"subCategory": "Photography",
 		"location": "Austin",
 		"tags": [
 			{
@@ -800,10 +800,10 @@
 		"cover": "https://www.ecowatch.com/wp-content/uploads/2022/07/GettyImages-1353301481-scaled.jpg",
 		"likes": 45,
 		"category": {
-			"name": "Environment",
-			"link": "/categories/environment",
-			"bgColor": "bg-blue-600",
-			"bgColorHover": "bg-blue-500",
+			"name": "Nature & Environment",
+			"link": "/categories/nature-environment",
+			"bgColor": "bg-green-600",
+			"bgColorHover": "bg-green-500",
 			"size": "sm"
 		},
 		"subCategory": "Volunteer",
@@ -884,13 +884,13 @@
 		"cover": "https://www.patriciamcconnell.com/theotherendoftheleash/wp-content/uploads/2017/09/bigstock-Group-Of-Dogs-With-Owners-At-O-96550604.jpg",
 		"likes": 32,
 		"category": {
-			"name": "Pets",
-			"link": "/categories/pets",
+			"name": "Nature & Environment",
+			"link": "/categories/nature-environment",
 			"bgColor": "bg-green-600",
 			"bgColorHover": "bg-green-500",
 			"size": "sm"
 		},
-		"subCategory": "Training",
+		"subCategory": "Pets",
 		"location": "San Diego",
 		"tags": [
 			{
@@ -998,8 +998,8 @@
 		"category": {
 			"name": "Games",
 			"link": "/categories/games",
-			"bgColor": "bg-black",
-			"bgColorHover": "bg-gray-800",
+			"bgColor": "bg-orange-400",
+			"bgColorHover": "bg-orange-300",
 			"size": "sm"
 		},
 		"subCategory": "Competition",
@@ -1054,8 +1054,8 @@
 		"category": {
 			"name": "Crafts",
 			"link": "/categories/crafts",
-			"bgColor": "bg-green-600",
-			"bgColorHover": "bg-green-500",
+			"bgColor": "bg-pink-600",
+			"bgColorHover": "bg-pink-500",
 			"size": "sm"
 		},
 		"subCategory": "Handmade",
@@ -1164,13 +1164,13 @@
 		"cover": "https://www.verywellmind.com/thmb/lmjACRUlHuZcHijdfo5dYplWQro=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-539661087-58d2e5e65f9b5846830df9aa.jpg",
 		"likes": 34,
 		"category": {
-			"name": "Wellness",
-			"link": "/categories/wellness",
+			"name": "Health & Fitness",
+			"link": "/categories/health-fitness",
 			"bgColor": "bg-blue-600",
 			"bgColorHover": "bg-blue-500",
 			"size": "sm"
 		},
-		"subCategory": "Health",
+		"subCategory": "Mental Health",
 		"location": "Seattle",
 		"tags": [
 			{
@@ -1220,8 +1220,8 @@
 		"cover": "https://i0.wp.com/usrepresented.com/wp-content/uploads/2014/07/theater-play.jpg?fit=1240%2C826&ssl=1",
 		"likes": 42,
 		"category": {
-			"name": "Entertainment",
-			"link": "/categories/entertainment",
+			"name": "Performing Arts",
+			"link": "/categories/performing-arts",
 			"bgColor": "bg-purple-600",
 			"bgColorHover": "bg-purple-500",
 			"size": "sm"
@@ -1250,8 +1250,8 @@
 		"category": {
 			"name": "Community",
 			"link": "/categories/community",
-			"bgColor": "bg-yellow-600",
-			"bgColorHover": "bg-yellow-500",
+			"bgColor": "bg-pink-600",
+			"bgColorHover": "bg-pink-500",
 			"size": "sm"
 		},
 		"subCategory": "Fundraising",
@@ -1276,8 +1276,8 @@
 		"cover": "https://dev-snowit.ams3.digitaloceanspaces.com/uploads/2023/06/30130308/trekking-montagna.jpg",
 		"likes": 48,
 		"category": {
-			"name": "Adventure",
-			"link": "/categories/adventure",
+			"name": "Nature & Environment",
+			"link": "/categories/nature-environment",
 			"bgColor": "bg-green-600",
 			"bgColorHover": "bg-green-500",
 			"size": "sm"
@@ -1362,8 +1362,8 @@
 		"category": {
 			"name": "Community",
 			"link": "/categories/community",
-			"bgColor": "bg-blue-600",
-			"bgColorHover": "bg-blue-500",
+			"bgColor": "bg-pink-600",
+			"bgColorHover": "bg-pink-500",
 			"size": "sm"
 		},
 		"subCategory": "Volunteering",
@@ -1418,8 +1418,8 @@
 		"category": {
 			"name": "Education",
 			"link": "/categories/education",
-			"bgColor": "bg-yellow-600",
-			"bgColorHover": "bg-yellow-500",
+			"bgColor": "bg-yellow-400",
+			"bgColorHover": "bg-yellow-300",
 			"size": "sm"
 		},
 		"subCategory": "Meetup",
@@ -1444,10 +1444,10 @@
 		"cover": "https://images.squarespace-cdn.com/content/v1/5b0e12a8697a98669b4339eb/1540867709901-GI1CJJEEQP628Q06NV0J/fullsizeoutput_1d44.jpeg",
 		"likes": 53,
 		"category": {
-			"name": "Health & Wellness",
-			"link": "/categories/health-wellness",
-			"bgColor": "bg-purple-600",
-			"bgColorHover": "bg-purple-500",
+			"name": "Health & Fitness",
+			"link": "/categories/health-fitness",
+			"bgColor": "bg-blue-600",
+			"bgColorHover": "bg-blue-500",
 			"size": "sm"
 		},
 		"subCategory": "Fitness",
@@ -1528,8 +1528,8 @@
 		"cover": "https://www.fairmont.com/assets/0/104/1821/1826/5036/5037/7c22cdd9-71e0-497d-bc2c-b097f7116761.jpg",
 		"likes": 60,
 		"category": {
-			"name": "Adventure",
-			"link": "/categories/adventure",
+			"name": "Nature & Environment",
+			"link": "/categories/nature-environment",
 			"bgColor": "bg-green-600",
 			"bgColorHover": "bg-green-500",
 			"size": "sm"

@@ -14,7 +14,7 @@ const ProjectCard = ({ project, animate }) => {
 				{/* Card image and category */}
 				<div className="relative w-full">
 					<Link href={`/projects/${id}`}>
-						<Image src={cover} className="w-full h-62 object-cover rounded-t-lg" alt="Card" height={0} width={0} sizes="100vw" />
+						<Image src={cover} className="w-full h-36 sm:h-62 object-cover rounded-t-lg" alt="Card" height={0} width={0} sizes="100vw" />
 					</Link>
 					<div className="absolute bottom-2 right-2">
 						<Badge badge={category} />

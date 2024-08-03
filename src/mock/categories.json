@@ -2,7 +2,7 @@
 	{
 		"name": "Art",
 		"description": "Explore your creative side and celebrate the human imagination with various forms of art",
-		"cover": "https://media.cntraveler.com/photos/5bbfc004c0b2432daa533e1c/16:9/w_2560,c_limit/Meadows-Museum_Dimitirs-Skliris_S3A9314.jpg",
+		"cover": "https://cdnsm5-ss3.sharpschool.com/UserFiles/Servers/Server_794494/Image/Art/Art.jpg",
 		"link": "/categories/art",
 		"subCategories": [
 			{
@@ -44,504 +44,6 @@
 				"bgColorHover": "bg-purple-300",
 				"size": "xs",
 				"symbol": "🖥️"
-			}
-		]
-	},
-	{
-		"name": "Music",
-		"description": "Dive into the world of melodies and rhythms",
-		"cover": "https://images.ctfassets.net/hrltx12pl8hq/4hzmbXG3YTqnogFwXeSozB/88f026173fb909dacf6ed80772f9cde4/purpleguitar_music_LIHP.jpg",
-		"logo": "https://example.com/logo/music.jpg",
-		"link": "/categories/music",
-		"subCategories": [
-			{
-				"name": "Composing",
-				"link": "/tags/composing",
-				"bgColor": "bg-blue-400",
-				"bgColorHover": "bg-blue-300",
-				"size": "xs",
-				"symbol": "🎼"
-			},
-			{
-				"name": "Performing",
-				"link": "/tags/performing",
-				"bgColor": "bg-blue-400",
-				"bgColorHover": "bg-blue-300",
-				"size": "xs",
-				"symbol": "🎤"
-			},
-			{
-				"name": "Recording",
-				"link": "/tags/recording",
-				"bgColor": "bg-blue-400",
-				"bgColorHover": "bg-blue-300",
-				"size": "xs",
-				"symbol": "🎛️"
-			},
-			{
-				"name": "Instrumental",
-				"link": "/tags/instrumental",
-				"bgColor": "bg-blue-400",
-				"bgColorHover": "bg-blue-300",
-				"size": "xs",
-				"symbol": "🎸"
-			},
-			{
-				"name": "DJing",
-				"link": "/tags/djing",
-				"bgColor": "bg-blue-400",
-				"bgColorHover": "bg-blue-300",
-				"size": "xs",
-				"symbol": "🎧"
-			}
-		]
-	},
-	{
-		"name": "Technology",
-		"description": "Innovate and create with cutting-edge technology",
-		"cover": "https://paas-s3-broker-prod-lon-2edbd31f-65e0-4d35-9755-fde7c3b1b292.s3.amazonaws.com/images/Tech.original.png",
-		"logo": "https://example.com/logo/technology.jpg",
-		"link": "/categories/technology",
-		"subCategories": [
-			{
-				"name": "Software Development",
-				"link": "/tags/software-development",
-				"bgColor": "bg-gray-400",
-				"bgColorHover": "bg-gray-300",
-				"size": "xs",
-				"symbol": "💻"
-			},
-			{
-				"name": "Hardware",
-				"link": "/tags/hardware",
-				"bgColor": "bg-gray-400",
-				"bgColorHover": "bg-gray-300",
-				"size": "xs",
-				"symbol": "🔧"
-			},
-			{
-				"name": "AI and Machine Learning",
-				"link": "/tags/ai-machine-learning",
-				"bgColor": "bg-gray-400",
-				"bgColorHover": "bg-gray-300",
-				"size": "xs",
-				"symbol": "🤖"
-			},
-			{
-				"name": "Mobile Apps",
-				"link": "/tags/mobile-apps",
-				"bgColor": "bg-gray-400",
-				"bgColorHover": "bg-gray-300",
-				"size": "xs",
-				"symbol": "📱"
-			},
-			{
-				"name": "Cybersecurity",
-				"link": "/tags/cybersecurity",
-				"bgColor": "bg-gray-400",
-				"bgColorHover": "bg-gray-300",
-				"size": "xs",
-				"symbol": "🔐"
-			}
-		]
-	},
-	{
-		"name": "Literature",
-		"description": "Immerse yourself in stories, poems, and scripts",
-		"cover": "https://t3.ftcdn.net/jpg/03/33/45/40/360_F_333454009_nlCLykXBPzOLMFCTbo3PHUQJnJrDtPQX.jpg",
-		"logo": "https://example.com/logo/literature.jpg",
-		"link": "/categories/literature",
-		"subCategories": [
-			{
-				"name": "Fiction",
-				"link": "/tags/fiction",
-				"bgColor": "bg-green-400",
-				"bgColorHover": "bg-green-300",
-				"size": "xs",
-				"symbol": "📖"
-			},
-			{
-				"name": "Non-fiction",
-				"link": "/tags/non-fiction",
-				"bgColor": "bg-green-400",
-				"bgColorHover": "bg-green-300",
-				"size": "xs",
-				"symbol": "📚"
-			},
-			{
-				"name": "Poetry",
-				"link": "/tags/poetry",
-				"bgColor": "bg-green-400",
-				"bgColorHover": "bg-green-300",
-				"size": "xs",
-				"symbol": "🖋️"
-			},
-			{
-				"name": "Graphic Novels",
-				"link": "/tags/graphic-novels",
-				"bgColor": "bg-green-400",
-				"bgColorHover": "bg-green-300",
-				"size": "xs",
-				"symbol": "📙"
-			},
-			{
-				"name": "Screenwriting",
-				"link": "/tags/screenwriting",
-				"bgColor": "bg-green-400",
-				"bgColorHover": "bg-green-300",
-				"size": "xs",
-				"symbol": "🎬"
-			}
-		]
-	},
-	{
-		"name": "Culture",
-		"description": "Explore diverse cultural expressions and traditions",
-		"cover": "https://www.nipissingu.ca/sites/default/files/styles/crop_featured/public/philosophySlider2.jpg?itok=DO3UEe5M",
-		"logo": "https://example.com/logo/culture.jpg",
-		"link": "/categories/culture",
-		"subCategories": [
-			{
-				"name": "Museum",
-				"link": "/tags/museum",
-				"bgColor": "bg-orange-400",
-				"bgColorHover": "bg-orange-300",
-				"size": "xs",
-				"symbol": "🏛️"
-			},
-			{
-				"name": "Cultural Preservation",
-				"link": "/tags/cultural-preservation",
-				"bgColor": "bg-orange-400",
-				"bgColorHover": "bg-orange-300",
-				"size": "xs",
-				"symbol": "🛡️"
-			},
-			{
-				"name": "Philosophy",
-				"link": "/tags/philosophy",
-				"bgColor": "bg-orange-400",
-				"bgColorHover": "bg-orange-300",
-				"size": "xs",
-				"symbol": "🧠"
-			},
-			{
-				"name": "Festivals",
-				"link": "/tags/festivals",
-				"bgColor": "bg-orange-400",
-				"bgColorHover": "bg-orange-300",
-				"size": "xs",
-				"symbol": "🎉"
-			},
-			{
-				"name": "Traditions",
-				"link": "/tags/traditions",
-				"bgColor": "bg-orange-400",
-				"bgColorHover": "bg-orange-300",
-				"size": "xs",
-				"symbol": "🏛️"
-			},
-			{
-				"name": "Languages",
-				"link": "/tags/languages",
-				"bgColor": "bg-orange-400",
-				"bgColorHover": "bg-orange-300",
-				"size": "xs",
-				"symbol": "🌍"
-			}
-		]
-	},
-	{
-		"name": "Performing Arts",
-		"description": "Experience the thrill of live performances",
-		"cover": "https://www.harker.org/uploaded/themes/corporate-2015/img/hero-us-performing-arts-2.jpg",
-		"logo": "https://example.com/logo/performing-arts.jpg",
-		"link": "/categories/performing-arts",
-		"subCategories": [
-			{
-				"name": "Theater",
-				"link": "/tags/theater",
-				"bgColor": "bg-red-400",
-				"bgColorHover": "bg-red-300",
-				"size": "xs",
-				"symbol": "🎭"
-			},
-			{
-				"name": "Dance",
-				"link": "/tags/dance",
-				"bgColor": "bg-red-400",
-				"bgColorHover": "bg-red-300",
-				"size": "xs",
-				"symbol": "💃"
-			},
-			{
-				"name": "Opera",
-				"link": "/tags/opera",
-				"bgColor": "bg-red-400",
-				"bgColorHover": "bg-red-300",
-				"size": "xs",
-				"symbol": "🎟️"
-			},
-			{
-				"name": "Circus Arts",
-				"link": "/tags/circus-arts",
-				"bgColor": "bg-red-400",
-				"bgColorHover": "bg-red-300",
-				"size": "xs",
-				"symbol": "🎪"
-			},
-			{
-				"name": "Stand-up Comedy",
-				"link": "/tags/stand-up-comedy",
-				"bgColor": "bg-red-400",
-				"bgColorHover": "bg-red-300",
-				"size": "xs",
-				"symbol": "🎙️"
-			}
-		]
-	},
-	{
-		"name": "Film & Video",
-		"description": "Create and explore the world of motion pictures",
-		"cover": "https://bowvalleycollege.ca/-/media/bvc/programs-and-courses/centre-for-entertainment-arts/images/advanced-film-production.ashx",
-		"logo": "https://example.com/logo/film-video.jpg",
-		"link": "/categories/film-video",
-		"subCategories": [
-			{
-				"name": "Documentary",
-				"link": "/tags/documentary",
-				"bgColor": "bg-yellow-400",
-				"bgColorHover": "bg-yellow-300",
-				"size": "xs",
-				"symbol": "🎥"
-			},
-			{
-				"name": "Short Film",
-				"link": "/tags/short-film",
-				"bgColor": "bg-yellow-400",
-				"bgColorHover": "bg-yellow-300",
-				"size": "xs",
-				"symbol": "📹"
-			},
-			{
-				"name": "Feature Film",
-				"link": "/tags/feature-film",
-				"bgColor": "bg-yellow-400",
-				"bgColorHover": "bg-yellow-300",
-				"size": "xs",
-				"symbol": "🎞️"
-			},
-			{
-				"name": "Animation",
-				"link": "/tags/animation",
-				"bgColor": "bg-yellow-400",
-				"bgColorHover": "bg-yellow-300",
-				"size": "xs",
-				"symbol": "🐾"
-			},
-			{
-				"name": "Web Series",
-				"link": "/tags/web-series",
-				"bgColor": "bg-yellow-400",
-				"bgColorHover": "bg-yellow-300",
-				"size": "xs",
-				"symbol": "📺"
-			}
-		]
-	},
-	{
-		"name": "Food",
-		"description": "Savor the world of culinary arts",
-		"cover": "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
-		"logo": "https://example.com/logo/culinary.jpg",
-		"link": "/categories/culinary",
-		"subCategories": [
-			{
-				"name": "Baking",
-				"link": "/tags/baking",
-				"bgColor": "bg-orange-400",
-				"bgColorHover": "bg-orange-300",
-				"size": "xs",
-				"symbol": "🥖"
-			},
-			{
-				"name": "Cooking",
-				"link": "/tags/cooking",
-				"bgColor": "bg-orange-400",
-				"bgColorHover": "bg-orange-300",
-				"size": "xs",
-				"symbol": "🍳"
-			},
-			{
-				"name": "Beverages",
-				"link": "/tags/beverages",
-				"bgColor": "bg-orange-400",
-				"bgColorHover": "bg-orange-300",
-				"size": "xs",
-				"symbol": "🍹"
-			},
-			{
-				"name": "Food Writing",
-				"link": "/tags/food-writing",
-				"bgColor": "bg-orange-400",
-				"bgColorHover": "bg-orange-300",
-				"size": "xs",
-				"symbol": "📝"
-			},
-			{
-				"name": "Food Photography",
-				"link": "/tags/food-photography",
-				"bgColor": "bg-orange-400",
-				"bgColorHover": "bg-orange-300",
-				"size": "xs",
-				"symbol": "📸"
-			}
-		]
-	},
-	{
-		"name": "Design",
-		"description": "Unleash your creativity with innovative designs",
-		"cover": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/2NmmyG5c0Hb0FZJyvPyxmm/700b2db0d62212edb8a0872f7f38fbed/GettyImages-1249256417.jpg?w=1500&h=680&q=60&fit=fill&f=faces&fm=jpg&fl=progressive&auto=format%2Ccompress&dpr=1&w=1000",
-		"logo": "https://example.com/logo/design.jpg",
-		"link": "/categories/design",
-		"subCategories": [
-			{
-				"name": "Graphic Design",
-				"link": "/tags/graphic-design",
-				"bgColor": "bg-pink-400",
-				"bgColorHover": "bg-pink-300",
-				"size": "xs",
-				"symbol": "🖌️"
-			},
-			{
-				"name": "Interior Design",
-				"link": "/tags/interior-design",
-				"bgColor": "bg-pink-400",
-				"bgColorHover": "bg-pink-300",
-				"size": "xs",
-				"symbol": "🛋️"
-			},
-			{
-				"name": "Fashion Design",
-				"link": "/tags/fashion-design",
-				"bgColor": "bg-pink-400",
-				"bgColorHover": "bg-pink-300",
-				"size": "xs",
-				"symbol": "👗"
-			},
-			{
-				"name": "Product Design",
-				"link": "/tags/product-design",
-				"bgColor": "bg-pink-400",
-				"bgColorHover": "bg-pink-300",
-				"size": "xs",
-				"symbol": "🛠️"
-			},
-			{
-				"name": "Architecture",
-				"link": "/tags/architecture",
-				"bgColor": "bg-pink-400",
-				"bgColorHover": "bg-pink-300",
-				"size": "xs",
-				"symbol": "🏛️"
-			}
-		]
-	},
-	{
-		"name": "Games",
-		"description": "Enter the realm of fun and entertainment",
-		"cover": "https://img.freepik.com/premium-photo/group-friends-playing-board-games-together_1022456-202170.jpg",
-		"logo": "https://example.com/logo/games.jpg",
-		"link": "/categories/games",
-		"subCategories": [
-			{
-				"name": "Video Games",
-				"link": "/tags/video-games",
-				"bgColor": "bg-purple-400",
-				"bgColorHover": "bg-purple-300",
-				"size": "xs",
-				"symbol": "🎮"
-			},
-			{
-				"name": "Board Games",
-				"link": "/tags/board-games",
-				"bgColor": "bg-purple-400",
-				"bgColorHover": "bg-purple-300",
-				"size": "xs",
-				"symbol": "🎲"
-			},
-			{
-				"name": "Card Games",
-				"link": "/tags/card-games",
-				"bgColor": "bg-purple-400",
-				"bgColorHover": "bg-purple-300",
-				"size": "xs",
-				"symbol": "🃏"
-			},
-			{
-				"name": "Tabletop RPGs",
-				"link": "/tags/tabletop-rpgs",
-				"bgColor": "bg-purple-400",
-				"bgColorHover": "bg-purple-300",
-				"size": "xs",
-				"symbol": "🗺️"
-			},
-			{
-				"name": "Mobile Games",
-				"link": "/tags/mobile-games",
-				"bgColor": "bg-purple-400",
-				"bgColorHover": "bg-purple-300",
-				"size": "xs",
-				"symbol": "📲"
-			}
-		]
-	},
-	{
-		"name": "Crafts",
-		"description": "Create and craft with your hands",
-		"cover": "https://lifework.arizona.edu/sites/default/files/styles/az_large/public/2023-06/news-banner-benefits-crafting.png?itok=WMfrl0J9",
-		"logo": "https://example.com/logo/crafts.jpg",
-		"link": "/categories/crafts",
-		"subCategories": [
-			{
-				"name": "Knitting",
-				"link": "/tags/knitting",
-				"bgColor": "bg-yellow-400",
-				"bgColorHover": "bg-yellow-300",
-				"size": "xs",
-				"symbol": "🧶"
-			},
-			{
-				"name": "Woodworking",
-				"link": "/tags/woodworking",
-				"bgColor": "bg-yellow-400",
-				"bgColorHover": "bg-yellow-300",
-				"size": "xs",
-				"symbol": "🪓"
-			},
-			{
-				"name": "Jewelry Making",
-				"link": "/tags/jewelry-making",
-				"bgColor": "bg-yellow-400",
-				"bgColorHover": "bg-yellow-300",
-				"size": "xs",
-				"symbol": "💍"
-			},
-			{
-				"name": "Pottery",
-				"link": "/tags/pottery",
-				"bgColor": "bg-yellow-400",
-				"bgColorHover": "bg-yellow-300",
-				"size": "xs",
-				"symbol": "🏺"
-			},
-			{
-				"name": "Paper Crafts",
-				"link": "/tags/paper-crafts",
-				"bgColor": "bg-yellow-400",
-				"bgColorHover": "bg-yellow-300",
-				"size": "xs",
-				"symbol": "✂️"
 			}
 		]
 	},
@@ -611,6 +113,218 @@
 		]
 	},
 	{
+		"name": "Crafts",
+		"description": "Create and craft with your hands",
+		"cover": "https://lifework.arizona.edu/sites/default/files/styles/az_large/public/2023-06/news-banner-benefits-crafting.png?itok=WMfrl0J9",
+		"logo": "https://example.com/logo/crafts.jpg",
+		"link": "/categories/crafts",
+		"subCategories": [
+			{
+				"name": "Knitting",
+				"link": "/tags/knitting",
+				"bgColor": "bg-yellow-400",
+				"bgColorHover": "bg-yellow-300",
+				"size": "xs",
+				"symbol": "🧶"
+			},
+			{
+				"name": "Woodworking",
+				"link": "/tags/woodworking",
+				"bgColor": "bg-yellow-400",
+				"bgColorHover": "bg-yellow-300",
+				"size": "xs",
+				"symbol": "🪓"
+			},
+			{
+				"name": "Jewelry Making",
+				"link": "/tags/jewelry-making",
+				"bgColor": "bg-yellow-400",
+				"bgColorHover": "bg-yellow-300",
+				"size": "xs",
+				"symbol": "💍"
+			},
+			{
+				"name": "Pottery",
+				"link": "/tags/pottery",
+				"bgColor": "bg-yellow-400",
+				"bgColorHover": "bg-yellow-300",
+				"size": "xs",
+				"symbol": "🏺"
+			},
+			{
+				"name": "Paper Crafts",
+				"link": "/tags/paper-crafts",
+				"bgColor": "bg-yellow-400",
+				"bgColorHover": "bg-yellow-300",
+				"size": "xs",
+				"symbol": "✂️"
+			}
+		]
+	},
+	{
+		"name": "Culture",
+		"description": "Explore diverse cultural expressions and traditions",
+		"cover": "https://www.nipissingu.ca/sites/default/files/styles/crop_featured/public/philosophySlider2.jpg?itok=DO3UEe5M",
+		"logo": "https://example.com/logo/culture.jpg",
+		"link": "/categories/culture",
+		"subCategories": [
+			{
+				"name": "Museum",
+				"link": "/tags/museum",
+				"bgColor": "bg-orange-400",
+				"bgColorHover": "bg-orange-300",
+				"size": "xs",
+				"symbol": "🏛️"
+			},
+			{
+				"name": "Cultural Preservation",
+				"link": "/tags/cultural-preservation",
+				"bgColor": "bg-orange-400",
+				"bgColorHover": "bg-orange-300",
+				"size": "xs",
+				"symbol": "🛡️"
+			},
+			{
+				"name": "Philosophy",
+				"link": "/tags/philosophy",
+				"bgColor": "bg-orange-400",
+				"bgColorHover": "bg-orange-300",
+				"size": "xs",
+				"symbol": "🧠"
+			},
+			{
+				"name": "Festivals",
+				"link": "/tags/festivals",
+				"bgColor": "bg-orange-400",
+				"bgColorHover": "bg-orange-300",
+				"size": "xs",
+				"symbol": "🎉"
+			},
+			{
+				"name": "Traditions",
+				"link": "/tags/traditions",
+				"bgColor": "bg-orange-400",
+				"bgColorHover": "bg-orange-300",
+				"size": "xs",
+				"symbol": "🏛️"
+			},
+			{
+				"name": "Languages",
+				"link": "/tags/languages",
+				"bgColor": "bg-orange-400",
+				"bgColorHover": "bg-orange-300",
+				"size": "xs",
+				"symbol": "🌍"
+			}
+		]
+	},
+	{
+		"name": "Design",
+		"description": "Unleash your creativity with innovative designs",
+		"cover": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/2NmmyG5c0Hb0FZJyvPyxmm/700b2db0d62212edb8a0872f7f38fbed/GettyImages-1249256417.jpg?w=1500&h=680&q=60&fit=fill&f=faces&fm=jpg&fl=progressive&auto=format%2Ccompress&dpr=1&w=1000",
+		"logo": "https://example.com/logo/design.jpg",
+		"link": "/categories/design",
+		"subCategories": [
+			{
+				"name": "Graphic Design",
+				"link": "/tags/graphic-design",
+				"bgColor": "bg-pink-400",
+				"bgColorHover": "bg-pink-300",
+				"size": "xs",
+				"symbol": "🖌️"
+			},
+			{
+				"name": "Interior Design",
+				"link": "/tags/interior-design",
+				"bgColor": "bg-pink-400",
+				"bgColorHover": "bg-pink-300",
+				"size": "xs",
+				"symbol": "🛋️"
+			},
+			{
+				"name": "Fashion Design",
+				"link": "/tags/fashion-design",
+				"bgColor": "bg-pink-400",
+				"bgColorHover": "bg-pink-300",
+				"size": "xs",
+				"symbol": "👗"
+			},
+			{
+				"name": "Product Design",
+				"link": "/tags/product-design",
+				"bgColor": "bg-pink-400",
+				"bgColorHover": "bg-pink-300",
+				"size": "xs",
+				"symbol": "🛠️"
+			},
+			{
+				"name": "Architecture",
+				"link": "/tags/architecture",
+				"bgColor": "bg-pink-400",
+				"bgColorHover": "bg-pink-300",
+				"size": "xs",
+				"symbol": "🏛️"
+			}
+		]
+	},
+	{
+		"name": "Education",
+		"link": "/categories/education",
+		"cover": "https://www.touteleurope.eu/wp-content/uploads/2020/08/politique-euro-formation-education.jpg",
+		"description": "Explore a wide range of educational projects and resources.",
+		"subCategories": [
+			{
+				"name": "Workshops and Seminars",
+				"link": "/categories/education/workshops-seminars",
+				"bgColor": "bg-green-500",
+				"bgColorHover": "bg-green-700",
+				"symbol": "🏫"
+			},
+			{
+				"name": "Tutoring and Mentoring",
+				"link": "/categories/education/tutoring-mentoring",
+				"bgColor": "bg-yellow-500",
+				"bgColorHover": "bg-yellow-700",
+				"symbol": "👩‍🏫"
+			},
+			{
+				"name": "Educational Events",
+				"link": "/categories/education/educational-events",
+				"bgColor": "bg-blue-500",
+				"bgColorHover": "bg-blue-700",
+				"symbol": "🎓"
+			},
+			{
+				"name": "Study Groups",
+				"link": "/categories/education/study-groups",
+				"bgColor": "bg-purple-500",
+				"bgColorHover": "bg-purple-700",
+				"symbol": "📖"
+			},
+			{
+				"name": "Learning",
+				"link": "/categories/education/learning",
+				"bgColor": "bg-green-500",
+				"bgColorHover": "bg-green-700",
+				"symbol": "📚"
+			},
+			{
+				"name": "Career Development",
+				"link": "/categories/education/career-development",
+				"bgColor": "bg-indigo-500",
+				"bgColorHover": "bg-indigo-700",
+				"symbol": "💼"
+			},
+			{
+				"name": "Language Learning",
+				"link": "/categories/education/language-learning",
+				"bgColor": "bg-orange-500",
+				"bgColorHover": "bg-orange-700",
+				"symbol": "🌍"
+			}
+		]
+	},
+	{
 		"name": "Fashion",
 		"description": "Stay stylish and trendy",
 		"cover": "https://cache.marieclaire.fr/data/photo/w1200_h630_c17/6g/fashion-week.jpg",
@@ -656,6 +370,153 @@
 				"bgColorHover": "bg-red-300",
 				"size": "xs",
 				"symbol": "🧵"
+			}
+		]
+	},
+	{
+		"name": "Film & Video",
+		"description": "Create and explore the world of motion pictures",
+		"cover": "https://bowvalleycollege.ca/-/media/bvc/programs-and-courses/centre-for-entertainment-arts/images/advanced-film-production.ashx",
+		"logo": "https://example.com/logo/film-video.jpg",
+		"link": "/categories/film-video",
+		"subCategories": [
+			{
+				"name": "Documentary",
+				"link": "/tags/documentary",
+				"bgColor": "bg-yellow-400",
+				"bgColorHover": "bg-yellow-300",
+				"size": "xs",
+				"symbol": "🎥"
+			},
+			{
+				"name": "Short Film",
+				"link": "/tags/short-film",
+				"bgColor": "bg-yellow-400",
+				"bgColorHover": "bg-yellow-300",
+				"size": "xs",
+				"symbol": "📹"
+			},
+			{
+				"name": "Feature Film",
+				"link": "/tags/feature-film",
+				"bgColor": "bg-yellow-400",
+				"bgColorHover": "bg-yellow-300",
+				"size": "xs",
+				"symbol": "🎞️"
+			},
+			{
+				"name": "Animation",
+				"link": "/tags/animation",
+				"bgColor": "bg-yellow-400",
+				"bgColorHover": "bg-yellow-300",
+				"size": "xs",
+				"symbol": "🐾"
+			},
+			{
+				"name": "Web Series",
+				"link": "/tags/web-series",
+				"bgColor": "bg-yellow-400",
+				"bgColorHover": "bg-yellow-300",
+				"size": "xs",
+				"symbol": "📺"
+			}
+		]
+	},
+	{
+		"name": "Food",
+		"description": "Savor the world of culinary arts",
+		"cover": "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+		"logo": "https://example.com/logo/culinary.jpg",
+		"link": "/categories/food",
+		"subCategories": [
+			{
+				"name": "Baking",
+				"link": "/tags/baking",
+				"bgColor": "bg-orange-400",
+				"bgColorHover": "bg-orange-300",
+				"size": "xs",
+				"symbol": "🥖"
+			},
+			{
+				"name": "Cooking",
+				"link": "/tags/cooking",
+				"bgColor": "bg-orange-400",
+				"bgColorHover": "bg-orange-300",
+				"size": "xs",
+				"symbol": "🍳"
+			},
+			{
+				"name": "Beverages",
+				"link": "/tags/beverages",
+				"bgColor": "bg-orange-400",
+				"bgColorHover": "bg-orange-300",
+				"size": "xs",
+				"symbol": "🍹"
+			},
+			{
+				"name": "Food Writing",
+				"link": "/tags/food-writing",
+				"bgColor": "bg-orange-400",
+				"bgColorHover": "bg-orange-300",
+				"size": "xs",
+				"symbol": "📝"
+			},
+			{
+				"name": "Food Photography",
+				"link": "/tags/food-photography",
+				"bgColor": "bg-orange-400",
+				"bgColorHover": "bg-orange-300",
+				"size": "xs",
+				"symbol": "📸"
+			}
+		]
+	},
+	{
+		"name": "Games",
+		"description": "Enter the realm of fun and entertainment",
+		"cover": "https://img.freepik.com/premium-photo/group-friends-playing-board-games-together_1022456-202170.jpg",
+		"logo": "https://example.com/logo/games.jpg",
+		"link": "/categories/games",
+		"subCategories": [
+			{
+				"name": "Video Games",
+				"link": "/tags/video-games",
+				"bgColor": "bg-purple-400",
+				"bgColorHover": "bg-purple-300",
+				"size": "xs",
+				"symbol": "🎮"
+			},
+			{
+				"name": "Board Games",
+				"link": "/tags/board-games",
+				"bgColor": "bg-purple-400",
+				"bgColorHover": "bg-purple-300",
+				"size": "xs",
+				"symbol": "🎲"
+			},
+			{
+				"name": "Card Games",
+				"link": "/tags/card-games",
+				"bgColor": "bg-purple-400",
+				"bgColorHover": "bg-purple-300",
+				"size": "xs",
+				"symbol": "🃏"
+			},
+			{
+				"name": "Tabletop RPGs",
+				"link": "/tags/tabletop-rpgs",
+				"bgColor": "bg-purple-400",
+				"bgColorHover": "bg-purple-300",
+				"size": "xs",
+				"symbol": "🗺️"
+			},
+			{
+				"name": "Mobile Games",
+				"link": "/tags/mobile-games",
+				"bgColor": "bg-purple-400",
+				"bgColorHover": "bg-purple-300",
+				"size": "xs",
+				"symbol": "📲"
 			}
 		]
 	},
@@ -709,6 +570,218 @@
 		]
 	},
 	{
+		"name": "Literature",
+		"description": "Immerse yourself in stories, poems, and scripts",
+		"cover": "https://foodtank.com/wp-content/uploads/2021/07/alfons-morales-YLSwjSy7stw-unsplash.jpg",
+		"logo": "https://example.com/logo/literature.jpg",
+		"link": "/categories/literature",
+		"subCategories": [
+			{
+				"name": "Fiction",
+				"link": "/tags/fiction",
+				"bgColor": "bg-green-400",
+				"bgColorHover": "bg-green-300",
+				"size": "xs",
+				"symbol": "📖"
+			},
+			{
+				"name": "Non-fiction",
+				"link": "/tags/non-fiction",
+				"bgColor": "bg-green-400",
+				"bgColorHover": "bg-green-300",
+				"size": "xs",
+				"symbol": "📚"
+			},
+			{
+				"name": "Poetry",
+				"link": "/tags/poetry",
+				"bgColor": "bg-green-400",
+				"bgColorHover": "bg-green-300",
+				"size": "xs",
+				"symbol": "🖋️"
+			},
+			{
+				"name": "Graphic Novels",
+				"link": "/tags/graphic-novels",
+				"bgColor": "bg-green-400",
+				"bgColorHover": "bg-green-300",
+				"size": "xs",
+				"symbol": "📙"
+			},
+			{
+				"name": "Screenwriting",
+				"link": "/tags/screenwriting",
+				"bgColor": "bg-green-400",
+				"bgColorHover": "bg-green-300",
+				"size": "xs",
+				"symbol": "🎬"
+			}
+		]
+	},
+	{
+		"name": "Music",
+		"description": "Dive into the world of melodies and rhythms",
+		"cover": "https://images.ctfassets.net/hrltx12pl8hq/4hzmbXG3YTqnogFwXeSozB/88f026173fb909dacf6ed80772f9cde4/purpleguitar_music_LIHP.jpg",
+		"logo": "https://example.com/logo/music.jpg",
+		"link": "/categories/music",
+		"subCategories": [
+			{
+				"name": "Composing",
+				"link": "/tags/composing",
+				"bgColor": "bg-blue-400",
+				"bgColorHover": "bg-blue-300",
+				"size": "xs",
+				"symbol": "🎼"
+			},
+			{
+				"name": "Performing",
+				"link": "/tags/performing",
+				"bgColor": "bg-blue-400",
+				"bgColorHover": "bg-blue-300",
+				"size": "xs",
+				"symbol": "🎤"
+			},
+			{
+				"name": "Recording",
+				"link": "/tags/recording",
+				"bgColor": "bg-blue-400",
+				"bgColorHover": "bg-blue-300",
+				"size": "xs",
+				"symbol": "🎛️"
+			},
+			{
+				"name": "Instrumental",
+				"link": "/tags/instrumental",
+				"bgColor": "bg-blue-400",
+				"bgColorHover": "bg-blue-300",
+				"size": "xs",
+				"symbol": "🎸"
+			},
+			{
+				"name": "DJing",
+				"link": "/tags/djing",
+				"bgColor": "bg-blue-400",
+				"bgColorHover": "bg-blue-300",
+				"size": "xs",
+				"symbol": "🎧"
+			}
+		]
+	},
+	{
+		"name": "Nature & Environment",
+		"description": "This is the category for nature lovers and Earth care",
+		"cover": "https://cdn.hometogo.net/assets/media/pics/1920_600/6116cc2b9dfc1.jpg",
+		"logo": "https://www.shutterstock.com/image-vector/people-logo-team-icon-partner-600nw-1103715440.jpg",
+		"link": "/categories/nature-environment",
+		"subCategories": [
+			{
+				"name": "Flora and Fauna",
+				"link": "/tags/flora-and-fauna",
+				"bgColor": "bg-purple-400",
+				"bgColorHover": "bg-purple-300",
+				"size": "xs",
+				"symbol": "🌿"
+			},
+			{
+				"name": "Pets",
+				"link": "/tags/pets",
+				"bgColor": "bg-purple-400",
+				"bgColorHover": "bg-purple-300",
+				"size": "xs",
+				"symbol": "🐶"
+			},
+			{
+				"name": "Outdoor Activities",
+				"link": "/tags/outdoor-activities",
+				"bgColor": "bg-purple-400",
+				"bgColorHover": "bg-purple-300",
+				"size": "xs",
+				"symbol": "🏞️"
+			},
+			{
+				"name": "Ecology",
+				"link": "/tags/ecology",
+				"bgColor": "bg-purple-400",
+				"bgColorHover": "bg-purple-300",
+				"size": "xs",
+				"symbol": "🌍"
+			},
+			{
+				"name": "Sustainable Agriculture",
+				"link": "/tags/sustainable-agriculture",
+				"bgColor": "bg-green-400",
+				"bgColorHover": "bg-green-300",
+				"size": "xs",
+				"symbol": "🌱"
+			},
+			{
+				"name": "Waste Reduction & Recycling",
+				"link": "/tags/waste-reduction-recycling",
+				"bgColor": "bg-blue-400",
+				"bgColorHover": "bg-blue-300",
+				"size": "xs",
+				"symbol": "♻️"
+			},
+			{
+				"name": "Biodiversity Protection",
+				"link": "/tags/biodiversity-protection",
+				"bgColor": "bg-yellow-400",
+				"bgColorHover": "bg-yellow-300",
+				"size": "xs",
+				"symbol": "🦋"
+			}
+		]
+	},
+	{
+		"name": "Performing Arts",
+		"description": "Experience the thrill of live performances",
+		"cover": "https://www.harker.org/uploaded/themes/corporate-2015/img/hero-us-performing-arts-2.jpg",
+		"logo": "https://example.com/logo/performing-arts.jpg",
+		"link": "/categories/performing-arts",
+		"subCategories": [
+			{
+				"name": "Theater",
+				"link": "/tags/theater",
+				"bgColor": "bg-red-400",
+				"bgColorHover": "bg-red-300",
+				"size": "xs",
+				"symbol": "🎭"
+			},
+			{
+				"name": "Dance",
+				"link": "/tags/dance",
+				"bgColor": "bg-red-400",
+				"bgColorHover": "bg-red-300",
+				"size": "xs",
+				"symbol": "💃"
+			},
+			{
+				"name": "Opera",
+				"link": "/tags/opera",
+				"bgColor": "bg-red-400",
+				"bgColorHover": "bg-red-300",
+				"size": "xs",
+				"symbol": "🎟️"
+			},
+			{
+				"name": "Circus Arts",
+				"link": "/tags/circus-arts",
+				"bgColor": "bg-red-400",
+				"bgColorHover": "bg-red-300",
+				"size": "xs",
+				"symbol": "🎪"
+			},
+			{
+				"name": "Stand-up Comedy",
+				"link": "/tags/stand-up-comedy",
+				"bgColor": "bg-red-400",
+				"bgColorHover": "bg-red-300",
+				"size": "xs",
+				"symbol": "🎙️"
+			}
+		]
+	},
+	{
 		"name": "Science",
 		"description": "Explore the wonders of science",
 		"cover": "https://us.123rf.com/450wm/zinkevych/zinkevych1703/zinkevych170301220/74661825-adolescents-capables-prenant-part-%C3%A0-l-exp%C3%A9rience-de-chimie-%C3%A0-l-%C3%A9cole.jpg?ver=6",
@@ -758,6 +831,55 @@
 		]
 	},
 	{
+		"name": "Technology",
+		"description": "Innovate and create with cutting-edge technology",
+		"cover": "https://paas-s3-broker-prod-lon-2edbd31f-65e0-4d35-9755-fde7c3b1b292.s3.amazonaws.com/images/Tech.original.png",
+		"logo": "https://example.com/logo/technology.jpg",
+		"link": "/categories/technology",
+		"subCategories": [
+			{
+				"name": "Software Development",
+				"link": "/tags/software-development",
+				"bgColor": "bg-gray-400",
+				"bgColorHover": "bg-gray-300",
+				"size": "xs",
+				"symbol": "💻"
+			},
+			{
+				"name": "Hardware",
+				"link": "/tags/hardware",
+				"bgColor": "bg-gray-400",
+				"bgColorHover": "bg-gray-300",
+				"size": "xs",
+				"symbol": "🔧"
+			},
+			{
+				"name": "AI and Machine Learning",
+				"link": "/tags/ai-machine-learning",
+				"bgColor": "bg-gray-400",
+				"bgColorHover": "bg-gray-300",
+				"size": "xs",
+				"symbol": "🤖"
+			},
+			{
+				"name": "Mobile Apps",
+				"link": "/tags/mobile-apps",
+				"bgColor": "bg-gray-400",
+				"bgColorHover": "bg-gray-300",
+				"size": "xs",
+				"symbol": "📱"
+			},
+			{
+				"name": "Cybersecurity",
+				"link": "/tags/cybersecurity",
+				"bgColor": "bg-gray-400",
+				"bgColorHover": "bg-gray-300",
+				"size": "xs",
+				"symbol": "🔐"
+			}
+		]
+	},
+	{
 		"name": "Travel",
 		"description": "Discover new places and experiences",
 		"cover": "https://t4.ftcdn.net/jpg/04/08/81/09/360_F_408810925_IG49PMSfC7ZolH4ZLYNZTVuy8YN0BhGK.jpg",
@@ -803,39 +925,6 @@
 				"bgColorHover": "bg-indigo-300",
 				"size": "xs",
 				"symbol": "📌"
-			}
-		]
-	},
-	{
-		"name": "Nature",
-		"description": "This is the category for nature lovers",
-		"cover": "https://static.vecteezy.com/system/resources/thumbnails/026/365/937/small_2x/beautiful-blurred-green-nature-background-ai-generated-photo.jpg",
-		"logo": "https://www.shutterstock.com/image-vector/people-logo-team-icon-partner-600nw-1103715440.jpg",
-		"link": "/categories/nature",
-		"subCategories": [
-			{
-				"name": "Flora and Fauna",
-				"link": "/tags/flora-and-fauna",
-				"bgColor": "bg-purple-400",
-				"bgColorHover": "bg-purple-300",
-				"size": "xs",
-				"symbol": "🌿"
-			},
-			{
-				"name": "Outdoor Activities",
-				"link": "/tags/outdoor-activities",
-				"bgColor": "bg-purple-400",
-				"bgColorHover": "bg-purple-300",
-				"size": "xs",
-				"symbol": "🏞️"
-			},
-			{
-				"name": "Ecology",
-				"link": "/tags/ecology",
-				"bgColor": "bg-purple-400",
-				"bgColorHover": "bg-purple-300",
-				"size": "xs",
-				"symbol": "♻️"
 			}
 		]
 	}

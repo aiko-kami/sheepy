@@ -41,8 +41,8 @@
 		"category": {
 			"name": "Nature",
 			"link": "/categories/nature",
-			"bgColor": "bg-yellow-500",
-			"bgColorHover": "bg-yellow-400",
+			"bgColor": "bg-green-600",
+			"bgColorHover": "bg-green-500",
 			"size": "sm"
 		},
 		"subCategory": "Construction",
