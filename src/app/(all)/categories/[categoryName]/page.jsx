@@ -3,7 +3,7 @@ import Link from "next/link";
 import ProjectCard from "@/components/Cards/Projects/ProjectCard";
 
 import categories from "@/mock/categories.json";
-import projectsToJoin from "@/mock/projectsToJoin.json";
+import projectsToJoinss from "@/mock/projectsToJoinss.json";
 
 export const metadata = {
 	title: "Category - Sheepy",
@@ -26,7 +26,7 @@ const ProjectDescriptionPage = ({ params }) => {
 	}
 
 	// Filter projects that belong to the specified category
-	const filteredProjects = projectsToJoin.filter((project) => project.category.name === category.name);
+	const filteredProjects = projectsToJoinss.filter((project) => project.category.name === category.name);
 
 	return (
 		<div className="container mx-auto py-8">
