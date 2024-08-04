@@ -42,12 +42,12 @@ const ProjectDescriptionPage = ({ params }) => {
 				</div>
 			</div>
 			<div className="px-6">
-				<div className="mb-10">
+				<div className="mb-6">
 					<p className="text-xl">{category.description}</p>
 				</div>
-				<div className="mb-10 text-center">
-					<p className="mb-4 text-xl">Filter on sub-categories:</p>
-					<div className="grid grid-flow-col gap-6 overflow-x-auto py-2">
+				<div className="mb-14 text-center">
+					<p className="mb-10 text-xl">Filter on sub-categories:</p>
+					<div className="grid grid-flow-col gap-6 overflow-x-auto">
 						{category.subCategories.map((subCategory, index) => (
 							<Link key={index} href={subCategory.link}>
 								<div className={`${subCategory.bgColor} text-nowrap hover:${subCategory.bgColorHover} text-white rounded-lg p-2 mb-2`}>
@@ -58,6 +58,7 @@ const ProjectDescriptionPage = ({ params }) => {
 						))}
 					</div>
 				</div>
+				<p className="mb-10 text-xl text-center">The project for the category {category.name}:</p>
 				<div className="grid justify-evenly grid-cols-2 gap-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-5">
 					{filteredProjects.map((project, index) => {
 						return (
