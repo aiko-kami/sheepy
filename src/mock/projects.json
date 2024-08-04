@@ -37,8 +37,8 @@
 		"cover": "https://images.pexels.com/photos/38136/pexels-photo-38136.jpeg",
 		"likes": 12,
 		"category": {
-			"name": "Nature",
-			"link": "/categories/nature",
+			"name": "Nature & Environment",
+			"link": "/categories/nature-environment",
 			"bgColor": "bg-green-600",
 			"bgColorHover": "bg-green-500",
 			"size": "xs"

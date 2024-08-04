@@ -323,6 +323,7 @@ module.exports = {
 			},
 			fontFamily: {
 				oldenburg: ["Oldenburg", "sans-serif"],
+				rowdies: ["Rowdies", "sans-serif"],
 			},
 		},
 	},

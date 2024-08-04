@@ -3,7 +3,7 @@ import Link from "next/link";
 import ProjectCard from "@/components/Cards/Projects/ProjectCard";
 
 import categories from "@/mock/categories.json";
-import projectsToJoinss from "@/mock/projectsToJoinss.json";
+import projectsToJoin from "@/mock/projectsToJoin.json";
 
 export const metadata = {
 	title: "Category - Sheepy",
@@ -26,15 +26,24 @@ const ProjectDescriptionPage = ({ params }) => {
 	}
 
 	// Filter projects that belong to the specified category
-	const filteredProjects = projectsToJoinss.filter((project) => project.category.name === category.name);
+	const filteredProjects = projectsToJoin.filter((project) => project.category.name === category.name);
 
 	return (
 		<div className="container mx-auto py-8">
-			<Image src={category.cover} className="w-full h-80 object-cover rounded-3xl mb-3" alt="Category cover" width={0} height={0} sizes="100vw" />
+			<div className="relative mb-6">
+				<Image src={category.cover} className="w-full h-80 object-cover rounded-3xl" alt="Category cover" width={0} height={0} sizes="100vw" />
+				<div className="absolute -translate-y-2 inset-0 flex items-center justify-center">
+					<h1
+						className="text-center leading-tight font-rowdies text-transparent bg-clip-text text-[50px] sm:text-[100px] lg:text-[150px] p-0 m-0 drop-shadow-[2px_2px_5px_rgba(0,0,0,0.9)]"
+						style={{ backgroundImage: `url(${category.coverText})` }}
+					>
+						{category.name}
+					</h1>
+				</div>
+			</div>
 			<div className="px-6">
 				<div className="mb-10">
-					<h1 className="text-3xl font-semibold mb-2">Category {category.name}</h1>
-					<p>{category.description}</p>
+					<p className="text-xl">{category.description}</p>
 				</div>
 				<div className="mb-10 text-center">
 					<p className="mb-4 text-xl">Filter on sub-categories:</p>

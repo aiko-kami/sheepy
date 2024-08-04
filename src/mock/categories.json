@@ -3,6 +3,7 @@
 		"name": "Art",
 		"description": "Explore your creative side and celebrate the human imagination with various forms of art",
 		"cover": "https://cdnsm5-ss3.sharpschool.com/UserFiles/Servers/Server_794494/Image/Art/Art.jpg",
+		"coverText": "https://www.france-justforyou.com/sites/default/files/styles/hero_small_1x/public/image/page/france-just-for-you-van-gogh-tour.jpg?itok=Vd4ak2ox",
 		"link": "/categories/art",
 		"subCategories": [
 			{
@@ -51,6 +52,7 @@
 		"name": "Community",
 		"description": "Connecting people and building communities",
 		"cover": "https://sfractus-images.cleo.media/unsafe/11x123:1259x825/2000x0/images/Community-11036.jpg",
+		"coverText": "https://img.freepik.com/free-vector/psychedelic-groovy-background_23-2148862302.jpg",
 		"logo": "https://example.com/logo/community.jpg",
 		"link": "/categories/community",
 		"subCategories": [
@@ -116,6 +118,7 @@
 		"name": "Crafts",
 		"description": "Create and craft with your hands",
 		"cover": "https://lifework.arizona.edu/sites/default/files/styles/az_large/public/2023-06/news-banner-benefits-crafting.png?itok=WMfrl0J9",
+		"coverText": "https://us.123rf.com/450wm/iktash/iktash1304/iktash130400014/19250128-r%C3%A9sum%C3%A9-mod%C3%A8le-vectoriel-transparente.jpg?ver=6",
 		"logo": "https://example.com/logo/crafts.jpg",
 		"link": "/categories/crafts",
 		"subCategories": [
@@ -165,6 +168,7 @@
 		"name": "Culture",
 		"description": "Explore diverse cultural expressions and traditions",
 		"cover": "https://www.nipissingu.ca/sites/default/files/styles/crop_featured/public/philosophySlider2.jpg?itok=DO3UEe5M",
+		"coverText": "https://c4.wallpaperflare.com/wallpaper/178/8/1012/fractal-abstract-digital-art-psychedelic-wallpaper-preview.jpg",
 		"logo": "https://example.com/logo/culture.jpg",
 		"link": "/categories/culture",
 		"subCategories": [
@@ -222,6 +226,7 @@
 		"name": "Design",
 		"description": "Unleash your creativity with innovative designs",
 		"cover": "https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/2NmmyG5c0Hb0FZJyvPyxmm/700b2db0d62212edb8a0872f7f38fbed/GettyImages-1249256417.jpg?w=1500&h=680&q=60&fit=fill&f=faces&fm=jpg&fl=progressive&auto=format%2Ccompress&dpr=1&w=1000",
+		"coverText": "https://static.vecteezy.com/ti/photos-gratuite/p1/6538797-arc-en-ciel-couleurs-psychedeliques-multicolores-motifs-fond-macro-shot-de-bulles-de-savon-gratuit-photo.jpg",
 		"logo": "https://example.com/logo/design.jpg",
 		"link": "/categories/design",
 		"subCategories": [
@@ -271,6 +276,7 @@
 		"name": "Education",
 		"link": "/categories/education",
 		"cover": "https://www.touteleurope.eu/wp-content/uploads/2020/08/politique-euro-formation-education.jpg",
+		"coverText": "https://img.freepik.com/free-photo/yellow-gold-oil-paint-abstract-background-oil-paint-yellow-gold-oil-paint-background-yellow-gold-marble-pattern-texture-abstract-background_1258-102937.jpg",
 		"description": "Explore a wide range of educational projects and resources.",
 		"subCategories": [
 			{
@@ -328,6 +334,7 @@
 		"name": "Fashion",
 		"description": "Stay stylish and trendy",
 		"cover": "https://cache.marieclaire.fr/data/photo/w1200_h630_c17/6g/fashion-week.jpg",
+		"coverText": "https://cdn.pixabay.com/photo/2017/01/21/22/51/background-1998454_960_720.jpg",
 		"logo": "https://example.com/logo/fashion.jpg",
 		"link": "/categories/fashion",
 		"subCategories": [
@@ -377,6 +384,7 @@
 		"name": "Film & Video",
 		"description": "Create and explore the world of motion pictures",
 		"cover": "https://bowvalleycollege.ca/-/media/bvc/programs-and-courses/centre-for-entertainment-arts/images/advanced-film-production.ashx",
+		"coverText": "https://t4.ftcdn.net/jpg/03/76/71/53/360_F_376715389_3B1sjr4gzYotwJkaOsuUpk3bJWq4p1ri.jpg",
 		"logo": "https://example.com/logo/film-video.jpg",
 		"link": "/categories/film-video",
 		"subCategories": [
@@ -426,6 +434,7 @@
 		"name": "Food",
 		"description": "Savor the world of culinary arts",
 		"cover": "https://t3.ftcdn.net/jpg/02/52/38/80/360_F_252388016_KjPnB9vglSCuUJAumCDNbmMzGdzPAucK.jpg",
+		"coverText": "https://robbreport.com/wp-content/uploads/2021/09/Psycho_Pop_Party_Adehla_Lee_SUPERFRICO.jpg",
 		"logo": "https://example.com/logo/culinary.jpg",
 		"link": "/categories/food",
 		"subCategories": [
@@ -475,7 +484,7 @@
 		"name": "Games",
 		"description": "Enter the realm of fun and entertainment",
 		"cover": "https://img.freepik.com/premium-photo/group-friends-playing-board-games-together_1022456-202170.jpg",
-		"logo": "https://example.com/logo/games.jpg",
+		"coverText": "https://e0.pxfuel.com/wallpapers/326/399/desktop-wallpaper-nexus-9-google-nexus-thumbnail.jpg",
 		"link": "/categories/games",
 		"subCategories": [
 			{
@@ -524,6 +533,7 @@
 		"name": "Health & Fitness",
 		"description": "Focus on your well-being and fitness",
 		"cover": "https://images.fresha.com/lead-images/placeholders/personal-trainer-8.jpg?class=venue-gallery-large",
+		"coverText": "https://muralium.com/wp-content/uploads/2023/03/13-1.jpg",
 		"logo": "https://example.com/logo/health-fitness.jpg",
 		"link": "/categories/health-fitness",
 		"subCategories": [
@@ -573,7 +583,7 @@
 		"name": "Literature",
 		"description": "Immerse yourself in stories, poems, and scripts",
 		"cover": "https://foodtank.com/wp-content/uploads/2021/07/alfons-morales-YLSwjSy7stw-unsplash.jpg",
-		"logo": "https://example.com/logo/literature.jpg",
+		"coverText": "https://images.fineartamerica.com/images/artworkimages/mediumlarge/3/imagination-through-reading-books-country-colors-debra-and-dave-vanderlaan.jpg",
 		"link": "/categories/literature",
 		"subCategories": [
 			{
@@ -622,6 +632,7 @@
 		"name": "Music",
 		"description": "Dive into the world of melodies and rhythms",
 		"cover": "https://images.ctfassets.net/hrltx12pl8hq/4hzmbXG3YTqnogFwXeSozB/88f026173fb909dacf6ed80772f9cde4/purpleguitar_music_LIHP.jpg",
+		"coverText": "https://as1.ftcdn.net/v2/jpg/00/91/95/12/1000_F_91951232_CqvLWqJjl85DnzWEfYxpDCYNJMnb3XQ5.jpg",
 		"logo": "https://example.com/logo/music.jpg",
 		"link": "/categories/music",
 		"subCategories": [
@@ -671,6 +682,7 @@
 		"name": "Nature & Environment",
 		"description": "This is the category for nature lovers and Earth care",
 		"cover": "https://cdn.hometogo.net/assets/media/pics/1920_600/6116cc2b9dfc1.jpg",
+		"coverText": "https://img.freepik.com/free-vector/hand-drawn-groovy-psychedelic-background_23-2149086359.jpg",
 		"logo": "https://www.shutterstock.com/image-vector/people-logo-team-icon-partner-600nw-1103715440.jpg",
 		"link": "/categories/nature-environment",
 		"subCategories": [
@@ -736,6 +748,7 @@
 		"name": "Performing Arts",
 		"description": "Experience the thrill of live performances",
 		"cover": "https://www.harker.org/uploaded/themes/corporate-2015/img/hero-us-performing-arts-2.jpg",
+		"coverText": "https://img6.arthub.ai/643da9de-87e2.webp",
 		"logo": "https://example.com/logo/performing-arts.jpg",
 		"link": "/categories/performing-arts",
 		"subCategories": [
@@ -785,6 +798,7 @@
 		"name": "Science",
 		"description": "Explore the wonders of science",
 		"cover": "https://us.123rf.com/450wm/zinkevych/zinkevych1703/zinkevych170301220/74661825-adolescents-capables-prenant-part-%C3%A0-l-exp%C3%A9rience-de-chimie-%C3%A0-l-%C3%A9cole.jpg?ver=6",
+		"coverText": "https://images.nightcafe.studio/jobs/0z1OCgjyYatHkigcvXmX/0z1OCgjyYatHkigcvXmX--1--xqdc0.jpg?tr=w-1600,c-at_max",
 		"logo": "https://example.com/logo/science.jpg",
 		"link": "/categories/science",
 		"subCategories": [
@@ -834,6 +848,7 @@
 		"name": "Technology",
 		"description": "Innovate and create with cutting-edge technology",
 		"cover": "https://paas-s3-broker-prod-lon-2edbd31f-65e0-4d35-9755-fde7c3b1b292.s3.amazonaws.com/images/Tech.original.png",
+		"coverText": "https://t4.ftcdn.net/jpg/04/08/69/87/360_F_408698751_rK9B0WmVmPI83pJisdNLRp92YXe9ADer.jpg",
 		"logo": "https://example.com/logo/technology.jpg",
 		"link": "/categories/technology",
 		"subCategories": [
@@ -883,6 +898,7 @@
 		"name": "Travel",
 		"description": "Discover new places and experiences",
 		"cover": "https://t4.ftcdn.net/jpg/04/08/81/09/360_F_408810925_IG49PMSfC7ZolH4ZLYNZTVuy8YN0BhGK.jpg",
+		"coverText": "https://i.redd.it/psychedelic-planet-v0-f1vk3vx0dumb1.png?width=1024&format=png&auto=webp&s=9ed408b27c5abc386858c03d4d07da265a32d6b3",
 		"logo": "https://example.com/logo/travel.jpg",
 		"link": "/categories/travel",
 		"subCategories": [
