@@ -6,13 +6,13 @@
 		"cover": "https://superawesomevectors.com/wp-content/uploads/2021/04/yellow-submarine-vector.jpg",
 		"likes": 5,
 		"category": {
-			"name": "Nature & Environment",
-			"link": "/categories/nature-environment",
+			"name": "Nature",
+			"link": "/categories/nature",
 			"bgColor": "bg-green-600",
 			"bgColorHover": "bg-green-500",
 			"size": "sm"
 		},
-		"subCategory": "Cinema",
+		"subCategory": "Outdoor Activities",
 		"location": "Sydney",
 		"tags": [
 			{
@@ -39,13 +39,13 @@
 		"cover": "https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/home-improvement/wp-content/uploads/2023/07/unnamed-5.jpg",
 		"likes": 8,
 		"category": {
-			"name": "Nature & Environment",
-			"link": "/categories/nature-environment",
-			"bgColor": "bg-green-600",
-			"bgColorHover": "bg-green-500",
+			"name": "Crafts",
+			"link": "/categories/crafts",
+			"bgColor": "bg-pink-600",
+			"bgColorHover": "bg-pink-500",
 			"size": "sm"
 		},
-		"subCategory": "Construction",
+		"subCategory": "DIY",
 		"location": "Seattle",
 		"tags": [
 			{
@@ -73,7 +73,7 @@
 			"bgColorHover": "bg-pink-500",
 			"size": "sm"
 		},
-		"subCategory": "Technology",
+		"subCategory": "Social Movements",
 		"location": "San Francisco",
 		"tags": [
 			{
@@ -106,7 +106,7 @@
 			"bgColorHover": "bg-pink-500",
 			"size": "sm"
 		},
-		"subCategory": "Social Cause",
+		"subCategory": "Charity",
 		"location": "New York",
 		"tags": [
 			{
@@ -274,7 +274,7 @@
 			"bgColorHover": "bg-red-500",
 			"size": "sm"
 		},
-		"subCategory": "Culinary Arts",
+		"subCategory": "Cooking",
 		"location": "Boston",
 		"tags": [
 			{
@@ -296,8 +296,8 @@
 		"cover": "https://www.cnu.org/sites/default/files/3-community-gardens.jpg",
 		"likes": 9,
 		"category": {
-			"name": "Nature & Environment",
-			"link": "/categories/nature-environment",
+			"name": "Nature",
+			"link": "/categories/nature",
 			"bgColor": "bg-green-600",
 			"bgColorHover": "bg-green-500",
 			"size": "sm"
@@ -330,7 +330,7 @@
 			"bgColorHover": "bg-gray-300",
 			"size": "sm"
 		},
-		"subCategory": "Robotics",
+		"subCategory": "Hardware",
 		"location": "San Diego",
 		"tags": [
 			{
@@ -386,7 +386,7 @@
 			"bgColorHover": "bg-gray-300",
 			"size": "sm"
 		},
-		"subCategory": "Renewable Energy",
+		"subCategory": "Hardware",
 		"location": "Berlin",
 		"tags": [
 			{
@@ -414,7 +414,7 @@
 			"bgColorHover": "bg-green-300",
 			"size": "sm"
 		},
-		"subCategory": "Spoken Word",
+		"subCategory": "Poetry",
 		"location": "London",
 		"tags": [
 			{
@@ -554,7 +554,7 @@
 			"bgColorHover": "bg-green-300",
 			"size": "sm"
 		},
-		"subCategory": "Reading",
+		"subCategory": "Book Clubs & Analysis",
 		"location": "Dublin",
 		"tags": [
 			{
@@ -694,7 +694,7 @@
 			"bgColorHover": "bg-pink-500",
 			"size": "sm"
 		},
-		"subCategory": "Events",
+		"subCategory": "Charity",
 		"location": "Seattle",
 		"tags": [
 			{
@@ -722,7 +722,7 @@
 			"bgColorHover": "bg-gray-300",
 			"size": "sm"
 		},
-		"subCategory": "Networking",
+		"subCategory": "AI and Machine Learning",
 		"location": "San Jose",
 		"tags": [
 			{
@@ -795,18 +795,46 @@
 		"status": "Active"
 	},
 	{
+		"title": "Traditional Japanese Tea Ceremony",
+		"summary": "Experience the elegance and tranquility of the traditional Japanese tea ceremony. Learn the art of tea preparation and its cultural significance with a seasoned tea master.",
+		"cover": "https://mizubatea.com/cdn/shop/articles/AdobeStock_chanoyu.jpg?v=1666147013&width=4228",
+		"likes": 42,
+		"category": {
+			"name": "Culture",
+			"link": "/categories/culture",
+			"bgColor": "bg-yellow-600",
+			"bgColorHover": "bg-yellow-500",
+			"size": "sm"
+		},
+		"subCategory": "Traditions",
+		"location": "Kyoto",
+		"tags": [
+			{
+				"name": "Traditions",
+				"bgColor": "bg-yellow-400",
+				"size": "xs"
+			},
+			{
+				"name": "Culture",
+				"bgColor": "bg-orange-400",
+				"size": "xs"
+			}
+		],
+		"status": "Active"
+	},
+	{
 		"title": "Beach Cleanup",
 		"summary": "Join us to clean up our local beach. Help protect marine life and keep our beaches beautiful.",
 		"cover": "https://www.ecowatch.com/wp-content/uploads/2022/07/GettyImages-1353301481-scaled.jpg",
 		"likes": 45,
 		"category": {
-			"name": "Nature & Environment",
-			"link": "/categories/nature-environment",
+			"name": "Nature",
+			"link": "/categories/nature",
 			"bgColor": "bg-green-600",
 			"bgColorHover": "bg-green-500",
 			"size": "sm"
 		},
-		"subCategory": "Volunteer",
+		"subCategory": "Volunteer Work",
 		"location": "Santa Monica",
 		"tags": [
 			{
@@ -884,8 +912,8 @@
 		"cover": "https://www.patriciamcconnell.com/theotherendoftheleash/wp-content/uploads/2017/09/bigstock-Group-Of-Dogs-With-Owners-At-O-96550604.jpg",
 		"likes": 32,
 		"category": {
-			"name": "Nature & Environment",
-			"link": "/categories/nature-environment",
+			"name": "Nature",
+			"link": "/categories/nature",
 			"bgColor": "bg-green-600",
 			"bgColorHover": "bg-green-500",
 			"size": "sm"
@@ -918,7 +946,7 @@
 			"bgColorHover": "bg-gray-300",
 			"size": "sm"
 		},
-		"subCategory": "Education",
+		"subCategory": "Software Development",
 		"location": "Seattle",
 		"tags": [
 			{
@@ -946,7 +974,7 @@
 			"bgColorHover": "bg-red-500",
 			"size": "sm"
 		},
-		"subCategory": "Events",
+		"subCategory": "Beverages",
 		"location": "Napa Valley",
 		"tags": [
 			{
@@ -1254,7 +1282,7 @@
 			"bgColorHover": "bg-pink-500",
 			"size": "sm"
 		},
-		"subCategory": "Fundraising",
+		"subCategory": "Charity",
 		"location": "Dallas",
 		"tags": [
 			{
@@ -1276,13 +1304,13 @@
 		"cover": "https://dev-snowit.ams3.digitaloceanspaces.com/uploads/2023/06/30130308/trekking-montagna.jpg",
 		"likes": 48,
 		"category": {
-			"name": "Nature & Environment",
-			"link": "/categories/nature-environment",
+			"name": "Nature",
+			"link": "/categories/nature",
 			"bgColor": "bg-green-600",
 			"bgColorHover": "bg-green-500",
 			"size": "sm"
 		},
-		"subCategory": "Outdoor",
+		"subCategory": "Outdoor Activities",
 		"location": "Denver",
 		"tags": [
 			{
@@ -1366,7 +1394,7 @@
 			"bgColorHover": "bg-pink-500",
 			"size": "sm"
 		},
-		"subCategory": "Volunteering",
+		"subCategory": "Volunteer Work",
 		"location": "Chicago",
 		"tags": [
 			{
@@ -1394,7 +1422,7 @@
 			"bgColorHover": "bg-red-500",
 			"size": "sm"
 		},
-		"subCategory": "Classes",
+		"subCategory": "Cooking",
 		"location": "Austin",
 		"tags": [
 			{
@@ -1506,7 +1534,7 @@
 			"bgColorHover": "bg-green-300",
 			"size": "sm"
 		},
-		"subCategory": "Workshop",
+		"subCategory": "Fiction",
 		"location": "Boston",
 		"tags": [
 			{
@@ -1528,13 +1556,13 @@
 		"cover": "https://www.fairmont.com/assets/0/104/1821/1826/5036/5037/7c22cdd9-71e0-497d-bc2c-b097f7116761.jpg",
 		"likes": 60,
 		"category": {
-			"name": "Nature & Environment",
-			"link": "/categories/nature-environment",
+			"name": "Nature",
+			"link": "/categories/nature",
 			"bgColor": "bg-green-600",
 			"bgColorHover": "bg-green-500",
 			"size": "sm"
 		},
-		"subCategory": "Adventure",
+		"subCategory": "Outdoor Activities",
 		"location": "Denver",
 		"tags": [
 			{

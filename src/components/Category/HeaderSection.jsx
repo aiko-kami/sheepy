@@ -1,22 +1,23 @@
 import Image from "next/image";
-import Link from "next/link";
 
-const HeadSection = ({ project }) => {
+const HeadSection = ({ category }) => {
 	return (
 		<>
-			{/* Title */}
-			<h1 className="text-5xl sm:text-6xl lg:text-7xl font-semibold mb-4 text-center">{project.title}</h1>
-			{/* Summary */}
-			<p className="mb-2 text-lg lg:mx-1/7 text-justify">{project.summary}</p>
-			{/* Creator */}
-			<div className="text-gray-300 text-lg mb-6 flex items-center justify-center">
-				<span className="">by</span>
-				<Link href={`/users/${project.userId}`} className="ml-1 mr-2 font-semibold">
-					{project.creator}
-				</Link>
-				<Link href={`/users/${project.userId}`}>
-					<Image src={project.creatorProfilePicture} className="object-cover rounded-full w-10 h-10" alt="creator profile picture" height={0} width={0} sizes="100vw" />
-				</Link>
+			<div className="mb-4 sm:mb-8">
+				<div className="relative mb-2 sm:mb-4">
+					<Image src={category.cover} className="w-full sm:h-80 object-cover rounded-3xl" alt="Category cover" width={0} height={0} sizes="100vw" />
+					<div className="absolute -translate-y-2 inset-0 flex items-center justify-center">
+						<h1
+							className="text-center leading-tight font-rowdies text-transparent bg-clip-text text-[60px] sm:text-[110px] lg:text-[150px] p-0 m-0 drop-shadow-[2px_2px_5px_rgba(0,0,0,0.9)]"
+							style={{ backgroundImage: `url(${category.coverText})` }}
+						>
+							{category.name}
+						</h1>
+					</div>
+				</div>
+				<div className="px-6">
+					<p className="sm:text-xl">{category.description}</p>
+				</div>
 			</div>
 		</>
 	);

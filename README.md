@@ -68,8 +68,8 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 - [x] Search projects page
 - [x] Search talents page
 - [x] Project creation page
+- [x] Projects by categories page
 
-- [] Projects by categories page
 - [] Projects by sub-categories page
 - [] Projects by locations page
 - [] Projects by tags page
@@ -337,4 +337,4 @@ Please contact neutroneer100@gmail.com
 
 ## 🧗‍♂️ Status
 
-I am currently working on... **Project description page**
+I am currently working on... **Category page**
