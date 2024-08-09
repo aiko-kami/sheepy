@@ -16,7 +16,7 @@
 				"link": "/tags/painting",
 				"bgColor": "bg-purple-400",
 				"bgColorHover": "bg-purple-300",
-				"color": "purple-400",
+				"colorBase": "purple-400",
 				"symbol": "🎨"
 			},
 			{
@@ -24,7 +24,7 @@
 				"link": "/tags/sculpture",
 				"bgColor": "bg-purple-400",
 				"bgColorHover": "bg-purple-300",
-				"color": "purple-400",
+				"colorBase": "purple-400",
 				"symbol": "🗿"
 			},
 			{
@@ -32,7 +32,7 @@
 				"link": "/tags/photography",
 				"bgColor": "bg-purple-400",
 				"bgColorHover": "bg-purple-300",
-				"color": "purple-400",
+				"colorBase": "purple-400",
 				"symbol": "📷"
 			},
 			{
@@ -40,7 +40,7 @@
 				"link": "/tags/drawing",
 				"bgColor": "bg-purple-400",
 				"bgColorHover": "bg-purple-300",
-				"color": "purple-400",
+				"colorBase": "purple-400",
 				"symbol": "✏️"
 			},
 			{
@@ -48,7 +48,7 @@
 				"link": "/tags/digital-art",
 				"bgColor": "bg-purple-400",
 				"bgColorHover": "bg-purple-300",
-				"color": "purple-400",
+				"colorBase": "purple-400",
 				"symbol": "🖥️"
 			}
 		]
@@ -71,7 +71,7 @@
 				"link": "/tags/charity",
 				"bgColor": "bg-blue-400",
 				"bgColorHover": "bg-blue-300",
-				"color": "blue-400",
+				"colorBase": "blue-400",
 				"symbol": "🤲"
 			},
 			{
@@ -79,7 +79,7 @@
 				"link": "/tags/events",
 				"bgColor": "bg-blue-400",
 				"bgColorHover": "bg-blue-300",
-				"color": "blue-400",
+				"colorBase": "blue-400",
 				"symbol": "🎉"
 			},
 			{
@@ -87,7 +87,7 @@
 				"link": "/tags/volunteer-work",
 				"bgColor": "bg-blue-400",
 				"bgColorHover": "bg-blue-300",
-				"color": "blue-400",
+				"colorBase": "blue-400",
 				"symbol": "💙"
 			},
 			{
@@ -95,7 +95,7 @@
 				"link": "/tags/local-events",
 				"bgColor": "bg-blue-400",
 				"bgColorHover": "bg-blue-300",
-				"color": "blue-400",
+				"colorBase": "blue-400",
 				"symbol": "📅"
 			},
 			{
@@ -103,7 +103,7 @@
 				"link": "/tags/social-movements",
 				"bgColor": "bg-blue-400",
 				"bgColorHover": "bg-blue-300",
-				"color": "blue-400",
+				"colorBase": "blue-400",
 				"symbol": "✊"
 			}
 		]
@@ -126,7 +126,7 @@
 				"link": "/tags/diy",
 				"bgColor": "bg-yellow-400",
 				"bgColorHover": "bg-yellow-300",
-				"color": "yellow-500",
+				"colorBase": "yellow-500",
 				"symbol": "🔨"
 			},
 			{
@@ -134,7 +134,7 @@
 				"link": "/tags/knitting",
 				"bgColor": "bg-yellow-400",
 				"bgColorHover": "bg-yellow-300",
-				"color": "yellow-500",
+				"colorBase": "yellow-500",
 				"symbol": "🧶"
 			},
 			{
@@ -142,7 +142,7 @@
 				"link": "/tags/woodworking",
 				"bgColor": "bg-yellow-400",
 				"bgColorHover": "bg-yellow-300",
-				"color": "yellow-500",
+				"colorBase": "yellow-500",
 				"symbol": "🪓"
 			},
 			{
@@ -150,7 +150,7 @@
 				"link": "/tags/jewelry-making",
 				"bgColor": "bg-yellow-400",
 				"bgColorHover": "bg-yellow-300",
-				"color": "yellow-500",
+				"colorBase": "yellow-500",
 				"symbol": "💍"
 			},
 			{
@@ -158,7 +158,7 @@
 				"link": "/tags/pottery",
 				"bgColor": "bg-yellow-400",
 				"bgColorHover": "bg-yellow-300",
-				"color": "yellow-500",
+				"colorBase": "yellow-500",
 				"symbol": "🏺"
 			},
 			{
@@ -166,7 +166,7 @@
 				"link": "/tags/paper-crafts",
 				"bgColor": "bg-yellow-400",
 				"bgColorHover": "bg-yellow-300",
-				"color": "yellow-500",
+				"colorBase": "yellow-500",
 				"symbol": "✂️"
 			}
 		]
@@ -189,7 +189,7 @@
 				"link": "/tags/museum",
 				"bgColor": "bg-orange-400",
 				"bgColorHover": "bg-orange-300",
-				"color": "orange-300",
+				"colorBase": "orange-300",
 				"symbol": "🏛️"
 			},
 			{
@@ -197,7 +197,7 @@
 				"link": "/tags/cultural-preservation",
 				"bgColor": "bg-orange-400",
 				"bgColorHover": "bg-orange-300",
-				"color": "orange-300",
+				"colorBase": "orange-300",
 				"symbol": "🛡️"
 			},
 			{
@@ -205,7 +205,7 @@
 				"link": "/tags/philosophy",
 				"bgColor": "bg-orange-400",
 				"bgColorHover": "bg-orange-300",
-				"color": "orange-300",
+				"colorBase": "orange-300",
 				"symbol": "🧠"
 			},
 			{
@@ -213,7 +213,7 @@
 				"link": "/tags/festivals",
 				"bgColor": "bg-orange-400",
 				"bgColorHover": "bg-orange-300",
-				"color": "orange-300",
+				"colorBase": "orange-300",
 				"symbol": "🎉"
 			},
 			{
@@ -221,7 +221,7 @@
 				"link": "/tags/traditions",
 				"bgColor": "bg-orange-400",
 				"bgColorHover": "bg-orange-300",
-				"color": "orange-300",
+				"colorBase": "orange-300",
 				"symbol": "🏛️"
 			},
 			{
@@ -229,7 +229,7 @@
 				"link": "/tags/languages",
 				"bgColor": "bg-orange-400",
 				"bgColorHover": "bg-orange-300",
-				"color": "orange-300",
+				"colorBase": "orange-300",
 				"symbol": "🌍"
 			}
 		]
@@ -252,7 +252,7 @@
 				"link": "/tags/graphic-design",
 				"bgColor": "bg-pink-400",
 				"bgColorHover": "bg-pink-300",
-				"color": "pink-300",
+				"colorBase": "pink-300",
 				"symbol": "🖌️"
 			},
 			{
@@ -260,7 +260,7 @@
 				"link": "/tags/interior-design",
 				"bgColor": "bg-pink-400",
 				"bgColorHover": "bg-pink-300",
-				"color": "pink-300",
+				"colorBase": "pink-300",
 				"symbol": "🛋️"
 			},
 			{
@@ -268,7 +268,7 @@
 				"link": "/tags/product-design",
 				"bgColor": "bg-pink-400",
 				"bgColorHover": "bg-pink-300",
-				"color": "pink-300",
+				"colorBase": "pink-300",
 				"symbol": "🛠️"
 			},
 			{
@@ -276,7 +276,7 @@
 				"link": "/tags/architecture",
 				"bgColor": "bg-pink-400",
 				"bgColorHover": "bg-pink-300",
-				"color": "pink-300",
+				"colorBase": "pink-300",
 				"symbol": "🏛️"
 			}
 		]
@@ -296,7 +296,7 @@
 			{
 				"name": "Workshops and Seminars",
 				"link": "/categories/education/workshops-seminars",
-				"color": "blue-500",
+				"colorBase": "blue-500",
 				"bgColor": "bg-green-500",
 				"bgColorHover": "bg-green-600",
 				"symbol": "🏫"
@@ -304,7 +304,7 @@
 			{
 				"name": "Tutoring and Mentoring",
 				"link": "/categories/education/tutoring-mentoring",
-				"color": "blue-500",
+				"colorBase": "blue-500",
 				"bgColor": "bg-green-500",
 				"bgColorHover": "bg-green-600",
 				"symbol": "👩‍🏫"
@@ -312,7 +312,7 @@
 			{
 				"name": "Educational Events",
 				"link": "/categories/education/educational-events",
-				"color": "blue-500",
+				"colorBase": "blue-500",
 				"bgColor": "bg-green-500",
 				"bgColorHover": "bg-green-600",
 				"symbol": "🎓"
@@ -320,7 +320,7 @@
 			{
 				"name": "Study Groups",
 				"link": "/categories/education/study-groups",
-				"color": "blue-500",
+				"colorBase": "blue-500",
 				"bgColor": "bg-green-500",
 				"bgColorHover": "bg-green-600",
 				"symbol": "📖"
@@ -328,7 +328,7 @@
 			{
 				"name": "Learning",
 				"link": "/categories/education/learning",
-				"color": "blue-500",
+				"colorBase": "blue-500",
 				"bgColor": "bg-green-500",
 				"bgColorHover": "bg-green-600",
 				"symbol": "📚"
@@ -336,7 +336,7 @@
 			{
 				"name": "Career Development",
 				"link": "/categories/education/career-development",
-				"color": "blue-500",
+				"colorBase": "blue-500",
 				"bgColor": "bg-green-500",
 				"bgColorHover": "bg-green-600",
 				"symbol": "💼"
@@ -344,7 +344,7 @@
 			{
 				"name": "Language Learning",
 				"link": "/categories/education/language-learning",
-				"color": "blue-500",
+				"colorBase": "blue-500",
 				"bgColor": "bg-green-500",
 				"bgColorHover": "bg-green-600",
 				"symbol": "🌍"
@@ -369,7 +369,7 @@
 				"link": "/tags/clothing",
 				"bgColor": "bg-red-400",
 				"bgColorHover": "bg-red-300",
-				"color": "red-300",
+				"colorBase": "red-300",
 				"symbol": "👕"
 			},
 			{
@@ -377,7 +377,7 @@
 				"link": "/tags/accessories",
 				"bgColor": "bg-red-400",
 				"bgColorHover": "bg-red-300",
-				"color": "red-300",
+				"colorBase": "red-300",
 				"symbol": "👜"
 			},
 			{
@@ -385,7 +385,7 @@
 				"link": "/tags/footwear",
 				"bgColor": "bg-red-400",
 				"bgColorHover": "bg-red-300",
-				"color": "red-300",
+				"colorBase": "red-300",
 				"symbol": "👟"
 			},
 			{
@@ -393,7 +393,7 @@
 				"link": "/tags/jewelry",
 				"bgColor": "bg-red-400",
 				"bgColorHover": "bg-red-300",
-				"color": "red-300",
+				"colorBase": "red-300",
 				"symbol": "💎"
 			},
 			{
@@ -401,7 +401,7 @@
 				"link": "/tags/textiles",
 				"bgColor": "bg-red-400",
 				"bgColorHover": "bg-red-300",
-				"color": "red-300",
+				"colorBase": "red-300",
 				"symbol": "🧵"
 			}
 		]
@@ -424,7 +424,7 @@
 				"link": "/tags/documentary",
 				"bgColor": "bg-yellow-400",
 				"bgColorHover": "bg-yellow-300",
-				"color": "yellow-500",
+				"colorBase": "yellow-500",
 				"symbol": "🎥"
 			},
 			{
@@ -432,7 +432,7 @@
 				"link": "/tags/short-film",
 				"bgColor": "bg-yellow-400",
 				"bgColorHover": "bg-yellow-300",
-				"color": "yellow-500",
+				"colorBase": "yellow-500",
 				"symbol": "📹"
 			},
 			{
@@ -440,7 +440,7 @@
 				"link": "/tags/feature-film",
 				"bgColor": "bg-yellow-400",
 				"bgColorHover": "bg-yellow-300",
-				"color": "yellow-500",
+				"colorBase": "yellow-500",
 				"symbol": "🎞️"
 			},
 			{
@@ -448,7 +448,7 @@
 				"link": "/tags/animation",
 				"bgColor": "bg-yellow-400",
 				"bgColorHover": "bg-yellow-300",
-				"color": "yellow-500",
+				"colorBase": "yellow-500",
 				"symbol": "🐾"
 			},
 			{
@@ -456,7 +456,7 @@
 				"link": "/tags/web-series",
 				"bgColor": "bg-yellow-400",
 				"bgColorHover": "bg-yellow-300",
-				"color": "yellow-500",
+				"colorBase": "yellow-500",
 				"symbol": "📺"
 			},
 			{
@@ -464,7 +464,7 @@
 				"link": "/tags/screenwriting",
 				"bgColor": "bg-yellow-400",
 				"bgColorHover": "bg-yellow-300",
-				"color": "yellow-500",
+				"colorBase": "yellow-500",
 				"symbol": "🎬"
 			}
 		]
@@ -487,7 +487,7 @@
 				"link": "/tags/baking",
 				"bgColor": "bg-orange-400",
 				"bgColorHover": "bg-orange-300",
-				"color": "orange-300",
+				"colorBase": "orange-300",
 				"symbol": "🥖"
 			},
 			{
@@ -495,7 +495,7 @@
 				"link": "/tags/cooking",
 				"bgColor": "bg-orange-400",
 				"bgColorHover": "bg-orange-300",
-				"color": "orange-300",
+				"colorBase": "orange-300",
 				"symbol": "🍳"
 			},
 			{
@@ -503,7 +503,7 @@
 				"link": "/tags/beverages",
 				"bgColor": "bg-orange-400",
 				"bgColorHover": "bg-orange-300",
-				"color": "orange-300",
+				"colorBase": "orange-300",
 				"symbol": "🍹"
 			},
 			{
@@ -511,7 +511,7 @@
 				"link": "/tags/food-writing",
 				"bgColor": "bg-orange-400",
 				"bgColorHover": "bg-orange-300",
-				"color": "orange-300",
+				"colorBase": "orange-300",
 				"symbol": "📝"
 			},
 			{
@@ -519,7 +519,7 @@
 				"link": "/tags/food-photography",
 				"bgColor": "bg-orange-400",
 				"bgColorHover": "bg-orange-300",
-				"color": "orange-300",
+				"colorBase": "orange-300",
 				"symbol": "📸"
 			}
 		]
@@ -541,7 +541,7 @@
 				"link": "/tags/video-games",
 				"bgColor": "bg-purple-400",
 				"bgColorHover": "bg-purple-300",
-				"color": "purple-400",
+				"colorBase": "purple-400",
 				"symbol": "🎮"
 			},
 			{
@@ -549,7 +549,7 @@
 				"link": "/tags/board-games",
 				"bgColor": "bg-purple-400",
 				"bgColorHover": "bg-purple-300",
-				"color": "purple-400",
+				"colorBase": "purple-400",
 				"symbol": "🎲"
 			},
 			{
@@ -557,7 +557,7 @@
 				"link": "/tags/card-games",
 				"bgColor": "bg-purple-400",
 				"bgColorHover": "bg-purple-300",
-				"color": "purple-400",
+				"colorBase": "purple-400",
 				"symbol": "🃏"
 			},
 			{
@@ -565,7 +565,7 @@
 				"link": "/tags/tabletop-rpgs",
 				"bgColor": "bg-purple-400",
 				"bgColorHover": "bg-purple-300",
-				"color": "purple-400",
+				"colorBase": "purple-400",
 				"symbol": "🗺️"
 			},
 			{
@@ -573,7 +573,7 @@
 				"link": "/tags/mobile-games",
 				"bgColor": "bg-purple-400",
 				"bgColorHover": "bg-purple-300",
-				"color": "purple-400",
+				"colorBase": "purple-400",
 				"symbol": "📲"
 			}
 		]
@@ -596,7 +596,7 @@
 				"link": "/tags/workouts",
 				"bgColor": "bg-green-400",
 				"bgColorHover": "bg-green-300",
-				"color": "green-400",
+				"colorBase": "green-400",
 				"symbol": "🏋️"
 			},
 			{
@@ -604,7 +604,7 @@
 				"link": "/tags/yoga",
 				"bgColor": "bg-green-400",
 				"bgColorHover": "bg-green-300",
-				"color": "green-400",
+				"colorBase": "green-400",
 				"symbol": "🧘"
 			},
 			{
@@ -612,7 +612,7 @@
 				"link": "/tags/mental-health",
 				"bgColor": "bg-green-400",
 				"bgColorHover": "bg-green-300",
-				"color": "green-400",
+				"colorBase": "green-400",
 				"symbol": "🧠"
 			},
 			{
@@ -620,7 +620,7 @@
 				"link": "/tags/nutrition",
 				"bgColor": "bg-green-400",
 				"bgColorHover": "bg-green-300",
-				"color": "green-400",
+				"colorBase": "green-400",
 				"symbol": "🍎"
 			},
 			{
@@ -628,7 +628,7 @@
 				"link": "/tags/sports",
 				"bgColor": "bg-green-400",
 				"bgColorHover": "bg-green-300",
-				"color": "green-400",
+				"colorBase": "green-400",
 				"symbol": "🏅"
 			}
 		]
@@ -650,7 +650,7 @@
 				"link": "/tags/fiction",
 				"bgColor": "bg-green-400",
 				"bgColorHover": "bg-green-300",
-				"color": "green-400",
+				"colorBase": "green-400",
 				"symbol": "📖"
 			},
 			{
@@ -658,7 +658,7 @@
 				"link": "/tags/non-fiction",
 				"bgColor": "bg-green-400",
 				"bgColorHover": "bg-green-300",
-				"color": "green-400",
+				"colorBase": "green-400",
 				"symbol": "📘"
 			},
 			{
@@ -666,7 +666,7 @@
 				"link": "/tags/poetry",
 				"bgColor": "bg-green-400",
 				"bgColorHover": "bg-green-300",
-				"color": "green-400",
+				"colorBase": "green-400",
 				"symbol": "🖋️"
 			},
 			{
@@ -674,7 +674,7 @@
 				"link": "/tags/graphic-novels",
 				"bgColor": "bg-green-400",
 				"bgColorHover": "bg-green-300",
-				"color": "green-400",
+				"colorBase": "green-400",
 				"symbol": "📙"
 			},
 			{
@@ -682,7 +682,7 @@
 				"link": "/tags/reading-groups-literary-criticism",
 				"bgColor": "bg-green-400",
 				"bgColorHover": "bg-green-300",
-				"color": "green-400",
+				"colorBase": "green-400",
 				"symbol": "📚"
 			}
 		]
@@ -705,7 +705,7 @@
 				"link": "/tags/composing",
 				"bgColor": "bg-blue-400",
 				"bgColorHover": "bg-blue-300",
-				"color": "blue-400",
+				"colorBase": "blue-400",
 				"symbol": "🎼"
 			},
 			{
@@ -713,7 +713,7 @@
 				"link": "/tags/performing",
 				"bgColor": "bg-blue-400",
 				"bgColorHover": "bg-blue-300",
-				"color": "blue-400",
+				"colorBase": "blue-400",
 				"symbol": "🎤"
 			},
 			{
@@ -721,7 +721,7 @@
 				"link": "/tags/recording",
 				"bgColor": "bg-blue-400",
 				"bgColorHover": "bg-blue-300",
-				"color": "blue-400",
+				"colorBase": "blue-400",
 				"symbol": "🎛️"
 			},
 			{
@@ -729,7 +729,7 @@
 				"link": "/tags/instrumental",
 				"bgColor": "bg-blue-400",
 				"bgColorHover": "bg-blue-300",
-				"color": "blue-400",
+				"colorBase": "blue-400",
 				"symbol": "🎸"
 			},
 			{
@@ -737,7 +737,7 @@
 				"link": "/tags/djing",
 				"bgColor": "bg-blue-400",
 				"bgColorHover": "bg-blue-300",
-				"color": "blue-400",
+				"colorBase": "blue-400",
 				"symbol": "🎧"
 			}
 		]
@@ -760,7 +760,7 @@
 				"link": "/tags/flora-and-fauna",
 				"bgColor": "bg-green-600",
 				"bgColorHover": "bg-green-500",
-				"color": "green-600",
+				"colorBase": "green-600",
 				"symbol": "🌿"
 			},
 			{
@@ -768,7 +768,7 @@
 				"link": "/tags/pets",
 				"bgColor": "bg-green-600",
 				"bgColorHover": "bg-green-500",
-				"color": "green-600",
+				"colorBase": "green-600",
 				"symbol": "🐶"
 			},
 			{
@@ -776,7 +776,7 @@
 				"link": "/tags/outdoor-activities",
 				"bgColor": "bg-green-600",
 				"bgColorHover": "bg-green-500",
-				"color": "green-600",
+				"colorBase": "green-600",
 				"symbol": "🏞️"
 			},
 			{
@@ -784,7 +784,7 @@
 				"link": "/tags/ecology",
 				"bgColor": "bg-green-600",
 				"bgColorHover": "bg-green-500",
-				"color": "green-600",
+				"colorBase": "green-600",
 				"symbol": "🌍"
 			},
 			{
@@ -792,7 +792,7 @@
 				"link": "/tags/sustainable-agriculture",
 				"bgColor": "bg-green-600",
 				"bgColorHover": "bg-green-500",
-				"color": "green-600",
+				"colorBase": "green-600",
 				"symbol": "🌱"
 			},
 			{
@@ -800,7 +800,7 @@
 				"link": "/tags/waste-reduction-recycling",
 				"bgColor": "bg-green-600",
 				"bgColorHover": "bg-green-500",
-				"color": "green-600",
+				"colorBase": "green-600",
 				"symbol": "♻️"
 			},
 			{
@@ -808,7 +808,7 @@
 				"link": "/tags/biodiversity-protection",
 				"bgColor": "bg-green-600",
 				"bgColorHover": "bg-green-500",
-				"color": "green-600",
+				"colorBase": "green-600",
 				"symbol": "🦋"
 			}
 		]
@@ -831,7 +831,7 @@
 				"link": "/tags/theater",
 				"bgColor": "bg-red-400",
 				"bgColorHover": "bg-red-300",
-				"color": "red-400",
+				"colorBase": "red-400",
 				"symbol": "🎭"
 			},
 			{
@@ -839,7 +839,7 @@
 				"link": "/tags/dance",
 				"bgColor": "bg-red-400",
 				"bgColorHover": "bg-red-300",
-				"color": "red-300",
+				"colorBase": "red-300",
 				"symbol": "💃"
 			},
 			{
@@ -847,7 +847,7 @@
 				"link": "/tags/opera",
 				"bgColor": "bg-red-400",
 				"bgColorHover": "bg-red-300",
-				"color": "red-300",
+				"colorBase": "red-300",
 				"symbol": "🎟️"
 			},
 			{
@@ -855,7 +855,7 @@
 				"link": "/tags/circus-arts",
 				"bgColor": "bg-red-400",
 				"bgColorHover": "bg-red-300",
-				"color": "red-300",
+				"colorBase": "red-300",
 				"symbol": "🎪"
 			},
 			{
@@ -863,7 +863,7 @@
 				"link": "/tags/stand-up-comedy",
 				"bgColor": "bg-red-400",
 				"bgColorHover": "bg-red-300",
-				"color": "red-300",
+				"colorBase": "red-300",
 				"symbol": "🎙️"
 			}
 		]
@@ -886,7 +886,7 @@
 				"link": "/tags/biology",
 				"bgColor": "bg-blue-400",
 				"bgColorHover": "bg-blue-300",
-				"color": "blue-400",
+				"colorBase": "blue-400",
 				"symbol": "🧬"
 			},
 			{
@@ -894,7 +894,7 @@
 				"link": "/tags/astronomy",
 				"bgColor": "bg-blue-400",
 				"bgColorHover": "bg-blue-300",
-				"color": "blue-400",
+				"colorBase": "blue-400",
 				"symbol": "🌌"
 			},
 			{
@@ -902,7 +902,7 @@
 				"link": "/tags/physics",
 				"bgColor": "bg-blue-400",
 				"bgColorHover": "bg-blue-300",
-				"color": "blue-400",
+				"colorBase": "blue-400",
 				"symbol": "⚛️"
 			},
 			{
@@ -910,7 +910,7 @@
 				"link": "/tags/chemistry",
 				"bgColor": "bg-blue-400",
 				"bgColorHover": "bg-blue-300",
-				"color": "blue-400",
+				"colorBase": "blue-400",
 				"symbol": "🧪"
 			},
 			{
@@ -918,7 +918,7 @@
 				"link": "/tags/mathematics",
 				"bgColor": "bg-blue-400",
 				"bgColorHover": "bg-blue-300",
-				"color": "blue-400",
+				"colorBase": "blue-400",
 				"symbol": "🔢"
 			},
 			{
@@ -926,7 +926,7 @@
 				"link": "/tags/earth-science",
 				"bgColor": "bg-blue-400",
 				"bgColorHover": "bg-blue-300",
-				"color": "blue-400",
+				"colorBase": "blue-400",
 				"symbol": "🌍"
 			}
 		]
@@ -949,7 +949,7 @@
 				"link": "/tags/software-development",
 				"bgColor": "bg-gray-500",
 				"bgColorHover": "bg-gray-400",
-				"color": "gray-400",
+				"colorBase": "gray-400",
 				"symbol": "💻"
 			},
 			{
@@ -957,7 +957,7 @@
 				"link": "/tags/hardware",
 				"bgColor": "bg-gray-500",
 				"bgColorHover": "bg-gray-400",
-				"color": "gray-400",
+				"colorBase": "gray-400",
 				"symbol": "🔧"
 			},
 			{
@@ -965,7 +965,7 @@
 				"link": "/tags/ai-machine-learning",
 				"bgColor": "bg-gray-500",
 				"bgColorHover": "bg-gray-400",
-				"color": "gray-400",
+				"colorBase": "gray-400",
 				"symbol": "🤖"
 			},
 			{
@@ -973,7 +973,7 @@
 				"link": "/tags/mobile-apps",
 				"bgColor": "bg-gray-500",
 				"bgColorHover": "bg-gray-400",
-				"color": "gray-400",
+				"colorBase": "gray-400",
 				"symbol": "📱"
 			},
 			{
@@ -981,7 +981,7 @@
 				"link": "/tags/cybersecurity",
 				"bgColor": "bg-gray-500",
 				"bgColorHover": "bg-gray-400",
-				"color": "gray-400",
+				"colorBase": "gray-400",
 				"symbol": "🔐"
 			}
 		]
@@ -1004,7 +1004,7 @@
 				"link": "/tags/adventure",
 				"bgColor": "bg-indigo-400",
 				"bgColorHover": "bg-indigo-300",
-				"color": "indigo-300",
+				"colorBase": "indigo-300",
 				"symbol": "🏔️"
 			},
 			{
@@ -1012,7 +1012,7 @@
 				"link": "/tags/cultural-experiences",
 				"bgColor": "bg-indigo-400",
 				"bgColorHover": "bg-indigo-300",
-				"color": "indigo-300",
+				"colorBase": "indigo-300",
 				"symbol": "🎭"
 			},
 			{
@@ -1020,7 +1020,7 @@
 				"link": "/tags/eco-tourism",
 				"bgColor": "bg-indigo-400",
 				"bgColorHover": "bg-indigo-300",
-				"color": "indigo-300",
+				"colorBase": "indigo-300",
 				"symbol": "🌿"
 			},
 			{
@@ -1028,7 +1028,7 @@
 				"link": "/tags/food-drink",
 				"bgColor": "bg-indigo-400",
 				"bgColorHover": "bg-indigo-300",
-				"color": "indigo-300",
+				"colorBase": "indigo-300",
 				"symbol": "🍽️"
 			},
 			{
@@ -1036,7 +1036,7 @@
 				"link": "/tags/guides-tips",
 				"bgColor": "bg-indigo-400",
 				"bgColorHover": "bg-indigo-300",
-				"color": "indigo-300",
+				"colorBase": "indigo-300",
 				"symbol": "📌"
 			}
 		]

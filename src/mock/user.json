@@ -69,7 +69,7 @@
 					"link": "/categories/culture",
 					"colors": {
 						"bgColor": "bg-blue-600",
-						"color": "blue-600",
+						"colorBase": "blue-600",
 						"bgColorHover": "bg-blue-500"
 					}
 				},
@@ -100,7 +100,7 @@
 					"link": "/categories/nature",
 					"colors": {
 						"bgColor": "bg-green-600",
-						"color": "green-600",
+						"colorBase": "green-600",
 						"bgColorHover": "bg-green-500"
 					}
 				},
@@ -131,7 +131,7 @@
 					"link": "/categories/games",
 					"colors": {
 						"bgColor": "bg-red-600",
-						"color": "red-600",
+						"colorBase": "red-600",
 						"bgColorHover": "bg-red-500"
 					}
 				},
@@ -164,7 +164,7 @@
 					"link": "/categories/art",
 					"colors": {
 						"bgColor": "bg-black",
-						"color": "black",
+						"colorBase": "black",
 						"bgColorHover": "bg-gray-800"
 					}
 				},
@@ -195,7 +195,7 @@
 					"link": "/categories/music",
 					"colors": {
 						"bgColor": "bg-purple-800",
-						"color": "purple-800",
+						"colorBase": "purple-800",
 						"bgColorHover": "bg-purple-500"
 					}
 				},
@@ -226,7 +226,7 @@
 					"link": "/categories/community",
 					"colors": {
 						"bgColor": "bg-pink-600",
-						"color": "pink-600",
+						"colorBase": "pink-600",
 						"bgColorHover": "bg-pink-500"
 					}
 				},
@@ -257,7 +257,7 @@
 					"link": "/categories/games",
 					"colors": {
 						"bgColor": "bg-red-600",
-						"color": "red-600",
+						"colorBase": "red-600",
 						"bgColorHover": "bg-red-500"
 					}
 				},
@@ -290,7 +290,7 @@
 					"link": "/categories/nature",
 					"colors": {
 						"bgColor": "bg-green-600",
-						"color": "green-600",
+						"colorBase": "green-600",
 						"bgColorHover": "bg-green-500"
 					}
 				},
@@ -321,7 +321,7 @@
 					"link": "/categories/games",
 					"colors": {
 						"bgColor": "bg-red-600",
-						"color": "red-600",
+						"colorBase": "red-600",
 						"bgColorHover": "bg-red-500"
 					}
 				},

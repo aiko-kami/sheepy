@@ -42,7 +42,7 @@
 			"name": "Crafts",
 			"link": "/categories/crafts",
 			"colors": {
-				"color": "pink-400",
+				"colorBase": "pink-400",
 				"bgColor": "bg-pink-400",
 				"bgColorHover": "bg-pink-300"
 			}
@@ -70,7 +70,7 @@
 			"name": "Community",
 			"link": "/categories/community",
 			"colors": {
-				"color": "pink-600",
+				"colorBase": "pink-600",
 				"bgColor": "bg-pink-600",
 				"bgColorHover": "bg-pink-500"
 			}
@@ -102,7 +102,7 @@
 			"name": "Community",
 			"link": "/categories/community",
 			"colors": {
-				"color": "pink-600",
+				"colorBase": "pink-600",
 				"bgColor": "bg-pink-600",
 				"bgColorHover": "bg-pink-500"
 			}
@@ -130,7 +130,7 @@
 			"name": "Literature",
 			"link": "/categories/literature",
 			"colors": {
-				"color": "green-400",
+				"colorBase": "green-400",
 				"bgColor": "bg-green-400",
 				"bgColorHover": "bg-green-300"
 			}
@@ -158,7 +158,7 @@
 			"name": "Technology",
 			"link": "/categories/technology",
 			"colors": {
-				"color": "gray-500",
+				"colorBase": "gray-500",
 				"bgColor": "bg-gray-500",
 				"bgColorHover": "bg-gray-400"
 			}
@@ -186,7 +186,7 @@
 			"name": "Art",
 			"link": "/categories/art",
 			"colors": {
-				"color": "black",
+				"colorBase": "black",
 				"bgColor": "bg-black",
 				"bgColorHover": "bg-gray-800"
 			}
@@ -214,7 +214,7 @@
 			"name": "Music",
 			"link": "/categories/music",
 			"colors": {
-				"color": "purple-800",
+				"colorBase": "purple-800",
 				"bgColor": "bg-purple-800",
 				"bgColorHover": "bg-purple-500"
 			}
@@ -242,7 +242,7 @@
 			"name": "Film & Video",
 			"link": "/categories/film-video",
 			"colors": {
-				"color": "yellow-400",
+				"colorBase": "yellow-400",
 				"bgColor": "bg-yellow-400",
 				"bgColorHover": "bg-yellow-300"
 			}
@@ -270,7 +270,7 @@
 			"name": "Food",
 			"link": "/categories/food",
 			"colors": {
-				"color": "red-600",
+				"colorBase": "red-600",
 				"bgColor": "bg-red-600",
 				"bgColorHover": "bg-red-500"
 			}
@@ -298,7 +298,7 @@
 			"name": "Nature",
 			"link": "/categories/nature",
 			"colors": {
-				"color": "green-600",
+				"colorBase": "green-600",
 				"bgColor": "bg-green-600",
 				"bgColorHover": "bg-green-500"
 			}
@@ -326,7 +326,7 @@
 			"name": "Technology",
 			"link": "/categories/technology",
 			"colors": {
-				"color": "gray-500",
+				"colorBase": "gray-500",
 				"bgColor": "bg-gray-500",
 				"bgColorHover": "bg-gray-400"
 			}
@@ -354,7 +354,7 @@
 			"name": "Art",
 			"link": "/categories/art",
 			"colors": {
-				"color": "black",
+				"colorBase": "black",
 				"bgColor": "bg-black",
 				"bgColorHover": "bg-gray-800"
 			}
@@ -382,7 +382,7 @@
 			"name": "Technology",
 			"link": "/categories/technology",
 			"colors": {
-				"color": "gray-500",
+				"colorBase": "gray-500",
 				"bgColor": "bg-gray-500",
 				"bgColorHover": "bg-gray-400"
 			}
@@ -410,7 +410,7 @@
 			"name": "Literature",
 			"link": "/categories/literature",
 			"colors": {
-				"color": "green-400",
+				"colorBase": "green-400",
 				"bgColor": "bg-green-400",
 				"bgColorHover": "bg-green-300"
 			}
@@ -438,7 +438,7 @@
 			"name": "Games",
 			"link": "/categories/games",
 			"colors": {
-				"color": "orange-400",
+				"colorBase": "orange-400",
 				"bgColor": "bg-orange-400",
 				"bgColorHover": "bg-orange-300"
 			}
@@ -466,7 +466,7 @@
 			"name": "Music",
 			"link": "/categories/music",
 			"colors": {
-				"color": "purple-800",
+				"colorBase": "purple-800",
 				"bgColor": "bg-purple-800",
 				"bgColorHover": "bg-purple-500"
 			}
@@ -494,7 +494,7 @@
 			"name": "Education",
 			"link": "/categories/education",
 			"colors": {
-				"color": "yellow-400",
+				"colorBase": "yellow-400",
 				"bgColor": "bg-yellow-400",
 				"bgColorHover": "bg-yellow-300"
 			}
@@ -522,7 +522,7 @@
 			"name": "Art",
 			"link": "/categories/art",
 			"colors": {
-				"color": "black",
+				"colorBase": "black",
 				"bgColor": "bg-black",
 				"bgColorHover": "bg-gray-800"
 			}
@@ -550,7 +550,7 @@
 			"name": "Literature",
 			"link": "/categories/literature",
 			"colors": {
-				"color": "green-400",
+				"colorBase": "green-400",
 				"bgColor": "bg-green-400",
 				"bgColorHover": "bg-green-300"
 			}
@@ -578,7 +578,7 @@
 			"name": "Art",
 			"link": "/categories/art",
 			"colors": {
-				"color": "black",
+				"colorBase": "black",
 				"bgColor": "bg-black",
 				"bgColorHover": "bg-gray-800"
 			}
@@ -606,7 +606,7 @@
 			"name": "Travel",
 			"link": "/categories/travel",
 			"colors": {
-				"color": "indigo-400",
+				"colorBase": "indigo-400",
 				"bgColor": "bg-indigo-400",
 				"bgColorHover": "bg-indigo-300"
 			}
@@ -634,7 +634,7 @@
 			"name": "Crafts",
 			"link": "/categories/crafts",
 			"colors": {
-				"color": "pink-400",
+				"colorBase": "pink-400",
 				"bgColor": "bg-pink-400",
 				"bgColorHover": "bg-pink-300"
 			}
@@ -662,7 +662,7 @@
 			"name": "Food",
 			"link": "/categories/food",
 			"colors": {
-				"color": "red-600",
+				"colorBase": "red-600",
 				"bgColor": "bg-red-600",
 				"bgColorHover": "bg-red-500"
 			}
@@ -690,7 +690,7 @@
 			"name": "Community",
 			"link": "/categories/community",
 			"colors": {
-				"color": "pink-600",
+				"colorBase": "pink-600",
 				"bgColor": "bg-pink-600",
 				"bgColorHover": "bg-pink-500"
 			}
@@ -718,7 +718,7 @@
 			"name": "Technology",
 			"link": "/categories/technology",
 			"colors": {
-				"color": "gray-500",
+				"colorBase": "gray-500",
 				"bgColor": "bg-gray-500",
 				"bgColorHover": "bg-gray-400"
 			}
@@ -746,7 +746,7 @@
 			"name": "Art",
 			"link": "/categories/art",
 			"colors": {
-				"color": "black",
+				"colorBase": "black",
 				"bgColor": "bg-black",
 				"bgColorHover": "bg-gray-800"
 			}
@@ -774,7 +774,7 @@
 			"name": "Food",
 			"link": "/categories/food",
 			"colors": {
-				"color": "red-600",
+				"colorBase": "red-600",
 				"bgColor": "bg-red-600",
 				"bgColorHover": "bg-red-500"
 			}
@@ -802,7 +802,7 @@
 			"name": "Culture",
 			"link": "/categories/culture",
 			"colors": {
-				"color": "yellow-600",
+				"colorBase": "yellow-600",
 				"bgColor": "bg-yellow-600",
 				"bgColorHover": "bg-yellow-500"
 			}
@@ -830,7 +830,7 @@
 			"name": "Nature",
 			"link": "/categories/nature",
 			"colors": {
-				"color": "green-600",
+				"colorBase": "green-600",
 				"bgColor": "bg-green-600",
 				"bgColorHover": "bg-green-500"
 			}
@@ -858,7 +858,7 @@
 			"name": "Music",
 			"link": "/categories/music",
 			"colors": {
-				"color": "purple-800",
+				"colorBase": "purple-800",
 				"bgColor": "bg-purple-800",
 				"bgColorHover": "bg-purple-500"
 			}
@@ -886,7 +886,7 @@
 			"name": "Crafts",
 			"link": "/categories/crafts",
 			"colors": {
-				"color": "pink-400",
+				"colorBase": "pink-400",
 				"bgColor": "bg-pink-400",
 				"bgColorHover": "bg-pink-300"
 			}
@@ -914,7 +914,7 @@
 			"name": "Nature",
 			"link": "/categories/nature",
 			"colors": {
-				"color": "green-600",
+				"colorBase": "green-600",
 				"bgColor": "bg-green-600",
 				"bgColorHover": "bg-green-500"
 			}
@@ -942,7 +942,7 @@
 			"name": "Technology",
 			"link": "/categories/technology",
 			"colors": {
-				"color": "gray-500",
+				"colorBase": "gray-500",
 				"bgColor": "bg-gray-500",
 				"bgColorHover": "bg-gray-400"
 			}
@@ -970,7 +970,7 @@
 			"name": "Food",
 			"link": "/categories/food",
 			"colors": {
-				"color": "red-600",
+				"colorBase": "red-600",
 				"bgColor": "bg-red-600",
 				"bgColorHover": "bg-red-500"
 			}
@@ -998,7 +998,7 @@
 			"name": "Crafts",
 			"link": "/categories/crafts",
 			"colors": {
-				"color": "pink-400",
+				"colorBase": "pink-400",
 				"bgColor": "bg-pink-400",
 				"bgColorHover": "bg-pink-300"
 			}
@@ -1026,7 +1026,7 @@
 			"name": "Games",
 			"link": "/categories/games",
 			"colors": {
-				"color": "orange-400",
+				"colorBase": "orange-400",
 				"bgColor": "bg-orange-400",
 				"bgColorHover": "bg-orange-300"
 			}
@@ -1054,7 +1054,7 @@
 			"name": "Science",
 			"link": "/categories/science",
 			"colors": {
-				"color": "blue-600",
+				"colorBase": "blue-600",
 				"bgColor": "bg-blue-600",
 				"bgColorHover": "bg-blue-500"
 			}
@@ -1082,7 +1082,7 @@
 			"name": "Crafts",
 			"link": "/categories/crafts",
 			"colors": {
-				"color": "pink-400",
+				"colorBase": "pink-400",
 				"bgColor": "bg-pink-400",
 				"bgColorHover": "bg-pink-300"
 			}
@@ -1110,7 +1110,7 @@
 			"name": "Technology",
 			"link": "/categories/technology",
 			"colors": {
-				"color": "gray-500",
+				"colorBase": "gray-500",
 				"bgColor": "bg-gray-500",
 				"bgColorHover": "bg-gray-400"
 			}
@@ -1138,7 +1138,7 @@
 			"name": "Food",
 			"link": "/categories/food",
 			"colors": {
-				"color": "red-600",
+				"colorBase": "red-600",
 				"bgColor": "bg-red-600",
 				"bgColorHover": "bg-red-500"
 			}
@@ -1166,7 +1166,7 @@
 			"name": "Art",
 			"link": "/categories/art",
 			"colors": {
-				"color": "black",
+				"colorBase": "black",
 				"bgColor": "bg-black",
 				"bgColorHover": "bg-gray-800"
 			}
@@ -1194,7 +1194,7 @@
 			"name": "Health & Fitness",
 			"link": "/categories/health-fitness",
 			"colors": {
-				"color": "blue-600",
+				"colorBase": "blue-600",
 				"bgColor": "bg-blue-600",
 				"bgColorHover": "bg-blue-500"
 			}
@@ -1222,7 +1222,7 @@
 			"name": "Crafts",
 			"link": "/categories/crafts",
 			"colors": {
-				"color": "pink-400",
+				"colorBase": "pink-400",
 				"bgColor": "bg-pink-400",
 				"bgColorHover": "bg-pink-300"
 			}
@@ -1250,7 +1250,7 @@
 			"name": "Performing Arts",
 			"link": "/categories/performing-arts",
 			"colors": {
-				"color": "purple-600",
+				"colorBase": "purple-600",
 				"bgColor": "bg-purple-600",
 				"bgColorHover": "bg-purple-500"
 			}
@@ -1278,7 +1278,7 @@
 			"name": "Community",
 			"link": "/categories/community",
 			"colors": {
-				"color": "pink-600",
+				"colorBase": "pink-600",
 				"bgColor": "bg-pink-600",
 				"bgColorHover": "bg-pink-500"
 			}
@@ -1306,7 +1306,7 @@
 			"name": "Nature",
 			"link": "/categories/nature",
 			"colors": {
-				"color": "green-600",
+				"colorBase": "green-600",
 				"bgColor": "bg-green-600",
 				"bgColorHover": "bg-green-500"
 			}
@@ -1334,7 +1334,7 @@
 			"name": "Fashion",
 			"link": "/categories/fashion",
 			"colors": {
-				"color": "yellow-600",
+				"colorBase": "yellow-600",
 				"bgColor": "bg-yellow-600",
 				"bgColorHover": "bg-yellow-500"
 			}
@@ -1362,7 +1362,7 @@
 			"name": "Art",
 			"link": "/categories/art",
 			"colors": {
-				"color": "black",
+				"colorBase": "black",
 				"bgColor": "bg-black",
 				"bgColorHover": "bg-gray-800"
 			}
@@ -1390,7 +1390,7 @@
 			"name": "Community",
 			"link": "/categories/community",
 			"colors": {
-				"color": "pink-600",
+				"colorBase": "pink-600",
 				"bgColor": "bg-pink-600",
 				"bgColorHover": "bg-pink-500"
 			}
@@ -1418,7 +1418,7 @@
 			"name": "Food",
 			"link": "/categories/food",
 			"colors": {
-				"color": "red-600",
+				"colorBase": "red-600",
 				"bgColor": "bg-red-600",
 				"bgColorHover": "bg-red-500"
 			}
@@ -1446,7 +1446,7 @@
 			"name": "Education",
 			"link": "/categories/education",
 			"colors": {
-				"color": "yellow-400",
+				"colorBase": "yellow-400",
 				"bgColor": "bg-yellow-400",
 				"bgColorHover": "bg-yellow-300"
 			}
@@ -1474,7 +1474,7 @@
 			"name": "Health & Fitness",
 			"link": "/categories/health-fitness",
 			"colors": {
-				"color": "blue-600",
+				"colorBase": "blue-600",
 				"bgColor": "bg-blue-600",
 				"bgColorHover": "bg-blue-500"
 			}
@@ -1502,7 +1502,7 @@
 			"name": "Technology",
 			"link": "/categories/technology",
 			"colors": {
-				"color": "gray-500",
+				"colorBase": "gray-500",
 				"bgColor": "bg-gray-500",
 				"bgColorHover": "bg-gray-400"
 			}
@@ -1530,7 +1530,7 @@
 			"name": "Literature",
 			"link": "/categories/literature",
 			"colors": {
-				"color": "green-400",
+				"colorBase": "green-400",
 				"bgColor": "bg-green-400",
 				"bgColorHover": "bg-green-300"
 			}
@@ -1558,7 +1558,7 @@
 			"name": "Nature",
 			"link": "/categories/nature",
 			"colors": {
-				"color": "green-600",
+				"colorBase": "green-600",
 				"bgColor": "bg-green-600",
 				"bgColorHover": "bg-green-500"
 			}
@@ -1586,7 +1586,7 @@
 			"name": "Art",
 			"link": "/categories/art",
 			"colors": {
-				"color": "black",
+				"colorBase": "black",
 				"bgColor": "bg-black",
 				"bgColorHover": "bg-gray-800"
 			}

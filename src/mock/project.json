@@ -10,18 +10,18 @@
 		"name": "Film & Video",
 		"link": "/categories/film-video",
 		"colors": {
-			"color": "bg-black",
-			"bgColor": "bg-black",
-			"bgColorHover": "bg-gray-800"
+			"colorBase": "yellow-400",
+			"bgColor": "bg-yellow-400",
+			"bgColorHover": "bg-yellow-300"
 		}
 	},
 	"subCategory": {
 		"name": "Cinema",
 		"link": "/search?search=cinema&tab=tabsubCategories",
 		"colors": {
-			"color": "bg-black",
-			"bgColor": "bg-black",
-			"bgColorHover": "bg-gray-800"
+			"colorBase": "yellow-400",
+			"bgColor": "bg-yellow-400",
+			"bgColorHover": "bg-yellow-300"
 		}
 	},
 	"tags": [
