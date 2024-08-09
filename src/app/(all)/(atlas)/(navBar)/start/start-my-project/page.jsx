@@ -1,5 +1,4 @@
 import StepManager from "@/components/StartProjectForm/StepManager";
-import projectForm from "@/mock/projectForm.json";
 
 export const metadata = {
 	title: "Start project - Sheepy",

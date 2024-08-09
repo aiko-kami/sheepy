@@ -23,7 +23,7 @@ const UserCard = ({ user, animate }) => {
 					<div className="flex flex-wrap justify-center h-8 overflow-hidden">
 						{tags.map((tag, index) => (
 							<div key={index} className="mx-1 my-1">
-								<BadgeRounded badge={tag} />
+								<BadgeRounded badge={tag} size={"xs"} />
 							</div>
 						))}
 					</div>

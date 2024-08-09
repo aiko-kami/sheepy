@@ -4,7 +4,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import { updateUrlParameters } from "@/utils/urlParameter";
 
-const SubCategory = ({ category, setSelectedSubCategory }) => {
+const SubCategories = ({ category, setSelectedSubCategory }) => {
 	// Get current path and search parameters
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
@@ -33,10 +33,12 @@ const SubCategory = ({ category, setSelectedSubCategory }) => {
 	const handleSubCategoryClick = (subCategory) => {
 		const isSelected = selectedSubCategory?.name === subCategory.name;
 		if (isSelected) {
-			// Unselect the subcategory
+			// If subCategory was already selected, unselect the subcategory
 			setSelectedSubCategory(null);
 			setSelectedSubCategoryState(null);
-			updateUrlParameters(router, pathname, searchParams, { subCategory: "" }); // Remove subCategory from URL
+
+			// Remove subCategory from URL
+			updateUrlParameters(router, pathname, searchParams, { subCategory: "" });
 		} else {
 			// Select the new subcategory
 			setSelectedSubCategory(subCategory);
@@ -59,9 +61,9 @@ const SubCategory = ({ category, setSelectedSubCategory }) => {
 						<div
 							key={index}
 							onClick={() => handleSubCategoryClick(subCategory)}
-							className={`${subCategory.bgColor} ${
-								selectedSubCategory?.name === subCategory.name ? "text-red-500 font-semibold" : "hover:bg-opacity-75 text-white"
-							} text-nowrap rounded-lg p-2 mb-2 cursor-pointer`}
+							className={`border-2 border-${category.colors.colorBase} text-nowrap rounded-lg p-2 mb-2 cursor-pointer ${
+								selectedSubCategory?.name === subCategory.name && `bg-${category.colors.colorBase}`
+							}`}
 						>
 							{subCategory.symbol && <span className="mr-2">{subCategory.symbol}</span>}
 							{subCategory.name}
@@ -73,4 +75,4 @@ const SubCategory = ({ category, setSelectedSubCategory }) => {
 	);
 };
 
-export default SubCategory;
+export default SubCategories;

@@ -8,9 +8,11 @@
 		"category": {
 			"name": "Nature",
 			"link": "/categories/nature",
-			"bgColor": "bg-green-600",
-			"bgColorHover": "bg-green-500",
-			"size": "sm"
+			"colors": {
+				"color": "bg-green-600",
+				"bgColor": "bg-green-600",
+				"bgColorHover": "bg-green-500"
+			}
 		},
 		"subCategory": "Cinema",
 		"location": "Sydney",
@@ -41,9 +43,11 @@
 		"category": {
 			"name": "Nature",
 			"link": "/categories/nature",
-			"bgColor": "bg-green-600",
-			"bgColorHover": "bg-green-500",
-			"size": "sm"
+			"colors": {
+				"color": "bg-green-600",
+				"bgColor": "bg-green-600",
+				"bgColorHover": "bg-green-500"
+			}
 		},
 		"subCategory": "Construction",
 		"location": "Seattle",
@@ -69,9 +73,11 @@
 		"category": {
 			"name": "Community",
 			"link": "/categories/community",
-			"bgColor": "bg-pink-600",
-			"bgColorHover": "bg-pink-500",
-			"size": "sm"
+			"colors": {
+				"color": "bg-pink-600",
+				"bgColor": "bg-pink-600",
+				"bgColorHover": "bg-pink-500"
+			}
 		},
 		"subCategory": "Technology",
 		"location": "San Francisco",
@@ -102,9 +108,11 @@
 		"category": {
 			"name": "Community",
 			"link": "/categories/community",
-			"bgColor": "bg-pink-600",
-			"bgColorHover": "bg-pink-500",
-			"size": "sm"
+			"colors": {
+				"color": "bg-pink-600",
+				"bgColor": "bg-pink-600",
+				"bgColorHover": "bg-pink-500"
+			}
 		},
 		"subCategory": "Social Cause",
 		"location": "New York",

@@ -9,10 +9,10 @@ const HeadSection = ({ project }) => {
 			{/* Category, location, likes, project status */}
 			<ul className="sm:flex mb-4 sm:mb-10 lg:pl-26 grid grid-cols-2">
 				<li className="flex mb-2 sm:mb-0 justify-center">
-					<Badge badge={project.category} />
+					<Badge badge={project.category} size={"sm"} />
 				</li>
 				<li className="flex mb-2 sm:mb-0 sm:ml-4 justify-center">
-					<Badge badge={project.subCategory} />
+					<Badge badge={project.subCategory} size={"xs"} />
 				</li>
 				<li className="flex mb-2 sm:mb-0 sm:ml-4 col-span-2 justify-center">
 					<IoLocationOutline className="text-gray-400 mr-1 text-2xl" />

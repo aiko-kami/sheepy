@@ -24,7 +24,7 @@ const CategoryHorizontalCard = ({ category }) => {
 						<div className="flex flex-wrap overflow-hidden mb-1 h-16">
 							{subCategories.map((subCategory, index) => (
 								<div key={index} className="mx-1 my-1">
-									<BadgeRounded badge={subCategory} />
+									<BadgeRounded badge={subCategory} size={"xs"} />
 								</div>
 							))}
 						</div>

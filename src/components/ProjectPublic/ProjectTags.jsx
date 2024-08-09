@@ -8,7 +8,7 @@ const HeadSection = ({ project }) => {
 			<div className="flex flex-wrap justify-center mb-8">
 				{project.tags.map((tag, index) => (
 					<div key={index} className="mx-1 my-2">
-						<BadgeRounded badge={tag} />
+						<BadgeRounded badge={tag} size={"xs"} />
 					</div>
 				))}
 			</div>

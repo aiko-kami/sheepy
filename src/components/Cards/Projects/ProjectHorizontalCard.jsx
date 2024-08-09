@@ -21,7 +21,7 @@ const ProjectHorizontalCard = ({ project, animate }) => {
 						<h3 className="inline-block font-semibold text-2xl">{title}</h3>
 					</Link>
 					<div className="py-2">
-						<Badge badge={category} />
+						<Badge badge={category} size={"xs"} />
 					</div>
 					<p className="line-clamp-2">{summary}</p>
 				</div>

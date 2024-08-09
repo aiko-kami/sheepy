@@ -9,20 +9,17 @@
 			{
 				"name": "Dev",
 				"link": "/tags/dev",
-				"bgColor": "bg-pink-400",
-				"size": "xs"
+				"bgColor": "bg-pink-400"
 			},
 			{
 				"name": "Web",
 				"link": "/tags/web",
-				"bgColor": "bg-pink-400",
-				"size": "xs"
+				"bgColor": "bg-pink-400"
 			},
 			{
 				"name": "Frontend",
 				"link": "/tags/frontend",
-				"bgColor": "bg-pink-400",
-				"size": "xs"
+				"bgColor": "bg-pink-400"
 			}
 		]
 	},
@@ -36,20 +33,17 @@
 			{
 				"name": "Design",
 				"link": "/tags/design",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			},
 			{
 				"name": "Graphic Design",
 				"link": "/tags/graphic-design",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			},
 			{
 				"name": "Illustration",
 				"link": "/tags/illustration",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			}
 		]
 	},
@@ -63,20 +57,17 @@
 			{
 				"name": "Photography",
 				"link": "/tags/photography",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			},
 			{
 				"name": "Landscapes",
 				"link": "/tags/landscapes",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			},
 			{
 				"name": "Cityscapes",
 				"link": "/tags/cityscapes",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			}
 		]
 	},
@@ -90,20 +81,17 @@
 			{
 				"name": "Exploration",
 				"link": "/tags/exploration",
-				"bgColor": "bg-orange-400",
-				"size": "xs"
+				"bgColor": "bg-orange-400"
 			},
 			{
 				"name": "Survival Skills",
 				"link": "/tags/survival-skills",
-				"bgColor": "bg-orange-400",
-				"size": "xs"
+				"bgColor": "bg-orange-400"
 			},
 			{
 				"name": "Adaptability",
 				"link": "/tags/adaptability",
-				"bgColor": "bg-orange-400",
-				"size": "xs"
+				"bgColor": "bg-orange-400"
 			}
 		]
 	}

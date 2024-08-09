@@ -18,8 +18,7 @@
 			"portfolio": "",
 			"certifications": "",
 			"bgColor": "bg-purple-400",
-			"bgColorHover": "bg-purple-300",
-			"size": "xs"
+			"bgColorHover": "bg-purple-300"
 		},
 		{
 			"name": "Strategic Leadership",
@@ -29,8 +28,7 @@
 			"portfolio": "",
 			"certifications": "",
 			"bgColor": "bg-purple-400",
-			"bgColorHover": "bg-purple-300",
-			"size": "xs"
+			"bgColorHover": "bg-purple-300"
 		},
 		{
 			"name": "Diplomacy",
@@ -40,8 +38,7 @@
 			"portfolio": "",
 			"certifications": "",
 			"bgColor": "bg-purple-400",
-			"bgColorHover": "bg-purple-300",
-			"size": "xs"
+			"bgColorHover": "bg-purple-300"
 		},
 		{
 			"name": "Tactical Command",
@@ -50,8 +47,7 @@
 			"experience": "",
 			"portfolio": "",
 			"certifications": "",
-			"bgColor": "bg-purple-400",
-			"size": "xs"
+			"bgColor": "bg-purple-400"
 		}
 	],
 	"bio": "I am Captain Jean-Luc Picard of the USS Enterprise. As a dedicated Starfleet officer, I have spent my career boldly going where no one has gone before, exploring the far reaches of space, seeking out new life and civilizations, and upholding the principles of peace, diplomacy, and justice.",
@@ -71,9 +67,11 @@
 				"category": {
 					"name": "Culture",
 					"link": "/categories/culture",
-					"bgColor": "bg-blue-600",
-					"bgColorHover": "bg-blue-500",
-					"size": "xs"
+					"colors": {
+						"bgColor": "bg-blue-600",
+						"color": "blue-600",
+						"bgColorHover": "bg-blue-500"
+					}
 				},
 				"subCategory": "Writing",
 				"location": "Global",
@@ -81,14 +79,12 @@
 					{
 						"name": "Writing",
 						"link": "/tags/writing",
-						"bgColor": "bg-green-400",
-						"size": "xs"
+						"bgColor": "bg-green-400"
 					},
 					{
 						"name": "Fiction",
 						"link": "/tags/fiction",
-						"bgColor": "bg-blue-400",
-						"size": "xs"
+						"bgColor": "bg-blue-400"
 					}
 				],
 				"status": "Active"
@@ -102,9 +98,11 @@
 				"category": {
 					"name": "Nature",
 					"link": "/categories/nature",
-					"bgColor": "bg-green-600",
-					"bgColorHover": "bg-green-500",
-					"size": "xs"
+					"colors": {
+						"bgColor": "bg-green-600",
+						"color": "green-600",
+						"bgColorHover": "bg-green-500"
+					}
 				},
 				"subCategory": "Environment",
 				"location": "Global",
@@ -112,14 +110,12 @@
 					{
 						"name": "Environmental Conservation",
 						"link": "/tags/environmental-conservation",
-						"bgColor": "bg-green-300",
-						"size": "xs"
+						"bgColor": "bg-green-300"
 					},
 					{
 						"name": "Climate Change",
 						"link": "/tags/climate-change",
-						"bgColor": "bg-blue-300",
-						"size": "xs"
+						"bgColor": "bg-blue-300"
 					}
 				],
 				"status": "Active"
@@ -133,9 +129,11 @@
 				"category": {
 					"name": "Games",
 					"link": "/categories/games",
-					"bgColor": "bg-red-600",
-					"bgColorHover": "bg-red-500",
-					"size": "xs"
+					"colors": {
+						"bgColor": "bg-red-600",
+						"color": "red-600",
+						"bgColorHover": "bg-red-500"
+					}
 				},
 				"subCategory": "Gaming",
 				"location": "Global",
@@ -143,14 +141,12 @@
 					{
 						"name": "Game Development",
 						"link": "/tags/game-development",
-						"bgColor": "bg-yellow-400",
-						"size": "xs"
+						"bgColor": "bg-yellow-400"
 					},
 					{
 						"name": "Creativity",
 						"link": "/tags/creativity",
-						"bgColor": "bg-red-400",
-						"size": "xs"
+						"bgColor": "bg-red-400"
 					}
 				],
 				"status": "Active"
@@ -166,9 +162,11 @@
 				"category": {
 					"name": "Art",
 					"link": "/categories/art",
-					"bgColor": "bg-black",
-					"bgColorHover": "bg-gray-800",
-					"size": "xs"
+					"colors": {
+						"bgColor": "bg-black",
+						"color": "black",
+						"bgColorHover": "bg-gray-800"
+					}
 				},
 				"subCategory": "Arts & Crafts",
 				"location": "Global",
@@ -176,14 +174,12 @@
 					{
 						"name": "Kids' Activities",
 						"link": "/tags/kids-activities",
-						"bgColor": "bg-pink-400",
-						"size": "xs"
+						"bgColor": "bg-pink-400"
 					},
 					{
 						"name": "Art Education",
 						"link": "/tags/art-education",
-						"bgColor": "bg-orange-400",
-						"size": "xs"
+						"bgColor": "bg-orange-400"
 					}
 				],
 				"status": "Active"
@@ -197,9 +193,11 @@
 				"category": {
 					"name": "Music",
 					"link": "/categories/music",
-					"bgColor": "bg-purple-800",
-					"bgColorHover": "bg-purple-500",
-					"size": "xs"
+					"colors": {
+						"bgColor": "bg-purple-800",
+						"color": "purple-800",
+						"bgColorHover": "bg-purple-500"
+					}
 				},
 				"subCategory": "Music",
 				"location": "Global",
@@ -207,14 +205,12 @@
 					{
 						"name": "Music Production",
 						"link": "/tags/music-production",
-						"bgColor": "bg-purple-400",
-						"size": "xs"
+						"bgColor": "bg-purple-400"
 					},
 					{
 						"name": "Collaboration",
 						"link": "/tags/collaboration",
-						"bgColor": "bg-green-400",
-						"size": "xs"
+						"bgColor": "bg-green-400"
 					}
 				],
 				"status": "Active"
@@ -228,9 +224,11 @@
 				"category": {
 					"name": "Community",
 					"link": "/categories/community",
-					"bgColor": "bg-pink-600",
-					"bgColorHover": "bg-pink-500",
-					"size": "xs"
+					"colors": {
+						"bgColor": "bg-pink-600",
+						"color": "pink-600",
+						"bgColorHover": "bg-pink-500"
+					}
 				},
 				"subCategory": "LGBTQ+",
 				"location": "Global",
@@ -238,14 +236,12 @@
 					{
 						"name": "Community Support",
 						"link": "/tags/community-support",
-						"bgColor": "bg-yellow-400",
-						"size": "xs"
+						"bgColor": "bg-yellow-400"
 					},
 					{
 						"name": "Inclusivity",
 						"link": "/tags/inclusivity",
-						"bgColor": "bg-green-400",
-						"size": "xs"
+						"bgColor": "bg-green-400"
 					}
 				],
 				"status": "Active"
@@ -259,9 +255,11 @@
 				"category": {
 					"name": "Games",
 					"link": "/categories/games",
-					"bgColor": "bg-red-600",
-					"bgColorHover": "bg-red-500",
-					"size": "xs"
+					"colors": {
+						"bgColor": "bg-red-600",
+						"color": "red-600",
+						"bgColorHover": "bg-red-500"
+					}
 				},
 				"subCategory": "Gaming",
 				"location": "Global",
@@ -269,14 +267,12 @@
 					{
 						"name": "Game Development",
 						"link": "/tags/game-development",
-						"bgColor": "bg-yellow-400",
-						"size": "xs"
+						"bgColor": "bg-yellow-400"
 					},
 					{
 						"name": "Creativity",
 						"link": "/tags/creativity",
-						"bgColor": "bg-red-400",
-						"size": "xs"
+						"bgColor": "bg-red-400"
 					}
 				],
 				"status": "Active"
@@ -292,9 +288,11 @@
 				"category": {
 					"name": "Nature",
 					"link": "/categories/nature",
-					"bgColor": "bg-green-600",
-					"bgColorHover": "bg-green-500",
-					"size": "xs"
+					"colors": {
+						"bgColor": "bg-green-600",
+						"color": "green-600",
+						"bgColorHover": "bg-green-500"
+					}
 				},
 				"subCategory": "Environment",
 				"location": "Global",
@@ -302,14 +300,12 @@
 					{
 						"name": "Environmental Conservation",
 						"link": "/tags/environmental-conservation",
-						"bgColor": "bg-green-300",
-						"size": "xs"
+						"bgColor": "bg-green-300"
 					},
 					{
 						"name": "Climate Change",
 						"link": "/tags/climate-change",
-						"bgColor": "bg-blue-300",
-						"size": "xs"
+						"bgColor": "bg-blue-300"
 					}
 				],
 				"status": "Active"
@@ -323,9 +319,11 @@
 				"category": {
 					"name": "Games",
 					"link": "/categories/games",
-					"bgColor": "bg-red-600",
-					"bgColorHover": "bg-red-500",
-					"size": "xs"
+					"colors": {
+						"bgColor": "bg-red-600",
+						"color": "red-600",
+						"bgColorHover": "bg-red-500"
+					}
 				},
 				"subCategory": "Gaming",
 				"location": "Global",
@@ -333,14 +331,12 @@
 					{
 						"name": "Game Development",
 						"link": "/tags/game-development",
-						"bgColor": "bg-yellow-400",
-						"size": "xs"
+						"bgColor": "bg-yellow-400"
 					},
 					{
 						"name": "Creativity",
 						"link": "/tags/creativity",
-						"bgColor": "bg-red-400",
-						"size": "xs"
+						"bgColor": "bg-red-400"
 					}
 				],
 				"status": "Active"

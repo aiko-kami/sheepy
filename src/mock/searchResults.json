@@ -9,9 +9,11 @@
 			"category": {
 				"name": "Art",
 				"link": "/categories/art",
-				"bgColor": "bg-black",
-				"bgColorHover": "bg-gray-800",
-				"size": "sm"
+				"colors": {
+					"bgColor": "bg-black",
+					"color": "black",
+					"bgColorHover": "bg-gray-800"
+				}
 			},
 			"subCategory": "Cinema",
 			"location": "San Fransokyo, USA",
@@ -19,14 +21,12 @@
 				{
 					"name": "indie_film",
 					"link": "/tags/indie-film",
-					"bgColor": "bg-green-400",
-					"size": "xs"
+					"bgColor": "bg-green-400"
 				},
 				{
 					"name": "cinematography",
 					"link": "/tags/cinematography",
-					"bgColor": "bg-blue-400",
-					"size": "xs"
+					"bgColor": "bg-blue-400"
 				}
 			],
 			"status": "Active"
@@ -40,9 +40,11 @@
 			"category": {
 				"name": "Nature",
 				"link": "/categories/nature",
-				"bgColor": "bg-green-600",
-				"bgColorHover": "bg-green-500",
-				"size": "xs"
+				"colors": {
+					"bgColor": "bg-green-600",
+					"color": "green-600",
+					"bgColorHover": "bg-green-500"
+				}
 			},
 			"subCategory": "Environment",
 			"location": "Global",
@@ -50,14 +52,12 @@
 				{
 					"name": "Environmental Conservation",
 					"link": "/tags/environmental-conservation",
-					"bgColor": "bg-green-300",
-					"size": "xs"
+					"bgColor": "bg-green-300"
 				},
 				{
 					"name": "Climate Change",
 					"link": "/tags/climate-change",
-					"bgColor": "bg-blue-300",
-					"size": "xs"
+					"bgColor": "bg-blue-300"
 				}
 			],
 			"status": "Active"
@@ -71,9 +71,11 @@
 			"category": {
 				"name": "Video Games",
 				"link": "/categories/video-games",
-				"bgColor": "bg-red-600",
-				"bgColorHover": "bg-red-500",
-				"size": "xs"
+				"colors": {
+					"bgColor": "bg-red-600",
+					"color": "red-600",
+					"bgColorHover": "bg-red-500"
+				}
 			},
 			"subCategory": "Gaming",
 			"location": "Global",
@@ -81,14 +83,12 @@
 				{
 					"name": "Game Development",
 					"link": "/tags/game-development",
-					"bgColor": "bg-yellow-400",
-					"size": "xs"
+					"bgColor": "bg-yellow-400"
 				},
 				{
 					"name": "Creativity",
 					"link": "/tags/creativity",
-					"bgColor": "bg-red-400",
-					"size": "xs"
+					"bgColor": "bg-red-400"
 				}
 			],
 			"status": "Active"
@@ -102,9 +102,11 @@
 			"category": {
 				"name": "Art",
 				"link": "/categories/art",
-				"bgColor": "bg-black",
-				"bgColorHover": "bg-gray-800",
-				"size": "xs"
+				"colors": {
+					"bgColor": "bg-black",
+					"color": "black",
+					"bgColorHover": "bg-gray-800"
+				}
 			},
 			"subCategory": "Arts & Crafts",
 			"location": "Global",
@@ -112,14 +114,12 @@
 				{
 					"name": "Kids' Activities",
 					"link": "/tags/kids-activities",
-					"bgColor": "bg-pink-400",
-					"size": "xs"
+					"bgColor": "bg-pink-400"
 				},
 				{
 					"name": "Art Education",
 					"link": "/tags/art-education",
-					"bgColor": "bg-orange-400",
-					"size": "xs"
+					"bgColor": "bg-orange-400"
 				}
 			],
 			"status": "Active"
@@ -133,9 +133,11 @@
 			"category": {
 				"name": "Music",
 				"link": "/categories/music",
-				"bgColor": "bg-purple-800",
-				"bgColorHover": "bg-purple-500",
-				"size": "xs"
+				"colors": {
+					"bgColor": "bg-purple-800",
+					"color": "purple-800",
+					"bgColorHover": "bg-purple-500"
+				}
 			},
 			"subCategory": "Music",
 			"location": "Global",
@@ -143,14 +145,12 @@
 				{
 					"name": "Music Production",
 					"link": "/tags/music-production",
-					"bgColor": "bg-purple-400",
-					"size": "xs"
+					"bgColor": "bg-purple-400"
 				},
 				{
 					"name": "Collaboration",
 					"link": "/tags/collaboration",
-					"bgColor": "bg-green-400",
-					"size": "xs"
+					"bgColor": "bg-green-400"
 				}
 			],
 			"status": "Active"
@@ -164,9 +164,11 @@
 			"category": {
 				"name": "Community",
 				"link": "/categories/community",
-				"bgColor": "bg-pink-600",
-				"bgColorHover": "bg-pink-500",
-				"size": "xs"
+				"colors": {
+					"bgColor": "bg-pink-600",
+					"color": "pink-600",
+					"bgColorHover": "bg-pink-500"
+				}
 			},
 			"subCategory": "LGBTQ+",
 			"location": "Global",
@@ -174,14 +176,12 @@
 				{
 					"name": "Community Support",
 					"link": "/tags/community-support",
-					"bgColor": "bg-yellow-400",
-					"size": "xs"
+					"bgColor": "bg-yellow-400"
 				},
 				{
 					"name": "Inclusivity",
 					"link": "/tags/inclusivity",
-					"bgColor": "bg-green-400",
-					"size": "xs"
+					"bgColor": "bg-green-400"
 				}
 			],
 			"status": "Active"
@@ -209,8 +209,7 @@
 					"certifications": "",
 					"link": "/tags/ui-ux-design",
 					"bgColor": "bg-purple-400",
-					"bgColorHover": "bg-purple-300",
-					"size": "xs"
+					"bgColorHover": "bg-purple-300"
 				},
 				{
 					"name": "Strategic Leadership",
@@ -221,8 +220,7 @@
 					"certifications": "",
 					"link": "/tags/user-research",
 					"bgColor": "bg-purple-400",
-					"bgColorHover": "bg-purple-300",
-					"size": "xs"
+					"bgColorHover": "bg-purple-300"
 				},
 				{
 					"name": "Diplomacy",
@@ -233,8 +231,7 @@
 					"certifications": "",
 					"link": "/tags/user-research",
 					"bgColor": "bg-purple-400",
-					"bgColorHover": "bg-purple-300",
-					"size": "xs"
+					"bgColorHover": "bg-purple-300"
 				},
 				{
 					"name": "Tactical Command",
@@ -245,8 +242,7 @@
 					"certifications": "",
 					"link": "/tags/user-research",
 					"bgColor": "bg-purple-400",
-					"bgColorHover": "bg-purple-300",
-					"size": "xs"
+					"bgColorHover": "bg-purple-300"
 				}
 			],
 			"bio": "I am Captain Jean-Luc Picard of the USS Enterprise. As a dedicated Starfleet officer, I have spent my career boldly going where no one has gone before, exploring the far reaches of space, seeking out new life and civilizations, and upholding the principles of peace, diplomacy, and justice.",
@@ -266,9 +262,11 @@
 						"category": {
 							"name": "Culture",
 							"link": "/categories/culture",
-							"bgColor": "bg-blue-600",
-							"bgColorHover": "bg-blue-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-blue-600",
+								"color": "blue-600",
+								"bgColorHover": "bg-blue-500"
+							}
 						},
 						"subCategory": "Writing",
 						"location": "Global",
@@ -276,14 +274,12 @@
 							{
 								"name": "Writing",
 								"link": "/tags/writing",
-								"bgColor": "bg-green-400",
-								"size": "xs"
+								"bgColor": "bg-green-400"
 							},
 							{
 								"name": "Fiction",
 								"link": "/tags/fiction",
-								"bgColor": "bg-blue-400",
-								"size": "xs"
+								"bgColor": "bg-blue-400"
 							}
 						],
 						"status": "Active"
@@ -297,9 +293,11 @@
 						"category": {
 							"name": "Nature",
 							"link": "/categories/nature",
-							"bgColor": "bg-green-600",
-							"bgColorHover": "bg-green-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-green-600",
+								"color": "green-600",
+								"bgColorHover": "bg-green-500"
+							}
 						},
 						"subCategory": "Environment",
 						"location": "Global",
@@ -307,14 +305,12 @@
 							{
 								"name": "Environmental Conservation",
 								"link": "/tags/environmental-conservation",
-								"bgColor": "bg-green-300",
-								"size": "xs"
+								"bgColor": "bg-green-300"
 							},
 							{
 								"name": "Climate Change",
 								"link": "/tags/climate-change",
-								"bgColor": "bg-blue-300",
-								"size": "xs"
+								"bgColor": "bg-blue-300"
 							}
 						],
 						"status": "Active"
@@ -328,9 +324,11 @@
 						"category": {
 							"name": "Video Games",
 							"link": "/categories/video-games",
-							"bgColor": "bg-red-600",
-							"bgColorHover": "bg-red-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-red-600",
+								"color": "red-600",
+								"bgColorHover": "bg-red-500"
+							}
 						},
 						"subCategory": "Gaming",
 						"location": "Global",
@@ -338,14 +336,12 @@
 							{
 								"name": "Game Development",
 								"link": "/tags/game-development",
-								"bgColor": "bg-yellow-400",
-								"size": "xs"
+								"bgColor": "bg-yellow-400"
 							},
 							{
 								"name": "Creativity",
 								"link": "/tags/creativity",
-								"bgColor": "bg-red-400",
-								"size": "xs"
+								"bgColor": "bg-red-400"
 							}
 						],
 						"status": "Active"
@@ -361,9 +357,11 @@
 						"category": {
 							"name": "Art",
 							"link": "/categories/art",
-							"bgColor": "bg-black",
-							"bgColorHover": "bg-gray-800",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-black",
+								"color": "black",
+								"bgColorHover": "bg-gray-800"
+							}
 						},
 						"subCategory": "Arts & Crafts",
 						"location": "Global",
@@ -371,14 +369,12 @@
 							{
 								"name": "Kids' Activities",
 								"link": "/tags/kids-activities",
-								"bgColor": "bg-pink-400",
-								"size": "xs"
+								"bgColor": "bg-pink-400"
 							},
 							{
 								"name": "Art Education",
 								"link": "/tags/art-education",
-								"bgColor": "bg-orange-400",
-								"size": "xs"
+								"bgColor": "bg-orange-400"
 							}
 						],
 						"status": "Active"
@@ -392,9 +388,11 @@
 						"category": {
 							"name": "Music",
 							"link": "/categories/music",
-							"bgColor": "bg-purple-800",
-							"bgColorHover": "bg-purple-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-purple-800",
+								"color": "purple-800",
+								"bgColorHover": "bg-purple-500"
+							}
 						},
 						"subCategory": "Music",
 						"location": "Global",
@@ -402,14 +400,12 @@
 							{
 								"name": "Music Production",
 								"link": "/tags/music-production",
-								"bgColor": "bg-purple-400",
-								"size": "xs"
+								"bgColor": "bg-purple-400"
 							},
 							{
 								"name": "Collaboration",
 								"link": "/tags/collaboration",
-								"bgColor": "bg-green-400",
-								"size": "xs"
+								"bgColor": "bg-green-400"
 							}
 						],
 						"status": "Active"
@@ -423,9 +419,11 @@
 						"category": {
 							"name": "Community",
 							"link": "/categories/community",
-							"bgColor": "bg-pink-600",
-							"bgColorHover": "bg-pink-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-pink-600",
+								"color": "pink-600",
+								"bgColorHover": "bg-pink-500"
+							}
 						},
 						"subCategory": "LGBTQ+",
 						"location": "Global",
@@ -433,14 +431,12 @@
 							{
 								"name": "Community Support",
 								"link": "/tags/community-support",
-								"bgColor": "bg-yellow-400",
-								"size": "xs"
+								"bgColor": "bg-yellow-400"
 							},
 							{
 								"name": "Inclusivity",
 								"link": "/tags/inclusivity",
-								"bgColor": "bg-green-400",
-								"size": "xs"
+								"bgColor": "bg-green-400"
 							}
 						],
 						"status": "Active"
@@ -454,9 +450,11 @@
 						"category": {
 							"name": "Video Games",
 							"link": "/categories/video-games",
-							"bgColor": "bg-red-600",
-							"bgColorHover": "bg-red-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-red-600",
+								"color": "red-600",
+								"bgColorHover": "bg-red-500"
+							}
 						},
 						"subCategory": "Gaming",
 						"location": "Global",
@@ -464,14 +462,12 @@
 							{
 								"name": "Game Development",
 								"link": "/tags/game-development",
-								"bgColor": "bg-yellow-400",
-								"size": "xs"
+								"bgColor": "bg-yellow-400"
 							},
 							{
 								"name": "Creativity",
 								"link": "/tags/creativity",
-								"bgColor": "bg-red-400",
-								"size": "xs"
+								"bgColor": "bg-red-400"
 							}
 						],
 						"status": "Active"
@@ -487,9 +483,11 @@
 						"category": {
 							"name": "Nature",
 							"link": "/categories/nature",
-							"bgColor": "bg-green-600",
-							"bgColorHover": "bg-green-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-green-600",
+								"color": "green-600",
+								"bgColorHover": "bg-green-500"
+							}
 						},
 						"subCategory": "Environment",
 						"location": "Global",
@@ -497,14 +495,12 @@
 							{
 								"name": "Environmental Conservation",
 								"link": "/tags/environmental-conservation",
-								"bgColor": "bg-green-300",
-								"size": "xs"
+								"bgColor": "bg-green-300"
 							},
 							{
 								"name": "Climate Change",
 								"link": "/tags/climate-change",
-								"bgColor": "bg-blue-300",
-								"size": "xs"
+								"bgColor": "bg-blue-300"
 							}
 						],
 						"status": "Active"
@@ -518,9 +514,11 @@
 						"category": {
 							"name": "Video Games",
 							"link": "/categories/video-games",
-							"bgColor": "bg-red-600",
-							"bgColorHover": "bg-red-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-red-600",
+								"color": "red-600",
+								"bgColorHover": "bg-red-500"
+							}
 						},
 						"subCategory": "Gaming",
 						"location": "Global",
@@ -528,14 +526,12 @@
 							{
 								"name": "Game Development",
 								"link": "/tags/game-development",
-								"bgColor": "bg-yellow-400",
-								"size": "xs"
+								"bgColor": "bg-yellow-400"
 							},
 							{
 								"name": "Creativity",
 								"link": "/tags/creativity",
-								"bgColor": "bg-red-400",
-								"size": "xs"
+								"bgColor": "bg-red-400"
 							}
 						],
 						"status": "Active"
@@ -564,8 +560,7 @@
 					"certifications": "",
 					"link": "/tags/investigation",
 					"bgColor": "bg-green-400",
-					"bgColorHover": "bg-green-300",
-					"size": "xs"
+					"bgColorHover": "bg-green-300"
 				},
 				{
 					"name": "Adventurous Spirit",
@@ -576,8 +571,7 @@
 					"certifications": "",
 					"link": "/tags/adventure",
 					"bgColor": "bg-green-400",
-					"bgColorHover": "bg-green-300",
-					"size": "xs"
+					"bgColorHover": "bg-green-300"
 				},
 				{
 					"name": "Journalism",
@@ -588,8 +582,7 @@
 					"certifications": "",
 					"link": "/tags/journalism",
 					"bgColor": "bg-green-400",
-					"bgColorHover": "bg-green-300",
-					"size": "xs"
+					"bgColorHover": "bg-green-300"
 				}
 			],
 			"bio": "I'm Dipper Pines, and I spend my summers in Gravity Falls, Oregon, where I investigate paranormal phenomena with my twin sister Mabel and our Great Uncle Stan. Together, we uncover secrets, solve mysteries, and have adventures beyond our wildest imaginations.",
@@ -609,9 +602,11 @@
 						"category": {
 							"name": "Culture",
 							"link": "/categories/culture",
-							"bgColor": "bg-blue-600",
-							"bgColorHover": "bg-blue-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-blue-600",
+								"color": "blue-600",
+								"bgColorHover": "bg-blue-500"
+							}
 						},
 						"subCategory": "Writing",
 						"location": "Global",
@@ -619,14 +614,12 @@
 							{
 								"name": "Writing",
 								"link": "/tags/writing",
-								"bgColor": "bg-green-400",
-								"size": "xs"
+								"bgColor": "bg-green-400"
 							},
 							{
 								"name": "Fiction",
 								"link": "/tags/fiction",
-								"bgColor": "bg-blue-400",
-								"size": "xs"
+								"bgColor": "bg-blue-400"
 							}
 						],
 						"status": "Active"
@@ -640,9 +633,11 @@
 						"category": {
 							"name": "Nature",
 							"link": "/categories/nature",
-							"bgColor": "bg-green-600",
-							"bgColorHover": "bg-green-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-green-600",
+								"color": "green-600",
+								"bgColorHover": "bg-green-500"
+							}
 						},
 						"subCategory": "Environment",
 						"location": "Global",
@@ -650,14 +645,12 @@
 							{
 								"name": "Environmental Conservation",
 								"link": "/tags/environmental-conservation",
-								"bgColor": "bg-green-300",
-								"size": "xs"
+								"bgColor": "bg-green-300"
 							},
 							{
 								"name": "Climate Change",
 								"link": "/tags/climate-change",
-								"bgColor": "bg-blue-300",
-								"size": "xs"
+								"bgColor": "bg-blue-300"
 							}
 						],
 						"status": "Active"
@@ -671,9 +664,11 @@
 						"category": {
 							"name": "Video Games",
 							"link": "/categories/video-games",
-							"bgColor": "bg-red-600",
-							"bgColorHover": "bg-red-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-red-600",
+								"color": "red-600",
+								"bgColorHover": "bg-red-500"
+							}
 						},
 						"subCategory": "Gaming",
 						"location": "Global",
@@ -681,14 +676,12 @@
 							{
 								"name": "Game Development",
 								"link": "/tags/game-development",
-								"bgColor": "bg-yellow-400",
-								"size": "xs"
+								"bgColor": "bg-yellow-400"
 							},
 							{
 								"name": "Creativity",
 								"link": "/tags/creativity",
-								"bgColor": "bg-red-400",
-								"size": "xs"
+								"bgColor": "bg-red-400"
 							}
 						],
 						"status": "Active"
@@ -704,9 +697,11 @@
 						"category": {
 							"name": "Art",
 							"link": "/categories/art",
-							"bgColor": "bg-black",
-							"bgColorHover": "bg-gray-800",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-black",
+								"color": "black",
+								"bgColorHover": "bg-gray-800"
+							}
 						},
 						"subCategory": "Arts & Crafts",
 						"location": "Global",
@@ -714,14 +709,12 @@
 							{
 								"name": "Kids' Activities",
 								"link": "/tags/kids-activities",
-								"bgColor": "bg-pink-400",
-								"size": "xs"
+								"bgColor": "bg-pink-400"
 							},
 							{
 								"name": "Art Education",
 								"link": "/tags/art-education",
-								"bgColor": "bg-orange-400",
-								"size": "xs"
+								"bgColor": "bg-orange-400"
 							}
 						],
 						"status": "Active"
@@ -735,9 +728,11 @@
 						"category": {
 							"name": "Music",
 							"link": "/categories/music",
-							"bgColor": "bg-purple-800",
-							"bgColorHover": "bg-purple-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-purple-800",
+								"color": "purple-800",
+								"bgColorHover": "bg-purple-500"
+							}
 						},
 						"subCategory": "Music",
 						"location": "Global",
@@ -745,14 +740,12 @@
 							{
 								"name": "Music Production",
 								"link": "/tags/music-production",
-								"bgColor": "bg-purple-400",
-								"size": "xs"
+								"bgColor": "bg-purple-400"
 							},
 							{
 								"name": "Collaboration",
 								"link": "/tags/collaboration",
-								"bgColor": "bg-green-400",
-								"size": "xs"
+								"bgColor": "bg-green-400"
 							}
 						],
 						"status": "Active"
@@ -766,9 +759,11 @@
 						"category": {
 							"name": "Community",
 							"link": "/categories/community",
-							"bgColor": "bg-pink-600",
-							"bgColorHover": "bg-pink-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-pink-600",
+								"color": "pink-600",
+								"bgColorHover": "bg-pink-500"
+							}
 						},
 						"subCategory": "LGBTQ+",
 						"location": "Global",
@@ -776,14 +771,12 @@
 							{
 								"name": "Community Support",
 								"link": "/tags/community-support",
-								"bgColor": "bg-yellow-400",
-								"size": "xs"
+								"bgColor": "bg-yellow-400"
 							},
 							{
 								"name": "Inclusivity",
 								"link": "/tags/inclusivity",
-								"bgColor": "bg-green-400",
-								"size": "xs"
+								"bgColor": "bg-green-400"
 							}
 						],
 						"status": "Active"
@@ -797,9 +790,11 @@
 						"category": {
 							"name": "Video Games",
 							"link": "/categories/video-games",
-							"bgColor": "bg-red-600",
-							"bgColorHover": "bg-red-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-red-600",
+								"color": "red-600",
+								"bgColorHover": "bg-red-500"
+							}
 						},
 						"subCategory": "Gaming",
 						"location": "Global",
@@ -807,14 +802,12 @@
 							{
 								"name": "Game Development",
 								"link": "/tags/game-development",
-								"bgColor": "bg-yellow-400",
-								"size": "xs"
+								"bgColor": "bg-yellow-400"
 							},
 							{
 								"name": "Creativity",
 								"link": "/tags/creativity",
-								"bgColor": "bg-red-400",
-								"size": "xs"
+								"bgColor": "bg-red-400"
 							}
 						],
 						"status": "Active"
@@ -830,9 +823,11 @@
 						"category": {
 							"name": "Nature",
 							"link": "/categories/nature",
-							"bgColor": "bg-green-600",
-							"bgColorHover": "bg-green-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-green-600",
+								"color": "green-600",
+								"bgColorHover": "bg-green-500"
+							}
 						},
 						"subCategory": "Environment",
 						"location": "Global",
@@ -840,14 +835,12 @@
 							{
 								"name": "Environmental Conservation",
 								"link": "/tags/environmental-conservation",
-								"bgColor": "bg-green-300",
-								"size": "xs"
+								"bgColor": "bg-green-300"
 							},
 							{
 								"name": "Climate Change",
 								"link": "/tags/climate-change",
-								"bgColor": "bg-blue-300",
-								"size": "xs"
+								"bgColor": "bg-blue-300"
 							}
 						],
 						"status": "Active"
@@ -861,9 +854,11 @@
 						"category": {
 							"name": "Video Games",
 							"link": "/categories/video-games",
-							"bgColor": "bg-red-600",
-							"bgColorHover": "bg-red-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-red-600",
+								"color": "red-600",
+								"bgColorHover": "bg-red-500"
+							}
 						},
 						"subCategory": "Gaming",
 						"location": "Global",
@@ -871,14 +866,12 @@
 							{
 								"name": "Game Development",
 								"link": "/tags/game-development",
-								"bgColor": "bg-yellow-400",
-								"size": "xs"
+								"bgColor": "bg-yellow-400"
 							},
 							{
 								"name": "Creativity",
 								"link": "/tags/creativity",
-								"bgColor": "bg-red-400",
-								"size": "xs"
+								"bgColor": "bg-red-400"
 							}
 						],
 						"status": "Active"
@@ -907,8 +900,7 @@
 					"certifications": "",
 					"link": "/tags/fashion-design",
 					"bgColor": "bg-pink-400",
-					"bgColorHover": "bg-pink-300",
-					"size": "xs"
+					"bgColorHover": "bg-pink-300"
 				},
 				{
 					"name": "Arts and Crafts",
@@ -919,8 +911,7 @@
 					"certifications": "",
 					"link": "/tags/arts-and-crafts",
 					"bgColor": "bg-pink-400",
-					"bgColorHover": "bg-pink-300",
-					"size": "xs"
+					"bgColorHover": "bg-pink-300"
 				},
 				{
 					"name": "Optimism",
@@ -931,8 +922,7 @@
 					"certifications": "",
 					"link": "/tags/optimism",
 					"bgColor": "bg-pink-400",
-					"bgColorHover": "bg-pink-300",
-					"size": "xs"
+					"bgColorHover": "bg-pink-300"
 				}
 			],
 			"bio": "Hey there! I'm Mabel Pines, the most fashionable girl in Gravity Falls! I love glitter, rainbows, and anything that sparkles. When I'm not designing fabulous sweaters or crafting adorable knick-knacks, you can find me spreading joy and laughter wherever I go. Let's make some memories together!",
@@ -952,9 +942,11 @@
 						"category": {
 							"name": "Culture",
 							"link": "/categories/culture",
-							"bgColor": "bg-blue-600",
-							"bgColorHover": "bg-blue-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-blue-600",
+								"color": "blue-600",
+								"bgColorHover": "bg-blue-500"
+							}
 						},
 						"subCategory": "Writing",
 						"location": "Global",
@@ -962,14 +954,12 @@
 							{
 								"name": "Writing",
 								"link": "/tags/writing",
-								"bgColor": "bg-green-400",
-								"size": "xs"
+								"bgColor": "bg-green-400"
 							},
 							{
 								"name": "Fiction",
 								"link": "/tags/fiction",
-								"bgColor": "bg-blue-400",
-								"size": "xs"
+								"bgColor": "bg-blue-400"
 							}
 						],
 						"status": "Active"
@@ -983,9 +973,11 @@
 						"category": {
 							"name": "Nature",
 							"link": "/categories/nature",
-							"bgColor": "bg-green-600",
-							"bgColorHover": "bg-green-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-green-600",
+								"color": "green-600",
+								"bgColorHover": "bg-green-500"
+							}
 						},
 						"subCategory": "Environment",
 						"location": "Global",
@@ -993,14 +985,12 @@
 							{
 								"name": "Environmental Conservation",
 								"link": "/tags/environmental-conservation",
-								"bgColor": "bg-green-300",
-								"size": "xs"
+								"bgColor": "bg-green-300"
 							},
 							{
 								"name": "Climate Change",
 								"link": "/tags/climate-change",
-								"bgColor": "bg-blue-300",
-								"size": "xs"
+								"bgColor": "bg-blue-300"
 							}
 						],
 						"status": "Active"
@@ -1014,9 +1004,11 @@
 						"category": {
 							"name": "Video Games",
 							"link": "/categories/video-games",
-							"bgColor": "bg-red-600",
-							"bgColorHover": "bg-red-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-red-600",
+								"color": "red-600",
+								"bgColorHover": "bg-red-500"
+							}
 						},
 						"subCategory": "Gaming",
 						"location": "Global",
@@ -1024,14 +1016,12 @@
 							{
 								"name": "Game Development",
 								"link": "/tags/game-development",
-								"bgColor": "bg-yellow-400",
-								"size": "xs"
+								"bgColor": "bg-yellow-400"
 							},
 							{
 								"name": "Creativity",
 								"link": "/tags/creativity",
-								"bgColor": "bg-red-400",
-								"size": "xs"
+								"bgColor": "bg-red-400"
 							}
 						],
 						"status": "Active"
@@ -1047,9 +1037,11 @@
 						"category": {
 							"name": "Art",
 							"link": "/categories/art",
-							"bgColor": "bg-black",
-							"bgColorHover": "bg-gray-800",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-black",
+								"color": "black",
+								"bgColorHover": "bg-gray-800"
+							}
 						},
 						"subCategory": "Arts & Crafts",
 						"location": "Global",
@@ -1057,14 +1049,12 @@
 							{
 								"name": "Kids' Activities",
 								"link": "/tags/kids-activities",
-								"bgColor": "bg-pink-400",
-								"size": "xs"
+								"bgColor": "bg-pink-400"
 							},
 							{
 								"name": "Art Education",
 								"link": "/tags/art-education",
-								"bgColor": "bg-orange-400",
-								"size": "xs"
+								"bgColor": "bg-orange-400"
 							}
 						],
 						"status": "Active"
@@ -1078,9 +1068,11 @@
 						"category": {
 							"name": "Music",
 							"link": "/categories/music",
-							"bgColor": "bg-purple-800",
-							"bgColorHover": "bg-purple-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-purple-800",
+								"color": "purple-800",
+								"bgColorHover": "bg-purple-500"
+							}
 						},
 						"subCategory": "Music",
 						"location": "Global",
@@ -1088,14 +1080,12 @@
 							{
 								"name": "Music Production",
 								"link": "/tags/music-production",
-								"bgColor": "bg-purple-400",
-								"size": "xs"
+								"bgColor": "bg-purple-400"
 							},
 							{
 								"name": "Collaboration",
 								"link": "/tags/collaboration",
-								"bgColor": "bg-green-400",
-								"size": "xs"
+								"bgColor": "bg-green-400"
 							}
 						],
 						"status": "Active"
@@ -1109,9 +1099,11 @@
 						"category": {
 							"name": "Community",
 							"link": "/categories/community",
-							"bgColor": "bg-pink-600",
-							"bgColorHover": "bg-pink-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-pink-600",
+								"color": "pink-600",
+								"bgColorHover": "bg-pink-500"
+							}
 						},
 						"subCategory": "LGBTQ+",
 						"location": "Global",
@@ -1119,14 +1111,12 @@
 							{
 								"name": "Community Support",
 								"link": "/tags/community-support",
-								"bgColor": "bg-yellow-400",
-								"size": "xs"
+								"bgColor": "bg-yellow-400"
 							},
 							{
 								"name": "Inclusivity",
 								"link": "/tags/inclusivity",
-								"bgColor": "bg-green-400",
-								"size": "xs"
+								"bgColor": "bg-green-400"
 							}
 						],
 						"status": "Active"
@@ -1140,9 +1130,11 @@
 						"category": {
 							"name": "Video Games",
 							"link": "/categories/video-games",
-							"bgColor": "bg-red-600",
-							"bgColorHover": "bg-red-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-red-600",
+								"color": "red-600",
+								"bgColorHover": "bg-red-500"
+							}
 						},
 						"subCategory": "Gaming",
 						"location": "Global",
@@ -1150,14 +1142,12 @@
 							{
 								"name": "Game Development",
 								"link": "/tags/game-development",
-								"bgColor": "bg-yellow-400",
-								"size": "xs"
+								"bgColor": "bg-yellow-400"
 							},
 							{
 								"name": "Creativity",
 								"link": "/tags/creativity",
-								"bgColor": "bg-red-400",
-								"size": "xs"
+								"bgColor": "bg-red-400"
 							}
 						],
 						"status": "Active"
@@ -1173,9 +1163,11 @@
 						"category": {
 							"name": "Nature",
 							"link": "/categories/nature",
-							"bgColor": "bg-green-600",
-							"bgColorHover": "bg-green-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-green-600",
+								"color": "green-600",
+								"bgColorHover": "bg-green-500"
+							}
 						},
 						"subCategory": "Environment",
 						"location": "Global",
@@ -1183,14 +1175,12 @@
 							{
 								"name": "Environmental Conservation",
 								"link": "/tags/environmental-conservation",
-								"bgColor": "bg-green-300",
-								"size": "xs"
+								"bgColor": "bg-green-300"
 							},
 							{
 								"name": "Climate Change",
 								"link": "/tags/climate-change",
-								"bgColor": "bg-blue-300",
-								"size": "xs"
+								"bgColor": "bg-blue-300"
 							}
 						],
 						"status": "Active"
@@ -1204,9 +1194,11 @@
 						"category": {
 							"name": "Video Games",
 							"link": "/categories/video-games",
-							"bgColor": "bg-red-600",
-							"bgColorHover": "bg-red-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-red-600",
+								"color": "red-600",
+								"bgColorHover": "bg-red-500"
+							}
 						},
 						"subCategory": "Gaming",
 						"location": "Global",
@@ -1214,14 +1206,12 @@
 							{
 								"name": "Game Development",
 								"link": "/tags/game-development",
-								"bgColor": "bg-yellow-400",
-								"size": "xs"
+								"bgColor": "bg-yellow-400"
 							},
 							{
 								"name": "Creativity",
 								"link": "/tags/creativity",
-								"bgColor": "bg-red-400",
-								"size": "xs"
+								"bgColor": "bg-red-400"
 							}
 						],
 						"status": "Active"
@@ -1250,8 +1240,7 @@
 					"certifications": "",
 					"link": "/tags/acting",
 					"bgColor": "bg-red-400",
-					"bgColorHover": "bg-red-300",
-					"size": "xs"
+					"bgColorHover": "bg-red-300"
 				},
 				{
 					"name": "Activism",
@@ -1262,8 +1251,7 @@
 					"certifications": "",
 					"link": "/tags/activism",
 					"bgColor": "bg-red-400",
-					"bgColorHover": "bg-red-300",
-					"size": "xs"
+					"bgColorHover": "bg-red-300"
 				},
 				{
 					"name": "Fashion",
@@ -1274,8 +1262,7 @@
 					"certifications": "",
 					"link": "/tags/fashion",
 					"bgColor": "bg-red-400",
-					"bgColorHover": "bg-red-300",
-					"size": "xs"
+					"bgColorHover": "bg-red-300"
 				}
 			],
 			"bio": "Hi there! I'm Emma Watson, an actress known for my roles in the Harry Potter series, The Perks of Being a Wallflower, and Beauty and the Beast. Beyond acting, I'm passionate about using my platform to advocate for gender equality and environmental sustainability. When I'm not on set, you can find me speaking at United Nations conferences, supporting various NGOs, or promoting sustainable fashion initiatives. Let's work together to create a better world!",
@@ -1295,9 +1282,11 @@
 						"category": {
 							"name": "Culture",
 							"link": "/categories/culture",
-							"bgColor": "bg-blue-600",
-							"bgColorHover": "bg-blue-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-blue-600",
+								"color": "blue-600",
+								"bgColorHover": "bg-blue-500"
+							}
 						},
 						"subCategory": "Writing",
 						"location": "Global",
@@ -1305,14 +1294,12 @@
 							{
 								"name": "Writing",
 								"link": "/tags/writing",
-								"bgColor": "bg-green-400",
-								"size": "xs"
+								"bgColor": "bg-green-400"
 							},
 							{
 								"name": "Fiction",
 								"link": "/tags/fiction",
-								"bgColor": "bg-blue-400",
-								"size": "xs"
+								"bgColor": "bg-blue-400"
 							}
 						],
 						"status": "Active"
@@ -1326,9 +1313,11 @@
 						"category": {
 							"name": "Nature",
 							"link": "/categories/nature",
-							"bgColor": "bg-green-600",
-							"bgColorHover": "bg-green-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-green-600",
+								"color": "green-600",
+								"bgColorHover": "bg-green-500"
+							}
 						},
 						"subCategory": "Environment",
 						"location": "Global",
@@ -1336,14 +1325,12 @@
 							{
 								"name": "Environmental Conservation",
 								"link": "/tags/environmental-conservation",
-								"bgColor": "bg-green-300",
-								"size": "xs"
+								"bgColor": "bg-green-300"
 							},
 							{
 								"name": "Climate Change",
 								"link": "/tags/climate-change",
-								"bgColor": "bg-blue-300",
-								"size": "xs"
+								"bgColor": "bg-blue-300"
 							}
 						],
 						"status": "Active"
@@ -1357,9 +1344,11 @@
 						"category": {
 							"name": "Video Games",
 							"link": "/categories/video-games",
-							"bgColor": "bg-red-600",
-							"bgColorHover": "bg-red-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-red-600",
+								"color": "red-600",
+								"bgColorHover": "bg-red-500"
+							}
 						},
 						"subCategory": "Gaming",
 						"location": "Global",
@@ -1367,14 +1356,12 @@
 							{
 								"name": "Game Development",
 								"link": "/tags/game-development",
-								"bgColor": "bg-yellow-400",
-								"size": "xs"
+								"bgColor": "bg-yellow-400"
 							},
 							{
 								"name": "Creativity",
 								"link": "/tags/creativity",
-								"bgColor": "bg-red-400",
-								"size": "xs"
+								"bgColor": "bg-red-400"
 							}
 						],
 						"status": "Active"
@@ -1390,9 +1377,11 @@
 						"category": {
 							"name": "Art",
 							"link": "/categories/art",
-							"bgColor": "bg-black",
-							"bgColorHover": "bg-gray-800",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-black",
+								"color": "black",
+								"bgColorHover": "bg-gray-800"
+							}
 						},
 						"subCategory": "Arts & Crafts",
 						"location": "Global",
@@ -1400,14 +1389,12 @@
 							{
 								"name": "Kids' Activities",
 								"link": "/tags/kids-activities",
-								"bgColor": "bg-pink-400",
-								"size": "xs"
+								"bgColor": "bg-pink-400"
 							},
 							{
 								"name": "Art Education",
 								"link": "/tags/art-education",
-								"bgColor": "bg-orange-400",
-								"size": "xs"
+								"bgColor": "bg-orange-400"
 							}
 						],
 						"status": "Active"
@@ -1421,9 +1408,11 @@
 						"category": {
 							"name": "Music",
 							"link": "/categories/music",
-							"bgColor": "bg-purple-800",
-							"bgColorHover": "bg-purple-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-purple-800",
+								"color": "purple-800",
+								"bgColorHover": "bg-purple-500"
+							}
 						},
 						"subCategory": "Music",
 						"location": "Global",
@@ -1431,14 +1420,12 @@
 							{
 								"name": "Music Production",
 								"link": "/tags/music-production",
-								"bgColor": "bg-purple-400",
-								"size": "xs"
+								"bgColor": "bg-purple-400"
 							},
 							{
 								"name": "Collaboration",
 								"link": "/tags/collaboration",
-								"bgColor": "bg-green-400",
-								"size": "xs"
+								"bgColor": "bg-green-400"
 							}
 						],
 						"status": "Active"
@@ -1452,9 +1439,11 @@
 						"category": {
 							"name": "Community",
 							"link": "/categories/community",
-							"bgColor": "bg-pink-600",
-							"bgColorHover": "bg-pink-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-pink-600",
+								"color": "pink-600",
+								"bgColorHover": "bg-pink-500"
+							}
 						},
 						"subCategory": "LGBTQ+",
 						"location": "Global",
@@ -1462,14 +1451,12 @@
 							{
 								"name": "Community Support",
 								"link": "/tags/community-support",
-								"bgColor": "bg-yellow-400",
-								"size": "xs"
+								"bgColor": "bg-yellow-400"
 							},
 							{
 								"name": "Inclusivity",
 								"link": "/tags/inclusivity",
-								"bgColor": "bg-green-400",
-								"size": "xs"
+								"bgColor": "bg-green-400"
 							}
 						],
 						"status": "Active"
@@ -1483,9 +1470,11 @@
 						"category": {
 							"name": "Video Games",
 							"link": "/categories/video-games",
-							"bgColor": "bg-red-600",
-							"bgColorHover": "bg-red-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-red-600",
+								"color": "red-600",
+								"bgColorHover": "bg-red-500"
+							}
 						},
 						"subCategory": "Gaming",
 						"location": "Global",
@@ -1493,14 +1482,12 @@
 							{
 								"name": "Game Development",
 								"link": "/tags/game-development",
-								"bgColor": "bg-yellow-400",
-								"size": "xs"
+								"bgColor": "bg-yellow-400"
 							},
 							{
 								"name": "Creativity",
 								"link": "/tags/creativity",
-								"bgColor": "bg-red-400",
-								"size": "xs"
+								"bgColor": "bg-red-400"
 							}
 						],
 						"status": "Active"
@@ -1516,9 +1503,11 @@
 						"category": {
 							"name": "Nature",
 							"link": "/categories/nature",
-							"bgColor": "bg-green-600",
-							"bgColorHover": "bg-green-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-green-600",
+								"color": "green-600",
+								"bgColorHover": "bg-green-500"
+							}
 						},
 						"subCategory": "Environment",
 						"location": "Global",
@@ -1526,14 +1515,12 @@
 							{
 								"name": "Environmental Conservation",
 								"link": "/tags/environmental-conservation",
-								"bgColor": "bg-green-300",
-								"size": "xs"
+								"bgColor": "bg-green-300"
 							},
 							{
 								"name": "Climate Change",
 								"link": "/tags/climate-change",
-								"bgColor": "bg-blue-300",
-								"size": "xs"
+								"bgColor": "bg-blue-300"
 							}
 						],
 						"status": "Active"
@@ -1547,9 +1534,11 @@
 						"category": {
 							"name": "Video Games",
 							"link": "/categories/video-games",
-							"bgColor": "bg-red-600",
-							"bgColorHover": "bg-red-500",
-							"size": "xs"
+							"colors": {
+								"bgColor": "bg-red-600",
+								"color": "red-600",
+								"bgColorHover": "bg-red-500"
+							}
 						},
 						"subCategory": "Gaming",
 						"location": "Global",
@@ -1557,14 +1546,12 @@
 							{
 								"name": "Game Development",
 								"link": "/tags/game-development",
-								"bgColor": "bg-yellow-400",
-								"size": "xs"
+								"bgColor": "bg-yellow-400"
 							},
 							{
 								"name": "Creativity",
 								"link": "/tags/creativity",
-								"bgColor": "bg-red-400",
-								"size": "xs"
+								"bgColor": "bg-red-400"
 							}
 						],
 						"status": "Active"

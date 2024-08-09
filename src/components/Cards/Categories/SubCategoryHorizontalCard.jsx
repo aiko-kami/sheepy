@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/Badges/Badges";
 
-const SubCategorieHorizontalCard = ({ category }) => {
+const SubCategoryHorizontalCard = ({ category }) => {
 	const { title, summary, cover, logo } = category;
 
 	return (
@@ -18,7 +18,7 @@ const SubCategorieHorizontalCard = ({ category }) => {
 						<h3 className="font-semibold text-2xl pb-1">{title}</h3>
 					</Link>
 					<div className="inline-block">
-						<Badge badge={logo} />
+						<Badge badge={logo} size={"xs"} />
 					</div>
 					<p className="line-clamp-2">{summary}</p>
 				</div>
@@ -27,4 +27,4 @@ const SubCategorieHorizontalCard = ({ category }) => {
 	);
 };
 
-export default SubCategorieHorizontalCard;
+export default SubCategoryHorizontalCard;

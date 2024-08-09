@@ -1,7 +1,8 @@
 import Link from "next/link";
 
-const Badge = ({ badge }) => {
-	const { name, size, link, bgColor, bgColorHover } = badge;
+const Badge = ({ badge, size }) => {
+	const { name, link } = badge;
+	const { bgColor, bgColorHover } = badge.colors;
 
 	let textSizeClass;
 	switch (size) {
@@ -28,8 +29,8 @@ const Badge = ({ badge }) => {
 	);
 };
 
-const BadgeRounded = ({ badge }) => {
-	const { name, size, bgColor, bgColorHover } = badge;
+const BadgeRounded = ({ badge, size }) => {
+	const { name, bgColor, bgColorHover } = badge;
 
 	const link = `/search?search=${badge.name.toLowerCase()}&tab=tabTags`;
 

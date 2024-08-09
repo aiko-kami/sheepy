@@ -3,8 +3,9 @@
 import { useState } from "react";
 
 import HeadSection from "@/components/Category/HeaderSection";
+import CategoryDescription from "@/components/Category/CategoryDescription";
 import SubCategories from "@/components/Category/SubCategories";
-import Projects from "@/components/Category/Projects";
+import ProjectsList from "@/components/Category/ProjectsList";
 
 const Category = ({ category, projects }) => {
 	const [selectedSubCategory, setSelectedSubCategory] = useState(null);
@@ -13,8 +14,9 @@ const Category = ({ category, projects }) => {
 		<>
 			<HeadSection category={category} />
 			<div className="px-6">
+				<CategoryDescription catDescription={category.description} />
 				<SubCategories category={category} setSelectedSubCategory={setSelectedSubCategory} />
-				<Projects category={category} projects={projects} selectedSubCategory={selectedSubCategory} />
+				<ProjectsList category={category} projects={projects} selectedSubCategory={selectedSubCategory} />
 			</div>
 		</>
 	);

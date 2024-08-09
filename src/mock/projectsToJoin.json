@@ -8,27 +8,27 @@
 		"category": {
 			"name": "Nature",
 			"link": "/categories/nature",
-			"bgColor": "bg-green-600",
-			"bgColorHover": "bg-green-500",
-			"size": "sm"
+			"colors": {
+				"corBase": "black",
+				"colorBase": "bg-black",
+				"bgColor": "bg-green-600"
+			},
+			"bgColorHover": "bg-green-500"
 		},
 		"subCategory": "Outdoor Activities",
 		"location": "Sydney",
 		"tags": [
 			{
 				"name": "Ocean",
-				"bgColor": "bg-blue-300",
-				"size": "xs"
+				"bgColor": "bg-blue-300"
 			},
 			{
 				"name": "Mechanics",
-				"bgColor": "bg-orange-400",
-				"size": "xs"
+				"bgColor": "bg-orange-400"
 			},
 			{
 				"name": "Exploration",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			}
 		],
 		"status": "Active"
@@ -41,22 +41,22 @@
 		"category": {
 			"name": "Crafts",
 			"link": "/categories/crafts",
-			"bgColor": "bg-pink-600",
-			"bgColorHover": "bg-pink-500",
-			"size": "sm"
+			"colors": {
+				"color": "pink-400",
+				"bgColor": "bg-pink-400",
+				"bgColorHover": "bg-pink-300"
+			}
 		},
 		"subCategory": "DIY",
 		"location": "Seattle",
 		"tags": [
 			{
 				"name": "Home Improvement",
-				"bgColor": "bg-stone-400",
-				"size": "xs"
+				"bgColor": "bg-stone-400"
 			},
 			{
 				"name": "Nature",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			}
 		],
 		"status": "Active"
@@ -69,27 +69,26 @@
 		"category": {
 			"name": "Community",
 			"link": "/categories/community",
-			"bgColor": "bg-pink-600",
-			"bgColorHover": "bg-pink-500",
-			"size": "sm"
+			"colors": {
+				"color": "pink-600",
+				"bgColor": "bg-pink-600",
+				"bgColorHover": "bg-pink-500"
+			}
 		},
 		"subCategory": "Social Movements",
 		"location": "San Francisco",
 		"tags": [
 			{
 				"name": "Podcast",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			},
 			{
 				"name": "Tech",
-				"bgColor": "bg-indigo-400",
-				"size": "xs"
+				"bgColor": "bg-indigo-400"
 			},
 			{
 				"name": "Society",
-				"bgColor": "bg-purple-400",
-				"size": "xs"
+				"bgColor": "bg-purple-400"
 			}
 		],
 		"status": "Active"
@@ -102,22 +101,22 @@
 		"category": {
 			"name": "Community",
 			"link": "/categories/community",
-			"bgColor": "bg-pink-600",
-			"bgColorHover": "bg-pink-500",
-			"size": "sm"
+			"colors": {
+				"color": "pink-600",
+				"bgColor": "bg-pink-600",
+				"bgColorHover": "bg-pink-500"
+			}
 		},
 		"subCategory": "Charity",
 		"location": "New York",
 		"tags": [
 			{
 				"name": "Charity",
-				"bgColor": "bg-pink-400",
-				"size": "xs"
+				"bgColor": "bg-pink-400"
 			},
 			{
 				"name": "Volunteering",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			}
 		],
 		"status": "Active"
@@ -130,22 +129,22 @@
 		"category": {
 			"name": "Literature",
 			"link": "/categories/literature",
-			"bgColor": "bg-green-400",
-			"bgColorHover": "bg-green-300",
-			"size": "sm"
+			"colors": {
+				"color": "green-400",
+				"bgColor": "bg-green-400",
+				"bgColorHover": "bg-green-300"
+			}
 		},
 		"subCategory": "Fiction",
 		"location": "Chicago",
 		"tags": [
 			{
 				"name": "Writing",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			},
 			{
 				"name": "Storytelling",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			}
 		],
 		"status": "Active"
@@ -158,22 +157,22 @@
 		"category": {
 			"name": "Technology",
 			"link": "/categories/technology",
-			"bgColor": "bg-gray-400",
-			"bgColorHover": "bg-gray-300",
-			"size": "sm"
+			"colors": {
+				"color": "gray-500",
+				"bgColor": "bg-gray-500",
+				"bgColorHover": "bg-gray-400"
+			}
 		},
 		"subCategory": "Mobile Apps",
 		"location": "Austin",
 		"tags": [
 			{
 				"name": "Programming",
-				"bgColor": "bg-red-400",
-				"size": "xs"
+				"bgColor": "bg-red-400"
 			},
 			{
 				"name": "Innovation",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			}
 		],
 		"status": "Active"
@@ -186,22 +185,22 @@
 		"category": {
 			"name": "Art",
 			"link": "/categories/art",
-			"bgColor": "bg-purple-400",
-			"bgColorHover": "bg-purple-300",
-			"size": "sm"
+			"colors": {
+				"color": "black",
+				"bgColor": "bg-black",
+				"bgColorHover": "bg-gray-800"
+			}
 		},
 		"subCategory": "Painting",
 		"location": "Los Angeles",
 		"tags": [
 			{
 				"name": "Creativity",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			},
 			{
 				"name": "Community",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			}
 		],
 		"status": "Active"
@@ -214,22 +213,22 @@
 		"category": {
 			"name": "Music",
 			"link": "/categories/music",
-			"bgColor": "bg-blue-400",
-			"bgColorHover": "bg-blue-300",
-			"size": "sm"
+			"colors": {
+				"color": "purple-800",
+				"bgColor": "bg-purple-800",
+				"bgColorHover": "bg-purple-500"
+			}
 		},
 		"subCategory": "Performing",
 		"location": "Nashville",
 		"tags": [
 			{
 				"name": "Music",
-				"bgColor": "bg-red-400",
-				"size": "xs"
+				"bgColor": "bg-red-400"
 			},
 			{
 				"name": "Band",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			}
 		],
 		"status": "Active"
@@ -242,22 +241,22 @@
 		"category": {
 			"name": "Film & Video",
 			"link": "/categories/film-video",
-			"bgColor": "bg-yellow-400",
-			"bgColorHover": "bg-yellow-300",
-			"size": "sm"
+			"colors": {
+				"color": "yellow-400",
+				"bgColor": "bg-yellow-400",
+				"bgColorHover": "bg-yellow-300"
+			}
 		},
 		"subCategory": "Short Film",
 		"location": "Toronto",
 		"tags": [
 			{
 				"name": "Film",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			},
 			{
 				"name": "Creativity",
-				"bgColor": "bg-red-400",
-				"size": "xs"
+				"bgColor": "bg-red-400"
 			}
 		],
 		"status": "Active"
@@ -270,22 +269,22 @@
 		"category": {
 			"name": "Food",
 			"link": "/categories/food",
-			"bgColor": "bg-red-600",
-			"bgColorHover": "bg-red-500",
-			"size": "sm"
+			"colors": {
+				"color": "red-600",
+				"bgColor": "bg-red-600",
+				"bgColorHover": "bg-red-500"
+			}
 		},
 		"subCategory": "Cooking",
 		"location": "Boston",
 		"tags": [
 			{
 				"name": "Cooking",
-				"bgColor": "bg-red-400",
-				"size": "xs"
+				"bgColor": "bg-red-400"
 			},
 			{
 				"name": "Food",
-				"bgColor": "bg-orange-400",
-				"size": "xs"
+				"bgColor": "bg-orange-400"
 			}
 		],
 		"status": "Active"
@@ -298,22 +297,22 @@
 		"category": {
 			"name": "Nature",
 			"link": "/categories/nature",
-			"bgColor": "bg-green-600",
-			"bgColorHover": "bg-green-500",
-			"size": "sm"
+			"colors": {
+				"color": "green-600",
+				"bgColor": "bg-green-600",
+				"bgColorHover": "bg-green-500"
+			}
 		},
 		"subCategory": "Gardening",
 		"location": "Portland",
 		"tags": [
 			{
 				"name": "Gardening",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			},
 			{
 				"name": "Community",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			}
 		],
 		"status": "Active"
@@ -326,22 +325,22 @@
 		"category": {
 			"name": "Technology",
 			"link": "/categories/technology",
-			"bgColor": "bg-gray-400",
-			"bgColorHover": "bg-gray-300",
-			"size": "sm"
+			"colors": {
+				"color": "gray-500",
+				"bgColor": "bg-gray-500",
+				"bgColorHover": "bg-gray-400"
+			}
 		},
 		"subCategory": "Hardware",
 		"location": "San Diego",
 		"tags": [
 			{
 				"name": "Robotics",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			},
 			{
 				"name": "Programming",
-				"bgColor": "bg-red-400",
-				"size": "xs"
+				"bgColor": "bg-red-400"
 			}
 		],
 		"status": "Active"
@@ -354,22 +353,22 @@
 		"category": {
 			"name": "Art",
 			"link": "/categories/art",
-			"bgColor": "bg-purple-400",
-			"bgColorHover": "bg-purple-300",
-			"size": "sm"
+			"colors": {
+				"color": "black",
+				"bgColor": "bg-black",
+				"bgColorHover": "bg-gray-800"
+			}
 		},
 		"subCategory": "Photography",
 		"location": "Paris",
 		"tags": [
 			{
 				"name": "Photography",
-				"bgColor": "bg-indigo-400",
-				"size": "xs"
+				"bgColor": "bg-indigo-400"
 			},
 			{
 				"name": "Exploration",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			}
 		],
 		"status": "Active"
@@ -382,22 +381,22 @@
 		"category": {
 			"name": "Technology",
 			"link": "/categories/technology",
-			"bgColor": "bg-gray-400",
-			"bgColorHover": "bg-gray-300",
-			"size": "sm"
+			"colors": {
+				"color": "gray-500",
+				"bgColor": "bg-gray-500",
+				"bgColorHover": "bg-gray-400"
+			}
 		},
 		"subCategory": "Hardware",
 		"location": "Berlin",
 		"tags": [
 			{
 				"name": "Renewable Energy",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			},
 			{
 				"name": "Innovation",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			}
 		],
 		"status": "Active"
@@ -410,22 +409,22 @@
 		"category": {
 			"name": "Literature",
 			"link": "/categories/literature",
-			"bgColor": "bg-green-400",
-			"bgColorHover": "bg-green-300",
-			"size": "sm"
+			"colors": {
+				"color": "green-400",
+				"bgColor": "bg-green-400",
+				"bgColorHover": "bg-green-300"
+			}
 		},
 		"subCategory": "Poetry",
 		"location": "London",
 		"tags": [
 			{
 				"name": "Poetry",
-				"bgColor": "bg-purple-400",
-				"size": "xs"
+				"bgColor": "bg-purple-400"
 			},
 			{
 				"name": "Performance",
-				"bgColor": "bg-red-400",
-				"size": "xs"
+				"bgColor": "bg-red-400"
 			}
 		],
 		"status": "Active"
@@ -438,22 +437,22 @@
 		"category": {
 			"name": "Games",
 			"link": "/categories/games",
-			"bgColor": "bg-orange-400",
-			"bgColorHover": "bg-orange-300",
-			"size": "sm"
+			"colors": {
+				"color": "orange-400",
+				"bgColor": "bg-orange-400",
+				"bgColorHover": "bg-orange-300"
+			}
 		},
-		"subCategory": "Game Design",
+		"subCategory": "Board Games",
 		"location": "Amsterdam",
 		"tags": [
 			{
 				"name": "Board Games",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			},
 			{
 				"name": "Design",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			}
 		],
 		"status": "Active"
@@ -466,22 +465,22 @@
 		"category": {
 			"name": "Music",
 			"link": "/categories/music",
-			"bgColor": "bg-blue-400",
-			"bgColorHover": "bg-blue-300",
-			"size": "sm"
+			"colors": {
+				"color": "purple-800",
+				"bgColor": "bg-purple-800",
+				"bgColorHover": "bg-purple-500"
+			}
 		},
 		"subCategory": "Event Planning",
 		"location": "Barcelona",
 		"tags": [
 			{
 				"name": "Music",
-				"bgColor": "bg-red-400",
-				"size": "xs"
+				"bgColor": "bg-red-400"
 			},
 			{
 				"name": "Festival",
-				"bgColor": "bg-orange-400",
-				"size": "xs"
+				"bgColor": "bg-orange-400"
 			}
 		],
 		"status": "Active"
@@ -494,22 +493,22 @@
 		"category": {
 			"name": "Education",
 			"link": "/categories/education",
-			"bgColor": "bg-yellow-400",
-			"bgColorHover": "bg-yellow-300",
-			"size": "sm"
+			"colors": {
+				"color": "yellow-400",
+				"bgColor": "bg-yellow-400",
+				"bgColorHover": "bg-yellow-300"
+			}
 		},
 		"subCategory": "E-Learning",
 		"location": "Remote",
 		"tags": [
 			{
 				"name": "Teaching",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			},
 			{
 				"name": "Online",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			}
 		],
 		"status": "Active"
@@ -522,22 +521,22 @@
 		"category": {
 			"name": "Art",
 			"link": "/categories/art",
-			"bgColor": "bg-purple-400",
-			"bgColorHover": "bg-purple-300",
-			"size": "sm"
+			"colors": {
+				"color": "black",
+				"bgColor": "bg-black",
+				"bgColorHover": "bg-gray-800"
+			}
 		},
 		"subCategory": "Exhibition",
 		"location": "Melbourne",
 		"tags": [
 			{
 				"name": "Art",
-				"bgColor": "bg-red-400",
-				"size": "xs"
+				"bgColor": "bg-red-400"
 			},
 			{
 				"name": "Community",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			}
 		],
 		"status": "Active"
@@ -550,22 +549,22 @@
 		"category": {
 			"name": "Literature",
 			"link": "/categories/literature",
-			"bgColor": "bg-green-400",
-			"bgColorHover": "bg-green-300",
-			"size": "sm"
+			"colors": {
+				"color": "green-400",
+				"bgColor": "bg-green-400",
+				"bgColorHover": "bg-green-300"
+			}
 		},
 		"subCategory": "Book Clubs & Analysis",
 		"location": "Dublin",
 		"tags": [
 			{
 				"name": "Books",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			},
 			{
 				"name": "Discussion",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			}
 		],
 		"status": "Active"
@@ -578,22 +577,22 @@
 		"category": {
 			"name": "Art",
 			"link": "/categories/art",
-			"bgColor": "bg-purple-400",
-			"bgColorHover": "bg-purple-300",
-			"size": "sm"
+			"colors": {
+				"color": "black",
+				"bgColor": "bg-black",
+				"bgColorHover": "bg-gray-800"
+			}
 		},
 		"subCategory": "Visual Arts",
 		"location": "New York",
 		"tags": [
 			{
 				"name": "Street-art",
-				"bgColor": "bg-purple-400",
-				"size": "xs"
+				"bgColor": "bg-purple-400"
 			},
 			{
 				"name": "Tour",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			}
 		],
 		"status": "Active"
@@ -606,22 +605,22 @@
 		"category": {
 			"name": "Travel",
 			"link": "/categories/travel",
-			"bgColor": "bg-indigo-400",
-			"bgColorHover": "bg-indigo-300",
-			"size": "sm"
+			"colors": {
+				"color": "indigo-400",
+				"bgColor": "bg-indigo-400",
+				"bgColorHover": "bg-indigo-300"
+			}
 		},
-		"subCategory": "Guides & Tips",
+		"subCategory": "Cultural Experiences",
 		"location": "Boston",
 		"tags": [
 			{
 				"name": "Past",
-				"bgColor": "bg-indigo-400",
-				"size": "xs"
+				"bgColor": "bg-indigo-400"
 			},
 			{
 				"name": "Tour",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			}
 		],
 		"status": "Active"
@@ -634,22 +633,22 @@
 		"category": {
 			"name": "Crafts",
 			"link": "/categories/crafts",
-			"bgColor": "bg-pink-600",
-			"bgColorHover": "bg-pink-500",
-			"size": "sm"
+			"colors": {
+				"color": "pink-400",
+				"bgColor": "bg-pink-400",
+				"bgColorHover": "bg-pink-300"
+			}
 		},
 		"subCategory": "Handmade",
 		"location": "Los Angeles",
 		"tags": [
 			{
 				"name": "DIY",
-				"bgColor": "bg-pink-400",
-				"size": "xs"
+				"bgColor": "bg-pink-400"
 			},
 			{
 				"name": "Crafts",
-				"bgColor": "bg-purple-400",
-				"size": "xs"
+				"bgColor": "bg-purple-400"
 			}
 		],
 		"status": "Active"
@@ -662,22 +661,22 @@
 		"category": {
 			"name": "Food",
 			"link": "/categories/food",
-			"bgColor": "bg-red-600",
-			"bgColorHover": "bg-red-500",
-			"size": "sm"
+			"colors": {
+				"color": "red-600",
+				"bgColor": "bg-red-600",
+				"bgColorHover": "bg-red-500"
+			}
 		},
 		"subCategory": "Cooking",
 		"location": "Chicago",
 		"tags": [
 			{
 				"name": "Cooking",
-				"bgColor": "bg-red-400",
-				"size": "xs"
+				"bgColor": "bg-red-400"
 			},
 			{
 				"name": "Food",
-				"bgColor": "bg-orange-400",
-				"size": "xs"
+				"bgColor": "bg-orange-400"
 			}
 		],
 		"status": "Active"
@@ -690,22 +689,22 @@
 		"category": {
 			"name": "Community",
 			"link": "/categories/community",
-			"bgColor": "bg-pink-600",
-			"bgColorHover": "bg-pink-500",
-			"size": "sm"
+			"colors": {
+				"color": "pink-600",
+				"bgColor": "bg-pink-600",
+				"bgColorHover": "bg-pink-500"
+			}
 		},
 		"subCategory": "Charity",
 		"location": "Seattle",
 		"tags": [
 			{
 				"name": "Charity",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			},
 			{
 				"name": "Fitness",
-				"bgColor": "bg-red-400",
-				"size": "xs"
+				"bgColor": "bg-red-400"
 			}
 		],
 		"status": "Active"
@@ -718,22 +717,22 @@
 		"category": {
 			"name": "Technology",
 			"link": "/categories/technology",
-			"bgColor": "bg-gray-400",
-			"bgColorHover": "bg-gray-300",
-			"size": "sm"
+			"colors": {
+				"color": "gray-500",
+				"bgColor": "bg-gray-500",
+				"bgColorHover": "bg-gray-400"
+			}
 		},
 		"subCategory": "AI and Machine Learning",
 		"location": "San Jose",
 		"tags": [
 			{
 				"name": "Technology",
-				"bgColor": "bg-gray-400",
-				"size": "xs"
+				"bgColor": "bg-gray-400"
 			},
 			{
 				"name": "AI",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			}
 		],
 		"status": "Active"
@@ -746,22 +745,22 @@
 		"category": {
 			"name": "Art",
 			"link": "/categories/art",
-			"bgColor": "bg-purple-400",
-			"bgColorHover": "bg-purple-300",
-			"size": "sm"
+			"colors": {
+				"color": "black",
+				"bgColor": "bg-black",
+				"bgColorHover": "bg-gray-800"
+			}
 		},
 		"subCategory": "Photography",
 		"location": "Austin",
 		"tags": [
 			{
 				"name": "Photography",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			},
 			{
 				"name": "Contest",
-				"bgColor": "bg-red-400",
-				"size": "xs"
+				"bgColor": "bg-red-400"
 			}
 		],
 		"status": "Active"
@@ -774,22 +773,22 @@
 		"category": {
 			"name": "Food",
 			"link": "/categories/food",
-			"bgColor": "bg-red-600",
-			"bgColorHover": "bg-red-500",
-			"size": "sm"
+			"colors": {
+				"color": "red-600",
+				"bgColor": "bg-red-600",
+				"bgColorHover": "bg-red-500"
+			}
 		},
 		"subCategory": "Market",
 		"location": "Portland",
 		"tags": [
 			{
 				"name": "Food",
-				"bgColor": "bg-red-400",
-				"size": "xs"
+				"bgColor": "bg-red-400"
 			},
 			{
 				"name": "Local",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			}
 		],
 		"status": "Active"
@@ -802,22 +801,22 @@
 		"category": {
 			"name": "Culture",
 			"link": "/categories/culture",
-			"bgColor": "bg-yellow-600",
-			"bgColorHover": "bg-yellow-500",
-			"size": "sm"
+			"colors": {
+				"color": "yellow-600",
+				"bgColor": "bg-yellow-600",
+				"bgColorHover": "bg-yellow-500"
+			}
 		},
 		"subCategory": "Traditions",
 		"location": "Kyoto",
 		"tags": [
 			{
 				"name": "Traditions",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			},
 			{
 				"name": "Culture",
-				"bgColor": "bg-orange-400",
-				"size": "xs"
+				"bgColor": "bg-orange-400"
 			}
 		],
 		"status": "Active"
@@ -830,22 +829,22 @@
 		"category": {
 			"name": "Nature",
 			"link": "/categories/nature",
-			"bgColor": "bg-green-600",
-			"bgColorHover": "bg-green-500",
-			"size": "sm"
+			"colors": {
+				"color": "green-600",
+				"bgColor": "bg-green-600",
+				"bgColorHover": "bg-green-500"
+			}
 		},
 		"subCategory": "Volunteer Work",
 		"location": "Santa Monica",
 		"tags": [
 			{
 				"name": "Environment",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			},
 			{
 				"name": "Volunteer",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			}
 		],
 		"status": "Active"
@@ -858,22 +857,22 @@
 		"category": {
 			"name": "Music",
 			"link": "/categories/music",
-			"bgColor": "bg-blue-400",
-			"bgColorHover": "bg-blue-300",
-			"size": "sm"
+			"colors": {
+				"color": "purple-800",
+				"bgColor": "bg-purple-800",
+				"bgColorHover": "bg-purple-500"
+			}
 		},
 		"subCategory": "Live Music",
 		"location": "New Orleans",
 		"tags": [
 			{
 				"name": "Music",
-				"bgColor": "bg-purple-400",
-				"size": "xs"
+				"bgColor": "bg-purple-400"
 			},
 			{
 				"name": "Jazz",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			}
 		],
 		"status": "Active"
@@ -886,22 +885,22 @@
 		"category": {
 			"name": "Crafts",
 			"link": "/categories/crafts",
-			"bgColor": "bg-pink-600",
-			"bgColorHover": "bg-pink-500",
-			"size": "sm"
+			"colors": {
+				"color": "pink-400",
+				"bgColor": "bg-pink-400",
+				"bgColorHover": "bg-pink-300"
+			}
 		},
 		"subCategory": "Handmade",
 		"location": "Denver",
 		"tags": [
 			{
 				"name": "DIY",
-				"bgColor": "bg-pink-400",
-				"size": "xs"
+				"bgColor": "bg-pink-400"
 			},
 			{
 				"name": "Crafts",
-				"bgColor": "bg-purple-400",
-				"size": "xs"
+				"bgColor": "bg-purple-400"
 			}
 		],
 		"status": "Active"
@@ -914,22 +913,22 @@
 		"category": {
 			"name": "Nature",
 			"link": "/categories/nature",
-			"bgColor": "bg-green-600",
-			"bgColorHover": "bg-green-500",
-			"size": "sm"
+			"colors": {
+				"color": "green-600",
+				"bgColor": "bg-green-600",
+				"bgColorHover": "bg-green-500"
+			}
 		},
 		"subCategory": "Pets",
 		"location": "San Diego",
 		"tags": [
 			{
 				"name": "Pets",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			},
 			{
 				"name": "Training",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			}
 		],
 		"status": "Active"
@@ -942,22 +941,22 @@
 		"category": {
 			"name": "Technology",
 			"link": "/categories/technology",
-			"bgColor": "bg-gray-400",
-			"bgColorHover": "bg-gray-300",
-			"size": "sm"
+			"colors": {
+				"color": "gray-500",
+				"bgColor": "bg-gray-500",
+				"bgColorHover": "bg-gray-400"
+			}
 		},
 		"subCategory": "Software Development",
 		"location": "Seattle",
 		"tags": [
 			{
 				"name": "Technology",
-				"bgColor": "bg-gray-400",
-				"size": "xs"
+				"bgColor": "bg-gray-400"
 			},
 			{
 				"name": "Coding",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			}
 		],
 		"status": "Active"
@@ -970,22 +969,22 @@
 		"category": {
 			"name": "Food",
 			"link": "/categories/food",
-			"bgColor": "bg-red-600",
-			"bgColorHover": "bg-red-500",
-			"size": "sm"
+			"colors": {
+				"color": "red-600",
+				"bgColor": "bg-red-600",
+				"bgColorHover": "bg-red-500"
+			}
 		},
 		"subCategory": "Beverages",
 		"location": "Napa Valley",
 		"tags": [
 			{
 				"name": "Wine",
-				"bgColor": "bg-purple-400",
-				"size": "xs"
+				"bgColor": "bg-purple-400"
 			},
 			{
 				"name": "Tour",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			}
 		],
 		"status": "Active"
@@ -998,22 +997,22 @@
 		"category": {
 			"name": "Crafts",
 			"link": "/categories/crafts",
-			"bgColor": "bg-pink-600",
-			"bgColorHover": "bg-pink-500",
-			"size": "sm"
+			"colors": {
+				"color": "pink-400",
+				"bgColor": "bg-pink-400",
+				"bgColorHover": "bg-pink-300"
+			}
 		},
 		"subCategory": "Handmade",
 		"location": "Austin",
 		"tags": [
 			{
 				"name": "Knitting",
-				"bgColor": "bg-pink-400",
-				"size": "xs"
+				"bgColor": "bg-pink-400"
 			},
 			{
 				"name": "Crochet",
-				"bgColor": "bg-purple-400",
-				"size": "xs"
+				"bgColor": "bg-purple-400"
 			}
 		],
 		"status": "Active"
@@ -1026,22 +1025,22 @@
 		"category": {
 			"name": "Games",
 			"link": "/categories/games",
-			"bgColor": "bg-orange-400",
-			"bgColorHover": "bg-orange-300",
-			"size": "sm"
+			"colors": {
+				"color": "orange-400",
+				"bgColor": "bg-orange-400",
+				"bgColorHover": "bg-orange-300"
+			}
 		},
-		"subCategory": "Competition",
+		"subCategory": "Board Games",
 		"location": "Chicago",
 		"tags": [
 			{
 				"name": "Chess",
-				"bgColor": "bg-gray-400",
-				"size": "xs"
+				"bgColor": "bg-gray-400"
 			},
 			{
 				"name": "Games",
-				"bgColor": "bg-black text-gray-200",
-				"size": "xs"
+				"bgColor": "bg-black text-gray-200"
 			}
 		],
 		"status": "Active"
@@ -1054,22 +1053,22 @@
 		"category": {
 			"name": "Science",
 			"link": "/categories/science",
-			"bgColor": "bg-blue-600",
-			"bgColorHover": "bg-blue-500",
-			"size": "sm"
+			"colors": {
+				"color": "blue-600",
+				"bgColor": "bg-blue-600",
+				"bgColorHover": "bg-blue-500"
+			}
 		},
-		"subCategory": "Education",
+		"subCategory": "Astronomy",
 		"location": "Phoenix",
 		"tags": [
 			{
 				"name": "Astronomy",
-				"bgColor": "bg-blue-700 text-gray-200",
-				"size": "xs"
+				"bgColor": "bg-blue-700 text-gray-200"
 			},
 			{
 				"name": "Science",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			}
 		],
 		"status": "Active"
@@ -1082,22 +1081,22 @@
 		"category": {
 			"name": "Crafts",
 			"link": "/categories/crafts",
-			"bgColor": "bg-pink-600",
-			"bgColorHover": "bg-pink-500",
-			"size": "sm"
+			"colors": {
+				"color": "pink-400",
+				"bgColor": "bg-pink-400",
+				"bgColorHover": "bg-pink-300"
+			}
 		},
 		"subCategory": "Handmade",
 		"location": "Nashville",
 		"tags": [
 			{
 				"name": "DIY",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			},
 			{
 				"name": "Nature",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			}
 		],
 		"status": "Active"
@@ -1110,22 +1109,22 @@
 		"category": {
 			"name": "Technology",
 			"link": "/categories/technology",
-			"bgColor": "bg-gray-400",
-			"bgColorHover": "bg-gray-300",
-			"size": "sm"
+			"colors": {
+				"color": "gray-500",
+				"bgColor": "bg-gray-500",
+				"bgColorHover": "bg-gray-400"
+			}
 		},
 		"subCategory": "Entertainment",
 		"location": "Los Angeles",
 		"tags": [
 			{
 				"name": "VR",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			},
 			{
 				"name": "Tech",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			}
 		],
 		"status": "Active"
@@ -1138,22 +1137,22 @@
 		"category": {
 			"name": "Food",
 			"link": "/categories/food",
-			"bgColor": "bg-red-600",
-			"bgColorHover": "bg-red-500",
-			"size": "sm"
+			"colors": {
+				"color": "red-600",
+				"bgColor": "bg-red-600",
+				"bgColorHover": "bg-red-500"
+			}
 		},
 		"subCategory": "Events",
 		"location": "San Francisco",
 		"tags": [
 			{
 				"name": "Food",
-				"bgColor": "bg-orange-400",
-				"size": "xs"
+				"bgColor": "bg-orange-400"
 			},
 			{
 				"name": "Festival",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			}
 		],
 		"status": "Active"
@@ -1166,22 +1165,22 @@
 		"category": {
 			"name": "Art",
 			"link": "/categories/art",
-			"bgColor": "bg-purple-400",
-			"bgColorHover": "bg-purple-300",
-			"size": "sm"
+			"colors": {
+				"color": "black",
+				"bgColor": "bg-black",
+				"bgColorHover": "bg-gray-800"
+			}
 		},
 		"subCategory": "Drawing",
 		"location": "Chicago",
 		"tags": [
 			{
 				"name": "Art",
-				"bgColor": "bg-purple-400",
-				"size": "xs"
+				"bgColor": "bg-purple-400"
 			},
 			{
 				"name": "Sketching",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			}
 		],
 		"status": "Active"
@@ -1194,22 +1193,22 @@
 		"category": {
 			"name": "Health & Fitness",
 			"link": "/categories/health-fitness",
-			"bgColor": "bg-blue-600",
-			"bgColorHover": "bg-blue-500",
-			"size": "sm"
+			"colors": {
+				"color": "blue-600",
+				"bgColor": "bg-blue-600",
+				"bgColorHover": "bg-blue-500"
+			}
 		},
 		"subCategory": "Mental Health",
 		"location": "Seattle",
 		"tags": [
 			{
 				"name": "Meditation",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			},
 			{
 				"name": "Wellness",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			}
 		],
 		"status": "Active"
@@ -1222,22 +1221,22 @@
 		"category": {
 			"name": "Crafts",
 			"link": "/categories/crafts",
-			"bgColor": "bg-pink-600",
-			"bgColorHover": "bg-pink-500",
-			"size": "sm"
+			"colors": {
+				"color": "pink-400",
+				"bgColor": "bg-pink-400",
+				"bgColorHover": "bg-pink-300"
+			}
 		},
 		"subCategory": "Handmade",
 		"location": "Phoenix",
 		"tags": [
 			{
 				"name": "Pottery",
-				"bgColor": "bg-rose-300",
-				"size": "xs"
+				"bgColor": "bg-rose-300"
 			},
 			{
 				"name": "Crafts",
-				"bgColor": "bg-purple-400",
-				"size": "xs"
+				"bgColor": "bg-purple-400"
 			}
 		],
 		"status": "Active"
@@ -1250,22 +1249,22 @@
 		"category": {
 			"name": "Performing Arts",
 			"link": "/categories/performing-arts",
-			"bgColor": "bg-purple-600",
-			"bgColorHover": "bg-purple-500",
-			"size": "sm"
+			"colors": {
+				"color": "purple-600",
+				"bgColor": "bg-purple-600",
+				"bgColorHover": "bg-purple-500"
+			}
 		},
 		"subCategory": "Theater",
 		"location": "Atlanta",
 		"tags": [
 			{
 				"name": "Theater",
-				"bgColor": "bg-red-400",
-				"size": "xs"
+				"bgColor": "bg-red-400"
 			},
 			{
 				"name": "Drama",
-				"bgColor": "bg-yellow-700",
-				"size": "xs"
+				"bgColor": "bg-yellow-700"
 			}
 		],
 		"status": "Active"
@@ -1278,22 +1277,22 @@
 		"category": {
 			"name": "Community",
 			"link": "/categories/community",
-			"bgColor": "bg-pink-600",
-			"bgColorHover": "bg-pink-500",
-			"size": "sm"
+			"colors": {
+				"color": "pink-600",
+				"bgColor": "bg-pink-600",
+				"bgColorHover": "bg-pink-500"
+			}
 		},
 		"subCategory": "Charity",
 		"location": "Dallas",
 		"tags": [
 			{
 				"name": "Charity",
-				"bgColor": "bg-red-400",
-				"size": "xs"
+				"bgColor": "bg-red-400"
 			},
 			{
 				"name": "Bake Sale",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			}
 		],
 		"status": "Active"
@@ -1306,22 +1305,22 @@
 		"category": {
 			"name": "Nature",
 			"link": "/categories/nature",
-			"bgColor": "bg-green-600",
-			"bgColorHover": "bg-green-500",
-			"size": "sm"
+			"colors": {
+				"color": "green-600",
+				"bgColor": "bg-green-600",
+				"bgColorHover": "bg-green-500"
+			}
 		},
 		"subCategory": "Outdoor Activities",
 		"location": "Denver",
 		"tags": [
 			{
 				"name": "Hiking",
-				"bgColor": "bg-rose-300",
-				"size": "xs"
+				"bgColor": "bg-rose-300"
 			},
 			{
 				"name": "Nature",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			}
 		],
 		"status": "Active"
@@ -1334,22 +1333,22 @@
 		"category": {
 			"name": "Fashion",
 			"link": "/categories/fashion",
-			"bgColor": "bg-yellow-600",
-			"bgColorHover": "bg-yellow-500",
-			"size": "sm"
+			"colors": {
+				"color": "yellow-600",
+				"bgColor": "bg-yellow-600",
+				"bgColorHover": "bg-yellow-500"
+			}
 		},
-		"subCategory": "Handmade",
+		"subCategory": "Clothing",
 		"location": "New York",
 		"tags": [
 			{
 				"name": "Fashion",
-				"bgColor": "bg-purple-400",
-				"size": "xs"
+				"bgColor": "bg-purple-400"
 			},
 			{
 				"name": "Sustainability",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			}
 		],
 		"status": "Active"
@@ -1362,22 +1361,22 @@
 		"category": {
 			"name": "Art",
 			"link": "/categories/art",
-			"bgColor": "bg-purple-400",
-			"bgColorHover": "bg-purple-300",
-			"size": "sm"
+			"colors": {
+				"color": "black",
+				"bgColor": "bg-black",
+				"bgColorHover": "bg-gray-800"
+			}
 		},
 		"subCategory": "Exhibition",
 		"location": "San Francisco",
 		"tags": [
 			{
 				"name": "Digital Art",
-				"bgColor": "bg-purple-400",
-				"size": "xs"
+				"bgColor": "bg-purple-400"
 			},
 			{
 				"name": "Interactive",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			}
 		],
 		"status": "Active"
@@ -1390,22 +1389,22 @@
 		"category": {
 			"name": "Community",
 			"link": "/categories/community",
-			"bgColor": "bg-pink-600",
-			"bgColorHover": "bg-pink-500",
-			"size": "sm"
+			"colors": {
+				"color": "pink-600",
+				"bgColor": "bg-pink-600",
+				"bgColorHover": "bg-pink-500"
+			}
 		},
 		"subCategory": "Volunteer Work",
 		"location": "Chicago",
 		"tags": [
 			{
 				"name": "Clean-Up",
-				"bgColor": "bg-red-400",
-				"size": "xs"
+				"bgColor": "bg-red-400"
 			},
 			{
 				"name": "Community",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			}
 		],
 		"status": "Active"
@@ -1418,22 +1417,22 @@
 		"category": {
 			"name": "Food",
 			"link": "/categories/food",
-			"bgColor": "bg-red-600",
-			"bgColorHover": "bg-red-500",
-			"size": "sm"
+			"colors": {
+				"color": "red-600",
+				"bgColor": "bg-red-600",
+				"bgColorHover": "bg-red-500"
+			}
 		},
 		"subCategory": "Cooking",
 		"location": "Austin",
 		"tags": [
 			{
 				"name": "Cooking",
-				"bgColor": "bg-orange-400",
-				"size": "xs"
+				"bgColor": "bg-orange-400"
 			},
 			{
 				"name": "Beginner",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			}
 		],
 		"status": "Active"
@@ -1446,22 +1445,22 @@
 		"category": {
 			"name": "Education",
 			"link": "/categories/education",
-			"bgColor": "bg-yellow-400",
-			"bgColorHover": "bg-yellow-300",
-			"size": "sm"
+			"colors": {
+				"color": "yellow-400",
+				"bgColor": "bg-yellow-400",
+				"bgColorHover": "bg-yellow-300"
+			}
 		},
 		"subCategory": "Meetup",
 		"location": "Los Angeles",
 		"tags": [
 			{
 				"name": "Languages",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			},
 			{
 				"name": "Practice",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			}
 		],
 		"status": "Active"
@@ -1474,22 +1473,22 @@
 		"category": {
 			"name": "Health & Fitness",
 			"link": "/categories/health-fitness",
-			"bgColor": "bg-blue-600",
-			"bgColorHover": "bg-blue-500",
-			"size": "sm"
+			"colors": {
+				"color": "blue-600",
+				"bgColor": "bg-blue-600",
+				"bgColorHover": "bg-blue-500"
+			}
 		},
-		"subCategory": "Fitness",
+		"subCategory": "Yoga",
 		"location": "Seattle",
 		"tags": [
 			{
 				"name": "Yoga",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			},
 			{
 				"name": "Relaxation",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			}
 		],
 		"status": "Active"
@@ -1502,22 +1501,22 @@
 		"category": {
 			"name": "Technology",
 			"link": "/categories/technology",
-			"bgColor": "bg-gray-400",
-			"bgColorHover": "bg-gray-300",
-			"size": "sm"
+			"colors": {
+				"color": "gray-500",
+				"bgColor": "bg-gray-500",
+				"bgColorHover": "bg-gray-400"
+			}
 		},
 		"subCategory": "Networking",
 		"location": "San Francisco",
 		"tags": [
 			{
 				"name": "Tech",
-				"bgColor": "bg-red-400",
-				"size": "xs"
+				"bgColor": "bg-red-400"
 			},
 			{
 				"name": "Networking",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			}
 		],
 		"status": "Active"
@@ -1530,22 +1529,22 @@
 		"category": {
 			"name": "Literature",
 			"link": "/categories/literature",
-			"bgColor": "bg-green-400",
-			"bgColorHover": "bg-green-300",
-			"size": "sm"
+			"colors": {
+				"color": "green-400",
+				"bgColor": "bg-green-400",
+				"bgColorHover": "bg-green-300"
+			}
 		},
 		"subCategory": "Fiction",
 		"location": "Boston",
 		"tags": [
 			{
 				"name": "Writing",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			},
 			{
 				"name": "Creativity",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			}
 		],
 		"status": "Active"
@@ -1558,22 +1557,22 @@
 		"category": {
 			"name": "Nature",
 			"link": "/categories/nature",
-			"bgColor": "bg-green-600",
-			"bgColorHover": "bg-green-500",
-			"size": "sm"
+			"colors": {
+				"color": "green-600",
+				"bgColor": "bg-green-600",
+				"bgColorHover": "bg-green-500"
+			}
 		},
 		"subCategory": "Outdoor Activities",
 		"location": "Denver",
 		"tags": [
 			{
 				"name": "Hiking",
-				"bgColor": "bg-rose-300",
-				"size": "xs"
+				"bgColor": "bg-rose-300"
 			},
 			{
 				"name": "Nature",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"bgColor": "bg-green-400"
 			}
 		],
 		"status": "Active"
@@ -1586,22 +1585,22 @@
 		"category": {
 			"name": "Art",
 			"link": "/categories/art",
-			"bgColor": "bg-purple-400",
-			"bgColorHover": "bg-purple-300",
-			"size": "sm"
+			"colors": {
+				"color": "black",
+				"bgColor": "bg-black",
+				"bgColorHover": "bg-gray-800"
+			}
 		},
 		"subCategory": "Workshop",
 		"location": "Portland",
 		"tags": [
 			{
 				"name": "Photography",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"bgColor": "bg-blue-400"
 			},
 			{
 				"name": "Workshop",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"bgColor": "bg-yellow-400"
 			}
 		],
 		"status": "Active"

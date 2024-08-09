@@ -9,83 +9,76 @@
 	"category": {
 		"name": "Film & Video",
 		"link": "/categories/film-video",
-		"bgColor": "bg-black",
-		"bgColorHover": "bg-gray-800",
-		"size": "xs"
+		"colors": {
+			"color": "bg-black",
+			"bgColor": "bg-black",
+			"bgColorHover": "bg-gray-800"
+		}
 	},
 	"subCategory": {
 		"name": "Cinema",
 		"link": "/search?search=cinema&tab=tabsubCategories",
-		"bgColor": "bg-orange-600",
-		"bgColorHover": "bg-orange-500",
-		"size": "xs"
+		"colors": {
+			"color": "bg-black",
+			"bgColor": "bg-black",
+			"bgColorHover": "bg-gray-800"
+		}
 	},
 	"tags": [
 		{
 			"name": "Indie film",
 			"link": "/tags/indie_film",
-			"bgColor": "border border-2 border-gray-500 text-white",
-			"size": "xs"
+			"bgColor": "border border-2 border-gray-500 text-white"
 		},
 		{
 			"name": "Fiction",
 			"link": "/tags/fiction",
-			"bgColor": "border border-2 border-gray-500 text-white",
-			"size": "xs"
+			"bgColor": "border border-2 border-gray-500 text-white"
 		},
 		{
 			"name": "Cinematography",
 			"link": "/tags/cinematography",
-			"bgColor": "border border-2 border-gray-500 text-white",
-			"size": "xs"
+			"bgColor": "border border-2 border-gray-500 text-white"
 		},
 		{
 			"name": "Sci-Fi",
 			"link": "/tags/sci-fi",
-			"bgColor": "border border-2 border-gray-500 text-white",
-			"size": "xs"
+			"bgColor": "border border-2 border-gray-500 text-white"
 		},
 		{
 			"name": "Editing",
 			"link": "/tags/editing",
-			"bgColor": "border border-2 border-gray-500 text-white",
-			"size": "xs"
+			"bgColor": "border border-2 border-gray-500 text-white"
 		},
 		{
 			"name": "Time travel",
 			"link": "/tags/time_travel",
-			"bgColor": "border border-2 border-gray-500 text-white",
-			"size": "xs"
+			"bgColor": "border border-2 border-gray-500 text-white"
 		},
 		{
 			"name": "Acting",
 			"link": "/tags/acting",
-			"bgColor": "border border-2 border-gray-500 text-white",
-			"size": "xs"
+			"bgColor": "border border-2 border-gray-500 text-white"
 		},
 		{
 			"name": "Cyberpunk",
 			"link": "/tags/cyberpunk",
-			"bgColor": "border border-2 border-gray-500 text-white",
-			"size": "xs"
+			"bgColor": "border border-2 border-gray-500 text-white"
 		},
 		{
 			"name": "Directing",
 			"link": "/tags/directing",
-			"bgColor": "border border-2 border-gray-500 text-white",
-			"size": "xs"
+			"bgColor": "border border-2 border-gray-500 text-white"
 		},
 		{
 			"name": "Visual effects ",
 			"link": "/tags/visual_effects",
-			"bgColor": "border border-2 border-gray-500 text-white",
-			"size": "xs"
+			"bgColor": "border border-2 border-gray-500 text-white"
 		},
 		{
 			"name": "screenwriting",
 			"link": "/tags/screenwriting",
-			"bgColor": "border border-1 border-gray-500 text-white",
-			"size": "xs"
+			"bgColor": "border border-1 border-gray-500 text-white"
 		}
 	],
 	"location": "San Fransokyo, USA",

@@ -17,7 +17,7 @@ const ProjectCard = ({ project, animate }) => {
 						<Image src={cover} className="w-full h-36 sm:h-62 object-cover rounded-t-lg" alt="Card" height={0} width={0} sizes="100vw" />
 					</Link>
 					<div className="absolute bottom-2 right-2">
-						<Badge badge={category} />
+						<Badge badge={category} size={"xs"} />
 					</div>
 				</div>
 
@@ -26,7 +26,7 @@ const ProjectCard = ({ project, animate }) => {
 					<div className="flex flex-wrap justify-center h-12 overflow-hidden">
 						{tags.map((tag, index) => (
 							<div key={index} className="mx-1 my-2">
-								<BadgeRounded badge={tag} />
+								<BadgeRounded badge={tag} size={"xs"} />
 							</div>
 						))}
 					</div>

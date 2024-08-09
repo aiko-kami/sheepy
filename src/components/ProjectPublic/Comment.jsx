@@ -34,7 +34,7 @@ const Comment = ({ comment }) => {
 					<span className="ml-2 text-sm font-normal text-gray-300">{relativeDate}</span>
 					{isOwner && (
 						<div className="mt-1 sm:mt-0 sm:ml-2">
-							<Badge badge={{ name: "Project Owner", size: "xs", bgColor: "bg-blue-500", bgColorHover: "bg-gray-800", link: `/users/${userId}` }} />
+							<Badge badge={{ name: "Project Owner", colors: { bgColor: "bg-blue-500", bgColorHover: "bg-gray-800" }, link: `/users/${userId}` }} size={"xs"} />
 						</div>
 					)}
 				</div>

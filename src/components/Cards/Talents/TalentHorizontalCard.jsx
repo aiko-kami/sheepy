@@ -39,7 +39,7 @@ const TalentHorizontalCard = ({ user, animate }) => {
 					<div className="flex flex-wrap h-8 overflow-hidden mb-1 tn:mb-2">
 						{talents.map((talent, index) => (
 							<div key={index} className="mx-1 my-1">
-								<BadgeRounded badge={talent} />
+								<BadgeRounded badge={talent} size={"xs"} />
 							</div>
 						))}
 					</div>
