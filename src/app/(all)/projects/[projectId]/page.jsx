@@ -7,6 +7,7 @@ import TalentsNeeded from "@/components/ProjectPublic/TalentsNeeded";
 import ProjectTags from "@/components/ProjectPublic/ProjectTags";
 import ProjectMembers from "@/components/ProjectPublic/ProjectMembers";
 import StepsQAComments from "@/components/ProjectPublic/StepsQAComments";
+import SimilarProjects from "@/components/ProjectPublic/SimilarProjects";
 
 import project from "@/mock/project.json";
 
@@ -35,20 +36,25 @@ const ProjectPublicPage = () => {
 						<ActionButtons project={project} />
 
 						{/* Goal */}
-						<ProjectGoal project={project} />
+						<ProjectGoal goal={project.goal} />
 
 						{/* Talents needed */}
 						<TalentsNeeded project={project} />
 
 						{/* Tags */}
-						<ProjectTags project={project} />
+						<ProjectTags tags={project.tags} />
 
 						{/* Members */}
-						<ProjectMembers project={project} />
+						<ProjectMembers members={project.members} />
 					</div>
 				</div>
 				{/* Q&A and comments */}
-				<StepsQAComments project={project} />
+				<div className="mb-4 sm:mb-12">
+					<StepsQAComments project={project} />
+				</div>
+				<div className="mb-4">
+					<SimilarProjects projects={project.similarProjects} />
+				</div>
 			</div>
 		</div>
 	);

@@ -264,5 +264,101 @@
 				}
 			]
 		}
+	],
+	"similarProjects": [
+		{
+			"id": 12345,
+			"title": "Create a submarine",
+			"summary": "Hello! I am looking for people who want to explore the ocean.",
+			"cover": "https://superawesomevectors.com/wp-content/uploads/2021/04/yellow-submarine-vector.jpg",
+			"likes": 5,
+			"category": {
+				"name": "Nature",
+				"link": "/categories/nature",
+				"colors": {
+					"corBase": "black",
+					"colorBase": "bg-black",
+					"bgColor": "bg-green-600"
+				},
+				"bgColorHover": "bg-green-500"
+			},
+			"subCategory": "Outdoor Activities",
+			"location": "Sydney",
+			"tags": [
+				{
+					"name": "Ocean",
+					"bgColor": "bg-blue-300"
+				},
+				{
+					"name": "Mechanics",
+					"bgColor": "bg-orange-400"
+				},
+				{
+					"name": "Exploration",
+					"bgColor": "bg-green-400"
+				}
+			],
+			"status": "Active"
+		},
+		{
+			"title": "Build a Treehouse",
+			"summary": "Hey everyone! I'm planning to build a cozy treehouse in my backyard. Join me in this fun project!",
+			"cover": "https://thumbor.forbes.com/thumbor/fit-in/x/https://www.forbes.com/home-improvement/wp-content/uploads/2023/07/unnamed-5.jpg",
+			"likes": 8,
+			"category": {
+				"name": "Crafts",
+				"link": "/categories/crafts",
+				"colors": {
+					"colorBase": "pink-400",
+					"bgColor": "bg-pink-400",
+					"bgColorHover": "bg-pink-300"
+				}
+			},
+			"subCategory": "DIY",
+			"location": "Seattle",
+			"tags": [
+				{
+					"name": "Home Improvement",
+					"bgColor": "bg-stone-400"
+				},
+				{
+					"name": "Nature",
+					"bgColor": "bg-green-400"
+				}
+			],
+			"status": "Active"
+		},
+		{
+			"title": "Start a Podcast",
+			"summary": "Hi friends! I'm launching a new podcast series about technology and its impact on society. Join me for some insightful conversations!",
+			"cover": "https://www.thomann.de/blog/wp-content/uploads/2023/01/podcastStart_header_770x425.png",
+			"likes": 12,
+			"category": {
+				"name": "Community",
+				"link": "/categories/community",
+				"colors": {
+					"colorBase": "pink-600",
+					"bgColor": "bg-pink-600",
+					"bgColorHover": "bg-pink-500"
+				}
+			},
+			"subCategory": "Social Movements",
+			"location": "San Francisco",
+			"tags": [
+				{
+					"name": "Podcast",
+					"bgColor": "bg-blue-400"
+				},
+				{
+					"name": "Tech",
+					"bgColor": "bg-indigo-400"
+				},
+				{
+					"name": "Society",
+					"bgColor": "bg-purple-400"
+				}
+			],
+			"status": "Active"
+		}
 	]
 }

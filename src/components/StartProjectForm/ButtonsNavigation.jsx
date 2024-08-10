@@ -17,7 +17,7 @@ const ButtonsNavigation = ({ goToStep, currentStep, totalSteps }) => {
 						</Button>
 					)}
 					{currentStep > 1 && (
-						<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "blue", btnRounded: "std", action: () => goToStep(currentStep - 1) }}>
+						<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "green", btnRounded: "std", action: () => goToStep(currentStep - 1) }}>
 							<div className="flex">
 								<IoArrowBack className="text-xl mr-2" /> Back
 							</div>
@@ -25,9 +25,7 @@ const ButtonsNavigation = ({ goToStep, currentStep, totalSteps }) => {
 					)}
 				</div>
 				<div className="flex gap-2 ml-auto">
-					<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "grayBorder", btnRounded: "std", action: () => goToStep(0) }}>
-						<div className="flex">Save draft</div>
-					</Button>
+					<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "grayBorder", btnRounded: "std", action: () => goToStep(0) }}>Save draft</Button>
 					{currentStep < totalSteps - 1 && (
 						<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "blue", btnRounded: "std", action: () => goToStep(currentStep + 1) }}>
 							<div className="flex">

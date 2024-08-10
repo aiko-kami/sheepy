@@ -33,11 +33,11 @@ const HeadSection = ({ project }) => {
 			</Modal>
 			{/* Buttons Like and Share */}
 			<div className="flex justify-center gap-8 mb-2">
-				<ButtonCircle btnProps={{ btnSize: "2xl", type: "button", btnColor: "gray" }}>
+				<ButtonCircle btnProps={{ btnSize: "2xl", type: "button", btnColor: "grayBorder" }}>
 					<IoBookmarkOutline />
 				</ButtonCircle>
 
-				<ButtonCircle btnProps={{ btnSize: "2xl", type: "button", btnColor: "gray" }}>
+				<ButtonCircle btnProps={{ btnSize: "2xl", type: "button", btnColor: "grayBorder" }}>
 					<IoShareSocialOutline />
 				</ButtonCircle>
 			</div>

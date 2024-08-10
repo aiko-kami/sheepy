@@ -30,16 +30,16 @@ const Button = ({ children, btnProps }) => {
 	let color;
 	switch (btnColor) {
 		case "gray":
-			color = "text-white bg-gray-500 hover:bg-gray-600 active:bg-gray-700";
+			color = "text-white bg-gray-600 hover:bg-gray-700 active:bg-gray-800";
 			break;
 		case "blue":
 			color = "text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800";
 			break;
 		case "green":
-			color = "text-white bg-green-500 hover:bg-green-600 active:bg-green-700";
+			color = "text-white bg-green-600 hover:bg-green-700 active:bg-green-800";
 			break;
 		case "grayBorder":
-			color = "text-white bg-base-500 border border-2 box-border border-gray-600 hover:bg-gray-600 active:bg-gray-700";
+			color = "text-white border border-2 box-border border-gray-600 hover:bg-gray-600 active:bg-gray-700";
 			break;
 		default:
 			color = "text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800";
@@ -109,16 +109,19 @@ const ButtonCircle = ({ children, btnProps }) => {
 	let color;
 	switch (btnColor) {
 		case "gray":
-			color = "text-white bg-gray-500 hover:bg-gray-600 active:bg-gray-700";
+			color = "text-white bg-gray-600 hover:bg-gray-700 active:bg-gray-800";
 			break;
 		case "blue":
 			color = "text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800";
 			break;
 		case "green":
-			color = "text-white bg-green-500 hover:bg-green-600 active:bg-green-700";
+			color = "text-white bg-green-600 hover:bg-green-700 active:bg-green-800";
+			break;
+		case "grayBorder":
+			color = "text-white border border-2 box-border border-gray-600 hover:bg-gray-600 active:bg-gray-700";
 			break;
 		default:
-			color = "text-base";
+			color = "text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800";
 	}
 
 	return (
