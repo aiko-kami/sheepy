@@ -68,11 +68,11 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 - [x] Search projects page
 - [x] Search talents page
 - [x] Project creation page
-- [x] Projects by categories page
+- [x] Projects by categories and sub-categories page
+- [x] Projects by locations page
+- [x] Projects by tags page
+- [] forgot password page or modal
 
-- [] Projects by sub-categories page
-- [] Projects by locations page
-- [] Projects by tags page
 
 - [] How it works
 
