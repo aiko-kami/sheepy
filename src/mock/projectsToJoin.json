@@ -631,15 +631,15 @@
 		"cover": "https://www.us.photojaanic.com/blog/wp-content/uploads/sites/2/2020/04/DIY-Home-Decor-Ideas-1080x720.jpeg",
 		"likes": 30,
 		"category": {
-			"name": "Crafts",
-			"link": "/categories/crafts",
+			"name": "Design",
+			"link": "/categories/design",
 			"colors": {
-				"colorBase": "pink-400",
-				"bgColor": "bg-pink-400",
-				"bgColorHover": "bg-pink-300"
+				"colorBase": "purple-700",
+				"bgColor": "bg-purple-700",
+				"bgColorHover": "bg-purple-600"
 			}
 		},
-		"subCategory": "Handmade",
+		"subCategory": "Interior Design",
 		"location": "Los Angeles",
 		"tags": [
 			{
@@ -647,7 +647,7 @@
 				"bgColor": "bg-pink-400"
 			},
 			{
-				"name": "Crafts",
+				"name": "Design",
 				"bgColor": "bg-purple-400"
 			}
 		],
@@ -891,7 +891,7 @@
 				"bgColorHover": "bg-pink-300"
 			}
 		},
-		"subCategory": "Handmade",
+		"subCategory": "DIY",
 		"location": "Denver",
 		"tags": [
 			{
@@ -1003,7 +1003,7 @@
 				"bgColorHover": "bg-pink-300"
 			}
 		},
-		"subCategory": "Handmade",
+		"subCategory": "Knitting",
 		"location": "Austin",
 		"tags": [
 			{
@@ -1087,7 +1087,7 @@
 				"bgColorHover": "bg-pink-300"
 			}
 		},
-		"subCategory": "Handmade",
+		"subCategory": "Woodworking",
 		"location": "Nashville",
 		"tags": [
 			{
@@ -1227,7 +1227,7 @@
 				"bgColorHover": "bg-pink-300"
 			}
 		},
-		"subCategory": "Handmade",
+		"subCategory": "Pottery",
 		"location": "Phoenix",
 		"tags": [
 			{
