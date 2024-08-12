@@ -44,7 +44,7 @@ const TalentsNeeded = ({ project }) => {
 						</div>
 					</React.Fragment>
 				))}
-				<Modal modalDisplay={modalDisplay}>
+				<Modal modalDisplay={modalDisplay} closeModal={closeModal} modalSize={"xl"} modalTitle={"You want to join this project?"}>
 					<ProjectApplicationModal closeModal={closeModal} talentsNeeded={project.talentsNeeded} roleSelected={selectedRole} />
 				</Modal>
 			</div>

@@ -38,25 +38,35 @@ const UserCardDetails = ({ user }) => {
 						{/* List of fields */}
 						<div className="mb-10">
 							{/* City */}
-							<InputField inputName={"locationCity"} inputType={"text"} label={"City"} inputValue={formInputs.locationCity} onChange={onChange}>
-								<IoLocationOutline className="w-5 h-5 text-gray-400" />
-							</InputField>
+							<div className="mb-6">
+								<InputField inputName={"locationCity"} inputType={"text"} label={"City"} inputValue={formInputs.locationCity} onChange={onChange}>
+									<IoLocationOutline className="w-5 h-5 text-gray-400" />
+								</InputField>
+							</div>
 							{/* Country */}
-							<InputField inputName={"locationCountry"} inputType={"text"} label={"Country"} inputValue={formInputs.locationCountry} onChange={onChange}>
-								<IoEarthOutline className="w-5 h-5 text-gray-400" />
-							</InputField>
+							<div className="mb-6">
+								<InputField inputName={"locationCountry"} inputType={"text"} label={"Country"} inputValue={formInputs.locationCountry} onChange={onChange}>
+									<IoEarthOutline className="w-5 h-5 text-gray-400" />
+								</InputField>
+							</div>
 							{/* Language */}
-							<InputField inputName={"languages"} inputType={"text"} label={"Languages"} inputValue={formInputs.languages} onChange={onChange}>
-								<IoChatbubbleEllipsesOutline className="w-5 h-5 text-gray-400" />
-							</InputField>
+							<div className="mb-6">
+								<InputField inputName={"languages"} inputType={"text"} label={"Languages"} inputValue={formInputs.languages} onChange={onChange}>
+									<IoChatbubbleEllipsesOutline className="w-5 h-5 text-gray-400" />
+								</InputField>
+							</div>
 							{/* Company */}
-							<InputField inputName={"company"} inputType={"text"} label={"Company"} inputValue={formInputs.company} onChange={onChange}>
-								<IoBusinessOutline className="w-5 h-5 text-gray-400" />
-							</InputField>
+							<div className="mb-6">
+								<InputField inputName={"company"} inputType={"text"} label={"Company"} inputValue={formInputs.company} onChange={onChange}>
+									<IoBusinessOutline className="w-5 h-5 text-gray-400" />
+								</InputField>
+							</div>
 							{/* Website */}
-							<InputField inputName={"website"} inputType={"text"} label={"Website"} inputValue={formInputs.website} onChange={onChange}>
-								<IoLinkOutline className="w-5 h-5 text-gray-400" />
-							</InputField>
+							<div className="mb-6">
+								<InputField inputName={"website"} inputType={"text"} label={"Website"} inputValue={formInputs.website} onChange={onChange}>
+									<IoLinkOutline className="w-5 h-5 text-gray-400" />
+								</InputField>
+							</div>
 						</div>
 						{/* Button Update profile (submit form) */}
 						<div className="text-center">

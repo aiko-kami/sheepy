@@ -5,6 +5,9 @@ import Link from "next/link";
 import { useState } from "react";
 import sheepLogo from "@/public/sheepyLogo.png";
 
+import TermsOfUseModal from "@/components/Modals/TermsOfUseModal";
+import Modal from "@/components/Modals/Modal";
+
 const SignUpPage = () => {
 	const [formData, setFormData] = useState({
 		username: "",
@@ -16,6 +19,14 @@ const SignUpPage = () => {
 
 	const [signupError, setSignupError] = useState("");
 	const [loading, setLoading] = useState(false);
+	const [modalDisplay, setModalDisplay] = useState(false);
+
+	const showModal = () => {
+		setModalDisplay(true);
+	};
+	const closeModal = () => {
+		setModalDisplay(false);
+	};
 
 	const onChange = (e) => {
 		setSignupError("");
@@ -126,9 +137,9 @@ const SignUpPage = () => {
 							<p>
 								By clicking on Register, you agree to our&nbsp;
 								<br className="sm:hidden" />
-								<Link href="#" className="underline">
+								<button type="button" className="underline hover:text-gray-400 duration-200 transition ease-in-out" onClick={showModal}>
 									Terms of use
-								</Link>
+								</button>
 							</p>
 						</div>
 
@@ -162,6 +173,9 @@ const SignUpPage = () => {
 					<Image src={sheepLogo} width={75} height={75} alt="Sheepy Logo" className="mx-auto" />
 				</div>
 			</div>
+			<Modal modalDisplay={modalDisplay} closeModal={closeModal} modalSize={"std"} modalTitle={"Terms of Use"}>
+				<TermsOfUseModal closeModal={closeModal} />
+			</Modal>
 		</>
 	);
 };

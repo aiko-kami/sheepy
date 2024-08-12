@@ -28,7 +28,7 @@ const HeadSection = ({ project }) => {
 					</div>
 				</Button>
 			</div>
-			<Modal modalDisplay={modalDisplay}>
+			<Modal modalDisplay={modalDisplay} closeModal={closeModal} modalSize={"xl"} modalTitle={"You want to join this project?"}>
 				<ProjectApplicationModal closeModal={closeModal} talentsNeeded={project.talentsNeeded} />
 			</Modal>
 			{/* Buttons Like and Share */}

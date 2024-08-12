@@ -37,24 +37,31 @@ const UserCardDetails = ({ user }) => {
 					{/* List of fields */}
 					<div className="mb-10">
 						{/* Email */}
-						<InputField inputName={"email"} inputType={"email"} label={"Email"} inputValue={formInputs.email} onChange={onChange}>
-							<IoAtOutline className="w-5 h-5 text-gray-400" />
-						</InputField>
-
+						<div className="mb-6">
+							<InputField inputName={"email"} inputType={"email"} label={"Email"} inputValue={formInputs.email} onChange={onChange}>
+								<IoAtOutline className="w-5 h-5 text-gray-400" />
+							</InputField>
+						</div>
 						{/* Old password */}
-						<InputField inputName="oldPassword" inputType="password" label="Old Password" inputValue={formInputs.oldPassword} onChange={onChange}>
-							<IoLockClosed className="w-5 h-5 text-gray-400" />
-						</InputField>
+						<div className="mb-6">
+							<InputField inputName="oldPassword" inputType="password" label="Old Password" inputValue={formInputs.oldPassword} onChange={onChange}>
+								<IoLockClosed className="w-5 h-5 text-gray-400" />
+							</InputField>
+						</div>
 
 						{/* New password */}
-						<InputField inputName="newPassword" inputType="password" label="New Password" inputValue={formInputs.newPassword} onChange={onChange}>
-							<IoLockClosed className="w-5 h-5 text-gray-400" />
-						</InputField>
+						<div className="mb-6">
+							<InputField inputName="newPassword" inputType="password" label="New Password" inputValue={formInputs.newPassword} onChange={onChange}>
+								<IoLockClosed className="w-5 h-5 text-gray-400" />
+							</InputField>
+						</div>
 
 						{/* Repeat new password */}
-						<InputField inputName="repeatNewPassword" inputType="password" label="Repeat New Password" inputValue={formInputs.repeatNewPassword} onChange={onChange}>
-							<IoLockClosed className="w-5 h-5 text-gray-400" />
-						</InputField>
+						<div className="mb-6">
+							<InputField inputName="repeatNewPassword" inputType="password" label="Repeat New Password" inputValue={formInputs.repeatNewPassword} onChange={onChange}>
+								<IoLockClosed className="w-5 h-5 text-gray-400" />
+							</InputField>
+						</div>
 					</div>
 					{/* Button Update account (submit form) */}
 					<div className="text-center">

@@ -37,9 +37,13 @@ const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTag
 								{/* Location online only (toggle button) */}
 								<ToggleField inputName="locationOnlineOnly" checked={formInputs.locationOnlineOnly} label="Project online only" onChange={onChange} />
 								{/* Location country */}
-								<InputField inputName="locationCountry" inputType="text" label="Country" inputValue={formInputs.locationCountry} onChange={onChange} disabled={formInputs.locationOnlineOnly} />
+								<div className="mb-6">
+									<InputField inputName="locationCountry" inputType="text" label="Country" inputValue={formInputs.locationCountry} onChange={onChange} disabled={formInputs.locationOnlineOnly} />
+								</div>
 								{/* Location city */}
-								<InputField inputName="locationCity" inputType="text" label="City" inputValue={formInputs.locationCity} onChange={onChange} disabled={formInputs.locationOnlineOnly} />
+								<div className="mb-6">
+									<InputField inputName="locationCity" inputType="text" label="City" inputValue={formInputs.locationCity} onChange={onChange} disabled={formInputs.locationOnlineOnly} />
+								</div>
 								{/* Project visibility */}
 								<select
 									id="projectVisibility"
@@ -66,7 +70,7 @@ const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTag
 								</div>
 								{/* Tag input field */}
 								<div className="flex items-center mt-6">
-									<div className="w-full mr-2">
+									<div className="w-full mr-2 mb-6">
 										<InputField inputName="tag" inputType="text" label="Tag (optional)" inputValue={tagInput} onChange={handleTagInputChange} />
 									</div>
 									<div className="min-w-fit">

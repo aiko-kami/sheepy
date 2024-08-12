@@ -1,0 +1,175 @@
+{
+	"terms_of_use": [
+		{
+			"tag": "h2",
+			"content": "Welcome to Sheepy!",
+			"className": "text-lg font-semibold mb-1"
+		},
+		{
+			"tag": "p",
+			"content": "Thank you for choosing Sheepy to help bring your projects to life. By accessing or using the Sheepy platform, you agree to comply with and be bound by the following Terms of Use. Please read them carefully before using our services.",
+			"className": "mb-6"
+		},
+		{
+			"tag": "h3",
+			"content": "1. Acceptance of Terms",
+			"className": "text-2xl font-medium mb-2"
+		},
+		{
+			"tag": "p",
+			"content": "By using Sheepy, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use. If you do not agree to these terms, you may not use the platform.",
+			"className": "mb-6"
+		},
+		{
+			"tag": "h3",
+			"content": "2. Our Mission",
+			"className": "text-2xl font-medium mb-2"
+		},
+		{
+			"tag": "p",
+			"content": "Sheepy is dedicated to connecting passionate and skilled individuals with innovative project ideas. Our mission is to help you bring your projects to life by providing a platform where talents and ideas converge.",
+			"className": "mb-6"
+		},
+		{
+			"tag": "h3",
+			"content": "3. Definition of a Project",
+			"className": "text-2xl font-medium mb-2"
+		},
+		{
+			"tag": "p",
+			"content": "In the context of Sheepy, a project is any idea or goal you wish to achieve that requires collaboration with others. This can range from creative endeavors like making a film or starting a band to technical projects like developing software or launching a new product.",
+			"className": "mb-6"
+		},
+		{
+			"tag": "h3",
+			"content": "4. User Responsibilities",
+			"className": "text-2xl font-medium mb-2"
+		},
+		{
+			"tag": "p",
+			"content": "Accurate Information: You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate and current.",
+			"className": "mb-2"
+		},
+		{
+			"tag": "p",
+			"content": "Respectful Conduct: You agree to interact with other users respectfully and professionally. Harassment, discrimination, or any form of abuse will not be tolerated.",
+			"className": "mb-2"
+		},
+		{
+			"tag": "p",
+			"content": "Ownership of Content: You retain ownership of any content, including project ideas and talent profiles, that you submit to the platform. However, by submitting content, you grant Sheepy a non-exclusive, worldwide, royalty-free license to use, display, reproduce, and distribute your content on the platform.",
+			"className": "mb-6"
+		},
+		{
+			"tag": "h3",
+			"content": "5. Prohibited Activities",
+			"className": "text-2xl font-medium mb-2"
+		},
+		{
+			"tag": "p",
+			"content": "You agree not to:",
+			"className": "mb-2"
+		},
+		{
+			"tag": "ul",
+			"className": "list-disc list-inside",
+			"children": [
+				{
+					"tag": "li",
+					"content": "Use the platform for any unlawful purpose.",
+					"className": "ml-2 mb-1"
+				},
+				{
+					"tag": "li",
+					"content": "Post false or misleading project proposals or talent profiles.",
+					"className": "ml-2 mb-1"
+				},
+				{
+					"tag": "li",
+					"content": "Engage in any activity that could harm the reputation or functionality of the Sheepy platform.",
+					"className": "ml-2 mb-1"
+				},
+				{
+					"tag": "li",
+					"content": "Attempt to gain unauthorized access to other users’ accounts or personal information.",
+					"className": "ml-2 mb-6"
+				}
+			]
+		},
+		{
+			"tag": "h3",
+			"content": "6. Termination of Use",
+			"className": "text-2xl font-medium mb-2"
+		},
+		{
+			"tag": "p",
+			"content": "Sheepy reserves the right to suspend or terminate your account if you violate these Terms of Use or engage in any conduct that Sheepy deems inappropriate or harmful to the community.",
+			"className": "mb-6"
+		},
+		{
+			"tag": "h3",
+			"content": "7. Disclaimer of Warranties",
+			"className": "text-2xl font-medium mb-2"
+		},
+		{
+			"tag": "p",
+			"content": "Sheepy provides the platform \"as is\" without warranties of any kind. We do not guarantee the accuracy, reliability, or suitability of the content provided by users or the success of any project.",
+			"className": "mb-6"
+		},
+		{
+			"tag": "h3",
+			"content": "8. Limitation of Liability",
+			"className": "text-2xl font-medium mb-2"
+		},
+		{
+			"tag": "p",
+			"content": "Sheepy is not liable for any direct, indirect, incidental, or consequential damages arising from your use of the platform. This includes, but is not limited to, any loss of profits, data, or other intangible losses.",
+			"className": "mb-6"
+		},
+		{
+			"tag": "h3",
+			"content": "9. Indemnification",
+			"className": "text-2xl font-medium mb-2"
+		},
+		{
+			"tag": "p",
+			"content": "You agree to indemnify and hold harmless Sheepy, its officers, directors, employees, and agents from any claims, damages, losses, liabilities, costs, or expenses arising from your use of the platform or violation of these Terms of Use.",
+			"className": "mb-6"
+		},
+		{
+			"tag": "h3",
+			"content": "10. Changes to Terms",
+			"className": "text-2xl font-medium mb-2"
+		},
+		{
+			"tag": "p",
+			"content": "Sheepy reserves the right to modify these Terms of Use at any time. We will notify users of any significant changes through the platform or via email. Your continued use of the platform after such changes constitutes your acceptance of the new terms.",
+			"className": "mb-6"
+		},
+		{
+			"tag": "h3",
+			"content": "11. Governing Law",
+			"className": "text-2xl font-medium mb-2"
+		},
+		{
+			"tag": "p",
+			"content": "These Terms of Use are governed by and construed in accordance with the laws of [Your Country/State]. Any disputes arising under these terms shall be subject to the exclusive jurisdiction of the courts located in [Your Country/State].",
+			"className": "mb-6"
+		},
+		{
+			"tag": "h3",
+			"content": "12. Contact Us",
+			"className": "text-2xl font-medium mb-2"
+		},
+		{
+			"tag": "p",
+			"content": "If you have any questions or concerns about these Terms of Use, please contact us at [Your Contact Information].",
+			"className": "mb-6"
+		},
+		{
+			"tag": "p",
+			"content": "By using Sheepy, you acknowledge that you have read, understood, and agree to these Terms of Use. Thank you for being a part of the Sheepy community, where ideas and talents come together to create something extraordinary.",
+			"className": "mb-6"
+		}
+	]
+}

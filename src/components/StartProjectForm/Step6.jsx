@@ -20,7 +20,7 @@ const StepSix = ({ formInputs, talentNeededInput, addTalentNeeded, removeTalentN
 						<div className="flex flex-col items-center w-full">
 							<div className="w-full sm:w-100 xl:w-120">
 								{/* Talents needed input field */}
-								<div className="flex items-center mt-6">
+								<div className="flex items-center my-6">
 									<div className="w-full mr-2">
 										<InputField inputName="talentNeeded" inputType="text" label="Add a talent you're looking for" inputValue={talentNeededInput} onChange={handleTalentNeededInputChange} />
 									</div>

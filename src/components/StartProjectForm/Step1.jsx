@@ -39,7 +39,9 @@ const StepOne = ({ categories, formInputs, onChange }) => {
 					<div className="flex justify-end items-center">
 						<div className="mb-10 w-full md:w-200">
 							{/* Project title */}
-							<InputField inputName="projectTitle" inputType="text" label="Project title" inputValue={formInputs.projectTitle} onChange={onChange}></InputField>
+							<div className="mb-6">
+								<InputField inputName="projectTitle" inputType="text" label="Project title" inputValue={formInputs.projectTitle} onChange={onChange} />
+							</div>
 							<div className="flex flex-col lg:flex-row justify-between">
 								{/* Project category */}
 								<div className="flex-1 mb-6 lg:mb-0 lg:mr-2">

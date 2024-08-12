@@ -1,6 +1,6 @@
 const InputField = ({ inputName, inputType, label, inputValue, onChange, disabled = false, children }) => {
 	return (
-		<div className="relative z-0 mb-6 w-full">
+		<div className="relative z-0 w-full">
 			{/* icon on the left of the field */}
 			<div className="flex absolute inset-y-6 -left-11 items-center pl-3 pointer-events-none">{children}</div>
 			<input

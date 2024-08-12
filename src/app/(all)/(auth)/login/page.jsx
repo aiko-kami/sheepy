@@ -5,12 +5,16 @@ import Link from "next/link";
 import { useState } from "react";
 import sheepLogo from "@/public/sheepyLogo.png";
 
+import ForgotPasswordModal from "@/components/Modals/ForgotPasswordModal";
+import Modal from "@/components/Modals/Modal";
+
 const LoginPage = () => {
 	const [formData, setFormData] = useState({
 		login: "",
 		password: "",
 	});
 	const [loginError, setLoginError] = useState("");
+	const [modalDisplay, setModalDisplay] = useState(false);
 
 	const onChange = (e) => {
 		setLoginError("");
@@ -26,6 +30,13 @@ const LoginPage = () => {
 		e.preventDefault();
 		// You can perform actions like searching here
 		console.log("Login submitted:", formData);
+	};
+
+	const showModal = () => {
+		setModalDisplay(true);
+	};
+	const closeModal = () => {
+		setModalDisplay(false);
 	};
 
 	const { login, password } = formData;
@@ -83,9 +94,9 @@ const LoginPage = () => {
 
 						{/* Forgot Password link */}
 						<div className="text-right mb-2">
-							<Link href="#" className="text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out">
+							<button type="button" className="text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out" onClick={showModal}>
 								Forgot password?
-							</Link>
+							</button>
 						</div>
 						<div className="min-h-7 mb-3">{loginError && <p className="text-xs text-red-600">{loginError}</p>}</div>
 
@@ -129,6 +140,9 @@ const LoginPage = () => {
 					</div>
 				</div>
 			</div>
+			<Modal modalDisplay={modalDisplay} closeModal={closeModal} modalSize={"sm"} modalTitle={"Forgot your password?"}>
+				<ForgotPasswordModal closeModal={closeModal} />
+			</Modal>
 		</>
 	);
 };
