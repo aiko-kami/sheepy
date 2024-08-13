@@ -8,7 +8,7 @@ export const metadata = {
 	description: "Category page with projects linked to the category",
 };
 
-const ProjectDescriptionPage = ({ params }) => {
+const CategoryPage = ({ params }) => {
 	const { categoryName } = params;
 
 	// Find the category object that matches the category link
@@ -30,4 +30,4 @@ const ProjectDescriptionPage = ({ params }) => {
 	);
 };
 
-export default ProjectDescriptionPage;
+export default CategoryPage;

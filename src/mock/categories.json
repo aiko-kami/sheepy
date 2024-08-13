@@ -296,57 +296,57 @@
 			{
 				"name": "Workshops and Seminars",
 				"link": "/categories/education/workshops-seminars",
-				"colorBase": "blue-500",
+				"colorBase": "green-500",
 				"bgColor": "bg-green-500",
-				"bgColorHover": "bg-green-600",
+				"bgColorHover": "bg-green-400",
 				"symbol": "🏫"
 			},
 			{
 				"name": "Tutoring and Mentoring",
 				"link": "/categories/education/tutoring-mentoring",
-				"colorBase": "blue-500",
+				"colorBase": "green-500",
 				"bgColor": "bg-green-500",
-				"bgColorHover": "bg-green-600",
+				"bgColorHover": "bg-green-400",
 				"symbol": "👩‍🏫"
 			},
 			{
 				"name": "Educational Events",
 				"link": "/categories/education/educational-events",
-				"colorBase": "blue-500",
+				"colorBase": "green-500",
 				"bgColor": "bg-green-500",
-				"bgColorHover": "bg-green-600",
+				"bgColorHover": "bg-green-400",
 				"symbol": "🎓"
 			},
 			{
 				"name": "Study Groups",
 				"link": "/categories/education/study-groups",
-				"colorBase": "blue-500",
+				"colorBase": "green-500",
 				"bgColor": "bg-green-500",
-				"bgColorHover": "bg-green-600",
+				"bgColorHover": "bg-green-400",
 				"symbol": "📖"
 			},
 			{
 				"name": "Learning",
 				"link": "/categories/education/learning",
-				"colorBase": "blue-500",
+				"colorBase": "green-500",
 				"bgColor": "bg-green-500",
-				"bgColorHover": "bg-green-600",
+				"bgColorHover": "bg-green-400",
 				"symbol": "📚"
 			},
 			{
 				"name": "Career Development",
 				"link": "/categories/education/career-development",
-				"colorBase": "blue-500",
+				"colorBase": "green-500",
 				"bgColor": "bg-green-500",
-				"bgColorHover": "bg-green-600",
+				"bgColorHover": "bg-green-400",
 				"symbol": "💼"
 			},
 			{
 				"name": "Language Learning",
 				"link": "/categories/education/language-learning",
-				"colorBase": "blue-500",
+				"colorBase": "green-500",
 				"bgColor": "bg-green-500",
-				"bgColorHover": "bg-green-600",
+				"bgColorHover": "bg-green-400",
 				"symbol": "🌍"
 			}
 		]

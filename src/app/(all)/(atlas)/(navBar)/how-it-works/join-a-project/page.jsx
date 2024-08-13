@@ -1,4 +1,4 @@
-const JoinAProject = () => {
+const JoinAProjectPage = () => {
 	return <div>This is the Join a project Page</div>;
 };
-export default JoinAProject;
+export default JoinAProjectPage;

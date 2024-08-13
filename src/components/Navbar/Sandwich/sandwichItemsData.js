@@ -42,6 +42,20 @@ export const sandwichItemsData = [
 	{
 		title: "Discover",
 		url: "/discover",
+		submenu: [
+			{
+				title: "The projects",
+				url: "/projects/join-a-project",
+			},
+			{
+				title: "The talents",
+				url: "/talents/meet-talents",
+			},
+			{
+				title: "The categories",
+				url: "/categories/all-categories",
+			},
+		],
 	},
 	{
 		title: "Search",

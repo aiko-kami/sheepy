@@ -73,7 +73,7 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 						<ul className="grid gap-8 sm:grid-cols-2 lg:mx-auto max-w-250">
 							{categories.map((category, index) => (
 								<li key={index} className="flex justify-center">
-									<CategoryHorizontalCard category={category} />
+									<CategoryHorizontalCard category={category} animate={true} />
 								</li>
 							))}
 						</ul>

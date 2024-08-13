@@ -5,7 +5,7 @@ export const metadata = {
 	description: "Start new project page",
 };
 
-const StartMyProject = () => {
+const StartMyProjectPage = () => {
 	return (
 		<>
 			<div className="container min-w-full mx-auto px-2 md:px-8 text-justify">
@@ -14,4 +14,4 @@ const StartMyProject = () => {
 		</>
 	);
 };
-export default StartMyProject;
+export default StartMyProjectPage;

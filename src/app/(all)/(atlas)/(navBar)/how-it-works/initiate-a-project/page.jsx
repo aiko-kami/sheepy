@@ -1,4 +1,4 @@
-const InitiateAProject = () => {
+const InitiateAProjectPage = () => {
 	return <div>This is the Initiate a project Page</div>;
 };
-export default InitiateAProject;
+export default InitiateAProjectPage;
