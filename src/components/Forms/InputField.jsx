@@ -1,12 +1,12 @@
-const InputField = ({ inputName, inputType, label, inputValue, onChange, disabled = false, children }) => {
+const InputField = ({ inputName, inputType, inputValue, onChange, disabled = false, label, children }) => {
 	return (
 		<div className="relative z-0 w-full">
 			{/* icon on the left of the field */}
 			<div className="flex absolute inset-y-6 -left-11 items-center pl-3 pointer-events-none">{children}</div>
 			<input
-				type={inputType}
 				name={inputName}
 				id={inputName}
+				type={inputType}
 				value={inputValue}
 				onChange={onChange}
 				className={`block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-500 peer ${

@@ -1,17 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import InputField from "@/components/Forms/InputField";
 
 const LoginForm = ({ setModalDisplay }) => {
 	const [formData, setFormData] = useState({
 		login: "",
 		password: "",
 	});
+	const { login, password } = formData;
+
 	const [loginError, setLoginError] = useState("");
 
 	const onChange = (e) => {
 		setLoginError("");
-
 		setFormData((prevState) => ({
 			...prevState,
 			[e.target.name]: e.target.value,
@@ -29,62 +31,28 @@ const LoginForm = ({ setModalDisplay }) => {
 		setModalDisplay(true);
 	};
 
-	const { login, password } = formData;
-
 	return (
 		<>
 			<h1 className="text-center text-2xl mb-4">Log in</h1>
 			<form onSubmit={handleSubmit}>
 				{/* Email input */}
-				<div className="relative z-0 mb-6 w-full group">
-					<input
-						type="text"
-						name="login"
-						id="login"
-						value={login}
-						onChange={onChange}
-						className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-500 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-						placeholder=" "
-						required
-					/>
-					<label
-						htmlFor="login"
-						className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-					>
-						Email address or Username
-					</label>
+				<div className="mb-6">
+					<InputField inputName="login" inputType="text" label="Email address or Username" inputValue={login} onChange={onChange} />
 				</div>
-
-				{/* Password input */}
-				<div className="relative z-0 mb-2 w-full group">
-					<input
-						type="password"
-						name="password"
-						id="password"
-						value={password}
-						onChange={onChange}
-						className="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-500 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-						placeholder=" "
-						required
-					/>
-					<label
-						htmlFor="password"
-						className="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-					>
-						Password
-					</label>
+				<div className="mb-3">
+					<InputField inputName="password" inputType="text" label="Password" inputValue={password} onChange={onChange} />
 				</div>
+				<div className="flex justify-between mb-3 min-h-14">
+					{/* Error message (displayed only if an error) */}
+					<div>{loginError && <p className="text-xs text-red-600">{loginError}</p>}</div>
 
-				{/* Error message (displayed only if an error) */}
-
-				{/* Forgot Password link */}
-				<div className="text-right mb-2">
-					<button type="button" className="text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out" onClick={showModal}>
-						Forgot password?
-					</button>
+					{/* Forgot Password link */}
+					<div className="text-right ml-4">
+						<button type="button" className="text-blue-600 hover:text-blue-700 focus:text-blue-700 active:text-blue-800 duration-200 transition ease-in-out whitespace-nowrap" onClick={showModal}>
+							Forgot password?
+						</button>
+					</div>
 				</div>
-				<div className="min-h-7 mb-3">{loginError && <p className="text-xs text-red-600">{loginError}</p>}</div>
-
 				{/* Sign in button (submit form) */}
 				<button
 					type="submit"
