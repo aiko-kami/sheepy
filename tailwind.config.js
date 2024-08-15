@@ -373,6 +373,7 @@ module.exports = {
 		"hover:bg-blue-500",
 		"hover:bg-blue-600",
 		"hover:bg-gray-300",
+		"hover:bg-gray-400",
 		"hover:bg-gray-500",
 		"hover:bg-gray-800",
 		"hover:bg-green-300",
