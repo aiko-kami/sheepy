@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import { IoGridOutline, IoReorderFour } from "react-icons/io5";
-import MyProjectsTable from "@/components/tables/MyProjectsTable";
+import MyProjectsTable from "@/components/Tables/MyProjectsTable";
 import MyProjectsCards from "@/components/UserProjectsPrivate/MyProjectCards";
 
 const MyProjects = ({ projects }) => {
