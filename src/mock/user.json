@@ -64,6 +64,11 @@
 				"summary": "Embark on an exciting journey to write a captivating fiction novel! Join our community of aspiring writers, editors, and literary enthusiasts.",
 				"cover": "https://images.pexels.com/photos/256514/pexels-photo-256514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 				"likes": 18,
+				"permissions": {
+					"isPrivateAllowed": true,
+					"isConfigureAllowed": true,
+					"isChatAllowed": true
+				},
 				"category": {
 					"name": "Culture",
 					"link": "/categories/culture",
@@ -95,6 +100,11 @@
 				"summary": "Join our movement to plant trees and restore our planet's greenery! Together, we can make a significant impact on the environment and combat climate change.",
 				"cover": "https://images.pexels.com/photos/38136/pexels-photo-38136.jpeg",
 				"likes": 12,
+				"permissions": {
+					"isPrivateAllowed": true,
+					"isConfigureAllowed": true,
+					"isChatAllowed": true
+				},
 				"category": {
 					"name": "Nature",
 					"link": "/categories/nature",
@@ -126,6 +136,11 @@
 				"summary": "Join our team of game developers and designers to create an immersive and thrilling video game experience! Let your creativity soar as we bring this project to life.",
 				"cover": "https://images.pexels.com/photos/21067/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 				"likes": 23,
+				"permissions": {
+					"isPrivateAllowed": true,
+					"isConfigureAllowed": true,
+					"isChatAllowed": false
+				},
 				"category": {
 					"name": "Games",
 					"link": "/categories/games",
@@ -159,6 +174,11 @@
 				"summary": "Ignite your child's creativity with our fun and educational painting activities program! Join us as we explore colors, shapes, and artistic expression.",
 				"cover": "https://images.pexels.com/photos/542556/pexels-photo-542556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 				"likes": 8,
+				"permissions": {
+					"isPrivateAllowed": true,
+					"isConfigureAllowed": false,
+					"isChatAllowed": true
+				},
 				"category": {
 					"name": "Art",
 					"link": "/categories/art",
@@ -190,6 +210,11 @@
 				"summary": "Calling all musicians and music enthusiasts! Let's collaborate to produce an exceptional music album that resonates with audiences worldwide.",
 				"cover": "https://images.pexels.com/photos/1389429/pexels-photo-1389429.jpeg",
 				"likes": 15,
+				"permissions": {
+					"isPrivateAllowed": false,
+					"isConfigureAllowed": false,
+					"isChatAllowed": false
+				},
 				"category": {
 					"name": "Music",
 					"link": "/categories/music",
@@ -221,6 +246,11 @@
 				"summary": "Join our safe and inclusive space for open discussions on LGBTQ+ topics, issues, and experiences. Let's foster understanding, acceptance, and support within the community.",
 				"cover": "https://images.pexels.com/photos/4557464/pexels-photo-4557464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 				"likes": 10,
+				"permissions": {
+					"isPrivateAllowed": true,
+					"isConfigureAllowed": false,
+					"isChatAllowed": true
+				},
 				"category": {
 					"name": "Community",
 					"link": "/categories/community",
@@ -252,6 +282,11 @@
 				"summary": "Join our team of game developers and designers to create an immersive and thrilling video game experience! Let your creativity soar as we bring this project to life.",
 				"cover": "https://images.pexels.com/photos/21067/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 				"likes": 23,
+				"permissions": {
+					"isPrivateAllowed": true,
+					"isConfigureAllowed": true,
+					"isChatAllowed": true
+				},
 				"category": {
 					"name": "Games",
 					"link": "/categories/games",
@@ -285,6 +320,11 @@
 				"summary": "Join our movement to plant trees and restore our planet's greenery! Together, we can make a significant impact on the environment and combat climate change.",
 				"cover": "https://images.pexels.com/photos/38136/pexels-photo-38136.jpeg",
 				"likes": 12,
+				"permissions": {
+					"isPrivateAllowed": true,
+					"isConfigureAllowed": false,
+					"isChatAllowed": false
+				},
 				"category": {
 					"name": "Nature",
 					"link": "/categories/nature",
@@ -316,6 +356,11 @@
 				"summary": "Join our team of game developers and designers to create an immersive and thrilling video game experience! Let your creativity soar as we bring this project to life.",
 				"cover": "https://images.pexels.com/photos/21067/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 				"likes": 23,
+				"permissions": {
+					"isPrivateAllowed": true,
+					"isConfigureAllowed": false,
+					"isChatAllowed": true
+				},
 				"category": {
 					"name": "Games",
 					"link": "/categories/games",

@@ -18,6 +18,10 @@ const Comment = ({ comment }) => {
 		setDisplayReply((prevDisplayReply) => !prevDisplayReply);
 	};
 
+	const handleReportClick = () => {
+		console.log("🚀 ~ handleReportClick ~ :", "💥 Comment reported! 💥");
+	};
+
 	const handleReplySubmit = () => {
 		setDisplayReply(false);
 	};
@@ -52,7 +56,7 @@ const Comment = ({ comment }) => {
 						)}
 						<span className="ml-2">{answers?.length ? `${answers.length} ${answers.length === 1 ? "reply" : "replies"}` : null}</span>
 					</div>
-					<button className="flex items-center text-gray-400 hover:text-gray-300" title="Report comment">
+					<button className="flex items-center text-gray-400 hover:text-gray-300" title="Report comment" onClick={handleReportClick}>
 						<span className="sm:mr-4">Report</span>
 					</button>
 				</div>

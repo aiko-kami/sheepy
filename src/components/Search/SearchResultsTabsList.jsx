@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import TabNavItem from "@/components/Tabs/TabNavItem";
 import TabContent from "@/components/Tabs/TabContent";
-import ProjectHorizontalCard from "@/components/Cards/Projects/ProjectHorizontalCard";
+import { ProjectHorizontalCard } from "@/components/Cards/Projects/ProjectCards";
 import TalentHorizontalCard from "@/components/Cards/Talents/TalentHorizontalCard";
 import CategoryHorizontalCard from "@/components/Cards/Categories/CategoryHorizontalCard";
 import SubCategoryHorizontalCard from "@/components/Cards/Categories/SubCategoryHorizontalCard";

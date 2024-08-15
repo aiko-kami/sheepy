@@ -1,4 +1,4 @@
-import ProjectCard from "./ProjectCard";
+import { ProjectCard } from "./ProjectCards";
 import LatestProjects from "@/mock/LatestProjects.json";
 
 const RecentProjects = () => {

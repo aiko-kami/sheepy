@@ -4,7 +4,8 @@ import { useState, useEffect, useRef } from "react";
 
 import { IoHappy } from "react-icons/io5";
 import EmojiPicker from "emoji-picker-react";
-import { Button } from "../Buttons/Buttons";
+import { Button } from "@/components/Buttons/Buttons";
+import { TextAreaCommentField } from "@/components/Forms/TextAreaField";
 
 const CommentReplyForm = ({ displayReply, handleReplySubmit }) => {
 	const [showEmojiPicker, setShowEmojiPicker] = useState(false);
@@ -31,9 +32,13 @@ const CommentReplyForm = ({ displayReply, handleReplySubmit }) => {
 		};
 	}, [showEmojiPicker]);
 
+	const onChange = (e) => {
+		setComment(e.target.value);
+	};
+
 	const onSubmit = (event) => {
 		event.preventDefault();
-		console.log(comment); // Log the comment to the console
+		console.log("🚀 ~ onSubmit ~ comment data:", comment);
 		handleReplySubmit(comment); // Pass the comment to the handler function
 		setComment(""); // Clear the comment after submitting
 	};
@@ -45,20 +50,17 @@ const CommentReplyForm = ({ displayReply, handleReplySubmit }) => {
 					<form onSubmit={onSubmit}>
 						<div className="w-full mb-4 border rounded-lg bg-gray-700 border-gray-600">
 							<div className="bg-gray-800 rounded-t-lg ">
-								<label htmlFor="comment" className="sr-only">
-									Your comment
-								</label>
-								<textarea
-									name="comment"
-									id="comment"
-									value={comment}
-									onChange={(e) => setComment(e.target.value)}
-									className="w-full resize-none rounded-t-lg p-2 bg-gray-800 border-0 focus:ring-0 placeholder-gray-400"
+								<TextAreaCommentField
+									label="Your comment"
+									labelStyle="sr-only"
+									inputName="comment"
+									inputValue={comment}
+									onChange={onChange}
 									placeholder="Write a comment..."
 									maxLength={1000}
 									rows="4"
 									required={true}
-								></textarea>
+								/>
 							</div>
 							<div className="flex items-center justify-end sm:justify-between px-2 py-2 border-t border-gray-600 relative">
 								<div className="hidden sm:flex" ref={emojiPickerRef}>

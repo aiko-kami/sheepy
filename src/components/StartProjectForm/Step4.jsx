@@ -1,6 +1,6 @@
 "use client";
 
-import TextAreaField from "@/components/Forms/TextAreaField";
+import { TextAreaField } from "@/components/Forms/TextAreaField";
 
 const StepFour = ({ formInputs, onChange }) => {
 	return (

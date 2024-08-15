@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 
 import { Button } from "@/components/Buttons/Buttons";
-import TextAreaField from "@/components/Forms/TextAreaField";
+import { TextAreaField } from "@/components/Forms/TextAreaField";
 
 const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) => {
 	const [formState, setFormState] = useState({

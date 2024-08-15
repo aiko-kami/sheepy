@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import TabNavItem from "@/components/Tabs/TabNavItem";
 import TabContent from "@/components/Tabs/TabContent";
-import ProjectHorizontalCard from "@/components/Cards/Projects/ProjectHorizontalCard";
+import { ProjectHorizontalCard } from "@/components/Cards/Projects/ProjectCards";
 
 const ProjectsTabsList = ({ projects }) => {
 	const [activeTab, setActiveTab] = useState("tabProjectWorked");

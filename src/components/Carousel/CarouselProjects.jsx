@@ -1,6 +1,6 @@
 "use client";
 import Carousel from "./Carousel";
-import ProjectCard from "@/components/Cards/Projects/ProjectCard";
+import { ProjectCard } from "@/components/Cards/Projects/ProjectCards";
 import LatestProjects from "@/mock/LatestProjects.json";
 import "./styles.module.css";
 

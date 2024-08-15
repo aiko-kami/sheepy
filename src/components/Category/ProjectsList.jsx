@@ -1,4 +1,4 @@
-import ProjectCard from "@/components/Cards/Projects/ProjectCard";
+import { ProjectCard } from "@/components/Cards/Projects/ProjectCards";
 
 const ProjectsList = ({ category, projects, selectedSubCategory }) => {
 	// Filter projects that belong to the specified category and subcategory

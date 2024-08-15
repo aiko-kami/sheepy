@@ -9,7 +9,7 @@ import Popover from "@/components/Popover";
 import { Button } from "@/components/Buttons/Buttons";
 import PopoverContent from "./PopoverContent";
 import ProjectCounter from "@/components/Common/ProjectCounter";
-import TextAreaField from "@/components/Forms/TextAreaField";
+import { TextAreaField } from "@/components/Forms/TextAreaField";
 
 const UserCardPictureBio = ({ user }) => {
 	const [formInputs, setFormInputs] = useState({

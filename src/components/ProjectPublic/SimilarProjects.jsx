@@ -1,5 +1,4 @@
-import { IoExtensionPuzzleOutline, IoChatboxEllipsesOutline, IoHelpCircleOutline } from "react-icons/io5";
-import ProjectHorizontalCard from "@/components/Cards/Projects/ProjectHorizontalCard";
+import { ProjectHorizontalCard } from "@/components/Cards/Projects/ProjectCards";
 
 const SimilarProjects = ({ projects }) => {
 	return (

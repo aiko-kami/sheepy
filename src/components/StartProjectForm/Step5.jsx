@@ -89,7 +89,7 @@ const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTag
 												<span key={index} className="flex items-center px-3 pt-0.5 pb-1 mt-1 bg-gray-200 text-gray-800 rounded-full">
 													{tag}
 													<button type="button" className="ml-1 text-gray-600 hover:text-gray-800 transition duration-150 ease-in-out" onClick={() => removeTag(tag)}>
-														<IoCloseCircleOutline className="text-lg" />
+														<IoCloseCircleOutline className="text-lg" title="Remove tag" />
 													</button>
 												</span>
 											))}
