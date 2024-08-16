@@ -21,21 +21,21 @@ const MyProjectsActions = ({ projectId, projectPermissions, iconSize }) => {
 	return (
 		<>
 			<Link href={`/projects/${projectId}`}>
-				<IoDocumentTextOutline className={`mx-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Go to project page" />
+				<IoDocumentTextOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Go to project page" />
 			</Link>
 			{projectPermissions.isPrivateAllowed && (
 				<Link href={`/projects/${projectId}`}>
-					<IoDocumentLockOutline className={`mx-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Go to project private page" />
+					<IoDocumentLockOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Go to project private page" />
 				</Link>
 			)}
 			{projectPermissions.isConfigureAllowed && (
 				<Link href={`/projects/${projectId}`}>
-					<IoConstructOutline className={`mx-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Configure project" />
+					<IoConstructOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Configure project" />
 				</Link>
 			)}
 			{projectPermissions.isChatAllowed && (
 				<Link href={`/projects/${projectId}`}>
-					<IoChatboxEllipsesOutline className={`mx-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Go to project discussion" />
+					<IoChatboxEllipsesOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Go to project discussion" />
 				</Link>
 			)}
 		</>

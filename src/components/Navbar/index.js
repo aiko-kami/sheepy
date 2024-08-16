@@ -5,13 +5,13 @@ import Login from "@/components/Navbar/Login";
 const Header = ({ isHomePage = false, displaySearchButton }) => {
 	return (
 		<header className={`sticky p-2 z-50 flex justify-between ${isHomePage && "bg-custom-blue-dark"}`}>
-			<div className="">
+			<div>
 				<Sandwich />
 			</div>
 			<div className="hidden lg:flex">
 				<Menu displaySearchButton={displaySearchButton} />
 			</div>
-			<div className="">
+			<div>
 				<Login />
 			</div>
 		</header>

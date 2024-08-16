@@ -387,5 +387,11 @@
 				"status": "Active"
 			}
 		]
+	},
+	"notifications": {
+		"myProfileNotif": 0,
+		"myProjectsNotif": 2,
+		"settingsNotif": 0,
+		"helpNotif": 0
 	}
 }

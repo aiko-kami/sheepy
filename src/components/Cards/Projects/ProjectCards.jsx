@@ -120,7 +120,7 @@ const ProjectHorizontalCardActions = ({ project, animate }) => {
 					<div className="py-2">
 						<Badge badge={category} size={"xs"} />
 					</div>
-					<p className="line-clamp-2 mb-4">{summary}</p>
+					<p className="line-clamp-2 mb-3">{summary}</p>
 					<div className="flex justify-end text-gray-300">
 						<MyProjectsActions projectId={project.projectId} projectPermissions={project.permissions} iconSize={"lg"} />
 					</div>

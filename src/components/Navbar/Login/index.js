@@ -59,7 +59,7 @@ const Login = () => {
 								<Image className="rounded-full object-cover w-12 h-12" src={user.profilePicture} alt="user picture" height={0} width={0} sizes="100vw" />
 							</button>
 							{/* <!-- Dropdown menu --> */}
-							<Dropdown username={user.username} userId={user.userId} dropdownOpen={dropdownOpen} closeDropdown={closeDropdown} />
+							<Dropdown username={user.username} userId={user.userId} notifications={user.notifications} dropdownOpen={dropdownOpen} closeDropdown={closeDropdown} />
 						</div>
 					</>
 				)}
