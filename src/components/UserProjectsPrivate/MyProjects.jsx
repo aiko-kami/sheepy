@@ -13,6 +13,7 @@ const MyProjects = ({ projects }) => {
 		displayMode === "table" && setDisplayMode("cards");
 		displayMode === "cards" && setDisplayMode("table");
 	};
+
 	return (
 		<>
 			<div className="grid grid-cols-3 items-center">
@@ -22,7 +23,7 @@ const MyProjects = ({ projects }) => {
 				</div>
 
 				{/* Change display buttons */}
-				{projects && projects.length !== 0 && (
+				{(projects.projectCount.onGoing > 0 || projects.projectCount.created > 0 || projects.projectCount.completed > 0) && (
 					<div className="text-right">
 						{displayMode === "table" && (
 							<>
@@ -39,13 +40,55 @@ const MyProjects = ({ projects }) => {
 					</div>
 				)}
 			</div>
-			{projects && projects.length !== 0 ? (
-				<>
-					{displayMode === "table" && <MyProjectsTable projects={projects} />}
-					{displayMode === "cards" && <MyProjectsCards projects={projects} />}
-				</>
+			<h2 className="text-xl mb-2 ml-4">Projects I created</h2>
+			<p className="mb-6 ml-4">The projects you created or for which you are the owner</p>
+			{projects.projectsOnGoing && projects.projectsOnGoing.length !== 0 ? (
+				<div className="mb-12">
+					{displayMode === "table" && <MyProjectsTable projects={projects.projectsOnGoing} />}
+					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsOnGoing} />}
+				</div>
 			) : (
-				<p className=" text-xl text-center pt-10"> No project found 😕</p>
+				<p className=" text-xl text-center pb-12"> No project found 😕</p>
+			)}
+			<h2 className="text-xl mb-2 ml-4">Projects I work on</h2>
+			<p className="mb-6 ml-4">The projects for which you are a team member</p>
+			{projects.projectsCreated && projects.projectsCreated.length !== 0 ? (
+				<div className="mb-12">
+					{displayMode === "table" && <MyProjectsTable projects={projects.projectsCreated} />}
+					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsCreated} />}
+				</div>
+			) : (
+				<p className=" text-xl text-center pb-12"> No project found 😕</p>
+			)}
+			<h2 className="text-xl mb-2 ml-4">Projects completed</h2>
+			<p className="mb-6 ml-4">The projects over for which you were either the owner or a team member</p>
+			{projects.projectsCompleted && projects.projectsCompleted.length !== 0 ? (
+				<div className="mb-12">
+					{displayMode === "table" && <MyProjectsTable projects={projects.projectsCompleted} />}
+					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsCompleted} />}
+				</div>
+			) : (
+				<p className=" text-xl text-center pb-12"> No project found 😕</p>
+			)}
+			<h2 className="text-xl mb-2 ml-4">Projects Invitations</h2>
+			<p className="mb-6 ml-4">The invitations you received to join a project</p>
+			{projects.projectsCompleted && projects.projectsCompleted.length !== 0 ? (
+				<div className="mb-12">
+					{displayMode === "table" && <MyProjectsTable projects={projects.projectsCompleted} />}
+					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsCompleted} />}
+				</div>
+			) : (
+				<p className=" text-xl text-center pb-12"> No project found 😕</p>
+			)}
+			<h2 className="text-xl mb-2 ml-4">Projects requests</h2>
+			<p className="mb-6 ml-4">The requests you sent to join a project</p>
+			{projects.projectsCompleted && projects.projectsCompleted.length !== 0 ? (
+				<div className="mb-12">
+					{displayMode === "table" && <MyProjectsTable projects={projects.projectsCompleted} />}
+					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsCompleted} />}
+				</div>
+			) : (
+				<p className=" text-xl text-center pb-12"> No project found 😕</p>
 			)}
 		</>
 	);
