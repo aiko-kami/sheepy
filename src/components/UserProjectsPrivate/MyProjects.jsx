@@ -40,55 +40,59 @@ const MyProjects = ({ projects }) => {
 					</div>
 				)}
 			</div>
-			<h2 className="text-xl mb-2 ml-4">Projects I created</h2>
-			<p className="mb-6 ml-4">The projects you created or for which you are the owner</p>
+			<h2 className="text-xl mb-2 sm:ml-4">Projects I created</h2>
+			<p className="mb-6 sm:ml-4">The projects you created or for which you are the owner</p>
 			{projects.projectsOnGoing && projects.projectsOnGoing.length !== 0 ? (
 				<div className="mb-12">
 					{displayMode === "table" && <MyProjectsTable projects={projects.projectsOnGoing} />}
 					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsOnGoing} />}
 				</div>
 			) : (
-				<p className=" text-xl text-center pb-12"> No project found 😕</p>
+				<p className=" text-xl text-center mb-12"> No project found 😕</p>
 			)}
-			<h2 className="text-xl mb-2 ml-4">Projects I work on</h2>
-			<p className="mb-6 ml-4">The projects for which you are a team member</p>
+			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
+			<h2 className="text-xl mb-2 sm:ml-4">Projects I work on</h2>
+			<p className="mb-6 sm:ml-4">The projects for which you are a team member</p>
 			{projects.projectsCreated && projects.projectsCreated.length !== 0 ? (
 				<div className="mb-12">
 					{displayMode === "table" && <MyProjectsTable projects={projects.projectsCreated} />}
 					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsCreated} />}
 				</div>
 			) : (
-				<p className=" text-xl text-center pb-12"> No project found 😕</p>
+				<p className=" text-xl text-center mb-12"> No project found 😕</p>
 			)}
-			<h2 className="text-xl mb-2 ml-4">Projects completed</h2>
-			<p className="mb-6 ml-4">The projects over for which you were either the owner or a team member</p>
+			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
+			<h2 className="text-xl mb-2 sm:ml-4">Projects completed</h2>
+			<p className="mb-6 sm:ml-4">The projects over for which you were either the owner or a team member</p>
 			{projects.projectsCompleted && projects.projectsCompleted.length !== 0 ? (
 				<div className="mb-12">
 					{displayMode === "table" && <MyProjectsTable projects={projects.projectsCompleted} />}
 					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsCompleted} />}
 				</div>
 			) : (
-				<p className=" text-xl text-center pb-12"> No project found 😕</p>
+				<p className=" text-xl text-center mb-12"> No project found 😕</p>
 			)}
-			<h2 className="text-xl mb-2 ml-4">Projects Invitations</h2>
-			<p className="mb-6 ml-4">The invitations you received to join a project</p>
+			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
+			<h2 className="text-xl mb-2 sm:ml-4">Projects Invitations</h2>
+			<p className="mb-6 sm:ml-4">The invitations you received to join a project</p>
 			{projects.projectsCompleted && projects.projectsCompleted.length !== 0 ? (
 				<div className="mb-12">
 					{displayMode === "table" && <MyProjectsTable projects={projects.projectsCompleted} />}
 					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsCompleted} />}
 				</div>
 			) : (
-				<p className=" text-xl text-center pb-12"> No project found 😕</p>
+				<p className=" text-xl text-center mb-12"> No project found 😕</p>
 			)}
-			<h2 className="text-xl mb-2 ml-4">Projects requests</h2>
-			<p className="mb-6 ml-4">The requests you sent to join a project</p>
+			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
+			<h2 className="text-xl mb-2 sm:ml-4">Projects requests</h2>
+			<p className="mb-6 sm:ml-4">The requests you sent to join a project</p>
 			{projects.projectsCompleted && projects.projectsCompleted.length !== 0 ? (
 				<div className="mb-12">
 					{displayMode === "table" && <MyProjectsTable projects={projects.projectsCompleted} />}
 					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsCompleted} />}
 				</div>
 			) : (
-				<p className=" text-xl text-center pb-12"> No project found 😕</p>
+				<p className=" text-xl text-center mb-12"> No project found 😕</p>
 			)}
 		</>
 	);
