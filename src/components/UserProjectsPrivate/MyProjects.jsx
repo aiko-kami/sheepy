@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import { IoGridOutline, IoReorderFour } from "react-icons/io5";
-import MyProjectsTable from "@/components/Tables/MyProjectsTable";
+import ProjectsTableActions from "@/components/Tables/ProjectsTableActions";
 import MyProjectsCards from "@/components/UserProjectsPrivate/MyProjectCards";
 
 const MyProjects = ({ projects }) => {
@@ -44,7 +44,7 @@ const MyProjects = ({ projects }) => {
 			<p className="mb-6 sm:ml-4">The projects you created or for which you are the owner</p>
 			{projects.projectsOnGoing && projects.projectsOnGoing.length !== 0 ? (
 				<div className="mb-12">
-					{displayMode === "table" && <MyProjectsTable projects={projects.projectsOnGoing} />}
+					{displayMode === "table" && <ProjectsTableActions projects={projects.projectsOnGoing} />}
 					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsOnGoing} />}
 				</div>
 			) : (
@@ -55,7 +55,7 @@ const MyProjects = ({ projects }) => {
 			<p className="mb-6 sm:ml-4">The projects for which you are a team member</p>
 			{projects.projectsCreated && projects.projectsCreated.length !== 0 ? (
 				<div className="mb-12">
-					{displayMode === "table" && <MyProjectsTable projects={projects.projectsCreated} />}
+					{displayMode === "table" && <ProjectsTableActions projects={projects.projectsCreated} />}
 					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsCreated} />}
 				</div>
 			) : (
@@ -66,7 +66,7 @@ const MyProjects = ({ projects }) => {
 			<p className="mb-6 sm:ml-4">The projects over for which you were either the owner or a team member</p>
 			{projects.projectsCompleted && projects.projectsCompleted.length !== 0 ? (
 				<div className="mb-12">
-					{displayMode === "table" && <MyProjectsTable projects={projects.projectsCompleted} />}
+					{displayMode === "table" && <ProjectsTableActions projects={projects.projectsCompleted} />}
 					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsCompleted} />}
 				</div>
 			) : (
@@ -77,7 +77,7 @@ const MyProjects = ({ projects }) => {
 			<p className="mb-6 sm:ml-4">The invitations you received to join a project</p>
 			{projects.projectsCompleted && projects.projectsCompleted.length !== 0 ? (
 				<div className="mb-12">
-					{displayMode === "table" && <MyProjectsTable projects={projects.projectsCompleted} />}
+					{displayMode === "table" && <ProjectsTableActions projects={projects.projectsCompleted} />}
 					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsCompleted} />}
 				</div>
 			) : (
@@ -88,7 +88,7 @@ const MyProjects = ({ projects }) => {
 			<p className="mb-6 sm:ml-4">The requests you sent to join a project</p>
 			{projects.projectsCompleted && projects.projectsCompleted.length !== 0 ? (
 				<div className="mb-12">
-					{displayMode === "table" && <MyProjectsTable projects={projects.projectsCompleted} />}
+					{displayMode === "table" && <ProjectsTableActions projects={projects.projectsCompleted} />}
 					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsCompleted} />}
 				</div>
 			) : (

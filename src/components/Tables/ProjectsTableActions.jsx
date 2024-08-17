@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Badge } from "@/components/Badges/Badges";
 import MyProjectsActions from "@/components/UserProjectsPrivate/MyProjectsActions";
 
-const MyProjectsTable = ({ projects }) => {
+const ProjectsTableActions = ({ projects }) => {
 	return (
 		<>
 			<table className="w-full text-xs md:text-sm shadow-2xl">
@@ -56,4 +56,4 @@ const MyProjectsTable = ({ projects }) => {
 	);
 };
 
-export default MyProjectsTable;
+export default ProjectsTableActions;
