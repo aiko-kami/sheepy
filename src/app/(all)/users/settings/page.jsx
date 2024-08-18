@@ -15,7 +15,6 @@ const SettingsPage = () => {
 			<div className="container min-w-full mx-auto py-8 px-2 md:px-8">Languages</div>
 			<div className="container min-w-full mx-auto py-8 px-2 md:px-8">Appearance</div>
 			<div className="container min-w-full mx-auto py-8 px-2 md:px-8">Newsletter</div>
-			In the My Projects page - add projects invitations and join request status
 		</>
 	);
 };

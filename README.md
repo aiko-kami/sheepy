@@ -71,8 +71,13 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 - [x] Projects by categories and sub-categories page
 - [x] Projects by locations page
 - [x] Projects by tags page
-- [] forgot password page or modal
+- [x] forgot password modal
 
+- [x] Discover
+
+  - [] The projects
+  - [] The talents
+  - [] The categories
 
 - [] How it works
 
@@ -82,10 +87,24 @@ Don't let your ideas and talents go to waste – join Sheepy now!
   - [] Why us
   - [] Pricing and fees
 
-- [] Discover
+- [] View my project page
+
+  - [x] Projects I created
+  - [x] Projects I work on
+  - [x] Projects completed
+  - [] Projects invitations
+    - [x] Modal View
+    - [] Modal Accept/Decline
+    - [] Modal Send message
+    - [] Modal Report
+  - [] Projects requests
+    - [x] Modal View
+    - [] Modal Cancel
+    - [] Modal Send message
 
 - [] Project description private page
 - [] Project edition page
+- [] Settings page
 - [] View my profile page
 
 ### Components
@@ -96,6 +115,9 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 - [x] Project card for search
 - [x] Talent card for search
 - [x] List of categories (buttons)
+- [x] Notification
+- [x] Tables (list vs table)
+- [x] Status
 - [] Other mosaic
 - [] Project table for search
 - [] Talent table for search
