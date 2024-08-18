@@ -1,12 +1,11 @@
 "use client";
 
+import { useState } from "react";
+import { IoArrowForward, IoBookmarkOutline, IoShareSocialOutline } from "react-icons/io5";
+
 import Modal from "@/components/Modals/Modal";
 import ProjectApplicationModal from "@/components/Modals/ProjectApplicationModal";
 import { Button, ButtonCircle } from "@/components/Buttons/Buttons";
-
-import { useState } from "react";
-import React from "react";
-import { IoArrowForward, IoBookmarkOutline, IoShareSocialOutline } from "react-icons/io5";
 
 const HeadSection = ({ project }) => {
 	const [modalDisplay, setModalDisplay] = useState(false);

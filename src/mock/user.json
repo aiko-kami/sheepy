@@ -386,12 +386,582 @@
 				],
 				"status": "Active"
 			}
+		],
+		"invitations": [
+			{
+				"project": {
+					"projectId": 24,
+					"title": "Create a comic magazine",
+					"summary": "We are very happy to start this project! Join our community of aspiring writers, editors, and super-heroes fans.",
+					"cover": "https://images.pexels.com/photos/256514/pexels-photo-256514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+					"likes": 11,
+					"permissions": {
+						"isPrivateAllowed": false,
+						"isConfigureAllowed": false,
+						"isChatAllowed": false
+					},
+					"category": {
+						"name": "Culture",
+						"link": "/categories/culture",
+						"colors": {
+							"bgColor": "bg-blue-600",
+							"colorBase": "blue-600",
+							"bgColorHover": "bg-blue-500"
+						}
+					},
+					"subCategory": "Writing",
+					"location": "Global",
+					"tags": [
+						{
+							"name": "Writing",
+							"link": "/tags/writing",
+							"bgColor": "bg-green-400"
+						},
+						{
+							"name": "Fiction",
+							"link": "/tags/fiction",
+							"bgColor": "bg-blue-400"
+						}
+					],
+					"status": "Active"
+				},
+				"message": "Hello, we are very interested in your profile as a writer, would you like to join us on this exciting adventure ?",
+				"talent": "Writer",
+				"new": true,
+				"status": {
+					"name": "NEW",
+					"bgColor": "bg-green-500"
+				},
+				"actions": {
+					"view": true,
+					"accept": true,
+					"decline": true,
+					"sendMessage": true,
+					"report": true
+				}
+			},
+			{
+				"project": {
+					"projectId": 710349,
+					"title": "Urban Sketching Group",
+					"summary": "Join us for a day of urban sketching. Capture the city's essence with your artistic skills.",
+					"cover": "https://www.lynnechapmanurbansketching.co.uk/wp-content/uploads/2016/02/US-Gallery-9.jpg",
+					"likes": 19,
+					"category": {
+						"name": "Art",
+						"link": "/categories/art",
+						"colors": {
+							"colorBase": "black",
+							"bgColor": "bg-black",
+							"bgColorHover": "bg-gray-800"
+						}
+					},
+					"subCategory": "Drawing",
+					"location": "Chicago",
+					"tags": [
+						{
+							"name": "Art",
+							"bgColor": "bg-purple-400"
+						},
+						{
+							"name": "Sketching",
+							"bgColor": "bg-blue-400"
+						}
+					],
+					"status": "Active"
+				},
+				"message": "Hello, we are very interested in your profile as a drawing teacher, would you like to join us on this exciting adventure ?",
+				"talent": "Drawing teacher",
+				"new": false,
+				"status": {
+					"name": "Pending",
+					"bgColor": "bg-blue-500"
+				},
+				"actions": {
+					"view": true,
+					"accept": true,
+					"decline": true,
+					"sendMessage": true,
+					"report": true
+				}
+			},
+			{
+				"project": {
+					"projectId": 48,
+					"title": "Write a Fiction Novel",
+					"summary": "Embark on an exciting journey to write a captivating fiction novel! Join our community of aspiring writers, editors, and literary enthusiasts.",
+					"cover": "https://images.pexels.com/photos/256514/pexels-photo-256514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+					"likes": 18,
+					"permissions": {
+						"isPrivateAllowed": false,
+						"isConfigureAllowed": false,
+						"isChatAllowed": false
+					},
+					"category": {
+						"name": "Culture",
+						"link": "/categories/culture",
+						"colors": {
+							"bgColor": "bg-blue-600",
+							"colorBase": "blue-600",
+							"bgColorHover": "bg-blue-500"
+						}
+					},
+					"subCategory": "Writing",
+					"location": "Global",
+					"tags": [
+						{
+							"name": "Writing",
+							"link": "/tags/writing",
+							"bgColor": "bg-green-400"
+						},
+						{
+							"name": "Fiction",
+							"link": "/tags/fiction",
+							"bgColor": "bg-blue-400"
+						}
+					],
+					"status": "Active"
+				},
+				"message": "Hello, we are very interested in your profile as an editor, would you like to join us on this exciting adventure ?",
+				"talent": "Editor",
+				"new": false,
+				"status": {
+					"name": "Accepted",
+					"bgColor": "bg-gray-500"
+				},
+				"actions": {
+					"view": true,
+					"accept": false,
+					"decline": false,
+					"sendMessage": true,
+					"report": true
+				}
+			},
+			{
+				"project": {
+					"projectId": 48,
+					"title": "Coding Bootcamp",
+					"summary": "Learn the basics of coding in our weekend bootcamp. No prior experience needed.",
+					"cover": "https://cms-assets.themuse.com/media/lead/_1200x630_crop_center-center_82_none/3000a530-7462-4e3e-bc17-a36c3e56407e.png?mtime=1568865848",
+					"likes": 50,
+					"permissions": {
+						"isPrivateAllowed": false,
+						"isConfigureAllowed": false,
+						"isChatAllowed": false
+					},
+					"category": {
+						"name": "Technology",
+						"link": "/categories/technology",
+						"colors": {
+							"colorBase": "gray-500",
+							"bgColor": "bg-gray-500",
+							"bgColorHover": "bg-gray-400"
+						}
+					},
+					"subCategory": "Software Development",
+					"location": "Seattle",
+					"tags": [
+						{
+							"name": "Technology",
+							"bgColor": "bg-gray-400"
+						},
+						{
+							"name": "Coding",
+							"bgColor": "bg-blue-400"
+						}
+					],
+					"status": "Active"
+				},
+				"message": "Hello, we are very interested in your profile as an experimented coder, would you like to join us on this exciting adventure ?",
+				"talent": "Coder",
+				"new": false,
+				"status": {
+					"name": "Declined",
+					"bgColor": "bg-gray-500"
+				},
+				"actions": {
+					"view": true,
+					"accept": false,
+					"decline": false,
+					"sendMessage": true,
+					"report": true
+				}
+			},
+			{
+				"project": {
+					"projectId": 247831,
+					"title": "Photography Workshop",
+					"summary": "Learn the basics of photography and improve your skills in this interactive workshop.",
+					"cover": "https://content.app-sources.com/s/56253637657728836/uploads/workshops/PHWK-7263767.jpg?format=webp",
+					"likes": 42,
+					"category": {
+						"name": "Art",
+						"link": "/categories/art",
+						"colors": {
+							"colorBase": "black",
+							"bgColor": "bg-black",
+							"bgColorHover": "bg-gray-800"
+						}
+					},
+					"subCategory": "Workshop",
+					"location": "Portland",
+					"tags": [
+						{
+							"name": "Photography",
+							"bgColor": "bg-blue-400"
+						},
+						{
+							"name": "Workshop",
+							"bgColor": "bg-yellow-400"
+						}
+					],
+					"status": "Active"
+				},
+				"message": "Hello, we are very interested in your profile as an photographer, would you like to join us on this exciting adventure ?",
+				"talent": "Photographer",
+				"new": false,
+				"status": {
+					"name": "Expired",
+					"bgColor": "bg-gray-500"
+				},
+				"actions": {
+					"view": true,
+					"accept": false,
+					"decline": false,
+					"sendMessage": true,
+					"report": true
+				}
+			}
+		],
+		"requests": [
+			{
+				"project": {
+					"projectId": 147362,
+					"title": "Beach Cleanup",
+					"summary": "Join us to clean up our local beach. Help protect marine life and keep our beaches beautiful.",
+					"cover": "https://www.ecowatch.com/wp-content/uploads/2022/07/GettyImages-1353301481-scaled.jpg",
+					"likes": 45,
+					"category": {
+						"name": "Nature",
+						"link": "/categories/nature",
+						"colors": {
+							"colorBase": "green-600",
+							"bgColor": "bg-green-600",
+							"bgColorHover": "bg-green-500"
+						}
+					},
+					"subCategory": "Volunteer Work",
+					"location": "Santa Monica",
+					"tags": [
+						{
+							"name": "Environment",
+							"bgColor": "bg-green-400"
+						},
+						{
+							"name": "Volunteer",
+							"bgColor": "bg-blue-400"
+						}
+					],
+					"status": "Active"
+				},
+				"message": "Hello, I am very interested in your project as a coordinator, can I join this exciting adventure ?",
+				"talent": "Coordinator",
+				"new": true,
+				"status": {
+					"name": "Accepted",
+					"bgColor": "bg-green-500"
+				},
+				"actions": {
+					"view": true,
+					"cancel": false,
+					"sendMessage": true
+				}
+			},
+			{
+				"project": {
+					"projectId": 674829,
+					"title": "Paint a Mural",
+					"summary": "Let's add some color to our community by painting a mural! Artists of all skill levels are welcome.",
+					"cover": "https://i.ytimg.com/vi/PvHayKjwKbs/maxresdefault.jpg",
+					"likes": 10,
+					"category": {
+						"name": "Art",
+						"link": "/categories/art",
+						"colors": {
+							"colorBase": "black",
+							"bgColor": "bg-black",
+							"bgColorHover": "bg-gray-800"
+						}
+					},
+					"subCategory": "Painting",
+					"location": "Los Angeles",
+					"tags": [
+						{
+							"name": "Creativity",
+							"bgColor": "bg-yellow-400"
+						},
+						{
+							"name": "Community",
+							"bgColor": "bg-green-400"
+						}
+					],
+					"status": "Active"
+				},
+				"message": "Hello, I am very interested in your project as a painter, can I join this exciting adventure ?",
+				"talent": "Painter",
+				"new": true,
+				"status": {
+					"name": "Declined",
+					"bgColor": "bg-red-500"
+				},
+				"actions": {
+					"view": true,
+					"cancel": false,
+					"sendMessage": true
+				}
+			},
+			{
+				"project": {
+					"projectId": 24,
+					"title": "Create a comic magazine",
+					"summary": "We are very happy to start this project! Join our community of aspiring writers, editors, and super-heroes fans.",
+					"cover": "https://images.pexels.com/photos/256514/pexels-photo-256514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+					"likes": 11,
+					"permissions": {
+						"isPrivateAllowed": false,
+						"isConfigureAllowed": false,
+						"isChatAllowed": false
+					},
+					"category": {
+						"name": "Culture",
+						"link": "/categories/culture",
+						"colors": {
+							"bgColor": "bg-blue-600",
+							"colorBase": "blue-600",
+							"bgColorHover": "bg-blue-500"
+						}
+					},
+					"subCategory": "Writing",
+					"location": "Global",
+					"tags": [
+						{
+							"name": "Writing",
+							"link": "/tags/writing",
+							"bgColor": "bg-green-400"
+						},
+						{
+							"name": "Fiction",
+							"link": "/tags/fiction",
+							"bgColor": "bg-blue-400"
+						}
+					],
+					"status": "Active"
+				},
+				"message": "Hello, I am very interested in your project as a writer, can I join this exciting adventure ?",
+				"talent": "Writer",
+				"new": false,
+				"status": {
+					"name": "Pending",
+					"bgColor": "bg-blue-500"
+				},
+				"actions": {
+					"view": true,
+					"cancel": true,
+					"sendMessage": true
+				}
+			},
+			{
+				"project": {
+					"projectId": 710349,
+					"title": "Urban Sketching Group",
+					"summary": "Join us for a day of urban sketching. Capture the city's essence with your artistic skills.",
+					"cover": "https://www.lynnechapmanurbansketching.co.uk/wp-content/uploads/2016/02/US-Gallery-9.jpg",
+					"likes": 19,
+					"category": {
+						"name": "Art",
+						"link": "/categories/art",
+						"colors": {
+							"colorBase": "black",
+							"bgColor": "bg-black",
+							"bgColorHover": "bg-gray-800"
+						}
+					},
+					"subCategory": "Drawing",
+					"location": "Chicago",
+					"tags": [
+						{
+							"name": "Art",
+							"bgColor": "bg-purple-400"
+						},
+						{
+							"name": "Sketching",
+							"bgColor": "bg-blue-400"
+						}
+					],
+					"status": "Active"
+				},
+				"message": "Hello, I am very interested in your project as a drawing teacher, can I join this exciting adventure ?",
+				"talent": "Drawing teacher",
+				"new": false,
+				"status": {
+					"name": "Accepted",
+					"bgColor": "bg-gray-500"
+				},
+				"actions": {
+					"view": true,
+					"cancel": false,
+					"sendMessage": true
+				}
+			},
+			{
+				"project": {
+					"projectId": 48,
+					"title": "Write a Fiction Novel",
+					"summary": "Embark on an exciting journey to write a captivating fiction novel! Join our community of aspiring writers, editors, and literary enthusiasts.",
+					"cover": "https://images.pexels.com/photos/256514/pexels-photo-256514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+					"likes": 18,
+					"permissions": {
+						"isPrivateAllowed": false,
+						"isConfigureAllowed": false,
+						"isChatAllowed": false
+					},
+					"category": {
+						"name": "Culture",
+						"link": "/categories/culture",
+						"colors": {
+							"bgColor": "bg-blue-600",
+							"colorBase": "blue-600",
+							"bgColorHover": "bg-blue-500"
+						}
+					},
+					"subCategory": "Writing",
+					"location": "Global",
+					"tags": [
+						{
+							"name": "Writing",
+							"link": "/tags/writing",
+							"bgColor": "bg-green-400"
+						},
+						{
+							"name": "Fiction",
+							"link": "/tags/fiction",
+							"bgColor": "bg-blue-400"
+						}
+					],
+					"status": "Active"
+				},
+				"message": "Hello, I am very interested in your project as an editor, can I join this exciting adventure ?",
+				"talent": "Editor",
+				"new": false,
+				"status": {
+					"name": "Declined",
+					"bgColor": "bg-gray-500"
+				},
+				"actions": {
+					"view": true,
+					"cancel": false,
+					"sendMessage": true
+				}
+			},
+			{
+				"project": {
+					"projectId": 48,
+					"title": "Coding Bootcamp",
+					"summary": "Learn the basics of coding in our weekend bootcamp. No prior experience needed.",
+					"cover": "https://cms-assets.themuse.com/media/lead/_1200x630_crop_center-center_82_none/3000a530-7462-4e3e-bc17-a36c3e56407e.png?mtime=1568865848",
+					"likes": 50,
+					"permissions": {
+						"isPrivateAllowed": false,
+						"isConfigureAllowed": false,
+						"isChatAllowed": false
+					},
+					"category": {
+						"name": "Technology",
+						"link": "/categories/technology",
+						"colors": {
+							"colorBase": "gray-500",
+							"bgColor": "bg-gray-500",
+							"bgColorHover": "bg-gray-400"
+						}
+					},
+					"subCategory": "Software Development",
+					"location": "Seattle",
+					"tags": [
+						{
+							"name": "Technology",
+							"bgColor": "bg-gray-400"
+						},
+						{
+							"name": "Coding",
+							"bgColor": "bg-blue-400"
+						}
+					],
+					"status": "Active"
+				},
+				"message": "Hello, I am very interested in your project as a coder, can I join this exciting adventure ?",
+				"talent": "Coder",
+				"new": false,
+				"status": {
+					"name": "Declined",
+					"bgColor": "bg-gray-500"
+				},
+				"actions": {
+					"view": true,
+					"cancel": false,
+					"sendMessage": true
+				}
+			},
+			{
+				"project": {
+					"projectId": 247831,
+					"title": "Photography Workshop",
+					"summary": "Learn the basics of photography and improve your skills in this interactive workshop.",
+					"cover": "https://content.app-sources.com/s/56253637657728836/uploads/workshops/PHWK-7263767.jpg?format=webp",
+					"likes": 42,
+					"category": {
+						"name": "Art",
+						"link": "/categories/art",
+						"colors": {
+							"colorBase": "black",
+							"bgColor": "bg-black",
+							"bgColorHover": "bg-gray-800"
+						}
+					},
+					"subCategory": "Workshop",
+					"location": "Portland",
+					"tags": [
+						{
+							"name": "Photography",
+							"bgColor": "bg-blue-400"
+						},
+						{
+							"name": "Workshop",
+							"bgColor": "bg-yellow-400"
+						}
+					],
+					"status": "Active"
+				},
+				"message": "Hello, I am very interested in your project as a photographer, can I join this exciting adventure ?",
+				"talent": "Photographer",
+				"new": false,
+				"status": {
+					"name": "Cancelled",
+					"bgColor": "bg-gray-500"
+				},
+				"actions": {
+					"view": true,
+					"cancel": false,
+					"sendMessage": true
+				}
+			}
 		]
 	},
 	"notifications": {
 		"myProfileNotif": 0,
-		"myProjectsNotif": 2,
+		"myProjectsNotif": 3,
 		"settingsNotif": 0,
-		"helpNotif": 0
+		"helpNotif": 0,
+		"invitationsNotif": 1,
+		"requestsNotif": 2
 	}
 }

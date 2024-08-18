@@ -4,9 +4,12 @@ import { useState } from "react";
 
 import { IoGridOutline, IoReorderFour } from "react-icons/io5";
 import ProjectsTableActions from "@/components/Tables/ProjectsTableActions";
+import ProjectsInvitationsTable from "@/components/Tables/ProjectsInvitationsTable";
+import ProjectsRequestsTable from "@/components/Tables/ProjectsRequestsTable";
 import MyProjectsCards from "@/components/UserProjectsPrivate/MyProjectCards";
+import Notification from "@/components/Badges/Notification";
 
-const MyProjects = ({ projects }) => {
+const MyProjects = ({ user }) => {
 	const [displayMode, setDisplayMode] = useState("table");
 
 	const switchDisplay = () => {
@@ -14,6 +17,8 @@ const MyProjects = ({ projects }) => {
 		displayMode === "cards" && setDisplayMode("table");
 	};
 
+	const projects = user.projects;
+	const notifications = user.notifications;
 	return (
 		<>
 			<div className="grid grid-cols-3 items-center">
@@ -40,27 +45,30 @@ const MyProjects = ({ projects }) => {
 					</div>
 				)}
 			</div>
+
 			<h2 className="text-xl mb-2 sm:ml-4">Projects I created</h2>
 			<p className="mb-6 sm:ml-4">The projects you created or for which you are the owner</p>
-			{projects.projectsOnGoing && projects.projectsOnGoing.length !== 0 ? (
-				<div className="mb-12">
-					{displayMode === "table" && <ProjectsTableActions projects={projects.projectsOnGoing} />}
-					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsOnGoing} />}
-				</div>
-			) : (
-				<p className=" text-xl text-center mb-12"> No project found 😕</p>
-			)}
-			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
-			<h2 className="text-xl mb-2 sm:ml-4">Projects I work on</h2>
-			<p className="mb-6 sm:ml-4">The projects for which you are a team member</p>
 			{projects.projectsCreated && projects.projectsCreated.length !== 0 ? (
 				<div className="mb-12">
 					{displayMode === "table" && <ProjectsTableActions projects={projects.projectsCreated} />}
 					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsCreated} />}
 				</div>
 			) : (
-				<p className=" text-xl text-center mb-12"> No project found 😕</p>
+				<p className=" text-xl text-center mb-12 italic">No projects found</p>
 			)}
+
+			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
+			<h2 className="text-xl mb-2 sm:ml-4">Projects I work on</h2>
+			<p className="mb-6 sm:ml-4">The projects for which you are a team member</p>
+			{projects.projectsOnGoing && projects.projectsOnGoing.length !== 0 ? (
+				<div className="mb-12">
+					{displayMode === "table" && <ProjectsTableActions projects={projects.projectsOnGoing} />}
+					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsOnGoing} />}
+				</div>
+			) : (
+				<p className=" text-xl text-center mb-12 italic">No projects found</p>
+			)}
+
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 			<h2 className="text-xl mb-2 sm:ml-4">Projects completed</h2>
 			<p className="mb-6 sm:ml-4">The projects over for which you were either the owner or a team member</p>
@@ -70,29 +78,45 @@ const MyProjects = ({ projects }) => {
 					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsCompleted} />}
 				</div>
 			) : (
-				<p className=" text-xl text-center mb-12"> No project found 😕</p>
+				<p className=" text-xl text-center mb-12 italic">No projects found</p>
 			)}
+
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
-			<h2 className="text-xl mb-2 sm:ml-4">Projects Invitations</h2>
+			<h2 className="text-xl mb-2 sm:ml-4 inline-flex items-center justify-center">
+				Projects Invitations
+				{notifications.invitationsNotif > 0 && (
+					<div className="inline-flex items-center justify-center ml-2 mt-1">
+						<Notification value={notifications.invitationsNotif} size={"sm"} notifColor={"pink"} />
+					</div>
+				)}
+			</h2>
 			<p className="mb-6 sm:ml-4">The invitations you received to join a project</p>
-			{projects.projectsCompleted && projects.projectsCompleted.length !== 0 ? (
+			{projects.invitations && projects.invitations.length !== 0 ? (
 				<div className="mb-12">
-					{displayMode === "table" && <ProjectsTableActions projects={projects.projectsCompleted} />}
+					{displayMode === "table" && <ProjectsInvitationsTable invitations={projects.invitations} />}
 					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsCompleted} />}
 				</div>
 			) : (
-				<p className=" text-xl text-center mb-12"> No project found 😕</p>
+				<p className=" text-xl text-center mb-12 italic">No invitations found</p>
 			)}
+
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
-			<h2 className="text-xl mb-2 sm:ml-4">Projects requests</h2>
+			<h2 className="text-xl mb-2 sm:ml-4 inline-flex items-center justify-center">
+				Projects requests
+				{notifications.requestsNotif > 0 && (
+					<div className="inline-flex items-center justify-center ml-2 mt-1">
+						<Notification value={notifications.requestsNotif} size={"sm"} notifColor={"pink"} />
+					</div>
+				)}
+			</h2>
 			<p className="mb-6 sm:ml-4">The requests you sent to join a project</p>
-			{projects.projectsCompleted && projects.projectsCompleted.length !== 0 ? (
+			{projects.requests && projects.requests.length !== 0 ? (
 				<div className="mb-12">
-					{displayMode === "table" && <ProjectsTableActions projects={projects.projectsCompleted} />}
+					{displayMode === "table" && <ProjectsRequestsTable requests={projects.requests} />}
 					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsCompleted} />}
 				</div>
 			) : (
-				<p className=" text-xl text-center mb-12"> No project found 😕</p>
+				<p className=" text-xl text-center mb-12 italic">No requests found</p>
 			)}
 		</>
 	);

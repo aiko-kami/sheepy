@@ -52,7 +52,9 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 							))}
 						</ul>
 					) : (
-						<p className=" text-xl text-center pt-10"> No project found 😕</p>
+						<p className=" text-xl text-center pt-10">
+							<span className="italic">No projects found</span> 😕
+						</p>
 					)}
 				</TabContent>
 				<TabContent id="tabTalents" activeTab={activeTab}>
@@ -65,7 +67,9 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 							))}
 						</ul>
 					) : (
-						<p className=" text-xl text-center pt-10"> No talent found 😕</p>
+						<p className=" text-xl text-center pt-10">
+							<span className="italic">No talents found</span> 😕
+						</p>
 					)}
 				</TabContent>
 				<TabContent id="tabCategories" activeTab={activeTab}>
@@ -78,7 +82,9 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 							))}
 						</ul>
 					) : (
-						<p className=" text-xl text-center pt-10"> No category found 😕</p>
+						<p className=" text-xl text-center pt-10">
+							<span className="italic">No categories found</span> 😕
+						</p>
 					)}
 				</TabContent>
 				<TabContent id="tabsubCategories" activeTab={activeTab}>
@@ -91,7 +97,9 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 							))}
 						</ul>
 					) : (
-						<p className=" text-xl text-center pt-10"> No sub-category found 😕</p>
+						<p className=" text-xl text-center pt-10">
+							<span className="italic">No sub-categories found</span> 😕
+						</p>
 					)}
 				</TabContent>
 				<TabContent id="tabLocations" activeTab={activeTab}>
@@ -104,7 +112,9 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 							))}
 						</ul>
 					) : (
-						<p className=" text-xl text-center pt-10"> No location found 😕</p>
+						<p className=" text-xl text-center pt-10">
+							<span className="italic">No locations found</span> 😕
+						</p>
 					)}
 				</TabContent>
 				<TabContent id="tabTags" activeTab={activeTab}>
@@ -117,7 +127,9 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 							))}
 						</ul>
 					) : (
-						<p className=" text-xl text-center pt-10"> No tag found 😕</p>
+						<p className=" text-xl text-center pt-10">
+							<span className="italic">No tags found</span> 😕
+						</p>
 					)}
 				</TabContent>
 			</div>

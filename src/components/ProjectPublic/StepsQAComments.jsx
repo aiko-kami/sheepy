@@ -9,6 +9,7 @@ import TabContent from "@/components/Tabs/TabContent";
 import Steps from "@/components/ProjectPublic/Steps";
 import QAs from "@/components/ProjectPublic/QAs";
 import Comments from "@/components/ProjectPublic/Comments";
+import Notification from "@/components/Badges/Notification";
 
 const StepsQAComments = ({ project }) => {
 	const [activeTab, setActiveTab] = useState("tabSteps");
@@ -54,8 +55,8 @@ const StepsQAComments = ({ project }) => {
 								{label}
 							</div>
 							<div className="relative">
-								<div className="absolute inline-flex items-center justify-center px-2 pb-0.5 h-7 text-sm font-bold text-white bg-gray-600 border-2 border-base-500 rounded-full top-6 -left-3 sm:-left-3">
-									{count}
+								<div className="absolute inline-flex items-center justify-center top-6 -left-3 sm:-left-3 rounded-full border-2 border-transparent">
+									<Notification value={count} size={"std"} notifColor={"gray"} />
 								</div>
 							</div>
 						</TabNavItem>

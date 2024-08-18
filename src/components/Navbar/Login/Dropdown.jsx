@@ -1,4 +1,7 @@
 import Link from "next/link";
+import Notification from "@/components/Badges/Notification";
+
+Notification;
 
 const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown }) => {
 	const { myProfileNotif, myProjectsNotif, settingsNotif, helpNotif } = notifications;
@@ -11,7 +14,9 @@ const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown
 			<ul className="py-1 text-gray-700">
 				<li className="relative">
 					{myProfileNotif > 0 && (
-						<span className="absolute top-1.5 right-4 inline-flex items-center justify-center px-2 pb-0.5 h-6 text-[12px] font-bold text-white bg-pink-600 rounded-full">{myProfileNotif}</span>
+						<div className="absolute top-1.5 right-4">
+							<Notification value={myProfileNotif} size={"sm"} notifColor={"pink"} />
+						</div>
 					)}
 					<Link href="/users/my-profile" onClick={closeDropdown} className="block py-2 hover:bg-gray-200 duration-200 active:text-base-450">
 						My profile
@@ -19,7 +24,9 @@ const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown
 				</li>
 				<li className="relative">
 					{myProjectsNotif > 0 && (
-						<span className="absolute top-1.5 right-4 inline-flex items-center justify-center px-2 pb-0.5 h-6 text-[12px] font-bold text-white bg-pink-600 rounded-full">{myProjectsNotif}</span>
+						<div className="absolute top-1.5 right-4">
+							<Notification value={myProjectsNotif} size={"sm"} notifColor={"pink"} />
+						</div>
 					)}
 					<Link href="/users/my-projects" onClick={closeDropdown} className="block py-2 hover:bg-gray-200 duration-200 active:text-base-450">
 						My projects
@@ -27,7 +34,9 @@ const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown
 				</li>
 				<li className="relative">
 					{settingsNotif > 0 && (
-						<span className="absolute top-1.5 right-4 inline-flex items-center justify-center px-2 pb-0.5 h-6 text-[12px] font-bold text-white bg-pink-600 rounded-full">{settingsNotif}</span>
+						<div className="absolute top-1.5 right-4">
+							<Notification value={settingsNotif} size={"sm"} notifColor={"pink"} />
+						</div>
 					)}
 					<Link href="/users/settings" onClick={closeDropdown} className="block py-2 hover:bg-gray-200 duration-200 active:text-base-450">
 						Settings
@@ -35,7 +44,9 @@ const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown
 				</li>
 				<li className="relative">
 					{helpNotif > 0 && (
-						<span className="absolute top-1.5 right-4 inline-flex items-center justify-center px-2 pb-0.5 h-6 text-[12px] font-bold text-white bg-pink-600 rounded-full">{helpNotif}</span>
+						<div className="absolute top-1.5 right-4">
+							<Notification value={helpNotif} size={"sm"} notifColor={"pink"} />
+						</div>
 					)}
 					<Link href="#" onClick={closeDropdown} className="block py-2 hover:bg-gray-200 duration-200 active:text-base-450">
 						Help

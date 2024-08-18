@@ -20,7 +20,9 @@ const ProjectsList = ({ category, projects, selectedSubCategory }) => {
 					})}
 				</div>
 			) : (
-				<p className="mt-10 text-center text-gray-500">No projects available</p>
+				<p className="mt-10 text-center text-gray-500">
+					<span className="italic">No projects found</span> 😕
+				</p>
 			)}
 		</>
 	);

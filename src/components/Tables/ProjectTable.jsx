@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Badge } from "@/components/Badges/Badges";
 
 const ProjectTable = ({ projects }) => {
@@ -28,7 +27,7 @@ const ProjectTable = ({ projects }) => {
 								<td className="px-6 py-4 text-center">
 									<Badge badge={project.category} size={"xs"} />
 								</td>
-								<td className="px-6 py-4 text-gray-400">{project.summary}</td>
+								<td className="px-6 py-4 text-gray-400 line-clamp-2">{project.summary}</td>
 							</tr>
 						);
 					})}

@@ -59,4 +59,54 @@ const BadgeRounded = ({ badge, size }) => {
 	);
 };
 
-export { Badge, BadgeRounded };
+const Status = ({ name, size, rounded, bgColor }) => {
+	let textSizeClass;
+	switch (size) {
+		case "xs":
+			textSizeClass = "text-xs";
+			break;
+		case "sm":
+			textSizeClass = "text-sm";
+			break;
+		case "std":
+			textSizeClass = "text-base";
+			break;
+		case "xl":
+			textSizeClass = "text-lg";
+			break;
+		default:
+			textSizeClass = "text-base";
+	}
+
+	let roundedClass;
+	switch (rounded) {
+		case "none":
+			roundedClass = "rounded-none";
+			break;
+		case "sm":
+			roundedClass = "rounded-sm";
+			break;
+		case "std":
+			roundedClass = "rounded";
+			break;
+		case "lg":
+			roundedClass = "rounded-lg";
+			break;
+		case "xl":
+			roundedClass = "rounded-xl";
+			break;
+		case "full":
+			roundedClass = "rounded-full";
+			break;
+		default:
+			roundedClass = "rounded";
+	}
+
+	return (
+		<div>
+			<span className={`rounded py-1 px-2.5 text-white font-bold duration-200 ${textSizeClass} ${roundedClass} ${bgColor}`}>{name}</span>
+		</div>
+	);
+};
+
+export { Badge, BadgeRounded, Status };

@@ -16,7 +16,9 @@ const AllCategoriesPage = () => {
 					))}
 				</ul>
 			) : (
-				<p className=" text-xl text-center pt-10"> No category found 😕</p>
+				<p className=" text-xl text-center pt-10 italic">
+					<span className="italic">No categories found</span> 😕
+				</p>
 			)}
 		</div>
 	);

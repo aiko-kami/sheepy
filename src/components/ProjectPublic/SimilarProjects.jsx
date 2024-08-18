@@ -14,7 +14,9 @@ const SimilarProjects = ({ projects }) => {
 					))}
 				</ul>
 			) : (
-				<p className=" text-xl text-center pt-10"> No project found 😕</p>
+				<p className=" text-xl text-center pt-10">
+					<span className="italic">No projects found</span> 😕
+				</p>
 			)}
 		</>
 	);

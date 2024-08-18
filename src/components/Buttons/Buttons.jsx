@@ -30,13 +30,25 @@ const Button = ({ children, btnProps }) => {
 	let color;
 	switch (btnColor) {
 		case "gray":
-			color = "text-white bg-gray-600 hover:bg-gray-700 active:bg-gray-800";
+			color = "text-white bg-gray-500 hover:bg-gray-600 active:bg-gray-800";
 			break;
 		case "blue":
 			color = "text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800";
 			break;
 		case "green":
 			color = "text-white bg-green-600 hover:bg-green-700 active:bg-green-800";
+			break;
+		case "red":
+			color = "text-white bg-red-600 hover:bg-red-700 active:bg-red-800";
+			break;
+		case "pink":
+			color = "text-white bg-pink-400 hover:bg-pink-500 active:bg-pink-700";
+			break;
+		case "orange":
+			color = "text-white bg-orange-600 hover:bg-orange-700 active:bg-orange-800";
+			break;
+		case "yellow":
+			color = "text-white bg-yellow-600 hover:bg-yellow-700 active:bg-yellow-800";
 			break;
 		case "grayBorder":
 			color = "text-white border border-2 box-border border-gray-600 hover:bg-gray-600 active:bg-gray-700";
@@ -70,13 +82,7 @@ const Button = ({ children, btnProps }) => {
 	}
 
 	return (
-		<button
-			type={type}
-			onClick={action}
-			className={`leading-snug hover:shadow-lg transition duration-150 ease-in-out ${size} ${color} ${rounded}`}
-			data-mdb-ripple="true"
-			data-mdb-ripple-color="light"
-		>
+		<button type={type} onClick={action} className={`leading-snug shadow-lg transition duration-150 ease-in-out ${size} ${color} ${rounded}`} data-mdb-ripple="true" data-mdb-ripple-color="light">
 			{children}
 		</button>
 	);

@@ -11,7 +11,7 @@ const MyProjectsPage = () => {
 	return (
 		<>
 			<div className="container min-w-full mx-auto py-8 px-2 md:px-8">
-				<MyProjects projects={user.projects} />
+				<MyProjects user={user} />
 			</div>
 		</>
 	);
