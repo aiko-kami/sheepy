@@ -75,9 +75,9 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 
 - [x] Discover
 
-  - [] The projects
-  - [] The talents
-  - [] The categories
+  - [x] The projects
+  - [x] The talents
+  - [x] The categories
 
 - [] How it works
 
@@ -92,15 +92,15 @@ Don't let your ideas and talents go to waste – join Sheepy now!
   - [x] Projects I created
   - [x] Projects I work on
   - [x] Projects completed
-  - [] Projects invitations
+  - [x] Projects invitations
     - [x] Modal View
-    - [] Modal Accept/Decline
-    - [] Modal Send message
-    - [] Modal Report
-  - [] Projects requests
+    - [x] Modal Accept/Decline
+    - [x] Modal Report
+    - [x] Modal Send message
+  - [x] Projects requests
     - [x] Modal View
-    - [] Modal Cancel
-    - [] Modal Send message
+    - [x] Modal Cancel
+    - [x] Modal Send message
 
 - [] Project description private page
 - [] Project edition page

@@ -52,7 +52,7 @@ const ProjectsRequestsRow = ({ request }) => {
 					</div>
 				</td>
 				<Modal modalDisplay={modalDisplay} closeModal={closeModal} closeModalWithBackground={closeModal} modalSize={"std"} modalTitle={"Project request"}>
-					<ProjectRequestDetailsModal closeModal={closeModal} request={request} />
+					<ProjectRequestDetailsModal request={request} />
 				</Modal>
 			</tr>
 		</>
