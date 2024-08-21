@@ -97,10 +97,12 @@ Don't let your ideas and talents go to waste – join Sheepy now!
     - [x] Modal Accept/Decline
     - [x] Modal Report
     - [x] Modal Send message
+    - [x] invitations as cards
   - [x] Projects requests
     - [x] Modal View
     - [x] Modal Cancel
     - [x] Modal Send message
+    - [x] requests as cards
 
 - [] Project description private page
 - [] Project edition page

@@ -1,10 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 
 import Modal from "@/components/Modals/Modal";
-import ProjectRequestDetailsModal from "@/components/Modals/ProjectRequestDetailsModal";
+import JoinProjectDetailsModal from "@/components/Modals/JoinProjectDetailsModal";
 import ProjectRequestCancelModal from "@/components/Modals/ProjectRequestCancelModal";
 import JoinProjectSendMessageModal from "@/components/Modals/JoinProjectSendMessageModal";
 
@@ -57,7 +56,7 @@ const RequestsActions = ({ request, iconSize }) => {
 						<IoEyeOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="View request" />
 					</button>
 					<Modal modalDisplay={modalDisplayDetails} closeModal={closeModalDetails} closeModalWithBackground={closeModalDetails} modalSize={"std"} modalTitle={"Project request"}>
-						<ProjectRequestDetailsModal request={request} />
+						<JoinProjectDetailsModal joinProject={request} type={"request"} />
 					</Modal>
 				</>
 			)}

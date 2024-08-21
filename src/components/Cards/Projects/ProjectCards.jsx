@@ -3,6 +3,8 @@ import Link from "next/link";
 
 import { Badge, BadgeRounded } from "@/components/Badges/Badges";
 import MyProjectsActions from "@/components/UserProjectsPrivate/MyProjectsActions";
+import RequestsActions from "@/components/UserProjectsPrivate/RequestsActions";
+import InvitationsActions from "@/components/UserProjectsPrivate/InvitationsActions";
 
 const ProjectCard = ({ project, animate }) => {
 	const { projectId, title, summary, cover, category, tags } = project;
@@ -72,7 +74,7 @@ const ProjectCardSkeleton = () => {
 };
 
 const ProjectHorizontalCard = ({ project, animate }) => {
-	const { title, summary, cover, likes, category, subCategory, location, tags, status } = project;
+	const { title, projectId, summary, cover, likes, category, subCategory, location, tags, status } = project;
 
 	// Conditional classes for animation
 	const animationClasses = animate ? "hover:-translate-y-1 transition ease-in duration-75" : "";
@@ -81,12 +83,12 @@ const ProjectHorizontalCard = ({ project, animate }) => {
 		<>
 			<div className={`relative grid grid-cols-4 items-center shadow-xl rounded-lg bg-blue-900 ${animationClasses}`}>
 				<div className="col-span-1 relative h-46">
-					<Link href="/projects/01">
+					<Link href={`/projects/${projectId}`}>
 						<Image src={cover} fill alt="Project picture" className="object-cover h-full shadow-md rounded-l-lg" />
 					</Link>
 				</div>
 				<div className="px-6 col-span-3 h-full py-8 relative">
-					<Link href="/projects/01">
+					<Link href={`/projects/${projectId}`}>
 						<h3 className="inline-block font-semibold text-2xl">{title}</h3>
 					</Link>
 					<div className="py-2">
@@ -100,7 +102,7 @@ const ProjectHorizontalCard = ({ project, animate }) => {
 };
 
 const ProjectHorizontalCardActions = ({ project, animate }) => {
-	const { title, summary, cover, likes, category, subCategory, location, tags, status } = project;
+	const { title, projectId, summary, cover, likes, category, subCategory, location, tags, status, permissions } = project;
 
 	// Conditional classes for animation
 	const animationClasses = animate ? "hover:-translate-y-1 transition ease-in duration-75" : "";
@@ -109,12 +111,12 @@ const ProjectHorizontalCardActions = ({ project, animate }) => {
 		<>
 			<div className={`relative grid grid-cols-4 items-center shadow-xl rounded-lg bg-blue-900 ${animationClasses}`}>
 				<div className="col-span-1 relative h-full">
-					<Link href="/projects/01">
+					<Link href={`/projects/${projectId}`}>
 						<Image src={cover} fill alt="Project picture" className="object-cover h-full shadow-md rounded-l-lg" />
 					</Link>
 				</div>
 				<div className="px-6 col-span-3 h-full py-4">
-					<Link href="/projects/01">
+					<Link href={`/projects/${projectId}`}>
 						<h3 className="inline-block font-semibold text-2xl">{title}</h3>
 					</Link>
 					<div className="py-2">
@@ -122,7 +124,7 @@ const ProjectHorizontalCardActions = ({ project, animate }) => {
 					</div>
 					<p className="line-clamp-2 mb-3">{summary}</p>
 					<div className="flex justify-end text-gray-300">
-						<MyProjectsActions projectId={project.projectId} projectPermissions={project.permissions} iconSize={"lg"} />
+						<MyProjectsActions projectId={projectId} projectPermissions={permissions} iconSize={"lg"} />
 					</div>
 				</div>
 			</div>
@@ -130,4 +132,31 @@ const ProjectHorizontalCardActions = ({ project, animate }) => {
 	);
 };
 
-export { ProjectCard, ProjectCardSkeleton, ProjectHorizontalCard, ProjectHorizontalCardActions };
+const JoinProjectHorizontalCardActions = ({ joinProject, animate, type }) => {
+	const { project, message, talent, recent, status, actions } = joinProject;
+
+	// Conditional classes for animation
+	const animationClasses = animate ? "hover:-translate-y-1 transition ease-in duration-75" : "";
+
+	return (
+		<>
+			<div className={`relative grid items-center shadow-xl rounded-lg bg-blue-900 ${animationClasses}`}>
+				<div className="px-6 h-full py-4">
+					<Link href={`/projects/${project.projectId}`}>
+						<h3 className="inline-block font-semibold text-2xl">{project.title}</h3>
+					</Link>
+					<div className="py-2">
+						<Badge badge={project.category} size={"xs"} />
+					</div>
+					<p className="line-clamp-2 mb-3">{message}</p>
+					<div className="flex justify-end text-gray-300">
+						{type === "invitation" && <InvitationsActions invitation={joinProject} iconSize={"lg"} />}
+						{type === "request" && <RequestsActions request={joinProject} iconSize={"lg"} />}
+					</div>
+				</div>
+			</div>
+		</>
+	);
+};
+
+export { ProjectCard, ProjectCardSkeleton, ProjectHorizontalCard, ProjectHorizontalCardActions, JoinProjectHorizontalCardActions };

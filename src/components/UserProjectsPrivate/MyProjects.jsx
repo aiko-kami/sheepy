@@ -4,9 +4,9 @@ import { useState } from "react";
 
 import { IoGridOutline, IoReorderFour } from "react-icons/io5";
 import ProjectsTableActions from "@/components/Tables/ProjectsTableActions";
-import ProjectsInvitationsTable from "@/components/Tables/ProjectsInvitationsTable";
-import ProjectsRequestsTable from "@/components/Tables/ProjectsRequestsTable";
+import JoinProjectTable from "@/components/Tables/JoinProjectTable";
 import MyProjectsCards from "@/components/UserProjectsPrivate/MyProjectCards";
+import MyJoinProjectsCards from "@/components/UserProjectsPrivate/MyJoinProjectCards";
 import Notification from "@/components/Badges/Notification";
 
 const MyProjects = ({ user }) => {
@@ -93,8 +93,8 @@ const MyProjects = ({ user }) => {
 			<p className="mb-6 sm:ml-4">The invitations you received to join a project</p>
 			{projects.invitations && projects.invitations.length !== 0 ? (
 				<div className="mb-12">
-					{displayMode === "table" && <ProjectsInvitationsTable invitations={projects.invitations} />}
-					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsCompleted} />}
+					{displayMode === "table" && <JoinProjectTable joinProjects={projects.invitations} type={"invitation"} />}
+					{displayMode === "cards" && <MyJoinProjectsCards joinProjects={projects.invitations} type={"invitation"} />}
 				</div>
 			) : (
 				<p className=" text-xl text-center mb-12 italic">No invitations found</p>
@@ -112,8 +112,8 @@ const MyProjects = ({ user }) => {
 			<p className="mb-6 sm:ml-4">The requests you sent to join a project</p>
 			{projects.requests && projects.requests.length !== 0 ? (
 				<div className="mb-12">
-					{displayMode === "table" && <ProjectsRequestsTable requests={projects.requests} />}
-					{displayMode === "cards" && <MyProjectsCards projects={projects.projectsCompleted} />}
+					{displayMode === "table" && <JoinProjectTable joinProjects={projects.requests} type={"request"} />}
+					{displayMode === "cards" && <MyJoinProjectsCards joinProjects={projects.requests} type={"request"} />}
 				</div>
 			) : (
 				<p className=" text-xl text-center mb-12 italic">No requests found</p>

@@ -2,11 +2,12 @@ import Link from "next/link";
 import { useState } from "react";
 
 import Modal from "@/components/Modals/Modal";
-import ProjectRequestDetailsModal from "@/components/Modals/ProjectRequestDetailsModal";
+import JoinProjectDetailsModal from "@/components/Modals/JoinProjectDetailsModal";
 import { Badge, Status } from "@/components/Badges/Badges";
 import RequestsActions from "@/components/UserProjectsPrivate/RequestsActions";
+import InvitationsActions from "@/components/UserProjectsPrivate/InvitationsActions";
 
-const ProjectsRequestsRow = ({ request }) => {
+const ProjectsRequestsRow = ({ joinProject, type }) => {
 	const [modalDisplay, setModalDisplay] = useState(false);
 
 	const showModal = () => {
@@ -18,41 +19,42 @@ const ProjectsRequestsRow = ({ request }) => {
 
 	return (
 		<>
-			<tr className={`border-b bg-gray-800 border-gray-700 hover:bg-gray-600 ${request.new && "text-green-500"}`}>
+			<tr className={`border-b bg-gray-800 border-gray-700 hover:bg-gray-600 ${joinProject.recent && "text-green-500"}`}>
 				<td scope="row" className="p-2 md:px-4 md:py-2">
 					<div className="font-semibold text-base lg:whitespace-nowrap">
-						<Link href={`/projects/${request.project.projectId}`}>{request.project.title}</Link>
+						<Link href={`/projects/${joinProject.project.projectId}`}>{joinProject.project.title}</Link>
 					</div>
 				</td>
 				<td className="p-2 md:px-4 md:py-2 text-center hidden md:table-cell">
 					<div>
-						<Badge badge={request.project.category} size={"xs"} />
+						<Badge badge={joinProject.project.category} size={"xs"} />
 					</div>
 				</td>
 				<td className="p-2 md:px-4 md:py-2 text-center hidden md:table-cell">
 					<button type="button" onClick={showModal}>
-						<div className={`${request.new && "font-bold"}`}>{request.talent}</div>
+						<div className={`${joinProject.recent && "font-bold"}`}>{joinProject.talent}</div>
 					</button>
 				</td>
 				<td className="p-2 md:px-4 md:py-2 hidden md:table-cell">
 					<button type="button" onClick={showModal}>
-						<div className={`${request.new && "font-bold"} text-left line-clamp-2`}>{request.message}</div>
+						<div className={`${joinProject.recent && "font-bold"} text-left line-clamp-2`}>{joinProject.message}</div>
 					</button>
 				</td>
 				<td className="p-2 md:px-4 md:py-2 text-center">
 					<div>
 						<button type="button" onClick={showModal}>
-							<Status name={request.status.name} size={"xs"} rounded={"xs"} bgColor={request.status.bgColor} bgColorHover={request.status.bgColorHover} />
+							<Status name={joinProject.status.name} size={"xs"} rounded={"xs"} bgColor={joinProject.status.bgColor} bgColorHover={joinProject.status.bgColorHover} />
 						</button>
 					</div>
 				</td>
 				<td className="p-2 md:px-4 md:py-2">
 					<div className="flex justify-center flex-wrap md:flex-nowrap text-white">
-						<RequestsActions request={request} />
+						{type === "invitation" && <InvitationsActions invitation={joinProject} />}
+						{type === "request" && <RequestsActions request={joinProject} />}
 					</div>
 				</td>
-				<Modal modalDisplay={modalDisplay} closeModal={closeModal} closeModalWithBackground={closeModal} modalSize={"std"} modalTitle={"Project request"}>
-					<ProjectRequestDetailsModal request={request} />
+				<Modal modalDisplay={modalDisplay} closeModal={closeModal} closeModalWithBackground={closeModal} modalSize={"std"} modalTitle={`Project ${type}`}>
+					<JoinProjectDetailsModal joinProject={joinProject} type={type} />
 				</Modal>
 			</tr>
 		</>

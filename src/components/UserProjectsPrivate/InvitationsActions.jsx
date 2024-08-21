@@ -1,10 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 
 import Modal from "@/components/Modals/Modal";
-import ProjectInvitationDetailsModal from "@/components/Modals/ProjectInvitationDetailsModal";
+import JoinProjectDetailsModal from "@/components/Modals/JoinProjectDetailsModal";
 import ProjectInvitationAcceptModal from "@/components/Modals/ProjectInvitationAcceptModal";
 import ProjectInvitationDeclineModal from "@/components/Modals/ProjectInvitationDeclineModal";
 import JoinProjectSendMessageModal from "@/components/Modals/JoinProjectSendMessageModal";
@@ -73,7 +72,7 @@ const InvitationsActions = ({ invitation, iconSize }) => {
 						<IoEyeOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="View invitation" />
 					</button>
 					<Modal modalDisplay={modalDisplayDetails} closeModal={closeModalDetails} closeModalWithBackground={closeModalDetails} modalSize={"std"} modalTitle={"Project invitation"}>
-						<ProjectInvitationDetailsModal invitation={invitation} />
+						<JoinProjectDetailsModal joinProject={invitation} type={"invitation"} />
 					</Modal>
 				</>
 			)}

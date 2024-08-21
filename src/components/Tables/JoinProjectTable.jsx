@@ -1,6 +1,6 @@
-import ProjectsRequestsRow from "@/components/Tables/ProjectsRequestsRow";
+import JoinProjectRow from "@/components/Tables/JoinProjectRow";
 
-const ProjectsRequestsTable = ({ requests }) => {
+const JoinProjectTable = ({ joinProjects, type }) => {
 	return (
 		<>
 			<table className="w-full text-xs md:text-sm shadow-2xl text-gray-300">
@@ -27,8 +27,8 @@ const ProjectsRequestsTable = ({ requests }) => {
 					</tr>
 				</thead>
 				<tbody>
-					{requests.map((request, index) => {
-						return <ProjectsRequestsRow key={index} request={request} />;
+					{joinProjects.map((joinProject, index) => {
+						return <JoinProjectRow key={index} joinProject={joinProject} type={type} />;
 					})}
 				</tbody>
 			</table>
@@ -36,4 +36,4 @@ const ProjectsRequestsTable = ({ requests }) => {
 	);
 };
 
-export default ProjectsRequestsTable;
+export default JoinProjectTable;

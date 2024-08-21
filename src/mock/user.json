@@ -427,7 +427,7 @@
 				},
 				"message": "Hello, we are very interested in your profile as a writer, would you like to join us on this exciting adventure ?",
 				"talent": "Writer",
-				"new": true,
+				"recent": true,
 				"status": {
 					"name": "NEW",
 					"bgColor": "bg-green-500"
@@ -472,7 +472,7 @@
 				},
 				"message": "Hello, we are very interested in your profile as a drawing teacher, would you like to join us on this exciting adventure ?",
 				"talent": "Drawing teacher",
-				"new": false,
+				"recent": false,
 				"status": {
 					"name": "Pending",
 					"bgColor": "bg-blue-500"
@@ -524,7 +524,7 @@
 				},
 				"message": "Hello, we are very interested in your profile as an editor, would you like to join us on this exciting adventure ?",
 				"talent": "Editor",
-				"new": false,
+				"recent": false,
 				"status": {
 					"name": "Accepted",
 					"bgColor": "bg-gray-500"
@@ -574,7 +574,7 @@
 				},
 				"message": "Hello, we are very interested in your profile as an experimented coder, would you like to join us on this exciting adventure ?",
 				"talent": "Coder",
-				"new": false,
+				"recent": false,
 				"status": {
 					"name": "Declined",
 					"bgColor": "bg-gray-500"
@@ -619,7 +619,7 @@
 				},
 				"message": "Hello, we are very interested in your profile as an photographer, would you like to join us on this exciting adventure ?",
 				"talent": "Photographer",
-				"new": false,
+				"recent": false,
 				"status": {
 					"name": "Expired",
 					"bgColor": "bg-gray-500"
@@ -666,7 +666,7 @@
 				},
 				"message": "Hello, I am very interested in your project as a coordinator, can I join this exciting adventure ?",
 				"talent": "Coordinator",
-				"new": true,
+				"recent": true,
 				"status": {
 					"name": "Accepted",
 					"bgColor": "bg-green-500"
@@ -709,7 +709,7 @@
 				},
 				"message": "Hello, I am very interested in your project as a painter, can I join this exciting adventure ?",
 				"talent": "Painter",
-				"new": true,
+				"recent": true,
 				"status": {
 					"name": "Declined",
 					"bgColor": "bg-red-500"
@@ -759,7 +759,7 @@
 				},
 				"message": "Hello, I am very interested in your project as a writer, can I join this exciting adventure ?",
 				"talent": "Writer",
-				"new": false,
+				"recent": false,
 				"status": {
 					"name": "Pending",
 					"bgColor": "bg-blue-500"
@@ -802,7 +802,7 @@
 				},
 				"message": "Hello, I am very interested in your project as a drawing teacher, can I join this exciting adventure ?",
 				"talent": "Drawing teacher",
-				"new": false,
+				"recent": false,
 				"status": {
 					"name": "Accepted",
 					"bgColor": "bg-gray-500"
@@ -852,7 +852,7 @@
 				},
 				"message": "Hello, I am very interested in your project as an editor, can I join this exciting adventure ?",
 				"talent": "Editor",
-				"new": false,
+				"recent": false,
 				"status": {
 					"name": "Declined",
 					"bgColor": "bg-gray-500"
@@ -900,7 +900,7 @@
 				},
 				"message": "Hello, I am very interested in your project as a coder, can I join this exciting adventure ?",
 				"talent": "Coder",
-				"new": false,
+				"recent": false,
 				"status": {
 					"name": "Declined",
 					"bgColor": "bg-gray-500"
@@ -943,7 +943,7 @@
 				},
 				"message": "Hello, I am very interested in your project as a photographer, can I join this exciting adventure ?",
 				"talent": "Photographer",
-				"new": false,
+				"recent": false,
 				"status": {
 					"name": "Cancelled",
 					"bgColor": "bg-gray-500"
