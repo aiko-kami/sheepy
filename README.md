@@ -87,7 +87,7 @@ Don't let your ideas and talents go to waste – join Sheepy now!
   - [] Why us
   - [] Pricing and fees
 
-- [] View my project page
+- [x] View my project page
 
   - [x] Projects I created
   - [x] Projects I work on
@@ -120,6 +120,7 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 - [x] Notification
 - [x] Tables (list vs table)
 - [x] Status
+- [x] Navbar for user profile private
 - [] Other mosaic
 - [] Project table for search
 - [] Talent table for search

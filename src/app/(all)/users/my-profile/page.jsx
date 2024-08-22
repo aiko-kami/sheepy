@@ -12,7 +12,7 @@ export const metadata = {
 const MyProfilePage = ({ params }) => {
 	return (
 		<>
-			<div className="grid md:grid-cols-2 md:grid-rows-2 gap-8 my-8">
+			<div className="grid md:grid-cols-2 md:grid-rows-2 gap-8 mb-8">
 				{/* User card with pictures and about me */}
 				<UserCardPictureBio user={user} />
 

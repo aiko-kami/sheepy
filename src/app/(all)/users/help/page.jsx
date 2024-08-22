@@ -3,18 +3,16 @@ import MyProjects from "@/components/UserProjectsPrivate/MyProjects";
 import user from "@/mock/user.json";
 
 export const metadata = {
-	title: "My projects - Sheepy",
+	title: "Settings - Sheepy",
 	description: "User personal projects page",
 };
 
-const MyProjectsPage = () => {
+const SettingsPage = () => {
 	return (
 		<>
-			<div className="container min-w-full mx-auto sm:py-8 px-2 md:px-8">
-				<MyProjects user={user} />
-			</div>
+			<div className="container min-w-full mx-auto sm:py-8 px-2 md:px-8">This Help Page</div>
 		</>
 	);
 };
 
-export default MyProjectsPage;
+export default SettingsPage;
