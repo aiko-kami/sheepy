@@ -9,12 +9,7 @@ export default function RootLayout({ children }) {
 		<>
 			<Navbar />
 
-			<main className="relative my-auto mx-2 md:mx-10 lg:mx-36">
-				<div className="mt-10 mb-4 sm:mb-14">
-					<UserNavbar />
-				</div>
-				{children}
-			</main>
+			<main className="relative mx-2 md:mx-10 lg:mx-36">{children}</main>
 			<Footer />
 		</>
 	);

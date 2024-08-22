@@ -10,7 +10,7 @@ export const metadata = {
 const SettingsPage = () => {
 	return (
 		<>
-			<div className="container min-w-full mx-auto sm:py-8 px-2 md:px-8">This Help Page</div>
+			<div className="container min-w-full mx-auto px-2 md:px-8">This Help Page</div>
 		</>
 	);
 };

@@ -10,7 +10,7 @@ export const metadata = {
 const MyProjectsPage = () => {
 	return (
 		<>
-			<div className="container min-w-full mx-auto sm:py-8 px-2 md:px-8">
+			<div className="container min-w-full mx-auto px-2 md:px-8">
 				<MyProjects user={user} />
 			</div>
 		</>

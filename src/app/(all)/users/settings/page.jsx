@@ -10,7 +10,7 @@ export const metadata = {
 const SettingsPage = () => {
 	return (
 		<>
-			<div className="container min-w-full mx-auto sm:py-8 px-2 md:px-8">
+			<div className="container min-w-full mx-auto px-2 md:px-8">
 				This my settings Page
 				<p className="py-8">Privacy</p>
 				<p className="py-8">Languages</p>
