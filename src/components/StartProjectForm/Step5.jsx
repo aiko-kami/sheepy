@@ -35,7 +35,9 @@ const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTag
 						<div className="flex flex-col items-center w-full">
 							<div className="w-full sm:w-100 xl:w-120">
 								{/* Location online only (toggle button) */}
-								<ToggleField inputName="locationOnlineOnly" checked={formInputs.locationOnlineOnly} label="Project online only" onChange={onChange} />
+								<div className="mb-4">
+									<ToggleField inputName="locationOnlineOnly" checked={formInputs.locationOnlineOnly} label="Project online only" onChange={onChange} />
+								</div>
 								{/* Location country */}
 								<div className="mb-6">
 									<InputField inputName="locationCountry" inputType="text" label="Country" inputValue={formInputs.locationCountry} onChange={onChange} disabled={formInputs.locationOnlineOnly} />
