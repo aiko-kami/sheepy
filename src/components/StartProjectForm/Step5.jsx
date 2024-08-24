@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import InputField from "@/components/Forms/InputField";
-import ToggleField from "@/components/Forms/ToggleField";
+import { ToggleField } from "@/components/Forms/ToggleField";
 import { Button } from "@/components/Buttons/Buttons";
 import { IoAddCircleOutline, IoCloseCircleOutline } from "react-icons/io5";
 import DatePickerField from "@/components/Forms/DatePickerField";

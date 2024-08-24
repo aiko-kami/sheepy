@@ -963,5 +963,15 @@
 		"helpNotif": 0,
 		"invitationsNotif": 1,
 		"requestsNotif": 2
+	},
+	"settings": {
+		"privacyProfilePicture": "public",
+		"privacyBio": "private",
+		"privacyLocationCity": "friends",
+		"privacyLocationCountry": "public",
+		"privacyCompany": "private",
+		"privacyLanguages": "private",
+		"privacyWebsite": "private",
+		"privacyProjectLike": "public"
 	}
 }
