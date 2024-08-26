@@ -77,7 +77,7 @@ const Settings = ({ user }) => {
 				<SettingsPrivacy formInputs={formInputs} onChange={onChange} />
 				<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 				{/* Appearance settings */}
-				<SettingsAppearance formInputs={formInputs} onChange={onChange} />
+				<SettingsAppearance setFormInputs={setFormInputs} formInputs={formInputs} />
 				<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
 				{/* Languages settings */}

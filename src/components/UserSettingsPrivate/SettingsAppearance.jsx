@@ -1,8 +1,29 @@
+import { ToggleFieldAligned } from "@/components/Forms/ToggleField";
+import Image from "next/image";
 import { IoSunny } from "react-icons/io5";
+import colorModeDark from "@/public/images/colorModeDark.png";
+import colorModeLight from "@/public/images/colorModeLight.png";
 
-const SettingsAppearance = ({ formInputs, onChange }) => {
-	const inputValues = ["light", "dark"];
-	const inputLabels = ["Light mode", "Dark mode"];
+const SettingsAppearance = ({ setFormInputs, formInputs }) => {
+	const appearanceOptions = [
+		{
+			label: "Light mode",
+			value: "light",
+			imageSrc: colorModeLight,
+		},
+		{
+			label: "Dark mode",
+			value: "dark",
+			imageSrc: colorModeDark,
+		},
+	];
+
+	const handleAppearanceChange = (value) => {
+		setFormInputs((prevState) => ({
+			...prevState,
+			appearance: value,
+		}));
+	};
 
 	return (
 		<div className="mb-12">
@@ -11,28 +32,20 @@ const SettingsAppearance = ({ formInputs, onChange }) => {
 				Appearance
 			</h2>
 			<p className="mb-6 sm:ml-4">Customize how your profile and project pages look to others.</p>
-			<div className="flex sm:ml-4">
-				<label htmlFor="language" className="sr-only">
-					Select a color mode:
-				</label>
-				<select
-					id="appearance"
-					name="appearance"
-					value={formInputs.appearance}
-					onChange={onChange}
-					className={`block py-3 px-1 w-100 bg-transparent border-0 border-b-2 border-gray-600 focus:outline-none hover:border-gray-500 hover:shadow-lg ${
-						formInputs.appearance === "" ? "text-gray-400" : "text-white"
-					}`}
-				>
-					<option value="" className="bg-gray-700 text-gray-400">
-						Choose a color mode
-					</option>
-					{inputValues.map((value, index) => (
-						<option key={index} className="bg-gray-700 text-gray-400" value={value}>
-							{inputLabels[index]}
-						</option>
-					))}
-				</select>
+			<div className="flex sm:ml-4 justify-center gap-9">
+				{appearanceOptions.map((option) => (
+					<button key={option.value} type="button" className="rounded-lg" onClick={() => handleAppearanceChange(option.value)}>
+						<p className="mb-1">{option.label}</p>
+						<Image
+							src={option.imageSrc}
+							height={0}
+							width={0}
+							sizes="100vw"
+							alt={option.value}
+							className={`w-40 h-40 rounded-lg shadow-xl border-3 ${formInputs.appearance === option.value ? "border-green-500" : "border-gray-900"}`}
+						/>
+					</button>
+				))}
 			</div>
 		</div>
 	);

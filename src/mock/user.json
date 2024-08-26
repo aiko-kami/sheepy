@@ -973,7 +973,7 @@
 		"privacyLanguages": "private",
 		"privacyWebsite": "private",
 		"privacyProjectLike": "public",
-		"appearance": "light",
+		"appearance": "dark",
 		"language": "English",
 		"notificationNewsletter": "true",
 		"notificationProjects": "true",
