@@ -48,7 +48,7 @@ const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown
 							<Notification value={helpNotif} size={"sm"} notifColor={"pink"} />
 						</div>
 					)}
-					<Link href="#" onClick={closeDropdown} className="block py-2 hover:bg-gray-200 duration-200 active:text-base-450">
+					<Link href="/users/help" onClick={closeDropdown} className="block py-2 hover:bg-gray-200 duration-200 active:text-base-450">
 						Help
 					</Link>
 				</li>

@@ -79,14 +79,6 @@ Don't let your ideas and talents go to waste – join Sheepy now!
   - [x] The talents
   - [x] The categories
 
-- [] How it works
-
-  - [] Take a tour
-  - [] Initiate a project
-  - [] Join a project
-  - [] Why us
-  - [] Pricing and fees
-
 - [x] View my project page
 
   - [x] Projects I created
@@ -104,9 +96,24 @@ Don't let your ideas and talents go to waste – join Sheepy now!
     - [x] Modal Send message
     - [x] requests as cards
 
+- [] Settings page
+
+  - [x] Privacy
+  - [] Appearance
+  - [] Try to put privacy into a table
+  - [] Languages
+  - [] Notifications
+
+- [] How it works
+
+  - [] Take a tour
+  - [] Initiate a project
+  - [] Join a project
+  - [] Why us
+  - [] Pricing and fees
+
 - [] Project description private page
 - [] Project edition page
-- [] Settings page
 - [] View my profile page
 
 ### Components

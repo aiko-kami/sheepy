@@ -25,7 +25,7 @@ const RadioMultiField = ({ fieldName, inputName, inputValues, inputLabels, check
 			<ul className="flex items-center whitespace-nowrap border rounded-lg bg-gray-600 border-gray-500">
 				{inputValues.map((value, index) => (
 					<li key={value} className="w-full border-gray-200">
-						<label className="flex items-center cursor-pointer w-full px-4">
+						<label className="flex items-center cursor-pointer w-full px-2 xl:px-4">
 							<input type="radio" value={value} name={inputName} onChange={onChange} checked={checkedValue === value} className="w-4 h-4 cursor-pointer" />
 							<span className="w-full py-3 ms-2 text-sm">{inputLabels[index]}</span>
 						</label>

@@ -13,7 +13,7 @@ const UserNavbar = () => {
 
 	return (
 		<>
-			<ul className="font-bold text-center rounded-lg shadow sm:flex text-gray-300">
+			<ul className="hidden font-bold text-center rounded-lg shadow sm:flex text-gray-300">
 				<li className="w-full focus-within:z-10">
 					<Link
 						href="/users/my-profile"

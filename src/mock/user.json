@@ -972,6 +972,8 @@
 		"privacyCompany": "private",
 		"privacyLanguages": "private",
 		"privacyWebsite": "private",
-		"privacyProjectLike": "public"
+		"privacyProjectLike": "public",
+		"appearance": "dark",
+		"language": "english"
 	}
 }
