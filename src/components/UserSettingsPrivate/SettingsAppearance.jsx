@@ -1,8 +1,8 @@
-import { ToggleFieldAligned } from "@/components/Forms/ToggleField";
 import Image from "next/image";
 import { IoSunny } from "react-icons/io5";
 import colorModeDark from "@/public/images/colorModeDark.png";
 import colorModeLight from "@/public/images/colorModeLight.png";
+import colorModeUnreal from "@/public/images/colorModeUnreal.png";
 
 const SettingsAppearance = ({ setFormInputs, formInputs }) => {
 	const appearanceOptions = [
@@ -15,6 +15,11 @@ const SettingsAppearance = ({ setFormInputs, formInputs }) => {
 			label: "Dark mode",
 			value: "dark",
 			imageSrc: colorModeDark,
+		},
+		{
+			label: "Unreal mode",
+			value: "unreal",
+			imageSrc: colorModeUnreal,
 		},
 	];
 
