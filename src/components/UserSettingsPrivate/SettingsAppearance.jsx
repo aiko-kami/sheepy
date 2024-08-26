@@ -1,7 +1,8 @@
 import { IoSunny } from "react-icons/io5";
 
 const SettingsAppearance = ({ formInputs, onChange }) => {
-	const inputValues = ["Light mode", "Dark mode"];
+	const inputValues = ["light", "dark"];
+	const inputLabels = ["Light mode", "Dark mode"];
 
 	return (
 		<div className="mb-12">
@@ -26,9 +27,9 @@ const SettingsAppearance = ({ formInputs, onChange }) => {
 					<option value="" className="bg-gray-700 text-gray-400">
 						Choose a color mode
 					</option>
-					{inputValues.map((mode, index) => (
-						<option key={index} className="bg-gray-700 text-gray-400" value={mode}>
-							{mode}
+					{inputValues.map((value, index) => (
+						<option key={index} className="bg-gray-700 text-gray-400" value={value}>
+							{inputLabels[index]}
 						</option>
 					))}
 				</select>

@@ -1,53 +1,49 @@
 import { RadioMultiField } from "@/components/Forms/ToggleField";
-import { IoKeyOutline, IoKey, IoKeySharp, IoNotifications, IoShieldHalf } from "react-icons/io5";
-import { FaUserShield } from "react-icons/fa6";
-const SettingsPrivacy = ({ formInputs, onChange }) => {
-	const inputValues = ["private", "friends", "public"];
-	const inputLabels = ["Only me", "My Friends", "Everyone"];
+import { IoNotifications } from "react-icons/io5";
+
+const SettingsNotifications = ({ formInputs, onChange }) => {
+	const inputValues = ["true", "false"];
+	const inputLabels = ["Yes", "No"];
 
 	return (
 		<div className="mb-12">
 			<h2 className="flex items-center text-xl mb-2 sm:ml-4">
-				<FaUserShield className="mr-2 text-2xl" />
+				<IoNotifications className="mr-2 text-2xl" />
 				Notifications
 			</h2>
 			<p className="mb-6 sm:ml-4">Manage your notification preferences for updates, messages, and activity alerts.</p>
 			<div className="flex justify-center">
 				<div className="grid lg:grid-cols-2 gap-2 md:gap-8">
 					<RadioMultiField
-						fieldName="Profile picture"
-						inputName="privacyProfilePicture"
+						fieldName="Newsletter"
+						inputName="notificationNewsletter"
 						inputValues={inputValues}
 						inputLabels={inputLabels}
-						checkedValue={formInputs.privacyProfilePicture}
-						onChange={onChange}
-					/>
-					<RadioMultiField fieldName="Your bio" inputName="privacyBio" inputValues={inputValues} inputLabels={inputLabels} checkedValue={formInputs.privacyBio} onChange={onChange} />
-					<RadioMultiField
-						fieldName="Your city"
-						inputName="privacyLocationCity"
-						inputValues={inputValues}
-						inputLabels={inputLabels}
-						checkedValue={formInputs.privacyLocationCity}
+						checkedValue={formInputs.notificationNewsletter}
 						onChange={onChange}
 					/>
 					<RadioMultiField
-						fieldName="Your country"
-						inputName="privacyLocationCountry"
+						fieldName="Projects"
+						inputName="notificationProjects"
 						inputValues={inputValues}
 						inputLabels={inputLabels}
-						checkedValue={formInputs.privacyLocationCountry}
+						checkedValue={formInputs.notificationProjects}
 						onChange={onChange}
 					/>
-					<RadioMultiField fieldName="Your company" inputName="privacyCompany" inputValues={inputValues} inputLabels={inputLabels} checkedValue={formInputs.privacyCompany} onChange={onChange} />
-					<RadioMultiField fieldName="Your languages" inputName="privacyLanguages" inputValues={inputValues} inputLabels={inputLabels} checkedValue={formInputs.privacyLanguages} onChange={onChange} />
-					<RadioMultiField fieldName="Your website" inputName="privacyWebsite" inputValues={inputValues} inputLabels={inputLabels} checkedValue={formInputs.privacyWebsite} onChange={onChange} />
 					<RadioMultiField
-						fieldName="Projects you like"
-						inputName="privacyProjectLike"
+						fieldName="Messages"
+						inputName="notificationMessages"
 						inputValues={inputValues}
 						inputLabels={inputLabels}
-						checkedValue={formInputs.privacyProjectLike}
+						checkedValue={formInputs.notificationMessages}
+						onChange={onChange}
+					/>
+					<RadioMultiField
+						fieldName="Comments"
+						inputName="notificationComments"
+						inputValues={inputValues}
+						inputLabels={inputLabels}
+						checkedValue={formInputs.notificationComments}
 						onChange={onChange}
 					/>
 				</div>
@@ -56,4 +52,4 @@ const SettingsPrivacy = ({ formInputs, onChange }) => {
 	);
 };
 
-export default SettingsPrivacy;
+export default SettingsNotifications;

@@ -973,7 +973,11 @@
 		"privacyLanguages": "private",
 		"privacyWebsite": "private",
 		"privacyProjectLike": "public",
-		"appearance": "dark",
-		"language": "english"
+		"appearance": "light",
+		"language": "English",
+		"notificationNewsletter": "true",
+		"notificationProjects": "true",
+		"notificationMessages": "false",
+		"notificationComments": "true"
 	}
 }

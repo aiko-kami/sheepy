@@ -1,6 +1,6 @@
 import { RadioMultiField } from "@/components/Forms/ToggleField";
-import { IoKeyOutline, IoKey, IoKeySharp, IoNotifications, IoShieldHalf } from "react-icons/io5";
 import { FaUserShield } from "react-icons/fa6";
+
 const SettingsPrivacy = ({ formInputs, onChange }) => {
 	const inputValues = ["private", "friends", "public"];
 	const inputLabels = ["Only me", "My Friends", "Everyone"];

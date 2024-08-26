@@ -1,4 +1,4 @@
-import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
+import { IoChatbubbleEllipses } from "react-icons/io5";
 
 const SettingsLanguages = ({ formInputs, onChange }) => {
 	const inputValues = ["English", "Français", "Español"];
@@ -6,7 +6,7 @@ const SettingsLanguages = ({ formInputs, onChange }) => {
 	return (
 		<div className="mb-12">
 			<h2 className="flex items-center text-xl mb-2 sm:ml-4">
-				<IoChatbubbleEllipsesOutline className="mr-2 text-2xl" />
+				<IoChatbubbleEllipses className="mr-2 text-2xl" />
 				Languages
 			</h2>
 			<p className="mb-6 sm:ml-4">Set your preferred languages for interacting with the platform and other users.</p>

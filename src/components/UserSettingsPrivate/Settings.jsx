@@ -6,6 +6,7 @@ import { Button } from "@/components/Buttons/Buttons";
 import SettingsPrivacy from "@/components/UserSettingsPrivate/SettingsPrivacy";
 import SettingsAppearance from "@/components/UserSettingsPrivate/SettingsAppearance";
 import SettingsLanguages from "@/components/UserSettingsPrivate/SettingsLanguages";
+import SettingsNotifications from "@/components/UserSettingsPrivate/SettingsNotifications";
 
 import ProjectsTableActions from "@/components/Tables/ProjectsTableActions";
 
@@ -25,6 +26,11 @@ const Settings = ({ user }) => {
 		appearance: settings.appearance,
 
 		language: settings.language,
+
+		notificationNewsletter: settings.notificationNewsletter,
+		notificationProjects: settings.notificationProjects,
+		notificationMessages: settings.notificationMessages,
+		notificationComments: settings.notificationComments,
 
 		projectTitle: "",
 		selectedCategory: "",
@@ -79,11 +85,7 @@ const Settings = ({ user }) => {
 				<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
 				{/* Notifications settings */}
-				<h2 className="text-xl mb-2 sm:ml-4">Notifications</h2>
-				<p className="mb-6 sm:ml-4">Manage your notification preferences for updates, messages, and activity alerts.</p>
-				<div className="mb-12">
-					<p className=" text-xl text-center italic">No settings found</p>
-				</div>
+				<SettingsNotifications formInputs={formInputs} onChange={onChange} />
 				<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
 				{/* Other */}
