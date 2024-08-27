@@ -3,7 +3,7 @@ const TextAreaField = ({ label, labelStyle, inputName, inputValue, onChange, pla
 
 	return (
 		<>
-			<label htmlFor={label} className={labelStyle}>
+			<label htmlFor={inputName} className={labelStyle}>
 				{label}
 			</label>
 			<textarea
@@ -26,7 +26,7 @@ const TextAreaCommentField = ({ label, labelStyle, inputName, inputValue, onChan
 
 	return (
 		<>
-			<label htmlFor={label} className={labelStyle}>
+			<label htmlFor={inputName} className={labelStyle}>
 				{label}
 			</label>
 			<textarea

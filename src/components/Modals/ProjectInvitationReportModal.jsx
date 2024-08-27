@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { SelectRoundedField } from "@/components/Forms/SelectField";
 import InputField from "@/components/Forms/InputField";
 import { Button } from "@/components/Buttons/Buttons";
 import { Badge } from "@/components/Badges/Badges";
@@ -27,6 +28,16 @@ const ProjectInvitationReportModal = ({ closeModalReport, invitation }) => {
 		closeModalReport();
 	};
 
+	const optionsList = [
+		{ value: "phishing", option: "Attempts to deceive the recipient into providing sensitive information" },
+		{ value: "spam", option: "Unsolicited and irrelevant, possibly part of a mass spam campaign" },
+		{ value: "scam", option: "Suspected to be part of a scam or fraudulent activity" },
+		{ value: "harassment", option: "Contains offensive or harassing content" },
+		{ value: "inappropriate", option: "Includes inappropriate language" },
+		{ value: "misleading", option: "Deceptive or intentionally misleading" },
+		{ value: "other", option: "Other" },
+	];
+
 	return (
 		<>
 			{/* Modal content */}
@@ -48,38 +59,7 @@ const ProjectInvitationReportModal = ({ closeModalReport, invitation }) => {
 					{/* Report form */}
 					<form onSubmit={onSubmit}>
 						<div className="mb-6">
-							<label htmlFor="role" className="block mb-2">
-								Why do you want to report this invitation?
-							</label>
-							<select
-								id="role"
-								name="reportReason"
-								value={formState.reportReason}
-								onChange={onChange}
-								className="bg-gray-700 focus:bg-gray-600 border border-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-							>
-								<option className="" value="phishing">
-									Attempts to deceive the recipient into providing sensitive information
-								</option>
-								<option className="" value="spam">
-									Unsolicited and irrelevant, possibly part of a mass spam campaign
-								</option>
-								<option className="" value="scam">
-									Suspected to be part of a scam or fraudulent activity
-								</option>
-								<option className="" value="harassment">
-									Contains offensive or harassing content
-								</option>
-								<option className="" value="inappropriate">
-									Includes inappropriate language
-								</option>
-								<option className="" value="misleading">
-									Deceptive or intentionally misleading
-								</option>
-								<option className="" value="other">
-									Other
-								</option>
-							</select>
+							<SelectRoundedField inputName="reportReason" possibleValues={optionsList} inputValue={formState.reportReason} label="Why do you want to report this invitation?" onChange={onChange} />
 						</div>
 
 						<div className="mb-6">

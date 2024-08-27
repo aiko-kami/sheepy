@@ -2,9 +2,25 @@
 
 import { useState, useEffect } from "react";
 import InputField from "@/components/Forms/InputField";
+import { SelectField } from "@/components/Forms/SelectField";
 
 const StepOne = ({ categories, formInputs, onChange }) => {
 	const [subCategories, setSubCategories] = useState([]);
+
+	let optionsListCat = [];
+
+	categories.forEach((category) => {
+		// Add the main category name
+		optionsListCat.push({
+			value: category.name,
+			option: category.name,
+		});
+	});
+
+	const optionsListSubcat = subCategories.map((subCategory) => ({
+		value: subCategory.name,
+		option: `${subCategory.name} ${subCategory.symbol}`,
+	}));
 
 	// Set sub-categories when the component mounts and when selectedCategory changes
 	useEffect(() => {
@@ -45,53 +61,13 @@ const StepOne = ({ categories, formInputs, onChange }) => {
 							<div className="flex flex-col lg:flex-row justify-between">
 								{/* Project category */}
 								<div className="flex-1 mb-6 lg:mb-0 lg:mr-2">
-									<label htmlFor="category" className="sr-only">
-										Choose a category:
-									</label>
-									<select
-										id="category"
-										name="selectedCategory"
-										value={formInputs.selectedCategory}
-										onChange={handleCategoryChange}
-										className={`block py-3 px-1 w-full bg-transparent border-0 border-b-2 border-gray-600 focus:outline-none hover:border-gray-500 hover:shadow-lg ${
-											formInputs.selectedCategory === "" ? "text-gray-400" : "text-white"
-										}`}
-									>
-										<option value="" className="bg-gray-700 text-gray-400">
-											Choose a category
-										</option>
-										{categories.map((category, index) => (
-											<option key={index} className="bg-gray-700 text-gray-400" value={category.name}>
-												{category.name}
-											</option>
-										))}
-									</select>
+									<SelectField inputName="selectedCategory" possibleValues={optionsListCat} inputValue={formInputs.selectedCategory} label="Choose a category" onChange={handleCategoryChange} />
 								</div>
 								{/* Project sub-category */}
 								<div className="flex-1 min-h-[3.5rem] lg:ml-2">
 									{formInputs.selectedCategory && subCategories.length > 0 && (
 										<>
-											<label htmlFor="subCategory" className="sr-only">
-												Choose a sub-category
-											</label>
-											<select
-												id="subCategory"
-												name="selectedSubCategory"
-												value={formInputs.selectedSubCategory}
-												onChange={onChange}
-												className={`block py-3 px-1 w-full bg-transparent border-0 border-b-2 border-gray-600 focus:outline-none hover:border-gray-500 hover:shadow-lg ${
-													formInputs.selectedSubCategory === "" ? "text-gray-400" : "text-white"
-												}`}
-											>
-												<option className="bg-gray-700 text-gray-400" value="">
-													Select a sub-category
-												</option>
-												{subCategories.map((subCategory, index) => (
-													<option key={index} className="bg-gray-700 text-gray-400" value={subCategory.name}>
-														{subCategory.name} {subCategory.symbol}
-													</option>
-												))}
-											</select>
+											<SelectField inputName="selectedSubCategory" possibleValues={optionsListSubcat} inputValue={formInputs.selectedSubCategory} label="Select a sub-category" onChange={onChange} />
 										</>
 									)}
 								</div>

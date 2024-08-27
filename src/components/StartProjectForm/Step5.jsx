@@ -1,12 +1,24 @@
 "use client";
 
 import InputField from "@/components/Forms/InputField";
+import { SelectField } from "@/components/Forms/SelectField";
 import { ToggleField } from "@/components/Forms/ToggleField";
 import { Button } from "@/components/Buttons/Buttons";
 import { IoAddCircleOutline, IoCloseCircleOutline } from "react-icons/io5";
 import DatePickerField from "@/components/Forms/DatePickerField";
 
 const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTagInputChange, setProjectStartDate }) => {
+	const optionsList = [
+		{
+			value: "public",
+			option: "Public",
+		},
+		{
+			value: "private",
+			option: "Private",
+		},
+	];
+
 	return (
 		<>
 			<div className="container min-w-full m-auto pr-2 lg:px-8 text-justify xl:grid grid-cols-5 gap-8">
@@ -37,34 +49,20 @@ const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTag
 								<div className="mb-4">
 									<ToggleField inputName="locationOnlineOnly" checked={formInputs.locationOnlineOnly} label="Project online only" onChange={onChange} />
 								</div>
+
 								{/* Location country */}
 								<div className="mb-6">
 									<InputField inputName="locationCountry" inputType="text" label="Country" inputValue={formInputs.locationCountry} onChange={onChange} disabled={formInputs.locationOnlineOnly} />
 								</div>
+
 								{/* Location city */}
 								<div className="mb-6">
 									<InputField inputName="locationCity" inputType="text" label="City" inputValue={formInputs.locationCity} onChange={onChange} disabled={formInputs.locationOnlineOnly} />
 								</div>
+
 								{/* Project visibility */}
-								<select
-									id="projectVisibility"
-									name="projectVisibility"
-									value={formInputs.projectVisibility}
-									onChange={onChange}
-									className={`block mb-6 py-3 px-1 w-full bg-transparent border-0 border-b-2 border-gray-600 focus:outline-none hover:border-gray-500 hover:shadow-lg ${
-										formInputs.projectVisibility === "" ? "text-gray-400" : "text-white"
-									}`}
-								>
-									<option value="" className="bg-gray-700 italic text-gray-400">
-										Select the project privacy
-									</option>
-									<option className="bg-gray-700 text-gray-400" value="public">
-										Public
-									</option>
-									<option className="bg-gray-700 text-gray-400" value="private">
-										Private
-									</option>
-								</select>
+								<SelectField inputName="projectVisibility" possibleValues={optionsList} inputValue={formInputs.projectVisibility} label="Select the project privacy" onChange={onChange} />
+
 								{/* Start date picker */}
 								<div className="w-60">
 									<DatePickerField label="Set a start date (optional)" value={formInputs.projectStartDate} onChange={(newValue) => setProjectStartDate(newValue)} />
@@ -82,6 +80,7 @@ const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTag
 										</Button>
 									</div>
 								</div>
+
 								{/* List of tags */}
 								<div className="min-h-32">
 									{formInputs.tags.length > 0 && (

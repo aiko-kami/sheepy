@@ -13,7 +13,7 @@ const SettingsNotifications = ({ formInputs, onChange }) => {
 			</h2>
 			<p className="mb-6 sm:ml-4">Manage your notification preferences for updates, messages, and activity alerts.</p>
 			<div className="flex justify-center">
-				<div className="grid lg:grid-cols-2 gap-2 md:gap-8">
+				<div className="grid lg:grid-cols-4 gap-2 md:gap-8">
 					<RadioMultiField
 						fieldName="Newsletter"
 						inputName="notificationNewsletter"

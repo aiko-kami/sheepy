@@ -4,12 +4,18 @@ import { useState, useEffect } from "react";
 
 import { Button } from "@/components/Buttons/Buttons";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
+import { SelectRoundedField } from "@/components/Forms/SelectField";
 
 const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) => {
 	const [formState, setFormState] = useState({
 		selectedRole: "",
 		message: "",
 	});
+
+	const optionsList = talentsNeeded.map((talent) => ({
+		value: talent.role,
+		option: talent.role,
+	}));
 
 	const onSaveDraft = (event) => {
 		event.preventDefault();
@@ -52,22 +58,7 @@ const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) =>
 						<form onSubmit={onSubmit}>
 							{/* Role */}
 							<div className="mb-6">
-								<label htmlFor="role" className="block mb-2">
-									Select the role you want:
-								</label>
-								<select
-									id="role"
-									name="selectedRole"
-									value={formState.selectedRole}
-									onChange={onChange}
-									className="bg-gray-700 focus:bg-gray-600 border border-gray-500 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-								>
-									{talentsNeeded.map((talent, index) => (
-										<option key={index} className="" value={talent.role}>
-											{talent.role}
-										</option>
-									))}
-								</select>
+								<SelectRoundedField inputName="selectedRole" possibleValues={optionsList} inputValue={formState.selectedRole} label="Select the role you want" onChange={onChange} />
 							</div>
 
 							{/* Message */}
