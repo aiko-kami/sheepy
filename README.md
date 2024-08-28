@@ -96,13 +96,13 @@ Don't let your ideas and talents go to waste – join Sheepy now!
     - [x] Modal Send message
     - [x] requests as cards
 
-- [] Settings page
+- [x] My settings page
 
   - [x] Privacy
-  - [] Appearance
-  - [] Try to put privacy into a table
-  - [] Languages
-  - [] Notifications
+  - [x] Appearance
+  - [x] Try to put privacy into a table
+  - [x] Languages
+  - [x] Notifications
 
 - [] How it works
 

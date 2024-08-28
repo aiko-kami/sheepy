@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { useState } from "react";
 
@@ -7,7 +9,7 @@ import { Badge, Status } from "@/components/Badges/Badges";
 import RequestsActions from "@/components/UserProjectsPrivate/RequestsActions";
 import InvitationsActions from "@/components/UserProjectsPrivate/InvitationsActions";
 
-const ProjectsRequestsRow = ({ joinProject, type }) => {
+const JoinProjectRow = ({ joinProject, type }) => {
 	const [modalDisplay, setModalDisplay] = useState(false);
 
 	const showModal = () => {
@@ -61,4 +63,4 @@ const ProjectsRequestsRow = ({ joinProject, type }) => {
 	);
 };
 
-export default ProjectsRequestsRow;
+export default JoinProjectRow;

@@ -38,8 +38,8 @@ const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown
 							<Notification value={settingsNotif} size={"sm"} notifColor={"pink"} />
 						</div>
 					)}
-					<Link href="/users/settings" onClick={closeDropdown} className="block py-2 hover:bg-gray-200 duration-200 active:text-base-450">
-						Settings
+					<Link href="/users/my-settings" onClick={closeDropdown} className="block py-2 hover:bg-gray-200 duration-200 active:text-base-450">
+						My settings
 					</Link>
 				</li>
 				<li className="relative">

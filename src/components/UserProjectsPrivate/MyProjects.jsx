@@ -21,12 +21,7 @@ const MyProjects = ({ user }) => {
 	const notifications = user.notifications;
 	return (
 		<>
-			<div className="grid grid-cols-3 items-center">
-				{/* Page title */}
-				<div className="col-start-2 col-span-1 text-center">
-					<h1 className="text-4xl mb-12 text-center">My Projects</h1>
-				</div>
-
+			<div className="flex justify-end">
 				{/* Change display buttons */}
 				{(projects.projectCount.onGoing > 0 || projects.projectCount.created > 0 || projects.projectCount.completed > 0) && (
 					<div className="text-right">

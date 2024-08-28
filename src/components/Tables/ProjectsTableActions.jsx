@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 
 import { Badge } from "@/components/Badges/Badges";
@@ -8,7 +6,7 @@ import MyProjectsActions from "@/components/UserProjectsPrivate/MyProjectsAction
 const ProjectsTableActions = ({ projects }) => {
 	return (
 		<>
-			<table className="w-full text-xs md:text-sm shadow-2xl">
+			<table className="w-full text-xs md:text-sm shadow-lg">
 				<thead className="uppercase bg-gray-700 text-gray-300">
 					<tr>
 						<th scope="col" className="text-center p-2 md:px-4 md:py-3 ">

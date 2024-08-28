@@ -29,8 +29,8 @@ const UserNavbar = () => {
 					</Link>
 				</li>
 				<li className="w-full focus-within:z-10">
-					<Link href="/users/settings" className={`${getLinkClasses("/users/settings")} sm:border-r sm:border-gray-700`}>
-						Settings
+					<Link href="/users/my-settings" className={`${getLinkClasses("/users/my-settings")} sm:border-r sm:border-gray-700`}>
+						My Settings
 					</Link>
 				</li>
 				<li className="w-full focus-within:z-10">
