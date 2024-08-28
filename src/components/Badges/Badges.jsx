@@ -24,7 +24,7 @@ const Badge = ({ badge, size }) => {
 
 	return (
 		<Link href={link || "#"}>
-			<span className={`py-1 px-2.5 text-white font-bold duration-200 rounded ${textSizeClass} ${bgColor} hover:${bgColorHover}`}>{name}</span>
+			<span className={`py-1 px-2.5 text-white font-bold text-nowrap duration-200 rounded ${textSizeClass} ${bgColor} hover:${bgColorHover}`}>{name}</span>
 		</Link>
 	);
 };
@@ -54,7 +54,7 @@ const BadgeRounded = ({ badge, size }) => {
 
 	return (
 		<Link href={link || "#"}>
-			<span className={`pt-1 pb-1.5 px-2.5 text-blue-800 font-medium duration-200 rounded-full ${textSizeClass} ${bgColor} hover:${bgColorHover}`}>{name}</span>
+			<span className={`pt-1 pb-1.5 px-2.5 text-blue-800 font-medium text-nowrap duration-200 rounded-full ${textSizeClass} ${bgColor} hover:${bgColorHover}`}>{name}</span>
 		</Link>
 	);
 };
@@ -104,7 +104,7 @@ const Status = ({ name, size, rounded, bgColor }) => {
 
 	return (
 		<div>
-			<span className={`rounded py-1 px-2.5 text-white font-bold duration-200 ${textSizeClass} ${roundedClass} ${bgColor}`}>{name}</span>
+			<span className={`rounded py-1 px-2.5 text-white font-bold text-nowrap duration-200 ${textSizeClass} ${roundedClass} ${bgColor}`}>{name}</span>
 		</div>
 	);
 };
