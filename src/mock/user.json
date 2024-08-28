@@ -965,6 +965,7 @@
 		"requestsNotif": 2
 	},
 	"settings": {
+		"displayMode": "table",
 		"privacyProfilePicture": "public",
 		"privacyBio": "private",
 		"privacyLocationCity": "friends",

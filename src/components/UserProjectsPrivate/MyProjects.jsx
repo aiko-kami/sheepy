@@ -10,7 +10,7 @@ import MyJoinProjectsCards from "@/components/UserProjectsPrivate/MyJoinProjectC
 import Notification from "@/components/Badges/Notification";
 
 const MyProjects = ({ user }) => {
-	const [displayMode, setDisplayMode] = useState("table");
+	const [displayMode, setDisplayMode] = useState(user.settings.displayMode);
 
 	const switchDisplay = () => {
 		displayMode === "table" && setDisplayMode("cards");

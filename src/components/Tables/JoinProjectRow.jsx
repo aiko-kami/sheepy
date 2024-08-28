@@ -43,11 +43,9 @@ const JoinProjectRow = ({ joinProject, type }) => {
 					</button>
 				</td>
 				<td className="p-2 md:px-4 md:py-2 text-center">
-					<div>
-						<button type="button" onClick={showModal}>
-							<Status name={joinProject.status.name} size={"xs"} rounded={"xs"} bgColor={joinProject.status.bgColor} bgColorHover={joinProject.status.bgColorHover} />
-						</button>
-					</div>
+					<button type="button" onClick={showModal}>
+						<Status name={joinProject.status.name} size={"xs"} rounded={"xs"} bgColor={joinProject.status.bgColor} bgColorHover={joinProject.status.bgColorHover} />
+					</button>
 				</td>
 				<td className="p-2 md:px-4 md:py-2">
 					<div className="flex justify-center flex-wrap md:flex-nowrap text-white">
