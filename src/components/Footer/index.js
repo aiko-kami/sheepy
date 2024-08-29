@@ -15,7 +15,7 @@ const Footer = () => {
 						<div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 md:w-1/2">
 							<div>
 								<h2 className="mb-6 text-sm font-bold uppercase">Sheepy</h2>
-								<ul className="text-gray-400 font-medium">
+								<ul className="text-secondary font-medium">
 									<li className="mb-4">
 										<Link href="/about-us" className="hover:underline">
 											About us
@@ -45,7 +45,7 @@ const Footer = () => {
 							</div>
 							<div>
 								<h2 className="mb-6 text-sm font-bold uppercase">Services</h2>
-								<ul className="text-gray-400 font-medium">
+								<ul className="text-secondary font-medium">
 									<li className="mb-4">
 										<Link href="/help-center" className="hover:underline ">
 											Help Center
@@ -75,7 +75,7 @@ const Footer = () => {
 							</div>
 							<div>
 								<h2 className="mb-6 text-sm font-bold uppercase">More</h2>
-								<ul className="text-gray-400 font-medium">
+								<ul className="text-secondary font-medium">
 									<li className="mb-4">
 										<Link href="/campus" className="hover:underline">
 											Campus
@@ -92,7 +92,7 @@ const Footer = () => {
 					</div>
 					<hr className="my-6 sm:mx-auto border-gray-700 lg:my-8" />
 					<div className="sm:flex sm:items-center sm:justify-between">
-						<span className="text-sm sm:text-center text-gray-400">
+						<span className="text-sm sm:text-center">
 							{/* {" "} to be kept */}© {currentYear}{" "}
 							<Link href="#" className="hover:underline">
 								HELIOS Industries Ltd. ©

@@ -104,7 +104,7 @@ const Status = ({ name, size, rounded, bgColor }) => {
 
 	return (
 		<div>
-			<span className={`rounded py-1 px-2.5 text-white font-bold text-nowrap duration-200 ${textSizeClass} ${roundedClass} ${bgColor}`}>{name}</span>
+			<span className={`rounded uppercase py-1 px-2.5 text-white font-bold text-nowrap duration-200 ${textSizeClass} ${roundedClass} ${bgColor}`}>{name}</span>
 		</div>
 	);
 };

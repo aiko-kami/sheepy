@@ -8,7 +8,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body className="flex flex-col h-screen text-base-100 bg-base-500">
+			<body className="flex flex-col h-screen text-primary bg-base-500">
 				<link rel="shortcut icon" href="/images/favicon.ico" />
 				<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png" />
 				<link rel="android-chrome-192x192" sizes="192x192" href="/images/android-chrome-192x192.png" />

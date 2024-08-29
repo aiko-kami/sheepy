@@ -34,7 +34,9 @@ const ProjectTable = ({ projects }) => {
 									</div>
 								</td>
 								<td className="p-2 md:px-4 md:py-2 hidden md:table-cell">
-									<div className="text-gray-400 line-clamp-2">{project.summary}</div>
+									<div className="text-gray-400 line-clamp-2">
+										<Link href={`/projects/${project.projectId}`}>{project.summary}</Link>
+									</div>
 								</td>
 							</tr>
 						);

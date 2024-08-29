@@ -128,11 +128,11 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 - [x] Tables (list vs table)
 - [x] Status
 - [x] Navbar for user profile private
-- [] Add status in joinProject card
+- [x] Add status in joinProject card
+- [x] Project table for search
 
-- [] Other mosaic
-- [] Project table for search
 - [] Talent table for search
+- [] Other mosaic
 - [] Carousel with profiles or projects
 - [] Video presentation
 

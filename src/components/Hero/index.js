@@ -17,7 +17,7 @@ const Hero = () => {
 	return (
 		<>
 			{/* Mobile version */}
-			<div className="lg:hidden flex h-160 relative bg-gradient-to-b from-custom-blue-dark to-custom-blue-light overflow-x-hidden">
+			<div className="lg:hidden flex h-160 relative bg-gradient-to-b from-custom-gradiant-dark to-custom-gradiant-light overflow-x-hidden">
 				<div className="bg-white w-1 h-1 rounded-full absolute top-28 left-30"></div>
 				<div className="bg-white w-1 h-1 rounded-full absolute bottom-28 left-32"></div>
 				<div className="bg-white w-1 h-1 rounded-full absolute bottom-72 left-80"></div>
@@ -60,7 +60,7 @@ const Hero = () => {
 			</div>
 
 			{/* Large screen version */}
-			<div className="hidden lg:flex h-180 mb-8 relative bg-gradient-to-b from-custom-blue-dark to-custom-blue-light">
+			<div className="hidden lg:flex h-180 mb-8 relative bg-gradient-to-b from-custom-gradiant-dark to-custom-gradiant-light">
 				<div className="bg-white w-1 h-1 rounded-full absolute top-28 left-30"></div>
 				<div className="bg-white w-1 h-1 rounded-full absolute bottom-28 left-32"></div>
 				<div className="bg-white w-1 h-1 rounded-full absolute bottom-72 left-80"></div>

@@ -51,22 +51,23 @@ module.exports = {
 			},
 			colors: {
 				base: {
-					100: "#ffffff",
-					200: "#bcbec5",
-					300: "#7e818d",
-					400: "#38BDF8",
-					450: "#071e34",
-					500: "#002464",
-					550: "#0C1322",
-					600: "#111646",
-					700: "#0a0e19",
-					800: "#05070f",
-					900: "#000000",
+					100: "var(--100)",
+					200: "var(--200)",
+					300: "var(--300)",
+					400: "var(--400)",
+					450: "var(--450)",
+					500: "var(--500)",
+					550: "var(--550)",
+					600: "var(--600)",
+					700: "var(--700)",
+					800: "var(--800)",
+					900: "var(--900)",
 				},
-				bg: "#1E293B", // Background color
-				text: "#0F172A", // Text color
-				"custom-blue-dark": "#111646",
-				"custom-blue-light": "#002464",
+				bg: "var(--bg)", // Background color
+				primary: "var(--text-primary)", // Text color
+				secondary: "var(--text-secondary)", // Text color
+				"custom-gradiant-dark": "var(--gradiant-dark)",
+				"custom-gradiant-light": "var(--gradiant-light)",
 			},
 			spacing: {
 				2: "0.5rem",

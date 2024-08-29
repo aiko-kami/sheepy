@@ -429,7 +429,7 @@
 				"talent": "Writer",
 				"recent": true,
 				"status": {
-					"name": "NEW",
+					"name": "New",
 					"bgColor": "bg-green-500"
 				},
 				"actions": {

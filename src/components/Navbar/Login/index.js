@@ -7,6 +7,8 @@ import Dropdown from "./Dropdown";
 import user from "@/mock/user.json";
 
 const Login = () => {
+	const [theme, setTheme] = useState(user.settings.appearance || "light");
+
 	const session = true;
 	const [dropdownOpen, setDropdownOpen] = useState(false);
 	let ref = useRef();
@@ -19,12 +21,16 @@ const Login = () => {
 		};
 		document.addEventListener("mousedown", handler);
 		document.addEventListener("touchstart", handler);
+
+		// Set theme preference from user preferences or default theme
+		document.documentElement.setAttribute("data-theme", theme);
+
 		return () => {
 			// Cleanup the event listener
 			document.removeEventListener("mousedown", handler);
 			document.removeEventListener("touchstart", handler);
 		};
-	}, [dropdownOpen]);
+	}, [dropdownOpen, theme]);
 
 	const closeDropdown = () => {
 		dropdownOpen && setDropdownOpen(false);

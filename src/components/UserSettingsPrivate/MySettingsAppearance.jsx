@@ -30,6 +30,8 @@ const MySettingsAppearance = ({ setFormInputs, formInputs }) => {
 	];
 
 	const handleAppearanceChange = (value) => {
+		document.documentElement.setAttribute("data-theme", value);
+
 		setFormInputs((prevState) => ({
 			...prevState,
 			appearance: value,
