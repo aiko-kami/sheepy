@@ -56,14 +56,14 @@ const SubCategories = ({ category, setSelectedSubCategory }) => {
 
 	return (
 		<>
-			<div className="mb-4 sm:mb-8 text-center">
+			<div className="mb-4 sm:mb-8 text-center w-full">
 				<p className="mb-2 sm:mb-4 text-lg sm:text-xl">Filter on sub-categories:</p>
 				<div className="grid grid-flow-col gap-6 overflow-x-auto">
 					{category.subCategories.map((subCategory, index) => (
 						<motion.div
 							key={index}
 							onClick={() => handleSubCategoryClick(subCategory)}
-							className={`relative border-2 border-${category.colors.colorBase} text-nowrap rounded-lg p-2 mb-2 cursor-pointer overflow-hidden ${
+							className={`relative border-2 border-${category.colors.colorBase} text-nowrap rounded-lg p-2 cursor-pointer ${
 								selectedSubCategory?.name === subCategory.name && `bg-${category.colors.colorBase} text-white`
 							}`}
 							initial="rest"

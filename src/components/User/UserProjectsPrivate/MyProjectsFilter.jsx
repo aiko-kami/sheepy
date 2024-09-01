@@ -24,14 +24,14 @@ const MyProjectsFilter = ({ projectTypes, selectedProjectType, onProjectTypeChan
 	return (
 		<>
 			{/* Menu to filter on projects types  */}
-			<div className="mb-4 sm:mb-8 text-center mx-auto">
+			<div className="text-center mx-auto w-full max-w-7/8">
 				<p className="mb-2 sm:mb-4">Filter projects:</p>
-				<div className="grid grid-flow-col gap-6 overflow-x-auto text-sm">
+				<div className="flex flex-wrap gap-2 justify-center text-sm w-full max-w-full">
 					{projectTypes.map((type, index) => (
 						<motion.div
 							key={index}
 							onClick={() => handleProjectTypeClick(type.value)}
-							className={`relative border-2 border-gray-700 text-nowrap rounded-lg p-2 mb-2 cursor-pointer overflow-hidden ${selectedProjectType === type.value && "bg-gray-700 text-white"}`}
+							className={`relative sm:min-w-40 border-2 border-gray-700 whitespace-nowrap rounded-lg p-2 cursor-pointer ${selectedProjectType === type.value && "bg-gray-700 text-white"}`}
 							initial="rest"
 							whileHover="hover"
 							animate="rest"

@@ -46,7 +46,7 @@ const MyProjects = ({ user }) => {
 
 	return (
 		<>
-			<div className="flex justify-between items-center">
+			<div className="flex mb-4 sm:mb-8 justify-between items-start">
 				{/* Filter projects */}
 				<MyProjectsFilter projectTypes={projectTypes} selectedProjectType={selectedProjectType} setSelectedProjectType={setSelectedProjectType} onProjectTypeChange={setSelectedProjectType} />
 
