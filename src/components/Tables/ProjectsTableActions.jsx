@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-import { Badge } from "@/components/Badges/Badges";
-import MyProjectsActions from "@/components/UserProjectsPrivate/MyProjectsActions";
+import { Badge, Status } from "@/components/Badges/Badges";
+import MyProjectsActions from "@/components/User/UserProjectsPrivate/MyProjectsActions";
 
-const ProjectsTableActions = ({ projects }) => {
+const ProjectsTableActions = ({ projects, filter }) => {
 	return (
 		<>
 			<table className="w-full text-xs md:text-sm shadow-lg">
@@ -17,6 +17,9 @@ const ProjectsTableActions = ({ projects }) => {
 						</th>
 						<th scope="col" className="text-center p-2 md:px-4 md:py-3 hidden md:table-cell">
 							Summary
+						</th>
+						<th scope="col" className="text-center p-2 md:px-4 md:py-3 hidden md:table-cell">
+							Status
 						</th>
 						<th scope="col" className="text-center p-2 md:px-4 md:py-3">
 							Actions
@@ -39,6 +42,9 @@ const ProjectsTableActions = ({ projects }) => {
 								</td>
 								<td className="p-2 md:px-4 md:py-2 hidden md:table-cell">
 									<div className="text-gray-400 line-clamp-2">{project.summary}</div>
+								</td>
+								<td className="p-2 md:px-4 md:py-2 text-center hidden md:table-cell">
+									<Status name={project.status.name} size={"xs"} rounded={"xs"} bgColor={project.status.bgColor} />
 								</td>
 								<td className="p-2 md:px-4 md:py-2">
 									<div className="flex justify-center flex-wrap md:flex-nowrap">

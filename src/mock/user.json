@@ -65,6 +65,7 @@
 				"cover": "https://images.pexels.com/photos/256514/pexels-photo-256514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 				"likes": 18,
 				"permissions": {
+					"isPublicAllowed": true,
 					"isPrivateAllowed": true,
 					"isConfigureAllowed": true,
 					"isChatAllowed": true
@@ -92,7 +93,11 @@
 						"bgColor": "bg-blue-400"
 					}
 				],
-				"status": "Active"
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
 			},
 			{
 				"projectId": 479,
@@ -101,6 +106,7 @@
 				"cover": "https://images.pexels.com/photos/38136/pexels-photo-38136.jpeg",
 				"likes": 12,
 				"permissions": {
+					"isPublicAllowed": true,
 					"isPrivateAllowed": true,
 					"isConfigureAllowed": true,
 					"isChatAllowed": true
@@ -128,7 +134,11 @@
 						"bgColor": "bg-blue-300"
 					}
 				],
-				"status": "Active"
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
 			},
 			{
 				"projectId": 27,
@@ -137,6 +147,7 @@
 				"cover": "https://images.pexels.com/photos/21067/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 				"likes": 23,
 				"permissions": {
+					"isPublicAllowed": true,
 					"isPrivateAllowed": true,
 					"isConfigureAllowed": true,
 					"isChatAllowed": false
@@ -164,7 +175,11 @@
 						"bgColor": "bg-red-400"
 					}
 				],
-				"status": "Active"
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
 			}
 		],
 		"projectsCreated": [
@@ -175,6 +190,7 @@
 				"cover": "https://images.pexels.com/photos/542556/pexels-photo-542556.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 				"likes": 8,
 				"permissions": {
+					"isPublicAllowed": true,
 					"isPrivateAllowed": true,
 					"isConfigureAllowed": false,
 					"isChatAllowed": true
@@ -202,7 +218,11 @@
 						"bgColor": "bg-orange-400"
 					}
 				],
-				"status": "Active"
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
 			},
 			{
 				"projectId": 6,
@@ -211,6 +231,7 @@
 				"cover": "https://images.pexels.com/photos/1389429/pexels-photo-1389429.jpeg",
 				"likes": 15,
 				"permissions": {
+					"isPublicAllowed": true,
 					"isPrivateAllowed": false,
 					"isConfigureAllowed": false,
 					"isChatAllowed": false
@@ -238,7 +259,11 @@
 						"bgColor": "bg-green-400"
 					}
 				],
-				"status": "Active"
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
 			},
 			{
 				"projectId": 89,
@@ -247,6 +272,7 @@
 				"cover": "https://images.pexels.com/photos/4557464/pexels-photo-4557464.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 				"likes": 10,
 				"permissions": {
+					"isPublicAllowed": true,
 					"isPrivateAllowed": true,
 					"isConfigureAllowed": false,
 					"isChatAllowed": true
@@ -274,7 +300,11 @@
 						"bgColor": "bg-green-400"
 					}
 				],
-				"status": "Active"
+				"status": {
+					"name": "Submitted",
+					"bgColor": "bg-blue-500",
+					"textColor": "text-blue-500"
+				}
 			},
 			{
 				"projectId": 27,
@@ -283,9 +313,10 @@
 				"cover": "https://images.pexels.com/photos/21067/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 				"likes": 23,
 				"permissions": {
+					"isPublicAllowed": true,
 					"isPrivateAllowed": true,
 					"isConfigureAllowed": true,
-					"isChatAllowed": true
+					"isChatAllowed": false
 				},
 				"category": {
 					"name": "Games",
@@ -310,10 +341,14 @@
 						"bgColor": "bg-red-400"
 					}
 				],
-				"status": "Active"
+				"status": {
+					"name": "Draft",
+					"bgColor": "bg-gray-500",
+					"textColor": "text-gray-500"
+				}
 			}
 		],
-		"projectsCompleted": [
+		"projectsLike": [
 			{
 				"projectId": 479,
 				"title": "Planting Trees Initiative",
@@ -321,6 +356,7 @@
 				"cover": "https://images.pexels.com/photos/38136/pexels-photo-38136.jpeg",
 				"likes": 12,
 				"permissions": {
+					"isPublicAllowed": true,
 					"isPrivateAllowed": true,
 					"isConfigureAllowed": false,
 					"isChatAllowed": false
@@ -348,7 +384,11 @@
 						"bgColor": "bg-blue-300"
 					}
 				],
-				"status": "Active"
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
 			},
 			{
 				"projectId": 27,
@@ -357,6 +397,7 @@
 				"cover": "https://images.pexels.com/photos/21067/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 				"likes": 23,
 				"permissions": {
+					"isPublicAllowed": true,
 					"isPrivateAllowed": true,
 					"isConfigureAllowed": false,
 					"isChatAllowed": true
@@ -384,7 +425,11 @@
 						"bgColor": "bg-red-400"
 					}
 				],
-				"status": "Active"
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
 			}
 		],
 		"invitations": [
@@ -396,6 +441,7 @@
 					"cover": "https://images.pexels.com/photos/256514/pexels-photo-256514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 					"likes": 11,
 					"permissions": {
+						"isPublicAllowed": true,
 						"isPrivateAllowed": false,
 						"isConfigureAllowed": false,
 						"isChatAllowed": false
@@ -423,7 +469,11 @@
 							"bgColor": "bg-blue-400"
 						}
 					],
-					"status": "Active"
+					"status": {
+						"name": "Active",
+						"bgColor": "bg-green-500",
+						"textColor": "text-green-500"
+					}
 				},
 				"message": "Hello, we are very interested in your profile as a writer, would you like to join us on this exciting adventure ?",
 				"talent": "Writer",
@@ -468,7 +518,11 @@
 							"bgColor": "bg-blue-400"
 						}
 					],
-					"status": "Active"
+					"status": {
+						"name": "Active",
+						"bgColor": "bg-green-500",
+						"textColor": "text-green-500"
+					}
 				},
 				"message": "Hello, we are very interested in your profile as a drawing teacher, would you like to join us on this exciting adventure ?",
 				"talent": "Drawing teacher",
@@ -493,6 +547,7 @@
 					"cover": "https://images.pexels.com/photos/256514/pexels-photo-256514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 					"likes": 18,
 					"permissions": {
+						"isPublicAllowed": true,
 						"isPrivateAllowed": false,
 						"isConfigureAllowed": false,
 						"isChatAllowed": false
@@ -520,7 +575,11 @@
 							"bgColor": "bg-blue-400"
 						}
 					],
-					"status": "Active"
+					"status": {
+						"name": "Active",
+						"bgColor": "bg-green-500",
+						"textColor": "text-green-500"
+					}
 				},
 				"message": "Hello, we are very interested in your profile as an editor, would you like to join us on this exciting adventure ?",
 				"talent": "Editor",
@@ -545,6 +604,7 @@
 					"cover": "https://cms-assets.themuse.com/media/lead/_1200x630_crop_center-center_82_none/3000a530-7462-4e3e-bc17-a36c3e56407e.png?mtime=1568865848",
 					"likes": 50,
 					"permissions": {
+						"isPublicAllowed": true,
 						"isPrivateAllowed": false,
 						"isConfigureAllowed": false,
 						"isChatAllowed": false
@@ -570,7 +630,11 @@
 							"bgColor": "bg-blue-400"
 						}
 					],
-					"status": "Active"
+					"status": {
+						"name": "Active",
+						"bgColor": "bg-green-500",
+						"textColor": "text-green-500"
+					}
 				},
 				"message": "Hello, we are very interested in your profile as an experimented coder, would you like to join us on this exciting adventure ?",
 				"talent": "Coder",
@@ -615,7 +679,11 @@
 							"bgColor": "bg-yellow-400"
 						}
 					],
-					"status": "Active"
+					"status": {
+						"name": "Active",
+						"bgColor": "bg-green-500",
+						"textColor": "text-green-500"
+					}
 				},
 				"message": "Hello, we are very interested in your profile as an photographer, would you like to join us on this exciting adventure ?",
 				"talent": "Photographer",
@@ -662,7 +730,11 @@
 							"bgColor": "bg-blue-400"
 						}
 					],
-					"status": "Active"
+					"status": {
+						"name": "Active",
+						"bgColor": "bg-green-500",
+						"textColor": "text-green-500"
+					}
 				},
 				"message": "Hello, I am very interested in your project as a coordinator, can I join this exciting adventure ?",
 				"talent": "Coordinator",
@@ -705,7 +777,11 @@
 							"bgColor": "bg-green-400"
 						}
 					],
-					"status": "Active"
+					"status": {
+						"name": "Active",
+						"bgColor": "bg-green-500",
+						"textColor": "text-green-500"
+					}
 				},
 				"message": "Hello, I am very interested in your project as a painter, can I join this exciting adventure ?",
 				"talent": "Painter",
@@ -728,6 +804,7 @@
 					"cover": "https://images.pexels.com/photos/256514/pexels-photo-256514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 					"likes": 11,
 					"permissions": {
+						"isPublicAllowed": true,
 						"isPrivateAllowed": false,
 						"isConfigureAllowed": false,
 						"isChatAllowed": false
@@ -755,7 +832,11 @@
 							"bgColor": "bg-blue-400"
 						}
 					],
-					"status": "Active"
+					"status": {
+						"name": "Active",
+						"bgColor": "bg-green-500",
+						"textColor": "text-green-500"
+					}
 				},
 				"message": "Hello, I am very interested in your project as a writer, can I join this exciting adventure ?",
 				"talent": "Writer",
@@ -798,7 +879,11 @@
 							"bgColor": "bg-blue-400"
 						}
 					],
-					"status": "Active"
+					"status": {
+						"name": "Active",
+						"bgColor": "bg-green-500",
+						"textColor": "text-green-500"
+					}
 				},
 				"message": "Hello, I am very interested in your project as a drawing teacher, can I join this exciting adventure ?",
 				"talent": "Drawing teacher",
@@ -821,6 +906,7 @@
 					"cover": "https://images.pexels.com/photos/256514/pexels-photo-256514.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 					"likes": 18,
 					"permissions": {
+						"isPublicAllowed": true,
 						"isPrivateAllowed": false,
 						"isConfigureAllowed": false,
 						"isChatAllowed": false
@@ -848,7 +934,11 @@
 							"bgColor": "bg-blue-400"
 						}
 					],
-					"status": "Active"
+					"status": {
+						"name": "Active",
+						"bgColor": "bg-green-500",
+						"textColor": "text-green-500"
+					}
 				},
 				"message": "Hello, I am very interested in your project as an editor, can I join this exciting adventure ?",
 				"talent": "Editor",
@@ -871,6 +961,7 @@
 					"cover": "https://cms-assets.themuse.com/media/lead/_1200x630_crop_center-center_82_none/3000a530-7462-4e3e-bc17-a36c3e56407e.png?mtime=1568865848",
 					"likes": 50,
 					"permissions": {
+						"isPublicAllowed": true,
 						"isPrivateAllowed": false,
 						"isConfigureAllowed": false,
 						"isChatAllowed": false
@@ -896,7 +987,11 @@
 							"bgColor": "bg-blue-400"
 						}
 					],
-					"status": "Active"
+					"status": {
+						"name": "Active",
+						"bgColor": "bg-green-500",
+						"textColor": "text-green-500"
+					}
 				},
 				"message": "Hello, I am very interested in your project as a coder, can I join this exciting adventure ?",
 				"talent": "Coder",
@@ -939,7 +1034,11 @@
 							"bgColor": "bg-yellow-400"
 						}
 					],
-					"status": "Active"
+					"status": {
+						"name": "Active",
+						"bgColor": "bg-green-500",
+						"textColor": "text-green-500"
+					}
 				},
 				"message": "Hello, I am very interested in your project as a photographer, can I join this exciting adventure ?",
 				"talent": "Photographer",
@@ -957,9 +1056,11 @@
 		]
 	},
 	"notifications": {
+		"globalNotif": 5,
 		"myProfileNotif": 0,
 		"myProjectsNotif": 3,
-		"settingsNotif": 0,
+		"myMessagesNotif": 2,
+		"mySettingsNotif": 0,
 		"helpNotif": 0,
 		"invitationsNotif": 1,
 		"requestsNotif": 2

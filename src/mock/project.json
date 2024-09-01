@@ -96,6 +96,34 @@
 		}
 	],
 	"talentProfilePicture": "https://p7.hiclipart.com/preview/355/848/997/computer-icons-user-profile-google-account-photos-icon-account.jpg",
+	"status": {
+		"name": "Active",
+		"bgColor": "bg-green-500",
+		"textColor": "text-green-500"
+	},
+	"creator": "Brad_Anderson",
+	"creatorProfilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU",
+	"userId": "12345",
+	"members": [
+		{
+			"userId": "12345",
+			"username": "Brad Anderson",
+			"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU",
+			"role": "Director"
+		},
+		{
+			"userId": "1745",
+			"username": "Scott Kosar",
+			"profilePicture": "https://static.wikia.nocookie.net/headhuntershorrorhouse/images/2/20/Scott_Kosar.jpg/revision/latest?cb=20101120165807",
+			"role": "Screenwriter"
+		},
+		{
+			"userId": "56468",
+			"username": "Carlos Fernández",
+			"profilePicture": "https://media.licdn.com/dms/image/C4D22AQFMBGih4742dw/feedshare-shrink_800/0/1557307992723?e=2147483647&v=beta&t=7cQShBw07SJxBvKtDRzF2Tu659wVKJPgrixxtCK9Mo0",
+			"role": "Producer"
+		}
+	],
 	"qnasCount": 14,
 	"qnas": [
 		{
@@ -180,30 +208,6 @@
 			"title": "Post-Production",
 			"details": "In the post-production phase, the focus shifts to editing and finalizing the film. This includes cutting and assembling the footage, adding visual effects, sound design, and music scoring. Color correction and sound mixing enhance the film's aesthetic and auditory appeal. Once the final cut is approved, the film is prepared for distribution, which involves creating marketing materials and organizing premiere events or festival submissions.",
 			"status": "not started"
-		}
-	],
-	"status": "Project active",
-	"creator": "Brad_Anderson",
-	"creatorProfilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU",
-	"userId": "12345",
-	"members": [
-		{
-			"userId": "12345",
-			"username": "Brad Anderson",
-			"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU",
-			"role": "Director"
-		},
-		{
-			"userId": "1745",
-			"username": "Scott Kosar",
-			"profilePicture": "https://static.wikia.nocookie.net/headhuntershorrorhouse/images/2/20/Scott_Kosar.jpg/revision/latest?cb=20101120165807",
-			"role": "Screenwriter"
-		},
-		{
-			"userId": "56468",
-			"username": "Carlos Fernández",
-			"profilePicture": "https://media.licdn.com/dms/image/C4D22AQFMBGih4742dw/feedshare-shrink_800/0/1557307992723?e=2147483647&v=beta&t=7cQShBw07SJxBvKtDRzF2Tu659wVKJPgrixxtCK9Mo0",
-			"role": "Producer"
 		}
 	],
 	"commentsCount": 6,

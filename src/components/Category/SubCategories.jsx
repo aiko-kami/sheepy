@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { useState, useEffect } from "react";
 import { updateUrlParameters } from "@/utils/urlParameter";
@@ -58,16 +60,29 @@ const SubCategories = ({ category, setSelectedSubCategory }) => {
 				<p className="mb-2 sm:mb-4 text-lg sm:text-xl">Filter on sub-categories:</p>
 				<div className="grid grid-flow-col gap-6 overflow-x-auto">
 					{category.subCategories.map((subCategory, index) => (
-						<div
+						<motion.div
 							key={index}
 							onClick={() => handleSubCategoryClick(subCategory)}
-							className={`border-2 border-${category.colors.colorBase} text-nowrap rounded-lg p-2 mb-2 cursor-pointer ${
-								selectedSubCategory?.name === subCategory.name && `bg-${category.colors.colorBase}`
+							className={`relative border-2 border-${category.colors.colorBase} text-nowrap rounded-lg p-2 mb-2 cursor-pointer overflow-hidden ${
+								selectedSubCategory?.name === subCategory.name && `bg-${category.colors.colorBase} text-white`
 							}`}
+							initial="rest"
+							whileHover="hover"
+							animate="rest"
 						>
-							{subCategory.symbol && <span className="mr-2">{subCategory.symbol}</span>}
-							{subCategory.name}
-						</div>
+							<motion.span
+								className={`absolute inset-0 bg-${category.colors.colorBase}`}
+								variants={{
+									rest: { height: 0, top: "100%" },
+									hover: { height: "100%", top: 0 },
+								}}
+								transition={{ duration: 0.1, ease: "easeInOut" }}
+							/>
+							<span className="relative z-10">
+								{subCategory.symbol && <span className="mr-2">{subCategory.symbol}</span>}
+								{subCategory.name}
+							</span>
+						</motion.div>
 					))}
 				</div>
 			</div>

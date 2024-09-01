@@ -68,7 +68,7 @@ const ProjectsTabsList = ({ projects }) => {
 				</TabContent>
 				<TabContent id="tabProjectCompleted" activeTab={activeTab}>
 					<ul className="grid sm:grid-cols-2 gap-4">
-						{projects.projectsCompleted.map((project, index) => (
+						{projects.projectsLike.map((project, index) => (
 							<li key={index}>
 								<ProjectHorizontalCard project={project} animate={true} />
 							</li>

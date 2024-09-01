@@ -33,7 +33,11 @@
 				"size": "xs"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"title": "Build a Treehouse",
@@ -63,7 +67,11 @@
 				"size": "xs"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"title": "Start a Podcast",
@@ -98,7 +106,11 @@
 				"size": "xs"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"title": "Organize a Charity Event",
@@ -128,6 +140,10 @@
 				"size": "xs"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	}
 ]

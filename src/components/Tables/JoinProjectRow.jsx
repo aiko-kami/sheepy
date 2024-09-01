@@ -6,8 +6,8 @@ import { useState } from "react";
 import Modal from "@/components/Modals/Modal";
 import JoinProjectDetailsModal from "@/components/Modals/JoinProjectDetailsModal";
 import { Badge, Status } from "@/components/Badges/Badges";
-import RequestsActions from "@/components/UserProjectsPrivate/RequestsActions";
-import InvitationsActions from "@/components/UserProjectsPrivate/InvitationsActions";
+import RequestsActions from "@/components/User/UserProjectsPrivate/RequestsActions";
+import InvitationsActions from "@/components/User/UserProjectsPrivate/InvitationsActions";
 
 const JoinProjectRow = ({ joinProject, type }) => {
 	const [modalDisplay, setModalDisplay] = useState(false);
@@ -44,7 +44,7 @@ const JoinProjectRow = ({ joinProject, type }) => {
 				</td>
 				<td className="p-2 md:px-4 md:py-2 text-center">
 					<button type="button" onClick={showModal}>
-						<Status name={joinProject.status.name} size={"xs"} rounded={"xs"} bgColor={joinProject.status.bgColor} bgColorHover={joinProject.status.bgColorHover} />
+						<Status name={joinProject.status.name} size={"xs"} rounded={"xs"} bgColor={joinProject.status.bgColor} />
 					</button>
 				</td>
 				<td className="p-2 md:px-4 md:py-2">

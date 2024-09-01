@@ -29,7 +29,11 @@
 					"bgColor": "bg-blue-400"
 				}
 			],
-			"status": "Active"
+			"status": {
+				"name": "Active",
+				"bgColor": "bg-green-500",
+				"textColor": "text-green-500"
+			}
 		},
 		{
 			"projectId": 479,
@@ -60,7 +64,11 @@
 					"bgColor": "bg-blue-300"
 				}
 			],
-			"status": "Active"
+			"status": {
+				"name": "Active",
+				"bgColor": "bg-green-500",
+				"textColor": "text-green-500"
+			}
 		},
 		{
 			"projectId": 27,
@@ -91,7 +99,11 @@
 					"bgColor": "bg-red-400"
 				}
 			],
-			"status": "Active"
+			"status": {
+				"name": "Active",
+				"bgColor": "bg-green-500",
+				"textColor": "text-green-500"
+			}
 		},
 		{
 			"projectId": 12,
@@ -122,7 +134,11 @@
 					"bgColor": "bg-orange-400"
 				}
 			],
-			"status": "Active"
+			"status": {
+				"name": "Active",
+				"bgColor": "bg-green-500",
+				"textColor": "text-green-500"
+			}
 		},
 		{
 			"projectId": 6,
@@ -153,7 +169,11 @@
 					"bgColor": "bg-green-400"
 				}
 			],
-			"status": "Active"
+			"status": {
+				"name": "Active",
+				"bgColor": "bg-green-500",
+				"textColor": "text-green-500"
+			}
 		},
 		{
 			"projectId": 89,
@@ -184,7 +204,11 @@
 					"bgColor": "bg-green-400"
 				}
 			],
-			"status": "Active"
+			"status": {
+				"name": "Active",
+				"bgColor": "bg-green-500",
+				"textColor": "text-green-500"
+			}
 		}
 	],
 	"users": [
@@ -282,7 +306,11 @@
 								"bgColor": "bg-blue-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 479,
@@ -313,7 +341,11 @@
 								"bgColor": "bg-blue-300"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 27,
@@ -344,7 +376,11 @@
 								"bgColor": "bg-red-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					}
 				],
 				"projectsCreated": [
@@ -377,7 +413,11 @@
 								"bgColor": "bg-orange-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 6,
@@ -408,7 +448,11 @@
 								"bgColor": "bg-green-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 89,
@@ -439,7 +483,11 @@
 								"bgColor": "bg-green-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 27,
@@ -470,10 +518,14 @@
 								"bgColor": "bg-red-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					}
 				],
-				"projectsCompleted": [
+				"projectsLike": [
 					{
 						"projectId": 479,
 						"title": "Planting Trees Initiative",
@@ -503,7 +555,11 @@
 								"bgColor": "bg-blue-300"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 27,
@@ -534,7 +590,11 @@
 								"bgColor": "bg-red-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					}
 				]
 			}
@@ -622,7 +682,11 @@
 								"bgColor": "bg-blue-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 479,
@@ -653,7 +717,11 @@
 								"bgColor": "bg-blue-300"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 27,
@@ -684,7 +752,11 @@
 								"bgColor": "bg-red-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					}
 				],
 				"projectsCreated": [
@@ -717,7 +789,11 @@
 								"bgColor": "bg-orange-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 6,
@@ -748,7 +824,11 @@
 								"bgColor": "bg-green-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 89,
@@ -779,7 +859,11 @@
 								"bgColor": "bg-green-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 27,
@@ -810,10 +894,14 @@
 								"bgColor": "bg-red-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					}
 				],
-				"projectsCompleted": [
+				"projectsLike": [
 					{
 						"projectId": 479,
 						"title": "Planting Trees Initiative",
@@ -843,7 +931,11 @@
 								"bgColor": "bg-blue-300"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 27,
@@ -874,7 +966,11 @@
 								"bgColor": "bg-red-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					}
 				]
 			}
@@ -962,7 +1058,11 @@
 								"bgColor": "bg-blue-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 479,
@@ -993,7 +1093,11 @@
 								"bgColor": "bg-blue-300"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 27,
@@ -1024,7 +1128,11 @@
 								"bgColor": "bg-red-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					}
 				],
 				"projectsCreated": [
@@ -1057,7 +1165,11 @@
 								"bgColor": "bg-orange-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 6,
@@ -1088,7 +1200,11 @@
 								"bgColor": "bg-green-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 89,
@@ -1119,7 +1235,11 @@
 								"bgColor": "bg-green-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 27,
@@ -1150,10 +1270,14 @@
 								"bgColor": "bg-red-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					}
 				],
-				"projectsCompleted": [
+				"projectsLike": [
 					{
 						"projectId": 479,
 						"title": "Planting Trees Initiative",
@@ -1183,7 +1307,11 @@
 								"bgColor": "bg-blue-300"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 27,
@@ -1214,7 +1342,11 @@
 								"bgColor": "bg-red-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					}
 				]
 			}
@@ -1302,7 +1434,11 @@
 								"bgColor": "bg-blue-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 479,
@@ -1333,7 +1469,11 @@
 								"bgColor": "bg-blue-300"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 27,
@@ -1364,7 +1504,11 @@
 								"bgColor": "bg-red-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					}
 				],
 				"projectsCreated": [
@@ -1397,7 +1541,11 @@
 								"bgColor": "bg-orange-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 6,
@@ -1428,7 +1576,11 @@
 								"bgColor": "bg-green-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 89,
@@ -1459,7 +1611,11 @@
 								"bgColor": "bg-green-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 27,
@@ -1490,10 +1646,14 @@
 								"bgColor": "bg-red-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					}
 				],
-				"projectsCompleted": [
+				"projectsLike": [
 					{
 						"projectId": 479,
 						"title": "Planting Trees Initiative",
@@ -1523,7 +1683,11 @@
 								"bgColor": "bg-blue-300"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					},
 					{
 						"projectId": 27,
@@ -1554,7 +1718,11 @@
 								"bgColor": "bg-red-400"
 							}
 						],
-						"status": "Active"
+						"status": {
+							"name": "Active",
+							"bgColor": "bg-green-500",
+							"textColor": "text-green-500"
+						}
 					}
 				]
 			}

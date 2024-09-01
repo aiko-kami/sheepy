@@ -20,12 +20,17 @@ const UserNavbar = () => {
 						className={`${getLinkClasses("/users/my-profile")} rounded-t-lg sm:rounded-none sm:rounded-s-lg sm:border-r sm:border-gray-700`}
 						aria-current={pathname === "/users/my-profile" ? "page" : undefined}
 					>
-						My profile
+						My Profile
 					</Link>
 				</li>
 				<li className="w-full focus-within:z-10">
 					<Link href="/users/my-projects" className={`${getLinkClasses("/users/my-projects")} sm:border-r sm:border-gray-700`}>
-						My projects
+						My Projects
+					</Link>
+				</li>
+				<li className="w-full focus-within:z-10">
+					<Link href="/users/my-messages" className={`${getLinkClasses("/users/my-messages")} sm:border-r sm:border-gray-700`}>
+						My Messages
 					</Link>
 				</li>
 				<li className="w-full focus-within:z-10">

@@ -1,10 +1,8 @@
 import Link from "next/link";
 import Notification from "@/components/Badges/Notification";
 
-Notification;
-
 const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown }) => {
-	const { myProfileNotif, myProjectsNotif, settingsNotif, helpNotif } = notifications;
+	const { myProfileNotif, myProjectsNotif, myMessagesNotif, mySettingsNotif, helpNotif } = notifications;
 
 	return (
 		<div className={`z-10 absolute top-16 right-2 bg-white rounded-lg shadow w-36 tn:w-44 divide-y text-sm text-center divide-gray-300 ${dropdownOpen ? "inline-block" : "hidden"}`}>
@@ -19,7 +17,7 @@ const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown
 						</div>
 					)}
 					<Link href="/users/my-profile" onClick={closeDropdown} className="block py-2 hover:bg-gray-200 duration-200 active:text-base-450">
-						My profile
+						My Profile
 					</Link>
 				</li>
 				<li className="relative">
@@ -29,17 +27,27 @@ const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown
 						</div>
 					)}
 					<Link href="/users/my-projects" onClick={closeDropdown} className="block py-2 hover:bg-gray-200 duration-200 active:text-base-450">
-						My projects
+						My Projects
 					</Link>
 				</li>
 				<li className="relative">
-					{settingsNotif > 0 && (
+					{myMessagesNotif > 0 && (
 						<div className="absolute top-1.5 right-4">
-							<Notification value={settingsNotif} size={"sm"} notifColor={"pink"} />
+							<Notification value={myMessagesNotif} size={"sm"} notifColor={"pink"} />
+						</div>
+					)}
+					<Link href="/users/my-messages" onClick={closeDropdown} className="block py-2 hover:bg-gray-200 duration-200 active:text-base-450">
+						My Messages
+					</Link>
+				</li>
+				<li className="relative">
+					{mySettingsNotif > 0 && (
+						<div className="absolute top-1.5 right-4">
+							<Notification value={mySettingsNotif} size={"sm"} notifColor={"pink"} />
 						</div>
 					)}
 					<Link href="/users/my-settings" onClick={closeDropdown} className="block py-2 hover:bg-gray-200 duration-200 active:text-base-450">
-						My settings
+						My Settings
 					</Link>
 				</li>
 				<li className="relative">

@@ -3,10 +3,10 @@
 import { useState } from "react";
 
 import { Button } from "@/components/Buttons/Buttons";
-import MySettingsPrivacy from "@/components/UserSettingsPrivate/MySettingsPrivacy";
-import MySettingsAppearance from "@/components/UserSettingsPrivate/MySettingsAppearance";
-import MySettingsLanguages from "@/components/UserSettingsPrivate/MySettingsLanguages";
-import MySettingsNotifications from "@/components/UserSettingsPrivate/MySettingsNotifications";
+import MySettingsPrivacy from "@/components/User/UserSettingsPrivate/MySettingsPrivacy";
+import MySettingsAppearance from "@/components/User/UserSettingsPrivate/MySettingsAppearance";
+import MySettingsLanguages from "@/components/User/UserSettingsPrivate/MySettingsLanguages";
+import MySettingsNotifications from "@/components/User/UserSettingsPrivate/MySettingsNotifications";
 
 const MySettings = ({ user }) => {
 	const settings = user.settings;

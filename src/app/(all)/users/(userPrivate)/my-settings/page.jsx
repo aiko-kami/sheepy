@@ -1,4 +1,4 @@
-import MySettings from "@/components/UserSettingsPrivate/MySettings";
+import MySettings from "@/components/User/UserSettingsPrivate/MySettings";
 
 import user from "@/mock/user.json";
 

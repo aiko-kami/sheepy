@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import Dropdown from "./Dropdown";
 import user from "@/mock/user.json";
+import Notification from "@/components/Badges/Notification";
 
 const Login = () => {
 	const [theme, setTheme] = useState(user.settings.appearance || "light");
@@ -55,7 +56,7 @@ const Login = () => {
 						{/* <!-- Dropdown Avatar button --> */}
 						<div className="inline-flex items-center sm:px-2">
 							<button
-								className="flex text-sm bg-base-100 rounded-full w-12 md:me-0 hover:ring-4 hover:ring-slate-700 duration-200 active:ring-base-450"
+								className="flex text-sm bg-base-100 relative rounded-full w-12 md:me-0 hover:ring-4 hover:ring-slate-700 duration-200 active:ring-base-450"
 								type="button"
 								aria-expanded={dropdownOpen ? "true" : "false"}
 								onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -63,7 +64,15 @@ const Login = () => {
 								<span className="sr-only">Open user menu</span>
 
 								<Image className="rounded-full object-cover w-12 h-12" src={user.profilePicture} alt="user picture" height={0} width={0} sizes="100vw" />
+								{user.notifications.globalNotif > 0 && (
+									<>
+										<div className="absolute -bottom-2 right-10 z-10">
+											<Notification value={user.notifications.globalNotif} size={"xs"} notifColor={"pink"} />
+										</div>
+									</>
+								)}
 							</button>
+
 							{/* <!-- Dropdown menu --> */}
 							<Dropdown username={user.username} userId={user.userId} notifications={user.notifications} dropdownOpen={dropdownOpen} closeDropdown={closeDropdown} />
 						</div>

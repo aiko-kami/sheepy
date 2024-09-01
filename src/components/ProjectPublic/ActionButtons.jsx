@@ -7,7 +7,7 @@ import Modal from "@/components/Modals/Modal";
 import ProjectApplicationModal from "@/components/Modals/ProjectApplicationModal";
 import { Button, ButtonCircle } from "@/components/Buttons/Buttons";
 
-const HeadSection = ({ project }) => {
+const HeadSection = ({ project, user }) => {
 	const [modalDisplay, setModalDisplay] = useState(false);
 
 	const showModal = () => {

@@ -1,7 +1,7 @@
-import UserCardAboutMe from "@/components/UserProfilePublic/UserCardAboutMe";
-import UserCardBio from "@/components/UserProfilePublic/UserCardBio";
-import UserCardTalents from "@/components/UserProfilePublic/UserCardTalents";
-import UserCardProjects from "@/components/UserProfilePublic/UserCardProjects";
+import UserCardAboutMe from "@/components/User/UserProfilePublic/UserCardAboutMe";
+import UserCardBio from "@/components/User/UserProfilePublic/UserCardBio";
+import UserCardTalents from "@/components/User/UserProfilePublic/UserCardTalents";
+import UserCardProjects from "@/components/User/UserProfilePublic/UserCardProjects";
 
 import user from "@/mock/user.json";
 

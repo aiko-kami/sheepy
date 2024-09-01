@@ -83,7 +83,7 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 
   - [x] Projects I created
   - [x] Projects I work on
-  - [x] Projects completed
+  - [x] Projects I like
   - [x] Projects invitations
     - [x] Modal View
     - [x] Modal Accept/Decline
@@ -112,9 +112,11 @@ Don't let your ideas and talents go to waste – join Sheepy now!
   - [] Why us
   - [] Pricing and fees
 
+- [] Project edition page (dashboards with different projects?)
 - [] Project description private page
-- [] Project edition page
 - [] View my profile page
+- [] My messages page
+- [] Footer pages
 
 ### Components
 
@@ -140,6 +142,22 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 
 - [x] Add button "See more" on the home page
 - [x] Add project details (category) in project horizontal card
+- [x] Add status on project cards and table for My Projects
+
+---
+
+### Project types organisation
+
+Groups:
+
+- Projects I Own (Projects I Created, drafts, submitted - can be active, on hold, completed, archived, cancelled, rejected)
+- Projects I work on ( - can be active, on hold, completed, archived, cancelled)
+- Projects I like ( - can be active, on hold, completed, archived, cancelled)
+
+Projects Invitations
+Projects requests
+
+Possible status: drafts, submitted, active, on hold, completed, archived, cancelled, rejected
 
 ---
 

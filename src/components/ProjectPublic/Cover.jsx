@@ -23,8 +23,8 @@ const HeadSection = ({ project }) => {
 					<p>{project.likes} likes</p>
 				</li>
 				<li className="flex sm:ml-4">
-					<IoFitness className="text-green-600 mr-1 text-2xl justify-center" />
-					<p className="text-green-600 font-semibold">{project.status}</p>
+					<IoFitness className={`${project.status.textColor} mr-1 text-2xl justify-center`} />
+					<p className={`${project.status.textColor} font-semibold`}>{project.status.name}</p>
 				</li>
 			</ul>
 		</>

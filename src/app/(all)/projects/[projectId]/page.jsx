@@ -10,6 +10,7 @@ import StepsQAComments from "@/components/ProjectPublic/StepsQAComments";
 import SimilarProjects from "@/components/ProjectPublic/SimilarProjects";
 
 import project from "@/mock/project.json";
+import user from "@/mock/user.json";
 
 export const metadata = {
 	title: "Project - Sheepy",
@@ -33,13 +34,13 @@ const ProjectPublicPage = () => {
 
 					<div>
 						{/* Buttons Join project, Like and Share */}
-						<ActionButtons project={project} />
+						<ActionButtons project={project} user={user} />
 
 						{/* Goal */}
 						<ProjectGoal goal={project.goal} />
 
 						{/* Talents needed */}
-						<TalentsNeeded project={project} />
+						<TalentsNeeded project={project} user={user} />
 
 						{/* Tags */}
 						<ProjectTags tags={project.tags} />

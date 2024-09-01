@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Badge, BadgeRounded, Status } from "@/components/Badges/Badges";
-import MyProjectsActions from "@/components/UserProjectsPrivate/MyProjectsActions";
-import RequestsActions from "@/components/UserProjectsPrivate/RequestsActions";
-import InvitationsActions from "@/components/UserProjectsPrivate/InvitationsActions";
+import MyProjectsActions from "@/components/User/UserProjectsPrivate/MyProjectsActions";
+import RequestsActions from "@/components/User/UserProjectsPrivate/RequestsActions";
+import InvitationsActions from "@/components/User/UserProjectsPrivate/InvitationsActions";
 
 const ProjectCard = ({ project, animate }) => {
 	const { projectId, title, summary, cover, category, tags } = project;
@@ -150,7 +150,7 @@ const JoinProjectHorizontalCardActions = ({ joinProject, animate, type }) => {
 					</div>
 					<p className="line-clamp-2 mb-3">{message}</p>
 					<div className="flex items-center justify-end gap-2">
-						<Status name={joinProject.status.name} size={"xs"} rounded={"xs"} bgColor={joinProject.status.bgColor} bgColorHover={joinProject.status.bgColorHover} />
+						<Status name={joinProject.status.name} size={"xs"} rounded={"xs"} bgColor={joinProject.status.bgColor} />
 						<div className="flex justify-end text-gray-300">
 							{type === "invitation" && <InvitationsActions invitation={joinProject} iconSize={"lg"} />}
 							{type === "request" && <RequestsActions request={joinProject} iconSize={"lg"} />}

@@ -1,6 +1,6 @@
 import "@/app/globals.css";
 
-import UserNavbar from "@/components/UserProfilePrivate/UserNavbar";
+import UserNavbar from "@/components/User/UserNavbar";
 
 export default function RootLayout({ children }) {
 	return (

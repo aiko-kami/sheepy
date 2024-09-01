@@ -1,6 +1,6 @@
-import UserCardPictureBio from "@/components/UserProfilePrivate/UserCardPictureBio";
-import UserCardDetails from "@/components/UserProfilePrivate/UserCardDetails";
-import UserCardAccount from "@/components/UserProfilePrivate/UserCardAccount";
+import UserCardPictureBio from "@/components/User/UserProfilePrivate/UserCardPictureBio";
+import UserCardDetails from "@/components/User/UserProfilePrivate/UserCardDetails";
+import UserCardAccount from "@/components/User/UserProfilePrivate/UserCardAccount";
 
 import user from "@/mock/user.json";
 

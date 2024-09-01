@@ -9,7 +9,7 @@ import { Button } from "@/components/Buttons/Buttons";
 import Modal from "@/components/Modals/Modal";
 import ProjectApplicationModal from "@/components/Modals/ProjectApplicationModal";
 
-const TalentsNeeded = ({ project }) => {
+const TalentsNeeded = ({ project, user }) => {
 	const [modalDisplay, setModalDisplay] = useState(false);
 	const [selectedRole, setSelectedRole] = useState("");
 

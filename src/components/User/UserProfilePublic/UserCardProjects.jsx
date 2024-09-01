@@ -1,4 +1,4 @@
-import ProjectsTabsList from "@/components/UserProfilePublic/ProjectsTabsList";
+import ProjectsTabsList from "@/components/User/UserProfilePublic/ProjectsTabsList";
 
 const UserCardProjects = ({ projects }) => {
 	return (

@@ -31,7 +31,11 @@
 				"bgColor": "bg-green-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 947326,
@@ -60,7 +64,11 @@
 				"bgColor": "bg-green-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 120489,
@@ -93,7 +101,11 @@
 				"bgColor": "bg-purple-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 756230,
@@ -122,7 +134,11 @@
 				"bgColor": "bg-yellow-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 892413,
@@ -151,7 +167,11 @@
 				"bgColor": "bg-yellow-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 431052,
@@ -180,7 +200,11 @@
 				"bgColor": "bg-green-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 674829,
@@ -209,7 +233,11 @@
 				"bgColor": "bg-green-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 208345,
@@ -238,7 +266,11 @@
 				"bgColor": "bg-blue-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 536921,
@@ -267,7 +299,11 @@
 				"bgColor": "bg-red-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 987234,
@@ -296,7 +332,11 @@
 				"bgColor": "bg-orange-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 421598,
@@ -325,7 +365,11 @@
 				"bgColor": "bg-yellow-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 780143,
@@ -354,7 +398,11 @@
 				"bgColor": "bg-red-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 629547,
@@ -383,7 +431,11 @@
 				"bgColor": "bg-green-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 301824,
@@ -412,7 +464,11 @@
 				"bgColor": "bg-blue-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 864290,
@@ -441,7 +497,11 @@
 				"bgColor": "bg-red-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 439258,
@@ -470,7 +530,11 @@
 				"bgColor": "bg-blue-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 712036,
@@ -499,7 +563,11 @@
 				"bgColor": "bg-orange-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 958120,
@@ -528,7 +596,11 @@
 				"bgColor": "bg-blue-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 640581,
@@ -557,7 +629,11 @@
 				"bgColor": "bg-yellow-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 372914,
@@ -586,7 +662,11 @@
 				"bgColor": "bg-yellow-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 805623,
@@ -615,7 +695,11 @@
 				"bgColor": "bg-yellow-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 193472,
@@ -644,7 +728,11 @@
 				"bgColor": "bg-yellow-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 648295,
@@ -673,7 +761,11 @@
 				"bgColor": "bg-purple-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 320748,
@@ -702,7 +794,11 @@
 				"bgColor": "bg-orange-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 579162,
@@ -731,7 +827,11 @@
 				"bgColor": "bg-red-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 814935,
@@ -760,7 +860,11 @@
 				"bgColor": "bg-blue-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 260498,
@@ -789,7 +893,11 @@
 				"bgColor": "bg-red-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 736841,
@@ -818,7 +926,11 @@
 				"bgColor": "bg-yellow-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 892710,
@@ -847,7 +959,11 @@
 				"bgColor": "bg-orange-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 147362,
@@ -876,7 +992,11 @@
 				"bgColor": "bg-blue-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 603258,
@@ -905,7 +1025,11 @@
 				"bgColor": "bg-yellow-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 478591,
@@ -934,7 +1058,11 @@
 				"bgColor": "bg-purple-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 215943,
@@ -963,7 +1091,11 @@
 				"bgColor": "bg-yellow-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 689274,
@@ -992,7 +1124,11 @@
 				"bgColor": "bg-blue-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 902314,
@@ -1021,7 +1157,11 @@
 				"bgColor": "bg-yellow-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 345789,
@@ -1050,7 +1190,11 @@
 				"bgColor": "bg-purple-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 721690,
@@ -1079,7 +1223,11 @@
 				"bgColor": "bg-black text-gray-200"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 806243,
@@ -1108,7 +1256,11 @@
 				"bgColor": "bg-blue-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 159387,
@@ -1137,7 +1289,11 @@
 				"bgColor": "bg-blue-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 495872,
@@ -1166,7 +1322,11 @@
 				"bgColor": "bg-green-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 638214,
@@ -1195,7 +1355,11 @@
 				"bgColor": "bg-yellow-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 710349,
@@ -1224,7 +1388,11 @@
 				"bgColor": "bg-blue-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 524980,
@@ -1253,7 +1421,11 @@
 				"bgColor": "bg-blue-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 871263,
@@ -1282,7 +1454,11 @@
 				"bgColor": "bg-purple-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 320598,
@@ -1311,7 +1487,11 @@
 				"bgColor": "bg-yellow-700"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 940182,
@@ -1340,7 +1520,11 @@
 				"bgColor": "bg-yellow-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 681475,
@@ -1369,7 +1553,11 @@
 				"bgColor": "bg-green-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 739051,
@@ -1398,7 +1586,11 @@
 				"bgColor": "bg-green-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 285794,
@@ -1427,7 +1619,11 @@
 				"bgColor": "bg-blue-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 106238,
@@ -1456,7 +1652,11 @@
 				"bgColor": "bg-yellow-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 472519,
@@ -1485,7 +1685,11 @@
 				"bgColor": "bg-yellow-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 958734,
@@ -1514,7 +1718,11 @@
 				"bgColor": "bg-green-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 621390,
@@ -1543,7 +1751,11 @@
 				"bgColor": "bg-blue-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 403176,
@@ -1572,7 +1784,11 @@
 				"bgColor": "bg-blue-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 812549,
@@ -1601,7 +1817,11 @@
 				"bgColor": "bg-yellow-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 569234,
@@ -1630,7 +1850,11 @@
 				"bgColor": "bg-green-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	},
 	{
 		"projectId": 247831,
@@ -1659,6 +1883,10 @@
 				"bgColor": "bg-yellow-400"
 			}
 		],
-		"status": "Active"
+		"status": {
+			"name": "Active",
+			"bgColor": "bg-green-500",
+			"textColor": "text-green-500"
+		}
 	}
 ]

@@ -2,7 +2,7 @@ const Notification = ({ value, size, notifColor }) => {
 	let textSize;
 	switch (size) {
 		case "xs":
-			textSize = "text-[12px]";
+			textSize = "text-[10px] px-2 min-h-[12px] min-w-[12px] ring-4 ring-base-500";
 			break;
 		case "sm":
 			textSize = "text-[12px] px-2 pb-0.5 h-6";

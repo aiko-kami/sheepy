@@ -1,4 +1,4 @@
-import MyProjects from "@/components/UserProjectsPrivate/MyProjects";
+import MyProjects from "@/components/User/UserProjectsPrivate/MyProjects";
 
 import user from "@/mock/user.json";
 

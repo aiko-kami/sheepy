@@ -2,7 +2,6 @@ import "@/app/globals.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import UserNavbar from "@/components/UserProfilePrivate/UserNavbar";
 
 export default function RootLayout({ children }) {
 	return (
