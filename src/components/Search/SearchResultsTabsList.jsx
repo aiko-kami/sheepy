@@ -9,6 +9,7 @@ import { ProjectHorizontalCard } from "@/components/Cards/Projects/ProjectCards"
 import ProjectTable from "@/components/Tables/ProjectTable";
 import CategoryTable from "@/components/Tables/CategoryTable";
 import TalentTable from "@/components/Tables/TalentTable";
+import LocationTable from "@/components/Tables/LocationTable";
 import TalentHorizontalCard from "@/components/Cards/Talents/TalentHorizontalCard";
 import CategoryHorizontalCard from "@/components/Cards/Categories/CategoryHorizontalCard";
 import SubCategoryHorizontalCard from "@/components/Cards/Categories/SubCategoryHorizontalCard";
@@ -63,7 +64,7 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 									))}
 								</ul>
 							)}
-							<div className="relative overflow-x-auto shadow-md sm:rounded-lg">{displayMode === "table" && <ProjectTable projects={searchResults.projects} />}</div>
+							<div className="overflow-x-auto shadow-md sm:rounded-lg">{displayMode === "table" && <ProjectTable projects={searchResults.projects} />}</div>
 						</>
 					) : (
 						<p className=" text-xl text-center pt-10">
@@ -83,7 +84,7 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 									))}
 								</ul>
 							)}
-							<div className="relative overflow-x-auto shadow-md sm:rounded-lg">{displayMode === "table" && <TalentTable users={searchResults.users} />}</div>
+							<div className="overflow-x-auto shadow-md sm:rounded-lg">{displayMode === "table" && <TalentTable users={searchResults.users} />}</div>
 						</>
 					) : (
 						<p className=" text-xl text-center pt-10">
@@ -103,7 +104,7 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 									))}
 								</ul>
 							)}
-							<div className="relative overflow-x-auto shadow-md sm:rounded-lg">{displayMode === "table" && <CategoryTable categories={categories} />}</div>
+							<div className="overflow-x-auto shadow-md sm:rounded-lg">{displayMode === "table" && <CategoryTable categories={categories} />}</div>
 						</>
 					) : (
 						<p className=" text-xl text-center pt-10">
@@ -128,13 +129,18 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 				</TabContent>
 				<TabContent id="tabLocations" activeTab={activeTab}>
 					{searchResults.locations && searchResults.locations.length !== 0 ? (
-						<ul className="grid gap-5 tn:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:mx-auto max-w-320">
-							{searchResults.locations.map((location, index) => (
-								<li key={index} className="flex justify-center">
-									<LocationHorizontalCard location={location} />
-								</li>
-							))}
-						</ul>
+						<>
+							{displayMode === "cards" && (
+								<ul className="grid gap-5 tn:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:mx-auto max-w-320">
+									{searchResults.locations.map((location, index) => (
+										<li key={index} className="flex justify-center">
+											<LocationHorizontalCard location={location} />
+										</li>
+									))}
+								</ul>
+							)}
+							<div className="overflow-x-auto shadow-md sm:rounded-lg flex justify-center">{displayMode === "table" && <LocationTable locations={searchResults.locations} />}</div>
+						</>
 					) : (
 						<p className=" text-xl text-center pt-10">
 							<span className="italic">No locations found</span> 😕
