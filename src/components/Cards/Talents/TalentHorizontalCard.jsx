@@ -4,7 +4,7 @@ import { BadgeRounded } from "@/components/Badges/Badges";
 import { IoLocationOutline } from "react-icons/io5";
 
 const TalentHorizontalCard = ({ user, animate }) => {
-	const { userId, username, profilePicture, description, talents } = user;
+	const { userId, username, profilePicture, locationCity, locationCountry, description, talents } = user;
 
 	// Conditional classes for animation
 	const animationClasses = animate ? "hover:-translate-y-1 transition ease-in duration-75" : "";
@@ -14,14 +14,14 @@ const TalentHorizontalCard = ({ user, animate }) => {
 			<div className={`grid grid-cols-4 p-2 items-center shadow-xl rounded-lg bg-blue-900 w-full sm:w-200 ${animationClasses}`}>
 				{/* Profile picture */}
 				<div className="hidden sm:flex col-span-1 justify-center">
-					<Link href="/users/01" className="">
+					<Link href={`/users/${userId}`}>
 						<Image src={profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover w-34 h-34 rounded-full shadow-md" />
 					</Link>
 				</div>
 				{/* Username, location, description and talents */}
 				<div className="tn:px-5 col-span-4 sm:col-span-3">
 					{/* Username */}
-					<Link href="/users/01">
+					<Link href={`/users/${userId}`}>
 						<h3 className="inline-block font-semibold text-center tn:text-left text-xl tn:text-3xl mb-1 overflow-hidden text-ellipsis">{username}</h3>
 					</Link>
 					{/* Location */}
@@ -30,7 +30,7 @@ const TalentHorizontalCard = ({ user, animate }) => {
 							<IoLocationOutline className="text-lg tn:text-xl" />
 						</div>
 						<p className="text-xs tn:text-sm">
-							{user.locationCity}, <span className="uppercase">{user.locationCountry}</span>
+							{locationCity}, <span className="uppercase">{locationCountry}</span>
 						</p>
 					</div>
 					{/* Description */}

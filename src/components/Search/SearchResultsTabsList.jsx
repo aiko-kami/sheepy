@@ -2,12 +2,13 @@
 
 import { useState } from "react";
 
-import { IoGridOutline, IoReorderFour } from "react-icons/io5";
-
+import DisplaySwitch from "@/components/Buttons/DisplaySwitch";
 import TabNavItem from "@/components/Tabs/TabNavItem";
 import TabContent from "@/components/Tabs/TabContent";
 import { ProjectHorizontalCard } from "@/components/Cards/Projects/ProjectCards";
 import ProjectTable from "@/components/Tables/ProjectTable";
+import CategoryTable from "@/components/Tables/CategoryTable";
+import TalentTable from "@/components/Tables/TalentTable";
 import TalentHorizontalCard from "@/components/Cards/Talents/TalentHorizontalCard";
 import CategoryHorizontalCard from "@/components/Cards/Categories/CategoryHorizontalCard";
 import SubCategoryHorizontalCard from "@/components/Cards/Categories/SubCategoryHorizontalCard";
@@ -19,11 +20,6 @@ import categories from "@/mock/categories.json";
 const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 	const [activeTab, setActiveTab] = useState(tab || "tabProjects");
 	const [displayMode, setDisplayMode] = useState("table");
-
-	const switchDisplay = () => {
-		displayMode === "table" && setDisplayMode("cards");
-		displayMode === "cards" && setDisplayMode("table");
-	};
 
 	const tabData = [
 		{ tabId: "tabProjects", label: "Projects" },
@@ -48,30 +44,16 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 					</li>
 				))}
 			</ul>
+			{/* Change display buttons */}
+			<div className="mb-4">
+				<DisplaySwitch displayMode={displayMode} setDisplayMode={setDisplayMode} />
+			</div>
 
 			{/* Tabs content */}
 			<div id="defaultTabContent" className="">
 				<TabContent id="tabProjects" activeTab={activeTab}>
 					{searchResults.projects && searchResults.projects.length !== 0 ? (
 						<>
-							{/* Change display buttons */}
-							<div className="flex justify-end mb-4">
-								<div className="text-right">
-									{displayMode === "table" && (
-										<>
-											<button onClick={switchDisplay}>
-												<IoGridOutline className="text-3xl hover:text-blue-400 duration-100 transition ease-in-out" title="Display project as cards" />
-											</button>
-										</>
-									)}
-									{displayMode === "cards" && (
-										<button onClick={switchDisplay}>
-											<IoReorderFour className="text-3xl hover:text-blue-400 duration-100 transition ease-in-out" title="Display project as a table" />
-										</button>
-									)}
-								</div>
-							</div>
-
 							{displayMode === "cards" && (
 								<ul className="grid gap-4">
 									{searchResults.projects.map((project, index) => (
@@ -91,13 +73,18 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 				</TabContent>
 				<TabContent id="tabTalents" activeTab={activeTab}>
 					{searchResults.users && searchResults.users.length !== 0 ? (
-						<ul className="grid gap-4">
-							{searchResults.users.map((user, index) => (
-								<li key={index} className="flex justify-center">
-									<TalentHorizontalCard user={user} animate={true} />
-								</li>
-							))}
-						</ul>
+						<>
+							{displayMode === "cards" && (
+								<ul className="grid gap-4">
+									{searchResults.users.map((user, index) => (
+										<li key={index} className="flex justify-center">
+											<TalentHorizontalCard user={user} animate={true} />
+										</li>
+									))}
+								</ul>
+							)}
+							<div className="relative overflow-x-auto shadow-md sm:rounded-lg">{displayMode === "table" && <TalentTable users={searchResults.users} />}</div>
+						</>
 					) : (
 						<p className=" text-xl text-center pt-10">
 							<span className="italic">No talents found</span> 😕
@@ -106,13 +93,18 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 				</TabContent>
 				<TabContent id="tabCategories" activeTab={activeTab}>
 					{categories && categories.length !== 0 ? (
-						<ul className="grid gap-8 sm:grid-cols-2 lg:mx-auto max-w-250">
-							{categories.map((category, index) => (
-								<li key={index} className="flex justify-center">
-									<CategoryHorizontalCard category={category} animate={true} />
-								</li>
-							))}
-						</ul>
+						<>
+							{displayMode === "cards" && (
+								<ul className="grid gap-8 sm:grid-cols-2 lg:mx-auto max-w-250">
+									{categories.map((category, index) => (
+										<li key={index} className="flex justify-center">
+											<CategoryHorizontalCard category={category} animate={true} />
+										</li>
+									))}
+								</ul>
+							)}
+							<div className="relative overflow-x-auto shadow-md sm:rounded-lg">{displayMode === "table" && <CategoryTable categories={categories} />}</div>
+						</>
 					) : (
 						<p className=" text-xl text-center pt-10">
 							<span className="italic">No categories found</span> 😕

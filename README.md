@@ -104,6 +104,12 @@ Don't let your ideas and talents go to waste – join Sheepy now!
   - [x] Languages
   - [x] Notifications
 
+- [] Project edition page (dashboards with different projects?)
+- [] Project description private page
+- [] View my profile page
+- [] My messages page
+- [] Footer pages
+
 - [] How it works
 
   - [] Take a tour
@@ -111,12 +117,6 @@ Don't let your ideas and talents go to waste – join Sheepy now!
   - [] Join a project
   - [] Why us
   - [] Pricing and fees
-
-- [] Project edition page (dashboards with different projects?)
-- [] Project description private page
-- [] View my profile page
-- [] My messages page
-- [] Footer pages
 
 ### Components
 
@@ -132,8 +132,11 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 - [x] Navbar for user profile private
 - [x] Add status in joinProject card
 - [x] Project table for search
+- [x] Talent table for search
 
-- [] Talent table for search
+- [x] Location table for search
+- [] Search sub-categories
+- [] Search tags
 - [] Other mosaic
 - [] Carousel with profiles or projects
 - [] Video presentation
@@ -143,6 +146,7 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 - [x] Add button "See more" on the home page
 - [x] Add project details (category) in project horizontal card
 - [x] Add status on project cards and table for My Projects
+- [x] Add filters for My Projects page
 
 ---
 

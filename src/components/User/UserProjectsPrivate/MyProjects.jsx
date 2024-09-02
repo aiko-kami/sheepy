@@ -9,6 +9,7 @@ import MyProjectsFilter from "@/components/User/UserProjectsPrivate/MyProjectsFi
 import MyProjectsCards from "@/components/User/UserProjectsPrivate/MyProjectCards";
 import MyJoinProjectsCards from "@/components/User/UserProjectsPrivate/MyJoinProjectCards";
 import Notification from "@/components/Badges/Notification";
+import DisplaySwitch from "@/components/Buttons/DisplaySwitch";
 
 const MyProjects = ({ user }) => {
 	const [displayMode, setDisplayMode] = useState(user.settings.displayMode);
@@ -21,15 +22,6 @@ const MyProjects = ({ user }) => {
 
 	const projects = user.projects;
 	const notifications = user.notifications;
-
-	const projectTypes = [
-		{ value: "all", label: "All Projects" },
-		{ value: "likes", label: "Projects I like" },
-		{ value: "invitations", label: "Projects invitations" },
-		{ value: "requests", label: "Projects requests" },
-		{ value: "drafts", label: "Drafts" },
-		{ value: "submitted", label: "Projects submitted" },
-	];
 
 	// Filter projects based on the selected project type
 	const filterProjects = (projects, status) => {
@@ -46,27 +38,12 @@ const MyProjects = ({ user }) => {
 
 	return (
 		<>
-			<div className="flex mb-4 sm:mb-8 justify-between items-start">
+			<div className="flex justify-between items-start mb-4 sm:mb-8">
 				{/* Filter projects */}
-				<MyProjectsFilter projectTypes={projectTypes} selectedProjectType={selectedProjectType} setSelectedProjectType={setSelectedProjectType} onProjectTypeChange={setSelectedProjectType} />
+				<MyProjectsFilter selectedProjectType={selectedProjectType} setSelectedProjectType={setSelectedProjectType} onProjectTypeChange={setSelectedProjectType} />
 
 				{/* Change display buttons */}
-				{(projects.projectCount.onGoing > 0 || projects.projectCount.created > 0 || projects.projectCount.completed > 0) && (
-					<div className="flex justify-end">
-						{displayMode === "table" && (
-							<>
-								<button onClick={switchDisplay}>
-									<IoGridOutline className="text-3xl hover:text-blue-400 duration-100 transition ease-in-out" title="Display project as cards" />
-								</button>
-							</>
-						)}
-						{displayMode === "cards" && (
-							<button onClick={switchDisplay}>
-								<IoReorderFour className="text-3xl hover:text-blue-400 duration-100 transition ease-in-out" title="Display project as a table" />
-							</button>
-						)}
-					</div>
-				)}
+				{(projects.projectCount.onGoing > 0 || projects.projectCount.created > 0 || projects.projectCount.completed > 0) && <DisplaySwitch displayMode={displayMode} setDisplayMode={setDisplayMode} />}
 			</div>
 
 			{/* Projects I created */}

@@ -41,7 +41,9 @@ const ProjectsTableActions = ({ projects, filter }) => {
 									</div>
 								</td>
 								<td className="p-2 md:px-4 md:py-2 hidden md:table-cell">
-									<div className="text-gray-400 line-clamp-2">{project.summary}</div>
+									<div className="text-gray-400 line-clamp-2">
+										<Link href={`/projects/${project.projectId}`}>{project.summary}</Link>
+									</div>
 								</td>
 								<td className="p-2 md:px-4 md:py-2 text-center hidden md:table-cell">
 									<Status name={project.status.name} size={"xs"} rounded={"xs"} bgColor={project.status.bgColor} />

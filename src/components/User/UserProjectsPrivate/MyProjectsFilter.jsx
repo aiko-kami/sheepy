@@ -4,10 +4,19 @@ import { motion } from "framer-motion";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { updateUrlParameters } from "@/utils/urlParameter";
 
-const MyProjectsFilter = ({ projectTypes, selectedProjectType, onProjectTypeChange }) => {
+const MyProjectsFilter = ({ selectedProjectType, onProjectTypeChange }) => {
 	const router = useRouter();
 	const pathname = usePathname();
 	const searchParams = useSearchParams();
+
+	const projectTypes = [
+		{ value: "all", label: "All Projects" },
+		{ value: "invitations", label: "Projects invitations" },
+		{ value: "requests", label: "Projects requests" },
+		{ value: "likes", label: "Projects I like" },
+		{ value: "drafts", label: "Drafts" },
+		{ value: "submitted", label: "Projects submitted" },
+	];
 
 	const handleProjectTypeClick = (projectType) => {
 		if (selectedProjectType === projectType) {
