@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { IoLocationOutline } from "react-icons/io5";
 import { BadgeRounded } from "@/components/Badges/Badges";
@@ -28,8 +29,13 @@ const TalentTable = ({ users }) => {
 						return (
 							<tr key={index} className="border-b bg-gray-800 border-gray-700 hover:bg-gray-600">
 								<td scope="row" className="p-2 md:px-4 md:py-2">
-									<div className="font-semibold text-base lg:whitespace-nowrap">
-										<Link href={`/users/${user.userId}`}>{user.username}</Link>
+									<div className="flex items-center">
+										<Link href={`/users/${user.userId}`}>
+											<Image src={user.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover w-9 h-9 rounded-full shadow-md mr-4" />
+										</Link>
+										<div className="font-semibold text-base lg:whitespace-nowrap">
+											<Link href={`/users/${user.userId}`}>{user.username}</Link>
+										</div>
 									</div>
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2">
