@@ -23,7 +23,7 @@ const Badge = ({ badge, size }) => {
 	}
 
 	return (
-		<Link href={link || "#"}>
+		<Link href={link || "javascript:;"}>
 			<span className={`py-1 px-2.5 text-white font-bold text-nowrap duration-200 rounded ${textSizeClass} ${bgColor} hover:${bgColorHover}`}>{name}</span>
 		</Link>
 	);
