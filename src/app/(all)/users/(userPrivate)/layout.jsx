@@ -1,4 +1,4 @@
-import "@/app/globals.css";
+import "../../../globals.css";
 
 import UserNavbar from "@/components/User/UserNavbar";
 

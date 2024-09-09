@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
-import { IoArrowForward, IoBookmarkOutline, IoShareSocialOutline } from "react-icons/io5";
+import { IoArrowForward, IoBookmarkOutline, IoShareSocialOutline, IoBuild } from "react-icons/io5";
 
 import Modal from "@/components/Modals/Modal";
 import ProjectApplicationModal from "@/components/Modals/ProjectApplicationModal";
@@ -21,11 +22,22 @@ const HeadSection = ({ project, user }) => {
 		<>
 			{/* Button join project */}
 			<div className="text-center mb-8">
-				<Button btnProps={{ btnSize: "std", type: "button", action: showModal }}>
-					<div className="flex items-center">
-						Apply for this project <IoArrowForward className="text-2xl ml-2 mt-0.5" />
-					</div>
-				</Button>
+				<div className="mb-4">
+					<Button btnProps={{ btnSize: "std", type: "button", action: showModal }}>
+						<div className="flex items-center">
+							Apply for this project <IoArrowForward className="text-2xl ml-2 mt-0.5" />
+						</div>
+					</Button>
+				</div>
+				<div className="mb-4">
+					<Link href="/projects/48/edit">
+						<Button btnProps={{ btnSize: "std", type: "button", btnColor: "green" }}>
+							<div className="flex items-center">
+								Edit project <IoBuild className="text-2xl ml-2 mt-0.5" />
+							</div>
+						</Button>
+					</Link>
+				</div>
 			</div>
 			<Modal modalDisplay={modalDisplay} closeModal={closeModal} modalSize={"xl"} modalTitle={"You want to join this project?"}>
 				<ProjectApplicationModal closeModal={closeModal} talentsNeeded={project.talentsNeeded} />

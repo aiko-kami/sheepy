@@ -8,7 +8,7 @@ const HeadSection = ({ category }) => {
 				<div className="absolute -translate-y-2 inset-0 flex items-center justify-center">
 					<h1
 						className="text-center leading-tight font-rowdies text-transparent bg-clip-text text-[60px] sm:text-[110px] lg:text-[150px] p-0 m-0 drop-shadow-[2px_2px_5px_rgba(0,0,0,0.9)]"
-						style={{ backgroundImage: `url(${category.coverText})`, "background-position": "center" }}
+						style={{ backgroundImage: `url(${category.coverText})`, backgroundPosition: "center" }}
 					>
 						{category.name}
 					</h1>

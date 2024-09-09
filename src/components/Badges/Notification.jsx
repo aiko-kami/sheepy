@@ -1,8 +1,8 @@
-const Notification = ({ value, size, notifColor }) => {
+const Notification = ({ value, size, notifColor, ringMode }) => {
 	let textSize;
 	switch (size) {
 		case "xs":
-			textSize = "text-[10px] px-2 min-h-[12px] min-w-[12px] ring-4 ring-base-500";
+			textSize = "text-[10px] px-2 min-h-[12px] min-w-[12px]";
 			break;
 		case "sm":
 			textSize = "text-[12px] px-2 pb-0.5 h-6";
@@ -41,7 +41,19 @@ const Notification = ({ value, size, notifColor }) => {
 			color = "text-white bg-gray-600";
 	}
 
-	return <span className={`inline-flex items-center justify-center font-bold rounded-full ${textSize} ${color}`}>{value}</span>;
+	let ring;
+	switch (ringMode) {
+		case "home":
+			ring = "ring-4 ring-custom-gradiant-dark";
+			break;
+		case "std":
+			ring = "ring-4 ring-custom-gradiant-light";
+			break;
+		default:
+			ring = "";
+	}
+
+	return <span className={`inline-flex items-center justify-center font-bold rounded-full ${textSize} ${color} ${ring}`}>{value}</span>;
 };
 
 export default Notification;

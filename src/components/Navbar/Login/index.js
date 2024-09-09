@@ -7,7 +7,7 @@ import Dropdown from "./Dropdown";
 import user from "@/mock/user.json";
 import Notification from "@/components/Badges/Notification";
 
-const Login = () => {
+const Login = ({ isHomePage = false }) => {
 	const [theme, setTheme] = useState(user.settings.appearance || "light");
 
 	const session = true;
@@ -67,7 +67,11 @@ const Login = () => {
 								{user.notifications.globalNotif > 0 && (
 									<>
 										<div className="absolute -bottom-2 right-10 z-10">
-											<Notification value={user.notifications.globalNotif} size={"xs"} notifColor={"pink"} />
+											{isHomePage ? (
+												<Notification value={user.notifications.globalNotif} size={"xs"} notifColor={"pink"} ringMode={"home"} />
+											) : (
+												<Notification value={user.notifications.globalNotif} size={"xs"} notifColor={"pink"} ringMode={"std"} />
+											)}
 										</div>
 									</>
 								)}

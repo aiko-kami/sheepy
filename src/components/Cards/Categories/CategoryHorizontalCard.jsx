@@ -20,7 +20,7 @@ const CategoryHorizontalCard = ({ category, animate }) => {
 						<Link href={link}>
 							<h3
 								className="font-semibold tn:text-left overflow-hidden text-ellipsis font-rowdies text-transparent leading-tight bg-clip-text text-[45px] drop-shadow-[2px_2px_5px_rgba(0,0,0,0.9)]"
-								style={{ backgroundImage: `url(${category.coverText})`, "background-position": "center" }}
+								style={{ backgroundImage: `url(${category.coverText})`, backgroundPosition: "center" }}
 							>
 								{name}
 							</h3>

@@ -436,8 +436,8 @@
 				"symbol": "📹"
 			},
 			{
-				"name": "Feature Film",
-				"link": "/tags/feature-film",
+				"name": "Cinema",
+				"link": "/tags/cinema",
 				"bgColor": "bg-yellow-400",
 				"bgColorHover": "bg-yellow-300",
 				"colorBase": "yellow-500",

@@ -12,7 +12,7 @@ const Header = ({ isHomePage = false, displaySearchButton }) => {
 				<Menu displaySearchButton={displaySearchButton} />
 			</div>
 			<div>
-				<Login />
+				<Login isHomePage={isHomePage} />
 			</div>
 		</header>
 	);
