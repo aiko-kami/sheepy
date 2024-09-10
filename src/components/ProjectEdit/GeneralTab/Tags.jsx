@@ -6,7 +6,7 @@ const Tags = ({ formState, onChange }) => {
 	return (
 		<>
 			{/* Project tags */}
-			<div className="mb-12">
+			<div className="mb-8 lg:mb-12">
 				<h2 className="flex items-center text-xl mb-3 sm:ml-4">
 					<IoLocationSharp className="mr-2 text-2xl" />
 					Project tags

@@ -5,7 +5,7 @@ const Cover = ({ formState, onChange }) => {
 	return (
 		<>
 			{/* Project cover */}
-			<div className="mb-12">
+			<div className="mb-8 lg:mb-12">
 				<h2 className="flex items-center text-xl mb-3 sm:ml-4">
 					<IoImages className="mr-2 text-2xl" />
 					Project cover

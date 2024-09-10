@@ -11,13 +11,13 @@ export const metadata = {
 const ProjectPublicPage = () => {
 	return (
 		<div className="container mx-auto py-8 hyphens-auto">
-			<h1 className="text-center text-xl sm:text-3xl lg:text-3xl font-semibold mb-12">Project edition</h1>
-			<div className="grid grid-cols-5">
-				<div className="p-2">
+			<h1 className="text-center text-3xl font-semibold mb-6">Project edition</h1>
+			<div className="lg:grid grid-cols-5">
+				<div className="p-2 mb-6">
 					{/* Project Status and links */}
 					<SideMenu project={project} />
 				</div>
-				<div className="col-span-4 p-2">
+				<div className="col-span-4 py-2 lg:px-2">
 					{/* Project general information */}
 					<General project={project} />
 				</div>

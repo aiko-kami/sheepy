@@ -5,14 +5,14 @@ const Summary = ({ formState, onChange }) => {
 	return (
 		<>
 			{/* Project summary, description and goals */}
-			<div className="mb-12">
+			<div className="mb-8 lg:mb-12">
 				<h2 className="flex items-center text-xl mb-3 sm:ml-4">
 					<IoDocumentText className="mr-2 text-2xl" />
 					Project summary, description and goals
 				</h2>
 				<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-3 xl:mb-9" />
 				{/* Project summary */}
-				<div className="mb-8">
+				<div className="mb-4 lg:mb-8">
 					<TextAreaField
 						label="Project summary:"
 						labelStyle="block mb-2"
@@ -26,7 +26,7 @@ const Summary = ({ formState, onChange }) => {
 					/>
 				</div>
 				{/* Project description */}
-				<div className="mb-8">
+				<div className="mb-4 lg:mb-8">
 					<TextAreaField
 						label="Project description:"
 						labelStyle="block mb-2"
@@ -40,7 +40,7 @@ const Summary = ({ formState, onChange }) => {
 					/>
 				</div>
 				{/* Project goals */}
-				<div className="mb-8">
+				<div className="mb-4 lg:mb-8">
 					<TextAreaField
 						label="Project goal:"
 						labelStyle="block mb-2"

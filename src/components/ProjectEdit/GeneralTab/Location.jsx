@@ -6,7 +6,7 @@ const Location = ({ formState, onChange }) => {
 	return (
 		<>
 			{/* Project location */}
-			<div className="mb-12">
+			<div className="mb-8 lg:mb-12">
 				<h2 className="flex items-center text-xl mb-3 sm:ml-4">
 					<IoLocationSharp className="mr-2 text-2xl" />
 					Project location
@@ -17,7 +17,7 @@ const Location = ({ formState, onChange }) => {
 					<ToggleField inputName="locationOnlineOnly" checked={formState.locationOnlineOnly} label="Project online only" onChange={onChange} />
 				</div>
 
-				<div className="mb-8">
+				<div className="mb-6 xl:mb-8">
 					<InputField
 						inputName="projectLocationCountry"
 						inputType="text"
@@ -27,7 +27,7 @@ const Location = ({ formState, onChange }) => {
 						disabled={formState.locationOnlineOnly}
 					/>
 				</div>
-				<div className="mb-8">
+				<div className="mb-6 xl:mb-8">
 					<InputField inputName="projectLocationCity" inputType="text" label="City" inputValue={formState.projectLocationCity} onChange={onChange} disabled={formState.locationOnlineOnly} />
 				</div>
 			</div>

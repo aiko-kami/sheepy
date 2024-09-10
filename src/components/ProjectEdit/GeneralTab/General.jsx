@@ -43,7 +43,7 @@ const General = ({ project }) => {
 	return (
 		<>
 			<form onSubmit={onSubmit}>
-				<div className="pl-10">
+				<div className="lg:pl-10">
 					{/* Project title and category */}
 					<TitleCategory formState={formState} setFormState={setFormState} onChange={onChange} />
 
