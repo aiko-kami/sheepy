@@ -82,6 +82,7 @@
 		}
 	],
 	"location": "San Fransokyo, USA",
+	"locationOnlineOnly": false,
 	"locationCity": "San Fransokyo",
 	"locationCountry": "USA",
 	"talentsNeeded": [

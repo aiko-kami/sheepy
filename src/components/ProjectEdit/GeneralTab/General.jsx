@@ -8,6 +8,7 @@ import TitleCategory from "@/components/ProjectEdit/GeneralTab/TitleCategory";
 import Summary from "@/components/ProjectEdit/GeneralTab/Summary";
 import Cover from "@/components/ProjectEdit/GeneralTab/Cover";
 import Location from "@/components/ProjectEdit/GeneralTab/Location";
+import Tags from "@/components/ProjectEdit/GeneralTab/Tags";
 
 const General = ({ project }) => {
 	const [formState, setFormState] = useState({
@@ -17,16 +18,18 @@ const General = ({ project }) => {
 		projectSummary: project.summary,
 		projectDescription: project.description,
 		projectGoal: project.goal,
+		locationOnlineOnly: project.locationOnlineOnly,
 		projectLocationCity: project.locationCity,
 		projectLocationCountry: project.locationCountry,
-		projectGoal: project.goal,
+		projectTags: project.goal,
 	});
 
-	const onChange = (event) => {
-		const { name, value } = event.target;
+	const onChange = (e) => {
+		const { name, value, type, checked } = e.target;
+		const inputValue = type === "checkbox" ? checked : value;
 		setFormState((prevState) => ({
 			...prevState,
-			[name]: value,
+			[name]: inputValue,
 		}));
 	};
 
@@ -43,17 +46,19 @@ const General = ({ project }) => {
 				<div className="pl-10">
 					{/* Project title and category */}
 					<TitleCategory formState={formState} setFormState={setFormState} onChange={onChange} />
+
 					{/* Project summary, description and goals */}
 					<Summary formState={formState} onChange={onChange} />
+
 					{/* Project summary, description and goals */}
 					<Cover formState={formState} onChange={onChange} />
 
 					{/* Project location */}
 					<Location formState={formState} onChange={onChange} />
 
-					<div className="mb-8">
-						<InputField inputName="projectLocationCity" inputType="text" label="Tags" inputValue={formState.projectLocationCity} onChange={onChange} />
-					</div>
+					{/* Project tags */}
+					<Tags formState={formState} onChange={onChange} />
+
 					<div className="mb-8">
 						<InputField inputName="projectLocationCity" inputType="text" label="Status" inputValue={formState.projectLocationCity} onChange={onChange} />
 					</div>
