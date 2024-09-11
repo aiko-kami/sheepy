@@ -11,7 +11,7 @@ const Location = ({ formState, onChange }) => {
 					<IoLocationSharp className="mr-2 text-2xl" />
 					Project location
 				</h2>
-				<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-3 xl:mb-9" />
+				<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 				{/* Project location */}
 				<div className="mb-8">
 					<ToggleField inputName="locationOnlineOnly" checked={formState.locationOnlineOnly} label="Project online only" onChange={onChange} />

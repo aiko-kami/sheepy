@@ -10,7 +10,7 @@ const Cover = ({ formState, onChange }) => {
 					<IoImages className="mr-2 text-2xl" />
 					Project cover
 				</h2>
-				<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-3 xl:mb-9" />
+				<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 				{/* Project cover */}
 				<div className="mb-8 flex justify-center">
 					<div className="rounded-3xl border-2 border-dashed border-blue-400 w-2/3 h-70">

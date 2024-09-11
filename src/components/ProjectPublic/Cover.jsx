@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Badge, BadgeRounded } from "@/components/Badges/Badges";
+import { Badge } from "@/components/Badges/Badges";
 import { IoLocationOutline, IoHeartOutline, IoFitness } from "react-icons/io5";
 
 const HeadSection = ({ project }) => {

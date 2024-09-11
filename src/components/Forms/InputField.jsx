@@ -1,9 +1,13 @@
-const InputField = ({ inputName, inputType, inputValue, onChange, disabled = false, label, children }) => {
+import React from "react";
+
+// Using forwardRef to pass the ref down to the input element
+const InputField = React.forwardRef(({ inputName, inputType, inputValue, onChange, disabled = false, label, children }, ref) => {
 	return (
 		<div className="relative z-0 w-full">
 			{/* icon on the left of the field */}
 			<div className="flex absolute inset-y-6 -left-11 items-center pl-3 pointer-events-none">{children}</div>
 			<input
+				ref={ref} // Forward the ref to the input element
 				name={inputName}
 				id={inputName}
 				type={inputType}
@@ -25,5 +29,6 @@ const InputField = ({ inputName, inputType, inputValue, onChange, disabled = fal
 			</label>
 		</div>
 	);
-};
+});
+
 export default InputField;

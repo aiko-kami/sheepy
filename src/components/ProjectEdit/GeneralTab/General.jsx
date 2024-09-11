@@ -9,6 +9,7 @@ import Summary from "@/components/ProjectEdit/GeneralTab/Summary";
 import Cover from "@/components/ProjectEdit/GeneralTab/Cover";
 import Location from "@/components/ProjectEdit/GeneralTab/Location";
 import Tags from "@/components/ProjectEdit/GeneralTab/Tags";
+import Status from "@/components/ProjectEdit/GeneralTab/Status";
 
 const General = ({ project }) => {
 	const [formState, setFormState] = useState({
@@ -21,8 +22,43 @@ const General = ({ project }) => {
 		locationOnlineOnly: project.locationOnlineOnly,
 		projectLocationCity: project.locationCity,
 		projectLocationCountry: project.locationCountry,
-		projectTags: project.goal,
+		projectTags: [],
 	});
+
+	const [tagInput, setTagInput] = useState("");
+	const [tagError, setTagError] = useState("");
+
+	const addTag = () => {
+		if (!tagInput) {
+			setTagError("Please enter a tag.");
+		}
+		if (tagInput && formState.projectTags.includes(tagInput)) {
+			setTagError("This tag is already present in the list.");
+		}
+		if (tagInput && formState.projectTags.length >= 8) {
+			setTagError("You can only add up to 8 tags.");
+		}
+		if (tagInput && !formState.projectTags.includes(tagInput) && formState.projectTags.length < 8) {
+			setFormState((prevState) => ({
+				...prevState,
+				projectTags: [...prevState.projectTags, tagInput],
+			}));
+			setTagInput("");
+			setTagError("");
+		}
+	};
+
+	const removeTag = (tagToRemove) => {
+		setFormState((prevState) => ({
+			...prevState,
+			projectTags: prevState.projectTags.filter((tag) => tag !== tagToRemove),
+		}));
+	};
+
+	const handleTagInputChange = (e) => {
+		setTagError("");
+		setTagInput(e.target.value);
+	};
 
 	const onChange = (e) => {
 		const { name, value, type, checked } = e.target;
@@ -57,11 +93,10 @@ const General = ({ project }) => {
 					<Location formState={formState} onChange={onChange} />
 
 					{/* Project tags */}
-					<Tags formState={formState} onChange={onChange} />
+					<Tags formState={formState} tagInput={tagInput} addTag={addTag} removeTag={removeTag} handleTagInputChange={handleTagInputChange} tagError={tagError} />
 
-					<div className="mb-8">
-						<InputField inputName="projectLocationCity" inputType="text" label="Status" inputValue={formState.projectLocationCity} onChange={onChange} />
-					</div>
+					{/* Project status */}
+					<Status formState={formState} />
 				</div>
 			</form>
 		</>

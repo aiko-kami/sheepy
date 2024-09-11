@@ -40,6 +40,8 @@ const StepManager = () => {
 	});
 
 	const [tagInput, setTagInput] = useState("");
+	const [tagError, setTagError] = useState("");
+
 	const [talentNeededInput, setTalentNeededInput] = useState("");
 
 	const onChange = (e) => {
@@ -52,12 +54,22 @@ const StepManager = () => {
 	};
 
 	const addTag = () => {
+		if (!tagInput) {
+			setTagError("Please enter a tag.");
+		}
+		if (tagInput && formInputs.tags.includes(tagInput)) {
+			setTagError("This tag is already present in the list.");
+		}
+		if (tagInput && formInputs.tags.length >= 8) {
+			setTagError("You can only add up to 8 tags.");
+		}
 		if (tagInput && !formInputs.tags.includes(tagInput) && formInputs.tags.length < 8) {
 			setFormInputs((prevState) => ({
 				...prevState,
 				tags: [...prevState.tags, tagInput],
 			}));
 			setTagInput("");
+			setTagError("");
 		}
 	};
 
@@ -86,6 +98,7 @@ const StepManager = () => {
 	};
 
 	const handleTagInputChange = (e) => {
+		setTagError("");
 		setTagInput(e.target.value);
 	};
 
@@ -151,6 +164,7 @@ const StepManager = () => {
 							addTag={addTag}
 							removeTag={removeTag}
 							handleTagInputChange={handleTagInputChange}
+							tagError={tagError}
 							setProjectStartDate={setProjectStartDate}
 						/>
 					)}

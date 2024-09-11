@@ -10,7 +10,7 @@ const Summary = ({ formState, onChange }) => {
 					<IoDocumentText className="mr-2 text-2xl" />
 					Project summary, description and goals
 				</h2>
-				<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-3 xl:mb-9" />
+				<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 				{/* Project summary */}
 				<div className="mb-4 lg:mb-8">
 					<TextAreaField
