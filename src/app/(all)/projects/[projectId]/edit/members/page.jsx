@@ -8,22 +8,21 @@ export const metadata = {
 	description: "Project edition page",
 };
 
-const ProjectPublicPage = () => {
+const ProjectEditMembersPage = () => {
 	return (
-		<div className="container mx-auto py-8 hyphens-auto">
-			<h1 className="text-center text-3xl font-semibold mb-6">Project edition</h1>
+		<div className="container mx-auto hyphens-auto">
 			<div className="lg:grid grid-cols-5">
 				<div className="p-2 mb-6">
 					{/* Project Status and links */}
 					<SideMenu project={project} />
 				</div>
-				<div className="col-span-4 py-2 lg:px-2">
-					{/* Project general information */}
-					<General project={project} />
+				<div className="col-span-4 py-2 lg:px-2 lg:pl-10">
+					{/* Project members information */}
+					Project members
 				</div>
 			</div>
 		</div>
 	);
 };
 
-export default ProjectPublicPage;
+export default ProjectEditMembersPage;

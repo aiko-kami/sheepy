@@ -1,6 +1,6 @@
 import { IoFitness } from "react-icons/io5";
 
-const Status = ({ formState }) => {
+const StatusDetails = ({ formState, onChange }) => {
 	return (
 		<>
 			{/* Project status */}
@@ -19,4 +19,4 @@ const Status = ({ formState }) => {
 		</>
 	);
 };
-export default Status;
+export default StatusDetails;

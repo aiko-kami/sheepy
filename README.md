@@ -150,6 +150,73 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 
 ---
 
+### Project fields for project update
+
+projectVisibility (see list)
+
+projectMembersRoles (see list)
+
+Members:
+
+- User
+- Role
+- Start date
+
+Status and status history:
+
+- current status (see list)
+- reason
+- statusHistory
+- updatedBy
+- timestamp
+
+Steps: (updatedBy, createdAt, updatedAt)
+
+- title
+- details
+- published
+
+QAs: (updatedBy, createdAt, updatedAt)
+
+- question
+- response
+- published
+
+Attachments:
+
+- title
+- size
+- extension
+- createdAt
+- updatedBy
+
+title
+category
+subCategory
+goal
+summary
+description
+cover
+crush
+likes
+location:
+city
+country
+onlineOnly
+
+startDate
+phase
+creatorMotivation
+visibility
+tags
+talentsNeeded
+objectives
+updatedBy
+createdAt
+createdBy
+
+---
+
 ### Project types organisation
 
 Groups:

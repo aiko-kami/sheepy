@@ -51,28 +51,8 @@
 			"bgColor": "border border-2 border-gray-500 text-white"
 		},
 		{
-			"name": "Time travel",
-			"link": "/tags/time_travel",
-			"bgColor": "border border-2 border-gray-500 text-white"
-		},
-		{
-			"name": "Acting",
-			"link": "/tags/acting",
-			"bgColor": "border border-2 border-gray-500 text-white"
-		},
-		{
 			"name": "Cyberpunk",
 			"link": "/tags/cyberpunk",
-			"bgColor": "border border-2 border-gray-500 text-white"
-		},
-		{
-			"name": "Directing",
-			"link": "/tags/directing",
-			"bgColor": "border border-2 border-gray-500 text-white"
-		},
-		{
-			"name": "Visual effects ",
-			"link": "/tags/visual_effects",
 			"bgColor": "border border-2 border-gray-500 text-white"
 		},
 		{

@@ -1,10 +1,45 @@
 import { IoPricetag, IoAddCircleOutline, IoCloseCircleOutline } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import InputField from "@/components/Forms/InputField";
-import { useRef } from "react";
+import { useState, useRef } from "react";
 
-const Tags = ({ formState, tagInput, addTag, removeTag, handleTagInputChange, tagError }) => {
+const Tags = ({ formState, setFormState }) => {
 	const inputRef = useRef(null); // Create a reference to the input field
+
+	const [tagInput, setTagInput] = useState("");
+	const [tagError, setTagError] = useState("");
+
+	const addTag = () => {
+		if (!tagInput) {
+			setTagError("Please enter a tag.");
+		}
+		if (tagInput && formState.projectTags.includes(tagInput)) {
+			setTagError("This tag is already present in the list.");
+		}
+		if (tagInput && formState.projectTags.length >= 8) {
+			setTagError("You can only add up to 8 tags.");
+		}
+		if (tagInput && !formState.projectTags.includes(tagInput) && formState.projectTags.length < 8) {
+			setFormState((prevState) => ({
+				...prevState,
+				projectTags: [...prevState.projectTags, tagInput],
+			}));
+			setTagInput("");
+			setTagError("");
+		}
+	};
+
+	const removeTag = (tagToRemove) => {
+		setFormState((prevState) => ({
+			...prevState,
+			projectTags: prevState.projectTags.filter((tag) => tag !== tagToRemove),
+		}));
+	};
+
+	const handleTagInputChange = (e) => {
+		setTagError("");
+		setTagInput(e.target.value);
+	};
 
 	const handleAddTag = () => {
 		addTag();
@@ -21,22 +56,25 @@ const Tags = ({ formState, tagInput, addTag, removeTag, handleTagInputChange, ta
 					Project tags
 				</h2>
 				<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
-				{/* Project tags */}
-				<div className="mb-8 max-w-140 relative">
-					{/* Tag input field */}
-					<div className="flex items-center">
-						<div className="w-full mr-2 mb-6">
-							<InputField inputName="projectTags" inputType="text" label="Project tags (optional)" inputValue={tagInput} onChange={handleTagInputChange} ref={inputRef} />
+
+				<div className="pl-4">
+					{/* Project tags */}
+					<div className="mb-8 max-w-140 relative">
+						{/* Tag input field */}
+						<div className="flex items-center">
+							<div className="w-full mr-2 mb-6">
+								<InputField inputName="projectTags" inputType="text" label="Project tags (optional)" inputValue={tagInput} onChange={handleTagInputChange} ref={inputRef} />
+							</div>
+							<div className="min-w-fit">
+								<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "blue", btnRounded: "std", action: handleAddTag }}>
+									<div className="flex">
+										Add tag <IoAddCircleOutline className="text-xl ml-2" />
+									</div>
+								</Button>
+							</div>
 						</div>
-						<div className="min-w-fit">
-							<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "blue", btnRounded: "std", action: handleAddTag }}>
-								<div className="flex">
-									Add tag <IoAddCircleOutline className="text-xl ml-2" />
-								</div>
-							</Button>
-						</div>
+						<div className="absolute left-0 top-12 mb-2 min-h-6 text-sm">{tagError && <p className="text-xs text-red-600">{tagError}</p>}</div>
 					</div>
-					<div className="absolute left-0 top-12 mb-2 min-h-6 text-sm">{tagError && <p className="text-xs text-red-600">{tagError}</p>}</div>
 
 					{/* List of tags */}
 					<div className="mt-2">
