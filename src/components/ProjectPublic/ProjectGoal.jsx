@@ -1,4 +1,4 @@
-const HeadSection = ({ goal }) => {
+const ProjectGoal = ({ goal }) => {
 	return (
 		<>
 			<h2 className="font-semibold text-3xl mb-3">Goal</h2>
@@ -7,4 +7,4 @@ const HeadSection = ({ goal }) => {
 		</>
 	);
 };
-export default HeadSection;
+export default ProjectGoal;

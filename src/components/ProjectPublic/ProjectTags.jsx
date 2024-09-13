@@ -1,6 +1,6 @@
 import { BadgeRounded } from "@/components/Badges/Badges";
 
-const HeadSection = ({ tags }) => {
+const ProjectTags = ({ tags }) => {
 	return (
 		<>
 			<h2 className="font-semibold text-3xl mb-3">Tags</h2>
@@ -15,4 +15,4 @@ const HeadSection = ({ tags }) => {
 		</>
 	);
 };
-export default HeadSection;
+export default ProjectTags;

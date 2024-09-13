@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Badge } from "@/components/Badges/Badges";
 import { IoLocationOutline, IoHeartOutline, IoFitness } from "react-icons/io5";
 
-const HeadSection = ({ project }) => {
+const Cover = ({ project }) => {
 	return (
 		<>
 			<Image src={project.cover} className="w-full h-100 object-cover rounded-3xl mb-3" alt="Card" width={0} height={0} sizes="100vw" />
@@ -30,4 +30,4 @@ const HeadSection = ({ project }) => {
 		</>
 	);
 };
-export default HeadSection;
+export default Cover;

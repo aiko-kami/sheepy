@@ -1,4 +1,4 @@
-import General from "@/components/ProjectEdit/GeneralTab/General";
+import Attachments from "@/components/ProjectEdit/AttachmentsTab/Attachments";
 import SideMenu from "@/components/ProjectEdit/SideMenu";
 
 import project from "@/mock/project.json";
@@ -18,7 +18,7 @@ const ProjectEditAttachmentsPage = () => {
 				</div>
 				<div className="col-span-4 py-2 lg:px-2 lg:pl-10">
 					{/* Project attachments information */}
-					Project attachments
+					<Attachments project={project} />
 				</div>
 			</div>
 		</div>

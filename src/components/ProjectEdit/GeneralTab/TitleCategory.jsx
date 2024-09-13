@@ -66,7 +66,7 @@ const TitleCategory = ({ formState, onChange, setFormState }) => {
 				</h2>
 				<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
-				<div className="pl-4">
+				<div className="md:pl-4">
 					{/* Project title */}
 					<div className="mb-6 xl:mb-8">
 						<InputField inputName="projectTitle" inputType="text" label="Project title" inputValue={formState.projectTitle} onChange={onChange} />

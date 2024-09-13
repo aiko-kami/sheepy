@@ -1,4 +1,4 @@
-import General from "@/components/ProjectEdit/GeneralTab/General";
+import Steps from "@/components/ProjectEdit/StepsTab/Steps";
 import SideMenu from "@/components/ProjectEdit/SideMenu";
 
 import project from "@/mock/project.json";
@@ -18,7 +18,7 @@ const ProjectEditStepsPage = () => {
 				</div>
 				<div className="col-span-4 py-2 lg:px-2 lg:pl-10">
 					{/* Project steps information */}
-					Project steps
+					<Steps project={project} />
 				</div>
 			</div>
 		</div>

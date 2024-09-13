@@ -8,7 +8,7 @@ import Modal from "@/components/Modals/Modal";
 import ProjectApplicationModal from "@/components/Modals/ProjectApplicationModal";
 import { Button, ButtonCircle } from "@/components/Buttons/Buttons";
 
-const HeadSection = ({ project, user }) => {
+const ActionButtons = ({ project, user }) => {
 	const [modalDisplay, setModalDisplay] = useState(false);
 
 	const showModal = () => {
@@ -30,7 +30,7 @@ const HeadSection = ({ project, user }) => {
 					</Button>
 				</div>
 				<div className="mb-4">
-					<Link href="/projects/48/edit">
+					<Link href={`/projects/${project.projectId}/edit/general`}>
 						<Button btnProps={{ btnSize: "std", type: "button", btnColor: "green" }}>
 							<div className="flex items-center">
 								Edit project <IoBuild className="text-2xl ml-2 mt-0.5" />
@@ -55,4 +55,4 @@ const HeadSection = ({ project, user }) => {
 		</>
 	);
 };
-export default HeadSection;
+export default ActionButtons;

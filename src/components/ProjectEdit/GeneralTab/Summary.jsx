@@ -12,7 +12,7 @@ const Summary = ({ formState, onChange }) => {
 				</h2>
 				<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
-				<div className="pl-4">
+				<div className="md:pl-4">
 					{/* Project summary */}
 					<div className="mb-4 lg:mb-8">
 						<TextAreaField
