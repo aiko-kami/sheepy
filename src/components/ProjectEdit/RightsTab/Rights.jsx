@@ -29,7 +29,9 @@ const Rights = ({ project }) => {
 		<>
 			<form onSubmit={onSubmit}>
 				{/* Project rights */}
-				<RightsDetails formState={formState} onChange={onChange} />
+				<div className="mb-8 lg:mb-12">
+					<RightsDetails formState={formState} onChange={onChange} />
+				</div>
 			</form>
 		</>
 	);

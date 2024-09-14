@@ -31,7 +31,9 @@ const Location = ({ project }) => {
 		<>
 			<form onSubmit={onSubmit}>
 				{/* Project location */}
-				<LocationDetails formState={formState} onChange={onChange} />
+				<div className="mb-8 lg:mb-12">
+					<LocationDetails formState={formState} onChange={onChange} />
+				</div>
 			</form>
 		</>
 	);

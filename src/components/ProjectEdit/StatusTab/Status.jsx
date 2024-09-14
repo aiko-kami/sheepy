@@ -29,7 +29,9 @@ const Status = ({ project }) => {
 		<>
 			<form onSubmit={onSubmit}>
 				{/* Project status */}
-				<StatusDetails formState={formState} onChange={onChange} />
+				<div className="mb-8 lg:mb-12">
+					<StatusDetails formState={formState} onChange={onChange} />
+				</div>
 			</form>
 		</>
 	);

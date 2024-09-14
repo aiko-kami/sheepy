@@ -38,16 +38,21 @@ const General = ({ project }) => {
 		<>
 			<form onSubmit={onSubmit}>
 				{/* Project title and category */}
-				<TitleCategory formState={formState} setFormState={setFormState} onChange={onChange} />
-
+				<div className="mb-8 lg:mb-18">
+					<TitleCategory formState={formState} setFormState={setFormState} onChange={onChange} />
+				</div>
 				{/* Project summary, description and goals */}
-				<Summary formState={formState} onChange={onChange} />
-
-				{/* Project summary, description and goals */}
-				<Cover formState={formState} onChange={onChange} />
-
+				<div className="mb-8 lg:mb-18">
+					<Summary formState={formState} onChange={onChange} />
+				</div>
+				{/* Project cover */}
+				<div className="mb-8 lg:mb-18">
+					<Cover formState={formState} onChange={onChange} />
+				</div>
 				{/* Project tags */}
-				<Tags formState={formState} setFormState={setFormState} />
+				<div className="mb-8 lg:mb-18">
+					<Tags formState={formState} setFormState={setFormState} />
+				</div>
 			</form>
 		</>
 	);

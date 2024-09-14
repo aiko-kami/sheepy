@@ -59,28 +59,26 @@ const TitleCategory = ({ formState, onChange, setFormState }) => {
 	return (
 		<>
 			{/* Project title and category */}
-			<div className="mb-8 lg:mb-12">
-				<h2 className="flex items-center text-xl mb-3 sm:ml-4">
-					<IoRocketSharp className="mr-2 text-2xl" />
-					Project title and category
-				</h2>
-				<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
+			<h2 className="flex items-center text-xl mb-3 sm:ml-4">
+				<IoRocketSharp className="mr-2 text-2xl" />
+				Project title and category
+			</h2>
+			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
-				<div className="md:pl-4">
-					{/* Project title */}
-					<div className="mb-6 xl:mb-8">
-						<InputField inputName="projectTitle" inputType="text" label="Project title" inputValue={formState.projectTitle} onChange={onChange} />
-					</div>
-					<div className="max-w-180">
-						<div className="flex flex-col lg:flex-row justify-between">
-							{/* Project category */}
-							<div className="flex-1 mb-6 lg:mb-0 lg:mr-2">
-								<SelectField inputName="projectCategory" possibleValues={optionsListCat} inputValue={formState.projectCategory} label="Category" onChange={handleCategoryChange} />
-							</div>
-							{/* Project sub-category */}
-							<div className="flex-1 min-h-[3.5rem] lg:ml-2">
-								<SelectField inputName="projectSubCategory" possibleValues={optionsListSubcat} inputValue={formState.projectSubCategory} label="Sub-category" onChange={onChange} />
-							</div>
+			<div className="md:pl-4">
+				{/* Project title */}
+				<div className="mb-6 xl:mb-8">
+					<InputField inputName="projectTitle" inputType="text" label="Project title" inputValue={formState.projectTitle} onChange={onChange} />
+				</div>
+				<div className="max-w-180">
+					<div className="flex flex-col lg:flex-row justify-between">
+						{/* Project category */}
+						<div className="flex-1 mb-6 lg:mb-0 lg:mr-2">
+							<SelectField inputName="projectCategory" possibleValues={optionsListCat} inputValue={formState.projectCategory} label="Category" onChange={handleCategoryChange} />
+						</div>
+						{/* Project sub-category */}
+						<div className="flex-1 min-h-[3.5rem] lg:ml-2">
+							<SelectField inputName="projectSubCategory" possibleValues={optionsListSubcat} inputValue={formState.projectSubCategory} label="Sub-category" onChange={onChange} />
 						</div>
 					</div>
 				</div>

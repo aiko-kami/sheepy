@@ -16,7 +16,7 @@ const ProjectEditRightsPage = () => {
 					{/* Project Status and links */}
 					<SideMenu project={project} />
 				</div>
-				<div className="col-span-4 py-2 lg:px-2 lg:pl-10">
+				<div className="col-span-4 lg:px-2 lg:pl-10">
 					{/* Project rights information */}
 					<Rights project={project} />
 				</div>

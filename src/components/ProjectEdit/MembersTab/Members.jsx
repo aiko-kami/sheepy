@@ -29,7 +29,9 @@ const Members = ({ project }) => {
 		<>
 			<form onSubmit={onSubmit}>
 				{/* Project members */}
-				<MembersDetails formState={formState} onChange={onChange} />
+				<div className="mb-8 lg:mb-12">
+					<MembersDetails formState={formState} onChange={onChange} />
+				</div>
 			</form>
 		</>
 	);

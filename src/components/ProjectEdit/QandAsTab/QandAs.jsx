@@ -29,7 +29,9 @@ const QandAs = ({ project }) => {
 		<>
 			<form onSubmit={onSubmit}>
 				{/* Project status */}
-				<QandAsDetails formState={formState} onChange={onChange} />
+				<div className="mb-8 lg:mb-12">
+					<QandAsDetails formState={formState} onChange={onChange} />
+				</div>
 			</form>
 		</>
 	);
