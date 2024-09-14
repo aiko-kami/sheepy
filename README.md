@@ -133,6 +133,7 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 - [x] Add status in joinProject card
 - [x] Project table for search
 - [x] Talent table for search
+- [x] Navbar for project edition
 
 - [x] Location table for search
 - [] Search sub-categories
@@ -152,68 +153,82 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 
 ### Project fields for project update
 
-projectVisibility (see list)
+[x] General:
 
-projectMembersRoles (see list)
+[x] - title
+[x] - category
+[x] - subCategory
+[x] - summary
+[x] - description
+[x] - goal
+[x] - cover
+[x] - tags
 
-Members:
+[] Members:
 
-- User
-- Role
-- Start date
+[] - User
+[] - Role
+[] - Start date (join date?)
+[] - projectMembersRoles (see list) - ["owner", "member"]
+Actions: Remove, send message, send message to all, send message to several (select users), update role
+[] - Join requests
+[] - invitations
+Actions: Accept/decline request, send new invitation
 
-Status and status history:
+[] Rights:
 
-- current status (see list)
-- reason
-- statusHistory
-- updatedBy
-- timestamp
+[] - User
+[] - can update...
+Actions: update user right
 
-Steps: (updatedBy, createdAt, updatedAt)
+[] Status:
 
-- title
-- details
-- published
+[] - current status (see list) - ["draft", "submitted", "active", "on hold", "completed", "archived", "cancelled", "rejected"]
+[] - reason
+[] - status history
+[] - updatedBy
+[] - timestamp
+Actions: update project status
 
-QAs: (updatedBy, createdAt, updatedAt)
+[x] Location:
+[x] - onlineOnly
+[x] - city
+[x] - country
 
-- question
-- response
-- published
+[] Attachments:
 
-Attachments:
+[] - title
+[] - size
+[] - extension
+[] - createdAt
+[] - updatedBy
+Actions: Add, remove, update, change visibility
 
-- title
-- size
-- extension
-- createdAt
-- updatedBy
+[] Steps: (updatedBy, createdAt, updatedAt)
 
-title
-category
-subCategory
-goal
-summary
-description
-cover
-crush
-likes
-location:
-city
-country
-onlineOnly
+[] - title
+[] - details
+[] - published
+Actions: Add, remove, update, reorder
 
-startDate
-phase
-creatorMotivation
-visibility
-tags
-talentsNeeded
-objectives
-updatedBy
-createdAt
-createdBy
+[] QAs: (updatedBy, createdAt, updatedAt)
+
+[] - question
+[] - response
+[] - published
+Actions: Add, remove, update, reorder
+
+[] start date -> in tab General?
+[] phase -> in tab Status? possibility to change the visibility?
+[] talents needed -> in tab Members?
+[] project visibility (see list) - ["public", "private"]
+[] creator motivation
+[] objectives
+[] created by -> tab Details and stats?
+[] created at -> tab Details and stats?
+[] updated by -> tab Details and stats?
+[] crush -> tab Details and stats?
+[] likes -> tab Details and stats?
 
 ---
 
