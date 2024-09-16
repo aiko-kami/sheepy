@@ -14,11 +14,11 @@ const SelectField = ({ inputName, possibleValues, inputValue, label, onChange, d
 					inputValue === "" ? "text-gray-400" : "text-white"
 				}`}
 			>
-				<option value="" className="bg-gray-700 text-gray-400">
+				<option value="" className="bg-gray-700 text-gray-400 italic">
 					{label}
 				</option>
 				{possibleValues.map((element, index) => (
-					<option key={index} className="bg-gray-700 text-gray-400" value={element.value}>
+					<option key={index} className="bg-gray-700 text-gray-300" value={element.value}>
 						{element.option}
 					</option>
 				))}

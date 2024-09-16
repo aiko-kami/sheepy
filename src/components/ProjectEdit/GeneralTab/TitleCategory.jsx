@@ -74,10 +74,12 @@ const TitleCategory = ({ formState, onChange, setFormState }) => {
 					<div className="flex flex-col lg:flex-row justify-between">
 						{/* Project category */}
 						<div className="flex-1 mb-6 lg:mb-0 lg:mr-2">
+							<div className="text-sm">Select category:</div>
 							<SelectField inputName="projectCategory" possibleValues={optionsListCat} inputValue={formState.projectCategory} label="Category" onChange={handleCategoryChange} />
 						</div>
 						{/* Project sub-category */}
 						<div className="flex-1 min-h-[3.5rem] lg:ml-2">
+							<div className="text-sm">Select sub-category:</div>
 							<SelectField inputName="projectSubCategory" possibleValues={optionsListSubcat} inputValue={formState.projectSubCategory} label="Sub-category" onChange={onChange} />
 						</div>
 					</div>

@@ -22,7 +22,6 @@ const Attachments = ({ project }) => {
 		event.preventDefault();
 		// Handle form submission
 		console.log("🚀 ~ onSubmit ~ The project has been updated:", formState);
-		closeModalReport();
 	};
 
 	return (

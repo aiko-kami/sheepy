@@ -79,12 +79,12 @@
 	],
 	"talentProfilePicture": "https://p7.hiclipart.com/preview/355/848/997/computer-icons-user-profile-google-account-photos-icon-account.jpg",
 	"status": {
-		"name": "Active",
+		"name": "active",
 		"bgColor": "bg-green-500",
 		"textColor": "text-green-500",
 		"statusHistory": [
 			{
-				"name": "Active",
+				"name": "active",
 				"reason": "Back to business",
 				"updater": {
 					"userId": "12345",

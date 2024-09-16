@@ -1,7 +1,7 @@
 import { IoHourglassOutline, IoTime } from "react-icons/io5";
 import StatusHistoryTable from "@/components/Tables/StatusHistoryTable";
 
-const StatusHistory = ({ formState, onChange, project }) => {
+const StatusHistory = ({ status }) => {
 	return (
 		<>
 			{/* Project status history */}
@@ -12,10 +12,10 @@ const StatusHistory = ({ formState, onChange, project }) => {
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 			{/* Project status */}
 			<div className="mb-8">
-				{/* Status history input field */}
-				{project.status.statusHistory && (
+				{/* Status history table */}
+				{status.statusHistory && (
 					<div className="w-full overflow-x-auto shadow-md sm:rounded-lg">
-						<StatusHistoryTable status={project.status.statusHistory} />
+						<StatusHistoryTable status={status.statusHistory} />
 					</div>
 				)}
 			</div>

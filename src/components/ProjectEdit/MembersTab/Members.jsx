@@ -24,22 +24,21 @@ const Members = ({ project }) => {
 		event.preventDefault();
 		// Handle form submission
 		console.log("🚀 ~ onSubmit ~ The project has been updated:", formState);
-		closeModalReport();
 	};
 
 	return (
 		<>
 			<form onSubmit={onSubmit}>
 				{/* Project members */}
-				<div className="mb-8 lg:mb-18">
+				<div className="mb-8 lg:mb-14">
 					<MembersDetails formState={formState} onChange={onChange} />
 				</div>
 				{/* Project members */}
-				<div className="mb-8 lg:mb-18">
+				<div className="mb-8 lg:mb-14">
 					<JoinRequests formState={formState} onChange={onChange} />
 				</div>
 				{/* Project members */}
-				<div className="mb-8 lg:mb-18">
+				<div className="mb-8 lg:mb-14">
 					<JoinInvitations formState={formState} onChange={onChange} />
 				</div>
 			</form>

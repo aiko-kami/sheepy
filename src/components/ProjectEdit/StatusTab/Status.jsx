@@ -7,7 +7,8 @@ import StatusHistory from "@/components/ProjectEdit/StatusTab/StatusHistory";
 
 const Status = ({ project }) => {
 	const [formState, setFormState] = useState({
-		projectStatus: project.status,
+		projectStatus: project.status.name,
+		statusReason: "",
 	});
 
 	const onChange = (e) => {
@@ -23,20 +24,17 @@ const Status = ({ project }) => {
 		event.preventDefault();
 		// Handle form submission
 		console.log("🚀 ~ onSubmit ~ The project has been updated:", formState);
-		closeModalReport();
 	};
 
 	return (
 		<>
 			<form onSubmit={onSubmit}>
 				{/* Project status */}
-				<div className="mb-8 lg:mb-18">
+				<div className="mb-8 lg:mb-10">
 					<StatusDetails formState={formState} onChange={onChange} />
 				</div>
 				{/* Project status history */}
-				<div className="mb-8 lg:mb-18">
-					<StatusHistory formState={formState} onChange={onChange} project={project} />
-				</div>
+				<StatusHistory status={project.status} />
 			</form>
 		</>
 	);

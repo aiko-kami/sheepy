@@ -24,16 +24,13 @@ const Location = ({ project }) => {
 		event.preventDefault();
 		// Handle form submission
 		console.log("🚀 ~ onSubmit ~ The project has been updated:", formState);
-		closeModalReport();
 	};
 
 	return (
 		<>
 			<form onSubmit={onSubmit}>
 				{/* Project location */}
-				<div className="mb-8 lg:mb-12">
-					<LocationDetails formState={formState} onChange={onChange} />
-				</div>
+				<LocationDetails formState={formState} onChange={onChange} />
 			</form>
 		</>
 	);

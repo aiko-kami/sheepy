@@ -1,4 +1,5 @@
 import { IoLocationSharp } from "react-icons/io5";
+import { Button } from "@/components/Buttons/Buttons";
 import { ToggleField } from "@/components/Forms/ToggleField";
 import InputField from "@/components/Forms/InputField";
 
@@ -31,6 +32,16 @@ const LocationDetails = ({ formState, onChange }) => {
 					<div className="mb-6 xl:mb-8">
 						<InputField inputName="projectLocationCity" inputType="text" label="City" inputValue={formState.projectLocationCity} onChange={onChange} disabled={formState.locationOnlineOnly} />
 					</div>
+				</div>
+				<div className="flex justify-center">
+					<Button
+						btnProps={{
+							type: "submit",
+							btnColor: "blue",
+						}}
+					>
+						Update location
+					</Button>
 				</div>
 			</div>
 		</>

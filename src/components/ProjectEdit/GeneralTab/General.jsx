@@ -31,26 +31,25 @@ const General = ({ project }) => {
 		event.preventDefault();
 		// Handle form submission
 		console.log("🚀 ~ onSubmit ~ The project has been updated:", formState);
-		closeModalReport();
 	};
 
 	return (
 		<>
 			<form onSubmit={onSubmit}>
 				{/* Project title and category */}
-				<div className="mb-8 lg:mb-18">
+				<div className="mb-8 lg:mb-14">
 					<TitleCategory formState={formState} setFormState={setFormState} onChange={onChange} />
 				</div>
 				{/* Project summary, description and goals */}
-				<div className="mb-8 lg:mb-18">
+				<div className="mb-8 lg:mb-14">
 					<Summary formState={formState} onChange={onChange} />
 				</div>
 				{/* Project cover */}
-				<div className="mb-8 lg:mb-18">
+				<div className="mb-8 lg:mb-14">
 					<Cover formState={formState} onChange={onChange} />
 				</div>
 				{/* Project tags */}
-				<div className="mb-8 lg:mb-18">
+				<div className="mb-8 lg:mb-14">
 					<Tags formState={formState} setFormState={setFormState} />
 				</div>
 			</form>
