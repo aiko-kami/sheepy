@@ -81,7 +81,74 @@
 	"status": {
 		"name": "Active",
 		"bgColor": "bg-green-500",
-		"textColor": "text-green-500"
+		"textColor": "text-green-500",
+		"statusHistory": [
+			{
+				"name": "Active",
+				"reason": "Back to business",
+				"updater": {
+					"userId": "12345",
+					"username": "Captain_Picard",
+					"profilePicture": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Jean-Luc_Picard_2.jpg",
+					"role": "Director"
+				},
+				"date": "02 September 2024",
+				"bgColor": "bg-green-500",
+				"textColor": "text-green-500"
+			},
+			{
+				"name": "On-hold",
+				"reason": "Holiday break",
+				"updater": {
+					"userId": "12345",
+					"username": "Brad_Anderson",
+					"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU",
+					"role": "Director"
+				},
+				"date": "25 August 2024",
+				"bgColor": "bg-yellow-500",
+				"textColor": "text-yellow-500"
+			},
+			{
+				"name": "Active",
+				"reason": "Project approved",
+				"updater": {
+					"userId": "000",
+					"username": "Admin",
+					"profilePicture": "https://cdn.vectorstock.com/i/500p/35/93/admin-icon-vector-52943593.jpg",
+					"role": "Director"
+				},
+				"date": "07 August 2024",
+				"bgColor": "bg-green-500",
+				"textColor": "text-green-500"
+			},
+			{
+				"name": "Submitted",
+				"reason": "Project submitted for approval",
+				"updater": {
+					"userId": "12345",
+					"username": "Brad_Anderson",
+					"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU",
+					"role": "Director"
+				},
+				"date": "07 August 2024",
+				"bgColor": "bg-yellow-500",
+				"textColor": "text-yellow-500"
+			},
+			{
+				"name": "Draft",
+				"reason": "Project created",
+				"updater": {
+					"userId": "12345",
+					"username": "Brad_Anderson",
+					"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU",
+					"role": "Director"
+				},
+				"date": "04 August 2024",
+				"bgColor": "bg-gray-500",
+				"textColor": "text-gray-500"
+			}
+		]
 	},
 	"creator": "Brad_Anderson",
 	"creatorProfilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU",

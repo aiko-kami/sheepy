@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import StatusDetails from "@/components/ProjectEdit/StatusTab/StatusDetails";
+import StatusHistory from "@/components/ProjectEdit/StatusTab/StatusHistory";
 
 const Status = ({ project }) => {
 	const [formState, setFormState] = useState({
@@ -29,8 +30,12 @@ const Status = ({ project }) => {
 		<>
 			<form onSubmit={onSubmit}>
 				{/* Project status */}
-				<div className="mb-8 lg:mb-12">
+				<div className="mb-8 lg:mb-18">
 					<StatusDetails formState={formState} onChange={onChange} />
+				</div>
+				{/* Project status history */}
+				<div className="mb-8 lg:mb-18">
+					<StatusHistory formState={formState} onChange={onChange} project={project} />
 				</div>
 			</form>
 		</>

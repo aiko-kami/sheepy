@@ -1,5 +1,3 @@
-import { ProjectCard, ProjectCardSkeleton } from "@/components/Cards/Projects/ProjectCards";
-import ProjectTable from "@/components/Tables/ProjectTable";
 import projectsToJoin from "@/mock/projectsToJoin.json";
 import JoinProject from "@/components/JoinProject/JoinProject";
 

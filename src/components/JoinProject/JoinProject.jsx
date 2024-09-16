@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { IoGridOutline, IoReorderFour } from "react-icons/io5";
 import { ProjectCard, ProjectCardSkeleton } from "@/components/Cards/Projects/ProjectCards";
 import ProjectTable from "@/components/Tables/ProjectTable";
 import DisplaySwitch from "@/components/Buttons/DisplaySwitch";
