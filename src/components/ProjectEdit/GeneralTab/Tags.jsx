@@ -62,7 +62,7 @@ const Tags = ({ formState, setFormState }) => {
 					{/* Tag input field */}
 					<div className="flex items-center">
 						<div className="w-full mr-2 mb-6">
-							<InputField inputName="projectTags" inputType="text" label="Project tags (optional)" inputValue={tagInput} onChange={handleTagInputChange} ref={inputRef} />
+							<InputField inputName="projectTags" inputType="text" label="Project tags" inputValue={tagInput} onChange={handleTagInputChange} ref={inputRef} />
 						</div>
 						<div className="min-w-fit">
 							<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "blue", btnRounded: "std", action: handleAddTag }}>

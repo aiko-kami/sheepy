@@ -1,4 +1,5 @@
 import General from "@/components/ProjectEdit/GeneralTab/General";
+import FormGeneral from "@/components/ProjectEdit/GeneralTab/FormGeneral";
 import SideMenu from "@/components/ProjectEdit/SideMenu";
 
 import project from "@/mock/project.json";
@@ -11,16 +12,7 @@ export const metadata = {
 const ProjectEditGeneralPage = () => {
 	return (
 		<div className="container mx-auto hyphens-auto">
-			<div className="lg:grid grid-cols-5">
-				<div className="p-2 mb-6">
-					{/* Project Status and links */}
-					<SideMenu project={project} />
-				</div>
-				<div className="col-span-4 lg:px-2 lg:pl-10">
-					{/* Project general information */}
-					<General project={project} />
-				</div>
-			</div>
+			<FormGeneral project={project} />
 		</div>
 	);
 };

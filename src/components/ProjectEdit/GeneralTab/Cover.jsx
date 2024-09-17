@@ -10,23 +10,26 @@ const Cover = ({ formState, onChange }) => {
 				Project cover
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
-			{/* Project cover */}
-			<div className="flex justify-center">
-				<div className="rounded-3xl border-2 border-dashed border-blue-400 w-2/3 h-70">
-					<div className="flex justify-center items-center h-full">
-						<div className="flex flex-col justify-center items-center">
-							<div>
-								<IoPushOutline className="text-6xl text-blue-400" />
+
+			<div className="md:pl-4">
+				{/* Project cover */}
+				<div className="flex justify-center">
+					<div className="rounded-3xl border-2 border-dashed border-blue-400 w-2/3 h-70">
+						<div className="flex justify-center items-center h-full">
+							<div className="flex flex-col justify-center items-center">
+								<div>
+									<IoPushOutline className="text-6xl text-blue-400" />
+								</div>
+								<div className="">Drag and drop file here</div>
+								<div className="mb-2">or</div>
+								<Button
+									btnProps={{
+										type: "button",
+									}}
+								>
+									Choose a file
+								</Button>
 							</div>
-							<div className="">Drag and drop file here</div>
-							<div className="mb-2">or</div>
-							<Button
-								btnProps={{
-									type: "button",
-								}}
-							>
-								Choose a file
-							</Button>
 						</div>
 					</div>
 				</div>

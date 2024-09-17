@@ -1,4 +1,5 @@
 import { IoDocumentText } from "react-icons/io5";
+import { Button } from "@/components/Buttons/Buttons";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 
 const Summary = ({ formState, onChange }) => {
@@ -13,7 +14,7 @@ const Summary = ({ formState, onChange }) => {
 
 			<div className="md:pl-4">
 				{/* Project summary */}
-				<div className="mb-4 lg:mb-8">
+				<div className="mb-6 xl:mb-8">
 					<TextAreaField
 						label="Project summary:"
 						labelStyle="block mb-2"
@@ -27,7 +28,7 @@ const Summary = ({ formState, onChange }) => {
 					/>
 				</div>
 				{/* Project description */}
-				<div className="mb-4 lg:mb-8">
+				<div className="mb-6 xl:mb-8">
 					<TextAreaField
 						label="Project description:"
 						labelStyle="block mb-2"
@@ -41,19 +42,17 @@ const Summary = ({ formState, onChange }) => {
 					/>
 				</div>
 				{/* Project goals */}
-				<div>
-					<TextAreaField
-						label="Project goal:"
-						labelStyle="block mb-2"
-						inputName="projectGoal"
-						inputValue={formState.projectGoal}
-						onChange={onChange}
-						placeholder="What is the main goal of your project?... (500 characters max)"
-						maxLength={500}
-						rows="6"
-						required={true}
-					/>
-				</div>
+				<TextAreaField
+					label="Project goal:"
+					labelStyle="block mb-2"
+					inputName="projectGoal"
+					inputValue={formState.projectGoal}
+					onChange={onChange}
+					placeholder="What is the main goal of your project?... (500 characters max)"
+					maxLength={500}
+					rows="6"
+					required={true}
+				/>
 			</div>
 		</>
 	);
