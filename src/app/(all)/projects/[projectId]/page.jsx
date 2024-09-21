@@ -27,12 +27,7 @@ const ProjectPublicPage = () => {
 			<Cover project={project} />
 			<div className="lg:px-16">
 				<div className="sm:grid sm:grid-cols-3 mb-4 sm:mb-12">
-					<div className="sm:col-span-2 mb-4 sm:pr-8 lg:pr-16 sm:mb-0">
-						{/* Project description */}
-						<ProjectDescription project={project} />
-					</div>
-
-					<div>
+					<div className="sm:col-start-3 order-1 sm:order-2">
 						{/* Buttons Join project, Like and Share */}
 						<ActionButtons project={project} user={user} />
 
@@ -47,6 +42,10 @@ const ProjectPublicPage = () => {
 
 						{/* Members */}
 						<ProjectMembers members={project.members} />
+					</div>
+					<div className="sm:col-span-2 sm:order-1 order-2 mb-4 sm:pr-8 lg:pr-16 sm:mb-0">
+						{/* Project description */}
+						<ProjectDescription project={project} />
 					</div>
 				</div>
 				{/* Q&A and comments */}
