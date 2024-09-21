@@ -29,19 +29,9 @@ const LocationDetails = ({ formState, onChange }) => {
 							disabled={formState.locationOnlineOnly}
 						/>
 					</div>
-					<div className="mb-6 xl:mb-8">
+					<div>
 						<InputField inputName="projectLocationCity" inputType="text" label="City" inputValue={formState.projectLocationCity} onChange={onChange} disabled={formState.locationOnlineOnly} />
 					</div>
-				</div>
-				<div className="flex justify-center">
-					<Button
-						btnProps={{
-							type: "submit",
-							btnColor: "blue",
-						}}
-					>
-						Update location
-					</Button>
 				</div>
 			</div>
 		</>

@@ -1,6 +1,4 @@
-import General from "@/components/ProjectEdit/GeneralTab/General";
 import FormGeneral from "@/components/ProjectEdit/GeneralTab/FormGeneral";
-import SideMenu from "@/components/ProjectEdit/SideMenu";
 
 import project from "@/mock/project.json";
 

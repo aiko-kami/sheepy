@@ -1,5 +1,4 @@
-import QandAs from "@/components/ProjectEdit/QandAsTab/QandAs";
-import SideMenu from "@/components/ProjectEdit/SideMenu";
+import FormQandAs from "@/components/ProjectEdit/QandAsTab/FormQandAs";
 
 import project from "@/mock/project.json";
 
@@ -11,16 +10,7 @@ export const metadata = {
 const ProjectEditQandAPage = () => {
 	return (
 		<div className="container mx-auto hyphens-auto">
-			<div className="lg:grid grid-cols-5">
-				<div className="p-2 mb-6">
-					{/* Project Status and links */}
-					<SideMenu project={project} />
-				</div>
-				<div className="col-span-4 lg:px-2 lg:pl-10">
-					{/* Project Q&As information */}
-					<QandAs project={project} />
-				</div>
-			</div>
+			<FormQandAs project={project} />
 		</div>
 	);
 };

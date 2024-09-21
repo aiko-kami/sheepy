@@ -10,14 +10,17 @@ const StatusHistory = ({ status }) => {
 				Status history
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
-			{/* Project status */}
-			<div className="mb-8">
-				{/* Status history table */}
-				{status.statusHistory && (
-					<div className="w-full overflow-x-auto shadow-md sm:rounded-lg">
-						<StatusHistoryTable status={status.statusHistory} />
-					</div>
-				)}
+
+			<div className="md:px-4">
+				{/* Project status */}
+				<div className="mb-8">
+					{/* Status history table */}
+					{status.statusHistory && (
+						<div className="w-full overflow-x-auto shadow-md sm:rounded-lg">
+							<StatusHistoryTable status={status.statusHistory} />
+						</div>
+					)}
+				</div>
 			</div>
 		</>
 	);

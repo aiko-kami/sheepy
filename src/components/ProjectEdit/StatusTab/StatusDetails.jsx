@@ -30,7 +30,7 @@ const StatusDetails = ({ formState, onChange }) => {
 					<SelectField inputName="projectStatus" possibleValues={optionsList} inputValue={formState.projectStatus} label="New status" onChange={onChange} />
 				</div>
 				{/* Project status reason */}
-				<div className="max-w-160 mb-6 xl:mb-8">
+				<div className="max-w-180 mb-6 xl:mb-8">
 					<InputField inputName="statusReason" inputType="text" label="Reason to change project status" inputValue={formState.statusReason} onChange={onChange} />
 				</div>
 				<div className="flex justify-center">

@@ -1,5 +1,4 @@
-import Location from "@/components/ProjectEdit/LocationTab/Location";
-import SideMenu from "@/components/ProjectEdit/SideMenu";
+import FormLocation from "@/components/ProjectEdit/LocationTab/FormLocation";
 
 import project from "@/mock/project.json";
 
@@ -11,16 +10,7 @@ export const metadata = {
 const ProjectEditLocationPage = () => {
 	return (
 		<div className="container mx-auto hyphens-auto">
-			<div className="lg:grid grid-cols-5">
-				<div className="p-2 mb-6">
-					{/* Project Status and links */}
-					<SideMenu project={project} />
-				</div>
-				<div className="col-span-4 lg:px-2 lg:pl-10">
-					{/* Project location information */}
-					<Location project={project} />
-				</div>
-			</div>
+			<FormLocation project={project} />
 		</div>
 	);
 };

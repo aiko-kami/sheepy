@@ -13,7 +13,7 @@ const ProjectEditNavbar = () => {
 
 	return (
 		<>
-			<ul className="flex flex-wrap justify-center font-medium text-center xl:border-b border-gray-700">
+			<ul className="flex flex-wrap justify-end font-medium text-center xl:border-b border-gray-700">
 				<li className="mb-2 xl:mb-0 me-1">
 					<Link href="/projects/48/edit/general" className={`${getLinkClasses("/projects/48/edit/general")}`} aria-current={pathname === "/projects/48/edit/general" ? "page" : undefined}>
 						General
@@ -49,7 +49,7 @@ const ProjectEditNavbar = () => {
 						Steps
 					</Link>
 				</li>
-				<li className="mb-2 xl:mb-0 me-1">
+				<li className="mb-2 xl:mb-0">
 					<Link href="/projects/43/edit/q-and-a" className={`${getLinkClasses("/projects/43/edit/q-and-a")}`} aria-current={pathname === "/projects/43/edit/q-and-a" ? "page" : undefined}>
 						Q&As
 					</Link>

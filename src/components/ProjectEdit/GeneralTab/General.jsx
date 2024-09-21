@@ -1,7 +1,3 @@
-"use client";
-
-import { useState } from "react";
-
 import TitleCategory from "@/components/ProjectEdit/GeneralTab/TitleCategory";
 import Summary from "@/components/ProjectEdit/GeneralTab/Summary";
 import Cover from "@/components/ProjectEdit/GeneralTab/Cover";

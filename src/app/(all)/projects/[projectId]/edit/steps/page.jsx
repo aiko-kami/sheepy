@@ -1,5 +1,4 @@
-import Steps from "@/components/ProjectEdit/StepsTab/Steps";
-import SideMenu from "@/components/ProjectEdit/SideMenu";
+import FormSteps from "@/components/ProjectEdit/StepsTab/FormSteps";
 
 import project from "@/mock/project.json";
 
@@ -11,16 +10,7 @@ export const metadata = {
 const ProjectEditStepsPage = () => {
 	return (
 		<div className="container mx-auto hyphens-auto">
-			<div className="lg:grid grid-cols-5">
-				<div className="p-2 mb-6">
-					{/* Project Status and links */}
-					<SideMenu project={project} />
-				</div>
-				<div className="col-span-4 lg:px-2 lg:pl-10">
-					{/* Project steps information */}
-					<Steps project={project} />
-				</div>
-			</div>
+			<FormSteps project={project} />
 		</div>
 	);
 };

@@ -1,5 +1,4 @@
-import Rights from "@/components/ProjectEdit/RightsTab/Rights";
-import SideMenu from "@/components/ProjectEdit/SideMenu";
+import FormRights from "@/components/ProjectEdit/RightsTab/FormRights";
 
 import project from "@/mock/project.json";
 
@@ -11,16 +10,7 @@ export const metadata = {
 const ProjectEditRightsPage = () => {
 	return (
 		<div className="container mx-auto hyphens-auto">
-			<div className="lg:grid grid-cols-5">
-				<div className="p-2 mb-6">
-					{/* Project Status and links */}
-					<SideMenu project={project} />
-				</div>
-				<div className="col-span-4 lg:px-2 lg:pl-10">
-					{/* Project rights information */}
-					<Rights project={project} />
-				</div>
-			</div>
+			<FormRights project={project} />
 		</div>
 	);
 };

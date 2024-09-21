@@ -105,6 +105,23 @@ Don't let your ideas and talents go to waste – join Sheepy now!
   - [x] Notifications
 
 - [] Project edition page (dashboards with different projects?)
+
+  - [] General
+    - [] Display cover
+  - [x] Location
+  - [x] Status
+  - [] Attachments
+    - [] Upload file(s)
+    - [] Open/Download file
+    - [] Attachments actions
+  - [] Members
+    - [] Members actions
+    - [] Requests
+    - [] Invitations
+  - [] Rights
+  - [] Steps
+  - [] Q&As
+
 - [] Project description private page
 - [] View my profile page
 - [] My messages page
