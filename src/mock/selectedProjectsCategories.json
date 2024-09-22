@@ -1,0 +1,536 @@
+[
+	{
+		"category": {
+			"name": "Film & Video",
+			"link": "/categories/film-video",
+			"colors": {
+				"colorBase": "yellow-400",
+				"bgColor": "bg-yellow-400",
+				"bgColorHover": "bg-yellow-300"
+			}
+		},
+		"projects": [
+			{
+				"projectId": 48,
+				"title": "Film a Short Movie",
+				"summary": "Join me in creating a short movie. From scriptwriting to filming, we need creative minds to bring this project to life.",
+				"cover": "https://www.stagemilk.com/wp-content/uploads/2016/07/short-film-630x300.jpeg",
+				"likes": 14,
+				"category": {
+					"name": "Film & Video",
+					"link": "/categories/film-video",
+					"colors": {
+						"colorBase": "yellow-400",
+						"bgColor": "bg-yellow-400",
+						"bgColorHover": "bg-yellow-300"
+					}
+				},
+				"subCategory": "Short Film",
+				"location": "Toronto",
+				"tags": [
+					{
+						"name": "Film",
+						"bgColor": "bg-blue-400"
+					},
+					{
+						"name": "Creativity",
+						"bgColor": "bg-red-400"
+					}
+				],
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
+			},
+			{
+				"projectId": 48,
+				"title": "Film a Short Movie",
+				"summary": "Join me in creating a short movie. From scriptwriting to filming, we need creative minds to bring this project to life.",
+				"cover": "https://www.stagemilk.com/wp-content/uploads/2016/07/short-film-630x300.jpeg",
+				"likes": 14,
+				"category": {
+					"name": "Film & Video",
+					"link": "/categories/film-video",
+					"colors": {
+						"colorBase": "yellow-400",
+						"bgColor": "bg-yellow-400",
+						"bgColorHover": "bg-yellow-300"
+					}
+				},
+				"subCategory": "Short Film",
+				"location": "Toronto",
+				"tags": [
+					{
+						"name": "Film",
+						"bgColor": "bg-blue-400"
+					},
+					{
+						"name": "Creativity",
+						"bgColor": "bg-red-400"
+					}
+				],
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
+			},
+			{
+				"projectId": 48,
+				"title": "Film a Short Movie",
+				"summary": "Join me in creating a short movie. From scriptwriting to filming, we need creative minds to bring this project to life.",
+				"cover": "https://www.stagemilk.com/wp-content/uploads/2016/07/short-film-630x300.jpeg",
+				"likes": 14,
+				"category": {
+					"name": "Film & Video",
+					"link": "/categories/film-video",
+					"colors": {
+						"colorBase": "yellow-400",
+						"bgColor": "bg-yellow-400",
+						"bgColorHover": "bg-yellow-300"
+					}
+				},
+				"subCategory": "Short Film",
+				"location": "Toronto",
+				"tags": [
+					{
+						"name": "Film",
+						"bgColor": "bg-blue-400"
+					},
+					{
+						"name": "Creativity",
+						"bgColor": "bg-red-400"
+					}
+				],
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
+			},
+			{
+				"projectId": 48,
+				"title": "Film a Short Movie",
+				"summary": "Join me in creating a short movie. From scriptwriting to filming, we need creative minds to bring this project to life.",
+				"cover": "https://www.stagemilk.com/wp-content/uploads/2016/07/short-film-630x300.jpeg",
+				"likes": 14,
+				"category": {
+					"name": "Film & Video",
+					"link": "/categories/film-video",
+					"colors": {
+						"colorBase": "yellow-400",
+						"bgColor": "bg-yellow-400",
+						"bgColorHover": "bg-yellow-300"
+					}
+				},
+				"subCategory": "Short Film",
+				"location": "Toronto",
+				"tags": [
+					{
+						"name": "Film",
+						"bgColor": "bg-blue-400"
+					},
+					{
+						"name": "Creativity",
+						"bgColor": "bg-red-400"
+					}
+				],
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
+			},
+			{
+				"projectId": 48,
+				"title": "Film a Short Movie",
+				"summary": "Join me in creating a short movie. From scriptwriting to filming, we need creative minds to bring this project to life.",
+				"cover": "https://www.stagemilk.com/wp-content/uploads/2016/07/short-film-630x300.jpeg",
+				"likes": 14,
+				"category": {
+					"name": "Film & Video",
+					"link": "/categories/film-video",
+					"colors": {
+						"colorBase": "yellow-400",
+						"bgColor": "bg-yellow-400",
+						"bgColorHover": "bg-yellow-300"
+					}
+				},
+				"subCategory": "Short Film",
+				"location": "Toronto",
+				"tags": [
+					{
+						"name": "Film",
+						"bgColor": "bg-blue-400"
+					},
+					{
+						"name": "Creativity",
+						"bgColor": "bg-red-400"
+					}
+				],
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
+			}
+		]
+	},
+	{
+		"category": {
+			"name": "Travel",
+			"link": "/categories/travel",
+			"colors": {
+				"colorBase": "indigo-400",
+				"bgColor": "bg-indigo-400",
+				"bgColorHover": "bg-indigo-300"
+			}
+		},
+		"projects": [
+			{
+				"projectId": 193472,
+				"title": "Local History Walk",
+				"summary": "Explore the rich history of our town with a guided walk covering historical landmarks and local stories.",
+				"cover": "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/87/a8/61.jpg",
+				"likes": 12,
+				"category": {
+					"name": "Travel",
+					"link": "/categories/travel",
+					"colors": {
+						"colorBase": "indigo-400",
+						"bgColor": "bg-indigo-400",
+						"bgColorHover": "bg-indigo-300"
+					}
+				},
+				"subCategory": "Cultural Experiences",
+				"location": "Boston",
+				"tags": [
+					{
+						"name": "Past",
+						"bgColor": "bg-indigo-400"
+					},
+					{
+						"name": "Tour",
+						"bgColor": "bg-yellow-400"
+					}
+				],
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
+			},
+			{
+				"projectId": 193472,
+				"title": "Local History Walk",
+				"summary": "Explore the rich history of our town with a guided walk covering historical landmarks and local stories.",
+				"cover": "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/87/a8/61.jpg",
+				"likes": 12,
+				"category": {
+					"name": "Travel",
+					"link": "/categories/travel",
+					"colors": {
+						"colorBase": "indigo-400",
+						"bgColor": "bg-indigo-400",
+						"bgColorHover": "bg-indigo-300"
+					}
+				},
+				"subCategory": "Cultural Experiences",
+				"location": "Boston",
+				"tags": [
+					{
+						"name": "Past",
+						"bgColor": "bg-indigo-400"
+					},
+					{
+						"name": "Tour",
+						"bgColor": "bg-yellow-400"
+					}
+				],
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
+			},
+			{
+				"projectId": 193472,
+				"title": "Local History Walk",
+				"summary": "Explore the rich history of our town with a guided walk covering historical landmarks and local stories.",
+				"cover": "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/87/a8/61.jpg",
+				"likes": 12,
+				"category": {
+					"name": "Travel",
+					"link": "/categories/travel",
+					"colors": {
+						"colorBase": "indigo-400",
+						"bgColor": "bg-indigo-400",
+						"bgColorHover": "bg-indigo-300"
+					}
+				},
+				"subCategory": "Cultural Experiences",
+				"location": "Boston",
+				"tags": [
+					{
+						"name": "Past",
+						"bgColor": "bg-indigo-400"
+					},
+					{
+						"name": "Tour",
+						"bgColor": "bg-yellow-400"
+					}
+				],
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
+			},
+			{
+				"projectId": 193472,
+				"title": "Local History Walk",
+				"summary": "Explore the rich history of our town with a guided walk covering historical landmarks and local stories.",
+				"cover": "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/87/a8/61.jpg",
+				"likes": 12,
+				"category": {
+					"name": "Travel",
+					"link": "/categories/travel",
+					"colors": {
+						"colorBase": "indigo-400",
+						"bgColor": "bg-indigo-400",
+						"bgColorHover": "bg-indigo-300"
+					}
+				},
+				"subCategory": "Cultural Experiences",
+				"location": "Boston",
+				"tags": [
+					{
+						"name": "Past",
+						"bgColor": "bg-indigo-400"
+					},
+					{
+						"name": "Tour",
+						"bgColor": "bg-yellow-400"
+					}
+				],
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
+			},
+			{
+				"projectId": 193472,
+				"title": "Local History Walk",
+				"summary": "Explore the rich history of our town with a guided walk covering historical landmarks and local stories.",
+				"cover": "https://media.tacdn.com/media/attractions-splice-spp-674x446/07/87/a8/61.jpg",
+				"likes": 12,
+				"category": {
+					"name": "Travel",
+					"link": "/categories/travel",
+					"colors": {
+						"colorBase": "indigo-400",
+						"bgColor": "bg-indigo-400",
+						"bgColorHover": "bg-indigo-300"
+					}
+				},
+				"subCategory": "Cultural Experiences",
+				"location": "Boston",
+				"tags": [
+					{
+						"name": "Past",
+						"bgColor": "bg-indigo-400"
+					},
+					{
+						"name": "Tour",
+						"bgColor": "bg-yellow-400"
+					}
+				],
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
+			}
+		]
+	},
+	{
+		"category": {
+			"name": "Food",
+			"link": "/categories/food",
+			"colors": {
+				"colorBase": "red-600",
+				"bgColor": "bg-red-600",
+				"bgColorHover": "bg-red-500"
+			}
+		},
+		"projects": [
+			{
+				"projectId": 48,
+				"title": "Host a Cooking Class",
+				"summary": "Love cooking? Join me in hosting a cooking class where we can share recipes and culinary techniques.",
+				"cover": "https://media.licdn.com/dms/image/C561BAQFq6G0mq1ZEqQ/company-background_10000/0/1584375305611/cookingclass_cover?e=2147483647&v=beta&t=HHQJNqTlYpV9Th3TQtsT1KP7zmMVsTaxO0Op2l0CAX4",
+				"likes": 11,
+				"category": {
+					"name": "Food",
+					"link": "/categories/food",
+					"colors": {
+						"colorBase": "red-600",
+						"bgColor": "bg-red-600",
+						"bgColorHover": "bg-red-500"
+					}
+				},
+				"subCategory": "Cooking",
+				"location": "Boston",
+				"tags": [
+					{
+						"name": "Cooking",
+						"bgColor": "bg-red-400"
+					},
+					{
+						"name": "Food",
+						"bgColor": "bg-orange-400"
+					}
+				],
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
+			},
+			{
+				"projectId": 48,
+				"title": "Host a Cooking Class",
+				"summary": "Love cooking? Join me in hosting a cooking class where we can share recipes and culinary techniques.",
+				"cover": "https://media.licdn.com/dms/image/C561BAQFq6G0mq1ZEqQ/company-background_10000/0/1584375305611/cookingclass_cover?e=2147483647&v=beta&t=HHQJNqTlYpV9Th3TQtsT1KP7zmMVsTaxO0Op2l0CAX4",
+				"likes": 11,
+				"category": {
+					"name": "Food",
+					"link": "/categories/food",
+					"colors": {
+						"colorBase": "red-600",
+						"bgColor": "bg-red-600",
+						"bgColorHover": "bg-red-500"
+					}
+				},
+				"subCategory": "Cooking",
+				"location": "Boston",
+				"tags": [
+					{
+						"name": "Cooking",
+						"bgColor": "bg-red-400"
+					},
+					{
+						"name": "Food",
+						"bgColor": "bg-orange-400"
+					}
+				],
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
+			},
+			{
+				"projectId": 48,
+				"title": "Host a Cooking Class",
+				"summary": "Love cooking? Join me in hosting a cooking class where we can share recipes and culinary techniques.",
+				"cover": "https://media.licdn.com/dms/image/C561BAQFq6G0mq1ZEqQ/company-background_10000/0/1584375305611/cookingclass_cover?e=2147483647&v=beta&t=HHQJNqTlYpV9Th3TQtsT1KP7zmMVsTaxO0Op2l0CAX4",
+				"likes": 11,
+				"category": {
+					"name": "Food",
+					"link": "/categories/food",
+					"colors": {
+						"colorBase": "red-600",
+						"bgColor": "bg-red-600",
+						"bgColorHover": "bg-red-500"
+					}
+				},
+				"subCategory": "Cooking",
+				"location": "Boston",
+				"tags": [
+					{
+						"name": "Cooking",
+						"bgColor": "bg-red-400"
+					},
+					{
+						"name": "Food",
+						"bgColor": "bg-orange-400"
+					}
+				],
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
+			},
+			{
+				"projectId": 48,
+				"title": "Host a Cooking Class",
+				"summary": "Love cooking? Join me in hosting a cooking class where we can share recipes and culinary techniques.",
+				"cover": "https://media.licdn.com/dms/image/C561BAQFq6G0mq1ZEqQ/company-background_10000/0/1584375305611/cookingclass_cover?e=2147483647&v=beta&t=HHQJNqTlYpV9Th3TQtsT1KP7zmMVsTaxO0Op2l0CAX4",
+				"likes": 11,
+				"category": {
+					"name": "Food",
+					"link": "/categories/food",
+					"colors": {
+						"colorBase": "red-600",
+						"bgColor": "bg-red-600",
+						"bgColorHover": "bg-red-500"
+					}
+				},
+				"subCategory": "Cooking",
+				"location": "Boston",
+				"tags": [
+					{
+						"name": "Cooking",
+						"bgColor": "bg-red-400"
+					},
+					{
+						"name": "Food",
+						"bgColor": "bg-orange-400"
+					}
+				],
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
+			},
+			{
+				"projectId": 48,
+				"title": "Host a Cooking Class",
+				"summary": "Love cooking? Join me in hosting a cooking class where we can share recipes and culinary techniques.",
+				"cover": "https://media.licdn.com/dms/image/C561BAQFq6G0mq1ZEqQ/company-background_10000/0/1584375305611/cookingclass_cover?e=2147483647&v=beta&t=HHQJNqTlYpV9Th3TQtsT1KP7zmMVsTaxO0Op2l0CAX4",
+				"likes": 11,
+				"category": {
+					"name": "Food",
+					"link": "/categories/food",
+					"colors": {
+						"colorBase": "red-600",
+						"bgColor": "bg-red-600",
+						"bgColorHover": "bg-red-500"
+					}
+				},
+				"subCategory": "Cooking",
+				"location": "Boston",
+				"tags": [
+					{
+						"name": "Cooking",
+						"bgColor": "bg-red-400"
+					},
+					{
+						"name": "Food",
+						"bgColor": "bg-orange-400"
+					}
+				],
+				"status": {
+					"name": "Active",
+					"bgColor": "bg-green-500",
+					"textColor": "text-green-500"
+				}
+			}
+		]
+	}
+]

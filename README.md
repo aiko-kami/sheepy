@@ -153,9 +153,11 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 - [x] Navbar for project edition
 
 - [x] Location table for search
+- [x] Second mosaic
+- [x] Third mosaic
 - [] Search sub-categories
 - [] Search tags
-- [] Other mosaic
+- [] Fourth mosaic
 - [] Carousel with profiles or projects
 - [] Video presentation
 
@@ -183,29 +185,30 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 
 [] Members:
 
-[] - User
-[] - Role
-[] - Start date (join date?)
-[] - projectMembersRoles (see list) - ["owner", "member"]
-Actions: Remove, send message, send message to all, send message to several (select users), update role
+[x] - User
+[x] - Role
+[x] - Start date (join date?)
+[x] - projectMembersRoles (see list) - ["owner", "member"]
+[] - Actions: Remove, send message, send message to all, send message to several (select users), update role
+
 [] - Join requests
 [] - invitations
-Actions: Accept/decline request, send new invitation
+[] - Actions: Accept/decline request, send new invitation
 
 [] Rights:
 
 [] - User
 [] - can update...
-Actions: update user right
+[] - Actions: update user right
 
-[] Status:
+[x] Status:
 
-[] - current status (see list) - ["draft", "submitted", "active", "on hold", "completed", "archived", "cancelled", "rejected"]
-[] - reason
-[] - status history
-[] - updatedBy
-[] - timestamp
-Actions: update project status
+[x] - current status (see list) - ["draft", "submitted", "active", "on hold", "completed", "archived", "cancelled", "rejected"]
+[x] - reason
+[x] - status history
+[x] - updatedBy
+[x] - timestamp
+[x] - Actions: update project status
 
 [x] Location:
 [x] - onlineOnly
@@ -214,26 +217,26 @@ Actions: update project status
 
 [] Attachments:
 
-[] - title
-[] - size
-[] - extension
+[x] - title
+[x] - size
+[x] - extension
 [] - createdAt
 [] - updatedBy
-Actions: Add, remove, update, change visibility
+[] - Actions: Add, remove, update, change visibility
 
 [] Steps: (updatedBy, createdAt, updatedAt)
 
 [] - title
 [] - details
 [] - published
-Actions: Add, remove, update, reorder
+[] - Actions: Add, remove, update, reorder
 
 [] QAs: (updatedBy, createdAt, updatedAt)
 
 [] - question
 [] - response
 [] - published
-Actions: Add, remove, update, reorder
+[] - Actions: Add, remove, update, reorder
 
 [] start date -> in tab General?
 [] phase -> in tab Status? possibility to change the visibility?

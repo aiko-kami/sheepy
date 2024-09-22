@@ -11,17 +11,15 @@ const CarouselProjects = () => {
 
 	return (
 		<>
-			<div className="my-12">
-				<h2 className="text-center text-4xl">Carousel projects</h2>
-				<div className="w-1/2 mx-auto">
-					<Carousel options={OPTIONS}>
-						{LatestProjects.map((project, index) => (
-							<div className="embla__slide embla__class-names" key={index}>
-								<ProjectCard key={index} project={project} />
-							</div>
-						))}
-					</Carousel>
-				</div>
+			<h2 className="text-center text-4xl">Carousel projects</h2>
+			<div className="w-1/2 mx-auto">
+				<Carousel options={OPTIONS}>
+					{LatestProjects.map((project, index) => (
+						<div className="embla__slide embla__class-names" key={index}>
+							<ProjectCard key={index} project={project} />
+						</div>
+					))}
+				</Carousel>
 			</div>
 		</>
 	);
