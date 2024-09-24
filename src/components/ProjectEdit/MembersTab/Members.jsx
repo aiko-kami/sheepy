@@ -4,7 +4,7 @@ import MembersDetails from "@/components/ProjectEdit/MembersTab/MembersDetails";
 import JoinRequests from "@/components/ProjectEdit/MembersTab/JoinRequests";
 import JoinInvitations from "@/components/ProjectEdit/MembersTab/JoinInvitations";
 
-const Members = ({ formState, onChange, members }) => {
+const Members = ({ formState, onChange, members, requests, invitations }) => {
 	return (
 		<>
 			{/* Project members */}
@@ -13,11 +13,11 @@ const Members = ({ formState, onChange, members }) => {
 			</div>
 			{/* Project members */}
 			<div className="mb-8 lg:mb-14">
-				<JoinRequests formState={formState} onChange={onChange} />
+				<JoinRequests formState={formState} onChange={onChange} requests={requests} />
 			</div>
 			{/* Project members */}
 			<div className="mb-8 lg:mb-14">
-				<JoinInvitations formState={formState} onChange={onChange} />
+				<JoinInvitations formState={formState} onChange={onChange} invitations={invitations} />
 			</div>
 		</>
 	);

@@ -1,6 +1,6 @@
 import { IoArrowUpCircle } from "react-icons/io5";
 
-const JoinInvitations = ({ formState, onChange }) => {
+const JoinInvitations = ({ formState, onChange, invitations }) => {
 	return (
 		<>
 			{/* Join inviations */}
@@ -10,9 +10,15 @@ const JoinInvitations = ({ formState, onChange }) => {
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 			{/* Join inviations */}
-			<div className="mb-8 max-w-140 relative">
-				{/* Members input field */}
-				Invitations
+			<div className="mb-8">
+				{/* inviations */}
+				{invitations && invitations.length !== 0 ? (
+					<>Inviations</>
+				) : (
+					<p className=" text-xl text-center pt-10">
+						<span className="italic">No inviations found</span> 😕
+					</p>
+				)}
 			</div>
 		</>
 	);

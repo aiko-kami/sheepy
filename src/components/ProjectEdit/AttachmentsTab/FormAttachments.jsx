@@ -7,7 +7,7 @@ import SideMenu from "@/components/ProjectEdit/SideMenu";
 
 const FormAttachments = ({ project }) => {
 	const [formState, setFormState] = useState({
-		projectTitle: project.title,
+		projectTitle: project.title || "",
 	});
 
 	const onChange = (e) => {

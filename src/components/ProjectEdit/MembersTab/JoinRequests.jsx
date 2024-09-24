@@ -1,6 +1,6 @@
 import { IoArrowDownCircle } from "react-icons/io5";
 
-const JoinRequests = ({ formState, onChange }) => {
+const JoinRequests = ({ formState, onChange, requests }) => {
 	return (
 		<>
 			{/* Join requests */}
@@ -10,9 +10,15 @@ const JoinRequests = ({ formState, onChange }) => {
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 			{/* Join requests */}
-			<div className="mb-8 max-w-140 relative">
+			<div className="mb-8">
 				{/* requests */}
-				Requests
+				{requests && requests.length !== 0 ? (
+					<>Requests</>
+				) : (
+					<p className=" text-xl text-center pt-10">
+						<span className="italic">No requests found</span> 😕
+					</p>
+				)}
 			</div>
 		</>
 	);

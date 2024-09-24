@@ -9,9 +9,9 @@ import SideMenu from "@/components/ProjectEdit/SideMenu";
 
 const FormLocation = ({ project }) => {
 	const [formState, setFormState] = useState({
-		locationOnlineOnly: project.locationOnlineOnly,
-		projectLocationCity: project.locationCity,
-		projectLocationCountry: project.locationCountry,
+		locationOnlineOnly: project.locationOnlineOnly || false,
+		projectLocationCity: project.locationCity || "",
+		projectLocationCountry: project.locationCountry || "",
 	});
 
 	const onChange = (e) => {

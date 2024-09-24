@@ -15,10 +15,14 @@ const MembersDetails = ({ formState, onChange, members }) => {
 				{/* Project members */}
 				<div className="mb-8 flex justify-center">
 					{/* Status history table */}
-					{members && (
+					{members && members.length !== 0 ? (
 						<div className="w-full overflow-x-auto shadow-md sm:rounded-lg">
 							<MembersTable members={members} />
 						</div>
+					) : (
+						<p className=" text-xl text-center pt-10">
+							<span className="italic">No members found</span> 😕
+						</p>
 					)}
 				</div>
 			</div>

@@ -9,13 +9,13 @@ import SideMenu from "@/components/ProjectEdit/SideMenu";
 
 const FormGeneral = ({ project }) => {
 	const [formState, setFormState] = useState({
-		projectTitle: project.title,
-		projectCategory: project.category.name,
-		projectSubCategory: project.subCategory.name,
-		projectSummary: project.summary,
-		projectDescription: project.description,
-		projectGoal: project.goal,
-		projectTags: project.tags.map((tag) => tag.name),
+		projectTitle: project.title || "",
+		projectCategory: project.category.name || "",
+		projectSubCategory: project.subCategory.name || "",
+		projectSummary: project.summary || "",
+		projectDescription: project.description || "",
+		projectGoal: project.goal || "",
+		projectTags: project.tags.map((tag) => tag.name) || [],
 	});
 
 	const onChange = (e) => {

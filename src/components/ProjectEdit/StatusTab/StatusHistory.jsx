@@ -15,10 +15,14 @@ const StatusHistory = ({ status }) => {
 				{/* Project status */}
 				<div className="mb-8">
 					{/* Status history table */}
-					{status.statusHistory && (
+					{status.statusHistory && status.statusHistory.length !== 0 ? (
 						<div className="w-full overflow-x-auto shadow-md sm:rounded-lg">
 							<StatusHistoryTable status={status.statusHistory} />
 						</div>
+					) : (
+						<p className=" text-xl text-center pt-10">
+							<span className="italic">No status history found</span> 😕
+						</p>
 					)}
 				</div>
 			</div>
