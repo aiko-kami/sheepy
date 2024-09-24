@@ -1,5 +1,5 @@
-import MembersTable from "@/components/Tables/MembersTable";
 import { IoPeople } from "react-icons/io5";
+import MembersTable from "@/components/Tables/MembersTable";
 
 const MembersDetails = ({ formState, onChange, members }) => {
 	return (
@@ -21,7 +21,7 @@ const MembersDetails = ({ formState, onChange, members }) => {
 						</div>
 					) : (
 						<p className=" text-xl text-center pt-10">
-							<span className="italic">No members found</span> 😕
+							<span className="italic">No members found</span>
 						</p>
 					)}
 				</div>

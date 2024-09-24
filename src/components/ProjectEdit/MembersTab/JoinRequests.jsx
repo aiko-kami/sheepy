@@ -1,6 +1,7 @@
 import { IoArrowDownCircle } from "react-icons/io5";
+import JoinRequestsTable from "@/components/Tables/JoinRequestsTable";
 
-const JoinRequests = ({ formState, onChange, requests }) => {
+const RequestsTable = ({ formState, onChange, requests }) => {
 	return (
 		<>
 			{/* Join requests */}
@@ -13,14 +14,16 @@ const JoinRequests = ({ formState, onChange, requests }) => {
 			<div className="mb-8">
 				{/* requests */}
 				{requests && requests.length !== 0 ? (
-					<>Requests</>
+					<div className="w-full overflow-x-auto shadow-md sm:rounded-lg">
+						<JoinRequestsTable requests={requests} />
+					</div>
 				) : (
-					<p className=" text-xl text-center pt-10">
-						<span className="italic">No requests found</span> 😕
+					<p className=" text-xl text-center pt-6">
+						<span className="italic">No requests found</span>
 					</p>
 				)}
 			</div>
 		</>
 	);
 };
-export default JoinRequests;
+export default RequestsTable;

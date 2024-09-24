@@ -209,6 +209,53 @@
 			"startDate": "04 September 2024"
 		}
 	],
+	"invitations": [
+		{
+			"userId": "12345",
+			"username": "Brad Anderson",
+			"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU",
+			"role": "Director",
+			"startDate": "07 August 2024"
+		},
+		{
+			"userId": "1745",
+			"username": "Scott Kosar",
+			"profilePicture": "https://static.wikia.nocookie.net/headhuntershorrorhouse/images/2/20/Scott_Kosar.jpg/revision/latest?cb=20101120165807",
+			"role": "Screenwriter",
+			"startDate": "09 August 2024"
+		},
+		{
+			"userId": "56468",
+			"username": "Carlos Fernández",
+			"profilePicture": "https://media.licdn.com/dms/image/C4D22AQFMBGih4742dw/feedshare-shrink_800/0/1557307992723?e=2147483647&v=beta&t=7cQShBw07SJxBvKtDRzF2Tu659wVKJPgrixxtCK9Mo0",
+			"role": "Producer",
+			"startDate": "04 September 2024"
+		}
+	],
+	"requests": [
+		{
+			"userId": "12345",
+			"username": "Brad Anderson",
+			"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU",
+			"isOwner": true,
+			"role": "Director",
+			"startDate": "07 August 2024"
+		},
+		{
+			"userId": "1745",
+			"username": "Scott Kosar",
+			"profilePicture": "https://static.wikia.nocookie.net/headhuntershorrorhouse/images/2/20/Scott_Kosar.jpg/revision/latest?cb=20101120165807",
+			"role": "Screenwriter",
+			"startDate": "09 August 2024"
+		},
+		{
+			"userId": "56468",
+			"username": "Carlos Fernández",
+			"profilePicture": "https://media.licdn.com/dms/image/C4D22AQFMBGih4742dw/feedshare-shrink_800/0/1557307992723?e=2147483647&v=beta&t=7cQShBw07SJxBvKtDRzF2Tu659wVKJPgrixxtCK9Mo0",
+			"role": "Producer",
+			"startDate": "04 September 2024"
+		}
+	],
 	"qnasCount": 14,
 	"qnas": [
 		{

@@ -1,4 +1,6 @@
-import { IoArrowUpCircle } from "react-icons/io5";
+import { IoArrowUpCircle, IoAddOutline } from "react-icons/io5";
+import InvitationsTable from "@/components/Tables/InvitationsTable";
+import { Button } from "@/components/Buttons/Buttons";
 
 const JoinInvitations = ({ formState, onChange, invitations }) => {
 	return (
@@ -11,14 +13,41 @@ const JoinInvitations = ({ formState, onChange, invitations }) => {
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 			{/* Join inviations */}
 			<div className="mb-8">
+				<div className="pl-4 mb-6">
+					<Button
+						btnProps={{
+							type: "button",
+							btnColor: "blue",
+						}}
+					>
+						<div className="flex items-center">
+							New invitation <IoAddOutline className="text-2xl ml-2 mt-0.5" />
+						</div>
+					</Button>
+				</div>
+
 				{/* inviations */}
 				{invitations && invitations.length !== 0 ? (
-					<>Inviations</>
+					<div className="w-full overflow-x-auto shadow-md sm:rounded-lg mb-6">
+						<InvitationsTable invitations={invitations} />
+					</div>
 				) : (
-					<p className=" text-xl text-center pt-10">
-						<span className="italic">No inviations found</span> 😕
+					<p className=" text-xl text-center">
+						<span className="italic">No inviations found</span>
 					</p>
 				)}
+				<div className="pl-4 mb-6">
+					<Button
+						btnProps={{
+							type: "button",
+							btnColor: "blue",
+						}}
+					>
+						<div className="flex items-center">
+							New invitation <IoAddOutline className="text-2xl ml-2 mt-0.5" />
+						</div>
+					</Button>
+				</div>
 			</div>
 		</>
 	);

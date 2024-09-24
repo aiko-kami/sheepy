@@ -35,7 +35,7 @@ const FormMembers = ({ project }) => {
 					</div>
 					<div className="col-span-4 lg:px-2 lg:pl-10">
 						{/* Project members information */}
-						<Members formState={formState} onChange={onChange} members={project.members} />
+						<Members formState={formState} onChange={onChange} members={project.members} requests={project.requests} invitations={project.invitations} />
 					</div>
 				</div>
 			</form>
