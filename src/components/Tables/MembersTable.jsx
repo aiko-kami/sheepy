@@ -1,7 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const MembersTable = ({ members }) => {
+import MembersActions from "@/components/ProjectEdit/MembersTab/MembersActions";
+
+const MembersTable = ({ members, projectId, projectPermissions }) => {
 	return (
 		<>
 			<table className="w-full text-xs md:text-sm shadow-lg">
@@ -46,8 +48,10 @@ const MembersTable = ({ members }) => {
 								<td scope="row" className="p-2 md:px-4 md:py-2 text-center">
 									<div className="text-gray-400 whitespace-nowrap">{member.startDate}</div>
 								</td>
-								<td scope="row" className="p-2 md:px-4 md:py-2 text-center">
-									<div className="text-gray-400 whitespace-nowrap">{member.startDate}</div>
+								<td className="p-2 md:px-4 md:py-2">
+									<div className="flex justify-center flex-wrap md:flex-nowrap">
+										<MembersActions projectId={projectId} projectPermissions={projectPermissions} />
+									</div>
 								</td>
 							</tr>
 						);

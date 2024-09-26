@@ -24,7 +24,7 @@ const ProjectEditNavbar = () => {
 
 	return (
 		<>
-			<ul className="flex flex-wrap justify-end font-medium text-center xl:border-b border-gray-700">
+			<ul className="flex flex-wrap justify-center xl:justify-end font-medium text-center xl:border-b border-gray-700">
 				<li className="mb-2 xl:mb-0 me-1">
 					<Link href={`${projectBasePath}/general`} className={getLinkClasses(`${projectBasePath}/general`)} aria-current={pathname === `${projectBasePath}/general` ? "page" : undefined}>
 						General

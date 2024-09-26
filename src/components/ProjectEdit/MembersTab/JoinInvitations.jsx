@@ -36,18 +36,6 @@ const JoinInvitations = ({ formState, onChange, invitations }) => {
 						<span className="italic">No inviations found</span>
 					</p>
 				)}
-				<div className="pl-4 mb-6">
-					<Button
-						btnProps={{
-							type: "button",
-							btnColor: "blue",
-						}}
-					>
-						<div className="flex items-center">
-							New invitation <IoAddOutline className="text-2xl ml-2 mt-0.5" />
-						</div>
-					</Button>
-				</div>
 			</div>
 		</>
 	);

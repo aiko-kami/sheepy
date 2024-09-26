@@ -2,7 +2,9 @@ import Link from "next/link";
 
 import { IoConstructOutline, IoDocumentLockOutline, IoDocumentTextOutline, IoChatboxEllipsesOutline } from "react-icons/io5";
 
-const MyProjectsActions = ({ projectId, projectPermissions, iconSize }) => {
+const MembersActions = ({ projectId, projectPermissions, iconSize }) => {
+	console.log("🚀 ~ MembersActions ~ projectPermissions:", projectPermissions);
+
 	let size;
 	switch (iconSize) {
 		case "sm":
@@ -44,4 +46,4 @@ const MyProjectsActions = ({ projectId, projectPermissions, iconSize }) => {
 	);
 };
 
-export default MyProjectsActions;
+export default MembersActions;

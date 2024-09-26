@@ -7,6 +7,12 @@
 	"cover": "https://images.pexels.com/photos/7319068/pexels-photo-7319068.jpeg",
 	"coverDescription": "https://crypticrock.com/wp-content/uploads/2023/02/brad-anderson-on-set-blood.jpg",
 	"likes": 147,
+	"permissions": {
+		"isPublicAllowed": true,
+		"isPrivateAllowed": true,
+		"isConfigureAllowed": true,
+		"isChatAllowed": true
+	},
 	"category": {
 		"name": "Film & Video",
 		"link": "/categories/film-video",

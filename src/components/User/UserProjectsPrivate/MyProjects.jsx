@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 
-import { IoGridOutline, IoReorderFour } from "react-icons/io5";
-import ProjectsTableActions from "@/components/Tables/ProjectsTableActions";
+import ProjectsActionsTable from "@/components/Tables/ProjectsActionsTable";
 import JoinProjectTable from "@/components/Tables/JoinProjectTable";
 import MyProjectsFilter from "@/components/User/UserProjectsPrivate/MyProjectsFilter";
 import MyProjectsCards from "@/components/User/UserProjectsPrivate/MyProjectCards";
@@ -53,7 +52,7 @@ const MyProjects = ({ user }) => {
 					<p className="mb-6 sm:ml-4">The projects you created or for which you are the owner</p>
 					{projects.projectsCreated && projects.projectsCreated.length !== 0 ? (
 						<div className="mb-12">
-							{displayMode === "table" && <ProjectsTableActions projects={filteredProjectsCreated} />}
+							{displayMode === "table" && <ProjectsActionsTable projects={filteredProjectsCreated} />}
 							{displayMode === "cards" && <MyProjectsCards projects={filteredProjectsCreated} />}
 						</div>
 					) : (
@@ -70,7 +69,7 @@ const MyProjects = ({ user }) => {
 					<p className="mb-6 sm:ml-4">The projects for which you are a team member</p>
 					{projects.projectsOnGoing && projects.projectsOnGoing.length !== 0 ? (
 						<div className="mb-12">
-							{displayMode === "table" && <ProjectsTableActions projects={projects.projectsOnGoing} />}
+							{displayMode === "table" && <ProjectsActionsTable projects={projects.projectsOnGoing} />}
 							{displayMode === "cards" && <MyProjectsCards projects={projects.projectsOnGoing} />}
 						</div>
 					) : (
@@ -87,7 +86,7 @@ const MyProjects = ({ user }) => {
 					<p className="mb-6 sm:ml-4">The projects you've shown appreciation for by giving a like</p>
 					{projects.projectsLike && projects.projectsLike.length !== 0 ? (
 						<div className="mb-12">
-							{displayMode === "table" && <ProjectsTableActions projects={projects.projectsLike} />}
+							{displayMode === "table" && <ProjectsActionsTable projects={projects.projectsLike} />}
 							{displayMode === "cards" && <MyProjectsCards projects={projects.projectsLike} />}
 						</div>
 					) : (
