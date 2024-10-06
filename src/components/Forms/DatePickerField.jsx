@@ -32,7 +32,7 @@ const CustomDatePicker = styled(DatePicker)(({ theme }) => ({
 
 const DatePickerField = ({ label, value, onChange, disabled = false }) => {
 	return (
-		<div className="relative z-0 mb-6 w-full border-0 border-b-2 border-gray-600 hover:shadow-lg hover:border-gray-500">
+		<div className="relative z-0 w-full border-0 border-b-2 border-gray-600 hover:shadow-lg hover:border-gray-500">
 			<LocalizationProvider dateAdapter={AdapterLuxon}>
 				<CustomDatePicker
 					label={label}

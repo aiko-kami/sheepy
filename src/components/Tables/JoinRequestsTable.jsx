@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
+import ProjectRequestsActions from "@/components/IconsActions/ProjectRequestsActions";
 
-const JoinRequestsTable = ({ requests }) => {
+const JoinRequestsTable = ({ requests, projectId, projectPermissions }) => {
 	return (
 		<>
 			<table className="w-full text-xs md:text-sm shadow-lg">
@@ -48,7 +49,9 @@ const JoinRequestsTable = ({ requests }) => {
 									<div className="text-gray-400 whitespace-nowrap">{request.startDate}</div>
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2 text-center">
-									<div className="text-gray-400 whitespace-nowrap">{request.startDate}</div>
+									<div className="flex justify-center flex-nowrap">
+										<ProjectRequestsActions projectId={projectId} request={request} projectPermissions={projectPermissions} />
+									</div>
 								</td>
 							</tr>
 						);

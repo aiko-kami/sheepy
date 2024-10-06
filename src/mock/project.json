@@ -8,6 +8,9 @@
 	"coverDescription": "https://crypticrock.com/wp-content/uploads/2023/02/brad-anderson-on-set-blood.jpg",
 	"likes": 147,
 	"permissions": {
+		"canEditMembers": true,
+		"canRemoveMembers": true,
+		"canEditRights": true,
 		"isPublicAllowed": true,
 		"isPrivateAllowed": true,
 		"isConfigureAllowed": true,

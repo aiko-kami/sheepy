@@ -6,8 +6,8 @@ import { useState } from "react";
 import Modal from "@/components/Modals/Modal";
 import JoinProjectDetailsModal from "@/components/Modals/JoinProjectDetailsModal";
 import { Badge, Status } from "@/components/Badges/Badges";
-import RequestsActions from "@/components/User/UserProjectsPrivate/RequestsActions";
-import InvitationsActions from "@/components/User/UserProjectsPrivate/InvitationsActions";
+import RequestsActions from "@/components/IconsActions/RequestsActions";
+import InvitationsActions from "@/components/IconsActions/InvitationsActions";
 
 const JoinProjectRow = ({ joinProject, type }) => {
 	const [modalDisplay, setModalDisplay] = useState(false);

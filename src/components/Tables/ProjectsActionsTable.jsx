@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { Badge, Status } from "@/components/Badges/Badges";
-import MyProjectsActions from "@/components/User/UserProjectsPrivate/MyProjectsActions";
+import MyProjectsActions from "@/components/IconsActions/MyProjectsActions";
 
 const ProjectsActionsTable = ({ projects, filter }) => {
 	return (

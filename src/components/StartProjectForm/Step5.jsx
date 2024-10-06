@@ -3,9 +3,9 @@
 import InputField from "@/components/Forms/InputField";
 import { SelectField } from "@/components/Forms/SelectField";
 import { ToggleField } from "@/components/Forms/ToggleField";
+import DatePickerField from "@/components/Forms/DatePickerField";
 import { Button } from "@/components/Buttons/Buttons";
 import { IoAddCircleOutline, IoCloseCircleOutline } from "react-icons/io5";
-import DatePickerField from "@/components/Forms/DatePickerField";
 
 const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTagInputChange, tagError, setProjectStartDate }) => {
 	const optionsList = [
@@ -61,15 +61,17 @@ const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTag
 								</div>
 
 								{/* Project visibility */}
-								<SelectField inputName="projectVisibility" possibleValues={optionsList} inputValue={formInputs.projectVisibility} label="Select the project privacy" onChange={onChange} />
+								<div className="mb-6">
+									<SelectField inputName="projectVisibility" possibleValues={optionsList} inputValue={formInputs.projectVisibility} label="Select the project privacy" onChange={onChange} />
+								</div>
 
 								{/* Start date picker */}
-								<div className="w-60">
+								<div className="mb-6 w-60">
 									<DatePickerField label="Set a start date (optional)" value={formInputs.projectStartDate} onChange={(newValue) => setProjectStartDate(newValue)} />
 								</div>
 								{/* Tag input field */}
 								<div className="relative">
-									<div className="flex items-center mt-6">
+									<div className="flex items-center">
 										<div className="w-full mr-2 mb-6">
 											<InputField inputName="tag" inputType="text" label="Tag (optional)" inputValue={tagInput} onChange={handleTagInputChange} />
 										</div>

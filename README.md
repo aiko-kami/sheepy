@@ -115,7 +115,7 @@ Don't let your ideas and talents go to waste – join Sheepy now!
     - [] Open/Download file
     - [] Attachments actions
   - [] Members
-    - [] Members actions
+    - [x] Members actions
     - [] Requests
     - [] Invitations
   - [] Rights
@@ -193,7 +193,7 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 
 [] - Join requests
 [] - invitations
-[] - Actions: Accept/decline request, send new invitation
+[] - Actions: Accept/decline request, create new invitation
 
 [] Rights:
 

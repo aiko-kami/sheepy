@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Badge, BadgeRounded, Status } from "@/components/Badges/Badges";
-import MyProjectsActions from "@/components/User/UserProjectsPrivate/MyProjectsActions";
-import RequestsActions from "@/components/User/UserProjectsPrivate/RequestsActions";
-import InvitationsActions from "@/components/User/UserProjectsPrivate/InvitationsActions";
+import MyProjectsActions from "@/components/IconsActions/MyProjectsActions";
+import RequestsActions from "@/components/IconsActions/RequestsActions";
+import InvitationsActions from "@/components/IconsActions/InvitationsActions";
 
 const ProjectCard = ({ project, animate }) => {
 	const { projectId, title, summary, cover, category, tags } = project;
