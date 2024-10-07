@@ -6,8 +6,8 @@ import { useState } from "react";
 import Modal from "@/components/Modals/Modal";
 import JoinProjectDetailsModal from "@/components/Modals/JoinProjectDetailsModal";
 import { Badge, Status } from "@/components/Badges/Badges";
-import RequestsActions from "@/components/IconsActions/RequestsActions";
-import InvitationsActions from "@/components/IconsActions/InvitationsActions";
+import UserRequestsActions from "@/components/IconsActions/UserRequestsActions";
+import UserInvitationsActions from "@/components/IconsActions/UserInvitationsActions";
 
 const JoinProjectRow = ({ joinProject, type }) => {
 	const [modalDisplay, setModalDisplay] = useState(false);
@@ -49,8 +49,8 @@ const JoinProjectRow = ({ joinProject, type }) => {
 				</td>
 				<td className="p-2 md:px-4 md:py-2">
 					<div className="flex justify-center flex-wrap md:flex-nowrap text-white">
-						{type === "invitation" && <InvitationsActions invitation={joinProject} />}
-						{type === "request" && <RequestsActions request={joinProject} />}
+						{type === "invitation" && <UserInvitationsActions invitation={joinProject} />}
+						{type === "request" && <UserRequestsActions request={joinProject} />}
 					</div>
 				</td>
 				<Modal modalDisplay={modalDisplay} closeModal={closeModal} closeModalWithBackground={closeModal} modalSize={"std"} modalTitle={`Project ${type}`}>

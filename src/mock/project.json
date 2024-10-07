@@ -220,49 +220,240 @@
 	],
 	"invitations": [
 		{
-			"userId": "12345",
-			"username": "Brad Anderson",
-			"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU",
+			"user": {
+				"userId": "12345",
+				"username": "Brad Anderson",
+				"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU"
+			},
+			"message": "Hello, we are looking for a director!",
 			"role": "Director",
-			"startDate": "07 August 2024"
+			"recent": true,
+			"status": {
+				"name": "Pending",
+				"bgColor": "bg-blue-500"
+			},
+			"actions": {
+				"view": true,
+				"edit": false,
+				"cancel": true,
+				"sendMessage": true
+			}
 		},
 		{
-			"userId": "1745",
-			"username": "Scott Kosar",
-			"profilePicture": "https://static.wikia.nocookie.net/headhuntershorrorhouse/images/2/20/Scott_Kosar.jpg/revision/latest?cb=20101120165807",
+			"user": {
+				"userId": "1745",
+				"username": "Scott Kosar",
+				"profilePicture": "https://static.wikia.nocookie.net/headhuntershorrorhouse/images/2/20/Scott_Kosar.jpg/revision/latest?cb=20101120165807"
+			},
+			"message": "Hello, we are looking for a Screenwriter!",
 			"role": "Screenwriter",
-			"startDate": "09 August 2024"
+			"recent": true,
+			"status": {
+				"name": "Accepted",
+				"bgColor": "bg-green-500"
+			},
+			"actions": {
+				"view": true,
+				"edit": false,
+				"cancel": false,
+				"sendMessage": true
+			}
 		},
 		{
-			"userId": "56468",
-			"username": "Carlos Fernández",
-			"profilePicture": "https://media.licdn.com/dms/image/C4D22AQFMBGih4742dw/feedshare-shrink_800/0/1557307992723?e=2147483647&v=beta&t=7cQShBw07SJxBvKtDRzF2Tu659wVKJPgrixxtCK9Mo0",
+			"user": {
+				"userId": "1745",
+				"username": "Scott Kosar",
+				"profilePicture": "https://static.wikia.nocookie.net/headhuntershorrorhouse/images/2/20/Scott_Kosar.jpg/revision/latest?cb=20101120165807"
+			},
+			"message": "Hello, we are looking for a Screenwriter!",
+			"role": "Screenwriter",
+			"recent": true,
+			"status": {
+				"name": "Declined",
+				"bgColor": "bg-red-500"
+			},
+			"actions": {
+				"view": true,
+				"edit": false,
+				"cancel": false,
+				"sendMessage": true
+			}
+		},
+		{
+			"user": {
+				"userId": "56468",
+				"username": "Carlos Fernández",
+				"profilePicture": "https://media.licdn.com/dms/image/C4D22AQFMBGih4742dw/feedshare-shrink_800/0/1557307992723?e=2147483647&v=beta&t=7cQShBw07SJxBvKtDRzF2Tu659wVKJPgrixxtCK9Mo0"
+			},
+			"message": "Hello, we are looking for a Producer!",
 			"role": "Producer",
-			"startDate": "04 September 2024"
+			"recent": false,
+			"status": {
+				"name": "Draft",
+				"bgColor": "bg-gray-500"
+			},
+			"actions": {
+				"view": true,
+				"edit": true,
+				"cancel": true,
+				"sendMessage": true
+			}
 		}
 	],
 	"requests": [
 		{
-			"userId": "12345",
-			"username": "Brad Anderson",
-			"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU",
-			"isOwner": true,
+			"user": {
+				"userId": "12345",
+				"username": "Brad Anderson",
+				"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU"
+			},
 			"role": "Director",
-			"startDate": "07 August 2024"
+			"startDate": "07 August 2024",
+			"message": "Hello, I want to join your project!",
+			"recent": true,
+			"status": {
+				"name": "Pending",
+				"bgColor": "bg-blue-500"
+			},
+			"actions": {
+				"view": true,
+				"accept": true,
+				"decline": true,
+				"sendMessage": true,
+				"report": true
+			}
 		},
 		{
-			"userId": "1745",
-			"username": "Scott Kosar",
-			"profilePicture": "https://static.wikia.nocookie.net/headhuntershorrorhouse/images/2/20/Scott_Kosar.jpg/revision/latest?cb=20101120165807",
+			"user": {
+				"userId": "1745",
+				"username": "Scott Kosar",
+				"profilePicture": "https://static.wikia.nocookie.net/headhuntershorrorhouse/images/2/20/Scott_Kosar.jpg/revision/latest?cb=20101120165807"
+			},
 			"role": "Screenwriter",
-			"startDate": "09 August 2024"
+			"startDate": "09 August 2024",
+			"message": "Hello, I want to join your project!",
+			"recent": true,
+			"status": {
+				"name": "Accepted",
+				"bgColor": "bg-green-500"
+			},
+			"actions": {
+				"view": true,
+				"accept": false,
+				"decline": false,
+				"sendMessage": true,
+				"report": true
+			}
 		},
 		{
-			"userId": "56468",
-			"username": "Carlos Fernández",
-			"profilePicture": "https://media.licdn.com/dms/image/C4D22AQFMBGih4742dw/feedshare-shrink_800/0/1557307992723?e=2147483647&v=beta&t=7cQShBw07SJxBvKtDRzF2Tu659wVKJPgrixxtCK9Mo0",
+			"user": {
+				"userId": "56468",
+				"username": "Carlos Fernández",
+				"profilePicture": "https://media.licdn.com/dms/image/C4D22AQFMBGih4742dw/feedshare-shrink_800/0/1557307992723?e=2147483647&v=beta&t=7cQShBw07SJxBvKtDRzF2Tu659wVKJPgrixxtCK9Mo0"
+			},
 			"role": "Producer",
-			"startDate": "04 September 2024"
+			"startDate": "04 September 2024",
+			"message": "Hello, I want to join your project!",
+			"recent": true,
+			"status": {
+				"name": "Declined",
+				"bgColor": "bg-red-500"
+			},
+			"actions": {
+				"view": true,
+				"accept": false,
+				"decline": false,
+				"sendMessage": true,
+				"report": true
+			}
+		},
+		{
+			"user": {
+				"userId": "12345",
+				"username": "Brad Anderson",
+				"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU"
+			},
+			"role": "Director",
+			"startDate": "07 August 2024",
+			"message": "Hello, I want to join your project!",
+			"recent": false,
+			"status": {
+				"name": "Pending",
+				"bgColor": "bg-blue-500"
+			},
+			"actions": {
+				"view": true,
+				"accept": true,
+				"decline": true,
+				"sendMessage": true,
+				"report": true
+			}
+		},
+		{
+			"user": {
+				"userId": "1745",
+				"username": "Scott Kosar",
+				"profilePicture": "https://static.wikia.nocookie.net/headhuntershorrorhouse/images/2/20/Scott_Kosar.jpg/revision/latest?cb=20101120165807"
+			},
+			"role": "Screenwriter",
+			"startDate": "09 August 2024",
+			"message": "Hello, I want to join your project!",
+			"recent": false,
+			"status": {
+				"name": "Accepted",
+				"bgColor": "bg-gray-500"
+			},
+			"actions": {
+				"view": true,
+				"accept": false,
+				"decline": false,
+				"sendMessage": true,
+				"report": true
+			}
+		},
+		{
+			"user": {
+				"userId": "56468",
+				"username": "Carlos Fernández",
+				"profilePicture": "https://media.licdn.com/dms/image/C4D22AQFMBGih4742dw/feedshare-shrink_800/0/1557307992723?e=2147483647&v=beta&t=7cQShBw07SJxBvKtDRzF2Tu659wVKJPgrixxtCK9Mo0"
+			},
+			"role": "Producer",
+			"startDate": "04 September 2024",
+			"message": "Hello, I want to join your project!",
+			"recent": false,
+			"status": {
+				"name": "Declined",
+				"bgColor": "bg-gray-500"
+			},
+			"actions": {
+				"view": true,
+				"accept": false,
+				"decline": false,
+				"sendMessage": true,
+				"report": true
+			}
+		},
+		{
+			"user": {
+				"userId": "56468",
+				"username": "Carlos Fernández",
+				"profilePicture": "https://media.licdn.com/dms/image/C4D22AQFMBGih4742dw/feedshare-shrink_800/0/1557307992723?e=2147483647&v=beta&t=7cQShBw07SJxBvKtDRzF2Tu659wVKJPgrixxtCK9Mo0"
+			},
+			"role": "Producer",
+			"startDate": "04 September 2024",
+			"message": "Hello, I want to join your project!",
+			"recent": false,
+			"status": {
+				"name": "Expired",
+				"bgColor": "bg-gray-500"
+			},
+			"actions": {
+				"view": true,
+				"accept": false,
+				"decline": false,
+				"sendMessage": true,
+				"report": true
+			}
 		}
 	],
 	"qnasCount": 14,

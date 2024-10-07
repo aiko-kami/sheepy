@@ -11,7 +11,7 @@ import ProjectInvitationReportModal from "@/components/Modals/ProjectInvitationR
 
 import { IoEyeOutline, IoCheckmarkCircleOutline, IoCloseCircleOutline, IoMailOutline, IoWarningOutline } from "react-icons/io5";
 
-const InvitationsActions = ({ invitation, iconSize }) => {
+const UserInvitationsActions = ({ invitation, iconSize }) => {
 	const [modalDisplayDetails, setModalDisplayDetails] = useState(false);
 	const [modalDisplayAccept, setModalDisplayAccept] = useState(false);
 	const [modalDisplayDecline, setModalDisplayDecline] = useState(false);
@@ -120,4 +120,4 @@ const InvitationsActions = ({ invitation, iconSize }) => {
 	);
 };
 
-export default InvitationsActions;
+export default UserInvitationsActions;

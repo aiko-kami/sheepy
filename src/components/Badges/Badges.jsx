@@ -63,7 +63,7 @@ const Status = ({ name, size, rounded, bgColor }) => {
 	let textSizeClass;
 	switch (size) {
 		case "xs":
-			textSizeClass = "text-xs min-w-24";
+			textSizeClass = "text-xs min-w-20";
 			break;
 		case "sm":
 			textSizeClass = "text-sm";
@@ -104,7 +104,7 @@ const Status = ({ name, size, rounded, bgColor }) => {
 
 	return (
 		<div>
-			<div className={`inline-block rounded uppercase py-1 px-2.5 text-white font-bold text-nowrap duration-200 ${textSizeClass} ${roundedClass} ${bgColor}`}>{name}</div>
+			<div className={`inline-block rounded uppercase py-1 px-2.5 text-white text-center font-bold text-nowrap duration-200 ${textSizeClass} ${roundedClass} ${bgColor}`}>{name}</div>
 		</div>
 	);
 };

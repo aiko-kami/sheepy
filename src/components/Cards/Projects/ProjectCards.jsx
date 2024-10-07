@@ -3,8 +3,8 @@ import Link from "next/link";
 
 import { Badge, BadgeRounded, Status } from "@/components/Badges/Badges";
 import MyProjectsActions from "@/components/IconsActions/MyProjectsActions";
-import RequestsActions from "@/components/IconsActions/RequestsActions";
-import InvitationsActions from "@/components/IconsActions/InvitationsActions";
+import UserRequestsActions from "@/components/IconsActions/UserRequestsActions";
+import UserInvitationsActions from "@/components/IconsActions/UserInvitationsActions";
 
 const ProjectCard = ({ project, animate }) => {
 	const { projectId, title, summary, cover, category, tags } = project;
@@ -152,8 +152,8 @@ const JoinProjectHorizontalCardActions = ({ joinProject, animate, type }) => {
 					<div className="flex items-center justify-end gap-2">
 						<Status name={joinProject.status.name} size={"xs"} rounded={"xs"} bgColor={joinProject.status.bgColor} />
 						<div className="flex justify-end text-gray-300">
-							{type === "invitation" && <InvitationsActions invitation={joinProject} iconSize={"lg"} />}
-							{type === "request" && <RequestsActions request={joinProject} iconSize={"lg"} />}
+							{type === "invitation" && <UserInvitationsActions invitation={joinProject} iconSize={"lg"} />}
+							{type === "request" && <UserRequestsActions request={joinProject} iconSize={"lg"} />}
 						</div>
 					</div>
 				</div>

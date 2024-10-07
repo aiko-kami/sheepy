@@ -8,7 +8,7 @@ import RemoveMemberModal from "@/components/Modals/RemoveMemberModal";
 
 import Link from "next/link";
 
-import { IoEyeOutline, IoPersonOutline, IoCheckmarkCircleOutline, IoCloseCircleOutline, IoMailOutline, IoWarningOutline } from "react-icons/io5";
+import { IoEyeOutline, IoCreateOutline, IoCloseCircleOutline, IoMailOutline, IoWarningOutline } from "react-icons/io5";
 
 const ProjectInvitationsActions = ({ projectId, inviation, projectPermissions, iconSize }) => {
 	const [modalDisplayUpdate, setModalDisplayUpdate] = useState(false);
@@ -51,29 +51,26 @@ const ProjectInvitationsActions = ({ projectId, inviation, projectPermissions, i
 
 	return (
 		<>
-			{projectPermissions.canEditMembers && (
-				<>
-					<button type="button" onClick={showModalUpdate}>
-						<IoEyeOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Edit member" />
-					</button>
-				</>
+			{inviation.actions.view && (
+				<button type="button" onClick={showModalUpdate}>
+					<IoEyeOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="View invitation" />
+				</button>
 			)}
-			<button type="button">
-				<IoCheckmarkCircleOutline className={`m-1 hover:text-green-400 duration-100 transition ease-in-out ${size}`} title="Accept invitation" />
-			</button>
-			{projectPermissions.canRemoveMembers && (
-				<>
-					<button type="button" onClick={showModalRemove}>
-						<IoCloseCircleOutline className={`m-1 hover:text-red-400 duration-100 transition ease-in-out ${size}`} title="Remove from the project" />
-					</button>
-				</>
+			{inviation.actions.edit && (
+				<button type="button">
+					<IoCreateOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Edit invitation" />
+				</button>
 			)}
-			<button type="button">
-				<IoMailOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
-			</button>
-			<button type="button">
-				<IoWarningOutline className={`m-1 hover:text-yellow-500 duration-100 transition ease-in-out ${size}`} title="Report" />
-			</button>
+			{inviation.actions.cancel && (
+				<button type="button" onClick={showModalRemove}>
+					<IoCloseCircleOutline className={`m-1 hover:text-red-400 duration-100 transition ease-in-out ${size}`} title="Cancel invitation" />
+				</button>
+			)}
+			{inviation.actions.sendMessage && (
+				<button type="button">
+					<IoMailOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
+				</button>
+			)}
 		</>
 	);
 };

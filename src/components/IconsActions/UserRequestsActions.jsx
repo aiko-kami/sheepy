@@ -7,9 +7,9 @@ import JoinProjectDetailsModal from "@/components/Modals/JoinProjectDetailsModal
 import ProjectRequestCancelModal from "@/components/Modals/ProjectRequestCancelModal";
 import JoinProjectSendMessageModal from "@/components/Modals/JoinProjectSendMessageModal";
 
-import { IoEyeOutline, IoCloseCircleOutline, IoMailOutline } from "react-icons/io5";
+import { IoEyeOutline, IoCreateOutline, IoCloseCircleOutline, IoMailOutline } from "react-icons/io5";
 
-const RequestsActions = ({ request, iconSize }) => {
+const UserRequestsActions = ({ request, iconSize }) => {
 	const [modalDisplayDetails, setModalDisplayDetails] = useState(false);
 	const [modalDisplayCancel, setModalDisplayCancel] = useState(false);
 	const [modalDisplaySendMessage, setModalDisplaySendMessage] = useState(false);
@@ -60,6 +60,16 @@ const RequestsActions = ({ request, iconSize }) => {
 					</Modal>
 				</>
 			)}
+			{request.actions.edit && (
+				<>
+					<button type="button" onClick={showModalDetails}>
+						<IoCreateOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Edit request" />
+					</button>
+					<Modal modalDisplay={modalDisplayDetails} closeModal={closeModalDetails} closeModalWithBackground={closeModalDetails} modalSize={"std"} modalTitle={"Project request"}>
+						<JoinProjectDetailsModal joinProject={request} type={"request"} />
+					</Modal>
+				</>
+			)}
 			{request.actions.cancel && (
 				<>
 					<button type="button" onClick={showModalCancel}>
@@ -84,4 +94,4 @@ const RequestsActions = ({ request, iconSize }) => {
 	);
 };
 
-export default RequestsActions;
+export default UserRequestsActions;

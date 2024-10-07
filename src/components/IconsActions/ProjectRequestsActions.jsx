@@ -8,7 +8,7 @@ import RemoveMemberModal from "@/components/Modals/RemoveMemberModal";
 
 import Link from "next/link";
 
-import { IoBuildOutline, IoCloseCircleOutline, IoChatboxEllipsesOutline, IoPersonOutline } from "react-icons/io5";
+import { IoEyeOutline, IoPersonOutline, IoCheckmarkCircleOutline, IoCloseCircleOutline, IoMailOutline, IoWarningOutline } from "react-icons/io5";
 
 const ProjectRequestsActions = ({ projectId, request, projectPermissions, iconSize }) => {
 	const [modalDisplayUpdate, setModalDisplayUpdate] = useState(false);
@@ -51,25 +51,30 @@ const ProjectRequestsActions = ({ projectId, request, projectPermissions, iconSi
 
 	return (
 		<>
-			{projectPermissions.canEditMembers && (
-				<>
-					<button type="button" onClick={showModalUpdate}>
-						<IoBuildOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Edit member" />
-					</button>
-				</>
+			{request.actions.view && (
+				<button type="button" onClick={showModalUpdate}>
+					<IoEyeOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="View request" />
+				</button>
 			)}
-			<Link href={`/projects/${projectId}`}>
-				<IoChatboxEllipsesOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
-			</Link>
-			<Link href={`/users/${request.userId}`}>
-				<IoPersonOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Visit user profile" />
-			</Link>
-			{projectPermissions.canRemoveMembers && (
-				<>
-					<button type="button" onClick={showModalRemove}>
-						<IoCloseCircleOutline className={`m-1 hover:text-red-400 duration-100 transition ease-in-out ${size}`} title="Remove from the project" />
-					</button>
-				</>
+			{request.actions.accept && (
+				<button type="button">
+					<IoCheckmarkCircleOutline className={`m-1 hover:text-green-400 duration-100 transition ease-in-out ${size}`} title="Accept request" />
+				</button>
+			)}
+			{request.actions.decline && (
+				<button type="button" onClick={showModalRemove}>
+					<IoCloseCircleOutline className={`m-1 hover:text-red-400 duration-100 transition ease-in-out ${size}`} title="Decline request" />
+				</button>
+			)}
+			{request.actions.sendMessage && (
+				<button type="button">
+					<IoMailOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
+				</button>
+			)}
+			{request.actions.report && (
+				<button type="button">
+					<IoWarningOutline className={`m-1 hover:text-yellow-500 duration-100 transition ease-in-out ${size}`} title="Report" />
+				</button>
 			)}
 		</>
 	);

@@ -944,12 +944,13 @@
 				"talent": "Editor",
 				"recent": false,
 				"status": {
-					"name": "Declined",
+					"name": "Draft",
 					"bgColor": "bg-gray-500"
 				},
 				"actions": {
 					"view": true,
-					"cancel": false,
+					"cancel": true,
+					"edit": true,
 					"sendMessage": true
 				}
 			},
