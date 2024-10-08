@@ -117,7 +117,17 @@ Don't let your ideas and talents go to waste – join Sheepy now!
   - [] Members
     - [x] Members actions
     - [] Requests
+      - [] view modal
+      - [] accept modal
+      - [] decline modal
+      - [] send message modal
+      - [] report modal
     - [] Invitations
+      - [x] new invitation
+      - [] view modal
+      - [] edit modal
+      - [] cancel modal
+      - [] send message modal
   - [] Rights
   - [] Steps
   - [] Q&As

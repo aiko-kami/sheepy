@@ -10,7 +10,7 @@ import Link from "next/link";
 
 import { IoEyeOutline, IoCreateOutline, IoCloseCircleOutline, IoMailOutline, IoWarningOutline } from "react-icons/io5";
 
-const ProjectInvitationsActions = ({ projectId, inviation, projectPermissions, iconSize }) => {
+const ProjectInvitationsActions = ({ projectId, invitation, projectPermissions, iconSize }) => {
 	const [modalDisplayUpdate, setModalDisplayUpdate] = useState(false);
 	const [modalDisplayMessage, setModalDisplayMessage] = useState(false);
 	const [modalDisplayRemove, setModalDisplayRemove] = useState(false);
@@ -51,22 +51,22 @@ const ProjectInvitationsActions = ({ projectId, inviation, projectPermissions, i
 
 	return (
 		<>
-			{inviation.actions.view && (
+			{invitation.actions.view && (
 				<button type="button" onClick={showModalUpdate}>
 					<IoEyeOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="View invitation" />
 				</button>
 			)}
-			{inviation.actions.edit && (
+			{invitation.actions.edit && (
 				<button type="button">
 					<IoCreateOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Edit invitation" />
 				</button>
 			)}
-			{inviation.actions.cancel && (
+			{invitation.actions.cancel && (
 				<button type="button" onClick={showModalRemove}>
 					<IoCloseCircleOutline className={`m-1 hover:text-red-400 duration-100 transition ease-in-out ${size}`} title="Cancel invitation" />
 				</button>
 			)}
-			{inviation.actions.sendMessage && (
+			{invitation.actions.sendMessage && (
 				<button type="button">
 					<IoMailOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
 				</button>

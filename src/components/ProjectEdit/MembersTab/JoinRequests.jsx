@@ -2,8 +2,6 @@ import { IoArrowDownCircle } from "react-icons/io5";
 import JoinRequestsTable from "@/components/Tables/JoinRequestsTable";
 
 const RequestsTable = ({ project, user }) => {
-	console.log("🚀 ~ RequestsTable ~ project:", project);
-
 	return (
 		<>
 			{/* Join requests */}
