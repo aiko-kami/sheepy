@@ -3,11 +3,11 @@
 import { useState } from "react";
 
 import Modal from "@/components/Modals/Modal";
-import JoinProjectDetailsModal from "@/components/Modals/JoinProjectDetailsModal";
-import ProjectInvitationAcceptModal from "@/components/Modals/ProjectInvitationAcceptModal";
-import ProjectInvitationDeclineModal from "@/components/Modals/ProjectInvitationDeclineModal";
-import JoinProjectSendMessageModal from "@/components/Modals/JoinProjectSendMessageModal";
-import ProjectInvitationReportModal from "@/components/Modals/ProjectInvitationReportModal";
+import JoinProjectDetailsModal from "@/components/Modals/UserPrivate/JoinProjectDetailsModal";
+import ProjectInvitationAcceptModal from "@/components/Modals/UserPrivate/ProjectInvitationAcceptModal";
+import ProjectInvitationDeclineModal from "@/components/Modals/UserPrivate/ProjectInvitationDeclineModal";
+import JoinProjectSendMessageModal from "@/components/Modals/UserPrivate/JoinProjectSendMessageModal";
+import ProjectInvitationReportModal from "@/components/Modals/UserPrivate/ProjectInvitationReportModal";
 
 import { IoEyeOutline, IoCheckmarkCircleOutline, IoCloseCircleOutline, IoMailOutline, IoWarningOutline } from "react-icons/io5";
 

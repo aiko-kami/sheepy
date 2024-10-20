@@ -3,8 +3,8 @@
 import { useState } from "react";
 
 import Modal from "@/components/Modals/Modal";
-import UpdateMemberModal from "@/components/Modals/UpdateMemberModal";
-import RemoveMemberModal from "@/components/Modals/RemoveMemberModal";
+import UpdateMemberModal from "@/components/Modals/ProjectEdit/UpdateMemberModal";
+import RemoveMemberModal from "@/components/Modals/ProjectEdit/RemoveMemberModal";
 
 import Link from "next/link";
 

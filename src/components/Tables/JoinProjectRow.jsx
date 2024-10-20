@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 import Modal from "@/components/Modals/Modal";
-import JoinProjectDetailsModal from "@/components/Modals/JoinProjectDetailsModal";
+import JoinProjectDetailsModal from "@/components/Modals/UserPrivate/JoinProjectDetailsModal";
 import { Badge, Status } from "@/components/Badges/Badges";
 import UserRequestsActions from "@/components/IconsActions/UserRequestsActions";
 import UserInvitationsActions from "@/components/IconsActions/UserInvitationsActions";

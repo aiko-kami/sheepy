@@ -8,7 +8,7 @@ import OtherLoginMethods from "@/components/Auth/Login/OtherLoginMethods";
 import SignUpLink from "@/components/Auth/Login/SignUpLink";
 
 import Modal from "@/components/Modals/Modal";
-import ForgotPasswordModal from "@/components/Modals/ForgotPasswordModal";
+import ForgotPasswordModal from "@/components/Modals/Auth/ForgotPasswordModal";
 
 const LoginMenu = () => {
 	const [modalDisplay, setModalDisplay] = useState(false);

@@ -50,41 +50,33 @@ const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) =>
 
 	return (
 		<>
-			{/* Modal content */}
-			<div className="max-h-110 overflow-y-auto">
-				<div className="px-4 md:px-10 pb-8">
-					{/* Form */}
-					<div>
-						<form onSubmit={onSubmit}>
-							{/* Role */}
-							<div className="mb-6">
-								<SelectRoundedField inputName="selectedRole" possibleValues={optionsList} inputValue={formState.selectedRole} label="Select the role you want" onChange={onChange} />
-							</div>
-
-							{/* Message */}
-							<div className="relative z-0 mb-6 w-full">
-								<TextAreaField
-									label="Describe why you want to join this project:"
-									labelStyle="block mb-2"
-									inputName="message"
-									inputValue={formState.message}
-									onChange={onChange}
-									placeholder="Share your motivation for joining this project and introduce yourself briefly..."
-									maxLength={4000}
-									rows="8"
-									required={true}
-								/>
-							</div>
-
-							{/* Button Send application (submit form) */}
-							<div className="flex gap-8 justify-center">
-								<Button btnProps={{ type: "button", btnColor: "grayBorder", action: onSaveDraft }}>Save draft</Button>
-								<Button btnProps={{ type: "submit" }}>Send my application</Button>
-							</div>
-						</form>
-					</div>
+			<form onSubmit={onSubmit}>
+				{/* Role */}
+				<div className="mb-6">
+					<SelectRoundedField inputName="selectedRole" possibleValues={optionsList} inputValue={formState.selectedRole} label="Select the role you want" onChange={onChange} />
 				</div>
-			</div>
+
+				{/* Message */}
+				<div className="relative z-0 mb-6 w-full">
+					<TextAreaField
+						label="Describe why you want to join this project:"
+						labelStyle="block mb-2"
+						inputName="message"
+						inputValue={formState.message}
+						onChange={onChange}
+						placeholder="Share your motivation for joining this project and introduce yourself briefly..."
+						maxLength={4000}
+						rows="8"
+						required={true}
+					/>
+				</div>
+
+				{/* Button Send application (submit form) */}
+				<div className="flex gap-8 justify-center">
+					<Button btnProps={{ type: "button", btnColor: "grayBorder", action: onSaveDraft }}>Save draft</Button>
+					<Button btnProps={{ type: "submit" }}>Send my application</Button>
+				</div>
+			</form>
 		</>
 	);
 };

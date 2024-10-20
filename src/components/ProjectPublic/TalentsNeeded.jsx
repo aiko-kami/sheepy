@@ -7,7 +7,7 @@ import { IoArrowForward } from "react-icons/io5";
 
 import { Button } from "@/components/Buttons/Buttons";
 import Modal from "@/components/Modals/Modal";
-import ProjectApplicationModal from "@/components/Modals/ProjectApplicationModal";
+import ProjectApplicationModal from "@/components/Modals/ProjectPublic/ProjectApplicationModal";
 
 const TalentsNeeded = ({ project, user }) => {
 	const [modalDisplay, setModalDisplay] = useState(false);

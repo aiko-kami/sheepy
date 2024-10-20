@@ -6,7 +6,7 @@ import { IoArrowUpCircle, IoAddOutline } from "react-icons/io5";
 import InvitationsTable from "@/components/Tables/InvitationsTable";
 import { Button } from "@/components/Buttons/Buttons";
 import Modal from "@/components/Modals/Modal";
-import ProjectNewInvitationModal from "@/components/Modals/ProjectNewInvitationModal";
+import ProjectNewInvitationModal from "@/components/Modals/ProjectEdit/ProjectNewInvitationModal";
 
 const JoinInvitations = ({ project, user }) => {
 	const [modalDisplayNewInvitation, setModalDisplayNewInvitation] = useState(false);

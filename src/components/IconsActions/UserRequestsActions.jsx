@@ -3,9 +3,9 @@
 import { useState } from "react";
 
 import Modal from "@/components/Modals/Modal";
-import JoinProjectDetailsModal from "@/components/Modals/JoinProjectDetailsModal";
-import ProjectRequestCancelModal from "@/components/Modals/ProjectRequestCancelModal";
-import JoinProjectSendMessageModal from "@/components/Modals/JoinProjectSendMessageModal";
+import JoinProjectDetailsModal from "@/components/Modals/UserPrivate/JoinProjectDetailsModal";
+import ProjectRequestCancelModal from "@/components/Modals/UserPrivate/ProjectRequestCancelModal";
+import JoinProjectSendMessageModal from "@/components/Modals/UserPrivate/JoinProjectSendMessageModal";
 
 import { IoEyeOutline, IoCreateOutline, IoCloseCircleOutline, IoMailOutline } from "react-icons/io5";
 

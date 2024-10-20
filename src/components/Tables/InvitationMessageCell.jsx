@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import Modal from "@/components/Modals/Modal";
-import UpdateMemberModal from "@/components/Modals/UpdateMemberModal";
+import UpdateMemberModal from "@/components/Modals/ProjectEdit/UpdateMemberModal";
 
 const InvitationMessageCell = ({ invitation }) => {
 	const [modalDisplayDetails, setModalDisplayDetails] = useState(false);

@@ -7,7 +7,7 @@ import SignUpForm from "@/components/Auth/SignUp/SignUpForm";
 import LoginLink from "@/components/Auth/SignUp/LoginLink";
 
 import Modal from "@/components/Modals/Modal";
-import TermsOfUseModal from "@/components/Modals/TermsOfUseModal";
+import TermsOfUseModal from "@/components/Modals/Auth/TermsOfUseModal";
 
 const SignUpMenu = () => {
 	const [modalDisplay, setModalDisplay] = useState(false);

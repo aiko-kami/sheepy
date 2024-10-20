@@ -5,7 +5,7 @@ import { useState } from "react";
 import { IoArrowForward, IoBookmarkOutline, IoShareSocialOutline, IoBuild } from "react-icons/io5";
 
 import Modal from "@/components/Modals/Modal";
-import ProjectApplicationModal from "@/components/Modals/ProjectApplicationModal";
+import ProjectApplicationModal from "@/components/Modals/ProjectPublic/ProjectApplicationModal";
 import { Button, ButtonCircle } from "@/components/Buttons/Buttons";
 
 const ActionButtons = ({ project, user }) => {

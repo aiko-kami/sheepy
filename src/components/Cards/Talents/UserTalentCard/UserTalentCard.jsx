@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import UserTalentCardModal from "@/components/Modals/UserTalentCardModal";
+import UserTalentCardModal from "@/components/Modals/UserPublic/UserTalentCardModal";
 import Modal from "@/components/Modals/Modal";
 
 const UserTalentCard = ({ talent }) => {

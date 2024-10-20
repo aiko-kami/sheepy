@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 import Modal from "@/components/Modals/Modal";
-import UpdateMemberModal from "@/components/Modals/UpdateMemberModal";
+import UpdateMemberModal from "@/components/Modals/ProjectEdit/UpdateMemberModal";
 
 const InvitationUserCell = ({ invitation }) => {
 	const [modalDisplayDetails, setModalDisplayDetails] = useState(false);

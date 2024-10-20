@@ -31,7 +31,7 @@ const InvitationsTable = ({ invitations, projectId, projectPermissions }) => {
 				<tbody>
 					{invitations.map((invitation, index) => {
 						return (
-							<tr key={index} className="border-b bg-gray-800 border-gray-700 hover:bg-gray-600">
+							<tr key={index} className="bg-gray-800 border-gray-700 hover:bg-gray-600">
 								<td scope="row" className="p-2 md:px-4 md:py-2">
 									<InvitationUserCell invitation={invitation} />
 								</td>
