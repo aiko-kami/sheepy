@@ -45,7 +45,7 @@ const ProjectNewInvitationModal = ({ closeModal }) => {
 				</div>
 
 				{/* Talent */}
-				<div className="mb-6 ml-4 max-w-120">
+				<div className="mb-6 ml-4 max-w-70">
 					<InputField inputName="talent" inputType="text" label="Talent" inputValue={formState.talent} onChange={onChange} />
 				</div>
 

@@ -54,7 +54,7 @@ const Modal = ({ modalDisplay, closeModalWithBackground, closeModal, modalTitle,
 						<span className="sr-only">Close modal</span>
 					</button>
 				</div>
-				<div className="max-h-120 overflow-y-auto text-base text-white">
+				<div className="max-h-190 overflow-y-auto text-base text-white">
 					<div className="px-4 md:px-10 pb-8 pt-2">{children}</div>
 				</div>
 			</div>

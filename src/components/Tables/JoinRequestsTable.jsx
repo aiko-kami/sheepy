@@ -48,7 +48,7 @@ const JoinRequestsTable = ({ requests, projectId, projectPermissions }) => {
 										</button>
 									</div>
 								</td>
-								<td scope="row" className="p-2 md:px-4 md:py-2 text-center">
+								<td scope="row" className="p-2 md:px-4 md:py-2">
 									<div className="flex justify-center flex-nowrap">
 										<ProjectRequestsActions projectId={projectId} request={request} projectPermissions={projectPermissions} />
 									</div>
