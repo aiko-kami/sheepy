@@ -11,9 +11,9 @@ const ProjectRequestDeclineModal = ({ closeModalDecline, request }) => {
 		<>
 			{/* User, request message and talent requested */}
 			<div className="mb-10 border-2 border-gray-400 rounded-md p-4 pb-5">
-				<div className="mb-6">
+				<div className="mb-6 xl:flex items-center">
 					<h2 className="text-lg text-gray-400 font-semibold mb-1">Sender:</h2>
-					<div className="flex items-center pl-1">
+					<div className="flex items-center pl-1 xl:pl-4">
 						<Image src={request.user.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
 						<div className="font-semibold">{request.user.username}</div>
 					</div>

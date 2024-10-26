@@ -5,9 +5,10 @@ import { useState } from "react";
 import Modal from "@/components/Modals/Modal";
 import UpdateMemberModal from "@/components/Modals/ProjectEdit/UpdateMemberModal";
 import RemoveMemberModal from "@/components/Modals/ProjectEdit/RemoveMemberModal";
-import ProjectRequestReportModal from "@/components/Modals/ProjectEdit/ProjectRequestReportModal";
+import JoinProjectDetailsModal from "@/components/Modals/ProjectEdit/JoinProjectDetailsModal";
 import ProjectRequestAcceptModal from "@/components/Modals/ProjectEdit/ProjectRequestAcceptModal";
 import ProjectRequestDeclineModal from "@/components/Modals/ProjectEdit/ProjectRequestDeclineModal";
+import ProjectRequestReportModal from "@/components/Modals/ProjectEdit/ProjectRequestReportModal";
 
 import Link from "next/link";
 
@@ -69,9 +70,14 @@ const ProjectRequestsActions = ({ projectId, request, projectPermissions, iconSi
 	return (
 		<>
 			{request.actions.view && (
-				<button type="button" onClick={showModalDetails}>
-					<IoEyeOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="View request" />
-				</button>
+				<>
+					<button type="button" onClick={showModalDetails}>
+						<IoEyeOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="View request" />
+					</button>
+					<Modal modalDisplay={modalDisplayDetails} closeModal={closeModalDetails} modalSize={"std"} modalTitle={"View request"}>
+						<JoinProjectDetailsModal joinProject={request} type={"request"} />
+					</Modal>
+				</>
 			)}
 			{request.actions.accept && (
 				<>
@@ -94,9 +100,14 @@ const ProjectRequestsActions = ({ projectId, request, projectPermissions, iconSi
 				</>
 			)}
 			{request.actions.sendMessage && (
-				<button type="button" onClick={showModalSendMessage}>
-					<IoMailOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
-				</button>
+				<>
+					<button type="button" onClick={showModalSendMessage}>
+						<IoMailOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
+					</button>
+					<Modal modalDisplay={modalDisplayDecline} closeModal={closeModalDecline} modalSize={"std"} modalTitle={"Decline request"}>
+						<ProjectRequestDeclineModal request={request} closeModalDecline={closeModalDecline} />
+					</Modal>
+				</>
 			)}
 			{request.actions.report && (
 				<>
