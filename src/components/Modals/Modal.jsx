@@ -38,7 +38,7 @@ const Modal = ({ modalDisplay, closeModalWithBackground, closeModal, modalTitle,
 			></div>
 
 			{/* Modal window */}
-			<div className={`fixed z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${size} rounded-lg shadow bg-gray-700`}>
+			<div className={`fixed z-50 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 ${size} rounded-lg shadow bg-gray-700 max-h-9/10 overflow-auto`}>
 				{/* Modal title and cross button */}
 				<div className="flex items-center justify-center p-3 md:p-4 rounded-t">
 					<h3 className="text-2xl font-semibold text-white text-center my-2 mx-4">{modalTitle}</h3>
@@ -54,7 +54,7 @@ const Modal = ({ modalDisplay, closeModalWithBackground, closeModal, modalTitle,
 						<span className="sr-only">Close modal</span>
 					</button>
 				</div>
-				<div className="max-h-190 overflow-y-auto text-base text-white">
+				<div className="max-h-190 text-base text-white">
 					<div className="px-4 md:px-10 pb-8 pt-2">{children}</div>
 				</div>
 			</div>

@@ -122,8 +122,8 @@ Don't let your ideas and talents go to waste – join Sheepy now!
       - [] send message to member modal
     - [] Requests
       - [] view modal
-      - [] accept modal
-      - [] decline modal
+      - [x] accept modal
+      - [x] decline modal
       - [] send message modal
       - [x] report modal
     - [] Invitations

@@ -6,6 +6,8 @@ import Modal from "@/components/Modals/Modal";
 import UpdateMemberModal from "@/components/Modals/ProjectEdit/UpdateMemberModal";
 import RemoveMemberModal from "@/components/Modals/ProjectEdit/RemoveMemberModal";
 import ProjectRequestReportModal from "@/components/Modals/ProjectEdit/ProjectRequestReportModal";
+import ProjectRequestAcceptModal from "@/components/Modals/ProjectEdit/ProjectRequestAcceptModal";
+import ProjectRequestDeclineModal from "@/components/Modals/ProjectEdit/ProjectRequestDeclineModal";
 
 import Link from "next/link";
 
@@ -72,14 +74,24 @@ const ProjectRequestsActions = ({ projectId, request, projectPermissions, iconSi
 				</button>
 			)}
 			{request.actions.accept && (
-				<button type="button" onClick={showModalAccept}>
-					<IoCheckmarkCircleOutline className={`m-1 hover:text-green-400 duration-100 transition ease-in-out ${size}`} title="Accept request" />
-				</button>
+				<>
+					<button type="button" onClick={showModalAccept}>
+						<IoCheckmarkCircleOutline className={`m-1 hover:text-green-400 duration-100 transition ease-in-out ${size}`} title="Accept request" />
+					</button>
+					<Modal modalDisplay={modalDisplayAccept} closeModal={closeModalAccept} modalSize={"std"} modalTitle={"Accept request"}>
+						<ProjectRequestAcceptModal request={request} closeModalAccept={closeModalAccept} />
+					</Modal>
+				</>
 			)}
 			{request.actions.decline && (
-				<button type="button" onClick={showModalDecline}>
-					<IoCloseCircleOutline className={`m-1 hover:text-red-400 duration-100 transition ease-in-out ${size}`} title="Decline request" />
-				</button>
+				<>
+					<button type="button" onClick={showModalDecline}>
+						<IoCloseCircleOutline className={`m-1 hover:text-red-400 duration-100 transition ease-in-out ${size}`} title="Decline request" />
+					</button>
+					<Modal modalDisplay={modalDisplayDecline} closeModal={closeModalDecline} modalSize={"std"} modalTitle={"Decline request"}>
+						<ProjectRequestDeclineModal request={request} closeModalDecline={closeModalDecline} />
+					</Modal>
+				</>
 			)}
 			{request.actions.sendMessage && (
 				<button type="button" onClick={showModalSendMessage}>
