@@ -3,16 +3,12 @@
 import { useState } from "react";
 
 import Modal from "@/components/Modals/Modal";
-import UpdateMemberModal from "@/components/Modals/ProjectEdit/UpdateMemberModal";
-import RemoveMemberModal from "@/components/Modals/ProjectEdit/RemoveMemberModal";
 import JoinProjectDetailsModal from "@/components/Modals/ProjectEdit/JoinProjectDetailsModal";
 import ProjectRequestAcceptModal from "@/components/Modals/ProjectEdit/ProjectRequestAcceptModal";
 import ProjectRequestDeclineModal from "@/components/Modals/ProjectEdit/ProjectRequestDeclineModal";
 import ProjectRequestReportModal from "@/components/Modals/ProjectEdit/ProjectRequestReportModal";
 
-import Link from "next/link";
-
-import { IoEyeOutline, IoPersonOutline, IoCheckmarkCircleOutline, IoCloseCircleOutline, IoMailOutline, IoWarningOutline } from "react-icons/io5";
+import { IoEyeOutline, IoCheckmarkCircleOutline, IoCloseCircleOutline, IoMailOutline, IoWarningOutline } from "react-icons/io5";
 
 const ProjectRequestsActions = ({ projectId, request, projectPermissions, iconSize }) => {
 	const [modalDisplayDetails, setModalDisplayDetails] = useState(false);

@@ -3,35 +3,40 @@
 import { useState } from "react";
 
 import Modal from "@/components/Modals/Modal";
-import UpdateMemberModal from "@/components/Modals/ProjectEdit/UpdateMemberModal";
-import RemoveMemberModal from "@/components/Modals/ProjectEdit/RemoveMemberModal";
+import JoinProjectDetailsModal from "@/components/Modals/ProjectEdit/JoinProjectDetailsModal";
+import ProjectInvitationCancelModal from "@/components/Modals/ProjectEdit/ProjectInvitationCancelModal";
 
-import Link from "next/link";
-
-import { IoEyeOutline, IoCreateOutline, IoCloseCircleOutline, IoMailOutline, IoWarningOutline } from "react-icons/io5";
+import { IoEyeOutline, IoCreateOutline, IoCloseCircleOutline, IoMailOutline } from "react-icons/io5";
 
 const ProjectInvitationsActions = ({ projectId, invitation, projectPermissions, iconSize }) => {
+	const [modalDisplayDetails, setModalDisplayDetails] = useState(false);
 	const [modalDisplayUpdate, setModalDisplayUpdate] = useState(false);
-	const [modalDisplayMessage, setModalDisplayMessage] = useState(false);
-	const [modalDisplayRemove, setModalDisplayRemove] = useState(false);
+	const [modalDisplayCancel, setModalDisplayCancel] = useState(false);
+	const [modalDisplaySendMessage, setModalDisplaySendMessage] = useState(false);
 
+	const showModalDetails = () => {
+		setModalDisplayDetails(true);
+	};
+	const closeModalDetails = () => {
+		setModalDisplayDetails(false);
+	};
 	const showModalUpdate = () => {
 		setModalDisplayUpdate(true);
 	};
 	const closeModalUpdate = () => {
 		setModalDisplayUpdate(false);
 	};
-	const showModalMessage = () => {
-		setModalDisplayMessage(true);
+	const showModalCancel = () => {
+		setModalDisplayCancel(true);
 	};
-	const closeModalMessage = () => {
-		setModalDisplayMessage(false);
+	const closeModalCancel = () => {
+		setModalDisplayCancel(false);
 	};
-	const showModalRemove = () => {
-		setModalDisplayRemove(true);
+	const showModalSendMessage = () => {
+		setModalDisplaySendMessage(true);
 	};
-	const closeModalRemove = () => {
-		setModalDisplayRemove(false);
+	const closeModalSendMessage = () => {
+		setModalDisplaySendMessage(false);
 	};
 
 	let size;
@@ -52,24 +57,38 @@ const ProjectInvitationsActions = ({ projectId, invitation, projectPermissions, 
 	return (
 		<>
 			{invitation.actions.view && (
-				<button type="button" onClick={showModalUpdate}>
-					<IoEyeOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="View invitation" />
-				</button>
+				<>
+					<button type="button" onClick={showModalDetails}>
+						<IoEyeOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="View invitation" />
+					</button>
+					<Modal modalDisplay={modalDisplayDetails} closeModal={closeModalDetails} modalSize={"std"} modalTitle={"View invitation"}>
+						<JoinProjectDetailsModal joinProject={invitation} type={"invitation"} />
+					</Modal>
+				</>
 			)}
 			{invitation.actions.edit && (
-				<button type="button">
-					<IoCreateOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Edit invitation" />
-				</button>
+				<>
+					<button type="button">
+						<IoCreateOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Edit invitation" />
+					</button>
+				</>
 			)}
 			{invitation.actions.cancel && (
-				<button type="button" onClick={showModalRemove}>
-					<IoCloseCircleOutline className={`m-1 hover:text-red-400 duration-100 transition ease-in-out ${size}`} title="Cancel invitation" />
-				</button>
+				<>
+					<button type="button" onClick={showModalCancel}>
+						<IoCloseCircleOutline className={`m-1 hover:text-red-400 duration-100 transition ease-in-out ${size}`} title="Cancel invitation" />
+					</button>
+					<Modal modalDisplay={modalDisplayCancel} closeModal={closeModalCancel} modalSize={"std"} modalTitle={"Cancel invitation"}>
+						<ProjectInvitationCancelModal invitation={invitation} closeModalCancel={closeModalCancel} />
+					</Modal>
+				</>
 			)}
 			{invitation.actions.sendMessage && (
-				<button type="button">
-					<IoMailOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
-				</button>
+				<>
+					<button type="button">
+						<IoMailOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
+					</button>
+				</>
 			)}
 		</>
 	);

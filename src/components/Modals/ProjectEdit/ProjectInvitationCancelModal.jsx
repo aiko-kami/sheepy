@@ -2,39 +2,39 @@ import { Button } from "@/components/Buttons/Buttons";
 import { Status } from "@/components/Badges/Badges";
 import Image from "next/image";
 
-const ProjectRequestDeclineModal = ({ closeModalDecline, request }) => {
-	const declineRequest = () => {
-		console.log("🚀 ~ declineRequest: the request has been declined");
-		closeModalDecline();
+const ProjectInvitationCancelModal = ({ closeModalCancel, invitation }) => {
+	const cancelInvitation = () => {
+		console.log("🚀 ~ cancelInvitation: the invitation has been cancelled");
+		closeModalCancel();
 	};
 	return (
 		<>
-			{/* User, request message and talent requested */}
+			{/* User, invitation message and talent requested */}
 			<div className="mb-10 border-2 border-gray-400 rounded-md p-4 pb-5">
 				<div className="mb-6 xl:flex items-center">
-					<h2 className="text-lg text-gray-400 font-semibold mb-1">Sender:</h2>
+					<h2 className="text-lg text-gray-400 font-semibold mb-1">Receiver:</h2>
 					<div className="flex items-center pl-1 xl:pl-4">
-						<Image src={request.user.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
-						<div className="font-semibold">{request.user.username}</div>
+						<Image src={invitation.user.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
+						<div className="font-semibold">{invitation.user.username}</div>
 					</div>
 				</div>
 
 				{/* joinProject message sent */}
 				<div className="mb-6">
-					<h2 className="text-lg text-gray-400 font-semibold mb-1">Request message:</h2>
-					<p className="pl-1">{request.message}</p>
+					<h2 className="text-lg text-gray-400 font-semibold mb-1">Invitation message:</h2>
+					<p className="pl-1">{invitation.message}</p>
 				</div>
 				{/* Talent requested and joinProject status */}
 				<div className="lg:grid lg:grid-cols-2 justify-around">
 					<div className="xl:flex items-baseline mb-6 lg:mb-0">
 						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Talent requested:</h2>
-						<p className="pl-1 xl:pl-2">{request.role}</p>
+						<p className="pl-1 xl:pl-2">{invitation.role}</p>
 					</div>
 					<div>
 						<div className="xl:flex justify-center">
-							<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Request status:</h2>
+							<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Invitation status:</h2>
 							<div className="pl-1 xl:pl-2">
-								<Status name={request.status.name} size={"sm"} bgColor={request.status.bgColor} />
+								<Status name={invitation.status.name} size={"sm"} bgColor={invitation.status.bgColor} />
 							</div>
 						</div>
 					</div>
@@ -42,7 +42,7 @@ const ProjectRequestDeclineModal = ({ closeModalDecline, request }) => {
 			</div>
 
 			{/* Decline validation */}
-			<h2 className="text-lg text-center mb-6">Are you sure you want to decline this request to join the project?</h2>
+			<h2 className="text-lg text-center mb-6">Are you sure you want to cancel this invitation to join the project?</h2>
 
 			{/* Buttons */}
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 justify-center">
@@ -50,7 +50,7 @@ const ProjectRequestDeclineModal = ({ closeModalDecline, request }) => {
 					<Button
 						btnProps={{
 							type: "button",
-							action: closeModalDecline,
+							action: closeModalCancel,
 						}}
 					>
 						Close
@@ -61,10 +61,10 @@ const ProjectRequestDeclineModal = ({ closeModalDecline, request }) => {
 						btnProps={{
 							type: "button",
 							btnColor: "red",
-							action: declineRequest,
+							action: cancelInvitation,
 						}}
 					>
-						Decline request
+						Cancel inviation
 					</Button>
 				</div>
 			</div>
@@ -72,4 +72,4 @@ const ProjectRequestDeclineModal = ({ closeModalDecline, request }) => {
 	);
 };
 
-export default ProjectRequestDeclineModal;
+export default ProjectInvitationCancelModal;

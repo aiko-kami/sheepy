@@ -222,6 +222,11 @@
 		{
 			"user": {
 				"userId": "12345",
+				"username": "Captain_Picard",
+				"profilePicture": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Jean-Luc_Picard_2.jpg"
+			},
+			"sender": {
+				"userId": "00012",
 				"username": "Brad Anderson",
 				"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU"
 			},
@@ -245,6 +250,11 @@
 				"username": "Scott Kosar",
 				"profilePicture": "https://static.wikia.nocookie.net/headhuntershorrorhouse/images/2/20/Scott_Kosar.jpg/revision/latest?cb=20101120165807"
 			},
+			"sender": {
+				"userId": "00012",
+				"username": "Brad Anderson",
+				"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU"
+			},
 			"message": "Hello, we are looking for a Screenwriter!",
 			"role": "Screenwriter",
 			"recent": true,
@@ -265,6 +275,11 @@
 				"username": "Scott Kosar",
 				"profilePicture": "https://static.wikia.nocookie.net/headhuntershorrorhouse/images/2/20/Scott_Kosar.jpg/revision/latest?cb=20101120165807"
 			},
+			"sender": {
+				"userId": "00012",
+				"username": "Brad Anderson",
+				"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU"
+			},
 			"message": "Hello, we are looking for a Screenwriter!",
 			"role": "Screenwriter",
 			"recent": true,
@@ -284,6 +299,11 @@
 				"userId": "56468",
 				"username": "Carlos Fernández",
 				"profilePicture": "https://media.licdn.com/dms/image/C4D22AQFMBGih4742dw/feedshare-shrink_800/0/1557307992723?e=2147483647&v=beta&t=7cQShBw07SJxBvKtDRzF2Tu659wVKJPgrixxtCK9Mo0"
+			},
+			"sender": {
+				"userId": "00012",
+				"username": "Brad Anderson",
+				"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU"
 			},
 			"message": "Hello, we are looking for a Producer!",
 			"role": "Producer",

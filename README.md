@@ -128,9 +128,9 @@ Don't let your ideas and talents go to waste – join Sheepy now!
       - [x] report modal
     - [] Invitations
       - [x] new invitation
-      - [] view modal
-      - [] edit modal
-      - [] cancel modal
+      - [x] view modal
+      - [] edit modal ==> edit modal for user to be refactored
+      - [x] cancel modal
       - [] send message modal
   - [] Rights
   - [] Steps
