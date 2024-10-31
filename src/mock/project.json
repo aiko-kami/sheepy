@@ -220,6 +220,7 @@
 	],
 	"invitations": [
 		{
+			"joinProjectId": "54686351",
 			"user": {
 				"userId": "12345",
 				"username": "Captain_Picard",
@@ -245,6 +246,7 @@
 			}
 		},
 		{
+			"joinProjectId": "54686351",
 			"user": {
 				"userId": "1745",
 				"username": "Scott Kosar",
@@ -270,6 +272,7 @@
 			}
 		},
 		{
+			"joinProjectId": "54686351",
 			"user": {
 				"userId": "1745",
 				"username": "Scott Kosar",
@@ -295,6 +298,7 @@
 			}
 		},
 		{
+			"joinProjectId": "54686351",
 			"user": {
 				"userId": "56468",
 				"username": "Carlos Fernández",
@@ -322,6 +326,7 @@
 	],
 	"requests": [
 		{
+			"joinProjectId": "54686351",
 			"user": {
 				"userId": "12345",
 				"username": "Brad Anderson",
@@ -344,6 +349,7 @@
 			}
 		},
 		{
+			"joinProjectId": "54686351",
 			"user": {
 				"userId": "1745",
 				"username": "Scott Kosar",
@@ -366,6 +372,7 @@
 			}
 		},
 		{
+			"joinProjectId": "54686351",
 			"user": {
 				"userId": "56468",
 				"username": "Carlos Fernández",
@@ -388,6 +395,7 @@
 			}
 		},
 		{
+			"joinProjectId": "54686351",
 			"user": {
 				"userId": "12345",
 				"username": "Brad Anderson",
@@ -410,6 +418,7 @@
 			}
 		},
 		{
+			"joinProjectId": "54686351",
 			"user": {
 				"userId": "1745",
 				"username": "Scott Kosar",
@@ -432,6 +441,7 @@
 			}
 		},
 		{
+			"joinProjectId": "54686351",
 			"user": {
 				"userId": "56468",
 				"username": "Carlos Fernández",
@@ -454,6 +464,7 @@
 			}
 		},
 		{
+			"joinProjectId": "54686351",
 			"user": {
 				"userId": "56468",
 				"username": "Carlos Fernández",

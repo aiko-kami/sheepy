@@ -23,7 +23,7 @@ const ProjectInvitationAcceptModal = ({ closeModalAccept, invitation }) => {
 			</div>
 
 			{/* Accept validation */}
-			<h2 className="text-lg text-center mb-6">Are you sure you want to accept this invitation to join the project?</h2>
+			<h2 className="text-lg font-semibold text-center mb-6">Are you sure you want to accept this invitation to join the project?</h2>
 
 			{/* Buttons */}
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 justify-center">

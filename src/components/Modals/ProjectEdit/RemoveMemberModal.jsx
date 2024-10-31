@@ -32,26 +32,22 @@ const RemoveMemberModal = ({ closeModal, member }) => {
 					)}
 				</div>
 
-				<div className="sm:grid sm:grid-cols-1 xl:grid-cols-2 px-8 mb-6">
+				<div className="xl:grid xl:grid-cols-2 px-8 mb-6">
 					{/* User current role on the project */}
-					<div className="mb-6">
-						<h2 className="text-lg text-gray-400 font-semibold mb-1">
-							Current role: <span className="text-white font-normal text-base">{member.role}</span>
-						</h2>
+					<div className="sm:flex items-baseline xl:justify-center mb-6 xl:mb-0">
+						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Current role:</h2>
+						<p className="pl-1 xl:pl-2">{member.role}</p>
 					</div>
 
 					{/* User current start date on the project */}
-					<div className="mb-6">
-						<h2 className="text-lg text-gray-400 font-semibold mb-1">
-							Start date: <span className="text-white font-normal text-base">{member.startDate}</span>
-						</h2>
-					</div>
-
-					{/* User current start date on the project */}
-					<div className="col-span-2 mb-6 text-center">
-						<h2 className="text-lg font-semibold mb-1">Are you sure you want to remove {member.username} from the project?</h2>
+					<div className="sm:flex items-baseline xl:justify-center mb-6 xl:mb-0">
+						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Start date:</h2>
+						<p className="pl-1 xl:pl-2">{member.startDate}</p>
 					</div>
 				</div>
+
+				{/* User current start date on the project */}
+				<h2 className="text-lg font-semibold text-center mb-6">Are you sure you want to remove {member.username} from the project?</h2>
 
 				{/* Buttons */}
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 justify-center">

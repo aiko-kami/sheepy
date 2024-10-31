@@ -1,4 +1,4 @@
-import { Badge, Status } from "@/components/Badges/Badges";
+import { Status } from "@/components/Badges/Badges";
 import Image from "next/image";
 
 const JoinProjectDetailsModal = ({ joinProject, type }) => {

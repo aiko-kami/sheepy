@@ -121,17 +121,17 @@ Don't let your ideas and talents go to waste – join Sheepy now!
       - [x] view member profile
       - [] send message to member modal
     - [] Requests
-      - [] view modal
+      - [x] view modal
       - [x] accept modal
       - [x] decline modal
-      - [] send message modal
+      - [x] send message modal
       - [x] report modal
     - [] Invitations
       - [x] new invitation
       - [x] view modal
       - [] edit modal ==> edit modal for user to be refactored
       - [x] cancel modal
-      - [] send message modal
+      - [x] send message modal
   - [] Rights
   - [] Steps
   - [] Q&As

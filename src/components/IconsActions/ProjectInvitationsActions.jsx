@@ -5,6 +5,7 @@ import { useState } from "react";
 import Modal from "@/components/Modals/Modal";
 import JoinProjectDetailsModal from "@/components/Modals/ProjectEdit/JoinProjectDetailsModal";
 import ProjectInvitationCancelModal from "@/components/Modals/ProjectEdit/ProjectInvitationCancelModal";
+import JoinProjectSendMessageModal from "@/components/Modals/ProjectEdit/JoinProjectSendMessageModal";
 
 import { IoEyeOutline, IoCreateOutline, IoCloseCircleOutline, IoMailOutline } from "react-icons/io5";
 
@@ -85,9 +86,12 @@ const ProjectInvitationsActions = ({ projectId, invitation, projectPermissions, 
 			)}
 			{invitation.actions.sendMessage && (
 				<>
-					<button type="button">
+					<button type="button" onClick={showModalSendMessage}>
 						<IoMailOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
 					</button>
+					<Modal modalDisplay={modalDisplaySendMessage} closeModal={closeModalSendMessage} modalSize={"std"} modalTitle={"Send a message"}>
+						<JoinProjectSendMessageModal joinProject={invitation} closeModalSendMessage={closeModalSendMessage} type={"invitation"} />
+					</Modal>
 				</>
 			)}
 		</>

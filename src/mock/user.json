@@ -434,6 +434,7 @@
 		],
 		"invitations": [
 			{
+				"joinProjectId": "54686351",
 				"project": {
 					"projectId": 24,
 					"title": "Create a comic magazine",
@@ -491,6 +492,7 @@
 				}
 			},
 			{
+				"joinProjectId": "54686351",
 				"project": {
 					"projectId": 710349,
 					"title": "Urban Sketching Group",
@@ -540,6 +542,7 @@
 				}
 			},
 			{
+				"joinProjectId": "54686351",
 				"project": {
 					"projectId": 48,
 					"title": "Write a Fiction Novel",
@@ -597,6 +600,7 @@
 				}
 			},
 			{
+				"joinProjectId": "54686351",
 				"project": {
 					"projectId": 48,
 					"title": "Coding Bootcamp",
@@ -652,6 +656,7 @@
 				}
 			},
 			{
+				"joinProjectId": "54686351",
 				"project": {
 					"projectId": 247831,
 					"title": "Photography Workshop",
@@ -703,6 +708,7 @@
 		],
 		"requests": [
 			{
+				"joinProjectId": "54686351",
 				"project": {
 					"projectId": 147362,
 					"title": "Beach Cleanup",
@@ -750,6 +756,7 @@
 				}
 			},
 			{
+				"joinProjectId": "54686351",
 				"project": {
 					"projectId": 674829,
 					"title": "Paint a Mural",
@@ -797,6 +804,7 @@
 				}
 			},
 			{
+				"joinProjectId": "54686351",
 				"project": {
 					"projectId": 24,
 					"title": "Create a comic magazine",
@@ -852,6 +860,7 @@
 				}
 			},
 			{
+				"joinProjectId": "54686351",
 				"project": {
 					"projectId": 710349,
 					"title": "Urban Sketching Group",
@@ -899,6 +908,7 @@
 				}
 			},
 			{
+				"joinProjectId": "54686351",
 				"project": {
 					"projectId": 48,
 					"title": "Write a Fiction Novel",
@@ -955,6 +965,7 @@
 				}
 			},
 			{
+				"joinProjectId": "54686351",
 				"project": {
 					"projectId": 48,
 					"title": "Coding Bootcamp",
@@ -1008,6 +1019,7 @@
 				}
 			},
 			{
+				"joinProjectId": "54686351",
 				"project": {
 					"projectId": 247831,
 					"title": "Photography Workshop",

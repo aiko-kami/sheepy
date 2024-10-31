@@ -6,6 +6,7 @@ import Modal from "@/components/Modals/Modal";
 import JoinProjectDetailsModal from "@/components/Modals/ProjectEdit/JoinProjectDetailsModal";
 import ProjectRequestAcceptModal from "@/components/Modals/ProjectEdit/ProjectRequestAcceptModal";
 import ProjectRequestDeclineModal from "@/components/Modals/ProjectEdit/ProjectRequestDeclineModal";
+import JoinProjectSendMessageModal from "@/components/Modals/ProjectEdit/JoinProjectSendMessageModal";
 import ProjectRequestReportModal from "@/components/Modals/ProjectEdit/ProjectRequestReportModal";
 
 import { IoEyeOutline, IoCheckmarkCircleOutline, IoCloseCircleOutline, IoMailOutline, IoWarningOutline } from "react-icons/io5";
@@ -100,8 +101,8 @@ const ProjectRequestsActions = ({ projectId, request, projectPermissions, iconSi
 					<button type="button" onClick={showModalSendMessage}>
 						<IoMailOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
 					</button>
-					<Modal modalDisplay={modalDisplayDecline} closeModal={closeModalDecline} modalSize={"std"} modalTitle={"Decline request"}>
-						<ProjectRequestDeclineModal request={request} closeModalDecline={closeModalDecline} />
+					<Modal modalDisplay={modalDisplaySendMessage} closeModal={closeModalSendMessage} modalSize={"std"} modalTitle={"Send a message"}>
+						<JoinProjectSendMessageModal joinProject={request} closeModalSendMessage={closeModalSendMessage} type={"request"} />
 					</Modal>
 				</>
 			)}

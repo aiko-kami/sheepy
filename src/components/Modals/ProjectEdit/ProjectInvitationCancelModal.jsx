@@ -10,12 +10,24 @@ const ProjectInvitationCancelModal = ({ closeModalCancel, invitation }) => {
 	return (
 		<>
 			{/* User, invitation message and talent requested */}
+			<h2 className="text-xl text-center font-semibold mb-1">Invitation details</h2>
 			<div className="mb-10 border-2 border-gray-400 rounded-md p-4 pb-5">
-				<div className="mb-6 xl:flex items-center">
-					<h2 className="text-lg text-gray-400 font-semibold mb-1">Receiver:</h2>
-					<div className="flex items-center pl-1 xl:pl-4">
-						<Image src={invitation.user.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
-						<div className="font-semibold">{invitation.user.username}</div>
+				<div className="lg:grid lg:grid-cols-2 justify-around">
+					<div className="mb-6 xl:flex items-center">
+						<h2 className="text-lg text-gray-400 font-semibold mb-1">Receiver:</h2>
+						<div className="flex items-center pl-1 xl:pl-4">
+							<Image src={invitation.user.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
+							<div className="font-semibold">{invitation.user.username}</div>
+						</div>
+					</div>
+
+					{/* Sender from the project */}
+					<div className="mb-6 xl:flex items-center justify-center">
+						<h2 className="text-lg text-gray-400 font-semibold mb-1">Sent from:</h2>
+						<div className="flex items-center pl-1 xl:pl-4">
+							<Image src={invitation.sender.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
+							<div className="font-semibold">{invitation.sender.username}</div>
+						</div>
 					</div>
 				</div>
 
@@ -42,7 +54,7 @@ const ProjectInvitationCancelModal = ({ closeModalCancel, invitation }) => {
 			</div>
 
 			{/* Decline validation */}
-			<h2 className="text-lg text-center mb-6">Are you sure you want to cancel this invitation to join the project?</h2>
+			<h2 className="text-lg font-semibold text-center mb-6">Are you sure you want to cancel this invitation to join the project?</h2>
 
 			{/* Buttons */}
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 justify-center">
