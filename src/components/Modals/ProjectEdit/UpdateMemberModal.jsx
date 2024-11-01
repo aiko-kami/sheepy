@@ -7,7 +7,7 @@ import { Button } from "@/components/Buttons/Buttons";
 import DatePickerField from "@/components/Forms/DatePickerField";
 import InputField from "@/components/Forms/InputField";
 
-const UpdateMemberModal = ({ closeModal, member }) => {
+const UpdateMemberModal = ({ closeModalUpdate, member }) => {
 	const [formState, setFormState] = useState({
 		memberId: member.userId,
 		role: "",
@@ -34,6 +34,7 @@ const UpdateMemberModal = ({ closeModal, member }) => {
 		event.preventDefault();
 		// Handle form submission
 		console.log("🚀 ~ onSubmit ~ The member has been updated:", formState);
+		closeModalUpdate();
 	};
 
 	return (
@@ -80,7 +81,7 @@ const UpdateMemberModal = ({ closeModal, member }) => {
 						<Button
 							btnProps={{
 								type: "button",
-								action: closeModal,
+								action: closeModalUpdate,
 							}}
 						>
 							Close

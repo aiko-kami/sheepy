@@ -86,7 +86,7 @@ const UserRequestsActions = ({ request, iconSize }) => {
 						<IoMailOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
 					</button>
 					<Modal modalDisplay={modalDisplaySendMessage} closeModal={closeModalSendMessage} modalSize={"std"} modalTitle={"Send a message"}>
-						<JoinProjectSendMessageModal closeModalSendMessage={closeModalSendMessage} joinProject={request} />
+						<JoinProjectSendMessageModal closeModalSendMessage={closeModalSendMessage} joinProject={request} type={"request"} />
 					</Modal>
 				</>
 			)}

@@ -3,11 +3,12 @@
 import { useState } from "react";
 
 import { Button } from "@/components/Buttons/Buttons";
-import { Badge } from "@/components/Badges/Badges";
+import { Status, Badge } from "@/components/Badges/Badges";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 
-const JoinProjectSendMessageModal = ({ closeModalSendMessage, joinProject }) => {
+const JoinProjectSendMessageModal = ({ closeModalSendMessage, joinProject, type }) => {
 	const [formState, setFormState] = useState({
+		joinProjectId: joinProject.joinProjectId,
 		projectId: joinProject.project.projectId,
 		message: "",
 	});
@@ -29,19 +30,48 @@ const JoinProjectSendMessageModal = ({ closeModalSendMessage, joinProject }) => 
 
 	return (
 		<>
-			{/* Project title and category */}
-			<div className="sm:grid grid-cols-2">
-				<div className="">
-					<h2 className="text-lg text-gray-400 font-semibold mb-1">Project:</h2>
-					<p className="mb-6 font-semibold pl-1">{joinProject.project.title}</p>
+			{/* User, invitation message and talent requested */}
+			<h2 className="text-xl text-center font-semibold mb-1">
+				<span className="capitalize">{type}</span> details
+			</h2>
+			<div className="mb-6 border-2 border-gray-400 rounded-md p-4 pb-5">
+				{/* Project title and category */}
+				<div className="lg:grid lg:grid-cols-2 justify-around mb-8">
+					<div className="xl:flex items-baseline mb-6 lg:mb-0">
+						<h2 className="text-lg text-gray-400 font-semibold">Project:</h2>
+						<p className="pl-1 xl:pl-2">{joinProject.project.title}</p>
+					</div>
+					<div className="xl:flex justify-center">
+						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Category:</h2>
+						<div className="pl-1 xl:pl-2">
+							<Badge badge={joinProject.project.category} size={"sm"} />
+						</div>
+					</div>
 				</div>
-				<div>
-					<h2 className="text-lg text-gray-400 font-semibold mb-1">Category:</h2>
-					<div className="mb-10 pl-1">
-						<Badge badge={joinProject.project.category} size={"sm"} />
+
+				{/* joinProject message sent */}
+				<h2 className="text-lg text-gray-400 font-semibold mb-1">
+					<span className="capitalize">{type}</span> message:
+				</h2>
+				<p className="mb-10 pl-1">{joinProject.message}</p>
+
+				{/* Talent requested and joinProject status */}
+				<div className="lg:grid lg:grid-cols-2 justify-around">
+					<div className="xl:flex items-baseline mb-6 lg:mb-0">
+						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Talent requested:</h2>
+						<p className="pl-1">{joinProject.talent}</p>
+					</div>
+					<div className="xl:flex justify-center">
+						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">
+							<span className="capitalize">{type}</span> status:
+						</h2>
+						<div className="pl-1 xl:pl-2">
+							<Status name={joinProject.status.name} size={"sm"} bgColor={joinProject.status.bgColor} />
+						</div>
 					</div>
 				</div>
 			</div>
+
 			{/* Send message form */}
 			<form onSubmit={onSubmit}>
 				<div className="mb-8">

@@ -4,10 +4,8 @@ import { useState } from "react";
 
 import Image from "next/image";
 import { Button } from "@/components/Buttons/Buttons";
-import DatePickerField from "@/components/Forms/DatePickerField";
-import InputField from "@/components/Forms/InputField";
 
-const RemoveMemberModal = ({ closeModal, member }) => {
+const RemoveMemberModal = ({ closeModalRemove, member }) => {
 	const [formState, setFormState] = useState({
 		memberId: member.userId,
 	});
@@ -16,6 +14,7 @@ const RemoveMemberModal = ({ closeModal, member }) => {
 		event.preventDefault();
 		// Handle form submission
 		console.log("🚀 ~ onSubmit ~ The member has been removed:", formState);
+		closeModalRemove();
 	};
 
 	return (
@@ -55,7 +54,7 @@ const RemoveMemberModal = ({ closeModal, member }) => {
 						<Button
 							btnProps={{
 								type: "button",
-								action: closeModal,
+								action: closeModalRemove,
 							}}
 						>
 							Cancel

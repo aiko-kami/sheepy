@@ -115,12 +115,12 @@ Don't let your ideas and talents go to waste – join Sheepy now!
     - [] Open/Download file
     - [] Attachments actions
   - [] Members
-    - [] Members actions
+    - [x] Members actions
       - [x] edite member modal
       - [x] remove member modal
       - [x] view member profile
-      - [] send message to member modal
-    - [] Requests
+      - [x] send message to member modal
+    - [x] Requests
       - [x] view modal
       - [x] accept modal
       - [x] decline modal

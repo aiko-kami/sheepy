@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { Button } from "@/components/Buttons/Buttons";
-import { Badge } from "@/components/Badges/Badges";
+import { Badge, Status } from "@/components/Badges/Badges";
 
 const ProjectRequestCancelModal = ({ closeModalCancel, request }) => {
 	const cancelRequest = () => {
@@ -10,18 +10,38 @@ const ProjectRequestCancelModal = ({ closeModalCancel, request }) => {
 	};
 	return (
 		<>
-			{/* Project title and category */}
-			<div className="sm:grid grid-cols-2">
-				<div className="">
-					<h2 className="text-lg text-gray-400 font-semibold mb-1">Project:</h2>
-					<p className="mb-6 font-semibold pl-1">
-						<Link href={`/projects/${request.projectprojectId}`}>{request.project.title}</Link>
-					</p>
+			{/* User, request message and talent requested */}
+			<h2 className="text-xl text-center font-semibold mb-1">Request details</h2>
+			<div className="mb-6 border-2 border-gray-400 rounded-md p-4 pb-5">
+				{/* Project title and category */}
+				<div className="lg:grid lg:grid-cols-2 justify-around mb-8">
+					<div className="xl:flex items-baseline mb-6 lg:mb-0">
+						<h2 className="text-lg text-gray-400 font-semibold">Project:</h2>
+						<p className="pl-1 xl:pl-2">{request.project.title}</p>
+					</div>
+					<div className="xl:flex justify-center">
+						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Category:</h2>
+						<div className="pl-1 xl:pl-2">
+							<Badge badge={request.project.category} size={"sm"} />
+						</div>
+					</div>
 				</div>
-				<div>
-					<h2 className="text-lg text-gray-400 font-semibold mb-1">Category:</h2>
-					<div className="mb-10 pl-1">
-						<Badge badge={request.project.category} size={"sm"} />
+
+				{/* Request message sent */}
+				<h2 className="text-lg text-gray-400 font-semibold mb-1">Request message:</h2>
+				<p className="mb-10 pl-1">{request.message}</p>
+
+				{/* Talent requested and request status */}
+				<div className="lg:grid lg:grid-cols-2 justify-around">
+					<div className="xl:flex items-baseline mb-6 lg:mb-0">
+						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Talent requested:</h2>
+						<p className="pl-1">{request.talent}</p>
+					</div>
+					<div className="xl:flex justify-center">
+						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Request status:</h2>
+						<div className="pl-1 xl:pl-2">
+							<Status name={request.status.name} size={"sm"} bgColor={request.status.bgColor} />
+						</div>
 					</div>
 				</div>
 			</div>
