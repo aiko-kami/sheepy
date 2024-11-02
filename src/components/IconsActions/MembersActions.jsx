@@ -78,7 +78,7 @@ const MembersActions = ({ projectId, member, projectPermissions, iconSize }) => 
 					<button type="button" onClick={showModalRemove}>
 						<IoCloseCircleOutline className={`m-1 hover:text-red-400 duration-100 transition ease-in-out ${size}`} title="Remove from the project" />
 					</button>
-					<Modal modalDisplay={modalDisplayRemove} closeModal={closeModalRemove} modalSize={"std"} modalTitle={"Remove member from the project"}>
+					<Modal modalDisplay={modalDisplayRemove} closeModal={closeModalRemove} closeModalWithBackground={closeModalRemove} modalSize={"std"} modalTitle={"Remove member from the project"}>
 						<RemoveMemberModal member={member} closeModalRemove={closeModalRemove} />
 					</Modal>
 				</>

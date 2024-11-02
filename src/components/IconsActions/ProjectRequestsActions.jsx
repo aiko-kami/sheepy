@@ -71,7 +71,7 @@ const ProjectRequestsActions = ({ projectId, request, projectPermissions, iconSi
 					<button type="button" onClick={showModalDetails}>
 						<IoEyeOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="View request" />
 					</button>
-					<Modal modalDisplay={modalDisplayDetails} closeModal={closeModalDetails} modalSize={"std"} modalTitle={"View request"}>
+					<Modal modalDisplay={modalDisplayDetails} closeModal={closeModalDetails} closeModalWithBackground={closeModalDetails} modalSize={"std"} modalTitle={"View request"}>
 						<JoinProjectDetailsModal joinProject={request} type={"request"} />
 					</Modal>
 				</>
@@ -81,8 +81,8 @@ const ProjectRequestsActions = ({ projectId, request, projectPermissions, iconSi
 					<button type="button" onClick={showModalAccept}>
 						<IoCheckmarkCircleOutline className={`m-1 hover:text-green-400 duration-100 transition ease-in-out ${size}`} title="Accept request" />
 					</button>
-					<Modal modalDisplay={modalDisplayAccept} closeModal={closeModalAccept} modalSize={"std"} modalTitle={"Accept request"}>
-						<ProjectRequestAcceptModal request={request} closeModalAccept={closeModalAccept} />
+					<Modal modalDisplay={modalDisplayAccept} closeModal={closeModalAccept} closeModalWithBackground={closeModalAccept} modalSize={"std"} modalTitle={"Accept request"}>
+						<ProjectRequestAcceptModal request={request} closeModalAccept={closeModalAccept} projectId={projectId} />
 					</Modal>
 				</>
 			)}
@@ -91,8 +91,8 @@ const ProjectRequestsActions = ({ projectId, request, projectPermissions, iconSi
 					<button type="button" onClick={showModalDecline}>
 						<IoCloseCircleOutline className={`m-1 hover:text-red-400 duration-100 transition ease-in-out ${size}`} title="Decline request" />
 					</button>
-					<Modal modalDisplay={modalDisplayDecline} closeModal={closeModalDecline} modalSize={"std"} modalTitle={"Decline request"}>
-						<ProjectRequestDeclineModal request={request} closeModalDecline={closeModalDecline} />
+					<Modal modalDisplay={modalDisplayDecline} closeModal={closeModalDecline} closeModalWithBackground={closeModalDecline} modalSize={"std"} modalTitle={"Decline request"}>
+						<ProjectRequestDeclineModal request={request} closeModalDecline={closeModalDecline} projectId={projectId} />
 					</Modal>
 				</>
 			)}
@@ -102,7 +102,7 @@ const ProjectRequestsActions = ({ projectId, request, projectPermissions, iconSi
 						<IoMailOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
 					</button>
 					<Modal modalDisplay={modalDisplaySendMessage} closeModal={closeModalSendMessage} modalSize={"std"} modalTitle={"Send a message"}>
-						<JoinProjectSendMessageModal joinProject={request} closeModalSendMessage={closeModalSendMessage} type={"request"} />
+						<JoinProjectSendMessageModal joinProject={request} closeModalSendMessage={closeModalSendMessage} type={"request"} projectId={projectId} />
 					</Modal>
 				</>
 			)}
@@ -112,7 +112,7 @@ const ProjectRequestsActions = ({ projectId, request, projectPermissions, iconSi
 						<IoWarningOutline className={`m-1 hover:text-yellow-500 duration-100 transition ease-in-out ${size}`} title="Report" />
 					</button>
 					<Modal modalDisplay={modalDisplayReport} closeModal={closeModalReport} modalSize={"std"} modalTitle={"Report project request"}>
-						<ProjectRequestReportModal request={request} closeModalReport={closeModalReport} />
+						<ProjectRequestReportModal request={request} closeModalReport={closeModalReport} projectId={projectId} />
 					</Modal>
 				</>
 			)}

@@ -40,12 +40,12 @@ const ProjectNewInvitationModal = ({ closeModal }) => {
 		<>
 			<form onSubmit={onSubmit}>
 				{/* Recipient */}
-				<div className="mb-6 ml-4 max-w-120">
+				<div className="mb-6 max-w-120">
 					<InputField inputName="username" inputType="text" label="Recipient" inputValue={formState.username} onChange={onChange} />
 				</div>
 
 				{/* Talent */}
-				<div className="mb-6 ml-4 max-w-70">
+				<div className="mb-6 max-w-70">
 					<InputField inputName="talent" inputType="text" label="Talent" inputValue={formState.talent} onChange={onChange} />
 				</div>
 
@@ -67,7 +67,7 @@ const ProjectNewInvitationModal = ({ closeModal }) => {
 				{/* Button Send application (submit form) */}
 				<div className="flex gap-8 justify-center">
 					<Button btnProps={{ type: "button", btnColor: "grayBorder", action: onSaveDraft }}>Save draft</Button>
-					<Button btnProps={{ type: "submit" }}>Send inviation</Button>
+					<Button btnProps={{ type: "submit", btnColor: "green" }}>Send invitation</Button>
 				</div>
 			</form>
 		</>

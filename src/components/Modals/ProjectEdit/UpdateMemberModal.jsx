@@ -41,9 +41,11 @@ const UpdateMemberModal = ({ closeModalUpdate, member }) => {
 		<>
 			<form onSubmit={onSubmit}>
 				{/* User profile picture and username */}
-				<div className="flex items-center px-8 mb-6">
-					<Image src={member.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-16 h-16 rounded-full shadow-md mr-4" />
-					<div className="font-semibold text-lg lg:whitespace-nowrap">{member.username}</div>
+				<div className="md:flex items-center mb-6">
+					<div className="flex items-center mb-4 md:mb-0">
+						<Image src={member.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-16 h-16 rounded-full shadow-md mr-4" />
+						<div className="font-semibold text-lg lg:whitespace-nowrap">{member.username}</div>
+					</div>
 					{member.isOwner && (
 						<div className="sm:ml-3">
 							<span className="py-1 px-2.5 text-white font-bold text-nowrap duration-200 rounded cursor-default bg-blue-500">Project Owner</span>
@@ -51,26 +53,26 @@ const UpdateMemberModal = ({ closeModalUpdate, member }) => {
 					)}
 				</div>
 
-				<div className="sm:grid sm:grid-cols-1 xl:grid-cols-2 px-8 mb-6">
+				<div className="sm:grid sm:grid-cols-1 xl:grid-cols-2 mb-6 items-end">
 					{/* User current role on the project */}
-					<div className="mb-6">
-						<h2 className="text-lg text-gray-400 font-semibold mb-1">Current role:</h2>
-						<div className="pl-1">{member.role}</div>
+					<div className="flex items-baseline mb-2 xl:mb-6">
+						<h2 className="text-lg text-gray-400 font-semibold">Current role:</h2>
+						<p className="pl-1 xl:pl-2">{member.role}</p>
 					</div>
 
 					{/* New role */}
-					<div className="mb-6 max-w-80 pt-5">
+					<div className="max-w-80 mb-6">
 						<InputField inputName="role" inputType="text" label="New role" inputValue={formState.role} onChange={onChange} />
 					</div>
 
 					{/* User current start date on the project */}
-					<div className="mb-6">
-						<h2 className="text-lg text-gray-400 font-semibold mb-1">Start date:</h2>
-						<p className="pl-1">{member.startDate}</p>
+					<div className="flex items-baseline mb-2 xl:mb-6">
+						<h2 className="text-lg text-gray-400 font-semibold">Start date:</h2>
+						<p className="pl-1 xl:pl-2">{member.startDate}</p>
 					</div>
 
 					{/* Start date picker */}
-					<div className="mb-6 max-w-80 pt-4">
+					<div className="max-w-80 mb-6">
 						<DatePickerField label="Change member start date" value={formState.memberStartDate} onChange={(newValue) => setMemberStartDate(newValue)} />
 					</div>
 				</div>

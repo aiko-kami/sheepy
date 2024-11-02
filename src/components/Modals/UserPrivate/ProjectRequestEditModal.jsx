@@ -5,12 +5,14 @@ import { useState } from "react";
 import { Button } from "@/components/Buttons/Buttons";
 import { Status, Badge } from "@/components/Badges/Badges";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
+import { SelectRoundedField } from "@/components/Forms/SelectField";
 
-const JoinProjectSendMessageModal = ({ closeModalSendMessage, joinProject, type }) => {
+const ProjectRequestEditModal = ({ closeModalEdit, joinProject }) => {
 	const [formState, setFormState] = useState({
 		joinProjectId: joinProject.joinProjectId,
 		projectId: joinProject.project.projectId,
-		message: "",
+		selectedRole: joinProject.talent,
+		message: joinProject.message,
 	});
 
 	const onChange = (event) => {
@@ -21,19 +23,29 @@ const JoinProjectSendMessageModal = ({ closeModalSendMessage, joinProject, type 
 		}));
 	};
 
+	const onSaveDraft = (event) => {
+		event.preventDefault();
+		closeModalEdit();
+		// Handle form save draft
+		console.log("🚀 ~ onSaveDraft ~ form data:", formState);
+	};
+
 	const onSubmit = (event) => {
 		event.preventDefault();
 		// Handle form submission
 		console.log("🚀 ~ onSubmit ~ The message has been sent:", formState);
-		closeModalSendMessage();
+		closeModalEdit();
 	};
+
+	const optionsList = joinProject.project.talentsNeeded.map((talent) => ({
+		value: talent.role,
+		option: talent.role,
+	}));
 
 	return (
 		<>
 			{/* User, invitation message and talent requested */}
-			<h2 className="text-xl text-center font-semibold mb-1">
-				<span className="capitalize">{type}</span> details
-			</h2>
+			<h2 className="text-xl text-center font-semibold mb-1">Request details</h2>
 			<div className="mb-6 border-2 border-gray-400 rounded-md p-4 pb-5">
 				{/* Project title and category */}
 				<div className="lg:grid lg:grid-cols-2 justify-around mb-8">
@@ -49,39 +61,30 @@ const JoinProjectSendMessageModal = ({ closeModalSendMessage, joinProject, type 
 					</div>
 				</div>
 
-				{/* joinProject message sent */}
-				<h2 className="text-lg text-gray-400 font-semibold mb-1">
-					<span className="capitalize">{type}</span> message:
-				</h2>
-				<p className="mb-10 pl-1">{joinProject.message}</p>
-
-				{/* Talent requested and joinProject status */}
-				<div className="lg:grid lg:grid-cols-2 justify-around">
-					<div className="xl:flex items-baseline mb-6 lg:mb-0">
-						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Talent requested:</h2>
-						<p className="pl-1">{joinProject.talent}</p>
-					</div>
-					<div className="xl:flex justify-center">
-						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">
-							<span className="capitalize">{type}</span> status:
-						</h2>
-						<div className="pl-1 xl:pl-2">
-							<Status name={joinProject.status.name} size={"sm"} bgColor={joinProject.status.bgColor} />
-						</div>
-					</div>
+				{/* joinProject status */}
+				<div className="xl:flex">
+					<h2 className="text-lg text-gray-400 font-semibold mb-1">Request status:</h2>
+					<p className="pl-1 xl:pl-2">
+						<Status name={joinProject.status.name} size={"sm"} bgColor={joinProject.status.bgColor} />
+					</p>
 				</div>
+			</div>
+
+			{/* Role */}
+			<div className="mb-6">
+				<SelectRoundedField inputName="selectedRole" possibleValues={optionsList} inputValue={formState.selectedRole} label="Select the role you want:" onChange={onChange} />
 			</div>
 
 			{/* Send message form */}
 			<form onSubmit={onSubmit}>
 				<div className="mb-8">
 					<TextAreaField
-						label="Your message for the project owner:"
+						label="Describe why you want to join this project:"
 						labelStyle="block mb-2"
 						inputName="message"
 						inputValue={formState.message}
 						onChange={onChange}
-						placeholder="Write your message...(1000 characters max)"
+						placeholder="Share your motivation for joining this project and introduce yourself briefly..."
 						maxLength={1000}
 						rows="6"
 						required={true}
@@ -93,10 +96,11 @@ const JoinProjectSendMessageModal = ({ closeModalSendMessage, joinProject, type 
 						<Button
 							btnProps={{
 								type: "button",
-								action: closeModalSendMessage,
+								btnColor: "grayBorder",
+								action: onSaveDraft,
 							}}
 						>
-							Close
+							Save draft
 						</Button>
 					</div>
 					<div className="col-span-2 md:col-span-1 grid xl:px-1/5">
@@ -106,7 +110,7 @@ const JoinProjectSendMessageModal = ({ closeModalSendMessage, joinProject, type 
 								btnColor: "green",
 							}}
 						>
-							Send message
+							Send application
 						</Button>
 					</div>
 				</div>
@@ -115,4 +119,4 @@ const JoinProjectSendMessageModal = ({ closeModalSendMessage, joinProject, type 
 	);
 };
 
-export default JoinProjectSendMessageModal;
+export default ProjectRequestEditModal;

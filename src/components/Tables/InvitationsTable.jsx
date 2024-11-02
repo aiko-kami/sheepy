@@ -4,8 +4,10 @@ import { Status } from "@/components/Badges/Badges";
 import InvitationUserCell from "@/components/Tables/InvitationUserCell";
 import InvitationMessageCell from "@/components/Tables/InvitationMessageCell";
 import ProjectInvitationsActions from "@/components/IconsActions/ProjectInvitationsActions";
+import TalentsNeeded from "../ProjectPublic/TalentsNeeded";
 
-const InvitationsTable = ({ invitations, projectId, projectPermissions }) => {
+const InvitationsTable = ({ invitations, project, projectPermissions }) => {
+	const { projectId, talentsNeeded } = project;
 	return (
 		<>
 			<table className="w-full text-xs md:text-sm shadow-lg">
@@ -50,7 +52,7 @@ const InvitationsTable = ({ invitations, projectId, projectPermissions }) => {
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2">
 									<div className="flex justify-center flex-nowrap">
-										<ProjectInvitationsActions projectId={projectId} invitation={invitation} projectPermissions={projectPermissions} />
+										<ProjectInvitationsActions projectId={projectId} invitation={invitation} talentsNeeded={talentsNeeded} projectPermissions={projectPermissions} />
 									</div>
 								</td>
 							</tr>

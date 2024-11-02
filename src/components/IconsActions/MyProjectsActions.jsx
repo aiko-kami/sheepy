@@ -31,7 +31,7 @@ const MyProjectsActions = ({ projectId, projectPermissions, iconSize }) => {
 				</Link>
 			)}
 			{projectPermissions.isConfigureAllowed && (
-				<Link href={`/projects/${projectId}`}>
+				<Link href={`/projects/${projectId}/edit/general`}>
 					<IoConstructOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Configure project" />
 				</Link>
 			)}

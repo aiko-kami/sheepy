@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import Modal from "@/components/Modals/Modal";
 import JoinProjectDetailsModal from "@/components/Modals/UserPrivate/JoinProjectDetailsModal";
+import ProjectRequestEditModal from "@/components/Modals/UserPrivate/ProjectRequestEditModal";
 import ProjectRequestCancelModal from "@/components/Modals/UserPrivate/ProjectRequestCancelModal";
 import JoinProjectSendMessageModal from "@/components/Modals/UserPrivate/JoinProjectSendMessageModal";
 
@@ -11,6 +12,7 @@ import { IoEyeOutline, IoCreateOutline, IoCloseCircleOutline, IoMailOutline } fr
 
 const UserRequestsActions = ({ request, iconSize }) => {
 	const [modalDisplayDetails, setModalDisplayDetails] = useState(false);
+	const [modalDisplayEdit, setModalDisplayEdit] = useState(false);
 	const [modalDisplayCancel, setModalDisplayCancel] = useState(false);
 	const [modalDisplaySendMessage, setModalDisplaySendMessage] = useState(false);
 
@@ -19,6 +21,12 @@ const UserRequestsActions = ({ request, iconSize }) => {
 	};
 	const closeModalDetails = () => {
 		setModalDisplayDetails(false);
+	};
+	const showModalEdit = () => {
+		setModalDisplayEdit(true);
+	};
+	const closeModalEdit = () => {
+		setModalDisplayEdit(false);
 	};
 	const showModalCancel = () => {
 		setModalDisplayCancel(true);
@@ -62,11 +70,11 @@ const UserRequestsActions = ({ request, iconSize }) => {
 			)}
 			{request.actions.edit && (
 				<>
-					<button type="button" onClick={showModalDetails}>
+					<button type="button" onClick={showModalEdit}>
 						<IoCreateOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Edit request" />
 					</button>
-					<Modal modalDisplay={modalDisplayDetails} closeModal={closeModalDetails} closeModalWithBackground={closeModalDetails} modalSize={"std"} modalTitle={"Project request"}>
-						<JoinProjectDetailsModal joinProject={request} type={"request"} />
+					<Modal modalDisplay={modalDisplayEdit} closeModal={closeModalEdit} modalSize={"std"} modalTitle={"Edit project request"}>
+						<ProjectRequestEditModal closeModalEdit={closeModalEdit} joinProject={request} />
 					</Modal>
 				</>
 			)}

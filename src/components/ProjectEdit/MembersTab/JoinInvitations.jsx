@@ -50,7 +50,7 @@ const JoinInvitations = ({ project, user }) => {
 					{/* invitations */}
 					{project.invitations && project.invitations.length !== 0 ? (
 						<div className="w-full overflow-x-auto shadow-md sm:rounded-lg mb-6">
-							<InvitationsTable invitations={project.invitations} projectId={project.projectId} projectPermissions={project.permissions} />
+							<InvitationsTable invitations={project.invitations} project={project} projectPermissions={project.permissions} />
 						</div>
 					) : (
 						<p className=" text-xl text-center pt-10">

@@ -53,7 +53,7 @@ const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) =>
 			<form onSubmit={onSubmit}>
 				{/* Role */}
 				<div className="mb-6">
-					<SelectRoundedField inputName="selectedRole" possibleValues={optionsList} inputValue={formState.selectedRole} label="Select the role you want" onChange={onChange} />
+					<SelectRoundedField inputName="selectedRole" possibleValues={optionsList} inputValue={formState.selectedRole} label="Select the role you want:" onChange={onChange} />
 				</div>
 
 				{/* Message */}

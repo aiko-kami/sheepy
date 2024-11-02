@@ -115,6 +115,7 @@ Don't let your ideas and talents go to waste – join Sheepy now!
     - [] Open/Download file
     - [] Attachments actions
   - [] Members
+    - [] Talents needed
     - [x] Members actions
       - [x] edite member modal
       - [x] remove member modal
@@ -126,15 +127,16 @@ Don't let your ideas and talents go to waste – join Sheepy now!
       - [x] decline modal
       - [x] send message modal
       - [x] report modal
-    - [] Invitations
+    - [x] Invitations
       - [x] new invitation
       - [x] view modal
-      - [] edit modal ==> edit modal for user to be refactored
+      - [x] edit modal ==> edit modal for user to be refactored
       - [x] cancel modal
       - [x] send message modal
   - [] Rights
   - [] Steps
   - [] Q&As
+  - [] Details and stats
 
 - [] Project description private page
 - [] View my profile page
@@ -197,17 +199,17 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 [x] - cover
 [x] - tags
 
-[] Members:
+[x] Members:
 
 [x] - User
 [x] - Role
 [x] - Start date (join date?)
 [x] - projectMembersRoles (see list) - ["owner", "member"]
-[] - Actions: Remove, send message, send message to all, send message to several (select users), update role
-
-[] - Join requests
-[] - invitations
-[] - Actions: Accept/decline request, create new invitation
+[x] - Actions: Remove, send message, (send message to all), (send message to several (select users)), update role
+Not done: send message to all, send message to several (select users)
+[x] - Join requests
+[x] - invitations
+[x] - Actions: Accept/decline request, create new invitation
 
 [] Rights:
 

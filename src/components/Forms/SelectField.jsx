@@ -44,7 +44,7 @@ const SelectRoundedField = ({ inputName, possibleValues, inputValue, label, onCh
 				}`}
 			>
 				<option value="" className="bg-gray-700 text-gray-400">
-					{label}
+					...
 				</option>
 				{possibleValues.map((element, index) => (
 					<option key={index} className="bg-gray-700 text-gray-400" value={element.value}>

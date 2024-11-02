@@ -90,7 +90,7 @@ const JoinProjectSendMessageModal = ({ closeModalSendMessage, joinProject, type 
 			<form onSubmit={onSubmit}>
 				<div className="mb-8">
 					<TextAreaField
-						label="Your message for the user"
+						label="Your message for the user:"
 						labelStyle="block mb-2"
 						inputName="message"
 						inputValue={formState.message}
@@ -117,7 +117,7 @@ const JoinProjectSendMessageModal = ({ closeModalSendMessage, joinProject, type 
 						<Button
 							btnProps={{
 								type: "submit",
-								btnColor: "blue",
+								btnColor: "green",
 							}}
 						>
 							Send message

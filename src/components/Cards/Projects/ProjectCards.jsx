@@ -142,9 +142,7 @@ const JoinProjectHorizontalCardActions = ({ joinProject, animate, type }) => {
 		<>
 			<div className={`relative grid items-center shadow-xl rounded-lg bg-blue-900 ${animationClasses}`}>
 				<div className="px-6 h-full py-4">
-					<Link href={`/projects/${project.projectId}`}>
-						<h3 className="inline-block font-semibold text-2xl">{project.title}</h3>
-					</Link>
+					<h3 className="inline-block font-semibold text-2xl">{project.title}</h3>
 					<div className="py-2">
 						<Badge badge={project.category} size={"xs"} />
 					</div>

@@ -32,7 +32,7 @@ const ProjectEditNavbar = () => {
 				</li>
 				<li className="mb-2 xl:mb-0 me-1">
 					<Link href={`${projectBasePath}/members`} className={getLinkClasses(`${projectBasePath}/members`)} aria-current={pathname === `${projectBasePath}/members` ? "page" : undefined}>
-						Members
+						Members and Talents
 					</Link>
 				</li>
 				<li className="mb-2 xl:mb-0 me-1">
@@ -60,9 +60,18 @@ const ProjectEditNavbar = () => {
 						Steps
 					</Link>
 				</li>
-				<li className="mb-2 xl:mb-0">
+				<li className="mb-2 xl:mb-0 me-1">
 					<Link href={`${projectBasePath}/q-and-a`} className={getLinkClasses(`${projectBasePath}/q-and-a`)} aria-current={pathname === `${projectBasePath}/q-and-a` ? "page" : undefined}>
 						Q&As
+					</Link>
+				</li>
+				<li className="mb-2 xl:mb-0">
+					<Link
+						href={`${projectBasePath}/details-and-stats`}
+						className={getLinkClasses(`${projectBasePath}/details-and-stats`)}
+						aria-current={pathname === `${projectBasePath}/details-and-stats` ? "page" : undefined}
+					>
+						Details and Stats
 					</Link>
 				</li>
 			</ul>{" "}

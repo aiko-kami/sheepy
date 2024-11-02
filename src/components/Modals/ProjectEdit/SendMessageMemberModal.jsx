@@ -61,7 +61,7 @@ const SendMessageMemberModal = ({ closeModalMessage, member }) => {
 			<form onSubmit={onSubmit}>
 				<div className="mb-8">
 					<TextAreaField
-						label="Your message for the member"
+						label="Your message for the member:"
 						labelStyle="block mb-2"
 						inputName="message"
 						inputValue={formState.message}
@@ -88,7 +88,7 @@ const SendMessageMemberModal = ({ closeModalMessage, member }) => {
 						<Button
 							btnProps={{
 								type: "submit",
-								btnColor: "blue",
+								btnColor: "green",
 							}}
 						>
 							Send message

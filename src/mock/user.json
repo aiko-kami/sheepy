@@ -726,6 +726,17 @@
 					},
 					"subCategory": "Volunteer Work",
 					"location": "Santa Monica",
+					"talentsNeeded": [
+						{
+							"role": "Director"
+						},
+						{
+							"role": "Screenwriter"
+						},
+						{
+							"role": "Cinematographer"
+						}
+					],
 					"tags": [
 						{
 							"name": "Environment",
@@ -774,6 +785,17 @@
 					},
 					"subCategory": "Painting",
 					"location": "Los Angeles",
+					"talentsNeeded": [
+						{
+							"role": "Director"
+						},
+						{
+							"role": "Screenwriter"
+						},
+						{
+							"role": "Cinematographer"
+						}
+					],
 					"tags": [
 						{
 							"name": "Creativity",
@@ -828,6 +850,17 @@
 					},
 					"subCategory": "Writing",
 					"location": "Global",
+					"talentsNeeded": [
+						{
+							"role": "Director"
+						},
+						{
+							"role": "Screenwriter"
+						},
+						{
+							"role": "Cinematographer"
+						}
+					],
 					"tags": [
 						{
 							"name": "Writing",
@@ -878,6 +911,17 @@
 					},
 					"subCategory": "Drawing",
 					"location": "Chicago",
+					"talentsNeeded": [
+						{
+							"role": "Director"
+						},
+						{
+							"role": "Screenwriter"
+						},
+						{
+							"role": "Cinematographer"
+						}
+					],
 					"tags": [
 						{
 							"name": "Art",
@@ -932,6 +976,17 @@
 					},
 					"subCategory": "Writing",
 					"location": "Global",
+					"talentsNeeded": [
+						{
+							"role": "Editor"
+						},
+						{
+							"role": "Screenwriter"
+						},
+						{
+							"role": "Designer"
+						}
+					],
 					"tags": [
 						{
 							"name": "Writing",
@@ -989,6 +1044,17 @@
 					},
 					"subCategory": "Software Development",
 					"location": "Seattle",
+					"talentsNeeded": [
+						{
+							"role": "Director"
+						},
+						{
+							"role": "Screenwriter"
+						},
+						{
+							"role": "Cinematographer"
+						}
+					],
 					"tags": [
 						{
 							"name": "Technology",
@@ -1037,6 +1103,17 @@
 					},
 					"subCategory": "Workshop",
 					"location": "Portland",
+					"talentsNeeded": [
+						{
+							"role": "Director"
+						},
+						{
+							"role": "Screenwriter"
+						},
+						{
+							"role": "Cinematographer"
+						}
+					],
 					"tags": [
 						{
 							"name": "Photography",
