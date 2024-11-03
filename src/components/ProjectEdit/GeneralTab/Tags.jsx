@@ -58,10 +58,10 @@ const Tags = ({ formState, setFormState }) => {
 
 			<div className="md:pl-4">
 				{/* Project tags */}
-				<div className="mb-8 max-w-140 relative">
+				<div className="mb-6 max-w-140 relative">
 					{/* Tag input field */}
 					<div className="flex items-center">
-						<div className="w-full mr-2 mb-6">
+						<div className="w-full mr-2">
 							<InputField inputName="projectTags" inputType="text" label="Project tags" inputValue={tagInput} onChange={handleTagInputChange} ref={inputRef} />
 						</div>
 						<div className="min-w-fit">
@@ -76,7 +76,7 @@ const Tags = ({ formState, setFormState }) => {
 				</div>
 
 				{/* List of tags */}
-				<div className="mt-2">
+				<div>
 					{formState.projectTags.length > 0 && (
 						<div className="flex flex-wrap gap-2">
 							{formState.projectTags.map((tag, index) => (
