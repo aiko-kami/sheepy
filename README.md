@@ -114,13 +114,13 @@ Don't let your ideas and talents go to waste – join Sheepy now!
     - [] Upload file(s)
     - [] Open/Download file
     - [] Attachments actions
-  - [] Members
-    - [] Talents needed
+  - [x] Members
     - [x] Members actions
       - [x] edite member modal
       - [x] remove member modal
       - [x] view member profile
       - [x] send message to member modal
+    - [x] Talents needed
     - [x] Requests
       - [x] view modal
       - [x] accept modal
