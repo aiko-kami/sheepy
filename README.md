@@ -256,10 +256,10 @@ Not done: send message to all, send message to several (select users)
 
 [] start date -> in tab General?
 [] phase -> in tab Status? possibility to change the visibility?
-[] talents needed -> in tab Members?
-[] project visibility (see list) - ["public", "private"]
-[] creator motivation
 [] objectives
+[] creator motivation
+[] project visibility (see list) - ["public", "private"] -> in Status (Renamed Status and Visibility ?)
+[x] talents needed -> in tab Members
 [] created by -> tab Details and stats?
 [] created at -> tab Details and stats?
 [] updated by -> tab Details and stats?

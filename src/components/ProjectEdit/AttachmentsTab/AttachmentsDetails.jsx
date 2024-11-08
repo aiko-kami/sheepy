@@ -1,6 +1,6 @@
 import { IoDocuments, IoPushOutline } from "react-icons/io5";
 import FileDropField from "@/components/Forms/FileDropField";
-import AttachmentsTable from "@/components/Tables/AttachmentsTable";
+import AttachmentsTable from "@/components/Tables/ProjectEdit/AttachmentsTable";
 
 const AttachmentsDetails = ({ formState, onChange, attachments }) => {
 	return (

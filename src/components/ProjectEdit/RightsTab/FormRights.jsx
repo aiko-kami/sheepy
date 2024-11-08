@@ -36,16 +36,6 @@ const FormRights = ({ project }) => {
 					<div className="col-span-4 lg:px-2 lg:pl-10">
 						{/* Project Q&As information */}
 						<Rights formState={formState} project={project} onChange={onChange} />
-						<div className="flex justify-center">
-							<Button
-								btnProps={{
-									type: "submit",
-									btnColor: "blue",
-								}}
-							>
-								Save project
-							</Button>
-						</div>
 					</div>
 				</div>
 			</form>

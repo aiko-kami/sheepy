@@ -16,11 +16,11 @@ const Members = ({ project, user }) => {
 			<div className="mb-8 lg:mb-14">
 				<TalentsNeeded project={project} user={user} />
 			</div>
-			{/* Project members */}
+			{/* Requests to join the project */}
 			<div className="mb-8 lg:mb-14">
 				<JoinRequests project={project} user={user} />
 			</div>
-			{/* Project members */}
+			{/* Invitations to join the project */}
 			<div className="mb-8 lg:mb-14">
 				<JoinInvitations project={project} user={user} />
 			</div>
