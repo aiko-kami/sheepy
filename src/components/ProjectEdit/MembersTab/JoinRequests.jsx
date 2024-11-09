@@ -1,5 +1,5 @@
 import { IoArrowDownCircle } from "react-icons/io5";
-import JoinRequestsTable from "@/components/Tables/JoinRequestsTable";
+import JoinRequestsTable from "@/components/Tables/ProjectEdit/JoinRequestsTable";
 
 const RequestsTable = ({ project, user }) => {
 	return (

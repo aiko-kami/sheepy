@@ -34,7 +34,7 @@ const StepOne = ({ categories, formInputs, onChange }) => {
 		onChange(e); // Update the main form state
 		const selectedSubCategories = getSubCategories(value);
 		setSubCategories(selectedSubCategories);
-		onChange({ target: { name: "selectedSubCategory", value: "" } }); // Reset the sub-category
+		onChange({ target: { name: "selectedSubCategory", value: selectedSubCategories[0].name } }); // Reset the sub-category
 	};
 
 	// Get sub-categories for the selected category
@@ -55,19 +55,21 @@ const StepOne = ({ categories, formInputs, onChange }) => {
 					<div className="flex justify-end items-center">
 						<div className="mb-10 w-full md:w-200">
 							{/* Project title */}
-							<div className="mb-6">
-								<InputField inputName="projectTitle" inputType="text" label="Project title" inputValue={formInputs.projectTitle} onChange={onChange} />
+							<div className="mb-8">
+								<InputField inputName="projectTitle" inputType="text" label="Your project title" inputValue={formInputs.projectTitle} onChange={onChange} />
 							</div>
 							<div className="flex flex-col lg:flex-row justify-between">
 								{/* Project category */}
 								<div className="flex-1 mb-6 lg:mb-0 lg:mr-2">
-									<SelectField inputName="selectedCategory" possibleValues={optionsListCat} inputValue={formInputs.selectedCategory} label="Choose a category" onChange={handleCategoryChange} />
+									<div className="text-sm">Choose a category</div>
+									<SelectField inputName="selectedCategory" possibleValues={optionsListCat} inputValue={formInputs.selectedCategory} onChange={handleCategoryChange} />
 								</div>
 								{/* Project sub-category */}
 								<div className="flex-1 min-h-[3.5rem] lg:ml-2">
 									{formInputs.selectedCategory && subCategories.length > 0 && (
 										<>
-											<SelectField inputName="selectedSubCategory" possibleValues={optionsListSubcat} inputValue={formInputs.selectedSubCategory} label="Select a sub-category" onChange={onChange} />
+											<div className="text-sm">Select a sub-category</div>
+											<SelectField inputName="selectedSubCategory" possibleValues={optionsListSubcat} inputValue={formInputs.selectedSubCategory} onChange={onChange} />
 										</>
 									)}
 								</div>

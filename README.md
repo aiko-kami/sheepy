@@ -133,7 +133,7 @@ Don't let your ideas and talents go to waste – join Sheepy now!
       - [x] edit modal ==> edit modal for user to be refactored
       - [x] cancel modal
       - [x] send message modal
-  - [] Rights
+  - [x] Rights
   - [] Steps
   - [] Q&As
   - [] Details and stats
@@ -211,11 +211,11 @@ Not done: send message to all, send message to several (select users)
 [x] - invitations
 [x] - Actions: Accept/decline request, create new invitation
 
-[] Rights:
+[x] Rights:
 
-[] - User
-[] - can update...
-[] - Actions: update user right
+[x] - User
+[x] - can update...
+[x] - Actions: update user right
 
 [x] Status:
 
@@ -247,7 +247,7 @@ Not done: send message to all, send message to several (select users)
 [] - published
 [] - Actions: Add, remove, update, reorder
 
-[] QAs: (updatedBy, createdAt, updatedAt)
+[] Q&As: (updatedBy, createdAt, updatedAt)
 
 [] - question
 [] - response

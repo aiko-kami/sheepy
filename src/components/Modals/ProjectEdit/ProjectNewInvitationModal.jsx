@@ -4,7 +4,6 @@ import { useState } from "react";
 
 import { Button } from "@/components/Buttons/Buttons";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
-import { SelectRoundedField } from "@/components/Forms/SelectField";
 import InputField from "../../Forms/InputField";
 
 const ProjectNewInvitationModal = ({ closeModal }) => {

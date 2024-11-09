@@ -20,7 +20,7 @@ const MySettingsLanguages = ({ formInputs, onChange }) => {
 				<p className="mb-6 xl:col-span-2">Set your preferred languages for interacting with the platform and other users.</p>
 				<div className="flex justify-center xl:col-span-3">
 					<div className="w-80">
-						<SelectField inputName="language" possibleValues={optionsList} inputValue={formInputs.language} label="Choose a language" onChange={onChange} />
+						<SelectField inputName="language" possibleValues={optionsList} inputValue={formInputs.language} onChange={onChange} />
 					</div>
 				</div>
 			</div>

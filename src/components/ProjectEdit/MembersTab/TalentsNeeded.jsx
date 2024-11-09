@@ -4,7 +4,7 @@ import { IoPersonAdd, IoAddCircleOutline, IoCloseCircleOutline } from "react-ico
 import { Button } from "@/components/Buttons/Buttons";
 import InputField from "@/components/Forms/InputField";
 
-import MembersTable from "@/components/Tables/MembersTable";
+import MembersTable from "@/components/Tables/ProjectEdit/MembersTable";
 
 const TalentsNeeded = ({ project, user }) => {
 	const roleList = project.talentsNeeded.map((talent) => talent.role);

@@ -1,11 +1,10 @@
-import Link from "next/link";
-import Image from "next/image";
 import { Status } from "@/components/Badges/Badges";
-import JoinRequestUserCell from "@/components/Tables/JoinRequestUserCell";
-import JoinRequestMessageCell from "@/components/Tables/JoinRequestMessageCell";
-import ProjectRequestsActions from "@/components/IconsActions/ProjectRequestsActions";
+import InvitationUserCell from "@/components/Tables/ProjectEdit/InvitationUserCell";
+import InvitationMessageCell from "@/components/Tables/ProjectEdit/InvitationMessageCell";
+import ProjectInvitationsActions from "@/components/IconsActions/ProjectInvitationsActions";
 
-const JoinRequestsTable = ({ requests, projectId, projectPermissions }) => {
+const InvitationsTable = ({ invitations, project, projectPermissions }) => {
+	const { projectId, talentsNeeded } = project;
 	return (
 		<>
 			<table className="w-full text-xs md:text-sm shadow-lg">
@@ -29,28 +28,28 @@ const JoinRequestsTable = ({ requests, projectId, projectPermissions }) => {
 					</tr>
 				</thead>
 				<tbody>
-					{requests.map((request, index) => {
+					{invitations.map((invitation, index) => {
 						return (
 							<tr key={index} className="border-b bg-gray-800 border-gray-700 hover:bg-gray-600">
 								<td scope="row" className="p-2 md:px-4 md:py-2">
-									<JoinRequestUserCell request={request} />
+									<InvitationUserCell invitation={invitation} />
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2 text-center">
-									<div className="text-gray-400 whitespace-nowrap">{request.role}</div>
+									<div className="text-gray-400 whitespace-nowrap">{invitation.role}</div>
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2 text-center">
-									<JoinRequestMessageCell request={request} />
+									<InvitationMessageCell invitation={invitation} />
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2 text-center">
 									<div className="text-gray-400 whitespace-nowrap">
 										<button type="button">
-											<Status name={request.status.name} size={"xs"} rounded={"xs"} bgColor={request.status.bgColor} />
+											<Status name={invitation.status.name} size={"xs"} rounded={"xs"} bgColor={invitation.status.bgColor} />
 										</button>
 									</div>
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2">
 									<div className="flex justify-center flex-nowrap">
-										<ProjectRequestsActions projectId={projectId} request={request} projectPermissions={projectPermissions} />
+										<ProjectInvitationsActions projectId={projectId} invitation={invitation} talentsNeeded={talentsNeeded} projectPermissions={projectPermissions} />
 									</div>
 								</td>
 							</tr>
@@ -62,4 +61,4 @@ const JoinRequestsTable = ({ requests, projectId, projectPermissions }) => {
 	);
 };
 
-export default JoinRequestsTable;
+export default InvitationsTable;

@@ -1,8 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
-
-import { IoLocationOutline } from "react-icons/io5";
-import { BadgeRounded } from "@/components/Badges/Badges";
 
 const LocationTable = ({ locations }) => {
 	return (

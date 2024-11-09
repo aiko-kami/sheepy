@@ -1,9 +1,6 @@
-const SelectField = ({ inputName, possibleValues, inputValue, label, onChange, disabled = false }) => {
+const SelectField = ({ inputName, possibleValues, inputValue, onChange, disabled = false }) => {
 	return (
 		<>
-			<label htmlFor={inputName} className="sr-only">
-				{label}
-			</label>
 			<select
 				id={inputName}
 				name={inputName}
@@ -14,9 +11,6 @@ const SelectField = ({ inputName, possibleValues, inputValue, label, onChange, d
 					inputValue === "" ? "text-gray-400" : "text-white"
 				}`}
 			>
-				<option value="" className="bg-gray-700 text-gray-400 italic">
-					{label}
-				</option>
 				{possibleValues.map((element, index) => (
 					<option key={index} className="bg-gray-700 text-gray-300" value={element.value}>
 						{element.option}
@@ -43,9 +37,6 @@ const SelectRoundedField = ({ inputName, possibleValues, inputValue, label, onCh
 					inputValue === "" ? "text-gray-400" : "text-white"
 				}`}
 			>
-				<option value="" className="bg-gray-700 text-gray-400">
-					...
-				</option>
 				{possibleValues.map((element, index) => (
 					<option key={index} className="bg-gray-700 text-gray-400" value={element.value}>
 						{element.option}

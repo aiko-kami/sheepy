@@ -1,5 +1,5 @@
 import { IoPeople } from "react-icons/io5";
-import MembersTable from "@/components/Tables/MembersTable";
+import MembersTable from "@/components/Tables/ProjectEdit/MembersTable";
 
 const MembersDetails = ({ project, user }) => {
 	return (

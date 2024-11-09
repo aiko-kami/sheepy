@@ -8,6 +8,7 @@ import SideMenu from "@/components/ProjectEdit/SideMenu";
 const FormStatus = ({ project }) => {
 	const [formState, setFormState] = useState({
 		projectStatus: project.status.name || "",
+		projectVisibility: project.visibility || "",
 		statusReason: "",
 	});
 

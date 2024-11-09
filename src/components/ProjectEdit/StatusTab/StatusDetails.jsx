@@ -27,7 +27,7 @@ const StatusDetails = ({ formState, onChange }) => {
 				{/* Project status input */}
 				<div className="max-w-50 mb-6 xl:mb-8">
 					<div className="text-sm">Project status</div>
-					<SelectField inputName="projectStatus" possibleValues={optionsList} inputValue={formState.projectStatus} label="New status" onChange={onChange} />
+					<SelectField inputName="projectStatus" possibleValues={optionsList} inputValue={formState.projectStatus} onChange={onChange} />
 				</div>
 				{/* Project status reason */}
 				<div className="max-w-180 mb-6 xl:mb-8">

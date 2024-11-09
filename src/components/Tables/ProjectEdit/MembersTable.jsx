@@ -1,4 +1,4 @@
-import MemberUserCell from "@/components/Tables/MemberUserCell";
+import MemberUserCell from "@/components/Tables/ProjectEdit/MemberUserCell";
 import MembersActions from "@/components/IconsActions/MembersActions";
 
 const MembersTable = ({ members, projectId, projectPermissions }) => {

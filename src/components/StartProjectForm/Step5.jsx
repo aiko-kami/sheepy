@@ -62,7 +62,7 @@ const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTag
 
 								{/* Project visibility */}
 								<div className="mb-6">
-									<SelectField inputName="projectVisibility" possibleValues={optionsList} inputValue={formInputs.projectVisibility} label="Select the project privacy" onChange={onChange} />
+									<SelectField inputName="projectVisibility" possibleValues={optionsList} inputValue={formInputs.projectVisibility} onChange={onChange} />
 								</div>
 
 								{/* Start date picker */}

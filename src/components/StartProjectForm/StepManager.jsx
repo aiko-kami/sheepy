@@ -23,8 +23,8 @@ const StepManager = () => {
 
 	const [formInputs, setFormInputs] = useState({
 		projectTitle: "",
-		selectedCategory: "",
-		selectedSubCategory: "",
+		selectedCategory: categories[0].name,
+		selectedSubCategory: categories[0].subCategories[0].name,
 		projectSummary: "",
 		projectGoal: "",
 		projectDescription: "",
@@ -33,7 +33,7 @@ const StepManager = () => {
 		locationOnlineOnly: false,
 		locationCountry: "",
 		locationCity: "",
-		projectVisibility: "",
+		projectVisibility: "public",
 		projectStartDate: null,
 		tags: [],
 		talentsNeeded: [],

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { IoRocketSharp } from "react-icons/io5";
-import { Button } from "@/components/Buttons/Buttons";
 import { SelectField } from "@/components/Forms/SelectField";
 import InputField from "@/components/Forms/InputField";
 
@@ -76,12 +75,12 @@ const TitleCategory = ({ formState, onChange, setFormState }) => {
 						{/* Project category */}
 						<div className="flex-1 mb-6 lg:mb-0 lg:mr-2">
 							<div className="text-sm">Project category</div>
-							<SelectField inputName="projectCategory" possibleValues={optionsListCat} inputValue={formState.projectCategory} label="Category" onChange={handleCategoryChange} />
+							<SelectField inputName="projectCategory" possibleValues={optionsListCat} inputValue={formState.projectCategory} onChange={handleCategoryChange} />
 						</div>
 						{/* Project sub-category */}
 						<div className="flex-1 min-h-[3.5rem] lg:ml-2">
 							<div className="text-sm">Project sub-category</div>
-							<SelectField inputName="projectSubCategory" possibleValues={optionsListSubcat} inputValue={formState.projectSubCategory} label="Sub-category" onChange={onChange} />
+							<SelectField inputName="projectSubCategory" possibleValues={optionsListSubcat} inputValue={formState.projectSubCategory} onChange={onChange} />
 						</div>
 					</div>
 				</div>
