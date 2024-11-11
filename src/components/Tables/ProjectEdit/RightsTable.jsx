@@ -26,7 +26,7 @@ const RightsTable = ({ members, formState, onChange, onSelectAll, headers }) => 
 								</p>
 							</th>
 						))}
-						<th rowSpan="2" scope="col" className="font-normal text-center align-bottom p-2 md:px-4 md:py-3">
+						<th rowSpan="2" scope="col" className="font-normal fotext-center align-bottom p-2 md:px-4 md:py-3">
 							Select all
 						</th>
 					</tr>

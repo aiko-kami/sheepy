@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { DateTime } from "luxon";
 
 import Status from "@/components/ProjectEdit/StatusTab/Status";
 import SideMenu from "@/components/ProjectEdit/SideMenu";
@@ -8,6 +9,7 @@ import SideMenu from "@/components/ProjectEdit/SideMenu";
 const FormStatus = ({ project }) => {
 	const [formState, setFormState] = useState({
 		projectStatus: project.status.name || "",
+		projectStartDate: DateTime.fromISO(project.startDate) || null,
 		projectVisibility: project.visibility || "",
 		statusReason: "",
 	});

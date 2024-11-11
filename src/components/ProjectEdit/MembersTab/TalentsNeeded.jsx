@@ -74,7 +74,7 @@ const TalentsNeeded = ({ project, user }) => {
 			<form onSubmit={onSubmit}>
 				<div className="md:pl-4">
 					{/* Project talents */}
-					<div className="mb-6 max-w-140 relative">
+					<div className="mb-8 max-w-140 relative">
 						{/* Talent input field */}
 						<div className="flex items-center">
 							<div className="w-full mr-2">
@@ -92,13 +92,13 @@ const TalentsNeeded = ({ project, user }) => {
 					</div>
 
 					{/* List of talents needed */}
-					<div className="mb-6">
+					<div className="mb-8">
 						{formState.projectTalentsNeeded.length > 0 && (
-							<div className="flex flex-wrap gap-2">
+							<div className="flex flex-wrap gap-4">
 								{formState.projectTalentsNeeded.map((talent, index) => (
-									<span key={index} className="flex items-center px-3 pt-0.5 pb-1 mt-1 bg-gray-200 text-gray-800 rounded-full">
+									<span key={index} className="flex items-center px-3 pt-1 pb-1.5 mt-1 bg-base-440 text-lg rounded">
 										{talent}
-										<button type="button" className="ml-1 text-gray-600 hover:text-gray-800 transition duration-150 ease-in-out" onClick={() => removeTalent(talent)}>
+										<button type="button" className="ml-2 mt-0.5 hover:text-gray-300 transition duration-150 ease-in-out" onClick={() => removeTalent(talent)}>
 											<IoCloseCircleOutline className="text-lg" title="Remove tag" />
 										</button>
 									</span>

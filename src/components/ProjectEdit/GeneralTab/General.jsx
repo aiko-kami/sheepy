@@ -2,6 +2,7 @@ import TitleCategory from "@/components/ProjectEdit/GeneralTab/TitleCategory";
 import Summary from "@/components/ProjectEdit/GeneralTab/Summary";
 import Cover from "@/components/ProjectEdit/GeneralTab/Cover";
 import Tags from "@/components/ProjectEdit/GeneralTab/Tags";
+import Motivation from "@/components/ProjectEdit/GeneralTab/Motivation";
 
 const General = ({ formState, setFormState, onChange }) => {
 	return (
@@ -21,6 +22,10 @@ const General = ({ formState, setFormState, onChange }) => {
 			{/* Project tags */}
 			<div className="mb-8 lg:mb-10">
 				<Tags formState={formState} setFormState={setFormState} />
+			</div>
+			{/* Project creator motivation, objectives, phases */}
+			<div className="mb-8 lg:mb-10">
+				<Motivation formState={formState} onChange={onChange} />
 			</div>
 		</>
 	);

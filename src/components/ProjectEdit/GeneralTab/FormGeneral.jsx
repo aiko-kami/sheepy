@@ -1,9 +1,6 @@
 "use client";
 
 import { useState } from "react";
-
-import { Button } from "@/components/Buttons/Buttons";
-
 import General from "@/components/ProjectEdit/GeneralTab/General";
 import SideMenu from "@/components/ProjectEdit/SideMenu";
 
@@ -15,6 +12,8 @@ const FormGeneral = ({ project }) => {
 		projectSummary: project.summary || "",
 		projectDescription: project.description || "",
 		projectGoal: project.goal || "",
+		creatorMotivation: project.creatorMotivation || "",
+		projectObjectives: project.objectives || "",
 		projectTags: project.tags.map((tag) => tag.name) || [],
 	});
 
@@ -44,16 +43,6 @@ const FormGeneral = ({ project }) => {
 					<div className="col-span-4 lg:px-2 lg:pl-10">
 						{/* Project general information */}
 						<General formState={formState} setFormState={setFormState} onChange={onChange} />
-						<div className="flex justify-center">
-							<Button
-								btnProps={{
-									type: "submit",
-									btnColor: "blue",
-								}}
-							>
-								Save project
-							</Button>
-						</div>
 					</div>
 				</div>
 			</form>

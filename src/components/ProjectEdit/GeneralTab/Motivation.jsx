@@ -1,50 +1,50 @@
-import { IoDocumentText } from "react-icons/io5";
+import { IoSparklesSharp } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 
-const Summary = ({ formState, onChange }) => {
+const Motivation = ({ formState, onChange }) => {
 	return (
 		<>
-			{/* Project summary, description and goals */}
+			{/* Creator motivation, project objectives and phases */}
 			<h2 className="flex items-center text-xl mb-3 sm:ml-4">
-				<IoDocumentText className="mr-2 text-2xl" />
-				Project summary, description and goals
+				<IoSparklesSharp className="mr-2 text-2xl" />
+				Creator motivation, objectives and project phases
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
 			<div className="md:pl-4">
-				{/* Project summary */}
+				{/* Creator motivation */}
 				<div className="mb-6 xl:mb-8">
 					<TextAreaField
-						label="Project summary:"
+						label="Creator motivation (optional):"
 						labelStyle="block mb-2"
-						inputName="projectSummary"
-						inputValue={formState.projectSummary}
+						inputName="creatorMotivation"
+						inputValue={formState.creatorMotivation}
 						onChange={onChange}
-						placeholder="Summarize your project in a few sentences... (300 characters max)"
-						maxLength={300}
-						rows="6"
+						placeholder="What inspired you to start this project?..."
+						maxLength={500}
+						rows="4"
 						required={true}
 					/>
 				</div>
-				{/* Project description */}
+				{/* Project objectives */}
 				<div className="mb-6 xl:mb-8">
 					<TextAreaField
-						label="Project description:"
+						label="Objectives (optional):"
 						labelStyle="block mb-2"
-						inputName="projectDescription"
-						inputValue={formState.projectDescription}
+						inputName="projectObjectives"
+						inputValue={formState.projectObjectives}
 						onChange={onChange}
-						placeholder="What's the story behind your project?... (10 000 characters max)"
-						maxLength={10000}
-						rows="20"
-						required={true}
+						placeholder="What are the intermediate steps or milestones necessary for your project to succeed?..."
+						maxLength={500}
+						rows="5"
+						required={false}
 					/>
 				</div>
-				{/* Project goals */}
+				{/* Project phases */}
 				<div className="mb-8">
 					<TextAreaField
-						label="Project goal:"
+						label="Project phases:"
 						labelStyle="block mb-2"
 						inputName="projectGoal"
 						inputValue={formState.projectGoal}
@@ -69,4 +69,4 @@ const Summary = ({ formState, onChange }) => {
 		</>
 	);
 };
-export default Summary;
+export default Motivation;

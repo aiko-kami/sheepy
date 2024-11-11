@@ -76,7 +76,7 @@ const Tags = ({ formState, setFormState }) => {
 				</div>
 
 				{/* List of tags */}
-				<div>
+				<div className="mb-8">
 					{formState.projectTags.length > 0 && (
 						<div className="flex flex-wrap gap-2">
 							{formState.projectTags.map((tag, index) => (
@@ -89,6 +89,16 @@ const Tags = ({ formState, setFormState }) => {
 							))}
 						</div>
 					)}
+				</div>
+				<div className="flex justify-center">
+					<Button
+						btnProps={{
+							type: "submit",
+							btnColor: "blue",
+						}}
+					>
+						Save project
+					</Button>
 				</div>
 			</div>
 		</>

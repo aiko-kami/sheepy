@@ -6,6 +6,7 @@
 	"description": "This project aims to produce an independent film that explores a thought-provoking storyline and showcases talented actors and crew members. Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus velit ea itaque quo iste aut quibusdam labore cumque ab sequi animi, odit aliquam cum recusandae eveniet culpa aperiam adipisci quasi? Ad ab perferendis veritatis iste libero molestiae exercitationem repudiandae esse cum autem quasi et placeat natus sit earum, id odit aperiam nemo vel. Saepe facere fugit dignissimos nostrum tempore vero, sequi voluptate minima suscipit eum obcaecati quibusdam beatae aut provident repellat blanditiis voluptatum recusandae dolores id laborum adipisci ullam! Magnam nostrum placeat ut illo. Fugiat, unde assumenda veniam dolorem cum esse sapiente nulla atque expedita a consequatur, quasi possimus sed corrupti rerum earum! Atque asperiores fuga repellendus laboriosam porro! Numquam inventore reiciendis minus tempore ipsum dolore veritatis quod velit ducimus eius magnam, maiores similique consequuntur est veniam omnis quidem harum nihil incidunt architecto! Vitae nesciunt nam, laboriosam quibusdam sequi facilis ducimus tempora hic voluptate enim quas esse tempore magni consequuntur culpa atque at. Animi nulla dicta ex cum repellendus facilis? Perspiciatis aliquam optio facere omnis rerum corrupti at laborum ratione! Velit nam impedit consectetur ad quam eos repellendus debitis! Non perferendis excepturi id error mollitia debitis nisi? Asperiores maiores nihil architecto totam, magnam soluta amet reprehenderit fugiat voluptate placeat velit! Lorem ipsum dolor sit amet consectetur adipisicing elitro minus hic ut repellat, repellendus recusandae asperiores voluptas distinctio exercitationem eum consectetur tempora? Vel placeat reprehenderit ullam dignissimos! Est aspernatur vero asperiores, iusto dolores sequi unde cumque iure? Quasi reprehenderit vel ratione ut eaque, pariatur doloribus ipsam. Cupiditate, error voluptatum laboriosam quo voluptate fugit assumenda tenetur eum, aliquid vel consequuntur minima accusantium dolore nobis doloremque eos repellendus ea vitae officiis quis. Officiis, molestias obcaecati beatae distinctio sint non.",
 	"cover": "https://images.pexels.com/photos/7319068/pexels-photo-7319068.jpeg",
 	"coverDescription": "https://crypticrock.com/wp-content/uploads/2023/02/brad-anderson-on-set-blood.jpg",
+	"creatorMotivation": "I've always loved cinema and it's a big dream I have to make my own movie one day.",
 	"likes": 147,
 	"permissions": {
 		"canEditMembers": true,
@@ -108,6 +109,7 @@
 	"locationCity": "San Fransokyo",
 	"locationCountry": "USA",
 	"visibility": "public",
+	"startDate": "2024-12-31",
 	"talentsNeeded": [
 		{
 			"role": "Director"

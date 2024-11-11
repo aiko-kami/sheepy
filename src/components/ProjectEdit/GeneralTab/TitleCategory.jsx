@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { IoRocketSharp } from "react-icons/io5";
+import { Button } from "@/components/Buttons/Buttons";
 import { SelectField } from "@/components/Forms/SelectField";
 import InputField from "@/components/Forms/InputField";
 
@@ -46,7 +47,7 @@ const TitleCategory = ({ formState, onChange, setFormState }) => {
 		setSubCategories(selectedSubCategories);
 		setFormState((prevState) => ({
 			...prevState,
-			projectSubCategory: "",
+			projectSubCategory: selectedSubCategories[0].name,
 		}));
 	};
 
@@ -70,7 +71,7 @@ const TitleCategory = ({ formState, onChange, setFormState }) => {
 				<div className="mb-6 xl:mb-8">
 					<InputField inputName="projectTitle" inputType="text" label="Project title" inputValue={formState.projectTitle} onChange={onChange} />
 				</div>
-				<div className="max-w-180">
+				<div className="mb-8 max-w-180">
 					<div className="flex flex-col lg:flex-row justify-between">
 						{/* Project category */}
 						<div className="flex-1 mb-6 lg:mb-0 lg:mr-2">
@@ -83,6 +84,16 @@ const TitleCategory = ({ formState, onChange, setFormState }) => {
 							<SelectField inputName="projectSubCategory" possibleValues={optionsListSubcat} inputValue={formState.projectSubCategory} onChange={onChange} />
 						</div>
 					</div>
+				</div>
+				<div className="flex justify-center">
+					<Button
+						btnProps={{
+							type: "submit",
+							btnColor: "blue",
+						}}
+					>
+						Save project
+					</Button>
 				</div>
 			</div>
 		</>

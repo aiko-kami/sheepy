@@ -1,5 +1,6 @@
 import { IoImages, IoPushOutline } from "react-icons/io5";
 import FileDropField from "@/components/Forms/FileDropField";
+import { Button } from "@/components/Buttons/Buttons";
 
 const Cover = ({ formState, onChange }) => {
 	return (
@@ -13,7 +14,19 @@ const Cover = ({ formState, onChange }) => {
 
 			<div className="md:pl-4">
 				{/* Project cover */}
-				<FileDropField />
+				<div className="mb-8">
+					<FileDropField />
+				</div>
+				<div className="flex justify-center">
+					<Button
+						btnProps={{
+							type: "submit",
+							btnColor: "blue",
+						}}
+					>
+						Save project
+					</Button>
+				</div>
 			</div>
 		</>
 	);

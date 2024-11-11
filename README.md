@@ -254,17 +254,18 @@ Not done: send message to all, send message to several (select users)
 [] - published
 [] - Actions: Add, remove, update, reorder
 
-[] start date -> in tab General?
-[] phase -> in tab Status? possibility to change the visibility?
-[] objectives
-[] creator motivation
-[] project visibility (see list) - ["public", "private"] -> in Status (Renamed Status and Visibility ?)
+[x] start date -> in tab Status
+[x] creator motivation -> in tab General
+[x] objectives -> in tab General
+[] phases -> in tab General
+[x] project visibility (see list) - ["public", "private"] -> in Status (Renamed Status and Visibility ?)
 [x] talents needed -> in tab Members
-[] created by -> tab Details and stats?
-[] created at -> tab Details and stats?
-[] updated by -> tab Details and stats?
-[] crush -> tab Details and stats?
-[] likes -> tab Details and stats?
+
+[] created by -> tab Details and stats
+[] created at -> tab Details and stats
+[] updated by -> tab Details and stats
+[] crush -> tab Details and stats
+[] likes -> tab Details and stats
 
 ---
 
