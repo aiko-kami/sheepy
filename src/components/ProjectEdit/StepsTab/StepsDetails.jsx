@@ -1,4 +1,5 @@
 import { IoExtensionPuzzle } from "react-icons/io5";
+import DraggableStepsList from "@/components/ProjectEdit/StepsTab/DraggableStepsList";
 
 const StepsDetails = ({ formState, onChange }) => {
 	return (
@@ -14,7 +15,7 @@ const StepsDetails = ({ formState, onChange }) => {
 				{/* Project steps*/}
 				<div className="mb-8">
 					{/* steps input field */}
-					Steps
+					<DraggableStepsList formState={formState} onChange={onChange} />
 				</div>
 			</div>
 		</>

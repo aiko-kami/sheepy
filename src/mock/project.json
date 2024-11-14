@@ -639,22 +639,26 @@
 		{
 			"title": "Pre-Production Planning",
 			"details": "This initial phase involves extensive planning and preparation to ensure a smooth production process. Key activities include developing a detailed script, creating a production schedule, and assembling the core production team. Location scouting and securing necessary permits are also crucial at this stage. The goal is to lay a solid foundation by addressing potential challenges and setting clear objectives for the project.",
-			"status": "completed"
+			"status": "completed",
+			"published": true
 		},
 		{
 			"title": "Casting and Rehearsals",
 			"details": "During this phase, we focus on selecting the right talent to bring the characters to life. Casting calls and auditions will be conducted to find actors who best fit the roles. Once the cast is finalized, rehearsals will begin to help actors understand their characters and develop chemistry with each other. This stage is essential for refining performances and ensuring everyone is well-prepared before filming starts.",
-			"status": "on-going"
+			"status": "on-going",
+			"published": false
 		},
 		{
 			"title": "Production",
 			"details": "The production phase involves the actual filming of the movie. This includes setting up scenes, capturing footage, and managing on-set logistics. The production team will work closely to follow the shooting schedule, making adjustments as needed to stay on track. Attention to detail is critical, as this phase determines the visual and narrative quality of the film. Daily reviews of footage help ensure everything aligns with the director's vision.",
-			"status": "not started"
+			"status": "not started",
+			"published": true
 		},
 		{
 			"title": "Post-Production",
 			"details": "In the post-production phase, the focus shifts to editing and finalizing the film. This includes cutting and assembling the footage, adding visual effects, sound design, and music scoring. Color correction and sound mixing enhance the film's aesthetic and auditory appeal. Once the final cut is approved, the film is prepared for distribution, which involves creating marketing materials and organizing premiere events or festival submissions.",
-			"status": "not started"
+			"status": "not started",
+			"published": true
 		}
 	],
 	"commentsCount": 6,

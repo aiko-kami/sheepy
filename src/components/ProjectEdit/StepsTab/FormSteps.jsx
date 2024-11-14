@@ -7,15 +7,14 @@ import SideMenu from "@/components/ProjectEdit/SideMenu";
 
 const FormSteps = ({ project }) => {
 	const [formState, setFormState] = useState({
-		projectTitle: project.title,
+		projectId: project.projectId,
+		projectSteps: project.steps,
 	});
 
-	const onChange = (e) => {
-		const { name, value, type, checked } = e.target;
-		const inputValue = type === "checkbox" ? checked : value;
+	const onChange = (updatedSteps) => {
 		setFormState((prevState) => ({
 			...prevState,
-			[name]: inputValue,
+			projectSteps: updatedSteps,
 		}));
 	};
 
