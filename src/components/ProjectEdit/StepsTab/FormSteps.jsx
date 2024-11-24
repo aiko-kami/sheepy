@@ -24,6 +24,20 @@ const FormSteps = ({ project }) => {
 		console.log("🚀 ~ onSubmit ~ The project has been updated:", formState);
 	};
 
+	const addStep = () => {
+		const newStep = {
+			id: `${(formState.projectSteps.length || 0) + 1}`,
+			title: "",
+			details: "",
+			status: "",
+			published: false,
+		};
+
+		// Update the form state with the new step
+		const updatedSteps = [...formState.projectSteps, newStep];
+		onChange(updatedSteps);
+	};
+
 	return (
 		<>
 			<form onSubmit={onSubmit}>
@@ -34,7 +48,7 @@ const FormSteps = ({ project }) => {
 					</div>
 					<div className="col-span-4 lg:px-2 lg:pl-10">
 						{/* Project Q&As information */}
-						<Steps formState={formState} onChange={onChange} />
+						<Steps formState={formState} onChange={onChange} addStep={addStep} />
 						<div className="flex justify-center">
 							<Button
 								btnProps={{
