@@ -8,7 +8,10 @@ import SideMenu from "@/components/ProjectEdit/SideMenu";
 const FormSteps = ({ project }) => {
 	const [formState, setFormState] = useState({
 		projectId: project.projectId,
-		projectSteps: project.steps,
+		updatedBy: project.steps.updatedBy,
+		createdAt: project.steps.createdAt,
+		updatedAt: project.steps.updatedAt,
+		projectSteps: project.steps.stepsList,
 	});
 
 	const onChange = (updatedSteps) => {
@@ -47,7 +50,7 @@ const FormSteps = ({ project }) => {
 						<SideMenu project={project} />
 					</div>
 					<div className="col-span-4 lg:px-2 lg:pl-10">
-						{/* Project Q&As information */}
+						{/* Project steps information */}
 						<Steps formState={formState} onChange={onChange} addStep={addStep} />
 						<div className="flex justify-center">
 							<Button

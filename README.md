@@ -240,12 +240,12 @@ Not done: send message to all, send message to several (select users)
 [] - updatedBy
 [] - Actions: Add, remove, update, change visibility
 
-[] Steps: (updatedBy, createdAt, updatedAt)
+[x] Steps: (updatedBy, createdAt, updatedAt)
 
-[] - title
-[] - details
-[] - published
-[] - Actions: Add, remove, update, reorder
+[x] - title
+[x] - details
+[x] - published
+[x] - Actions: Add, remove, update, reorder
 
 [] Q&As: (updatedBy, createdAt, updatedAt)
 

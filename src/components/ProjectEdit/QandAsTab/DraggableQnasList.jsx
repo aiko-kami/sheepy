@@ -1,24 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { DndContext, closestCenter } from "@dnd-kit/core";
 import { SortableContext, arrayMove } from "@dnd-kit/sortable";
-import DraggableStepItem from "@/components/ProjectEdit/StepsTab/DraggableStepItem";
+import DraggableQnaItem from "@/components/ProjectEdit/QandAsTab/DraggableQnaItem";
 
-const DraggableStepsList = ({ formState, onChange }) => {
+const DraggableQnasList = ({ formState, onChange }) => {
 	const [items, setItems] = useState([]);
 
-	// Initialize items based on formState.projectSteps
+	// Initialize items based on formState.projectQnas
 	useEffect(() => {
-		if (formState?.projectSteps) {
-			const transformedItems = formState.projectSteps.map((step, index) => ({
+		if (formState?.projectQnas) {
+			const transformedItems = formState.projectQnas.map((qna, index) => ({
 				id: `${index + 1}`,
-				title: step.title,
-				details: step.details,
-				status: step.status,
-				published: step.published,
+				question: qna.question,
+				response: qna.response,
+				published: qna.published,
 			}));
 			setItems(transformedItems);
 		}
-	}, [formState.projectSteps]);
+	}, [formState.projectQnas]);
 
 	// Handle the end of dragging
 	const handleDragEnd = (event) => {
@@ -39,7 +38,7 @@ const DraggableStepsList = ({ formState, onChange }) => {
 			<SortableContext items={items.map((item) => item.id)}>
 				<div>
 					{items.map((item) => (
-						<DraggableStepItem
+						<DraggableQnaItem
 							key={item.id}
 							item={item}
 							items={items}
@@ -53,4 +52,4 @@ const DraggableStepsList = ({ formState, onChange }) => {
 	);
 };
 
-export default DraggableStepsList;
+export default DraggableQnasList;
