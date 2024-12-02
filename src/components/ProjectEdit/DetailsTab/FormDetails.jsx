@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { Button } from "@/components/Buttons/Buttons";
-import DetailsandStats from "@/components/ProjectEdit/DetailsandStatsTab/DetailsandStats";
+import Details from "@/components/ProjectEdit/DetailsTab/Details";
 import SideMenu from "@/components/ProjectEdit/SideMenu";
 
-const FormDetailsandStats = ({ project }) => {
+const FormDetails = ({ project }) => {
 	const [formState, setFormState] = useState({
 		projectTitle: project.title,
 	});
@@ -35,7 +35,7 @@ const FormDetailsandStats = ({ project }) => {
 					</div>
 					<div className="col-span-4 lg:px-2 lg:pl-10">
 						{/* Project details and stats information */}
-						<DetailsandStats formState={formState} onChange={onChange} />
+						<Details formState={formState} onChange={onChange} />
 						<div className="flex justify-center">
 							<Button
 								btnProps={{
@@ -52,4 +52,4 @@ const FormDetailsandStats = ({ project }) => {
 		</>
 	);
 };
-export default FormDetailsandStats;
+export default FormDetails;

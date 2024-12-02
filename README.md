@@ -134,8 +134,8 @@ Don't let your ideas and talents go to waste – join Sheepy now!
       - [x] cancel modal
       - [x] send message modal
   - [x] Rights
-  - [] Steps
-  - [] Q&As
+  - [x] Steps
+  - [x] Q&As
   - [] Details and stats
 
 - [] Project description private page
@@ -188,84 +188,87 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 
 ### Project fields for project update
 
-[x] General:
+- [x] General:
 
-[x] - title
-[x] - category
-[x] - subCategory
-[x] - summary
-[x] - description
-[x] - goal
-[x] - cover
-[x] - tags
+  - [x] Title
+  - [x] Category
+  - [x] Sub-category
+  - [x] Summary
+  - [x] Description
+  - [x] Goal
+  - [x] Cover
+  - [x] Tags
+  - [x] Creator motivation
+  - [x] Objectives
+  - [] Phases
 
-[x] Members:
+- [x] Members:
 
-[x] - User
-[x] - Role
-[x] - Start date (join date?)
-[x] - projectMembersRoles (see list) - ["owner", "member"]
-[x] - Actions: Remove, send message, (send message to all), (send message to several (select users)), update role
-Not done: send message to all, send message to several (select users)
-[x] - Join requests
-[x] - invitations
-[x] - Actions: Accept/decline request, create new invitation
+  - [x] User
+  - [x] Role
+  - [x] Start date (join date?)
+  - [x] Project members roles (see list) - ["owner", "member"]
+  - [x] Actions: Remove, send message, (send message to all), (send message to several (select users)), update role
+        Not done: send message to all, send message to several (select users)
+  - [x] Join requests
+  - [x] Invitations
+  - [x] Actions: Accept/decline request, create new invitation
+  - [x] Talents needed
 
-[x] Rights:
+- [x] Rights:
 
-[x] - User
-[x] - can update...
-[x] - Actions: update user right
+  - [x] User
+  - [x] Can update...
+  - [x] Actions: update user right
 
-[x] Status:
+- [x] Status:
 
-[x] - current status (see list) - ["draft", "submitted", "active", "on hold", "completed", "archived", "cancelled", "rejected"]
-[x] - reason
-[x] - status history
-[x] - updatedBy
-[x] - timestamp
-[x] - Actions: update project status
+  - [x] Current status (see list) - ["draft", "submitted", "active", "on hold", "completed", "archived", "cancelled", "rejected"]
+  - [x] Start date
+  - [x] Reason
+  - [x] project visibility ["public", "private"]
+  - [x] Status history
+  - [x] Updated by
+  - [x] Timestamp
+  - [x] Actions: update project status
 
-[x] Location:
-[x] - onlineOnly
-[x] - city
-[x] - country
+- [x] Location:
 
-[] Attachments:
+  - [x] Online only
+  - [x] City
+  - [x] Country
 
-[x] - title
-[x] - size
-[x] - extension
-[] - createdAt
-[] - updatedBy
-[] - Actions: Add, remove, update, change visibility
+- [] Attachments:
 
-[x] Steps: (updatedBy, createdAt, updatedAt)
+  - [x] Title
+  - [x] Size
+  - [x] Extension
+  - [] Created at
+  - [] Updated by
+  - [] Actions: Add, remove, update, change visibility
 
-[x] - title
-[x] - details
-[x] - published
-[x] - Actions: Add, remove, update, reorder
+- [x] Steps: (updatedBy, createdAt, updatedAt)
 
-[] Q&As: (updatedBy, createdAt, updatedAt)
+  - [x] Title
+  - [x] Details
+  - [x] Status
+  - [x] Published
+  - [x] Actions: Add, remove, update, reorder
 
-[] - question
-[] - response
-[] - published
-[] - Actions: Add, remove, update, reorder
+- [x] Q&As: (updatedBy, createdAt, updatedAt)
 
-[x] start date -> in tab Status
-[x] creator motivation -> in tab General
-[x] objectives -> in tab General
-[] phases -> in tab General
-[x] project visibility (see list) - ["public", "private"] -> in Status (Renamed Status and Visibility ?)
-[x] talents needed -> in tab Members
+  - [x] Question
+  - [x] Response
+  - [x] Published
+  - [x] Actions: Add, remove, update, reorder
 
-[] created by -> tab Details and stats
-[] created at -> tab Details and stats
-[] updated by -> tab Details and stats
-[] crush -> tab Details and stats
-[] likes -> tab Details and stats
+- [] Details and stats:
+
+  - [] Created by
+  - [] Created at
+  - [] Updated by
+  - [] Crush
+  - [] Likes
 
 ---
 
