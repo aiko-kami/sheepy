@@ -4,44 +4,59 @@ import { IoLockOpen, IoSettingsSharp, IoPeople, IoDocuments } from "react-icons/
 import RightsDetails from "@/components/ProjectEdit/RightsTab/RightsDetails";
 
 const Rights = ({ project }) => {
-	const headersGlobal = [
-		{ label: "project status", right: "canUpdateProjectStatus" },
-		{ label: "project visibility", right: "canUpdateProjectVisibility" },
-		{ label: "project project location", right: "canUpdateProjectLocation" },
-		{ label: "project project steps", right: "canUpdateProjectSteps" },
-		{ label: "project project Q&As", right: "canUpdateProjectQnAs" },
-		{ label: "project members rights", right: "canUpdateMembersRights" },
-	];
+	const headersGlobal = {
+		type: "project",
+		labels: [
+			{ label: "status", right: "canUpdateProjectStatus" },
+			{ label: "visibility", right: "canUpdateProjectVisibility" },
+			{ label: "location", right: "canUpdateProjectLocation" },
+			{ label: "steps", right: "canUpdateProjectSteps" },
+			{ label: "Q&As", right: "canUpdateProjectQnAs" },
+			{ label: "members rights", right: "canUpdateMembersRights" },
+		],
+	};
 
-	const headersGeneral = [
-		{ label: "title", right: "canUpdateProjectTitle" },
-		{ label: "category", right: "canUpdateProjectCategory" },
-		{ label: "sub-category", right: "canUpdateProjectSubCategory" },
-		{ label: "summary", right: "canUpdateProjectSummary" },
-		{ label: "description", right: "canUpdateProjectDescription" },
-		{ label: "goal", right: "canUpdateProjectGoal" },
-		{ label: "cover", right: "canUpdateProjectCover" },
-		{ label: "tags", right: "canUpdateProjectTags" },
-	];
+	const headersGeneral = {
+		type: "project",
+		labels: [
+			{ label: "title", right: "canUpdateProjectTitle" },
+			{ label: "category", right: "canUpdateProjectCategory" },
+			{ label: "sub-category", right: "canUpdateProjectSubCategory" },
+			{ label: "summary", right: "canUpdateProjectSummary" },
+			{ label: "description", right: "canUpdateProjectDescription" },
+			{ label: "goal", right: "canUpdateProjectGoal" },
+			{ label: "cover", right: "canUpdateProjectCover" },
+			{ label: "tags", right: "canUpdateProjectTags" },
+		],
+	};
 
-	const headersMembers = [
-		{ label: "edit members", right: "canUpdateEditMembers" },
-		{ label: "remove members", right: "canRemoveMembers" },
-		{ label: "talents needed", right: "canUpdateTalentsNeeded" },
-		{ label: "view requests", right: "canViewRequests" },
-		{ label: "edit requests", right: "canEditRequests" },
-		{ label: "view invitations", right: "canViewInvitations" },
-		{ label: "edit invitations", right: "canEditInvitations" },
-	];
+	const headersMembers = {
+		type: "members",
+		labels: [
+			{ label: "edit members", right: "canUpdateEditMembers" },
+			{ label: "remove members", right: "canRemoveMembers" },
+			{ label: "talents needed", right: "canUpdateTalentsNeeded" },
+			{ label: "view requests", right: "canViewRequests" },
+			{ label: "edit requests", right: "canEditRequests" },
+			{ label: "view invitations", right: "canViewInvitations" },
+			{ label: "edit invitations", right: "canEditInvitations" },
+		],
+	};
 
-	const headersAttachments = [
-		{ label: "view document", right: "canViewAttachments" },
-		{ label: "add document", right: "canUpdateAddAttachments" },
-		{ label: "edit document", right: "canUpdateEditAttachments" },
-		{ label: "remove document", right: "canUpdateRemoveAttachments" },
-	];
+	const headersAttachments = {
+		type: "attachments",
+		labels: [
+			{ label: "view document", right: "canViewAttachments" },
+			{ label: "add document", right: "canUpdateAddAttachments" },
+			{ label: "edit document", right: "canUpdateEditAttachments" },
+			{ label: "remove document", right: "canUpdateRemoveAttachments" },
+		],
+	};
 
-	const headersCopy = ["start date", "phase", "objectives", "motivation", "visibility"];
+	const headersCopy = {
+		type: "project",
+		labels: ["start date", "phase", "objectives", "motivation", "visibility"],
+	};
 
 	return (
 		<>

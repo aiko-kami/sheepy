@@ -9,12 +9,12 @@ const RightsTable = ({ members, formState, onChange, onSelectAll, headers }) => 
 						<th rowSpan="2" scope="col" className="text-center align-bottom p-2 md:px-4 md:py-3 uppercase">
 							User
 						</th>
-						<th colSpan={headers.length + 1} scope="col" className="font-normal text-center md:px-4 py-1">
-							Can update...
+						<th colSpan={headers.labels.length + 1} scope="col" className="font-normal text-center md:px-4 py-1">
+							Can update {headers.type}...
 						</th>
 					</tr>
 					<tr>
-						{headers.map((header, index) => (
+						{headers.labels.map((header, index) => (
 							<th key={index} scope="col" className="font-normal text-center p-2 md:pb-3 md:px-3 text-xs">
 								<p
 									style={{
@@ -41,7 +41,7 @@ const RightsTable = ({ members, formState, onChange, onSelectAll, headers }) => 
 									<MemberUserCell member={member} />
 								</td>
 								{/* Individual Rights Checkboxes */}{" "}
-								{headers.map((header, index) => {
+								{headers.labels.map((header, index) => {
 									const isChecked = memberState?.memberRights[header.right] ?? false;
 									return (
 										<td key={index} scope="row" className="p-2 md:px-4 md:py-2 text-center">
