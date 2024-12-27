@@ -19,12 +19,14 @@ const ProjectEditNavbar = () => {
 		// Default to "General" if the base path matches without sub-path
 		const isActive = pathname === href || (pathname === projectBasePath && href === `${projectBasePath}/general`);
 
-		return `inline-block p-3 rounded-lg xl:rounded-b-none rounded-t-lg min-w-28 ${isActive ? "text-blue-500 bg-gray-800" : "text-gray-500 bg-gray-700 hover:bg-gray-800 hover:text-gray-300"}`;
+		return `inline-block p-3 min-w-20 md:min-w-26 rounded-lg xl:rounded-b-none rounded-t-lg ${
+			isActive ? "text-blue-500 bg-gray-800" : "text-gray-500 bg-gray-700 hover:bg-gray-800 hover:text-gray-300"
+		}`;
 	};
 
 	return (
 		<>
-			<ul className="flex flex-wrap justify-center xl:justify-end font-medium text-center xl:border-b border-gray-700">
+			<ul className="flex flex-wrap justify-center xl:justify-end text-sm md:text-base font-medium text-center xl:border-b border-gray-700">
 				<li className="mb-2 xl:mb-0 me-1">
 					<Link href={`${projectBasePath}/general`} className={getLinkClasses(`${projectBasePath}/general`)} aria-current={pathname === `${projectBasePath}/general` ? "page" : undefined}>
 						General
