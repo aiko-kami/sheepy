@@ -7,17 +7,8 @@ import SideMenu from "@/components/ProjectEdit/SideMenu";
 
 const FormAttachments = ({ project }) => {
 	const [formState, setFormState] = useState({
-		projectTitle: project.title || "",
+		newAttachments: [],
 	});
-
-	const onChange = (e) => {
-		const { name, value, type, checked } = e.target;
-		const inputValue = type === "checkbox" ? checked : value;
-		setFormState((prevState) => ({
-			...prevState,
-			[name]: inputValue,
-		}));
-	};
 
 	const onSubmit = (event) => {
 		event.preventDefault();
@@ -35,7 +26,7 @@ const FormAttachments = ({ project }) => {
 					</div>
 					<div className="col-span-4 lg:px-2 lg:pl-10">
 						{/* Project Attachments information */}
-						<Attachments formState={formState} onChange={onChange} attachments={project.attachments} />
+						<Attachments setFormState={setFormState} attachments={project.attachments} />
 					</div>
 				</div>
 			</form>

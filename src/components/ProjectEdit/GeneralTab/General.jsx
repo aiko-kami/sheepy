@@ -17,7 +17,7 @@ const General = ({ formState, setFormState, onChange }) => {
 			</div>
 			{/* Project cover */}
 			<div className="mb-8 lg:mb-10">
-				<Cover formState={formState} onChange={onChange} />
+				<Cover setFormState={setFormState} />
 			</div>
 			{/* Project tags */}
 			<div className="mb-8 lg:mb-10">

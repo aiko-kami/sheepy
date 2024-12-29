@@ -1,8 +1,25 @@
-import { IoDocuments, IoPushOutline } from "react-icons/io5";
-import FileDropField from "@/components/Forms/FileDropField";
+import { IoDocuments } from "react-icons/io5";
+import { FilesDropField } from "@/components/Forms/FileDropField";
+import { Button } from "@/components/Buttons/Buttons";
+
 import AttachmentsTable from "@/components/Tables/ProjectEdit/AttachmentsTable";
 
-const AttachmentsDetails = ({ formState, onChange, attachments }) => {
+const AttachmentsDetails = ({ setFormState, attachments }) => {
+	const fileTypesAllowed = {
+		"image/png": ".png",
+		"image/jpeg": ".jpg",
+		"application/pdf": ".pdf",
+		"application/msword": ".doc",
+		"application/vnd.openxmlformats-officedocument.wordprocessingml.document": ".docx",
+		"application/vnd.ms-excel": ".xls",
+		"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": ".xlsx",
+		"application/vnd.ms-powerpoint": ".ppt",
+		"application/vnd.openxmlformats-officedocument.presentationml.presentation": ".pptx",
+		"text/plain": ".txt",
+	};
+
+	const maxFileSizeAllowed = 5 * 1024 * 1024; // 5 MB in bytes
+
 	return (
 		<>
 			{/* Project attachments */}
@@ -16,7 +33,17 @@ const AttachmentsDetails = ({ formState, onChange, attachments }) => {
 				<div className="md:pl-4">
 					{/* Add project attachments */}
 					<div className="mb-6 xl:mb-10">
-						<FileDropField />
+						<FilesDropField onFilesSelected={setFormState} fileTypesAllowed={fileTypesAllowed} maxFileSizeAllowed={maxFileSizeAllowed} />
+					</div>
+					<div className="flex justify-center mb-6 xl:mb-10">
+						<Button
+							btnProps={{
+								type: "submit",
+								btnColor: "blue",
+							}}
+						>
+							Save project
+						</Button>
 					</div>
 
 					<div className="md:px-4">

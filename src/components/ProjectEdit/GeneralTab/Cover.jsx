@@ -1,8 +1,14 @@
-import { IoImages, IoPushOutline } from "react-icons/io5";
-import FileDropField from "@/components/Forms/FileDropField";
+import { IoImages } from "react-icons/io5";
+import { FileDropField } from "@/components/Forms/FileDropField";
 import { Button } from "@/components/Buttons/Buttons";
 
-const Cover = ({ formState, onChange }) => {
+const Cover = ({ setFormState }) => {
+	const fileTypesAllowed = {
+		"image/png": ".png",
+		"image/jpeg": ".jpg",
+	};
+	const maxFileSizeAllowed = 5 * 1024 * 1024; // 5 MB in bytes
+
 	return (
 		<>
 			{/* Project cover */}
@@ -15,7 +21,7 @@ const Cover = ({ formState, onChange }) => {
 			<div className="md:pl-4">
 				{/* Project cover */}
 				<div className="mb-8">
-					<FileDropField />
+					<FileDropField setFormState={setFormState} fileTypesAllowed={fileTypesAllowed} maxFileSizeAllowed={maxFileSizeAllowed} />
 				</div>
 				<div className="flex justify-center">
 					<Button

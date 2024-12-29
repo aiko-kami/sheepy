@@ -1,10 +1,10 @@
 import AttachmentsDetails from "@/components/ProjectEdit/AttachmentsTab/AttachmentsDetails";
 
-const Attachments = ({ formState, onChange, attachments }) => {
+const Attachments = ({ setFormState, attachments }) => {
 	return (
 		<>
 			{/* Project attachments */}
-			<AttachmentsDetails formState={formState} onChange={onChange} attachments={attachments} />
+			<AttachmentsDetails setFormState={setFormState} attachments={attachments} />
 		</>
 	);
 };

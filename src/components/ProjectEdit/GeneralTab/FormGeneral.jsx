@@ -12,6 +12,7 @@ const FormGeneral = ({ project }) => {
 		projectSummary: project.summary || "",
 		projectDescription: project.description || "",
 		projectGoal: project.goal || "",
+		projectCover: project.cover || "",
 		creatorMotivation: project.creatorMotivation || "",
 		projectObjectives: project.objectives || "",
 		projectTags: project.tags.map((tag) => tag.name) || [],
@@ -30,6 +31,7 @@ const FormGeneral = ({ project }) => {
 		event.preventDefault();
 		// Handle form submission
 		console.log("🚀 ~ onSubmit ~ The project has been updated:", formState);
+		console.log("🚀 ~ onSubmit ~ The cover has been updated:", formState.projectCover);
 	};
 
 	return (
