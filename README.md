@@ -107,11 +107,11 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 - [] Project edition page (dashboards with different projects?)
 
   - [] General
-    - [] Display cover
+    - [x] Display cover
   - [x] Location
   - [x] Status
   - [] Attachments
-    - [] Upload file(s)
+    - [x] Upload file(s)
     - [] Open/Download file
     - [] Attachments actions
   - [x] Members
@@ -196,6 +196,7 @@ Don't let your ideas and talents go to waste – join Sheepy now!
   - [x] Summary
   - [x] Description
   - [x] Goal
+  - [x] Upload cover
   - [x] Cover
   - [x] Tags
   - [x] Creator motivation
@@ -240,6 +241,7 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 
 - [] Attachments:
 
+  - [x] Upload
   - [x] Title
   - [x] Size
   - [x] Extension
@@ -264,11 +266,12 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 
 - [] Details and stats:
 
-  - [] Created by
-  - [] Created at
-  - [] Updated by
+  - [x] Created by
+  - [x] Created at
+  - [x] Owner(s)
+  - [x] Updated at and by
   - [] Crush
-  - [] Likes
+  - [x] Likes
 
 ---
 

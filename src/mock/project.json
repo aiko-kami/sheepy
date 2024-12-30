@@ -8,6 +8,7 @@
 	"coverDescription": "https://crypticrock.com/wp-content/uploads/2023/02/brad-anderson-on-set-blood.jpg",
 	"creatorMotivation": "I've always loved cinema and it's a big dream I have to make my own movie one day.",
 	"likes": 147,
+	"crush": true,
 	"permissions": {
 		"canEditMembers": true,
 		"canRemoveMembers": true,
@@ -194,9 +195,19 @@
 			}
 		]
 	},
-	"creator": "Brad_Anderson",
-	"creatorProfilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU",
-	"userId": "12345",
+	"creator": {
+		"userId": "12345",
+		"username": "Brad_Anderson",
+		"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU"
+	},
+	"createdAt": "2023-09-11T20:24:47.802+00:00",
+	"updatedAt": "2024-12-30T20:24:47.802+00:00",
+	"updatedBy": {
+		"userId": "12345",
+		"username": "Captain_Picard",
+		"profilePicture": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Jean-Luc_Picard_2.jpg",
+		"role": "Director"
+	},
 	"members": [
 		{
 			"userId": "12345",

@@ -29,7 +29,7 @@ const MemberUserCell = ({ member }) => {
 				</div>
 				{member.isOwner && (
 					<div className="sm:ml-3">
-						<span className="py-1 px-2.5 text-white font-bold text-xs text-nowrap duration-200 rounded cursor-default bg-blue-500">Project Owner</span>
+						<span className="py-1 px-2.5 text-white font-bold text-xs text-nowrap rounded cursor-default bg-blue-500">Project Owner</span>
 					</div>
 				)}
 			</div>

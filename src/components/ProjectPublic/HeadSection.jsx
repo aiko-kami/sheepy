@@ -11,11 +11,11 @@ const HeadSection = ({ project }) => {
 			{/* Creator */}
 			<div className="text-gray-300 text-lg mb-6 flex items-center justify-center">
 				<span className="">by</span>
-				<Link href={`/users/${project.userId}`} className="ml-1 mr-2 font-semibold">
-					{project.creator}
+				<Link href={`/users/${project.creator.userId}`} className="ml-1 mr-2 font-semibold">
+					{project.creator.username}
 				</Link>
-				<Link href={`/users/${project.userId}`}>
-					<Image src={project.creatorProfilePicture} className="object-cover rounded-full w-10 h-10" alt="creator profile picture" height={0} width={0} sizes="100vw" />
+				<Link href={`/users/${project.creator.userId}`}>
+					<Image src={project.creator.profilePicture} className="object-cover rounded-full w-10 h-10" alt="creator profile picture" height={0} width={0} sizes="100vw" />
 				</Link>
 			</div>
 		</>

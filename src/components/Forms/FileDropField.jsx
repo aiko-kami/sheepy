@@ -108,7 +108,10 @@ const FileDropField = ({ setFormState, fileTypesAllowed, maxFileSizeAllowed }) =
 			<div className="flex justify-center">
 				<div
 					className={`rounded-3xl border-2 border-dashed w-7/8 sm:w-2/3 h-70 relative ${isDragOver ? "border-green-400" : "border-blue-400"}`}
-					onDrop={handleDrop}
+					onDrop={(e) => {
+						handleDrop(e);
+						setIsDragOver(false);
+					}}
 					onDragOver={(e) => {
 						e.preventDefault();
 						setIsDragOver(true);
@@ -125,9 +128,9 @@ const FileDropField = ({ setFormState, fileTypesAllowed, maxFileSizeAllowed }) =
 				>
 					<div className="flex justify-center items-center h-full">
 						<div className="flex flex-col justify-center items-center">
-							<div>
+							<label htmlFor="browseCover" className="cursor-pointer">
 								<IoPushOutline className={`text-6xl ${isDragOver ? "text-green-400" : "text-blue-400"}`} />
-							</div>
+							</label>
 							<div>Drag and drop file here</div>
 							<div className="mb-2">or</div>
 							<input type="file" hidden id="browseCover" onChange={handleFileChange} accept={acceptedMimeTypes} />
@@ -150,12 +153,8 @@ const FileDropField = ({ setFormState, fileTypesAllowed, maxFileSizeAllowed }) =
 			{thumbnail && (
 				<div className="flex justify-center mt-4">
 					<div className="relative">
-						<img src={thumbnail} alt="Preview" className="w-full max-h-100 object-cover rounded" />
-						<button
-							type="button"
-							className="text-red-400 bg-transparent rounded-lg text-sm absolute right-2 top-2 inline-flex justify-center items-center hover:text-red-500"
-							onClick={handleRemoveFile}
-						>
+						<img src={thumbnail} alt="Preview" className="w-full max-h-100 object-cover rounded-lg" />
+						<button type="button" className="text-red-400 text-sm absolute right-2 top-2 inline-flex justify-center items-center hover:text-red-500" onClick={handleRemoveFile}>
 							<svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
 								<path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
 							</svg>
@@ -167,6 +166,7 @@ const FileDropField = ({ setFormState, fileTypesAllowed, maxFileSizeAllowed }) =
 		</>
 	);
 };
+
 const FilesDropField = ({ onFilesSelected, fileTypesAllowed, maxFileSizeAllowed }) => {
 	const [files, setFiles] = useState([]);
 	const [isDragOver, setIsDragOver] = useState(false);
@@ -277,14 +277,14 @@ const FilesDropField = ({ onFilesSelected, fileTypesAllowed, maxFileSizeAllowed 
 				>
 					<div className="flex justify-center items-center h-full">
 						<div className="flex flex-col justify-center items-center text-center">
-							<div>
+							<label htmlFor="browseFiles" className="cursor-pointer">
 								<IoPushOutline className={`text-6xl ${isDragOver ? "text-green-400" : "text-blue-400"}`} />
-							</div>
+							</label>
 							<div>Drag and drop files here</div>
 							<div className="mb-2">or</div>
-							<input type="file" hidden id="browseCover" onChange={handleFileChange} multiple />
+							<input type="file" hidden id="browseFiles" onChange={handleFileChange} multiple />
 							<label
-								htmlFor="browseCover"
+								htmlFor="browseFiles"
 								className="text-base px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded leading-snug shadow-lg transition duration-150 ease-in-out"
 							>
 								Choose a file
@@ -307,7 +307,7 @@ const FilesDropField = ({ onFilesSelected, fileTypesAllowed, maxFileSizeAllowed 
 								<span className="w-1/2 line-clamp-1">{file.name}</span>
 								<span className="w-1/4 line-clamp-1">{file.type}</span>
 								<span className="line-clamp-1">{formatFileSize(file.size)}</span>
-								<button type="button" className="text-gray-300 bg-transparent rounded-lg text-sm inline-flex justify-center items-center hover:text-red-400" onClick={() => handleRemoveFile(index)}>
+								<button type="button" className="text-gray-300 text-sm inline-flex justify-center items-center hover:text-red-400" onClick={() => handleRemoveFile(index)}>
 									<svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
 										<path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
 									</svg>
