@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 import Modal from "@/components/Modals/Modal";
-import UpdateMemberModal from "@/components/Modals/ProjectEdit/UpdateMemberModal";
+import JoinProjectDetailsModal from "@/components/Modals/ProjectEdit/JoinProjectDetailsModal";
 
 const JoinRequestUserCell = ({ request }) => {
 	const [modalDisplayDetails, setModalDisplayDetails] = useState(false);
@@ -28,8 +28,8 @@ const JoinRequestUserCell = ({ request }) => {
 					</button>
 				</div>
 			</div>
-			<Modal modalDisplay={modalDisplayDetails} closeModal={closeModalDetails} modalSize={"std"} modalTitle={"Request"}>
-				<UpdateMemberModal member={request.user} closeModal={closeModalDetails} />
+			<Modal modalDisplay={modalDisplayDetails} closeModal={closeModalDetails} closeModalWithBackground={closeModalDetails} modalSize={"std"} modalTitle={"View request"}>
+				<JoinProjectDetailsModal joinProject={request} type={"request"} />
 			</Modal>
 		</>
 	);
