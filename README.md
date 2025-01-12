@@ -245,8 +245,8 @@ Don't let your ideas and talents go to waste – join Sheepy now!
   - [x] Title
   - [x] Size
   - [x] Extension
-  - [] Created at
-  - [] Updated by
+  - [x] Created at
+  - [x] Updated by
   - [] Actions: Add, remove, update, change visibility
 
 - [x] Steps: (updatedBy, createdAt, updatedAt)

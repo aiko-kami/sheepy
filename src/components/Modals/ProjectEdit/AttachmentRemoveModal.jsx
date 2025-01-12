@@ -9,7 +9,7 @@ const AttachmentRemoveModal = ({ closeModalRemove, attachment, projectId }) => {
 	};
 	return (
 		<>
-			{/* File name, request message and talent requested */}
+			{/* Attachment details */}
 			<h2 className="text-xl text-center font-semibold mb-1">Attachment details</h2>
 			<div className="mb-10 border-2 border-gray-400 rounded-md p-4 pb-5">
 				{/* File name */}

@@ -1,10 +1,24 @@
+"use client";
+
+import { useState } from "react";
+
 import { IoDocuments } from "react-icons/io5";
 import { FilesDropField } from "@/components/Forms/FileDropField";
 import { Button } from "@/components/Buttons/Buttons";
 
 import AttachmentsTable from "@/components/Tables/ProjectEdit/AttachmentsTable";
 
-const AttachmentsDetails = ({ setFormState, project }) => {
+const AttachmentsDetails = ({ project }) => {
+	const [formState, setFormState] = useState({
+		newAttachments: [],
+	});
+
+	const onSubmit = (event) => {
+		event.preventDefault();
+		// Handle form submission
+		console.log("🚀 ~ onSubmit ~ The project has been updated:", formState);
+	};
+
 	const fileTypesAllowed = {
 		"image/png": ".png",
 		"image/jpeg": ".jpg",
@@ -32,19 +46,21 @@ const AttachmentsDetails = ({ setFormState, project }) => {
 
 				<div className="md:pl-4">
 					{/* Add project attachments */}
-					<div className="mb-6 xl:mb-10">
-						<FilesDropField onFilesSelected={setFormState} fileTypesAllowed={fileTypesAllowed} maxFileSizeAllowed={maxFileSizeAllowed} />
-					</div>
-					<div className="flex justify-center mb-6 xl:mb-10">
-						<Button
-							btnProps={{
-								type: "submit",
-								btnColor: "blue",
-							}}
-						>
-							Save project
-						</Button>
-					</div>
+					<form onSubmit={onSubmit}>
+						<div className="mb-6 xl:mb-10">
+							<FilesDropField onFilesSelected={setFormState} fileTypesAllowed={fileTypesAllowed} maxFileSizeAllowed={maxFileSizeAllowed} />
+						</div>
+						<div className="flex justify-center mb-6 xl:mb-10">
+							<Button
+								btnProps={{
+									type: "submit",
+									btnColor: "blue",
+								}}
+							>
+								Save project
+							</Button>
+						</div>
+					</form>
 
 					<div className="md:px-4">
 						{/* Project attachments */}
