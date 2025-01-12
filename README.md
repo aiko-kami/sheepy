@@ -73,10 +73,10 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 - [x] Projects by tags page
 - [x] forgot password modal
 
-- [x] Discover
+- [] Discover
 
   - [x] The projects
-  - [x] The talents
+  - [] The talents
   - [x] The categories
 
 - [x] View my project page
@@ -113,10 +113,10 @@ Don't let your ideas and talents go to waste – join Sheepy now!
   - [] Attachments
     - [x] Upload file(s)
     - [] Open/Download file
-    - [] Attachments actions
+    - [x] Attachments actions
   - [x] Members
     - [x] Members actions
-      - [x] edite member modal
+      - [x] edit member modal
       - [x] remove member modal
       - [x] view member profile
       - [x] send message to member modal
@@ -186,7 +186,7 @@ Don't let your ideas and talents go to waste – join Sheepy now!
 
 ---
 
-### Project fields for project update
+### Project fields for project edition page
 
 - [x] General:
 
@@ -247,7 +247,12 @@ Don't let your ideas and talents go to waste – join Sheepy now!
   - [x] Extension
   - [x] Created at
   - [x] Updated by
-  - [] Actions: Add, remove, update, change visibility
+  - [] Actions:
+    - [x] Add
+    - [x] Remove
+    - [x] Report
+    - [x] View
+    - [] Download
 
 - [x] Steps: (updatedBy, createdAt, updatedAt)
 

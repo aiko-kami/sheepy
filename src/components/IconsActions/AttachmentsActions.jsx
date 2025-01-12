@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 import Modal from "@/components/Modals/Modal";
 import AttachmentRemoveModal from "@/components/Modals/ProjectEdit/AttachmentRemoveModal";
@@ -44,9 +45,9 @@ const AttachmentsActions = ({ projectId, attachment, permissions, iconSize }) =>
 		<>
 			{permissions.canViewAttachments && (
 				<>
-					<button type="button">
+					<Link href={attachment.fileLink} rel="noopener noreferrer" target="_blank">
 						<IoEyeOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="View attachment" />
-					</button>
+					</Link>
 				</>
 			)}
 			{permissions.canUpdateRemoveAttachments && (

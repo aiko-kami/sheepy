@@ -13,13 +13,15 @@ const AttachmentRemoveModal = ({ closeModalRemove, attachment, projectId }) => {
 			<h2 className="text-xl text-center font-semibold mb-1">Attachment details</h2>
 			<div className="mb-10 border-2 border-gray-400 rounded-md p-4 pb-5">
 				{/* File name */}
-				<div className="xl:flex items-baseline mb-6 lg:mb-4">
-					<h2 className="text-lg text-gray-400 font-semibold mb-2 lg:mb-0">File name:</h2>
-					<p className="pl-1 xl:pl-2 font-semibold">{attachment.fileName}</p>
+				<div className="mb-6 lg:mb-4">
+					<div className="xl:flex items-center">
+						<h2 className="text-lg text-gray-400 font-semibold mb-2 lg:mb-0">File name:</h2>
+						<p className="pl-1 xl:pl-2 font-semibold">{attachment.fileName}</p>
+					</div>
 				</div>
 
 				{/* File type and file size */}
-				<div className="lg:grid lg:grid-cols-2 justify-around">
+				<div className="lg:grid lg:grid-cols-2">
 					<div className="xl:flex items-center mb-6 lg:mb-4">
 						<h2 className="text-lg text-gray-400 font-semibold mb-2 lg:mb-0 mr-2">File type:</h2>
 						<div className="flex items-center">
@@ -27,16 +29,14 @@ const AttachmentRemoveModal = ({ closeModalRemove, attachment, projectId }) => {
 							<div className="text-base whitespace-nowrap">{attachment.fileType}</div>
 						</div>
 					</div>
-					<div>
-						<div className="xl:flex items-baseline mb-6 lg:mb-4">
-							<h2 className="text-lg text-gray-400 font-semibold mb-2 lg:mb-0">File size:</h2>
-							<p className="pl-1 xl:pl-2">{attachment.fileSize}</p>
-						</div>
+					<div className="xl:flex items-center min-h-full mb-6 lg:mb-4">
+						<h2 className="text-lg text-gray-400 font-semibold mb-2 lg:mb-0">File size:</h2>
+						<p className="pl-1 xl:pl-2">{attachment.fileSize}</p>
 					</div>
 				</div>
 
 				{/* Uploaded by and Uploaded at */}
-				<div className="lg:grid lg:grid-cols-2 justify-around">
+				<div className="lg:grid lg:grid-cols-2">
 					<div className="xl:flex items-center mb-6 lg:mb-0">
 						<h2 className="text-lg text-gray-400 font-semibold mb-2 lg:mb-0 mr-2">Uploaded by:</h2>
 						<div className="flex items-center">
@@ -45,7 +45,7 @@ const AttachmentRemoveModal = ({ closeModalRemove, attachment, projectId }) => {
 						</div>
 					</div>
 					<div>
-						<div className="xl:flex items-baseline justify-center">
+						<div className="xl:flex items-center min-h-full">
 							<h2 className="text-lg text-gray-400 font-semibold mb-2 lg:mb-0">Uploaded at:</h2>
 							<div className="pl-1 xl:pl-2">
 								<div className="whitespace-nowrap" title={DateTime.fromISO(attachment.createdAt, { locale: "en" }).toJSDate().toString()}>
