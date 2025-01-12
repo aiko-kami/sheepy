@@ -37,9 +37,9 @@ const DetailsDetails = ({ project }) => {
 
 			<div>
 				{/* Project details and stats */}
-				<div className="mb-8 md:grid md:grid-cols-2 xl:grid-cols-3 gap-3">
+				<div className="mb-8 md:grid md:grid-cols-2 xl:grid-cols-6 gap-3">
 					{/* Project creator */}
-					<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 mb-3 xl:mb-0">
+					<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 mb-3 xl:mb-0 xl:col-span-2">
 						<IoBulbOutline className="absolute right-3 top-3 text-5xl p-2 bg-sky-900 rounded-md" />
 						<h3 className="flex text-lg mb-4 ">Project creator</h3>
 						<div className="flex items-center justify-center">
@@ -53,7 +53,7 @@ const DetailsDetails = ({ project }) => {
 					</div>
 
 					{/* Project owner(s) */}
-					<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 mb-3 xl:mb-0">
+					<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 mb-3 xl:mb-0 xl:col-span-2">
 						<IoPersonCircleOutline className="absolute right-3 top-3 text-5xl p-2 bg-sky-900 rounded-md" />
 						<span className="text-lg py-1 px-2.5 rounded bg-blue-500">Project {projectOwners.length > 1 ? "owners" : "owner"}</span>
 						<div className="mt-4 pl-12">
@@ -71,7 +71,7 @@ const DetailsDetails = ({ project }) => {
 					</div>
 
 					{/* Project creation date */}
-					<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 mb-3 xl:mb-0">
+					<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 mb-3 xl:mb-0 xl:col-span-2">
 						<IoCalendar className="absolute right-3 top-3 text-5xl p-2 bg-sky-900 rounded-md" />
 						<h3 className="flex text-lg mb-4">Project created</h3>
 						<div className="flex items-center justify-center">
@@ -86,7 +86,7 @@ const DetailsDetails = ({ project }) => {
 					</div>
 
 					{/* Project last update date */}
-					<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 col-span-2 mb-3 xl:mb-0">
+					<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 col-span-3 mb-3 xl:mb-0">
 						<IoTimeOutline className="absolute right-3 top-3 text-5xl p-2 bg-sky-900 rounded-md" />
 						<h3 className="flex text-lg mb-4">Project last updated</h3>
 						<div className="flex items-center justify-center mb-5">
@@ -112,27 +112,81 @@ const DetailsDetails = ({ project }) => {
 					</div>
 
 					{/* Project number of likes */}
-					<div className="bg-base-550 rounded-md min-h-50 relative mb-3 xl:mb-0">
-						<div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-							<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 24 24">
-								<path fill="#db2777" d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z" />
-							</svg>
+					{(project.likes || project.likes === 0) && (
+						<div className="bg-base-550 rounded-md min-h-50 relative mb-3 xl:mb-0">
+							<div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+								<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 24 24">
+									<path fill="#db2777" d="M12 4.435c-1.989-5.399-12-4.597-12 3.568 0 4.068 3.06 9.481 12 14.997 8.94-5.516 12-10.929 12-14.997 0-8.118-10-8.999-12-3.568z" />
+								</svg>
+							</div>
+							<div className="absolute top-4/9 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl">
+								<span className="font-semibold ">{project.likes}</span>&nbsp;
+								{project.likes > 1 ? "Likes" : "Like"}
+							</div>
 						</div>
-						<div className="absolute top-4/9 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl">
-							<span className="font-semibold ">{project.likes}</span>&nbsp;
-							{project.likes > 1 ? "Likes" : "Like"}
-						</div>
-					</div>
+					)}
 
 					{/* Project crush */}
-					{project.crush && (
-						<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 mb-3 xl:mb-0">
+					{project.selection.crush && (
+						<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 mb-3 xl:mb-0 xl:col-span-2">
 							<IoStar className="absolute right-3 top-3 text-5xl p-2 bg-sky-900 rounded-md" />
 							<h3 className="flex text-lg mb-4">Selection</h3>
 							<div className="flex flex-col items-center justify-center">
 								<div className="mb-4">Your project has been selected as</div>
 								<span className="mb-3 py-1 px-2.5 font-bold text-3xl text-nowrap rounded cursor-default bg-yellow-500">CRUSH</span>
 								<div className="mb-2 text-xs italic">Crush projects are visible on the front page</div>
+							</div>
+						</div>
+					)}
+
+					{/* Project new */}
+					{project.selection.new && (
+						<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 mb-3 xl:mb-0 xl:col-span-2">
+							<IoStar className="absolute right-3 top-3 text-5xl p-2 bg-sky-900 rounded-md" />
+							<h3 className="flex text-lg mb-4">Selection</h3>
+							<div className="flex flex-col items-center justify-center">
+								<div className="mb-4">Your project has been selected as</div>
+								<span className="mb-3 py-1 px-2.5 font-bold text-3xl text-nowrap rounded cursor-default bg-teal-500">NEW</span>
+								<div className="mb-2 text-xs italic">New projects are visible in the dedicated section</div>
+							</div>
+						</div>
+					)}
+
+					{/* Project urgent */}
+					{project.selection.urgent && (
+						<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 mb-3 xl:mb-0 xl:col-span-2">
+							<IoStar className="absolute right-3 top-3 text-5xl p-2 bg-sky-900 rounded-md" />
+							<h3 className="flex text-lg mb-4">Selection</h3>
+							<div className="flex flex-col items-center justify-center">
+								<div className="mb-4">Your project has been selected as</div>
+								<span className="mb-3 py-1 px-2.5 font-bold text-3xl text-nowrap rounded cursor-default bg-pink-600">URGENT</span>
+								<div className="mb-2 text-xs italic">Urgent projects are visible in the dedicated section</div>
+							</div>
+						</div>
+					)}
+
+					{/* Project sustainable */}
+					{project.selection.sustainable && (
+						<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 mb-3 xl:mb-0 xl:col-span-2">
+							<IoStar className="absolute right-3 top-3 text-5xl p-2 bg-sky-900 rounded-md" />
+							<h3 className="flex text-lg mb-4">Selection</h3>
+							<div className="flex flex-col items-center justify-center">
+								<div className="mb-4">Your project has been selected as</div>
+								<span className="mb-3 py-1 px-2.5 font-bold text-3xl text-nowrap rounded cursor-default bg-green-500">SUSTAINBLE</span>
+								<div className="mb-2 text-xs italic">Sustainable projects are visible in the dedicated section</div>
+							</div>
+						</div>
+					)}
+
+					{/* Project trending */}
+					{project.selection.trending && (
+						<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 mb-3 xl:mb-0 xl:col-span-2">
+							<IoStar className="absolute right-3 top-3 text-5xl p-2 bg-sky-900 rounded-md" />
+							<h3 className="flex text-lg mb-4">Selection</h3>
+							<div className="flex flex-col items-center justify-center">
+								<div className="mb-4">Your project has been selected as</div>
+								<span className="mb-3 py-1 px-2.5 font-bold text-3xl text-nowrap rounded cursor-default bg-violet-500">TRENDING</span>
+								<div className="mb-2 text-xs italic">Trending projects are visible in the dedicated section</div>
 							</div>
 						</div>
 					)}

@@ -8,7 +8,13 @@
 	"coverDescription": "https://crypticrock.com/wp-content/uploads/2023/02/brad-anderson-on-set-blood.jpg",
 	"creatorMotivation": "I've always loved cinema and it's a big dream I have to make my own movie one day.",
 	"likes": 147,
-	"crush": true,
+	"selection": {
+		"crush": true,
+		"new": true,
+		"urgent": true,
+		"sustainable": true,
+		"trending": true
+	},
 	"permissions": {
 		"canEditMembers": true,
 		"canRemoveMembers": true,
@@ -16,7 +22,11 @@
 		"isPublicAllowed": true,
 		"isPrivateAllowed": true,
 		"isConfigureAllowed": true,
-		"isChatAllowed": true
+		"isChatAllowed": true,
+		"canViewAttachments": true,
+		"canUpdateAddAttachments": true,
+		"canUpdateEditAttachments": true,
+		"canUpdateRemoveAttachments": true
 	},
 	"category": {
 		"name": "Film & Video",
@@ -76,33 +86,75 @@
 	"attachments": [
 		{
 			"fileName": "Scenario",
-			"fileType": "https://cdn-icons-png.freepik.com/512/11580/11580904.png?ga=GA1.1.1847964296.1712438701",
-			"fileSize": "2.4 Mo"
+			"fileType": "Document",
+			"fileTypeIcon": "https://cdn-icons-png.freepik.com/512/11580/11580904.png?ga=GA1.1.1847964296.1712438701",
+			"fileSize": "2.4 Mo",
+			"createdAt": "2025-01-11T20:24:47.802+00:00",
+			"uploadedBy": {
+				"userId": "00012",
+				"username": "Brad Anderson",
+				"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU"
+			}
 		},
 		{
 			"fileName": "Idea presentation",
-			"fileType": "https://cdn-icons-png.freepik.com/512/11580/11580898.png?ga=GA1.1.1847964296.1712438701",
-			"fileSize": "2.4 Mo"
+			"fileType": "Document",
+			"fileTypeIcon": "https://cdn-icons-png.freepik.com/512/11580/11580898.png?ga=GA1.1.1847964296.1712438701",
+			"fileSize": "2.4 Mo",
+			"createdAt": "2024-12-11T20:24:47.802+00:00",
+			"uploadedBy": {
+				"userId": "00012",
+				"username": "Brad Anderson",
+				"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU"
+			}
 		},
 		{
 			"fileName": "Rush 10",
-			"fileType": "https://cdn-icons-png.freepik.com/512/11580/11580843.png?ga=GA1.1.1847964296.1712438701",
-			"fileSize": "2.4 Mo"
+			"fileType": "Video",
+			"fileTypeIcon": "https://cdn-icons-png.freepik.com/512/11580/11580843.png?ga=GA1.1.1847964296.1712438701",
+			"fileSize": "2.4 Mo",
+			"createdAt": "2024-11-11T20:24:47.802+00:00",
+			"uploadedBy": {
+				"userId": "00012",
+				"username": "Brad Anderson",
+				"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU"
+			}
 		},
 		{
 			"fileName": "Rush 11",
-			"fileType": "https://cdn-icons-png.freepik.com/512/11580/11580843.png?ga=GA1.1.1847964296.1712438701",
-			"fileSize": "2.4 Mo"
+			"fileType": "Video",
+			"fileTypeIcon": "https://cdn-icons-png.freepik.com/512/11580/11580843.png?ga=GA1.1.1847964296.1712438701",
+			"fileSize": "2.4 Mo",
+			"createdAt": "2024-10-11T20:24:47.802+00:00",
+			"uploadedBy": {
+				"userId": "00012",
+				"username": "Brad Anderson",
+				"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU"
+			}
 		},
 		{
 			"fileName": "Rush 12",
-			"fileType": "https://cdn-icons-png.freepik.com/512/11580/11580843.png?ga=GA1.1.1847964296.1712438701",
-			"fileSize": "2.4 Mo"
+			"fileType": "Video",
+			"fileTypeIcon": "https://cdn-icons-png.freepik.com/512/11580/11580843.png?ga=GA1.1.1847964296.1712438701",
+			"fileSize": "2.4 Mo",
+			"createdAt": "2023-09-11T20:24:47.802+00:00",
+			"uploadedBy": {
+				"userId": "00012",
+				"username": "Brad Anderson",
+				"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU"
+			}
 		},
 		{
 			"fileName": "Movie sounds",
-			"fileType": "https://cdn-icons-png.freepik.com/512/11580/11580879.png?ga=GA1.1.1847964296.1712438701",
-			"fileSize": "2.4 Mo"
+			"fileType": "Audio",
+			"fileTypeIcon": "https://cdn-icons-png.freepik.com/512/11580/11580879.png?ga=GA1.1.1847964296.1712438701",
+			"fileSize": "2.4 Mo",
+			"createdAt": "2023-09-11T20:24:47.802+00:00",
+			"uploadedBy": {
+				"userId": "00012",
+				"username": "Brad Anderson",
+				"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU"
+			}
 		}
 	],
 	"location": "San Fransokyo, USA",

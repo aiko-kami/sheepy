@@ -26,7 +26,7 @@ const FormAttachments = ({ project }) => {
 					</div>
 					<div className="col-span-4 lg:px-2 lg:pl-10">
 						{/* Project Attachments information */}
-						<Attachments setFormState={setFormState} attachments={project.attachments} />
+						<Attachments setFormState={setFormState} project={project} />
 					</div>
 				</div>
 			</form>

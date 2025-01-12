@@ -136,7 +136,7 @@ Don't let your ideas and talents go to waste – join Sheepy now!
   - [x] Rights
   - [x] Steps
   - [x] Q&As
-  - [] Details and stats
+  - [x] Details and stats
 
 - [] Project description private page
 - [] View my profile page
@@ -264,14 +264,14 @@ Don't let your ideas and talents go to waste – join Sheepy now!
   - [x] Published
   - [x] Actions: Add, remove, update, reorder
 
-- [] Details and stats:
+- [x] Details and stats:
 
   - [x] Created by
   - [x] Created at
   - [x] Owner(s)
   - [x] Updated at and by
-  - [] Crush
   - [x] Likes
+  - [x] Selection (Crush, New, Urgent, Sustainable, Trending)
 
 ---
 

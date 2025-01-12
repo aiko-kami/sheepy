@@ -4,7 +4,7 @@ import { Button } from "@/components/Buttons/Buttons";
 
 import AttachmentsTable from "@/components/Tables/ProjectEdit/AttachmentsTable";
 
-const AttachmentsDetails = ({ setFormState, attachments }) => {
+const AttachmentsDetails = ({ setFormState, project }) => {
 	const fileTypesAllowed = {
 		"image/png": ".png",
 		"image/jpeg": ".jpg",
@@ -49,9 +49,9 @@ const AttachmentsDetails = ({ setFormState, attachments }) => {
 					<div className="md:px-4">
 						{/* Project attachments */}
 						<div className="mb-8 flex justify-center">
-							{attachments && (
+							{project.attachments && (
 								<div className="w-full overflow-x-auto shadow-md sm:rounded-lg">
-									<AttachmentsTable attachments={attachments} />
+									<AttachmentsTable attachments={project.attachments} projectId={project.projectId} permissions={project.permissions} />
 								</div>
 							)}
 						</div>
