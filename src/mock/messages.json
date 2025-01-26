@@ -1,0 +1,50 @@
+{
+	"userId": "12345",
+	"username": "Captain_Picard",
+	"profilePicture": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Jean-Luc_Picard_2.jpg",
+	"contacts": [
+		{
+			"id": 1,
+			"name": "Josh",
+			"message": "Hey there!",
+			"avatar": "https://images.pexels.com/photos/936119/pexels-photo-936119.jpeg",
+			"isOnline": true
+		},
+		{
+			"id": 2,
+			"name": "Jane Smith",
+			"message": "How are you?",
+			"avatar": "https://images.pexels.com/photos/2051956/pexels-photo-2051956.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+			"isOnline": false
+		},
+		{
+			"id": 3,
+			"name": "Diana",
+			"message": "Bye, Good night",
+			"avatar": "https://images.pexels.com/photos/2690323/pexels-photo-2690323.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+			"isOnline": false
+		},
+		{
+			"id": 4,
+			"name": "Natasha Engineer",
+			"message": "Let's catch up ",
+			"avatar": "https://images.unsplash.com/photo-1519648023493-d82b5f8d7b8a?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHVzZXIlMjBwcm9maWxlfGVufDB8fDB8fHww",
+			"isOnline": false
+		},
+		{
+			"id": 5,
+			"name": "Ryan",
+			"message": "Completed.",
+			"avatar": "https://images.pexels.com/photos/1097456/pexels-photo-1097456.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+			"isOnline": true
+		}
+	],
+	"conversation": [
+		{ "id": 1, "message": "Hello!", "timestamp": "10:00 AM", "type": "received" },
+		{ "id": 2, "message": "Hi, how are you?", "timestamp": "10:02 AM", "type": "sent" },
+		{ "id": 3, "message": "I'm fine. What about you?", "timestamp": "10:03 AM", "type": "received" },
+		{ "id": 4, "message": "I'm also fine", "timestamp": "10:04 AM", "type": "sent" },
+		{ "id": 5, "message": "I'm getting error in my code", "timestamp": "10:05 AM", "type": "received" },
+		{ "id": 6, "message": "Send me the code, I will look it into it", "timestamp": "10:02 AM", "type": "sent" }
+	]
+}
