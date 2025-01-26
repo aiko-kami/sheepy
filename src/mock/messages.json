@@ -67,6 +67,126 @@
 					"type": "received",
 					"message": "Doing well! Just busy with work.",
 					"timestamp": "10:34 AM"
+				},
+				{
+					"id": "m4",
+					"type": "sent",
+					"message": "I totally get that. Work has been crazy for me too.",
+					"timestamp": "10:35 AM"
+				},
+				{
+					"id": "m5",
+					"type": "received",
+					"message": "Yeah, deadlines are killing me.",
+					"timestamp": "10:36 AM"
+				},
+				{
+					"id": "m6",
+					"type": "sent",
+					"message": "Same here. Have you had any time to relax?",
+					"timestamp": "10:38 AM"
+				},
+				{
+					"id": "m7",
+					"type": "received",
+					"message": "A little bit. I watched a movie last night.",
+					"timestamp": "10:40 AM"
+				},
+				{
+					"id": "m8",
+					"type": "sent",
+					"message": "Oh nice! What movie?",
+					"timestamp": "10:42 AM"
+				},
+				{
+					"id": "m9",
+					"type": "received",
+					"message": "Inception. A classic!",
+					"timestamp": "10:45 AM"
+				},
+				{
+					"id": "m10",
+					"type": "sent",
+					"message": "Oh wow! I love that movie. The ending is mind-blowing!",
+					"timestamp": "10:47 AM"
+				},
+				{
+					"id": "m11",
+					"type": "received",
+					"message": "Totally! I keep wondering if the top was going to fall or not.",
+					"timestamp": "10:48 AM"
+				},
+				{
+					"id": "m12",
+					"type": "sent",
+					"message": "Haha, exactly! I guess we'll never know.",
+					"timestamp": "10:49 AM"
+				},
+				{
+					"id": "m13",
+					"type": "received",
+					"message": "Yeah, Nolan really knows how to mess with our minds.",
+					"timestamp": "10:50 AM"
+				},
+				{
+					"id": "m14",
+					"type": "sent",
+					"message": "For sure. By the way, do you have time to catch up this weekend?",
+					"timestamp": "10:52 AM"
+				},
+				{
+					"id": "m15",
+					"type": "received",
+					"message": "Yeah, I think Saturday afternoon works for me.",
+					"timestamp": "10:54 AM"
+				},
+				{
+					"id": "m16",
+					"type": "sent",
+					"message": "Perfect! Let's grab some coffee.",
+					"timestamp": "10:55 AM"
+				},
+				{
+					"id": "m17",
+					"type": "received",
+					"message": "Sounds great! Looking forward to it.",
+					"timestamp": "10:56 AM"
+				},
+				{
+					"id": "m18",
+					"type": "sent",
+					"message": "Same here! Let’s meet at the usual spot?",
+					"timestamp": "10:58 AM"
+				},
+				{
+					"id": "m19",
+					"type": "received",
+					"message": "Yep! See you there.",
+					"timestamp": "11:00 AM"
+				},
+				{
+					"id": "m20",
+					"type": "sent",
+					"message": "Awesome! Take care till then.",
+					"timestamp": "11:02 AM"
+				},
+				{
+					"id": "m21",
+					"type": "received",
+					"message": "You too! See you soon.",
+					"timestamp": "11:05 AM"
+				},
+				{
+					"id": "m22",
+					"type": "sent",
+					"message": "Alright, back to work now. Catch you later!",
+					"timestamp": "11:06 AM"
+				},
+				{
+					"id": "m23",
+					"type": "received",
+					"message": "Yep, same here. Later!",
+					"timestamp": "11:07 AM"
 				}
 			]
 		},

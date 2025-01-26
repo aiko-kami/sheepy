@@ -21,7 +21,7 @@ const MyMessages = ({ user, messages }) => {
 
 	return (
 		<>
-			<div className="flex border border-gray-700 mx-auto mt-20 rounded-lg">
+			<div className="flex border border-gray-700 mx-auto rounded-lg h-[calc(100vh-74px)]">
 				<Contacts contacts={messages.contacts} onSelectContact={handleSelectContact} />
 				<Chat conversation={selectedConversation} />
 			</div>

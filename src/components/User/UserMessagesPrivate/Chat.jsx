@@ -26,7 +26,9 @@ const Chat = ({ conversation }) => {
 				<div className="p-4 flex">
 					<input className="flex-1 p-2 pb-3 rounded-lg bg-gray-700 focus:outline-none focus:ring-0" type="text" placeholder="Type a message..." />
 					<button className="ml-2 bg-blue-600 px-3 rounded-lg text-white">
-						<FiSend className="text-xl" />
+						<div className="flex">
+							Send <FiSend className="ml-2 mt-1 text-xl" />
+						</div>
 					</button>
 				</div>
 			</div>
