@@ -1,10 +1,20 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { FiSend } from "react-icons/fi";
-import { BsThreeDotsVertical } from "react-icons/bs";
 
 const Chat = ({ conversation }) => {
+	const chatContainerRef = useRef(null); // Reference for chat messages container
+
+	// Auto-scroll when conversation changes
+	useEffect(() => {
+		if (chatContainerRef.current) {
+			chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
+		}
+	}, [conversation?.userId]); // Dependency: Trigger when conversation.userId changes
+
 	if (!conversation) return <div className="flex-1 p-4">Select a contact to start chatting</div>;
+
 	return (
 		<>
 			<div className="flex-1 flex flex-col">
@@ -12,7 +22,8 @@ const Chat = ({ conversation }) => {
 					<img className="h-10 w-10 rounded-full object-cover" src={conversation.avatar} alt="Profile picture" />
 					<span className="ml-4">Chat with {conversation.name}</span>
 				</div>
-				<div className="flex-1 p-4 overflow-auto">
+				{/* Chat Messages Container */}
+				<div ref={chatContainerRef} className="flex-1 p-4 overflow-auto">
 					{conversation.messages.map((chat) => (
 						<div key={chat.id} className={`flex items-end ${chat.type === "sent" ? "justify-end" : "justify-start"}`}>
 							{chat.type === "received" && <img className="h-6 w-6 rounded-full object-cover mr-2 mb-2" src={conversation.avatar} alt="Profile picture" />}

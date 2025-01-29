@@ -206,6 +206,42 @@
 					"type": "received",
 					"message": "Yes! See you at 2 PM 💛",
 					"timestamp": "9:05 AM"
+				},
+				{
+					"id": "m6",
+					"type": "sent",
+					"message": "Great! Let me know if anything changes.",
+					"timestamp": "9:10 AM"
+				},
+				{
+					"id": "m7",
+					"type": "received",
+					"message": "Will do! By the way, did you check the report?",
+					"timestamp": "9:15 AM"
+				},
+				{
+					"id": "m8",
+					"type": "sent",
+					"message": "Yes, I reviewed it. Looks solid!",
+					"timestamp": "9:18 AM"
+				},
+				{
+					"id": "m9",
+					"type": "received",
+					"message": "Awesome. Thanks for the feedback!",
+					"timestamp": "9:20 AM"
+				},
+				{
+					"id": "m10",
+					"type": "sent",
+					"message": "No problem! Looking forward to our meeting.",
+					"timestamp": "9:25 AM"
+				},
+				{
+					"id": "m11",
+					"type": "received",
+					"message": "Same here! See you later. 😊",
+					"timestamp": "9:30 AM"
 				}
 			]
 		},
