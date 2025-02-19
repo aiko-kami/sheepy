@@ -10,7 +10,7 @@ import Notification from "@/components/Badges/Notification";
 const Login = ({ isHomePage = false }) => {
 	const [theme, setTheme] = useState(user.settings.appearance || "light");
 
-	const session = true;
+	const session = false;
 	const [dropdownOpen, setDropdownOpen] = useState(false);
 	let ref = useRef();
 

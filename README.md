@@ -105,6 +105,7 @@ Don't let your ideas and talents go to waste – join Sheepy now!
   - [x] Notifications
 
 - [] Project edition page (dashboards with different projects?)
+- [] In project edition Steps - Change Status input by Select input (Not started/On-going/Completed)
 
   - [] General
     - [x] Display cover
