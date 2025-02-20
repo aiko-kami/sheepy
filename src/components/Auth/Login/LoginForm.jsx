@@ -34,6 +34,7 @@ const LoginForm = ({ setModalDisplay }) => {
 		try {
 			const response = await fetch("https://panda-server-37m0.onrender.com/auth/login", {
 				method: "POST",
+				credentials: "include",
 				headers: {
 					"Content-Type": "application/json",
 				},
