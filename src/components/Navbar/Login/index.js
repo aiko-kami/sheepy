@@ -7,10 +7,10 @@ import Dropdown from "./Dropdown";
 import user from "@/mock/user.json";
 import Notification from "@/components/Badges/Notification";
 
-const Login = ({ isHomePage = false }) => {
+const Login = ({ isHomePage = false, isSession }) => {
 	const [theme, setTheme] = useState(user.settings.appearance || "light");
 
-	const session = false;
+	const session = isSession;
 	const [dropdownOpen, setDropdownOpen] = useState(false);
 	let ref = useRef();
 
