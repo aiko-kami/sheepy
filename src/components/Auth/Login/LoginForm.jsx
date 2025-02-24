@@ -28,6 +28,17 @@ const LoginForm = ({ setModalDisplay }) => {
 	// Handle form submission
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+
+		// Validate inputs before calling the server
+		if (!login.trim()) {
+			setLoginError("Email or username is required.");
+			return;
+		}
+		if (!password.trim()) {
+			setLoginError("Password is required.");
+			return;
+		}
+
 		setLoading(true);
 		setLoginError("");
 
