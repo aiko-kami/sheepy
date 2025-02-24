@@ -4,6 +4,22 @@ import Notification from "@/components/Badges/Notification";
 const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown }) => {
 	const { myProfileNotif, myProjectsNotif, myMessagesNotif, mySettingsNotif, helpNotif } = notifications;
 
+	const handleLogout = async () => {
+		try {
+			const response = await fetch("https://panda-server-37m0.onrender.com/auth/logout", {
+				method: "POST",
+				credentials: "include",
+			});
+
+			if (!response.ok) {
+				throw new Error("Logout failed");
+			}
+			window.location.href = "/";
+		} catch (error) {
+			console.error("Logout error:", error);
+		}
+	};
+
 	return (
 		<div className={`z-10 absolute top-16 right-2 bg-white rounded-lg shadow w-36 tn:w-44 divide-y text-sm text-center divide-gray-300 ${dropdownOpen ? "inline-block" : "hidden"}`}>
 			<div className="py-1 text-gray-900">
@@ -62,9 +78,9 @@ const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown
 				</li>
 			</ul>
 			<div className="py-1">
-				<Link href="/logout" onClick={closeDropdown} className="block py-2 text-gray-700 hover:bg-gray-200 duration-200 active:text-base-450">
+				<button onClick={handleLogout} className="block w-full py-2 text-gray-700 hover:bg-gray-200 duration-200 active:text-base-450">
 					Sign out
-				</Link>
+				</button>
 			</div>
 		</div>
 	);
