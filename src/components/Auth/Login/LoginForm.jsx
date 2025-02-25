@@ -44,6 +44,7 @@ const LoginForm = ({ setModalDisplay }) => {
 
 		try {
 			const response = await fetch("https://panda-server-37m0.onrender.com/auth/login", {
+				//const response = await fetch("http://localhost:8080/auth/login", {
 				method: "POST",
 				credentials: "include",
 				headers: {
@@ -60,6 +61,7 @@ const LoginForm = ({ setModalDisplay }) => {
 			if (!response.ok) {
 				throw new Error(data.message || "Login failed");
 			}
+
 			router.push("/");
 		} catch (error) {
 			setLoginError(error.message);
