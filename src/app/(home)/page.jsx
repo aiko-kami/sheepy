@@ -11,7 +11,12 @@ export const metadata = {
 	description: "Home page",
 };
 
-const HomePage = () => {
+const HomePage = async () => {
+	const res = await fetch("https://server.sheepy.neutroneer.com/projectsExtended/crushProjects", {
+		cache: "no-store",
+	});
+	const data = await res.json();
+
 	return (
 		<div className="relative">
 			<div className="mb-12">
