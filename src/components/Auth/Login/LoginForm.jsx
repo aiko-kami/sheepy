@@ -43,7 +43,7 @@ const LoginForm = ({ setModalDisplay }) => {
 		setLoginError("");
 
 		try {
-			const response = await fetch("https://server.sheepy.neutroneer.com/auth/login", {
+			const response = await fetch("https://panda-server-37m0.onrender.com/auth/login", {
 				method: "POST",
 				credentials: "include",
 				headers: {
