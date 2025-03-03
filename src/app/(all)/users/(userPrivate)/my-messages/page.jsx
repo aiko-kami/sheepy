@@ -9,10 +9,12 @@ export const metadata = {
 };
 
 const MyMessagesPage = async () => {
-	const res = await fetch("https://panda-server-37m0.onrender.com/projectsExtended/crushProjects", {
+	const response = await fetch("https://server.neutroneer.com/projectsExtended/crushProjects", {
+		//const response = await fetch("http://localhost:8080/projectsExtended/crushProjects", {
 		cache: "no-store",
+		credentials: "include",
 	});
-	const data = await res.json();
+	const data = await response.json();
 
 	return (
 		<>

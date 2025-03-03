@@ -6,7 +6,7 @@ const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown
 
 	const handleLogout = async () => {
 		try {
-			const response = await fetch("https://panda-server-37m0.onrender.com/auth/logout", {
+			const response = await fetch("https://server.neutroneer.com/auth/logout", {
 				//const response = await fetch("http://localhost:8080/auth/logout", {
 				method: "POST",
 				credentials: "include",
