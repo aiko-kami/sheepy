@@ -46,7 +46,7 @@ const LoginForm = ({ setModalDisplay }) => {
 			const response = await fetch("https://server.neutroneer.com/auth/login", {
 				//const response = await fetch("http://localhost:8080/auth/login", {
 				method: "POST",
-				credentials: "same-origin",
+				credentials: "include",
 				headers: {
 					"Content-Type": "application/json",
 				},
