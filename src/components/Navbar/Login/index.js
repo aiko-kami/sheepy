@@ -3,18 +3,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
+import { useAuth } from "@/contexts/AuthContext";
 import Dropdown from "./Dropdown";
-import user from "@/mock/user.json";
 import Notification from "@/components/Badges/Notification";
 
-const Login = ({ isHomePage = false, isSession }) => {
-	const [theme, setTheme] = useState(user.settings.appearance || "light");
-
-	const session = isSession;
+const Login = ({ isHomePage = false }) => {
+	const { user } = useAuth();
 	const [dropdownOpen, setDropdownOpen] = useState(false);
+	const [theme, setTheme] = useState("night");
 	let ref = useRef();
 
 	useEffect(() => {
+		// Close dropdown on outside click
 		const handler = (event) => {
 			if (dropdownOpen && ref.current && !ref.current.contains(event.target)) {
 				setDropdownOpen(false);
@@ -38,52 +38,38 @@ const Login = ({ isHomePage = false, isSession }) => {
 	};
 
 	return (
-		<>
-			<div className="flex h-full m-auto" ref={ref}>
-				{!session && (
-					<>
-						<Link href="/sign-up" className="inline-flex items-center duration-200 active:text-base-450 px-2 py-1.5 tn:m-2">
-							Register
-						</Link>
-						<Link href="/login" className="inline-flex items-center duration-200 active:text-base-450 px-2 py-1.5 tn:m-2">
-							Login
-						</Link>
-					</>
-				)}
+		<div className="flex h-full m-auto" ref={ref}>
+			{!user ? (
+				<>
+					<Link href="/sign-up" className="inline-flex items-center px-2 py-1.5 duration-200 tn:m-2">
+						Register
+					</Link>
+					<Link href="/login" className="inline-flex items-center px-2 py-1.5 duration-200 tn:m-2">
+						Login
+					</Link>
+				</>
+			) : (
+				<div className="inline-flex items-center sm:px-2">
+					<button
+						className="flex text-sm bg-base-100 relative rounded-full w-12 md:me-0 hover:ring-4 hover:ring-slate-700 duration-200"
+						type="button"
+						aria-expanded={dropdownOpen ? "true" : "false"}
+						onClick={() => setDropdownOpen(!dropdownOpen)}
+					>
+						<span className="sr-only">Open user menu</span>
+						<Image className="rounded-full object-cover w-12 h-12" src={user.profilePicture.link || "/default-avatar.png"} alt="User picture" width={48} height={48} />
 
-				{session && (
-					<>
-						{/* <!-- Dropdown Avatar button --> */}
-						<div className="inline-flex items-center sm:px-2">
-							<button
-								className="flex text-sm bg-base-100 relative rounded-full w-12 md:me-0 hover:ring-4 hover:ring-slate-700 duration-200 active:ring-base-450"
-								type="button"
-								aria-expanded={dropdownOpen ? "true" : "false"}
-								onClick={() => setDropdownOpen(!dropdownOpen)}
-							>
-								<span className="sr-only">Open user menu</span>
+						{user.notifications?.globalNotif > 0 && (
+							<div className="absolute -bottom-2 right-10 z-10">
+								<Notification value={user.notifications.globalNotif} size={"xs"} notifColor={"pink"} ringMode={isHomePage ? "home" : "std"} />
+							</div>
+						)}
+					</button>
 
-								<Image className="rounded-full object-cover w-12 h-12" src={user.profilePicture} alt="user picture" height={0} width={0} sizes="100vw" />
-								{user.notifications.globalNotif > 0 && (
-									<>
-										<div className="absolute -bottom-2 right-10 z-10">
-											{isHomePage ? (
-												<Notification value={user.notifications.globalNotif} size={"xs"} notifColor={"pink"} ringMode={"home"} />
-											) : (
-												<Notification value={user.notifications.globalNotif} size={"xs"} notifColor={"pink"} ringMode={"std"} />
-											)}
-										</div>
-									</>
-								)}
-							</button>
-
-							{/* <!-- Dropdown menu --> */}
-							<Dropdown username={user.username} userId={user.userId} notifications={user.notifications} dropdownOpen={dropdownOpen} closeDropdown={closeDropdown} />
-						</div>
-					</>
-				)}
-			</div>
-		</>
+					<Dropdown username={user.username} userId={user.userId} notifications={user.notifications || 2} dropdownOpen={dropdownOpen} closeDropdown={closeDropdown} />
+				</div>
+			)}
+		</div>
 	);
 };
 export default Login;

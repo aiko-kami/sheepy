@@ -1,13 +1,8 @@
 import Sandwich from "@/components/Navbar/Sandwich";
 import Menu from "@/components/Navbar/Menu";
 import Login from "@/components/Navbar/Login";
-import { cookies } from "next/headers";
 
-const Header = ({ isHomePage = false, displaySearchButton }) => {
-	const token = cookies().get("access_token");
-
-	console.log("🚀 ~ Header ~ token:", token);
-
+const Navbar = ({ isHomePage = false, displaySearchButton }) => {
 	return (
 		<header className={`sticky p-2 z-50 flex justify-between ${isHomePage && "bg-custom-gradiant-dark"}`}>
 			<div>
@@ -17,10 +12,10 @@ const Header = ({ isHomePage = false, displaySearchButton }) => {
 				<Menu displaySearchButton={displaySearchButton} />
 			</div>
 			<div>
-				<Login isHomePage={isHomePage} isSession={token} />
+				<Login isHomePage={isHomePage} />
 			</div>
 		</header>
 	);
 };
 
-export default Header;
+export default Navbar;
