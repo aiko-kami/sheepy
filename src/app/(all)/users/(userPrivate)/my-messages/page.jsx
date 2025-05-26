@@ -9,8 +9,7 @@ export const metadata = {
 };
 
 const MyMessagesPage = async () => {
-	const response = await fetch("https://server.neutroneer.com/projectsExtended/crushProjects", {
-		//const response = await fetch("http://localhost:8080/projectsExtended/crushProjects", {
+	const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/projectsExtended/crushProjects`, {
 		cache: "no-store",
 		credentials: "include",
 	});

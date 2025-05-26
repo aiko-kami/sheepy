@@ -6,8 +6,7 @@ const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown
 
 	const handleLogout = async () => {
 		try {
-			const response = await fetch("https://server.neutroneer.com/auth/logout", {
-				//const response = await fetch("http://localhost:8080/auth/logout", {
+			const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/logout`, {
 				method: "POST",
 				credentials: "include",
 			});
