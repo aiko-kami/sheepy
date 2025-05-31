@@ -50,6 +50,29 @@ export async function getUserFromSession() {
 	}
 }
 
+export async function forgotPassword(email) {
+	try {
+		const res = await fetch(`${BASE_URL}/auth/forgotPassword`, {
+			method: "POST",
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ email }),
+		});
+
+		const result = await res.json();
+
+		if (!res.ok) {
+			throw new Error(result.message || "Forgot password failed");
+		}
+
+		return result.data;
+	} catch (error) {
+		throw error;
+	}
+}
+
 export async function resetPassword({ resetToken, newPassword, confirmPassword }) {
 	try {
 		const res = await fetch(`${BASE_URL}/auth/forgotPassword/reset/${resetToken}`, {
