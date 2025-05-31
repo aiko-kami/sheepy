@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
+import { forgotPassword } from "@/lib/api/auth";
 import { Button } from "@/components/Buttons/Buttons";
 import InputField from "@/components/Forms/InputField";
 
@@ -12,7 +12,7 @@ const ForgotPasswordModal = ({ closeModal }) => {
 	const [formError, setFormError] = useState("");
 	const [isSubmitted, setIsSubmitted] = useState(false);
 
-	const onChange = (e) => {
+	const handleChange = (e) => {
 		setFormError("");
 
 		setFormData((prevState) => ({
@@ -21,8 +21,9 @@ const ForgotPasswordModal = ({ closeModal }) => {
 		}));
 	};
 
-	const onSubmit = (event) => {
-		event.preventDefault();
+	// Handle form submission
+	const handleSubmit = async (e) => {
+		e.preventDefault();
 
 		// Simple email validation regex
 		const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -35,9 +36,13 @@ const ForgotPasswordModal = ({ closeModal }) => {
 			return;
 		}
 
-		// If validation passes
-		setIsSubmitted(true);
-		console.log("🚀 ~ onSubmit ~ form data:", formData);
+		try {
+			await forgotPassword(formData.email);
+			setIsSubmitted(true);
+		} catch (error) {
+			console.error("Forgot password error:", error.message);
+			setFormError(error.message || "Something went wrong");
+		}
 	};
 
 	return (
@@ -45,10 +50,10 @@ const ForgotPasswordModal = ({ closeModal }) => {
 			{!isSubmitted ? (
 				/* Forgot password form */
 				<div>
-					<form onSubmit={onSubmit}>
+					<form onSubmit={handleSubmit}>
 						{/* Email */}
 						<div className="mb-1">
-							<InputField inputName="email" inputType="text" label="Your email" inputValue={formData.email} onChange={onChange} />
+							<InputField inputName="email" inputType="text" label="Your email" inputValue={formData.email} onChange={handleChange} />
 						</div>
 						<div className="min-h-7 mb-6">{formError && <p className="text-sm text-red-600">{formError}</p>}</div>
 						{/* Buttons */}
@@ -76,7 +81,8 @@ const ForgotPasswordModal = ({ closeModal }) => {
 				/* Success message */
 				<div className="text-center">
 					<p className="text-green-500 font-semibold text-xl mb-1">Success</p>
-					<p className="mb-6">Check your inbox! We've sent you a link to reset your password.</p>
+					<p>Check your inbox! We've sent you a link to reset your password.</p>
+					<p className="mb-6">If you don't see it, be sure to check your spam or junk folder.</p>
 					<Button
 						btnProps={{
 							type: "button",

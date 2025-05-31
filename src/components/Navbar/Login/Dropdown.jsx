@@ -1,19 +1,17 @@
 import Link from "next/link";
+
+import { useAuth } from "@/contexts/AuthContext";
+import { logout } from "@/lib/api/auth";
 import Notification from "@/components/Badges/Notification";
 
 const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown }) => {
+	const { logoutUser } = useAuth();
 	const { myProfileNotif, myProjectsNotif, myMessagesNotif, mySettingsNotif, helpNotif } = notifications;
 
 	const handleLogout = async () => {
 		try {
-			const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/logout`, {
-				method: "POST",
-				credentials: "include",
-			});
-
-			if (!response.ok) {
-				throw new Error("Logout failed");
-			}
+			const user = await logout();
+			logoutUser();
 			window.location.href = "/";
 		} catch (error) {
 			console.error("Logout error:", error);

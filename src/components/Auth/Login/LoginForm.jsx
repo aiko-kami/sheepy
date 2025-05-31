@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
+import { login } from "@/lib/api/auth";
 import InputField from "@/components/Forms/InputField";
 import Triforce from "@/components/Loaders/Triforce";
 
@@ -11,10 +12,10 @@ const LoginForm = ({ setModalDisplay }) => {
 	const { loginUser } = useAuth();
 
 	const [formData, setFormData] = useState({
-		login: "",
+		identifier: "",
 		password: "",
 	});
-	const { login, password } = formData;
+	const { identifier, password } = formData;
 
 	const [loginError, setLoginError] = useState("");
 	const [loading, setLoading] = useState(false);
@@ -32,7 +33,7 @@ const LoginForm = ({ setModalDisplay }) => {
 		e.preventDefault();
 
 		// Validate inputs before calling the server
-		if (!login.trim()) {
+		if (!identifier.trim()) {
 			setLoginError("Email or username is required.");
 			return;
 		}
@@ -45,26 +46,9 @@ const LoginForm = ({ setModalDisplay }) => {
 		setLoginError("");
 
 		try {
-			const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
-				method: "POST",
-				credentials: "include",
-				headers: {
-					"Content-Type": "application/json",
-				},
-				body: JSON.stringify({ identifier: login, password }),
-			});
-
-			const result = await response.json();
-
-			if (!response.ok) {
-				throw new Error(result.message || "Login failed");
-			}
-
-			const { user } = result.data;
-
-			loginUser(user);
-
+			const user = await login({ identifier, password });
 			router.push("/");
+			loginUser(user);
 		} catch (error) {
 			setLoginError(error.message);
 		} finally {
@@ -89,7 +73,7 @@ const LoginForm = ({ setModalDisplay }) => {
 			<form onSubmit={handleSubmit} className={loading ? "opacity-50 pointer-events-none" : ""}>
 				{/* Email input */}
 				<div className="mb-6">
-					<InputField inputName="login" inputType="text" label="Email address or Username" inputValue={login} onChange={onChange} />
+					<InputField inputName="identifier" inputType="text" label="Email address or Username" inputValue={identifier} onChange={onChange} />
 				</div>
 				<div className="mb-3">
 					<InputField inputName="password" inputType="password" label="Password" inputValue={password} onChange={onChange} />

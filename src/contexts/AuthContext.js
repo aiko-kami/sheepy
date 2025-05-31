@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { getUserFromSession } from "@/utils/getUserFromSession";
+import { getUserFromSession } from "@/lib/api/auth";
 
 const AuthContext = createContext();
 
