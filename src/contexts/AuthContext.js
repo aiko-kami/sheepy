@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { getUserFromSession } from "@/lib/api/auth";
+import { ApiGetUserFromSession } from "@/lib/api/auth";
 
 const AuthContext = createContext();
 
@@ -15,7 +15,7 @@ export const AuthProvider = ({ children }) => {
 	useEffect(() => {
 		const fetchUser = async () => {
 			try {
-				const userData = await getUserFromSession();
+				const userData = await ApiGetUserFromSession();
 				if (userData) {
 					setUser(userData);
 				}

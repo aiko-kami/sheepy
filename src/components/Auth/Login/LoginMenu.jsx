@@ -23,7 +23,7 @@ const LoginMenu = () => {
 				<LoginTitle />
 				<div className="md:w-3/5 w-full max-w-md px-10">
 					<LoginForm setModalDisplay={setModalDisplay} />
-					<OtherLoginMethods />
+					{/* <OtherLoginMethods /> */}
 					<SignUpLink />
 				</div>
 			</div>

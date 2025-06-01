@@ -1,6 +1,6 @@
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
-export async function login({ identifier, password }) {
+export async function ApiLogin({ identifier, password }) {
 	try {
 		const res = await fetch(`${BASE_URL}/auth/login`, {
 			method: "POST",
@@ -23,7 +23,52 @@ export async function login({ identifier, password }) {
 	}
 }
 
-export async function logout() {
+export async function ApiSignUp({ username, email, password, confirmPassword }) {
+	try {
+		const res = await fetch(`${BASE_URL}/auth/sign-up`, {
+			method: "POST",
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ username, email, password, confirmPassword }),
+		});
+
+		const result = await res.json();
+
+		if (!res.ok) {
+			throw new Error(result.message || "Sign-up failed");
+		}
+
+		return result;
+	} catch (error) {
+		throw error;
+	}
+}
+
+export async function ApiValidateEmail(emailValidationId) {
+	try {
+		const res = await fetch(`${BASE_URL}/auth/sign-up/${emailValidationId}`, {
+			method: "GET",
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
+
+		const result = await res.json();
+
+		if (!res.ok) {
+			throw new Error(result.message || "Email validation failed");
+		}
+
+		return result;
+	} catch (error) {
+		throw error;
+	}
+}
+
+export async function ApiLogout() {
 	try {
 		const res = await fetch(`${BASE_URL}/auth/logout`, {
 			method: "POST",
@@ -37,7 +82,7 @@ export async function logout() {
 	}
 }
 
-export async function getUserFromSession() {
+export async function ApiGetUserFromSession() {
 	try {
 		const res = await fetch(`${BASE_URL}/users/myData`, {
 			credentials: "include",
@@ -50,7 +95,7 @@ export async function getUserFromSession() {
 	}
 }
 
-export async function forgotPassword(email) {
+export async function ApiForgotPassword(email) {
 	try {
 		const res = await fetch(`${BASE_URL}/auth/forgotPassword`, {
 			method: "POST",
@@ -73,7 +118,7 @@ export async function forgotPassword(email) {
 	}
 }
 
-export async function resetPassword({ resetToken, newPassword, confirmPassword }) {
+export async function ApiResetPassword({ resetToken, newPassword, confirmPassword }) {
 	try {
 		const res = await fetch(`${BASE_URL}/auth/forgotPassword/reset/${resetToken}`, {
 			method: "POST",

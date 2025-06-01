@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
-import { login } from "@/lib/api/auth";
+import { ApiLogin } from "@/lib/api/auth";
 import InputField from "@/components/Forms/InputField";
 import Triforce from "@/components/Loaders/Triforce";
 
@@ -46,11 +46,11 @@ const LoginForm = ({ setModalDisplay }) => {
 		setLoginError("");
 
 		try {
-			const user = await login({ identifier, password });
+			const user = await ApiLogin({ identifier, password });
 			router.push("/");
 			loginUser(user);
 		} catch (error) {
-			setLoginError(error.message);
+			setLoginError(error.message || "Something went wrong");
 		} finally {
 			setLoading(false);
 		}

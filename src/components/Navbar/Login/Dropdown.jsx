@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { useAuth } from "@/contexts/AuthContext";
-import { logout } from "@/lib/api/auth";
+import { ApiLogout } from "@/lib/api/auth";
 import Notification from "@/components/Badges/Notification";
 
 const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown }) => {
@@ -10,7 +10,7 @@ const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown
 
 	const handleLogout = async () => {
 		try {
-			const user = await logout();
+			const user = await ApiLogout();
 			logoutUser();
 			window.location.href = "/";
 		} catch (error) {

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { resetPassword } from "@/lib/api/auth";
+import { ApiResetPassword } from "@/lib/api/auth";
 import { Button } from "@/components/Buttons/Buttons";
 import InputField from "@/components/Forms/InputField";
 import Triforce from "@/components/Loaders/Triforce";
@@ -35,12 +35,12 @@ const ForgotPasswordMenu = ({ resetToken }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		if (!formData.newPassword || !formData.confirmPassword) {
+		if (!newPassword.trim() || !confirmPassword.trim()) {
 			setFormError("Both fields are required.");
 			return;
 		}
 
-		if (formData.newPassword !== formData.confirmPassword) {
+		if (newPassword !== confirmPassword) {
 			setFormError("Passwords do not match.");
 			return;
 		}
@@ -50,10 +50,10 @@ const ForgotPasswordMenu = ({ resetToken }) => {
 		setFormSuccess("");
 
 		try {
-			await resetPassword({
+			await ApiResetPassword({
 				resetToken,
-				newPassword: formData.newPassword,
-				confirmPassword: formData.confirmPassword,
+				newPassword: newPassword,
+				confirmPassword: confirmPassword,
 			});
 
 			setFormSuccess("Password reset successfully! Redirecting to login...");

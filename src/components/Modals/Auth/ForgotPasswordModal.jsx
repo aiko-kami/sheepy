@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { forgotPassword } from "@/lib/api/auth";
+import { ApiForgotPassword } from "@/lib/api/auth";
 import { Button } from "@/components/Buttons/Buttons";
 import InputField from "@/components/Forms/InputField";
 
@@ -28,7 +28,7 @@ const ForgotPasswordModal = ({ closeModal }) => {
 		// Simple email validation regex
 		const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-		if (!formData.email) {
+		if (!formData.email.trim()) {
 			setFormError("Email is required");
 			return;
 		} else if (!emailPattern.test(formData.email)) {
@@ -37,7 +37,7 @@ const ForgotPasswordModal = ({ closeModal }) => {
 		}
 
 		try {
-			await forgotPassword(formData.email);
+			await ApiForgotPassword(formData.email);
 			setIsSubmitted(true);
 		} catch (error) {
 			console.error("Forgot password error:", error.message);
@@ -81,7 +81,7 @@ const ForgotPasswordModal = ({ closeModal }) => {
 				/* Success message */
 				<div className="text-center">
 					<p className="text-green-500 font-semibold text-xl mb-1">Success</p>
-					<p>Check your inbox! We've sent you a link to reset your password.</p>
+					<p className="mb-2">Check your inbox! We've sent you a link to reset your password.</p>
 					<p className="mb-6">If you don't see it, be sure to check your spam or junk folder.</p>
 					<Button
 						btnProps={{
