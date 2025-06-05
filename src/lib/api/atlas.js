@@ -1,29 +1,45 @@
-/**
- * Atlas routes
- */
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
-const atlasRoute = require("express").Router();
+export async function ApiAtlasPublic({ dataId }) {
+	try {
+		const res = await fetch(`${BASE_URL}/atlas/public/${dataId}`, {
+			method: "GET",
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
 
-// Atlas public
-atlasRoute.get("/public/:dataId", (req, res) => {
-	res.json({
-		message: `Atlas public ${req.params.dataId} page`,
-	});
-});
+		const result = await res.json();
 
-// Atlas internal
-atlasRoute.get("/private/:dataId", (req, res) => {
-	res.json({
-		message: `Atlas internal ${req.params.dataId} page`,
-	});
-});
+		if (!res.ok) {
+			throw new Error(result.message || "Data retrieval failed");
+		}
 
-// Test set cookies
-atlasRoute.get("/setCookies", (req, res) => {
-	res.cookie("coOokieName", "coOokieValue");
-	res.json({
-		message: `Atlas public ${req.params.dataId} page`,
-	});
-});
+		return result.data;
+	} catch (error) {
+		throw error;
+	}
+}
 
-module.exports = atlasRoute;
+export async function ApiAtlasPrivate({ dataId }) {
+	try {
+		const res = await fetch(`${BASE_URL}/atlas/private/${dataId}`, {
+			method: "GET",
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+		});
+
+		const result = await res.json();
+
+		if (!res.ok) {
+			throw new Error(result.message || "Data retrieval failed");
+		}
+
+		return result.data;
+	} catch (error) {
+		throw error;
+	}
+}

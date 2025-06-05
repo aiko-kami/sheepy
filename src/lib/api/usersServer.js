@@ -1,12 +1,30 @@
-/**
- * Users routes
- */
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+import { cookies } from "next/headers";
 
-const usersRoute = require("express").Router();
+export async function ApiGetUserFromSessionServer() {
+	const cookieStore = cookies();
+	const cookieHeader = cookieStore
+		.getAll()
+		.map(({ name, value }) => `${name}=${value}`)
+		.join("; ");
 
-const { userController, talentController } = require("../controllers");
-const { verifyAccess } = require("../middlewares/verifyAccess.middleware");
+	try {
+		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/myData`, {
+			headers: {
+				Cookie: cookieHeader,
+			},
+			cache: "no-store", // Ensure fresh data
+		});
+		if (!res.ok) throw new Error("Failed to fetch user");
+		const json = await res.json();
+		return json.data.user;
+	} catch (error) {
+		console.error("Error:", error.message);
+		return null;
+	}
+}
 
+/* 
 // Me
 usersRoute.get("/myData", verifyAccess, userController.retrieveMyUserData);
 usersRoute.patch("/updateMyData", verifyAccess, userController.updateUser);
@@ -28,5 +46,4 @@ usersRoute.get("/userOverview/:userId", userController.retrieveUserOverview);
 
 // User public info
 usersRoute.get("/userPublic/:userId", userController.retrieveUserPublicData);
-
-module.exports = usersRoute;
+ */

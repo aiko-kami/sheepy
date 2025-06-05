@@ -1,6 +1,4 @@
-/**
- * Join project invitation routes
- */
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const joinProjectRoute = require("express").Router();
 

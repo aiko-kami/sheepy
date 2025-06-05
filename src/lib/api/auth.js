@@ -82,19 +82,6 @@ export async function ApiLogout() {
 	}
 }
 
-export async function ApiGetUserFromSession() {
-	try {
-		const res = await fetch(`${BASE_URL}/users/myData`, {
-			credentials: "include",
-		});
-		if (!res.ok) return null;
-		const json = await res.json();
-		return json.data.user;
-	} catch (e) {
-		throw error;
-	}
-}
-
 export async function ApiForgotPassword(email) {
 	try {
 		const res = await fetch(`${BASE_URL}/auth/forgotPassword`, {

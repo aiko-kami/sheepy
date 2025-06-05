@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { ApiGetUserFromSession } from "@/lib/api/auth";
+import { ApiGetUserFromSessionClient } from "@/lib/api/usersClient";
 
 const AuthContext = createContext();
 
@@ -15,7 +15,8 @@ export const AuthProvider = ({ children }) => {
 	useEffect(() => {
 		const fetchUser = async () => {
 			try {
-				const userData = await ApiGetUserFromSession();
+				const userData = await ApiGetUserFromSessionClient();
+
 				if (userData) {
 					setUser(userData);
 				}
@@ -26,9 +27,7 @@ export const AuthProvider = ({ children }) => {
 			}
 		};
 
-		if (!user) {
-			fetchUser();
-		}
+		fetchUser();
 	}, []);
 
 	return <AuthContext.Provider value={{ user, loginUser, logoutUser, loading }}>{children}</AuthContext.Provider>;
