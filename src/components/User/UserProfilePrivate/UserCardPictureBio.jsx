@@ -49,11 +49,12 @@ const UserCardPictureBio = ({ user }) => {
 								<TextAreaField
 									label="Description"
 									labelStyle="block mb-2 text-sm font-medium text-gray-400"
+									inputStyle="h-30 xl:h-24"
 									inputName="description"
 									inputValue={formInputs.description}
 									onChange={onChange}
 									placeholder="Say few words about yourself with 100 characters maximum..."
-									maxLength={100}
+									maxLength={200}
 									rows="2"
 									required={false}
 								/>

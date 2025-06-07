@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import UserLanguages from "@/components/User/UserProfilePrivate/UserLanguages";
+
 import { Button } from "@/components/Buttons/Buttons";
 import InputField from "@/components/Forms/InputField";
 
@@ -8,11 +10,11 @@ import { IoLocationOutline, IoEarthOutline, IoBusinessOutline, IoChatbubbleEllip
 
 const UserCardDetails = ({ user }) => {
 	const [formInputs, setFormInputs] = useState({
-		locationCity: user.locationCity,
-		locationCountry: user.locationCountry,
-		languages: user.languages.join(", "),
-		company: user.company,
-		website: user.website,
+		locationCity: user.location.city.data,
+		locationCountry: user.location.country.data,
+		languages: user.languages.data,
+		company: user.company.data,
+		website: user.website.data,
 	});
 
 	const onChange = (e) => {
@@ -50,11 +52,7 @@ const UserCardDetails = ({ user }) => {
 								</InputField>
 							</div>
 							{/* Language */}
-							<div className="mb-6">
-								<InputField inputName={"languages"} inputType={"text"} label={"Languages"} inputValue={formInputs.languages} onChange={onChange}>
-									<IoChatbubbleEllipsesOutline className="w-5 h-5 text-gray-400" />
-								</InputField>
-							</div>
+							<UserLanguages user={user} formInputs={formInputs} setFormInputs={setFormInputs} />
 							{/* Company */}
 							<div className="mb-6">
 								<InputField inputName={"company"} inputType={"text"} label={"Company"} inputValue={formInputs.company} onChange={onChange}>

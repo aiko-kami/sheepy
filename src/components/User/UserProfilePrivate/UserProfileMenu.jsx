@@ -16,6 +16,7 @@ const UserProfileMenu = async () => {
 			<UserCardPictureBio user={user} />
 
 			{/* User card with my details */}
+			<UserCardDetails user={user} />
 
 			{/* User card with account info */}
 			<UserCardAccount user={user} />
