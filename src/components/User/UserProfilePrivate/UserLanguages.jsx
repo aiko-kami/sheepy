@@ -46,7 +46,7 @@ const UserLanguages = ({ user, formInputs, setFormInputs }) => {
 			<div className="relative">
 				<div className="xl:flex items-center xl:mb-6">
 					<div className="w-full mr-2 mb-1 md:mb-6 xl:mb-1">
-						<InputField inputName="language" inputType="text" label="Language (optional)" inputValue={languageInput} onChange={handleLanguageInputChange}>
+						<InputField inputName="language" inputType="text" label="Language" inputValue={languageInput} onChange={handleLanguageInputChange}>
 							<IoChatbubbleEllipsesOutline className="w-5 h-5 text-gray-400" />
 						</InputField>
 					</div>

@@ -1,13 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/Buttons/Buttons";
 import ProfilePicture from "@/components/User/UserProfilePrivate/ProfilePicture";
 import ProjectCounter from "@/components/Common/ProjectCounter";
+import { ApiUpdateUserDescriptionBio } from "@/lib/api/usersClient";
+
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 
 const UserCardPictureBio = ({ user }) => {
+	const router = useRouter();
+
 	const [formInputs, setFormInputs] = useState({
 		description: user.description || "",
 		bio: user.bio.data || "",
@@ -21,9 +26,15 @@ const UserCardPictureBio = ({ user }) => {
 		}));
 	};
 
-	const onSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log("Form data:", formInputs);
+
+		try {
+			const user = await ApiUpdateUserDescriptionBio({ description: formInputs.description, bio: formInputs.bio });
+			router.push("/");
+		} catch (error) {
+			console.log(error.message || "Something went wrong");
+		}
 	};
 
 	return (
@@ -43,7 +54,7 @@ const UserCardPictureBio = ({ user }) => {
 					<h2 className="text-2xl font-semibold mb-4">About me</h2>
 					{/* Profile introduction section */}
 					<div>
-						<form onSubmit={onSubmit}>
+						<form onSubmit={handleSubmit}>
 							{/* Description */}
 							<div className="relative z-0 mb-6 w-full">
 								<TextAreaField

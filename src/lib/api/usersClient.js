@@ -13,6 +13,26 @@ export async function ApiGetUserFromSessionClient() {
 		return null;
 	}
 }
+
+export async function ApiUpdateUserDescriptionBio() {
+	try {
+		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/updateMyBioDescription`, {
+			method: "POST",
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ description, bio }),
+		});
+		if (!res.ok) throw new Error("Failed to update user");
+		const json = await res.json();
+		return json.data.user;
+	} catch (error) {
+		console.error("Error:", error.message);
+		return null;
+	}
+}
+
 /* 
 // Me
 usersRoute.get("/myData", verifyAccess, userController.retrieveMyUserData);
