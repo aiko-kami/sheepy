@@ -2,6 +2,7 @@ export const toastOptions = {
 	position: "top-right",
 	reverseOrder: false,
 	toastOptions: {
+		duration: 5000,
 		className: "toast-enter",
 		style: {
 			borderRadius: "12px",

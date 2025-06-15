@@ -45,7 +45,7 @@ const UserCardEmail = ({ user }) => {
 
 		try {
 			await ApiUpdateUserEmail(payload);
-			showSuccessToast("Email updated successfully!.....");
+			showSuccessToast("We've sent a verification link to your new email. Please check your inbox to confirm the change.");
 			router.push("/users/my-profile");
 		} catch (error) {
 			showErrorToast(error.message);
