@@ -6,6 +6,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import { ApiLogin } from "@/lib/api/auth";
 import InputField from "@/components/Forms/InputField";
 import Triforce from "@/components/Loaders/Triforce";
+import { showErrorToast } from "@/utils/toast";
 
 const LoginForm = ({ setModalDisplay }) => {
 	const router = useRouter();
@@ -17,40 +18,34 @@ const LoginForm = ({ setModalDisplay }) => {
 	});
 	const { identifier, password } = formData;
 
-	const [loginError, setLoginError] = useState("");
 	const [loading, setLoading] = useState(false);
 
 	const onChange = (e) => {
-		setLoginError("");
 		setFormData((prevState) => ({
 			...prevState,
 			[e.target.name]: e.target.value,
 		}));
 	};
 
-	// Handle form submission
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-
-		// Validate inputs before calling the server
 		if (!identifier.trim()) {
-			setLoginError("Email or username is required.");
+			showErrorToast("Email or username is required.");
 			return;
 		}
 		if (!password.trim()) {
-			setLoginError("Password is required.");
+			showErrorToast("Password is required.");
 			return;
 		}
 
 		setLoading(true);
-		setLoginError("");
 
 		try {
 			const user = await ApiLogin({ identifier, password });
 			router.push("/");
 			loginUser(user);
 		} catch (error) {
-			setLoginError(error.message || "Something went wrong");
+			showErrorToast(error.message || "Something went wrong");
 		} finally {
 			setLoading(false);
 		}
@@ -75,14 +70,13 @@ const LoginForm = ({ setModalDisplay }) => {
 				<div className="mb-6">
 					<InputField inputName="identifier" inputType="text" label="Email address or Username" inputValue={identifier} onChange={onChange} />
 				</div>
+				{/* Password input */}
 				<div className="mb-3">
 					<InputField inputName="password" inputType="password" label="Password" inputValue={password} onChange={onChange} />
 				</div>
-				<div className="flex justify-between mb-3 min-h-14">
-					{/* Error message */}
-					<div>{loginError && <p className="text-xs text-red-600">{loginError}</p>}</div>
-
-					{/* Forgot Password link */}
+				{/* Forgot Password link */}
+				<div className="flex justify-between mb-8">
+					<div></div>
 					<div className="text-right ml-4">
 						<button
 							type="button"
@@ -94,13 +88,11 @@ const LoginForm = ({ setModalDisplay }) => {
 						</button>
 					</div>
 				</div>
-				{/* Sign in button */}
+				{/* Submit button */}
 				<button
 					type="submit"
 					className="inline-block px-7 py-2 bg-blue-600 text-white font-medium leading-snug rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out w-full"
-					data-mdb-ripple="true"
-					data-mdb-ripple-color="light"
-					disabled={loading} // Disable button while loading
+					disabled={loading}
 				>
 					{loading ? "Signing in..." : "Sign in"}
 				</button>

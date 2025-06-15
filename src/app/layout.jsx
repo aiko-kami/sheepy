@@ -1,5 +1,7 @@
 import "./globals.css";
 import { AppProvider } from "../contexts/AppProvider";
+import { Toaster } from "react-hot-toast";
+import { toastOptions } from "@/config/toastConfig";
 
 export const metadata = {
 	title: "Sheepy",
@@ -16,7 +18,10 @@ export default function RootLayout({ children }) {
 				<link rel="android-chrome-512x512" sizes="512x512" href="/images/android-chrome-512x512.png" />
 				<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
 				<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
-				<AppProvider>{children}</AppProvider>
+				<AppProvider>
+					{children}
+					<Toaster {...toastOptions} />
+				</AppProvider>
 			</body>
 		</html>
 	);

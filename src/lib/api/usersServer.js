@@ -15,8 +15,15 @@ export async function ApiGetUserFromSessionServer() {
 			},
 			cache: "no-store", // Ensure fresh data
 		});
-		if (!res.ok) throw new Error("Failed to fetch user");
+
 		const json = await res.json();
+
+		if (!res.ok) {
+			// Try to read backend error message if available
+			const errorMessage = json?.message || "Failed to fetch user";
+			throw new Error(errorMessage);
+		}
+
 		return json.data.user;
 	} catch (error) {
 		console.error("Error:", error.message);

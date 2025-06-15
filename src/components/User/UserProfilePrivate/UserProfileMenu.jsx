@@ -1,6 +1,7 @@
 import UserCardPictureBio from "@/components/User/UserProfilePrivate/UserCardPictureBio";
 import UserCardDetails from "@/components/User/UserProfilePrivate/UserCardDetails";
-import UserCardAccount from "@/components/User/UserProfilePrivate/UserCardAccount";
+import UserCardEmail from "@/components/User/UserProfilePrivate/UserCardEmail";
+import UserCardPassword from "@/components/User/UserProfilePrivate/UserCardPassword";
 import { ApiGetUserFromSessionServer } from "@/lib/api/usersServer";
 
 const UserProfileMenu = async () => {
@@ -12,14 +13,19 @@ const UserProfileMenu = async () => {
 
 	return (
 		<>
-			{/* User card with pictures and about me */}
-			<UserCardPictureBio user={user} />
+			<div className="grid md:grid-cols-2 gap-8 mb-8">
+				{/* User card with pictures and about me */}
+				<UserCardPictureBio user={user} />
 
-			{/* User card with my details */}
-			<UserCardDetails user={user} />
+				{/* User card with my details */}
+				<UserCardDetails user={user} />
 
-			{/* User card with account info */}
-			<UserCardAccount user={user} />
+				{/* User card with email */}
+				<UserCardEmail user={user} />
+
+				{/* User card with password */}
+				<UserCardPassword user={user} />
+			</div>
 		</>
 	);
 };

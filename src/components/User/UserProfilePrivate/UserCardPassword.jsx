@@ -1,17 +1,21 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { IoLockClosed } from "react-icons/io5";
+
 import { Button } from "@/components/Buttons/Buttons";
 import InputField from "@/components/Forms/InputField";
+import { ApiUpdateUserPassword } from "@/lib/api/usersClient";
+import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
-import { IoAtOutline, IoLockClosed } from "react-icons/io5";
+const UserCardPassword = ({ user }) => {
+	const router = useRouter();
 
-const UserCardDetails = ({ user }) => {
 	const [formInputs, setFormInputs] = useState({
-		email: user.email,
 		oldPassword: "",
 		newPassword: "",
-		repeatNewPassword: "",
+		confirmNewPassword: "",
 	});
 
 	const onChange = (e) => {
@@ -23,25 +27,33 @@ const UserCardDetails = ({ user }) => {
 	};
 
 	// Handle form submission
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log("Form data:", formInputs);
+
+		// Prepare payload, replacing empty strings with special marker
+		const payload = {
+			oldPassword: formInputs.oldPassword,
+			newPassword: formInputs.newPassword,
+			confirmNewPassword: formInputs.confirmNewPassword,
+		};
+
+		try {
+			await ApiUpdateUserPassword(payload);
+			showSuccessToast("Password updated successfully!");
+			router.push("/users/my-profile");
+		} catch (error) {
+			showErrorToast(error.message);
+		}
 	};
 
 	return (
 		<div className="bg-base-450 shadow-2xl p-6 pb-8">
-			<h2 className="text-2xl font-semibold mb-6">My account</h2>
-			{/* User account information */}
+			<h2 className="text-2xl font-semibold mb-6">My password</h2>
+			{/* User password */}
 			<div className="mx-0 px-6 pl-8">
 				<form onSubmit={handleSubmit}>
 					{/* List of fields */}
 					<div className="mb-10">
-						{/* Email */}
-						<div className="mb-6">
-							<InputField inputName={"email"} inputType={"email"} label={"Email"} inputValue={formInputs.email} onChange={onChange}>
-								<IoAtOutline className="w-5 h-5 text-gray-400" />
-							</InputField>
-						</div>
 						{/* Old password */}
 						<div className="mb-6">
 							<InputField inputName="oldPassword" inputType="password" label="Old Password" inputValue={formInputs.oldPassword} onChange={onChange}>
@@ -58,18 +70,18 @@ const UserCardDetails = ({ user }) => {
 
 						{/* Repeat new password */}
 						<div className="mb-6">
-							<InputField inputName="repeatNewPassword" inputType="password" label="Repeat New Password" inputValue={formInputs.repeatNewPassword} onChange={onChange}>
+							<InputField inputName="confirmNewPassword" inputType="password" label="Repeat New Password" inputValue={formInputs.confirmNewPassword} onChange={onChange}>
 								<IoLockClosed className="w-5 h-5 text-gray-400" />
 							</InputField>
 						</div>
 					</div>
-					{/* Button Update account (submit form) */}
+					{/* Button Update password (submit form) */}
 					<div className="text-center">
-						<Button btnProps={{ type: "submit" }}>Update my account</Button>
+						<Button btnProps={{ type: "submit" }}>Update my password</Button>
 					</div>
 				</form>
 			</div>
 		</div>
 	);
 };
-export default UserCardDetails;
+export default UserCardPassword;

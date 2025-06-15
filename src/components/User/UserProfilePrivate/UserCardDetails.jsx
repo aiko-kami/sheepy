@@ -1,14 +1,18 @@
 "use client";
 
 import { useState } from "react";
-import UserLanguages from "@/components/User/UserProfilePrivate/UserLanguages";
+import { useRouter } from "next/navigation";
+import { IoLocationOutline, IoEarthOutline, IoBusinessOutline, IoLinkOutline, IoClose } from "react-icons/io5";
 
+import UserLanguages from "@/components/User/UserProfilePrivate/UserLanguages";
 import { Button } from "@/components/Buttons/Buttons";
 import InputField from "@/components/Forms/InputField";
-
-import { IoLocationOutline, IoEarthOutline, IoBusinessOutline, IoChatbubbleEllipsesOutline, IoLinkOutline } from "react-icons/io5";
+import { ApiUpdateUserDetails } from "@/lib/api/usersClient";
+import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
 const UserCardDetails = ({ user }) => {
+	const router = useRouter();
+
 	const [formInputs, setFormInputs] = useState({
 		locationCity: user.location.city.data,
 		locationCountry: user.location.country.data,
@@ -25,9 +29,25 @@ const UserCardDetails = ({ user }) => {
 		}));
 	};
 	// Handle form submission
-	const onSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log("Form data:", formInputs);
+
+		// Prepare payload, replacing empty strings with special marker
+		const payload = {
+			locationCity: formInputs.locationCity.trim() === "" ? "@--empty--string" : formInputs.locationCity,
+			locationCountry: formInputs.locationCountry.trim() === "" ? "@--empty--string" : formInputs.locationCountry,
+			languages: formInputs.languages.length === 0 ? ["@--empty--string"] : formInputs.languages,
+			company: formInputs.company.trim() === "" ? "@--empty--string" : formInputs.company,
+			website: formInputs.website.trim() === "" ? "@--empty--string" : formInputs.website,
+		};
+
+		try {
+			await ApiUpdateUserDetails(payload);
+			showSuccessToast("Profile updated successfully!");
+			router.push("/users/my-profile");
+		} catch (error) {
+			showErrorToast(error.message);
+		}
 	};
 
 	return (
@@ -36,7 +56,7 @@ const UserCardDetails = ({ user }) => {
 				<h2 className="text-2xl font-semibold mb-6">My details</h2>
 				{/* User details */}
 				<div className="mx-0 px-6 pl-8">
-					<form onSubmit={onSubmit}>
+					<form onSubmit={handleSubmit}>
 						{/* List of fields */}
 						<div className="mb-10">
 							{/* City */}

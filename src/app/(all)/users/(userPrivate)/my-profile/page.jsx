@@ -8,10 +8,7 @@ export const metadata = {
 const MyProfilePage = async () => {
 	return (
 		<>
-			<div className="grid md:grid-cols-2 md:grid-rows-2 gap-8 mb-8">
-				{/* User card with pictures and about me */}
-				<UserProfileMenu />
-			</div>
+			<UserProfileMenu />
 		</>
 	);
 };
