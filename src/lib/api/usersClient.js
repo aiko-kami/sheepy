@@ -158,6 +158,52 @@ export async function ApiUpdateUserPassword({ oldPassword, newPassword, confirmN
 	}
 }
 
+export async function ApiUpdateUserPicture(file) {
+	try {
+		const formData = new FormData();
+		formData.append("image", file); // match the backend's expected field name
+
+		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/updateMyPicture`, {
+			method: "POST",
+			credentials: "include",
+			body: formData, // no need to set Content-Type, fetch does it automatically
+		});
+
+		const json = await res.json();
+
+		if (!res.ok) {
+			const errorMessage = json?.message || "Failed to update user picture";
+			throw new Error(errorMessage);
+		}
+		return json;
+	} catch (error) {
+		throw error;
+	}
+}
+
+export async function ApiUpdateUserBackgroundPicture(file) {
+	try {
+		const formData = new FormData();
+		formData.append("image", file); // match the backend's expected field name
+
+		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/updateMyBackgroundPicture`, {
+			method: "POST",
+			credentials: "include",
+			body: formData, // no need to set Content-Type, fetch does it automatically
+		});
+
+		const json = await res.json();
+
+		if (!res.ok) {
+			const errorMessage = json?.message || "Failed to update user picture";
+			throw new Error(errorMessage);
+		}
+		return json;
+	} catch (error) {
+		throw error;
+	}
+}
+
 /* 
 // Me
 usersRoute.get("/myData", verifyAccess, userController.retrieveMyUserData);

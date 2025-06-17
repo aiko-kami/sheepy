@@ -1,37 +1,119 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
-import BackgroundPicture from "@/components/User/UserProfilePrivate/BackgroundPicture";
+import { useState, useRef } from "react";
+import { useRouter } from "next/navigation";
 import { IoColorWandOutline } from "react-icons/io5";
+
+import BackgroundPicture from "@/components/User/UserProfilePrivate/BackgroundPicture";
 import Popover from "@/components/Popover";
 import PopoverContent from "./PopoverContent";
+import { useAuth } from "@/contexts/AuthContext";
+import { ApiUpdateUserPicture, ApiUpdateUserBackgroundPicture } from "@/lib/api/usersClient";
+import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
 const ProfilePicture = ({ user }) => {
+	const router = useRouter();
+	const { refreshUser } = useAuth();
+
 	const [displayPopover, setDisplayPopover] = useState(false);
+	const [profileImage, setProfileImage] = useState(user.profilePicture?.link || "/default-profile.jpg");
+	const [backgroundImage, setBackgroundImage] = useState(user.backgroundPicture?.link || "");
+	const fileInputProfileRef = useRef(null);
+	const fileInputBackgroundRef = useRef(null);
+
+	// Profile Picture
+	const handleProfilePictureChange = async (file) => {
+		try {
+			const localImageURL = URL.createObjectURL(file);
+			setProfileImage(localImageURL);
+
+			await ApiUpdateUserPicture(file);
+			await refreshUser();
+
+			showSuccessToast("Profile picture updated successfully!");
+			router.push("/users/my-profile");
+		} catch (error) {
+			showErrorToast(error.message);
+		}
+	};
+
+	// Background Picture
+	const handleBackgroundPictureChange = async (file) => {
+		try {
+			const localImageURL = URL.createObjectURL(file);
+			setBackgroundImage(localImageURL);
+
+			await ApiUpdateUserBackgroundPicture(file);
+			await refreshUser();
+
+			showSuccessToast("Background picture updated successfully!");
+			router.push("/users/my-profile");
+		} catch (error) {
+			showErrorToast(error.message);
+		}
+	};
+
+	const onProfileInputChange = (e) => {
+		const file = e.target.files?.[0];
+		if (file) handleProfilePictureChange(file);
+	};
+
+	const onBackgroundInputChange = (e) => {
+		const file = e.target.files?.[0];
+		if (file) handleBackgroundPictureChange(file);
+	};
+
+	const triggerProfileInput = () => fileInputProfileRef.current?.click();
+	const triggerBackgroundInput = () => fileInputBackgroundRef.current?.click();
+
+	const handleRemoveProfilePicture = async () => {
+		try {
+			await ApiUpdateUserPicture(); // No file passed = remove
+			await refreshUser();
+			showSuccessToast("Profile picture removed successfully!");
+			router.push("/users/my-profile");
+		} catch (error) {
+			showErrorToast(error.message);
+		}
+	};
+
+	const handleRemoveBackgroundPicture = async () => {
+		try {
+			await ApiUpdateUserBackgroundPicture(); // No file passed = remove
+			await refreshUser();
+			showSuccessToast("Background picture removed successfully!");
+			router.push("/users/my-profile");
+		} catch (error) {
+			showErrorToast(error.message);
+		}
+	};
 
 	return (
 		<>
 			<BackgroundPicture backgroundPicture={user.backgroundPicture} />
-			{/* Profile picture */}
+
 			<div className="h-40 w-40 tn:min-h-60 tn:min-w-60 relative mx-auto -mt-30">
-				<Image src={user.profilePicture.link} fill sizes="100vw, (min-width: 768px) 200px" alt="User profile picture" className="rounded-full object-cover border-5 border-base-500 bg-white" />
-				{/* Icon update pictures */}
+				<Image src={profileImage} fill sizes="100vw, (min-width: 768px) 200px" alt="User profile picture" className="rounded-full object-cover border-5 border-base-500 bg-white" />
+				{/* Trigger Icon */}
 				<div className="absolute right-0 bottom-0 tn:right-1 tn:bottom-1" onClick={() => setDisplayPopover(!displayPopover)} onMouseLeave={() => setDisplayPopover(false)}>
-					<div className="relative">
-						<IoColorWandOutline className="w-6 h-6 tn:w-7 tn:h-7" />
-						<div className="relative">
-							<Popover displayPopover={displayPopover} position={"-mx-43 -my-8 sm:mx-7"} style={"text-gray-900 whitespace-nowrap bg-white rounded-sm shadow px-1"}>
-								<PopoverContent />
-							</Popover>
-						</div>
-					</div>
+					<IoColorWandOutline className="w-6 h-6 tn:w-7 tn:h-7" />
+
+					<Popover displayPopover={displayPopover} position="-mx-43 -my-8 sm:mx-7" style="text-gray-900 whitespace-nowrap bg-white rounded-sm shadow px-1">
+						<PopoverContent
+							onSelectPicture={triggerProfileInput}
+							onRemovePicture={handleRemoveProfilePicture}
+							onSelectBackground={triggerBackgroundInput}
+							onRemoveBackground={handleRemoveBackgroundPicture}
+						/>
+					</Popover>
 				</div>
-				{/*<div className="absolute -right-9 top-32">
-					<IoColorWandOutline className="w-7 h-7" />
-				</div>*/}
+				{/* Hidden File Input */}
+				<input type="file" accept="image/*" ref={fileInputProfileRef} className="hidden" onChange={onProfileInputChange} />
+				<input type="file" accept="image/*" ref={fileInputBackgroundRef} className="hidden" onChange={onBackgroundInputChange} />
 			</div>
 		</>
 	);
 };
+
 export default ProfilePicture;

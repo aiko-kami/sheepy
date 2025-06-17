@@ -12,25 +12,22 @@ export const AuthProvider = ({ children }) => {
 	const loginUser = (userData) => setUser(userData);
 	const logoutUser = () => setUser(null);
 
-	useEffect(() => {
-		const fetchUser = async () => {
-			try {
-				const userData = await ApiGetUserFromSessionClient();
-
-				if (userData) {
-					setUser(userData);
-				}
-			} catch (err) {
-				console.error("Error loading user from session", err);
-			} finally {
-				setLoading(false);
+	const refreshUser = async () => {
+		try {
+			const userData = await ApiGetUserFromSessionClient();
+			if (userData) {
+				setUser(userData);
 			}
-		};
+		} catch (err) {
+			console.error("Failed to refresh user", err);
+		}
+	};
 
-		fetchUser();
+	useEffect(() => {
+		refreshUser().finally(() => setLoading(false));
 	}, []);
 
-	return <AuthContext.Provider value={{ user, loginUser, logoutUser, loading }}>{children}</AuthContext.Provider>;
+	return <AuthContext.Provider value={{ user, loginUser, logoutUser, refreshUser, loading }}>{children}</AuthContext.Provider>;
 };
 
 export const useAuth = () => useContext(AuthContext);
