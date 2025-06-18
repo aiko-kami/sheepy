@@ -9,7 +9,7 @@ import BackgroundPicture from "@/components/User/UserProfilePrivate/BackgroundPi
 import Popover from "@/components/Popover";
 import PopoverContent from "./PopoverContent";
 import { useAuth } from "@/contexts/AuthContext";
-import { ApiUpdateUserPicture, ApiUpdateUserBackgroundPicture } from "@/lib/api/usersClient";
+import { ApiUpdateUserPicture, ApiUpdateUserBackgroundPicture, ApiRemoveUserPicture, ApiRemoveUserBackgroundPicture } from "@/lib/api/usersClient";
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
 const ProfilePicture = ({ user }) => {
@@ -69,7 +69,8 @@ const ProfilePicture = ({ user }) => {
 
 	const handleRemoveProfilePicture = async () => {
 		try {
-			await ApiUpdateUserPicture(); // No file passed = remove
+			await ApiRemoveUserPicture();
+			setProfileImage("");
 			await refreshUser();
 			showSuccessToast("Profile picture removed successfully!");
 			router.push("/users/my-profile");
@@ -80,7 +81,8 @@ const ProfilePicture = ({ user }) => {
 
 	const handleRemoveBackgroundPicture = async () => {
 		try {
-			await ApiUpdateUserBackgroundPicture(); // No file passed = remove
+			await ApiRemoveUserBackgroundPicture();
+			setBackgroundImage("");
 			await refreshUser();
 			showSuccessToast("Background picture removed successfully!");
 			router.push("/users/my-profile");
@@ -91,7 +93,7 @@ const ProfilePicture = ({ user }) => {
 
 	return (
 		<>
-			<BackgroundPicture backgroundPicture={user.backgroundPicture} />
+			<BackgroundPicture backgroundPicture={backgroundImage} />
 
 			<div className="h-40 w-40 tn:min-h-60 tn:min-w-60 relative mx-auto -mt-30">
 				<Image src={profileImage} fill sizes="100vw, (min-width: 768px) 200px" alt="User profile picture" className="rounded-full object-cover border-5 border-base-500 bg-white" />
@@ -105,6 +107,8 @@ const ProfilePicture = ({ user }) => {
 							onRemovePicture={handleRemoveProfilePicture}
 							onSelectBackground={triggerBackgroundInput}
 							onRemoveBackground={handleRemoveBackgroundPicture}
+							profileImage={profileImage}
+							backgroundImage={backgroundImage}
 						/>
 					</Popover>
 				</div>

@@ -204,6 +204,44 @@ export async function ApiUpdateUserBackgroundPicture(file) {
 	}
 }
 
+export async function ApiRemoveUserPicture() {
+	try {
+		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/removeMyPicture`, {
+			method: "DELETE",
+			credentials: "include",
+		});
+
+		const json = await res.json();
+
+		if (!res.ok) {
+			const errorMessage = json?.message || "Failed to remove user picture";
+			throw new Error(errorMessage);
+		}
+		return json;
+	} catch (error) {
+		throw error;
+	}
+}
+
+export async function ApiRemoveUserBackgroundPicture() {
+	try {
+		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/removeMyBackgroundPicture`, {
+			method: "DELETE",
+			credentials: "include",
+		});
+
+		const json = await res.json();
+
+		if (!res.ok) {
+			const errorMessage = json?.message || "Failed to remove user picture";
+			throw new Error(errorMessage);
+		}
+		return json;
+	} catch (error) {
+		throw error;
+	}
+}
+
 /* 
 // Me
 usersRoute.get("/myData", verifyAccess, userController.retrieveMyUserData);
