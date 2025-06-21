@@ -2,7 +2,7 @@ import { RadioMultiField } from "@/components/Forms/ToggleField";
 import { IoNotifications } from "react-icons/io5";
 
 const MySettingsNotifications = ({ formInputs, onChange }) => {
-	const inputValues = ["true", "false"];
+	const inputValues = [true, false];
 	const inputLabels = ["Yes", "No"];
 
 	return (

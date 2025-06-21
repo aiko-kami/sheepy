@@ -1156,20 +1156,22 @@
 		"requestsNotif": 2
 	},
 	"settings": {
+		"privacySettings": {
+			"privacyProfilePicture": "public",
+			"privacyBio": "private",
+			"privacyLocationCity": "friends",
+			"privacyLocationCountry": "public",
+			"privacyCompany": "private",
+			"privacyLanguages": "private",
+			"privacyWebsite": "private",
+			"privacyProjectLike": "public"
+		},
 		"displayMode": "table",
-		"privacyProfilePicture": "public",
-		"privacyBio": "private",
-		"privacyLocationCity": "friends",
-		"privacyLocationCountry": "public",
-		"privacyCompany": "private",
-		"privacyLanguages": "private",
-		"privacyWebsite": "private",
-		"privacyProjectLike": "public",
 		"appearance": "night",
 		"language": "English",
-		"notificationNewsletter": "true",
-		"notificationProjects": "true",
-		"notificationMessages": "false",
-		"notificationComments": "true"
+		"notificationNewsletter": true,
+		"notificationProjects": true,
+		"notificationMessages": false,
+		"notificationComments": true
 	}
 }

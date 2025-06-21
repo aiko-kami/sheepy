@@ -9,6 +9,7 @@ import BackgroundPicture from "@/components/User/UserProfilePrivate/BackgroundPi
 import Popover from "@/components/Popover";
 import PopoverContent from "./PopoverContent";
 import { useAuth } from "@/contexts/AuthContext";
+import defaultPicture from "@/public/images/default-profile-picture.png";
 import { ApiUpdateUserPicture, ApiUpdateUserBackgroundPicture, ApiRemoveUserPicture, ApiRemoveUserBackgroundPicture } from "@/lib/api/usersClient";
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
@@ -17,7 +18,7 @@ const ProfilePicture = ({ user }) => {
 	const { refreshUser } = useAuth();
 
 	const [displayPopover, setDisplayPopover] = useState(false);
-	const [profileImage, setProfileImage] = useState(user.profilePicture?.link || "/default-profile.jpg");
+	const [profileImage, setProfileImage] = useState(user.profilePicture?.link || defaultPicture.src);
 	const [backgroundImage, setBackgroundImage] = useState(user.backgroundPicture?.link || "");
 	const fileInputProfileRef = useRef(null);
 	const fileInputBackgroundRef = useRef(null);
@@ -70,7 +71,7 @@ const ProfilePicture = ({ user }) => {
 	const handleRemoveProfilePicture = async () => {
 		try {
 			await ApiRemoveUserPicture();
-			setProfileImage("");
+			setProfileImage(defaultPicture.src);
 			await refreshUser();
 			showSuccessToast("Profile picture removed successfully!");
 			router.push("/users/my-profile");

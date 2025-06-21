@@ -21,6 +21,27 @@ export async function ApiGetUserFromSessionClient() {
 	}
 }
 
+export async function ApiGetUserSettings() {
+	try {
+		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/mySettings`, {
+			credentials: "include",
+		});
+
+		const json = await res.json();
+
+		if (!res.ok) {
+			// Try to read backend error message if available
+			const errorMessage = json?.message || "Failed to fetch user settings";
+			throw new Error(errorMessage);
+		}
+
+		return json.data.userSettings;
+	} catch (error) {
+		console.error("Error:", error.message);
+		return null;
+	}
+}
+
 export async function ApiUpdateUserBioDescription({ description, bio }) {
 	try {
 		const userNewData = {
