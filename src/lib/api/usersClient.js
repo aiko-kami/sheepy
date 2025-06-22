@@ -21,7 +21,7 @@ export async function ApiGetUserFromSessionClient() {
 	}
 }
 
-export async function ApiGetUserSettings() {
+export async function ApiGetUserSettingsClient() {
 	try {
 		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/mySettings`, {
 			credentials: "include",
