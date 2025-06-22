@@ -101,6 +101,124 @@ export async function ApiUpdateUserDetails({ locationCity, locationCountry, lang
 	}
 }
 
+export async function ApiUpdateUserSettingsPrivacy(privacySettings) {
+	try {
+		const userNewData = {
+			privacyProfilePicture: privacySettings.privacyProfilePicture,
+			privacyBio: privacySettings.privacyBio,
+			privacyLocationCity: privacySettings.privacyLocationCity,
+			privacyLocationCountry: privacySettings.privacyLocationCountry,
+			privacyCompany: privacySettings.privacyCompany,
+			privacyLanguages: privacySettings.privacyLanguages,
+			privacyWebsite: privacySettings.privacyWebsite,
+			privacyProjectLike: privacySettings.privacyProjectLike,
+		};
+
+		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/updateMySettingsPrivacy`, {
+			method: "PATCH",
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ userNewData }),
+		});
+		const json = await res.json();
+
+		if (!res.ok) {
+			// Try to read backend error message if available
+			const errorMessage = json?.message || "Failed to update user";
+			throw new Error(errorMessage);
+		}
+		return;
+	} catch (error) {
+		throw error;
+	}
+}
+
+export async function ApiUpdateUserSettingsAppearance(appearance) {
+	try {
+		const userNewData = {
+			appearance,
+		};
+
+		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/updateMySettingsAppearance`, {
+			method: "PATCH",
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ userNewData }),
+		});
+		const json = await res.json();
+
+		if (!res.ok) {
+			// Try to read backend error message if available
+			const errorMessage = json?.message || "Failed to update user";
+			throw new Error(errorMessage);
+		}
+		return;
+	} catch (error) {
+		throw error;
+	}
+}
+
+export async function ApiUpdateUserSettingsLanguage(language) {
+	try {
+		const userNewData = {
+			language,
+		};
+
+		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/updateMySettingsLanguage`, {
+			method: "PATCH",
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ userNewData }),
+		});
+		const json = await res.json();
+
+		if (!res.ok) {
+			// Try to read backend error message if available
+			const errorMessage = json?.message || "Failed to update user";
+			throw new Error(errorMessage);
+		}
+		return;
+	} catch (error) {
+		throw error;
+	}
+}
+
+export async function ApiUpdateUserSettingsNotifications(notifications) {
+	try {
+		const userNewData = {
+			notificationsNewsletter: notifications.notificationsNewsletter,
+			notificationsProjects: notifications.notificationsProjects,
+			notificationsMessages: notifications.notificationsMessages,
+			notificationsComments: notifications.notificationsComments,
+		};
+
+		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/updateMySettingsNotifications`, {
+			method: "PATCH",
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ userNewData }),
+		});
+		const json = await res.json();
+
+		if (!res.ok) {
+			// Try to read backend error message if available
+			const errorMessage = json?.message || "Failed to update user";
+			throw new Error(errorMessage);
+		}
+		return;
+	} catch (error) {
+		throw error;
+	}
+}
+
 export async function ApiUpdateUserEmail({ email }) {
 	try {
 		const userNewData = {

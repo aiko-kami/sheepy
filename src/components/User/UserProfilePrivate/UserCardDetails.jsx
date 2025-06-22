@@ -28,6 +28,7 @@ const UserCardDetails = ({ user }) => {
 			[name]: value,
 		}));
 	};
+
 	// Handle form submission
 	const handleSubmit = async (e) => {
 		e.preventDefault();
