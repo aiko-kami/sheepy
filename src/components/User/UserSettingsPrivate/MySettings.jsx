@@ -3,7 +3,6 @@ import MySettingsAppearance from "@/components/User/UserSettingsPrivate/MySettin
 import MySettingsLanguages from "@/components/User/UserSettingsPrivate/MySettingsLanguages";
 import MySettingsNotifications from "@/components/User/UserSettingsPrivate/MySettingsNotifications";
 import { ApiGetUserSettingsServer } from "@/lib/api/usersServer";
-import { showErrorToast } from "@/utils/toast";
 
 const MySettings = async () => {
 	const userSettings = await ApiGetUserSettingsServer();

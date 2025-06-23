@@ -27,12 +27,12 @@ const ProfilePicture = ({ user }) => {
 	const handleProfilePictureChange = async (file) => {
 		try {
 			const localImageURL = URL.createObjectURL(file);
-			setProfileImage(localImageURL);
 
 			await ApiUpdateUserPicture(file);
 			await refreshUser();
 
 			showSuccessToast("Profile picture updated successfully!");
+			setProfileImage(localImageURL);
 			router.push("/users/my-profile");
 		} catch (error) {
 			showErrorToast(error.message);
@@ -43,12 +43,12 @@ const ProfilePicture = ({ user }) => {
 	const handleBackgroundPictureChange = async (file) => {
 		try {
 			const localImageURL = URL.createObjectURL(file);
-			setBackgroundImage(localImageURL);
 
 			await ApiUpdateUserBackgroundPicture(file);
 			await refreshUser();
 
 			showSuccessToast("Background picture updated successfully!");
+			setBackgroundImage(localImageURL);
 			router.push("/users/my-profile");
 		} catch (error) {
 			showErrorToast(error.message);
