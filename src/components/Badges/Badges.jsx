@@ -30,7 +30,8 @@ const Badge = ({ badge, size }) => {
 };
 
 const BadgeRounded = ({ badge, size }) => {
-	const { name, bgColor, bgColorHover } = badge;
+	const { name } = badge;
+	const { bgColor, bgColorHover } = badge.colors;
 
 	const link = `/search?search=${badge.name.toLowerCase()}&tab=tabTags`;
 

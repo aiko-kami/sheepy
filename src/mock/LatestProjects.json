@@ -19,18 +19,27 @@
 		"tags": [
 			{
 				"name": "Ocean",
-				"bgColor": "bg-blue-300",
-				"size": "xs"
+				"size": "xs",
+				"colors": {
+					"bgColor": "bg-blue-300",
+					"bgColorHover": "bg-blue-200"
+				}
 			},
 			{
 				"name": "Mecanics",
-				"bgColor": "bg-orange-400",
-				"size": "xs"
+				"size": "xs",
+				"colors": {
+					"bgColor": "bg-orange-400",
+					"bgColorHover": "bg-orange-300"
+				}
 			},
 			{
 				"name": "Exploration",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"size": "xs",
+				"colors": {
+					"bgColor": "bg-green-400",
+					"bgColorHover": "bg-green-300"
+				}
 			}
 		],
 		"status": {
@@ -59,13 +68,19 @@
 		"tags": [
 			{
 				"name": "Home Improvement",
-				"bgColor": "bg-stone-400",
-				"size": "xs"
+				"size": "xs",
+				"colors": {
+					"bgColor": "bg-stone-400",
+					"bgColorHover": "bg-stone-300"
+				}
 			},
 			{
 				"name": "Nature",
-				"bgColor": "bg-green-400",
-				"size": "xs"
+				"size": "xs",
+				"colors": {
+					"bgColor": "bg-green-400",
+					"bgColorHover": "bg-green-300"
+				}
 			}
 		],
 		"status": {
@@ -94,18 +109,27 @@
 		"tags": [
 			{
 				"name": "Podcast",
-				"bgColor": "bg-blue-400",
-				"size": "xs"
+				"size": "xs",
+				"colors": {
+					"bgColor": "bg-blue-400",
+					"bgColorHover": "bg-blue-300"
+				}
 			},
 			{
 				"name": "Tech",
-				"bgColor": "bg-indigo-400",
-				"size": "xs"
+				"size": "xs",
+				"colors": {
+					"bgColor": "bg-indigo-400",
+					"bgColorHover": "bg-indigo-300"
+				}
 			},
 			{
 				"name": "Society",
-				"bgColor": "bg-purple-400",
-				"size": "xs"
+				"size": "xs",
+				"colors": {
+					"bgColor": "bg-purple-400",
+					"bgColorHover": "bg-purple-300"
+				}
 			}
 		],
 		"status": {
@@ -134,13 +158,19 @@
 		"tags": [
 			{
 				"name": "Charity",
-				"bgColor": "bg-pink-400",
-				"size": "xs"
+				"size": "xs",
+				"colors": {
+					"bgColor": "bg-pink-400",
+					"bgColorHover": "bg-pink-300"
+				}
 			},
 			{
 				"name": "Volunteering",
-				"bgColor": "bg-yellow-400",
-				"size": "xs"
+				"size": "xs",
+				"colors": {
+					"bgColor": "bg-yellow-400",
+					"bgColorHover": "bg-yellow-300"
+				}
 			}
 		],
 		"status": {

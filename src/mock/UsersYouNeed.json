@@ -9,17 +9,23 @@
 			{
 				"name": "UI/UX Design",
 				"link": "/tags/ui-ux-design",
-				"bgColor": "bg-purple-400"
+				"colors": {
+					"bgColor": "bg-purple-400"
+				}
 			},
 			{
 				"name": "User Research",
 				"link": "/tags/user-research",
-				"bgColor": "bg-purple-400"
+				"colors": {
+					"bgColor": "bg-purple-400"
+				}
 			},
 			{
 				"name": "Wireframing",
 				"link": "/tags/wireframing",
-				"bgColor": "bg-purple-400"
+				"colors": {
+					"bgColor": "bg-purple-400"
+				}
 			}
 		]
 	},
@@ -33,17 +39,23 @@
 			{
 				"name": "Software",
 				"link": "/tags/software",
-				"bgColor": "bg-indigo-400"
+				"colors": {
+					"bgColor": "bg-indigo-400"
+				}
 			},
 			{
 				"name": "Web",
 				"link": "/tags/web",
-				"bgColor": "bg-indigo-400"
+				"colors": {
+					"bgColor": "bg-indigo-400"
+				}
 			},
 			{
 				"name": "Backend",
 				"link": "/tags/backend",
-				"bgColor": "bg-indigo-400"
+				"colors": {
+					"bgColor": "bg-indigo-400"
+				}
 			}
 		]
 	},
@@ -57,17 +69,23 @@
 			{
 				"name": "Guitar",
 				"link": "/tags/guitar",
-				"bgColor": "bg-yellow-400"
+				"colors": {
+					"bgColor": "bg-yellow-400"
+				}
 			},
 			{
 				"name": "Piano",
 				"link": "/tags/piano",
-				"bgColor": "bg-yellow-400"
+				"colors": {
+					"bgColor": "bg-yellow-400"
+				}
 			},
 			{
 				"name": "Melody",
 				"link": "/tags/melody",
-				"bgColor": "bg-yellow-400"
+				"colors": {
+					"bgColor": "bg-yellow-400"
+				}
 			}
 		]
 	},
@@ -81,17 +99,23 @@
 			{
 				"name": "Filmmaking",
 				"link": "/tags/filmmaking",
-				"bgColor": "bg-blue-400"
+				"colors": {
+					"bgColor": "bg-blue-400"
+				}
 			},
 			{
 				"name": "Storytelling",
 				"link": "/tags/storytelling",
-				"bgColor": "bg-blue-400"
+				"colors": {
+					"bgColor": "bg-blue-400"
+				}
 			},
 			{
 				"name": "Cinema",
 				"link": "/tags/cinema",
-				"bgColor": "bg-blue-400"
+				"colors": {
+					"bgColor": "bg-blue-400"
+				}
 			}
 		]
 	}

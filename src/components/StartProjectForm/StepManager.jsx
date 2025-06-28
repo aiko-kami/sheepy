@@ -12,19 +12,20 @@ import StepFinalValidation from "@/components/StartProjectForm/StepFinalValidati
 import StepProjectSubmitted from "@/components/StartProjectForm/StepProjectSubmitted";
 import ProgressBar from "@/components/StartProjectForm/ProgressBar";
 import ButtonsNavigation from "@/components/StartProjectForm/ButtonsNavigation";
+import { ApiGetAllCategories } from "@/lib/api/categories";
 
 import projectForm from "@/mock/projectForm.json";
-import categories from "@/mock/categories.json";
 
 const StepManager = () => {
 	const [currentStep, setCurrentStep] = useState(0);
 	const [percent, setPercent] = useState(0);
 	const totalSteps = 7; // Total number of steps
+	const [categories, setCategories] = useState([]);
 
 	const [formInputs, setFormInputs] = useState({
 		projectTitle: "",
-		selectedCategory: categories[0].name,
-		selectedSubCategory: categories[0].subCategories[0].name,
+		selectedCategory: "",
+		selectedSubCategory: "",
 		projectSummary: "",
 		projectGoal: "",
 		projectDescription: "",
@@ -116,6 +117,29 @@ const StepManager = () => {
 	const goToStep = (step) => {
 		setCurrentStep(step);
 	};
+
+	// Fetch categories on mount
+	useEffect(() => {
+		const fetchCategories = async () => {
+			const data = await ApiGetAllCategories();
+
+			console.log("🚀 ~ fetchCategories ~ data:", data);
+
+			setCategories(data);
+		};
+		fetchCategories();
+	}, []);
+
+	// Update subcategory when category changes
+	useEffect(() => {
+		const category = categories.find((c) => c.name === formInputs.selectedCategory);
+		if (category && category.subCategories.length > 0) {
+			setFormInputs((prev) => ({
+				...prev,
+				selectedSubCategory: category.subCategories[0].name,
+			}));
+		}
+	}, [formInputs.selectedCategory, categories]);
 
 	useEffect(() => {
 		let newPercent;

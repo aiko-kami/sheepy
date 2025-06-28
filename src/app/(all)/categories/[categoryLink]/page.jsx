@@ -1,6 +1,5 @@
 import Category from "@/components/Category/Category";
-
-import categories from "@/mock/categories.json";
+import { ApiGetCategoryWithLink } from "@/lib/api/categories";
 import projectsToJoin from "@/mock/projectsToJoin.json";
 
 export const metadata = {
@@ -8,13 +7,11 @@ export const metadata = {
 	description: "Category page with projects linked to the category",
 };
 
-const CategoryPage = ({ params }) => {
-	const { categoryName } = params;
+const CategoryPage = async ({ params }) => {
+	const { categoryLink } = params;
 
-	// Find the category object that matches the category link
-	const category = categories.find((cat) => cat.link === `/categories/${categoryName}`);
+	const category = await ApiGetCategoryWithLink(categoryLink);
 
-	// If the category is not found
 	if (!category) {
 		return (
 			<div className="container mx-auto py-8">

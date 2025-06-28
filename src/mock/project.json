@@ -50,37 +50,51 @@
 		{
 			"name": "Indie film",
 			"link": "/tags/indie_film",
-			"bgColor": "border border-2 border-gray-500 text-white"
+			"colors": {
+				"bgColor": "border border-2 border-gray-500 text-white"
+			}
 		},
 		{
 			"name": "Fiction",
 			"link": "/tags/fiction",
-			"bgColor": "border border-2 border-gray-500 text-white"
+			"colors": {
+				"bgColor": "border border-2 border-gray-500 text-white"
+			}
 		},
 		{
 			"name": "Cinematography",
 			"link": "/tags/cinematography",
-			"bgColor": "border border-2 border-gray-500 text-white"
+			"colors": {
+				"bgColor": "border border-2 border-gray-500 text-white"
+			}
 		},
 		{
 			"name": "Sci-Fi",
 			"link": "/tags/sci-fi",
-			"bgColor": "border border-2 border-gray-500 text-white"
+			"colors": {
+				"bgColor": "border border-2 border-gray-500 text-white"
+			}
 		},
 		{
 			"name": "Editing",
 			"link": "/tags/editing",
-			"bgColor": "border border-2 border-gray-500 text-white"
+			"colors": {
+				"bgColor": "border border-2 border-gray-500 text-white"
+			}
 		},
 		{
 			"name": "Cyberpunk",
 			"link": "/tags/cyberpunk",
-			"bgColor": "border border-2 border-gray-500 text-white"
+			"colors": {
+				"bgColor": "border border-2 border-gray-500 text-white"
+			}
 		},
 		{
 			"name": "screenwriting",
 			"link": "/tags/screenwriting",
-			"bgColor": "border border-1 border-gray-500 text-white"
+			"colors": {
+				"bgColor": "border border-1 border-gray-500 text-white"
+			}
 		}
 	],
 	"attachments": [

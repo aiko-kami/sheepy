@@ -12,12 +12,6 @@ export const metadata = {
 };
 
 const HomePage = async () => {
-	const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/projectsExtended/crushProjects`, {
-		cache: "no-store",
-		credentials: "include",
-	});
-	const data = await response.json();
-
 	return (
 		<div className="relative">
 			<div className="mb-12">

@@ -30,7 +30,7 @@ const CategoryTable = ({ categories }) => {
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2 w-1/2 hidden md:table-cell">
 									<div className="text-gray-400 line-clamp-2">
-										<Link href={category.link}>{category.description}</Link>
+										<Link href={`/categories/${category.link}`}>{category.description}</Link>
 									</div>
 								</td>
 								<td className="p-2 md:px-4 md:py-2">
