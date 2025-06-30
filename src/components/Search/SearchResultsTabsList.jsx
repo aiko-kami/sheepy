@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import DisplaySwitch from "@/components/Buttons/DisplaySwitch";
 import TabNavItem from "@/components/Tabs/TabNavItem";
@@ -14,9 +14,10 @@ import TalentHorizontalCard from "@/components/Cards/Talents/TalentHorizontalCar
 import CategoryHorizontalCard from "@/components/Cards/Categories/CategoryHorizontalCard";
 import SubCategoryHorizontalCard from "@/components/Cards/Categories/SubCategoryHorizontalCard";
 import LocationHorizontalCard from "@/components/Cards/Locations/LocationHorizontalCard";
+import Triforce from "@/components/Loaders/Triforce";
 
 import searchResults from "@/mock/searchResults.json";
-import categories from "@/mock/categories.json";
+import { ApiGetAllCategories } from "@/lib/api/categories";
 
 const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 	const [activeTab, setActiveTab] = useState(tab || "tabProjects");
@@ -30,6 +31,35 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 		{ tabId: "tabLocations", label: "Locations" },
 		{ tabId: "tabTags", label: "Tags" },
 	];
+
+	const [categories, setCategories] = useState([]);
+	const [loadingProjects, setLoadingProjects] = useState(false);
+	const [errorProjects, setErrorProjects] = useState(null);
+	const [loadingTalents, setLoadingTalents] = useState(false);
+	const [errorTalents, setErrorTalents] = useState(null);
+	const [loadingCategories, setLoadingCategories] = useState(true);
+	const [errorCategories, setErrorCategories] = useState(null);
+	const [loadingSubCategories, setLoadingSubCategories] = useState(false);
+	const [errorSubCategories, setErrorSubCategories] = useState(null);
+	const [loadingLocations, setLoadingLocations] = useState(false);
+	const [errorLocations, setErrorLocations] = useState(null);
+	const [loadingTags, setLoadingTags] = useState(false);
+	const [errorTags, setErrorTags] = useState(null);
+
+	useEffect(() => {
+		const fetchCategories = async () => {
+			try {
+				const data = await ApiGetAllCategories();
+				setCategories(data);
+			} catch (err) {
+				setErrorCategories(err.message);
+			} finally {
+				setLoadingCategories(false);
+			}
+		};
+
+		fetchCategories();
+	}, []);
 
 	return (
 		<>
@@ -53,7 +83,13 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 			{/* Tabs content */}
 			<div id="defaultTabContent" className="">
 				<TabContent id="tabProjects" activeTab={activeTab}>
-					{searchResults.projects && searchResults.projects.length !== 0 ? (
+					{loadingProjects ? (
+						<div className="inset-0 flex items-center justify-center z-10">
+							<Triforce />
+						</div>
+					) : errorProjects ? (
+						<p className="text-center text-red-600">Error: {errorProjects}</p>
+					) : searchResults.projects && searchResults.projects.length !== 0 ? (
 						<>
 							{displayMode === "cards" && (
 								<ul className="grid gap-4">
@@ -73,7 +109,13 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 					)}
 				</TabContent>
 				<TabContent id="tabTalents" activeTab={activeTab}>
-					{searchResults.users && searchResults.users.length !== 0 ? (
+					{loadingTalents ? (
+						<div className="inset-0 flex items-center justify-center z-10">
+							<Triforce />
+						</div>
+					) : errorTalents ? (
+						<p className="text-center text-red-600">Error: {errorTalents}</p>
+					) : searchResults.users && searchResults.users.length !== 0 ? (
 						<>
 							{displayMode === "cards" && (
 								<ul className="grid gap-4">
@@ -93,7 +135,13 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 					)}
 				</TabContent>
 				<TabContent id="tabCategories" activeTab={activeTab}>
-					{categories && categories.length !== 0 ? (
+					{loadingCategories ? (
+						<div className="inset-0 flex items-center justify-center z-10">
+							<Triforce />
+						</div>
+					) : errorCategories ? (
+						<p className="text-center text-red-600">Error: {errorCategories}</p>
+					) : categories && categories.length !== 0 ? (
 						<>
 							{displayMode === "cards" && (
 								<ul className="grid gap-8 sm:grid-cols-2 lg:mx-auto max-w-250">
@@ -113,7 +161,13 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 					)}
 				</TabContent>
 				<TabContent id="tabsubCategories" activeTab={activeTab}>
-					{searchResults.subCategories && searchResults.subCategories.length !== 0 ? (
+					{loadingSubCategories ? (
+						<div className="inset-0 flex items-center justify-center z-10">
+							<Triforce />
+						</div>
+					) : errorSubCategories ? (
+						<p className="text-center text-red-600">Error: {errorSubCategories}</p>
+					) : searchResults.subCategories && searchResults.subCategories.length !== 0 ? (
 						<ul className="grid gap-4">
 							{searchResults.subCategories.map((subCategory, index) => (
 								<li key={index}>
@@ -128,7 +182,13 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 					)}
 				</TabContent>
 				<TabContent id="tabLocations" activeTab={activeTab}>
-					{searchResults.locations && searchResults.locations.length !== 0 ? (
+					{loadingLocations ? (
+						<div className="inset-0 flex items-center justify-center z-10">
+							<Triforce />
+						</div>
+					) : errorLocations ? (
+						<p className="text-center text-red-600">Error: {errorLocations}</p>
+					) : searchResults.locations && searchResults.locations.length !== 0 ? (
 						<>
 							{displayMode === "cards" && (
 								<ul className="grid gap-5 tn:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:mx-auto max-w-320">
@@ -148,7 +208,13 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 					)}
 				</TabContent>
 				<TabContent id="tabTags" activeTab={activeTab}>
-					{searchResults.tags && searchResults.tags.length !== 0 ? (
+					{loadingTags ? (
+						<div className="inset-0 flex items-center justify-center z-10">
+							<Triforce />
+						</div>
+					) : errorTags ? (
+						<p className="text-center text-red-600">Error: {errorTags}</p>
+					) : searchResults.tags && searchResults.tags.length !== 0 ? (
 						<ul className="grid gap-4">
 							{searchResults.tags.map((tag, index) => (
 								<li key={index}>

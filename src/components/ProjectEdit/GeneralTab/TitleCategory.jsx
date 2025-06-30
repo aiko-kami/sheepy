@@ -6,10 +6,29 @@ import { Button } from "@/components/Buttons/Buttons";
 import { SelectField } from "@/components/Forms/SelectField";
 import InputField from "@/components/Forms/InputField";
 
-import categories from "@/mock/categories.json";
+import { ApiGetAllCategories } from "@/lib/api/categories";
 
 const TitleCategory = ({ formState, onChange, setFormState }) => {
+	const [categories, setCategories] = useState([]);
+	const [loading, setLoading] = useState(true);
+	const [error, setError] = useState(null);
+
 	const [subCategories, setSubCategories] = useState([]);
+
+	useEffect(() => {
+		const fetchCategories = async () => {
+			try {
+				const data = await ApiGetAllCategories();
+				setCategories(data);
+			} catch (err) {
+				setError(err.message);
+			} finally {
+				setLoading(false);
+			}
+		};
+
+		fetchCategories();
+	}, []);
 
 	let optionsListCat = [];
 
@@ -28,16 +47,19 @@ const TitleCategory = ({ formState, onChange, setFormState }) => {
 
 	// Set sub-categories when the component mounts and when selectedCategory changes
 	useEffect(() => {
-		const selectedSubCategories = getSubCategories(formState.projectCategory);
-		setSubCategories(selectedSubCategories);
-		const subCategoryExists = selectedSubCategories.some((sub) => sub.name === formState.projectSubCategory);
-		if (!subCategoryExists) {
-			setFormState((prevState) => ({
-				...prevState,
-				projectSubCategory: "",
-			}));
+		if (!loading && categories.length > 0) {
+			const selectedSubCategories = getSubCategories(formState.projectCategory);
+			setSubCategories(selectedSubCategories);
+			const subCategoryExists = selectedSubCategories.some((sub) => sub.name === formState.projectSubCategory);
+
+			if (!subCategoryExists) {
+				setFormState((prevState) => ({
+					...prevState,
+					projectSubCategory: "",
+				}));
+			}
 		}
-	}, [formState.projectCategory]);
+	}, [formState.projectCategory, loading, categories]);
 
 	// Update the state when the category changes
 	const handleCategoryChange = (e) => {
@@ -47,7 +69,7 @@ const TitleCategory = ({ formState, onChange, setFormState }) => {
 		setSubCategories(selectedSubCategories);
 		setFormState((prevState) => ({
 			...prevState,
-			projectSubCategory: selectedSubCategories[0].name,
+			projectSubCategory: selectedSubCategories[0]?.name || "",
 		}));
 	};
 

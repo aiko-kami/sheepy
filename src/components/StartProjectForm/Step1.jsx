@@ -22,10 +22,34 @@ const StepOne = ({ categories, formInputs, onChange }) => {
 		option: `${subCategory.name} ${subCategory.symbol}`,
 	}));
 
+	useEffect(() => {
+		if (!formInputs.selectedCategory && categories.length > 0) {
+			// Set first category as default if not set
+			onChange({
+				target: {
+					name: "selectedCategory",
+					value: categories[0].name,
+				},
+			});
+		}
+	}, [categories]);
 	// Set sub-categories when the component mounts and when selectedCategory changes
 	useEffect(() => {
+		if (!formInputs.selectedCategory) return;
+
 		const selectedSubCategories = getSubCategories(formInputs.selectedCategory);
 		setSubCategories(selectedSubCategories);
+
+		// Set default subCategory if not valid or not set
+		const isValid = selectedSubCategories.some((sub) => sub.name === formInputs.selectedSubCategory);
+		if (!isValid && selectedSubCategories.length > 0) {
+			onChange({
+				target: {
+					name: "selectedSubCategory",
+					value: selectedSubCategories[0].name,
+				},
+			});
+		}
 	}, [formInputs.selectedCategory]);
 
 	// Update the state when the category changes

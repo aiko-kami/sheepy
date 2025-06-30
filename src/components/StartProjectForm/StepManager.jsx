@@ -122,9 +122,6 @@ const StepManager = () => {
 	useEffect(() => {
 		const fetchCategories = async () => {
 			const data = await ApiGetAllCategories();
-
-			console.log("🚀 ~ fetchCategories ~ data:", data);
-
 			setCategories(data);
 		};
 		fetchCategories();

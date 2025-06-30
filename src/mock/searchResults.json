@@ -232,8 +232,10 @@
 					"portfolio": "",
 					"certifications": "",
 					"link": "/tags/ui-ux-design",
-					"bgColor": "bg-purple-400",
-					"bgColorHover": "bg-purple-300"
+					"colors": {
+						"bgColor": "bg-purple-400",
+						"bgColorHover": "bg-purple-300"
+					}
 				},
 				{
 					"name": "Strategic Leadership",
@@ -243,8 +245,10 @@
 					"portfolio": "",
 					"certifications": "",
 					"link": "/tags/user-research",
-					"bgColor": "bg-purple-400",
-					"bgColorHover": "bg-purple-300"
+					"colors": {
+						"bgColor": "bg-purple-400",
+						"bgColorHover": "bg-purple-300"
+					}
 				},
 				{
 					"name": "Diplomacy",
@@ -254,8 +258,10 @@
 					"portfolio": "",
 					"certifications": "",
 					"link": "/tags/user-research",
-					"bgColor": "bg-purple-400",
-					"bgColorHover": "bg-purple-300"
+					"colors": {
+						"bgColor": "bg-purple-400",
+						"bgColorHover": "bg-purple-300"
+					}
 				},
 				{
 					"name": "Tactical Command",
@@ -265,8 +271,10 @@
 					"portfolio": "",
 					"certifications": "",
 					"link": "/tags/user-research",
-					"bgColor": "bg-purple-400",
-					"bgColorHover": "bg-purple-300"
+					"colors": {
+						"bgColor": "bg-purple-400",
+						"bgColorHover": "bg-purple-300"
+					}
 				}
 			],
 			"bio": "I am Captain Jean-Luc Picard of the USS Enterprise. As a dedicated Starfleet officer, I have spent my career boldly going where no one has gone before, exploring the far reaches of space, seeking out new life and civilizations, and upholding the principles of peace, diplomacy, and justice.",
@@ -619,8 +627,10 @@
 					"portfolio": "",
 					"certifications": "",
 					"link": "/tags/investigation",
-					"bgColor": "bg-green-400",
-					"bgColorHover": "bg-green-300"
+					"colors": {
+						"bgColor": "bg-green-400",
+						"bgColorHover": "bg-green-300"
+					}
 				},
 				{
 					"name": "Adventurous Spirit",
@@ -630,8 +640,10 @@
 					"portfolio": "",
 					"certifications": "",
 					"link": "/tags/adventure",
-					"bgColor": "bg-green-400",
-					"bgColorHover": "bg-green-300"
+					"colors": {
+						"bgColor": "bg-green-400",
+						"bgColorHover": "bg-green-300"
+					}
 				},
 				{
 					"name": "Journalism",
@@ -641,8 +653,10 @@
 					"portfolio": "",
 					"certifications": "",
 					"link": "/tags/journalism",
-					"bgColor": "bg-green-400",
-					"bgColorHover": "bg-green-300"
+					"colors": {
+						"bgColor": "bg-green-400",
+						"bgColorHover": "bg-green-300"
+					}
 				}
 			],
 			"bio": "I'm Dipper Pines, and I spend my summers in Gravity Falls, Oregon, where I investigate paranormal phenomena with my twin sister Mabel and our Great Uncle Stan. Together, we uncover secrets, solve mysteries, and have adventures beyond our wildest imaginations.",
@@ -995,8 +1009,10 @@
 					"portfolio": "",
 					"certifications": "",
 					"link": "/tags/fashion-design",
-					"bgColor": "bg-pink-400",
-					"bgColorHover": "bg-pink-300"
+					"colors": {
+						"bgColor": "bg-pink-400",
+						"bgColorHover": "bg-pink-300"
+					}
 				},
 				{
 					"name": "Arts and Crafts",
@@ -1006,8 +1022,10 @@
 					"portfolio": "",
 					"certifications": "",
 					"link": "/tags/arts-and-crafts",
-					"bgColor": "bg-pink-400",
-					"bgColorHover": "bg-pink-300"
+					"colors": {
+						"bgColor": "bg-pink-400",
+						"bgColorHover": "bg-pink-300"
+					}
 				},
 				{
 					"name": "Optimism",
@@ -1017,8 +1035,10 @@
 					"portfolio": "",
 					"certifications": "",
 					"link": "/tags/optimism",
-					"bgColor": "bg-pink-400",
-					"bgColorHover": "bg-pink-300"
+					"colors": {
+						"bgColor": "bg-pink-400",
+						"bgColorHover": "bg-pink-300"
+					}
 				}
 			],
 			"bio": "Hey there! I'm Mabel Pines, the most fashionable girl in Gravity Falls! I love glitter, rainbows, and anything that sparkles. When I'm not designing fabulous sweaters or crafting adorable knick-knacks, you can find me spreading joy and laughter wherever I go. Let's make some memories together!",
@@ -1371,8 +1391,10 @@
 					"portfolio": "https://www.imdb.com/name/nm0914612/",
 					"certifications": "",
 					"link": "/tags/acting",
-					"bgColor": "bg-red-400",
-					"bgColorHover": "bg-red-300"
+					"colors": {
+						"bgColor": "bg-red-400",
+						"bgColorHover": "bg-red-300"
+					}
 				},
 				{
 					"name": "Activism",
@@ -1382,8 +1404,10 @@
 					"portfolio": "",
 					"certifications": "",
 					"link": "/tags/activism",
-					"bgColor": "bg-red-400",
-					"bgColorHover": "bg-red-300"
+					"colors": {
+						"bgColor": "bg-red-400",
+						"bgColorHover": "bg-red-300"
+					}
 				},
 				{
 					"name": "Fashion",
@@ -1393,8 +1417,10 @@
 					"portfolio": "",
 					"certifications": "",
 					"link": "/tags/fashion",
-					"bgColor": "bg-red-400",
-					"bgColorHover": "bg-red-300"
+					"colors": {
+						"bgColor": "bg-red-400",
+						"bgColorHover": "bg-red-300"
+					}
 				}
 			],
 			"bio": "Hi there! I'm Emma Watson, an actress known for my roles in the Harry Potter series, The Perks of Being a Wallflower, and Beauty and the Beast. Beyond acting, I'm passionate about using my platform to advocate for gender equality and environmental sustainability. When I'm not on set, you can find me speaking at United Nations conferences, supporting various NGOs, or promoting sustainable fashion initiatives. Let's work together to create a better world!",

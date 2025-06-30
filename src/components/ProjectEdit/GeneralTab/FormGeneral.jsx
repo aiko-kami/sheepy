@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import General from "@/components/ProjectEdit/GeneralTab/General";
 import SideMenu from "@/components/ProjectEdit/SideMenu";
 

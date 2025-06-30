@@ -1,5 +1,3 @@
-import "../../../../globals.css";
-
 import ProjectEditNavbar from "@/components/ProjectEdit/ProjectEditNavbar";
 
 export default function RootLayout({ children }) {
