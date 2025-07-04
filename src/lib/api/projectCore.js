@@ -1,11 +1,52 @@
-/**
- * Project core routes
- */
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
-const projectRoute = require("express").Router();
+export async function ApiCreateProjectDraft(projectInputs) {
+	try {
+		const res = await fetch(`${BASE_URL}/projects/createProjectDraft`, {
+			method: "post",
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ projectInputs }),
+		});
+		const json = await res.json();
 
-const { projectController } = require("../controllers");
-const { verifyAccess, verifyAdminAccess } = require("../middlewares/verifyAccess.middleware");
+		if (!res.ok) {
+			// Try to read backend error message if available
+			const errorMessage = json?.message || "Failed to create project draft";
+			throw new Error(errorMessage);
+		}
+		return;
+	} catch (error) {
+		throw error;
+	}
+}
+
+export async function ApiSubmitProject(projectInputs) {
+	try {
+		const res = await fetch(`${BASE_URL}/projects/submitProject`, {
+			method: "post",
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ projectInputs }),
+		});
+		const json = await res.json();
+
+		if (!res.ok) {
+			// Try to read backend error message if available
+			const errorMessage = json?.message || "Failed to submit project";
+			throw new Error(errorMessage);
+		}
+		return;
+	} catch (error) {
+		throw error;
+	}
+}
+
+/* 
 
 // Project creation
 // createProjectDraft, updateProjectDraft, removeProjectDraft to be completed
@@ -31,4 +72,4 @@ projectRoute.get("/submittedProjects", verifyAdminAccess, projectController.retr
 projectRoute.get("/nbProjects", projectController.countProjects);
 projectRoute.get("/nbProjectsPerCategory", projectController.countProjectsPerCategory);
 
-module.exports = projectRoute;
+ */

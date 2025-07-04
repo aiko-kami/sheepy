@@ -1,4 +1,4 @@
-import { IoArrowForward, IoArrowBack, IoCheckmarkCircleOutline } from "react-icons/io5";
+import { IoArrowForward, IoArrowBack, IoPaperPlaneOutline } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 
 const ButtonsNavigation = ({ goToStep, currentStep, totalSteps }) => {
@@ -8,42 +8,68 @@ const ButtonsNavigation = ({ goToStep, currentStep, totalSteps }) => {
 	return (
 		<>
 			<div className="flex items-center sticky bottom-0">
+				{/* Back button */}
 				<div className="flex">
-					{currentStep === 1 && (
-						<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "blue", btnRounded: "std", action: () => goToStep(0) }}>
+					{currentStep > 0 && (
+						<Button
+							btnProps={{
+								btnSize: "sm",
+								type: "button",
+								btnColor: currentStep === 1 ? "blue" : "green",
+								btnRounded: "std",
+								action: () => goToStep(currentStep === 1 ? 0 : currentStep - 1),
+							}}
+						>
 							<div className="flex">
-								<IoArrowBack className="text-xl mr-2" /> Back
-							</div>
-						</Button>
-					)}
-					{currentStep > 1 && (
-						<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "green", btnRounded: "std", action: () => goToStep(currentStep - 1) }}>
-							<div className="flex">
-								<IoArrowBack className="text-xl mr-2" /> Back
+								<IoArrowBack className="text-xl mr-2" />
+								{currentStep === totalSteps ? "Back to edit" : "Back"}
 							</div>
 						</Button>
 					)}
 				</div>
+
+				{/* Next / Save draft / Submit buttons */}
 				<div className="flex gap-2 ml-auto">
-					<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "grayBorder", btnRounded: "std", action: () => goToStep(0) }}>Save draft</Button>
-					{currentStep < totalSteps - 1 && (
-						<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "blue", btnRounded: "std", action: () => goToStep(currentStep + 1) }}>
-							<div className="flex">
-								Next <IoArrowForward className="text-xl ml-2" />
-							</div>
-						</Button>
-					)}
-					{currentStep === totalSteps - 1 && (
-						<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "blue", btnRounded: "std", action: () => goToStep(totalSteps) }}>
+					<Button
+						btnProps={{
+							btnSize: "sm",
+							type: "submit",
+							name: "action",
+							value: "save-draft",
+							btnColor: "grayBorder",
+							btnRounded: "std",
+						}}
+					>
+						Save draft
+					</Button>
+					{currentStep < totalSteps && (
+						<Button
+							btnProps={{
+								btnSize: "sm",
+								type: "button",
+								btnColor: "blue",
+								btnRounded: "std",
+								action: () => goToStep(currentStep + 1),
+							}}
+						>
 							<div className="flex">
 								Next <IoArrowForward className="text-xl ml-2" />
 							</div>
 						</Button>
 					)}
 					{currentStep === totalSteps && (
-						<Button btnProps={{ btnSize: "sm", type: "submit", btnColor: "blue", btnRounded: "std" }}>
+						<Button
+							btnProps={{
+								btnSize: "sm",
+								type: "submit",
+								name: "action",
+								value: "submit-project",
+								btnColor: "gradientBluePurple",
+								btnRounded: "std",
+							}}
+						>
 							<div className="flex">
-								Submit my project <IoCheckmarkCircleOutline className="text-xl ml-2" />
+								Submit my project <IoPaperPlaneOutline className="text-xl ml-2" />
 							</div>
 						</Button>
 					)}

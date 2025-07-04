@@ -25,7 +25,6 @@ const StepThree = ({ formInputs, onChange }) => {
 									placeholder="What's the story behind your project?... (10 000 characters max)"
 									maxLength={10000}
 									rows="20"
-									required={true}
 								/>
 							</div>
 						</div>

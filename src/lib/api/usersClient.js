@@ -2,7 +2,7 @@ const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export async function ApiGetUserFromSessionClient() {
 	try {
-		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/myData`, {
+		const res = await fetch(`${BASE_URL}/users/myData`, {
 			credentials: "include",
 		});
 
@@ -23,7 +23,7 @@ export async function ApiGetUserFromSessionClient() {
 
 export async function ApiGetUserSettingsClient() {
 	try {
-		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/mySettings`, {
+		const res = await fetch(`${BASE_URL}/users/mySettings`, {
 			credentials: "include",
 		});
 
@@ -49,7 +49,7 @@ export async function ApiUpdateUserBioDescription({ description, bio }) {
 			bio,
 		};
 
-		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/updateMyBioDescription`, {
+		const res = await fetch(`${BASE_URL}/users/updateMyBioDescription`, {
 			method: "PATCH",
 			credentials: "include",
 			headers: {
@@ -80,7 +80,7 @@ export async function ApiUpdateUserDetails({ locationCity, locationCountry, lang
 			website,
 		};
 
-		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/updateMyDetails`, {
+		const res = await fetch(`${BASE_URL}/users/updateMyDetails`, {
 			method: "PATCH",
 			credentials: "include",
 			headers: {
@@ -114,7 +114,7 @@ export async function ApiUpdateUserSettingsPrivacy(privacySettings) {
 			privacyProjectLike: privacySettings.privacyProjectLike,
 		};
 
-		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/updateMySettingsPrivacy`, {
+		const res = await fetch(`${BASE_URL}/users/updateMySettingsPrivacy`, {
 			method: "PATCH",
 			credentials: "include",
 			headers: {
@@ -141,7 +141,7 @@ export async function ApiUpdateUserSettingsAppearance(appearance) {
 			appearance,
 		};
 
-		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/updateMySettingsAppearance`, {
+		const res = await fetch(`${BASE_URL}/users/updateMySettingsAppearance`, {
 			method: "PATCH",
 			credentials: "include",
 			headers: {
@@ -168,7 +168,7 @@ export async function ApiUpdateUserSettingsLanguage(language) {
 			language,
 		};
 
-		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/updateMySettingsLanguage`, {
+		const res = await fetch(`${BASE_URL}/users/updateMySettingsLanguage`, {
 			method: "PATCH",
 			credentials: "include",
 			headers: {
@@ -198,7 +198,7 @@ export async function ApiUpdateUserSettingsNotifications(notifications) {
 			notificationsComments: notifications.notificationsComments,
 		};
 
-		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/updateMySettingsNotifications`, {
+		const res = await fetch(`${BASE_URL}/users/updateMySettingsNotifications`, {
 			method: "PATCH",
 			credentials: "include",
 			headers: {
@@ -225,7 +225,7 @@ export async function ApiUpdateUserEmail({ email }) {
 			email,
 		};
 
-		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/changeMyEmail`, {
+		const res = await fetch(`${BASE_URL}/users/changeMyEmail`, {
 			method: "PATCH",
 			credentials: "include",
 			headers: {
@@ -276,7 +276,7 @@ export async function ApiUpdateUserPassword({ oldPassword, newPassword, confirmN
 			confirmNewPassword,
 		};
 
-		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/changeMyPassword`, {
+		const res = await fetch(`${BASE_URL}/users/changeMyPassword`, {
 			method: "PATCH",
 			credentials: "include",
 			headers: {
@@ -302,7 +302,7 @@ export async function ApiUpdateUserPicture(file) {
 		const formData = new FormData();
 		formData.append("image", file); // match the backend's expected field name
 
-		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/updateMyPicture`, {
+		const res = await fetch(`${BASE_URL}/users/updateMyPicture`, {
 			method: "POST",
 			credentials: "include",
 			body: formData, // no need to set Content-Type, fetch does it automatically
@@ -325,7 +325,7 @@ export async function ApiUpdateUserBackgroundPicture(file) {
 		const formData = new FormData();
 		formData.append("image", file); // match the backend's expected field name
 
-		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/updateMyBackgroundPicture`, {
+		const res = await fetch(`${BASE_URL}/users/updateMyBackgroundPicture`, {
 			method: "POST",
 			credentials: "include",
 			body: formData, // no need to set Content-Type, fetch does it automatically
@@ -345,7 +345,7 @@ export async function ApiUpdateUserBackgroundPicture(file) {
 
 export async function ApiRemoveUserPicture() {
 	try {
-		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/removeMyPicture`, {
+		const res = await fetch(`${BASE_URL}/users/removeMyPicture`, {
 			method: "DELETE",
 			credentials: "include",
 		});
@@ -364,7 +364,7 @@ export async function ApiRemoveUserPicture() {
 
 export async function ApiRemoveUserBackgroundPicture() {
 	try {
-		const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/users/removeMyBackgroundPicture`, {
+		const res = await fetch(`${BASE_URL}/users/removeMyBackgroundPicture`, {
 			method: "DELETE",
 			credentials: "include",
 		});

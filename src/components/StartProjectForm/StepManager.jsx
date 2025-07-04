@@ -2,17 +2,19 @@
 
 import { useState, useEffect } from "react";
 import StartProject from "@/components/StartProjectForm/StartProject";
-import StepOne from "@/components/StartProjectForm/Step1";
-import StepTwo from "@/components/StartProjectForm/Step2";
-import StepThree from "@/components/StartProjectForm/Step3";
-import StepFour from "@/components/StartProjectForm/Step4";
-import StepFive from "@/components/StartProjectForm/Step5";
-import StepSix from "@/components/StartProjectForm/Step6";
-import StepFinalValidation from "@/components/StartProjectForm/StepFinalValidation";
+import StepOne from "@/components/StartProjectForm/Steps/Step1";
+import StepTwo from "@/components/StartProjectForm/Steps/Step2";
+import StepThree from "@/components/StartProjectForm/Steps/Step3";
+import StepFour from "@/components/StartProjectForm/Steps/Step4";
+import StepFive from "@/components/StartProjectForm/Steps/Step5";
+import StepSix from "@/components/StartProjectForm/Steps/Step6";
+import StepFinalValidation from "@/components/StartProjectForm/Steps/StepFinalValidation";
 import StepProjectSubmitted from "@/components/StartProjectForm/StepProjectSubmitted";
 import ProgressBar from "@/components/StartProjectForm/ProgressBar";
 import ButtonsNavigation from "@/components/StartProjectForm/ButtonsNavigation";
 import { ApiGetAllCategories } from "@/lib/api/categories";
+import { ApiCreateProjectDraft, ApiSubmitProject } from "@/lib/api/projectCore";
+import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
 import projectForm from "@/mock/projectForm.json";
 
@@ -24,13 +26,14 @@ const StepManager = () => {
 
 	const [formInputs, setFormInputs] = useState({
 		projectTitle: "",
-		selectedCategory: "",
+		selectedCategoryId: "",
+		selectedCategoryName: "",
 		selectedSubCategory: "",
 		projectSummary: "",
 		projectGoal: "",
 		projectDescription: "",
 		creatorMotivations: "",
-		projectObjectives: "",
+		projectObjectives: [],
 		locationOnlineOnly: false,
 		locationCountry: "",
 		locationCity: "",
@@ -44,6 +47,9 @@ const StepManager = () => {
 	const [tagError, setTagError] = useState("");
 
 	const [talentNeededInput, setTalentNeededInput] = useState("");
+
+	const [objectiveInput, setObjectiveInput] = useState("");
+	const [objectiveError, setObjectiveError] = useState("");
 
 	const onChange = (e) => {
 		const { name, value, type, checked } = e.target;
@@ -84,6 +90,26 @@ const StepManager = () => {
 		}
 	};
 
+	const addObjective = () => {
+		if (!objectiveInput) {
+			setObjectiveError("Please enter an objective.");
+		}
+		if (objectiveInput && formInputs.projectObjectives.includes(objectiveInput)) {
+			setObjectiveError("This project objective is already present in the list.");
+		}
+		if (objectiveInput && formInputs.projectObjectives.length >= 10) {
+			setObjectiveError("You can only add up to 10 project objectives.");
+		}
+		if (objectiveInput && !formInputs.projectObjectives.includes(objectiveInput) && formInputs.projectObjectives.length < 10) {
+			setFormInputs((prevState) => ({
+				...prevState,
+				projectObjectives: [...prevState.projectObjectives, objectiveInput],
+			}));
+			setObjectiveInput("");
+			setObjectiveError("");
+		}
+	};
+
 	const removeTag = (tagToRemove) => {
 		setFormInputs((prevState) => ({
 			...prevState,
@@ -98,6 +124,13 @@ const StepManager = () => {
 		}));
 	};
 
+	const removeObjective = (objectiveToRemove) => {
+		setFormInputs((prevState) => ({
+			...prevState,
+			projectObjectives: prevState.projectObjectives.filter((objective) => objective !== objectiveToRemove),
+		}));
+	};
+
 	const handleTagInputChange = (e) => {
 		setTagError("");
 		setTagInput(e.target.value);
@@ -105,6 +138,11 @@ const StepManager = () => {
 
 	const handleTalentNeededInputChange = (e) => {
 		setTalentNeededInput(e.target.value);
+	};
+
+	const handleObjectiveInputChange = (e) => {
+		setObjectiveError("");
+		setObjectiveInput(e.target.value);
 	};
 
 	const setProjectStartDate = (newValue) => {
@@ -129,14 +167,14 @@ const StepManager = () => {
 
 	// Update subcategory when category changes
 	useEffect(() => {
-		const category = categories.find((c) => c.name === formInputs.selectedCategory);
+		const category = categories.find((c) => c.name === formInputs.selectedCategoryId);
 		if (category && category.subCategories.length > 0) {
 			setFormInputs((prev) => ({
 				...prev,
 				selectedSubCategory: category.subCategories[0].name,
 			}));
 		}
-	}, [formInputs.selectedCategory, categories]);
+	}, [formInputs.selectedCategoryId, categories]);
 
 	useEffect(() => {
 		let newPercent;
@@ -151,11 +189,41 @@ const StepManager = () => {
 	}, [currentStep]);
 
 	// Handle form submission
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		// You can perform actions like searching here
-		console.log("🚀 ~ handleSubmit ~ Project inputs:", formInputs);
-		goToStep(totalSteps + 1);
+
+		const formAction = e.nativeEvent.submitter?.value;
+
+		// Prepare payload, replacing empty strings with special marker
+		const payload = {
+			title: formInputs.projectTitle,
+			categoryId: formInputs.selectedCategoryId,
+			subCategory: formInputs.selectedSubCategory,
+			summary: formInputs.projectSummary,
+			goal: formInputs.projectGoal,
+			description: formInputs.projectDescription,
+			creatorMotivation: formInputs.creatorMotivations,
+			objectives: formInputs.projectObjectives,
+			locationCountry: formInputs.locationCountry,
+			locationCity: formInputs.locationCity,
+			locationOnlineOnly: formInputs.locationOnlineOnly,
+			visibility: formInputs.projectVisibility,
+			startDate: formInputs.projectStartDate ? formInputs.projectStartDate.toUTC().toISO() : "",
+			tags: formInputs.tags,
+			talentsNeeded: formInputs.talentsNeeded,
+		};
+		try {
+			if (formAction === "save-draft") {
+				await ApiCreateProjectDraft(payload);
+				showSuccessToast("Draft project saved!");
+			} else if (formAction === "submit-project") {
+				await ApiSubmitProject(payload);
+				goToStep(totalSteps + 1);
+				showSuccessToast("Project submitted successfully!");
+			}
+		} catch (error) {
+			showErrorToast(error.message);
+		}
 	};
 
 	return (
@@ -174,7 +242,17 @@ const StepManager = () => {
 					{currentStep === 3 && <StepThree formInputs={formInputs} onChange={onChange} />}
 
 					{/* Step 4: Fill in the creator motivations and objectives */}
-					{currentStep === 4 && <StepFour formInputs={formInputs} onChange={onChange} />}
+					{currentStep === 4 && (
+						<StepFour
+							formInputs={formInputs}
+							onChange={onChange}
+							objectiveInput={objectiveInput}
+							addObjective={addObjective}
+							removeObjective={removeObjective}
+							handleObjectiveInputChange={handleObjectiveInputChange}
+							objectiveError={objectiveError}
+						/>
+					)}
 
 					{/* Step 5: Fill in the project project online-only, project location, project privacy, project start date, and tags */}
 					{currentStep === 5 && (
@@ -204,7 +282,7 @@ const StepManager = () => {
 				</div>
 				<div className={`${currentStep === totalSteps ? "h-160" : "hidden"} overflow-y-auto mb-4 py-1`}>
 					{/* Step 7: (Final Validation): Review and validate all the provided information */}
-					{currentStep === totalSteps && <StepFinalValidation formInputs={formInputs} talentNeededProfilePicture={projectForm.talentNeededProfilePicture} />}
+					{currentStep === totalSteps && <StepFinalValidation formInputs={formInputs} talentNeededProfilePicture={projectForm.talentNeededProfilePicture} categories={categories} />}
 				</div>
 				{/* Step 8: Show confirmation that the project has been submitted */}
 				{currentStep === 8 && <StepProjectSubmitted goToStep={goToStep} />}

@@ -25,7 +25,6 @@ const StepTwo = ({ formInputs, onChange }) => {
 									placeholder="Summarize your project in a few sentences... (300 characters max)"
 									maxLength={300}
 									rows="6"
-									required={true}
 								/>
 							</div>
 							{/* Project goal */}
@@ -38,7 +37,6 @@ const StepTwo = ({ formInputs, onChange }) => {
 								placeholder="What is the main goal of your project?... (500 characters max)"
 								maxLength={500}
 								rows="6"
-								required={true}
 							/>
 						</div>
 					</div>

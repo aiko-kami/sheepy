@@ -12,7 +12,7 @@ const StepOne = ({ categories, formInputs, onChange }) => {
 	categories.forEach((category) => {
 		// Add the main category name
 		optionsListCat.push({
-			value: category.name,
+			value: category.categoryId,
 			option: category.name,
 		});
 	});
@@ -23,21 +23,22 @@ const StepOne = ({ categories, formInputs, onChange }) => {
 	}));
 
 	useEffect(() => {
-		if (!formInputs.selectedCategory && categories.length > 0) {
+		if (!formInputs.selectedCategoryId && categories.length > 0) {
 			// Set first category as default if not set
 			onChange({
 				target: {
-					name: "selectedCategory",
-					value: categories[0].name,
+					name: "selectedCategoryId",
+					value: categories[0].categoryId,
 				},
 			});
 		}
 	}, [categories]);
-	// Set sub-categories when the component mounts and when selectedCategory changes
-	useEffect(() => {
-		if (!formInputs.selectedCategory) return;
 
-		const selectedSubCategories = getSubCategories(formInputs.selectedCategory);
+	// Set sub-categories when the component mounts and when selectedCategoryId changes
+	useEffect(() => {
+		if (!formInputs.selectedCategoryId) return;
+
+		const selectedSubCategories = getSubCategories(formInputs.selectedCategoryId);
 		setSubCategories(selectedSubCategories);
 
 		// Set default subCategory if not valid or not set
@@ -50,20 +51,30 @@ const StepOne = ({ categories, formInputs, onChange }) => {
 				},
 			});
 		}
-	}, [formInputs.selectedCategory]);
+	}, [formInputs.selectedCategoryId]);
 
 	// Update the state when the category changes
 	const handleCategoryChange = (e) => {
 		const { name, value } = e.target;
+		const selectedCategory = categories.find((cat) => cat.categoryId === value);
+
 		onChange(e); // Update the main form state
-		const selectedSubCategories = getSubCategories(value);
-		setSubCategories(selectedSubCategories);
-		onChange({ target: { name: "selectedSubCategory", value: selectedSubCategories[0].name } }); // Reset the sub-category
+		if (selectedCategory) {
+			// Update category name and default subcategory
+			onChange({ target: { name: "selectedCategoryName", value: selectedCategory.name } });
+
+			const selectedSubCategories = selectedCategory.subCategories || [];
+			setSubCategories(selectedSubCategories);
+
+			if (selectedSubCategories.length > 0) {
+				onChange({ target: { name: "selectedSubCategory", value: selectedSubCategories[0].name } });
+			}
+		}
 	};
 
 	// Get sub-categories for the selected category
-	const getSubCategories = (categoryName) => {
-		const category = categories.find((cat) => cat.name === categoryName);
+	const getSubCategories = (categoryId) => {
+		const category = categories.find((cat) => cat.categoryId === categoryId);
 		return category ? category.subCategories : [];
 	};
 
@@ -73,7 +84,19 @@ const StepOne = ({ categories, formInputs, onChange }) => {
 				<div className="col-span-2 xl:pl-14">
 					<p className="text-xl mb-4 text-center">Let's start with the basics!</p>
 					<p className="mb-6 text-justify">Give your project a cool title and pick a category and sub-category that best suit your project.</p>
+					<div className="flex flex-col lg:flex-row justify-between">
+						{/* Category and sub-category description */}
+						<div className="flex-1 mb-6 lg:mb-0 lg:mr-2">
+							{formInputs.selectedCategoryId && (
+								<div className="p-3 border border-gray-300 rounded bg-gray-200">
+									<div className="font-semibold mb-2 text-gray-700 leading-none">{categories.find((cat) => cat.id === formInputs.selectedCategoryId)?.name} category description</div>
+									<div className="text-sm text-gray-700">{categories.find((cat) => cat.id === formInputs.selectedCategoryId)?.description || "No description available."}</div>
+								</div>
+							)}
+						</div>
+					</div>
 				</div>
+
 				<div className="col-span-3">
 					{/* List of fields */}
 					<div className="flex justify-end items-center">
@@ -82,15 +105,15 @@ const StepOne = ({ categories, formInputs, onChange }) => {
 							<div className="mb-8">
 								<InputField inputName="projectTitle" inputType="text" label="Your project title" inputValue={formInputs.projectTitle} onChange={onChange} />
 							</div>
-							<div className="flex flex-col lg:flex-row justify-between">
+							<div className="flex flex-col lg:flex-row justify-between mb-8">
 								{/* Project category */}
 								<div className="flex-1 mb-6 lg:mb-0 lg:mr-2">
 									<div className="text-sm">Choose a category</div>
-									<SelectField inputName="selectedCategory" possibleValues={optionsListCat} inputValue={formInputs.selectedCategory} onChange={handleCategoryChange} />
+									<SelectField inputName="selectedCategoryId" possibleValues={optionsListCat} inputValue={formInputs.selectedCategoryId} onChange={handleCategoryChange} />
 								</div>
 								{/* Project sub-category */}
 								<div className="flex-1 min-h-[3.5rem] lg:ml-2">
-									{formInputs.selectedCategory && subCategories.length > 0 && (
+									{formInputs.selectedCategoryId && subCategories.length > 0 && (
 										<>
 											<div className="text-sm">Select a sub-category</div>
 											<SelectField inputName="selectedSubCategory" possibleValues={optionsListSubcat} inputValue={formInputs.selectedSubCategory} onChange={onChange} />

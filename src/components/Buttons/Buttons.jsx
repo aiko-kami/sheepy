@@ -1,7 +1,7 @@
 "use client";
 
 const Button = ({ children, btnProps }) => {
-	const { type, btnSize, btnColor, btnRounded, action = () => {} } = btnProps;
+	const { type, btnSize, btnColor, btnRounded, action = () => {}, name, value } = btnProps;
 
 	let size;
 	switch (btnSize) {
@@ -50,6 +50,9 @@ const Button = ({ children, btnProps }) => {
 		case "yellow":
 			color = "text-white bg-yellow-600 hover:bg-yellow-700 active:bg-yellow-800";
 			break;
+		case "gradientBluePurple":
+			color = "text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 active:from-blue-800 active:to-indigo-800";
+			break;
 		case "grayBorder":
 			color = "text-white border border-2 box-border border-gray-600 hover:bg-gray-600 active:bg-gray-700";
 			break;
@@ -82,14 +85,22 @@ const Button = ({ children, btnProps }) => {
 	}
 
 	return (
-		<button type={type} onClick={action} className={`leading-snug shadow-lg transition duration-150 ease-in-out ${size} ${color} ${rounded}`} data-mdb-ripple="true" data-mdb-ripple-color="light">
+		<button
+			type={type}
+			onClick={action}
+			name={name}
+			value={value}
+			className={`leading-snug shadow-lg transition duration-150 ease-in-out ${size} ${color} ${rounded}`}
+			data-mdb-ripple="true"
+			data-mdb-ripple-color="light"
+		>
 			{children}
 		</button>
 	);
 };
 
 const ButtonCircle = ({ children, btnProps }) => {
-	const { btnSize, type, btnColor, action = () => {} } = btnProps;
+	const { btnSize, type, btnColor, action = () => {}, name, value } = btnProps;
 
 	let size;
 	switch (btnSize) {
@@ -134,6 +145,8 @@ const ButtonCircle = ({ children, btnProps }) => {
 		<button
 			type={type}
 			onClick={action}
+			name={name}
+			value={value}
 			className={`rounded-full leading-snug hover:shadow-lg transition duration-150 ease-in-out ${size} ${color}`}
 			data-mdb-ripple="true"
 			data-mdb-ripple-color="light"
