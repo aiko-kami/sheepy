@@ -1,7 +1,7 @@
 "use client";
 
 const Button = ({ children, btnProps }) => {
-	const { type, btnSize, btnColor, btnRounded, action = () => {}, name, value } = btnProps;
+	const { type, btnSize, btnColor, btnRounded, action = () => {}, name, value, disabled = false } = btnProps;
 
 	let size;
 	switch (btnSize) {
@@ -23,41 +23,50 @@ const Button = ({ children, btnProps }) => {
 		case "3xl":
 			size = "text-3xl px-7 pb-5 pt-3 m-4";
 			break;
+		case "lg":
+			size = "text-lg px-12 py-4 font-semibold";
+			break;
 		default:
 			size = "text-base px-4 py-2";
 	}
 
 	let color;
+	const isDisabled = btnProps?.disabled;
+
 	switch (btnColor) {
 		case "gray":
-			color = "text-white bg-gray-500 hover:bg-gray-600 active:bg-gray-800";
+			color = isDisabled ? "text-white bg-gray-500 opacity-40" : "text-white bg-gray-500 hover:bg-gray-600 active:bg-gray-800";
 			break;
 		case "blue":
-			color = "text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800";
+			color = isDisabled ? "text-white bg-blue-600 opacity-40" : "text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800";
 			break;
 		case "green":
-			color = "text-white bg-green-600 hover:bg-green-700 active:bg-green-800";
+			color = isDisabled ? "text-white bg-green-600 opacity-40" : "text-white bg-green-600 hover:bg-green-700 active:bg-green-800";
 			break;
 		case "red":
-			color = "text-white bg-red-600 hover:bg-red-700 active:bg-red-800";
+			color = isDisabled ? "text-white bg-red-600 opacity-40" : "text-white bg-red-600 hover:bg-red-700 active:bg-red-800";
 			break;
 		case "pink":
-			color = "text-white bg-pink-400 hover:bg-pink-500 active:bg-pink-700";
+			color = isDisabled ? "text-white bg-pink-400 opacity-40" : "text-white bg-pink-400 hover:bg-pink-500 active:bg-pink-700";
 			break;
 		case "orange":
-			color = "text-white bg-orange-600 hover:bg-orange-700 active:bg-orange-800";
+			color = isDisabled ? "text-white bg-orange-600 opacity-40" : "text-white bg-orange-600 hover:bg-orange-700 active:bg-orange-800";
 			break;
 		case "yellow":
-			color = "text-white bg-yellow-600 hover:bg-yellow-700 active:bg-yellow-800";
+			color = isDisabled ? "text-white bg-yellow-600 opacity-40" : "text-white bg-yellow-600 hover:bg-yellow-700 active:bg-yellow-800";
 			break;
 		case "gradientBluePurple":
-			color = "text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 active:from-blue-800 active:to-indigo-800";
+			color = isDisabled
+				? "text-white bg-indigo-600 opacity-40"
+				: "text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 active:from-blue-800 active:to-indigo-800 shadow-2xl shadow-blue-500/25";
 			break;
 		case "grayBorder":
-			color = "text-white border border-2 box-border border-gray-600 hover:bg-gray-600 active:bg-gray-700";
+			color = isDisabled
+				? "text-white border border-2 box-border border-gray-300 bg-gray-200 opacity-40"
+				: "text-white border border-2 box-border border-gray-600 hover:bg-gray-600 active:bg-gray-700";
 			break;
 		default:
-			color = "text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800";
+			color = isDisabled ? "text-white bg-blue-300 opacity-40" : "text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800";
 	}
 
 	let rounded;
@@ -90,6 +99,7 @@ const Button = ({ children, btnProps }) => {
 			onClick={action}
 			name={name}
 			value={value}
+			disabled={disabled}
 			className={`leading-snug shadow-lg transition duration-150 ease-in-out ${size} ${color} ${rounded}`}
 			data-mdb-ripple="true"
 			data-mdb-ripple-color="light"
@@ -100,7 +110,7 @@ const Button = ({ children, btnProps }) => {
 };
 
 const ButtonCircle = ({ children, btnProps }) => {
-	const { btnSize, type, btnColor, action = () => {}, name, value } = btnProps;
+	const { btnSize, type, btnColor, action = () => {}, name, value, disabled = false } = btnProps;
 
 	let size;
 	switch (btnSize) {
@@ -147,6 +157,7 @@ const ButtonCircle = ({ children, btnProps }) => {
 			onClick={action}
 			name={name}
 			value={value}
+			disabled={disabled}
 			className={`rounded-full leading-snug hover:shadow-lg transition duration-150 ease-in-out ${size} ${color}`}
 			data-mdb-ripple="true"
 			data-mdb-ripple-color="light"

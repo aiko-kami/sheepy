@@ -1,31 +1,6 @@
-import Image from "next/image";
 import { DateTime } from "luxon";
 
-import {
-	IoCalendarOutline,
-	IoLocation,
-	IoGlobeOutline,
-	IoSparkles,
-	IoLocationOutline,
-	IoEyeOutline,
-	IoEyeOffOutline,
-	IoNavigateOutline,
-	IoPlanet,
-	IoFlagOutline,
-	IoPeopleOutline,
-	IoPricetagOutline,
-	IoDocumentText,
-	IoDocumentTextOutline,
-	IoHeartOutline,
-	IoCheckmarkCircleOutline,
-	IoCreateOutline,
-	IoArrowBackOutline,
-	IoSendOutline,
-	IoTimeOutline,
-	IoCompassOutline,
-	IoPricetagsOutline,
-} from "react-icons/io5";
-import { Badge, BadgeRounded } from "@/components/Badges/Badges";
+import { IoCalendarOutline, IoGlobeOutline, IoSparkles, IoLocationOutline, IoEyeOutline, IoEyeOffOutline, IoTimeOutline, IoPricetagsOutline } from "react-icons/io5";
 
 const CardProjectLocationSettingsTags = ({ formInputs }) => {
 	const formatDate = (date) => {
@@ -41,17 +16,17 @@ const CardProjectLocationSettingsTags = ({ formInputs }) => {
 	return (
 		<>
 			{/* Project Overview Card */}
-			<div className="bg-white rounded-lg shadow-lg border-0 overflow-hidden w-7/9 mx-auto">
+			<div className="bg-white rounded-lg shadow-lg border-0 overflow-hidden w-2/3 mx-auto">
 				<div className="bg-gray-200 p-6">
 					<h2 className="flex items-center gap-2 text-xl font-semibold text-gray-800">
-						<IoSparkles className="h-6 w-6 text-gray-400" />
+						<IoSparkles className="h-6 w-6 text-blue-600" />
 						Location & Settings
 					</h2>
 				</div>
 				<div className="p-6 space-y-4">
 					<div>
 						<div className="flex items-center gap-2 mb-2">
-							<IoLocation className="h-5 w-5 text-blue-600" />
+							<IoLocationOutline className="h-5 w-5 text-blue-600" />
 							<h3 className="font-semibold text-gray-900">Project Location</h3>
 						</div>
 						<div className="ml-8 text-gray-800 flex items-center gap-1">

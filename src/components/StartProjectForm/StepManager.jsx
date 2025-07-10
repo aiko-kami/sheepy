@@ -156,6 +156,39 @@ const StepManager = () => {
 		setCurrentStep(step);
 	};
 
+	const isProjectReadyToSubmit = (formInputs) => {
+		const {
+			projectTitle,
+			selectedCategoryId,
+			selectedSubCategory,
+			projectSummary,
+			projectGoal,
+			projectDescription,
+			locationOnlineOnly,
+			locationCountry,
+			locationCity,
+			projectVisibility,
+			talentsNeeded,
+		} = formInputs;
+
+		// Check basic required fields
+		const hasRequiredFields =
+			projectTitle.trim() &&
+			selectedCategoryId &&
+			selectedSubCategory &&
+			projectSummary.trim() &&
+			projectGoal.trim() &&
+			projectDescription.trim() &&
+			projectVisibility &&
+			Array.isArray(talentsNeeded) &&
+			talentsNeeded.length > 0;
+
+		// Check location fields conditionally
+		const hasValidLocation = locationOnlineOnly || (locationCountry.trim() && locationCity.trim());
+
+		return Boolean(hasRequiredFields && hasValidLocation);
+	};
+
 	// Fetch categories on mount
 	useEffect(() => {
 		const fetchCategories = async () => {
@@ -167,7 +200,7 @@ const StepManager = () => {
 
 	// Update subcategory when category changes
 	useEffect(() => {
-		const category = categories.find((c) => c.name === formInputs.selectedCategoryId);
+		const category = categories.find((c) => c.categoryId === formInputs.selectedCategoryId);
 		if (category && category.subCategories.length > 0) {
 			setFormInputs((prev) => ({
 				...prev,
@@ -229,7 +262,7 @@ const StepManager = () => {
 	return (
 		<>
 			{currentStep === 0 && <StartProject goToStep={goToStep} />}
-			{currentStep > 0 && currentStep <= totalSteps && <ProgressBar currentStep={currentStep} percent={percent} />}
+			{currentStep > 0 && currentStep <= totalSteps && <ProgressBar currentStep={currentStep} totalSteps={totalSteps} percent={percent} />}
 			<form onSubmit={handleSubmit}>
 				<div className={`${currentStep > 0 && currentStep < totalSteps ? "h-160" : "hidden"} overflow-y-auto mb-4 py-1 xl:pt-20`}>
 					{/* Step 1: Fill in the project title, category, and sub-category */}
@@ -282,12 +315,14 @@ const StepManager = () => {
 				</div>
 				<div className={`${currentStep === totalSteps ? "h-160" : "hidden"} overflow-y-auto mb-4 py-1`}>
 					{/* Step 7: (Final Validation): Review and validate all the provided information */}
-					{currentStep === totalSteps && <StepFinalValidation formInputs={formInputs} talentNeededProfilePicture={projectForm.talentNeededProfilePicture} categories={categories} />}
+					{currentStep === totalSteps && (
+						<StepFinalValidation formInputs={formInputs} talentNeededProfilePicture={projectForm.talentNeededProfilePicture} categories={categories} isProjectReadyToSubmit={isProjectReadyToSubmit} />
+					)}
 				</div>
 				{/* Step 8: Show confirmation that the project has been submitted */}
 				{currentStep === 8 && <StepProjectSubmitted goToStep={goToStep} />}
 
-				<ButtonsNavigation goToStep={goToStep} currentStep={currentStep} totalSteps={totalSteps} />
+				<ButtonsNavigation goToStep={goToStep} currentStep={currentStep} totalSteps={totalSteps} formInputs={formInputs} isProjectReadyToSubmit={isProjectReadyToSubmit} />
 			</form>
 		</>
 	);

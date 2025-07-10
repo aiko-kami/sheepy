@@ -5,7 +5,7 @@ export const sandwichItemsData = [
 		submenu: [
 			{
 				title: "Start my project",
-				url: "/projects/start-my-project",
+				url: "/start-my-project",
 			},
 			{
 				title: "Join a project",

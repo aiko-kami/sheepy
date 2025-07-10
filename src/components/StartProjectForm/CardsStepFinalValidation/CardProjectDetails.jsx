@@ -4,10 +4,10 @@ import { IoDocumentText, IoDocumentTextOutline, IoHeartOutline, IoCompassOutline
 const CardProjectDetails = ({ formInputs }) => {
 	return (
 		<>
-			<div className="bg-white rounded-lg shadow-lg border-0 overflow-hidden w-7/9 mx-auto">
+			<div className="bg-white rounded-lg shadow-lg border-0 overflow-hidden w-2/3 mx-auto">
 				<div className="bg-gray-200 p-6">
 					<h2 className="flex items-center gap-2 text-xl font-semibold text-gray-800">
-						<IoDocumentText className="h-6 w-6 text-gray-400" />
+						<IoDocumentText className="h-6 w-6 text-blue-600" />
 						Project Details
 					</h2>
 				</div>

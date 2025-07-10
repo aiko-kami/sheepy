@@ -4,7 +4,7 @@ import { Badge, BadgeRounded } from "@/components/Badges/Badges";
 const CardProjectOverview = ({ formInputs, selectedCategory, selectedSubCategory }) => {
 	return (
 		<>
-			<div className="bg-white rounded-lg shadow-lg border-0 overflow-hidden w-7/9 mx-auto">
+			<div className="bg-white rounded-lg shadow-lg border-0 overflow-hidden w-2/3 mx-auto">
 				<div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white p-6">
 					<h2 className="flex items-center gap-2 text-xl font-semibold">
 						<IoStar className="h-6 w-6" />

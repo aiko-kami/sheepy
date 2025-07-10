@@ -52,7 +52,7 @@ const Hero = () => {
 					<h2 className="text-center text-2xl font-oldenburg mb-6">Bring your ideas to life</h2>
 					<h2 className="text-center text-2xl font-oldenburg">by finding the best talents</h2>
 				</div>
-				<Link href="/projects/start-my-project">
+				<Link href="/start-my-project">
 					<div className="absolute left-1/2 -translate-x-1/2 bottom-38">
 						<Button btnProps={{ btnSize: "xl", type: "button", btnColor: "green", btnRounded: "full" }}>Start my project</Button>
 					</div>
@@ -95,7 +95,7 @@ const Hero = () => {
 					<h2 className="text-center text-4xl font-oldenburg mb-10">Bring your ideas to life</h2>
 					<h2 className="text-center text-4xl font-oldenburg">by finding the best talents</h2>
 				</div>
-				<Link href="/projects/start-my-project">
+				<Link href="/start-my-project">
 					<div className="absolute left-1/2 -translate-x-1/2 bottom-14 m-4">
 						<Button btnProps={{ btnSize: "3xl", type: "button", btnColor: "green", btnRounded: "full" }}>Start my project</Button>
 					</div>
