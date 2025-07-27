@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Badge = ({ badge, size }) => {
+const Badge = ({ badge, size, clickable = true }) => {
 	const { name, link } = badge;
 	const { bgColor, bgColorHover } = badge.colors;
 
@@ -22,14 +22,20 @@ const Badge = ({ badge, size }) => {
 			textSizeClass = "text-base";
 	}
 
-	return (
-		<Link href={link || "javascript:;"}>
-			<span className={`py-1 px-2.5 text-white font-bold text-nowrap duration-200 rounded ${textSizeClass} ${bgColor} hover:${bgColorHover}`}>{name}</span>
-		</Link>
-	);
+	const classes = `py-1 px-2.5 text-white font-bold text-nowrap duration-200 rounded ${textSizeClass} ${bgColor} ${clickable ? `hover:${bgColorHover} cursor-pointer` : ""}`;
+
+	if (clickable && link) {
+		return (
+			<Link href={link}>
+				<span className={classes}>{name}</span>
+			</Link>
+		);
+	} else {
+		return <span className={classes}>{name}</span>;
+	}
 };
 
-const BadgeRounded = ({ badge, size }) => {
+const BadgeRounded = ({ badge, size, clickable = true }) => {
 	const { name } = badge;
 	const { bgColor, bgColorHover } = badge.colors;
 
@@ -53,11 +59,17 @@ const BadgeRounded = ({ badge, size }) => {
 			textSizeClass = "text-base";
 	}
 
-	return (
-		<Link href={link || "#"}>
-			<span className={`pt-1 pb-1.5 px-2.5 text-blue-800 font-medium text-nowrap duration-200 rounded-full ${textSizeClass} ${bgColor} hover:${bgColorHover}`}>{name}</span>
-		</Link>
-	);
+	const classes = `pt-1 pb-1.5 px-2.5 text-blue-800 font-medium text-nowrap duration-200 rounded-full ${textSizeClass} ${bgColor} ${clickable ? `hover:${bgColorHover} cursor-pointer` : ""}`;
+
+	if (clickable) {
+		return (
+			<Link href={link}>
+				<span className={classes}>{name}</span>
+			</Link>
+		);
+	} else {
+		return <span className={classes}>{name}</span>;
+	}
 };
 
 const Status = ({ name, size, rounded, bgColor }) => {

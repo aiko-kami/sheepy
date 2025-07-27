@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { IoCloseOutline, IoRemoveOutline, IoSquareOutline } from "react-icons/io5";
+import { IoCloseOutline } from "react-icons/io5";
 
 export const WindowFrame = ({ title, children, onClose, onSaveDraft, hasUnsavedChanges = false }) => {
 	const [showCloseModal, setShowCloseModal] = useState(false);

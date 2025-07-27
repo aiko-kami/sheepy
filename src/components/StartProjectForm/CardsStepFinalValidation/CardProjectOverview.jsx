@@ -28,7 +28,7 @@ const CardProjectOverview = ({ formInputs, selectedCategory, selectedSubCategory
 								<h3 className="font-semibold text-gray-900">Category</h3>
 							</div>
 							<div className="ml-7">
-								<Badge badge={selectedCategory} size={"sm"} />
+								<Badge badge={selectedCategory} size={"sm"} clickable={false} />
 							</div>
 						</div>
 						<div>
@@ -37,7 +37,7 @@ const CardProjectOverview = ({ formInputs, selectedCategory, selectedSubCategory
 								<h3 className="font-semibold text-gray-900">Sub-category</h3>
 							</div>
 							<div className="ml-7">
-								<BadgeRounded badge={selectedSubCategory} size={"sm"} />
+								<BadgeRounded badge={selectedSubCategory} size={"sm"} clickable={false} />
 							</div>
 						</div>
 					</div>
