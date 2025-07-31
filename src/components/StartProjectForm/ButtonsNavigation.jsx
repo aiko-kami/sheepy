@@ -16,21 +16,6 @@ const ButtonsNavigation = ({ goToStep, currentStep, totalSteps, isProjectReadyTo
 					<div>
 						<Button
 							btnProps={{
-								type: "button",
-								btnColor: "blue",
-								btnRounded: "std",
-								action: () => goToStep(0),
-							}}
-						>
-							<div className="flex">
-								<IoArrowBack className="text-xl mt-0.5 mr-2" />
-								{"Back to start"}
-							</div>
-						</Button>
-					</div>
-					<div>
-						<Button
-							btnProps={{
 								type: "submit",
 								name: "action",
 								value: "save-draft",

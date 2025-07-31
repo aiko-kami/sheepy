@@ -11,16 +11,28 @@ const CardProjectOverview = ({ formInputs, selectedCategory, selectedSubCategory
 						Project Overview
 					</h2>
 				</div>
-				<div className="p-6 space-y-4">
-					<div>
-						<div className="flex items-center gap-2 mb-2">
+				<div className="p-6 pe-12 space-y-4">
+					<div className="space-y-3">
+						<div className="flex items-center gap-2">
 							<IoFlagOutline className="h-5 w-5 text-blue-600" />
-							<h3 className="font-semibold text-gray-900">Project Title</h3>
+							<h3 className="font-semibold text-gray-900">
+								Project Title
+								<span className="text-red-500 ml-1 text-sm">*</span>
+							</h3>
 						</div>
 						<div className="ml-7">
-							<h2 className="text-xl font-semibold text-gray-900"> {formInputs.projectTitle?.trim() || "___________________________________"}</h2>
+							{formInputs.projectTitle?.trim() ? (
+								<h2 className="text-xl font-semibold text-gray-900">{formInputs.projectTitle.trim()}</h2>
+							) : (
+								<div className="w-9/10 p-3 bg-red-100 border-l-4 border-red-500 rounded-r-md">
+									<p className="text-red-700 text-sm font-medium">
+										<span className="italic">Required field</span> – Please add Project Title information
+									</p>
+								</div>
+							)}
 						</div>
 					</div>
+
 					<div className="grid md:grid-cols-2 gap-6">
 						<div>
 							<div className="flex items-center gap-2 mb-3">
@@ -28,26 +40,55 @@ const CardProjectOverview = ({ formInputs, selectedCategory, selectedSubCategory
 								<h3 className="font-semibold text-gray-900">Category</h3>
 							</div>
 							<div className="ml-7">
-								<Badge badge={selectedCategory} size={"sm"} clickable={false} />
+								{selectedCategory ? (
+									<Badge badge={selectedCategory} size={"sm"} clickable={false} />
+								) : (
+									<div className="w-9/10 p-3 bg-red-100 border-l-4 border-red-500 rounded-r-md">
+										<p className="text-red-700 text-sm font-medium">
+											<span className="italic">Required field</span> – Please add Category information
+										</p>
+									</div>
+								)}
 							</div>
 						</div>
+
 						<div>
 							<div className="flex items-center gap-2 mb-3">
 								<IoPricetagOutline className="h-5 w-5 text-blue-600" />
 								<h3 className="font-semibold text-gray-900">Sub-category</h3>
 							</div>
 							<div className="ml-7">
-								<BadgeRounded badge={selectedSubCategory} size={"sm"} clickable={false} />
+								{selectedSubCategory ? (
+									<BadgeRounded badge={selectedSubCategory} size={"sm"} clickable={false} />
+								) : (
+									<div className="w-9/10 p-3 bg-red-100 border-l-4 border-red-500 rounded-r-md">
+										<p className="text-red-700 text-sm font-medium">
+											<span className="italic">Required field</span> – Please add Sub-category information
+										</p>
+									</div>
+								)}
 							</div>
 						</div>
 					</div>
-					<div>
-						<div className="flex items-center gap-2 mb-2">
+
+					<div className="space-y-3">
+						<div className="flex items-center gap-2">
 							<IoDocumentTextOutline className="h-5 w-5 text-blue-600" />
-							<h3 className="font-semibold text-gray-900">Project Summary</h3>
+							<h3 className="font-semibold text-gray-900">
+								Project Summary
+								<span className="text-red-500 ml-1 text-sm">*</span>
+							</h3>
 						</div>
-						<div className="ml-7 text-gray-800">
-							<p className="leading-relaxed">{formInputs.projectSummary?.trim() || "___________________________________"}</p>
+						<div className="ml-7">
+							{formInputs.projectSummary?.trim() ? (
+								<h2 className="text-xl font-semibold text-gray-900">{formInputs.projectSummary.trim()}</h2>
+							) : (
+								<div className="w-9/10 p-3 bg-red-100 border-l-4 border-red-500 rounded-r-md">
+									<p className="text-red-700 text-sm font-medium">
+										<span className="italic">Required field</span> – Please add Project Summary information
+									</p>
+								</div>
+							)}
 						</div>
 					</div>
 				</div>

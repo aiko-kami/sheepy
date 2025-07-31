@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import { IoPeople } from "react-icons/io5";
-import { Badge, BadgeRounded } from "@/components/Badges/Badges";
 
 const CardProjectTalents = ({ formInputs, talentNeededProfilePicture }) => {
 	return (
@@ -14,7 +13,7 @@ const CardProjectTalents = ({ formInputs, talentNeededProfilePicture }) => {
 						Talents You Need
 					</h2>
 				</div>
-				<div className="p-6 space-y-4">
+				<div className="p-6 pe-12 space-y-4">
 					<div className="flex gap-1">
 						{Array.isArray(formInputs.talentsNeeded) && formInputs.talentsNeeded.length > 0 ? (
 							<div className="space-y-3 w-full">
@@ -26,7 +25,11 @@ const CardProjectTalents = ({ formInputs, talentNeededProfilePicture }) => {
 								))}
 							</div>
 						) : (
-							<p className="text-gray-600 italic">N/A</p>
+							<div className="w-9/10 p-3 bg-red-100 border-l-4 border-red-500 rounded-r-md">
+								<p className="text-red-700 text-sm font-medium">
+									<span className="italic">Required field</span> – Please add Talents information
+								</p>
+							</div>
 						)}
 					</div>
 				</div>

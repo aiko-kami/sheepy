@@ -1,34 +1,25 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+
 import { IoCloseOutline } from "react-icons/io5";
+import Modal from "@/components/Modals/Modal";
+import CloseWindowFrameModal from "@/components/Modals/ProjectCreation/CloseWindowFrameModal";
 
-export const WindowFrame = ({ title, children, onClose, onSaveDraft, hasUnsavedChanges = false }) => {
-	const [showCloseModal, setShowCloseModal] = useState(false);
+export const WindowFrame = ({ title, currentStep, children }) => {
+	const router = useRouter();
 
-	const handleCloseClick = () => {
-		if (hasUnsavedChanges) {
-			setShowCloseModal(true);
-		} else {
-			onClose();
-		}
+	const [modalDisplayCloseWindow, setModalDisplayCloseWindow] = useState(false);
+	const closeWindow = () => {
+		router.push("/");
 	};
 
-	const handleConfirmClose = (action) => {
-		setShowCloseModal(false);
-
-		switch (action) {
-			case "save":
-				onSaveDraft();
-				onClose();
-				break;
-			case "discard":
-				onClose();
-				break;
-			case "cancel":
-				// Do nothing, just close modal
-				break;
-		}
+	const showModalCloseWindow = () => {
+		setModalDisplayCloseWindow(true);
+	};
+	const closeModalCloseWindow = () => {
+		setModalDisplayCloseWindow(false);
 	};
 
 	return (
@@ -49,7 +40,16 @@ export const WindowFrame = ({ title, children, onClose, onSaveDraft, hasUnsavedC
 
 						{/* Window Actions (Right) */}
 						<div className="flex items-center space-x-2">
-							<button onClick={handleCloseClick} className="p-2 text-gray-400 hover:text-red-400 hover:bg-red-900/20 rounded-lg transition-all duration-200 group">
+							<button
+								onClick={() => {
+									if (currentStep === 0) {
+										closeWindow();
+									} else {
+										showModalCloseWindow();
+									}
+								}}
+								className="p-2 text-gray-400 hover:text-red-400 hover:bg-red-900/20 rounded-lg transition-all duration-200 group"
+							>
 								<IoCloseOutline className="h-4 w-4 group-hover:scale-110 transition-transform" />
 							</button>
 						</div>
@@ -59,6 +59,9 @@ export const WindowFrame = ({ title, children, onClose, onSaveDraft, hasUnsavedC
 					<div className="h-[calc(100%-4rem)] overflow-auto pt-6">{children}</div>
 				</div>
 			</div>
+			<Modal modalDisplay={modalDisplayCloseWindow} closeModal={closeModalCloseWindow} modalSize={"sm"} modalTitle={"Close Project Creation?"}>
+				<CloseWindowFrameModal closeModalCloseWindow={closeModalCloseWindow} />
+			</Modal>
 		</>
 	);
 };

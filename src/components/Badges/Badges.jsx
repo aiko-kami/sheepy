@@ -1,9 +1,6 @@
 import Link from "next/link";
 
 const Badge = ({ badge, size, clickable = true }) => {
-	const { name, link } = badge;
-	const { bgColor, bgColorHover } = badge.colors;
-
 	let textSizeClass;
 	switch (size) {
 		case "xs":
@@ -21,6 +18,14 @@ const Badge = ({ badge, size, clickable = true }) => {
 		default:
 			textSizeClass = "text-base";
 	}
+
+	// Handle missing or invalid badge
+	if (!badge || !badge.name || !badge.colors) {
+		return <span className={`py-1 px-2.5 text-white font-bold text-nowrap rounded bg-gray-500 ${textSizeClass}`}>Not found</span>;
+	}
+
+	const { name, link } = badge;
+	const { bgColor, bgColorHover } = badge.colors;
 
 	const classes = `py-1 px-2.5 text-white font-bold text-nowrap duration-200 rounded ${textSizeClass} ${bgColor} ${clickable ? `hover:${bgColorHover} cursor-pointer` : ""}`;
 

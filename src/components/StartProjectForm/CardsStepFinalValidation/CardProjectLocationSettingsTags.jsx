@@ -1,6 +1,6 @@
 import { DateTime } from "luxon";
 
-import { IoCalendarOutline, IoGlobeOutline, IoSparkles, IoLocationOutline, IoEyeOutline, IoEyeOffOutline, IoTimeOutline, IoPricetagsOutline } from "react-icons/io5";
+import { IoCalendarOutline, IoGlobeOutline, IoSparkles, IoLocationOutline, IoEyeOutline, IoEyeOffOutline, IoPricetagsOutline } from "react-icons/io5";
 
 const CardProjectLocationSettingsTags = ({ formInputs }) => {
 	const formatDate = (date) => {
@@ -23,13 +23,13 @@ const CardProjectLocationSettingsTags = ({ formInputs }) => {
 						Location & Settings
 					</h2>
 				</div>
-				<div className="p-6 space-y-4">
-					<div>
-						<div className="flex items-center gap-2 mb-2">
+				<div className="p-6 pe-12 space-y-4">
+					<div className="space-y-3">
+						<div className="flex items-center gap-2">
 							<IoLocationOutline className="h-5 w-5 text-blue-600" />
 							<h3 className="font-semibold text-gray-900">Project Location</h3>
 						</div>
-						<div className="ml-8 text-gray-800 flex items-center gap-1">
+						<div className="ml-7 text-gray-800 flex items-center gap-1">
 							{formInputs.locationOnlineOnly ? (
 								<>
 									<IoGlobeOutline className="h-4 w-4 text-green-600" />
@@ -37,8 +37,18 @@ const CardProjectLocationSettingsTags = ({ formInputs }) => {
 								</>
 							) : (
 								<>
-									<span className="text-gray-800">{formInputs.locationCity}, </span>
-									<span className="text-gray-800">{formInputs.locationCountry}</span>
+									{!formInputs.locationCity?.trim() || !formInputs.locationCountry?.trim() ? (
+										<div className="w-9/10 p-3 bg-red-100 border-l-4 border-red-500 rounded-r-md">
+											<p className="text-red-700 text-sm font-medium">
+												<span className="italic">Required field</span> – Please add Project Location information
+											</p>
+										</div>
+									) : (
+										<>
+											<span className="text-gray-800">{formInputs.locationCity},</span>
+											<span className="text-gray-800">{formInputs.locationCountry}</span>
+										</>
+									)}
 								</>
 							)}
 						</div>
@@ -49,7 +59,7 @@ const CardProjectLocationSettingsTags = ({ formInputs }) => {
 								<IoEyeOutline className="h-5 w-5 text-blue-600" />
 								<h3 className="font-semibold text-gray-900">Visibility</h3>
 							</div>
-							<div className="ml-8 text-gray-800 flex items-center gap-2">
+							<div className="ml-7 text-gray-800 flex items-center gap-2">
 								{formInputs.projectVisibility === "public" ? (
 									<>
 										<IoEyeOutline className="text-green-600 w-5 h-5" />
@@ -68,22 +78,26 @@ const CardProjectLocationSettingsTags = ({ formInputs }) => {
 								<IoCalendarOutline className="h-5 w-5 text-blue-600" />
 								<h3 className="font-semibold text-gray-900">Start Date</h3>
 							</div>
-							<div className="ml-8 text-gray-800">
-								<div className="flex items-center gap-1">
-									<IoTimeOutline className="h-4 w-4 text-gray-500" />
-									<span className={`leading-relaxed ${formatDate(formInputs.projectStartDate) === "Not set" ? "text-gray-700 italic" : "text-gray-800"}`}>
-										{formatDate(formInputs.projectStartDate)}
-									</span>
-								</div>
+
+							<div className="ml-7">
+								{formatDate(formInputs.projectStartDate) !== "Not set" ? (
+									<p className="leading-relaxed text-gray-800">{formatDate(formInputs.projectStartDate)}</p>
+								) : (
+									<div className="w-9/10 p-3 bg-teal-100 border-l-4 border-teal-500 rounded-r-md">
+										<p className="text-teal-700 text-sm font-medium">
+											<span className="italic">Optional field</span> – You can add this later
+										</p>
+									</div>
+								)}
 							</div>
 						</div>
 					</div>
-					<div>
-						<div className="flex items-center gap-2 mb-2">
+					<div className="space-y-3">
+						<div className="flex items-center gap-2">
 							<IoPricetagsOutline className="h-5 w-5 text-blue-600" />
 							<h3 className="font-semibold text-gray-900">Tags</h3>
 						</div>
-						<div className="ml-8 text-gray-800 flex gap-1">
+						<div className="ml-7 flex gap-1">
 							{Array.isArray(formInputs.tags) && formInputs.tags.length > 0 ? (
 								formInputs.tags.map((tag, index) => (
 									<span key={index} className="inline-flex items-center px-3 pt-0.5 pb-1 mt-1 rounded-full bg-blue-100 text-blue-800 border border-blue-200">
@@ -91,7 +105,11 @@ const CardProjectLocationSettingsTags = ({ formInputs }) => {
 									</span>
 								))
 							) : (
-								<p className="text-gray-600 italic">N/A</p>
+								<div className="w-9/10 p-3 bg-teal-100 border-l-4 border-teal-500 rounded-r-md">
+									<p className="text-teal-700 text-sm font-medium">
+										<span className="italic">Optional field</span> – You can add this information later
+									</p>
+								</div>
 							)}
 						</div>
 					</div>

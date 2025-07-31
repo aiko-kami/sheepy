@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { IoDocumentText, IoDocumentTextOutline, IoHeartOutline, IoCompassOutline, IoTrailSignOutline } from "react-icons/io5";
 
 const CardProjectDetails = ({ formInputs }) => {
@@ -11,40 +10,67 @@ const CardProjectDetails = ({ formInputs }) => {
 						Project Details
 					</h2>
 				</div>
-				<div className="p-6 space-y-4">
-					<div>
-						<div className="flex items-center gap-2 mb-2">
+				<div className="p-6 pe-12 space-y-4">
+					<div className="space-y-3">
+						<div className="flex items-center gap-2">
 							<IoCompassOutline className="h-5 w-5 text-blue-600" />
 							<h3 className="font-semibold text-gray-900">Project Goal</h3>
 						</div>
-						<div className="ml-8 text-gray-800">
-							<p className="leading-relaxed">{formInputs.projectGoal?.trim() || "___________________________________"}</p>
+						<div className="ml-7">
+							{formInputs.projectGoal?.trim() ? (
+								<p className="leading-relaxed text-gray-800">{formInputs.projectGoal.trim()}</p>
+							) : (
+								<div className="w-9/10 p-3 bg-red-100 border-l-4 border-red-500 rounded-r-md">
+									<p className="text-red-700 text-sm font-medium">
+										<span className="italic">Required field</span> – Please add Project Goal information
+									</p>
+								</div>
+							)}
 						</div>
 					</div>
-					<div>
-						<div className="flex items-center gap-2 mb-2">
+
+					<div className="space-y-3">
+						<div className="flex items-center gap-2">
 							<IoDocumentTextOutline className="h-5 w-5 text-blue-600" />
 							<h3 className="font-semibold text-gray-900">Description</h3>
 						</div>
-						<div className="ml-8 text-gray-800">
-							<p className="leading-relaxed">{formInputs.projectDescription?.trim() || "___________________________________"}</p>
+						<div className="ml-7">
+							{formInputs.projectDescription?.trim() ? (
+								<p className="leading-relaxed text-gray-800">{formInputs.projectDescription.trim()}</p>
+							) : (
+								<div className="w-9/10 p-3 bg-red-100 border-l-4 border-red-500 rounded-r-md">
+									<p className="text-red-700 text-sm font-medium">
+										<span className="italic">Required field</span> – Please add Project Description information
+									</p>
+								</div>
+							)}
 						</div>
 					</div>
-					<div>
-						<div className="flex items-center gap-2 mb-2">
+
+					<div className="space-y-3">
+						<div className="flex items-center gap-2">
 							<IoHeartOutline className="h-5 w-5 text-blue-600" />
 							<h3 className="font-semibold text-gray-900">Creator Motivations</h3>
 						</div>
-						<div className="ml-8 text-gray-800">
-							<p className="leading-relaxed">{formInputs.creatorMotivations?.trim() || "___________________________________"}</p>
+						<div className="ml-7">
+							{formInputs.creatorMotivations?.trim() ? (
+								<p className="leading-relaxed text-gray-800">{formInputs.creatorMotivations.trim()}</p>
+							) : (
+								<div className="w-9/10 p-3 bg-teal-100 border-l-4 border-teal-500 rounded-r-md">
+									<p className="text-teal-700 text-sm font-medium">
+										<span className="italic">Optional field</span> – You can add this later
+									</p>
+								</div>
+							)}
 						</div>
 					</div>
+
 					<div>
 						<div className="flex items-center gap-2 mb-2">
 							<IoTrailSignOutline className="h-5 w-5 text-blue-600" />
 							<h3 className="font-semibold text-gray-900">Objectives</h3>
 						</div>
-						<div className="ml-8 text-gray-800">
+						<div className="ml-7">
 							{Array.isArray(formInputs.projectObjectives) && formInputs.projectObjectives.length > 0 ? (
 								<ul className="list-disc list-inside space-y-1">
 									{formInputs.projectObjectives.map((objective, index) => (
@@ -52,7 +78,11 @@ const CardProjectDetails = ({ formInputs }) => {
 									))}
 								</ul>
 							) : (
-								<p className="text-gray-600 italic">N/A</p>
+								<div className="w-9/10 p-3 bg-teal-100 border-l-4 border-teal-500 rounded-r-md">
+									<p className="text-teal-700 text-sm font-medium">
+										<span className="italic">Optional field</span> – You can add this later
+									</p>
+								</div>
 							)}
 						</div>
 					</div>

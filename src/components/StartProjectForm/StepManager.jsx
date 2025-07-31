@@ -1,6 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
+
+import { WindowFrame } from "@/components/StartProjectForm/windowFrame";
 import StartProject from "@/components/StartProjectForm/StartProject";
 import StepOne from "@/components/StartProjectForm/Steps/Step1";
 import StepTwo from "@/components/StartProjectForm/Steps/Step2";
@@ -19,6 +22,8 @@ import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import projectForm from "@/mock/projectForm.json";
 
 const StepManager = () => {
+	const router = useRouter();
+
 	const [currentStep, setCurrentStep] = useState(0);
 	const [percent, setPercent] = useState(0);
 	const totalSteps = 7; // Total number of steps
@@ -156,44 +161,40 @@ const StepManager = () => {
 		setCurrentStep(step);
 	};
 
-	const isProjectReadyToSubmit = (formInputs) => {
-		const {
-			projectTitle,
-			selectedCategoryId,
-			selectedSubCategory,
-			projectSummary,
-			projectGoal,
-			projectDescription,
-			locationOnlineOnly,
-			locationCountry,
-			locationCity,
-			projectVisibility,
-			talentsNeeded,
-		} = formInputs;
+	const requiredFieldKeys = ["projectTitle", "selectedCategoryId", "selectedSubCategory", "projectSummary", "projectGoal", "projectDescription", "projectVisibility", "talentsNeeded"];
 
-		// Check basic required fields
-		const hasRequiredFields =
-			projectTitle.trim() &&
-			selectedCategoryId &&
-			selectedSubCategory &&
-			projectSummary.trim() &&
-			projectGoal.trim() &&
-			projectDescription.trim() &&
-			projectVisibility &&
-			Array.isArray(talentsNeeded) &&
-			talentsNeeded.length > 0;
+	const requiredFields = requiredFieldKeys.reduce((acc, key) => {
+		acc[key] = formInputs[key];
+		return acc;
+	}, {});
 
-		// Check location fields conditionally
-		const hasValidLocation = locationOnlineOnly || (locationCountry.trim() && locationCity.trim());
+	if (!formInputs.locationOnlineOnly) {
+		requiredFields.locationCountry = formInputs.locationCountry;
+		requiredFields.locationCity = formInputs.locationCity;
+	}
 
-		return Boolean(hasRequiredFields && hasValidLocation);
+	const isProjectReadyToSubmit = (inputs) => {
+		const hasRequired = requiredFieldKeys.every((key) => {
+			const value = inputs[key];
+			if (Array.isArray(value)) return value.length > 0;
+			if (typeof value === "string") return value.trim().length > 0;
+			return Boolean(value);
+		});
+
+		const hasValidLocation = inputs.locationOnlineOnly || (inputs.locationCountry.trim() && inputs.locationCity.trim());
+
+		return hasRequired && hasValidLocation;
 	};
 
 	// Fetch categories on mount
 	useEffect(() => {
 		const fetchCategories = async () => {
 			const data = await ApiGetAllCategories();
-			setCategories(data);
+			if (data) {
+				setCategories(data);
+			} else {
+				showErrorToast("Failed to load categories.");
+			}
 		};
 		fetchCategories();
 	}, []);
@@ -249,6 +250,12 @@ const StepManager = () => {
 			if (formAction === "save-draft") {
 				await ApiCreateProjectDraft(payload);
 				showSuccessToast("Draft project saved!");
+			} else if (formAction === "save-draft-modal") {
+				await ApiSubmitProject(payload);
+				showSuccessToast("Draft project saved!");
+				setTimeout(() => {
+					router.push("/");
+				}, 1000); // Delay just enough for modal unmount
 			} else if (formAction === "submit-project") {
 				await ApiSubmitProject(payload);
 				goToStep(totalSteps + 1);
@@ -261,68 +268,76 @@ const StepManager = () => {
 
 	return (
 		<>
-			{currentStep === 0 && <StartProject goToStep={goToStep} />}
-			{currentStep > 0 && currentStep <= totalSteps && <ProgressBar currentStep={currentStep} totalSteps={totalSteps} percent={percent} />}
 			<form onSubmit={handleSubmit}>
-				<div className={`${currentStep > 0 && currentStep < totalSteps ? "h-160" : "hidden"} overflow-y-auto mb-4 py-1 xl:pt-20`}>
-					{/* Step 1: Fill in the project title, category, and sub-category */}
-					{currentStep === 1 && <StepOne formInputs={formInputs} onChange={onChange} categories={categories} />}
+				<WindowFrame title="Project Creation" currentStep={currentStep}>
+					{currentStep === 0 && <StartProject goToStep={goToStep} />}
+					{currentStep > 0 && currentStep <= totalSteps && <ProgressBar currentStep={currentStep} totalSteps={totalSteps} percent={percent} />}
+					<div className={`${currentStep > 0 && currentStep < totalSteps ? "h-160" : "hidden"} overflow-y-auto mb-4 py-1 xl:pt-20`}>
+						{/* Step 1: Fill in the project title, category, and sub-category */}
+						{currentStep === 1 && <StepOne formInputs={formInputs} onChange={onChange} categories={categories} />}
 
-					{/* Step 2: Fill in the project summary and goal */}
-					{currentStep === 2 && <StepTwo formInputs={formInputs} onChange={onChange} />}
+						{/* Step 2: Fill in the project summary and goal */}
+						{currentStep === 2 && <StepTwo formInputs={formInputs} onChange={onChange} />}
 
-					{/* Step 3: Fill in the project description */}
-					{currentStep === 3 && <StepThree formInputs={formInputs} onChange={onChange} />}
+						{/* Step 3: Fill in the project description */}
+						{currentStep === 3 && <StepThree formInputs={formInputs} onChange={onChange} />}
 
-					{/* Step 4: Fill in the creator motivations and objectives */}
-					{currentStep === 4 && (
-						<StepFour
-							formInputs={formInputs}
-							onChange={onChange}
-							objectiveInput={objectiveInput}
-							addObjective={addObjective}
-							removeObjective={removeObjective}
-							handleObjectiveInputChange={handleObjectiveInputChange}
-							objectiveError={objectiveError}
-						/>
-					)}
+						{/* Step 4: Fill in the creator motivations and objectives */}
+						{currentStep === 4 && (
+							<StepFour
+								formInputs={formInputs}
+								onChange={onChange}
+								objectiveInput={objectiveInput}
+								addObjective={addObjective}
+								removeObjective={removeObjective}
+								handleObjectiveInputChange={handleObjectiveInputChange}
+								objectiveError={objectiveError}
+							/>
+						)}
 
-					{/* Step 5: Fill in the project project online-only, project location, project privacy, project start date, and tags */}
-					{currentStep === 5 && (
-						<StepFive
-							formInputs={formInputs}
-							onChange={onChange}
-							tagInput={tagInput}
-							addTag={addTag}
-							removeTag={removeTag}
-							handleTagInputChange={handleTagInputChange}
-							tagError={tagError}
-							setProjectStartDate={setProjectStartDate}
-						/>
-					)}
+						{/* Step 5: Fill in the project project online-only, project location, project privacy, project start date, and tags */}
+						{currentStep === 5 && (
+							<StepFive
+								formInputs={formInputs}
+								onChange={onChange}
+								tagInput={tagInput}
+								addTag={addTag}
+								removeTag={removeTag}
+								handleTagInputChange={handleTagInputChange}
+								tagError={tagError}
+								setProjectStartDate={setProjectStartDate}
+							/>
+						)}
 
-					{/* Step 6: Fill in the talents needed */}
-					{currentStep === 6 && (
-						<StepSix
-							formInputs={formInputs}
-							talentNeededInput={talentNeededInput}
-							addTalentNeeded={addTalentNeeded}
-							removeTalentNeeded={removeTalentNeeded}
-							handleTalentNeededInputChange={handleTalentNeededInputChange}
-							talentNeededProfilePicture={projectForm.talentNeededProfilePicture}
-						/>
-					)}
-				</div>
-				<div className={`${currentStep === totalSteps ? "h-160" : "hidden"} overflow-y-auto mb-4 py-1`}>
-					{/* Step 7: (Final Validation): Review and validate all the provided information */}
-					{currentStep === totalSteps && (
-						<StepFinalValidation formInputs={formInputs} talentNeededProfilePicture={projectForm.talentNeededProfilePicture} categories={categories} isProjectReadyToSubmit={isProjectReadyToSubmit} />
-					)}
-				</div>
-				{/* Step 8: Show confirmation that the project has been submitted */}
-				{currentStep === 8 && <StepProjectSubmitted goToStep={goToStep} />}
+						{/* Step 6: Fill in the talents needed */}
+						{currentStep === 6 && (
+							<StepSix
+								formInputs={formInputs}
+								talentNeededInput={talentNeededInput}
+								addTalentNeeded={addTalentNeeded}
+								removeTalentNeeded={removeTalentNeeded}
+								handleTalentNeededInputChange={handleTalentNeededInputChange}
+								talentNeededProfilePicture={projectForm.talentNeededProfilePicture}
+							/>
+						)}
+					</div>
+					<div className={`${currentStep === totalSteps ? "h-160" : "hidden"} overflow-y-auto mb-4 py-1`}>
+						{/* Step 7: (Final Validation): Review and validate all the provided information */}
+						{currentStep === totalSteps && (
+							<StepFinalValidation
+								formInputs={formInputs}
+								requiredFields={requiredFields}
+								talentNeededProfilePicture={projectForm.talentNeededProfilePicture}
+								categories={categories}
+								isProjectReadyToSubmit={isProjectReadyToSubmit}
+							/>
+						)}
+					</div>
+					{/* Step 8: Show confirmation that the project has been submitted */}
+					{currentStep === 8 && <StepProjectSubmitted goToStep={goToStep} />}
 
-				<ButtonsNavigation goToStep={goToStep} currentStep={currentStep} totalSteps={totalSteps} formInputs={formInputs} isProjectReadyToSubmit={isProjectReadyToSubmit} />
+					<ButtonsNavigation goToStep={goToStep} currentStep={currentStep} totalSteps={totalSteps} formInputs={formInputs} isProjectReadyToSubmit={isProjectReadyToSubmit} />
+				</WindowFrame>
 			</form>
 		</>
 	);
