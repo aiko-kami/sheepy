@@ -65,18 +65,18 @@ const CardProjectDetails = ({ formInputs }) => {
 						</div>
 					</div>
 
-					<div>
-						<div className="flex items-center gap-2 mb-2">
+					<div className="space-y-3">
+						<div className="flex items-center gap-2">
 							<IoTrailSignOutline className="h-5 w-5 text-blue-600" />
 							<h3 className="font-semibold text-gray-900">Objectives</h3>
 						</div>
-						<div className="ml-7">
+						<div className="ml-7 flex gap-1">
 							{Array.isArray(formInputs.projectObjectives) && formInputs.projectObjectives.length > 0 ? (
-								<ul className="list-disc list-inside space-y-1">
-									{formInputs.projectObjectives.map((objective, index) => (
-										<li key={index}>{objective.trim()}</li>
-									))}
-								</ul>
+								formInputs.projectObjectives.map((objective, index) => (
+									<span key={index} className="inline-flex items-center px-3 pt-0.5 pb-1 mt-1 rounded-full bg-purple-100 text-purple-800 border border-purple-200">
+										{objective}
+									</span>
+								))
 							) : (
 								<div className="w-9/10 p-3 bg-teal-100 border-l-4 border-teal-500 rounded-r-md">
 									<p className="text-teal-700 text-sm font-medium">

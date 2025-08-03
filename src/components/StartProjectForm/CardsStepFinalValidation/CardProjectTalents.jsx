@@ -18,9 +18,9 @@ const CardProjectTalents = ({ formInputs, talentNeededProfilePicture }) => {
 						{Array.isArray(formInputs.talentsNeeded) && formInputs.talentsNeeded.length > 0 ? (
 							<div className="space-y-3 w-full">
 								{formInputs.talentsNeeded.map((talent, index) => (
-									<div key={index} className="flex items-center gap-3 p-3 bg-gray-100 rounded-lg">
+									<div key={index} className="flex items-center gap-3 p-3 bg-sky-200 rounded-lg border border-sky-300">
 										<Image src={talentNeededProfilePicture} className="object-cover rounded-full w-10 h-10 mr-3" alt="talent profile picture" height={0} width={0} sizes="100vw" />
-										<span className="font-medium text-gray-900">{talent}</span>
+										<span className="font-medium text-sky-900">{talent}</span>
 									</div>
 								))}
 							</div>

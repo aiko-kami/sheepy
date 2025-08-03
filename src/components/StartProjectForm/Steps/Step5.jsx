@@ -73,7 +73,19 @@ const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTag
 								<div className="relative">
 									<div className="flex items-center">
 										<div className="w-full mr-2 mb-6">
-											<InputField inputName="tag" inputType="text" label="Tag (optional)" inputValue={tagInput} onChange={handleTagInputChange} />
+											<InputField
+												inputName="tag"
+												inputType="text"
+												label="Tag (optional)"
+												inputValue={tagInput}
+												onChange={handleTagInputChange}
+												onKeyDown={(e) => {
+													if (e.key === "Enter") {
+														e.preventDefault();
+														addTag();
+													}
+												}}
+											/>
 										</div>
 										<div className="min-w-fit">
 											<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "blue", btnRounded: "std", action: addTag }}>

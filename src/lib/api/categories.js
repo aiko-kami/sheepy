@@ -18,8 +18,7 @@ export async function ApiGetAllCategories() {
 
 		return json.data.categories;
 	} catch (error) {
-		console.error("Error:", error.message);
-		return null;
+		throw error;
 	}
 }
 
@@ -48,8 +47,7 @@ export async function ApiGetCategoryWithId(categoryId) {
 
 		return json.data.category;
 	} catch (error) {
-		console.error("Error:", error.message);
-		return null;
+		throw error;
 	}
 }
 
@@ -78,7 +76,6 @@ export async function ApiGetCategoryWithLink(categoryLink) {
 
 		return json.data.category;
 	} catch (error) {
-		console.error("Error:", error.message);
-		return null;
+		throw error;
 	}
 }

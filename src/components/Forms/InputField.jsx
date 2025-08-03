@@ -1,7 +1,7 @@
 import React from "react";
 
 // Using forwardRef to pass the ref down to the input element
-const InputField = React.forwardRef(({ inputName, inputType, inputValue, onChange, disabled = false, label, children }, ref) => {
+const InputField = React.forwardRef(({ inputName, inputType, inputValue, onChange, onKeyDown, disabled = false, label, children }, ref) => {
 	return (
 		<div className="relative z-0 w-full">
 			{/* icon on the left of the field */}
@@ -13,6 +13,7 @@ const InputField = React.forwardRef(({ inputName, inputType, inputValue, onChang
 				type={inputType}
 				value={inputValue}
 				onChange={onChange}
+				onKeyDown={onKeyDown}
 				className={`block pt-2.5 pb-2 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-500 peer ${
 					disabled ? "text-gray-500 line-through" : "text-white hover:shadow-lg hover:border-gray-500"
 				}`}

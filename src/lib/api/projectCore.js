@@ -17,7 +17,7 @@ export async function ApiCreateProjectDraft(projectInputs) {
 			const errorMessage = json?.message || "Failed to create project draft";
 			throw new Error(errorMessage);
 		}
-		return;
+		return json.data.project;
 	} catch (error) {
 		throw error;
 	}
@@ -40,7 +40,7 @@ export async function ApiSubmitProject(projectInputs) {
 			const errorMessage = json?.message || "Failed to submit project";
 			throw new Error(errorMessage);
 		}
-		return;
+		return json.data.project;
 	} catch (error) {
 		throw error;
 	}

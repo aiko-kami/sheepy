@@ -22,7 +22,19 @@ const StepSix = ({ formInputs, talentNeededInput, addTalentNeeded, removeTalentN
 								{/* Talents needed input field */}
 								<div className="flex items-center my-6">
 									<div className="w-full mr-2">
-										<InputField inputName="talentNeeded" inputType="text" label="Add a talent you're looking for" inputValue={talentNeededInput} onChange={handleTalentNeededInputChange} />
+										<InputField
+											inputName="talentNeeded"
+											inputType="text"
+											label="Add a talent you're looking for"
+											inputValue={talentNeededInput}
+											onChange={handleTalentNeededInputChange}
+											onKeyDown={(e) => {
+												if (e.key === "Enter") {
+													e.preventDefault();
+													addTalentNeeded();
+												}
+											}}
+										/>
 									</div>
 									<div className="min-w-fit">
 										<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "blue", btnRounded: "std", action: addTalentNeeded }}>

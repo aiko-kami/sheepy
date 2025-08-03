@@ -39,7 +39,19 @@ const StepFour = ({ formInputs, onChange, objectiveInput, addObjective, removeOb
 							<div className="relative">
 								<div className="flex items-center">
 									<div className="w-full mr-2 mb-6">
-										<InputField inputName="objective" inputType="text" label="Objectives (optional)" inputValue={objectiveInput} onChange={handleObjectiveInputChange} />
+										<InputField
+											inputName="objective"
+											inputType="text"
+											label="Objectives (optional)"
+											inputValue={objectiveInput}
+											onChange={handleObjectiveInputChange}
+											onKeyDown={(e) => {
+												if (e.key === "Enter") {
+													e.preventDefault();
+													addObjective();
+												}
+											}}
+										/>
 									</div>
 									<div className="min-w-fit">
 										<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "blue", btnRounded: "std", action: addObjective }}>

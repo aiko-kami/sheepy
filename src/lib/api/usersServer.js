@@ -26,8 +26,7 @@ export async function ApiGetUserFromSessionServer() {
 
 		return json.data.user;
 	} catch (error) {
-		console.error("Error:", error.message);
-		return null;
+		throw error;
 	}
 }
 
@@ -55,8 +54,7 @@ export async function ApiGetUserSettingsServer() {
 
 		return json.data.userSettings;
 	} catch (error) {
-		console.error("Error:", error.message);
-		return null;
+		throw error;
 	}
 }
 

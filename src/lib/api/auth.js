@@ -77,8 +77,7 @@ export async function ApiLogout() {
 		if (!res.ok) throw new Error("Logout failed");
 		return true;
 	} catch (error) {
-		console.error(error);
-		return false;
+		throw error;
 	}
 }
 
