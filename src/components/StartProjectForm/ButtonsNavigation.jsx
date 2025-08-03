@@ -9,7 +9,7 @@ const ButtonsNavigation = ({ goToStep, currentStep, totalSteps, isProjectReadyTo
 	const canSubmitProject = isProjectReadyToSubmit(formInputs);
 
 	return (
-		<div className="w-full sticky bottom-0 p-6 z-10 border-t border-gray-200 flex justify-between">
+		<div className="w-full sticky bottom-0 min-h-24 px-6 z-10 border-t border-gray-200 flex justify-between items-center">
 			{/* Buttons in step 1 */}
 			{currentStep === 1 && (
 				<>

@@ -272,7 +272,7 @@ const StepManager = () => {
 				<WindowFrame title="Project Creation" currentStep={currentStep}>
 					{currentStep === 0 && <StartProject goToStep={goToStep} />}
 					{currentStep > 0 && currentStep <= totalSteps && <ProgressBar currentStep={currentStep} totalSteps={totalSteps} percent={percent} />}
-					<div className={`${currentStep > 0 && currentStep < totalSteps ? "h-160" : "hidden"} overflow-y-auto mb-4 py-1 xl:pt-20`}>
+					<div className={`${currentStep > 0 && currentStep < totalSteps ? "h-140" : "hidden"} h-140 overflow-y-auto mb-4 py-1 xl:pt-20`}>
 						{/* Step 1: Fill in the project title, category, and sub-category */}
 						{currentStep === 1 && <StepOne formInputs={formInputs} onChange={onChange} categories={categories} />}
 
@@ -321,7 +321,7 @@ const StepManager = () => {
 							/>
 						)}
 					</div>
-					<div className={`${currentStep === totalSteps ? "h-160" : "hidden"} overflow-y-auto mb-4 py-1`}>
+					<div className={`${currentStep === totalSteps ? "h-140" : "hidden"} overflow-y-auto mb-4 py-1`}>
 						{/* Step 7: (Final Validation): Review and validate all the provided information */}
 						{currentStep === totalSteps && (
 							<StepFinalValidation

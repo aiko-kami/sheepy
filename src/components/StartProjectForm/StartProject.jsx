@@ -25,55 +25,67 @@ const StartProject = ({ goToStep }) => {
 				<div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-10">
 					{/* Step 1 */}
 					<div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6 backdrop-blur-sm">
-						<div className="w-10 h-10 bg-blue-900/50 rounded-lg flex items-center justify-center mb-2 border border-blue-700">
-							<span className="text-blue-400 text-xl font-bold">1</span>
+						<div className="flex items-center">
+							<div className="w-10 h-10 bg-blue-900/50 rounded-lg flex items-center justify-center mb-2 border border-blue-700">
+								<span className="text-blue-400 text-xl font-bold">1</span>
+							</div>
+							<h3 className="text-lg font-semibold text-gray-100 mb-2 grow px-1">Project Basics</h3>
 						</div>
-						<h3 className="text-lg font-semibold text-gray-100 mb-2">Project Basics</h3>
 						<p className="text-gray-400 text-sm">Start by naming your project and how it fits within categories.</p>
 					</div>
 
 					{/* Step 2 */}
 					<div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6 backdrop-blur-sm">
-						<div className="w-10 h-10 bg-green-900/50 rounded-lg flex items-center justify-center mb-2 border border-green-700">
-							<span className="text-green-400 text-xl font-bold">2</span>
+						<div className="flex items-center">
+							<div className="w-10 h-10 bg-green-900/50 rounded-lg flex items-center justify-center mb-2 border border-green-700">
+								<span className="text-green-400 text-xl font-bold">2</span>
+							</div>
+							<h3 className="text-lg font-semibold text-gray-100 mb-2 grow px-1">Quick Overview</h3>
 						</div>
-						<h3 className="text-lg font-semibold text-gray-100 mb-2">Quick Overview</h3>
 						<p className="text-gray-400 text-sm">Craft a concise summary and define your main goal.</p>
 					</div>
 
 					{/* Step 3 */}
 					<div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6 backdrop-blur-sm">
-						<div className="w-10 h-10 bg-purple-900/50 rounded-lg flex items-center justify-center mb-2 border border-purple-700">
-							<span className="text-purple-400 text-xl font-bold">3</span>
+						<div className="flex items-center">
+							<div className="w-10 h-10 bg-purple-900/50 rounded-lg flex items-center justify-center mb-2 border border-purple-700">
+								<span className="text-purple-400 text-xl font-bold">3</span>
+							</div>
+							<h3 className="text-lg font-semibold text-gray-100 mb-2 grow px-1">Project Details</h3>
 						</div>
-						<h3 className="text-lg font-semibold text-gray-100 mb-2">Project Details</h3>
 						<p className="text-gray-400 text-sm">Give a precise decription of your project. What it is, how it works, and what makes it unique.</p>
 					</div>
 
 					{/* Step 4 */}
 					<div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6 backdrop-blur-sm">
-						<div className="w-10 h-10 bg-orange-900/50 rounded-lg flex items-center justify-center mb-2 border border-orange-700">
-							<span className="text-orange-400 text-xl font-bold">4</span>
+						<div className="flex items-center">
+							<div className="w-10 h-10 bg-orange-900/50 rounded-lg flex items-center justify-center mb-2 border border-orange-700">
+								<span className="text-orange-400 text-xl font-bold">4</span>
+							</div>
+							<h3 className="text-lg font-semibold text-gray-100 mb-2 grow px-1">Purpose & Impact</h3>
 						</div>
-						<h3 className="text-lg font-semibold text-gray-100 mb-2">Purpose & Impact</h3>
 						<p className="text-gray-400 text-sm">Share your motivations and the impact you aim to create.</p>
 					</div>
 
 					{/* Step 5 */}
 					<div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6 backdrop-blur-sm">
-						<div className="w-10 h-10 bg-teal-900/50 rounded-lg flex items-center justify-center mb-2 border border-teal-700">
-							<span className="text-teal-400 text-xl font-bold">5</span>
+						<div className="flex items-center">
+							<div className="w-10 h-10 bg-teal-900/50 rounded-lg flex items-center justify-center mb-2 border border-teal-700">
+								<span className="text-teal-400 text-xl font-bold">5</span>
+							</div>
+							<h3 className="text-lg font-semibold text-gray-100 mb-2 grow px-1">When And Where Do We Start ?</h3>
 						</div>
-						<h3 className="text-lg font-semibold text-gray-100 mb-2">When And Where Do We Start ?</h3>
 						<p className="text-gray-400 text-sm">Set your project's start date and define where it will take place.</p>
 					</div>
 
 					{/* Step 6 */}
 					<div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6 backdrop-blur-sm">
-						<div className="w-10 h-10 bg-pink-900/50 rounded-lg flex items-center justify-center mb-2 border border-pink-700">
-							<span className="text-pink-400 text-xl font-bold">6</span>
+						<div className="flex items-center">
+							<div className="w-10 h-10 bg-pink-900/50 rounded-lg flex items-center justify-center mb-2 border border-pink-700">
+								<span className="text-pink-400 text-xl font-bold">6</span>
+							</div>
+							<h3 className="text-lg font-semibold text-gray-100 mb-2 grow px-1">Assembling Your Dream Team</h3>
 						</div>
-						<h3 className="text-lg font-semibold text-gray-100 mb-2">Assembling Your Dream Team</h3>
 						<p className="text-gray-400 text-sm">Find the right talents to collaborate on your project.</p>
 					</div>
 				</div>
@@ -95,7 +107,7 @@ const StartProject = ({ goToStep }) => {
 				</div>
 
 				{/* Progress Hint */}
-				<div className="pt-8">
+				<div className="pt-8 pb-3">
 					<p className="text-sm text-gray-400">✨ You can save your progress at any time during the project creation.</p>
 				</div>
 			</div>
