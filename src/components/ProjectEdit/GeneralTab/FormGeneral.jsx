@@ -1,11 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
 import General from "@/components/ProjectEdit/GeneralTab/General";
 import SideMenu from "@/components/ProjectEdit/SideMenu";
 
+import { handleFormChange } from "@/utils/formHandlers";
+
 const FormGeneral = ({ project }) => {
-	const [formState, setFormState] = useState({
+	const [formInputs, setFormInputs] = useState({
 		projectTitle: project.title || "",
 		projectCategory: project.category.name || "",
 		projectSubCategory: project.subCategory.name || "",
@@ -18,20 +21,13 @@ const FormGeneral = ({ project }) => {
 		projectTags: project.tags.map((tag) => tag.name) || [],
 	});
 
-	const onChange = (e) => {
-		const { name, value, type, checked } = e.target;
-		const inputValue = type === "checkbox" ? checked : value;
-		setFormState((prevState) => ({
-			...prevState,
-			[name]: inputValue,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	const onSubmit = (event) => {
 		event.preventDefault();
 		// Handle form submission
-		console.log("🚀 ~ onSubmit ~ The project has been updated:", formState);
-		console.log("🚀 ~ onSubmit ~ The cover has been updated:", formState.projectCover);
+		console.log("🚀 ~ onSubmit ~ The project has been updated:", formInputs);
+		console.log("🚀 ~ onSubmit ~ The cover has been updated:", formInputs.projectCover);
 	};
 
 	return (
@@ -44,7 +40,7 @@ const FormGeneral = ({ project }) => {
 					</div>
 					<div className="col-span-4 lg:px-2 lg:pl-10">
 						{/* Project general information */}
-						<General formState={formState} setFormState={setFormState} onChange={onChange} />
+						<General formInputs={formInputs} setFormInputs={setFormInputs} onChange={onChange} />
 					</div>
 				</div>
 			</form>

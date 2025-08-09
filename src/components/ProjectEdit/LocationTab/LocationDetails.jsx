@@ -3,7 +3,7 @@ import { Button } from "@/components/Buttons/Buttons";
 import { ToggleField } from "@/components/Forms/ToggleField";
 import InputField from "@/components/Forms/InputField";
 
-const LocationDetails = ({ formState, onChange }) => {
+const LocationDetails = ({ formInputs, onChange }) => {
 	return (
 		<>
 			{/* Project location */}
@@ -16,7 +16,7 @@ const LocationDetails = ({ formState, onChange }) => {
 			<div className="pl-4">
 				{/* Project location */}
 				<div className="mb-8">
-					<ToggleField inputName="locationOnlineOnly" checked={formState.locationOnlineOnly} label="Project online only" onChange={onChange} />
+					<ToggleField inputName="locationOnlineOnly" checked={formInputs.locationOnlineOnly} label="Project online only" onChange={onChange} />
 				</div>
 				<div className="max-w-140">
 					<div className="mb-6 xl:mb-8">
@@ -24,13 +24,13 @@ const LocationDetails = ({ formState, onChange }) => {
 							inputName="projectLocationCountry"
 							inputType="text"
 							label="Project country"
-							inputValue={formState.projectLocationCountry}
+							inputValue={formInputs.projectLocationCountry}
 							onChange={onChange}
-							disabled={formState.locationOnlineOnly}
+							disabled={formInputs.locationOnlineOnly}
 						/>
 					</div>
 					<div>
-						<InputField inputName="projectLocationCity" inputType="text" label="City" inputValue={formState.projectLocationCity} onChange={onChange} disabled={formState.locationOnlineOnly} />
+						<InputField inputName="projectLocationCity" inputType="text" label="City" inputValue={formInputs.projectLocationCity} onChange={onChange} disabled={formInputs.locationOnlineOnly} />
 					</div>
 				</div>
 			</div>

@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { DndContext, closestCenter } from "@dnd-kit/core";
 import { SortableContext, arrayMove } from "@dnd-kit/sortable";
+
 import DraggableStepItem from "@/components/ProjectEdit/StepsTab/DraggableStepItem";
 
-const DraggableStepsList = ({ formState, onChange }) => {
+const DraggableStepsList = ({ formInputs, onChange }) => {
 	const [items, setItems] = useState([]);
 
-	// Initialize items based on formState.projectSteps
+	// Initialize items based on formInputs.projectSteps
 	useEffect(() => {
-		if (formState?.projectSteps) {
-			const transformedItems = formState.projectSteps.map((step, index) => ({
+		if (formInputs?.projectSteps) {
+			const transformedItems = formInputs.projectSteps.map((step, index) => ({
 				id: `${index + 1}`,
 				title: step.title,
 				details: step.details,
@@ -18,7 +19,7 @@ const DraggableStepsList = ({ formState, onChange }) => {
 			}));
 			setItems(transformedItems);
 		}
-	}, [formState.projectSteps]);
+	}, [formInputs.projectSteps]);
 
 	// Handle the end of dragging
 	const handleDragEnd = (event) => {

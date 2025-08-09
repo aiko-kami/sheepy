@@ -27,7 +27,11 @@ export const WindowFrame = ({ title, currentStep, children }) => {
 			<div className="bg-black/50 backdrop-blur-sm z-40" />
 
 			<div className="flex items-center justify-center">
-				<div className="w-full h-full max-w-8xl border border-gray-700/50 rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-br from-gray-900 via-blue-900 to-gray-900">
+				<div
+					className={`${
+						currentStep == 0 ? "from-blue-900/30 via-blue-900 to-purple-900/40" : "from-gray-900 via-blue-900 to-gray-900"
+					} w-full h-full max-w-8xl border border-gray-700/50 rounded-2xl shadow-2xl overflow-hidden bg-gradient-to-br`}
+				>
 					{/* Window Title Bar */}
 					<div className="flex items-center justify-between px-3 py-1 bg-gray-800/50 border-b border-gray-700/50">
 						{/* Window Controls (Left) */}

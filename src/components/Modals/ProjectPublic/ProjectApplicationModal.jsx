@@ -6,8 +6,10 @@ import { Button } from "@/components/Buttons/Buttons";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 import { SelectRoundedField } from "@/components/Forms/SelectField";
 
+import { handleFormChange } from "@/utils/formHandlers";
+
 const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) => {
-	const [formState, setFormState] = useState({
+	const [formInputs, setFormInputs] = useState({
 		selectedRole: "",
 		message: "",
 	});
@@ -21,27 +23,21 @@ const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) =>
 		event.preventDefault();
 		closeModal();
 		// Handle form save draft
-		console.log("🚀 ~ onSaveDraft ~ form data:", formState);
+		console.log("🚀 ~ onSaveDraft ~ form data:", formInputs);
 	};
 
 	const onSubmit = (event) => {
 		event.preventDefault();
 		closeModal();
 		// Handle form submission
-		console.log("🚀 ~ onSubmit ~ form data:", formState);
+		console.log("🚀 ~ onSubmit ~ form data:", formInputs);
 	};
 
-	const onChange = (event) => {
-		const { name, value } = event.target;
-		setFormState((prevState) => ({
-			...prevState,
-			[name]: value,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	useEffect(() => {
 		if (roleSelected) {
-			setFormState((prevState) => ({
+			setFormInputs((prevState) => ({
 				...prevState,
 				selectedRole: roleSelected,
 			}));
@@ -53,7 +49,7 @@ const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) =>
 			<form onSubmit={onSubmit}>
 				{/* Role */}
 				<div className="mb-6">
-					<SelectRoundedField inputName="selectedRole" possibleValues={optionsList} inputValue={formState.selectedRole} label="Select the role you want:" onChange={onChange} />
+					<SelectRoundedField inputName="selectedRole" possibleValues={optionsList} inputValue={formInputs.selectedRole} label="Select the role you want:" onChange={onChange} />
 				</div>
 
 				{/* Message */}
@@ -62,7 +58,7 @@ const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) =>
 						label="Describe why you want to join this project:"
 						labelStyle="block mb-2"
 						inputName="message"
-						inputValue={formState.message}
+						inputValue={formInputs.message}
 						onChange={onChange}
 						placeholder="Share your motivation for joining this project and introduce yourself briefly..."
 						maxLength={4000}

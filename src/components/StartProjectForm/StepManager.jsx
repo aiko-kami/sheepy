@@ -15,9 +15,12 @@ import StepFinalValidation from "@/components/StartProjectForm/Steps/StepFinalVa
 import StepProjectSubmitted from "@/components/StartProjectForm/StepProjectSubmitted";
 import ProgressBar from "@/components/StartProjectForm/ProgressBar";
 import ButtonsNavigation from "@/components/StartProjectForm/ButtonsNavigation";
+
 import { ApiGetAllCategories } from "@/lib/api/categories";
 import { ApiCreateProjectDraft, ApiSubmitProject } from "@/lib/api/projectCore";
+
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { handleFormChange } from "@/utils/formHandlers";
 
 import projectForm from "@/mock/projectForm.json";
 
@@ -56,14 +59,7 @@ const StepManager = () => {
 	const [objectiveInput, setObjectiveInput] = useState("");
 	const [objectiveError, setObjectiveError] = useState("");
 
-	const onChange = (e) => {
-		const { name, value, type, checked } = e.target;
-		const inputValue = type === "checkbox" ? checked : value;
-		setFormInputs((prevState) => ({
-			...prevState,
-			[name]: inputValue,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	const addTag = () => {
 		if (!tagInput) {

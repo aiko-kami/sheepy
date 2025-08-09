@@ -2,30 +2,30 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+
 import { useAuth } from "@/contexts/AuthContext";
-import { ApiLogin } from "@/lib/api/auth";
+
 import InputField from "@/components/Forms/InputField";
 import Triforce from "@/components/Loaders/Triforce";
+
+import { ApiLogin } from "@/lib/api/auth";
+
 import { showErrorToast } from "@/utils/toast";
+import { handleFormChange } from "@/utils/formHandlers";
 
 const LoginForm = ({ setModalDisplay }) => {
 	const router = useRouter();
 	const { loginUser } = useAuth();
 
-	const [formData, setFormData] = useState({
+	const [formInputs, setFormInputs] = useState({
 		identifier: "",
 		password: "",
 	});
-	const { identifier, password } = formData;
+	const { identifier, password } = formInputs;
 
 	const [loading, setLoading] = useState(false);
 
-	const onChange = (e) => {
-		setFormData((prevState) => ({
-			...prevState,
-			[e.target.name]: e.target.value,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();

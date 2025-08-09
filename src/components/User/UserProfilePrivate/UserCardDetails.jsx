@@ -7,8 +7,11 @@ import { IoLocationOutline, IoEarthOutline, IoBusinessOutline, IoLinkOutline, Io
 import UserLanguages from "@/components/User/UserProfilePrivate/UserLanguages";
 import { Button } from "@/components/Buttons/Buttons";
 import InputField from "@/components/Forms/InputField";
+
 import { ApiUpdateUserDetails } from "@/lib/api/usersClient";
+
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { handleFormChange } from "@/utils/formHandlers";
 
 const UserCardDetails = ({ user }) => {
 	const router = useRouter();
@@ -21,13 +24,7 @@ const UserCardDetails = ({ user }) => {
 		website: user.website.data,
 	});
 
-	const onChange = (e) => {
-		const { name, value } = e.target;
-		setFormInputs((prevState) => ({
-			...prevState,
-			[name]: value,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	// Handle form submission
 	const handleSubmit = async (e) => {

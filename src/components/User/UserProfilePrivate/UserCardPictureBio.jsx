@@ -8,8 +8,11 @@ import { Button } from "@/components/Buttons/Buttons";
 import ProfilePicture from "@/components/User/UserProfilePrivate/ProfilePicture";
 import ProjectCounter from "@/components/Common/ProjectCounter";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
+
 import { ApiUpdateUserBioDescription } from "@/lib/api/usersClient";
+
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { handleFormChange } from "@/utils/formHandlers";
 
 const UserCardPictureBio = ({ user }) => {
 	const router = useRouter();
@@ -19,13 +22,7 @@ const UserCardPictureBio = ({ user }) => {
 		bio: user.bio.data || "",
 	});
 
-	const onChange = (e) => {
-		const { name, value } = e.target;
-		setFormInputs((prevState) => ({
-			...prevState,
-			[name]: value,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();

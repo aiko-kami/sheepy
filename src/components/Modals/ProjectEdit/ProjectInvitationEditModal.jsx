@@ -8,8 +8,10 @@ import { Status, Badge } from "@/components/Badges/Badges";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 import { SelectRoundedField } from "@/components/Forms/SelectField";
 
+import { handleFormChange } from "@/utils/formHandlers";
+
 const ProjectInvitationEditModal = ({ closeModalEdit, invitation, projectId, talentsNeeded }) => {
-	const [formState, setFormState] = useState({
+	const [formInputs, setFormInputs] = useState({
 		joinProjectId: invitation.joinProjectId,
 		userId: invitation.user.userId,
 		projectId: projectId,
@@ -17,25 +19,19 @@ const ProjectInvitationEditModal = ({ closeModalEdit, invitation, projectId, tal
 		message: invitation.message,
 	});
 
-	const onChange = (event) => {
-		const { name, value } = event.target;
-		setFormState((prevState) => ({
-			...prevState,
-			[name]: value,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	const onSaveDraft = (event) => {
 		event.preventDefault();
 		// Handle form save draft
-		console.log("🚀 ~ onSaveDraft ~ form data:", formState);
+		console.log("🚀 ~ onSaveDraft ~ form data:", formInputs);
 		closeModalEdit();
 	};
 
 	const onSubmit = (event) => {
 		event.preventDefault();
 		// Handle form submission
-		console.log("🚀 ~ onSubmit ~ The message has been sent:", formState);
+		console.log("🚀 ~ onSubmit ~ The message has been sent:", formInputs);
 		closeModalEdit();
 	};
 
@@ -57,7 +53,7 @@ const ProjectInvitationEditModal = ({ closeModalEdit, invitation, projectId, tal
 
 			{/* Role */}
 			<div className="mb-6">
-				<SelectRoundedField inputName="selectedRole" possibleValues={optionsList} inputValue={formState.selectedRole} label="Talent requested:" onChange={onChange} />
+				<SelectRoundedField inputName="selectedRole" possibleValues={optionsList} inputValue={formInputs.selectedRole} label="Talent requested:" onChange={onChange} />
 			</div>
 
 			{/* Send message form */}
@@ -67,7 +63,7 @@ const ProjectInvitationEditModal = ({ closeModalEdit, invitation, projectId, tal
 						label="Invitation message:"
 						labelStyle="block mb-2"
 						inputName="message"
-						inputValue={formState.message}
+						inputValue={formInputs.message}
 						onChange={onChange}
 						placeholder="Write a message explaining the role and why the user would be a great fit for this project..."
 						maxLength={1000}

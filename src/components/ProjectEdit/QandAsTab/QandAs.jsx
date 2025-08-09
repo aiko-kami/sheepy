@@ -1,11 +1,11 @@
 import QandAsDetails from "@/components/ProjectEdit/QandAsTab/QandAsDetails";
 
-const QandAs = ({ formState, onChange, addQna }) => {
+const QandAs = ({ formInputs, onChange, addQna }) => {
 	return (
 		<>
 			{/* Project Q&As */}
 			<div className="mb-8 lg:mb-14">
-				<QandAsDetails formState={formState} onChange={onChange} addQna={addQna} />
+				<QandAsDetails formInputs={formInputs} onChange={onChange} addQna={addQna} />
 			</div>
 		</>
 	);

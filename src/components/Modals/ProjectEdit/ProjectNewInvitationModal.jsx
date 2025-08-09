@@ -4,10 +4,12 @@ import { useState } from "react";
 
 import { Button } from "@/components/Buttons/Buttons";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
-import InputField from "../../Forms/InputField";
+import InputField from "@/components/Forms/InputField";
+
+import { handleFormChange } from "@/utils/formHandlers";
 
 const ProjectNewInvitationModal = ({ closeModal }) => {
-	const [formState, setFormState] = useState({
+	const [formInputs, setFormInputs] = useState({
 		username: "",
 		talent: "",
 		message: "",
@@ -17,35 +19,29 @@ const ProjectNewInvitationModal = ({ closeModal }) => {
 		event.preventDefault();
 		closeModal();
 		// Handle form save draft
-		console.log("🚀 ~ onSaveDraft ~ form data:", formState);
+		console.log("🚀 ~ onSaveDraft ~ form data:", formInputs);
 	};
 
 	const onSubmit = (event) => {
 		event.preventDefault();
 		closeModal();
 		// Handle form submission
-		console.log("🚀 ~ onSubmit ~ form data:", formState);
+		console.log("🚀 ~ onSubmit ~ form data:", formInputs);
 	};
 
-	const onChange = (event) => {
-		const { name, value } = event.target;
-		setFormState((prevState) => ({
-			...prevState,
-			[name]: value,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	return (
 		<>
 			<form onSubmit={onSubmit}>
 				{/* Recipient */}
 				<div className="mb-6 max-w-120">
-					<InputField inputName="username" inputType="text" label="Recipient" inputValue={formState.username} onChange={onChange} />
+					<InputField inputName="username" inputType="text" label="Recipient" inputValue={formInputs.username} onChange={onChange} />
 				</div>
 
 				{/* Talent */}
 				<div className="mb-6 max-w-70">
-					<InputField inputName="talent" inputType="text" label="Talent" inputValue={formState.talent} onChange={onChange} />
+					<InputField inputName="talent" inputType="text" label="Talent" inputValue={formInputs.talent} onChange={onChange} />
 				</div>
 
 				{/* Message */}
@@ -54,7 +50,7 @@ const ProjectNewInvitationModal = ({ closeModal }) => {
 						label="Invitation message:"
 						labelStyle="block mb-2"
 						inputName="message"
-						inputValue={formState.message}
+						inputValue={formInputs.message}
 						onChange={onChange}
 						placeholder="Write a message explaining the role and why the user would be a great fit for this project..."
 						maxLength={2000}

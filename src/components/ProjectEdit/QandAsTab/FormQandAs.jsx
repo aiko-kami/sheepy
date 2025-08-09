@@ -6,7 +6,7 @@ import QandAs from "@/components/ProjectEdit/QandAsTab/QandAs";
 import SideMenu from "@/components/ProjectEdit/SideMenu";
 
 const FormQandAs = ({ project }) => {
-	const [formState, setFormState] = useState({
+	const [formInputs, setFormInputs] = useState({
 		projectId: project.projectId,
 		updatedBy: project.qnas.updatedBy,
 		createdAt: project.qnas.createdAt,
@@ -15,7 +15,7 @@ const FormQandAs = ({ project }) => {
 	});
 
 	const onChange = (updatedQnas) => {
-		setFormState((prevState) => ({
+		setFormInputs((prevState) => ({
 			...prevState,
 			projectQnas: updatedQnas,
 		}));
@@ -24,19 +24,19 @@ const FormQandAs = ({ project }) => {
 	const onSubmit = (event) => {
 		event.preventDefault();
 		// Handle form submission
-		console.log("🚀 ~ onSubmit ~ The project has been updated:", formState);
+		console.log("🚀 ~ onSubmit ~ The project has been updated:", formInputs);
 	};
 
 	const addQna = () => {
 		const newQna = {
-			id: `${(formState.projectQnas.length || 0) + 1}`,
+			id: `${(formInputs.projectQnas.length || 0) + 1}`,
 			question: "",
 			response: "",
 			published: false,
 		};
 
 		// Update the form state with the new Qna
-		const updatedQnas = [...formState.projectQnas, newQna];
+		const updatedQnas = [...formInputs.projectQnas, newQna];
 		onChange(updatedQnas);
 	};
 
@@ -50,7 +50,7 @@ const FormQandAs = ({ project }) => {
 					</div>
 					<div className="col-span-4 lg:px-2 lg:pl-10">
 						{/* Project Q&As information */}
-						<QandAs formState={formState} onChange={onChange} addQna={addQna} />
+						<QandAs formInputs={formInputs} onChange={onChange} addQna={addQna} />
 						<div className="flex justify-center">
 							<Button
 								btnProps={{

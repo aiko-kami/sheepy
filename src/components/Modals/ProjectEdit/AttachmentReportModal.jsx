@@ -2,32 +2,27 @@
 
 import { useState } from "react";
 import { DateTime } from "luxon";
-
 import Image from "next/image";
 
 import { SelectRoundedField } from "@/components/Forms/SelectField";
 import InputField from "@/components/Forms/InputField";
 import { Button } from "@/components/Buttons/Buttons";
 
+import { handleFormChange } from "@/utils/formHandlers";
+
 const AttachmentReportModal = ({ closeModalReport, attachment, projectId }) => {
-	const [formState, setFormState] = useState({
+	const [formInputs, setFormInputs] = useState({
 		reportReason: "spam",
 		reportReasonText: "",
 		projectId: projectId,
 	});
 
-	const onChange = (event) => {
-		const { name, value } = event.target;
-		setFormState((prevState) => ({
-			...prevState,
-			[name]: value,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	const onSubmit = (event) => {
 		event.preventDefault();
 		// Handle form submission
-		console.log("🚀 ~ onSubmit ~ The attachment has been reported:", formState);
+		console.log("🚀 ~ onSubmit ~ The attachment has been reported:", formInputs);
 		closeModalReport();
 	};
 
@@ -94,11 +89,11 @@ const AttachmentReportModal = ({ closeModalReport, attachment, projectId }) => {
 			{/* Report form */}
 			<form onSubmit={onSubmit}>
 				<div className="mb-6">
-					<SelectRoundedField inputName="reportReason" possibleValues={optionsList} inputValue={formState.reportReason} label="Why do you want to report this attachment?" onChange={onChange} />
+					<SelectRoundedField inputName="reportReason" possibleValues={optionsList} inputValue={formInputs.reportReason} label="Why do you want to report this attachment?" onChange={onChange} />
 				</div>
 
 				<div className="mb-6">
-					<InputField inputName="reportReasonText" inputType="text" label="Provide additional information if needed" inputValue={formState.reportReasonText} onChange={onChange} />
+					<InputField inputName="reportReasonText" inputType="text" label="Provide additional information if needed" inputValue={formInputs.reportReasonText} onChange={onChange} />
 				</div>
 
 				{/* Report validation */}

@@ -2,7 +2,7 @@ import { IoSparklesSharp } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 
-const Motivation = ({ formState, onChange }) => {
+const Motivation = ({ formInputs, onChange }) => {
 	return (
 		<>
 			{/* Creator motivation, project objectives and phases */}
@@ -19,7 +19,7 @@ const Motivation = ({ formState, onChange }) => {
 						label="Creator motivation (optional):"
 						labelStyle="block mb-2"
 						inputName="creatorMotivation"
-						inputValue={formState.creatorMotivation}
+						inputValue={formInputs.creatorMotivation}
 						onChange={onChange}
 						placeholder="What inspired you to start this project?..."
 						maxLength={500}
@@ -33,7 +33,7 @@ const Motivation = ({ formState, onChange }) => {
 						label="Objectives (optional):"
 						labelStyle="block mb-2"
 						inputName="projectObjectives"
-						inputValue={formState.projectObjectives}
+						inputValue={formInputs.projectObjectives}
 						onChange={onChange}
 						placeholder="What are the intermediate steps or milestones necessary for your project to succeed?..."
 						maxLength={500}
@@ -47,7 +47,7 @@ const Motivation = ({ formState, onChange }) => {
 						label="Project phases:"
 						labelStyle="block mb-2"
 						inputName="projectGoal"
-						inputValue={formState.projectGoal}
+						inputValue={formInputs.projectGoal}
 						onChange={onChange}
 						placeholder="What is the main goal of your project?... (500 characters max)"
 						maxLength={500}

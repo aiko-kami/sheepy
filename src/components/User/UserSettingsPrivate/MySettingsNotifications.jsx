@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { IoNotifications } from "react-icons/io5";
 
 import { RadioMultiField } from "@/components/Forms/ToggleField";
-import { IoNotifications } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
+
 import { ApiUpdateUserSettingsNotifications } from "@/lib/api/usersClient";
+
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
 const MySettingsNotifications = ({ userNotificationsSettings }) => {

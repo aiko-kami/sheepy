@@ -3,7 +3,7 @@ import { Button } from "@/components/Buttons/Buttons";
 import InputField from "@/components/Forms/InputField";
 import { useState, useRef } from "react";
 
-const Tags = ({ formState, setFormState }) => {
+const Tags = ({ formInputs, setFormInputs }) => {
 	const inputRef = useRef(null); // Create a reference to the input field
 
 	const [tagInput, setTagInput] = useState("");
@@ -13,14 +13,14 @@ const Tags = ({ formState, setFormState }) => {
 		if (!tagInput) {
 			setTagError("Please enter a tag.");
 		}
-		if (tagInput && formState.projectTags.includes(tagInput)) {
+		if (tagInput && formInputs.projectTags.includes(tagInput)) {
 			setTagError("This tag is already present in the list.");
 		}
-		if (tagInput && formState.projectTags.length >= 8) {
+		if (tagInput && formInputs.projectTags.length >= 8) {
 			setTagError("You can only add up to 8 tags.");
 		}
-		if (tagInput && !formState.projectTags.includes(tagInput) && formState.projectTags.length < 8) {
-			setFormState((prevState) => ({
+		if (tagInput && !formInputs.projectTags.includes(tagInput) && formInputs.projectTags.length < 8) {
+			setFormInputs((prevState) => ({
 				...prevState,
 				projectTags: [...prevState.projectTags, tagInput],
 			}));
@@ -30,7 +30,7 @@ const Tags = ({ formState, setFormState }) => {
 	};
 
 	const removeTag = (tagToRemove) => {
-		setFormState((prevState) => ({
+		setFormInputs((prevState) => ({
 			...prevState,
 			projectTags: prevState.projectTags.filter((tag) => tag !== tagToRemove),
 		}));
@@ -77,9 +77,9 @@ const Tags = ({ formState, setFormState }) => {
 
 				{/* List of tags */}
 				<div className="mb-8">
-					{formState.projectTags.length > 0 && (
+					{formInputs.projectTags.length > 0 && (
 						<div className="flex flex-wrap gap-2">
-							{formState.projectTags.map((tag, index) => (
+							{formInputs.projectTags.map((tag, index) => (
 								<span key={index} className="flex items-center px-3 pt-0.5 pb-1 mt-1 bg-gray-200 text-gray-800 rounded-full">
 									{tag}
 									<button type="button" className="ml-1 text-gray-600 hover:text-gray-800 transition duration-150 ease-in-out" onClick={() => removeTag(tag)}>

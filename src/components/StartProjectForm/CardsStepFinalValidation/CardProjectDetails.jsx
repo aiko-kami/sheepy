@@ -11,7 +11,7 @@ const CardProjectDetails = ({ formInputs }) => {
 					</h2>
 				</div>
 				<div className="p-6 pe-12 space-y-4">
-					<div className="space-y-3">
+					<div className="space-y-1">
 						<div className="flex items-center gap-2">
 							<IoCompassOutline className="h-5 w-5 text-blue-600" />
 							<h3 className="font-semibold text-gray-900">Project Goal</h3>
@@ -29,7 +29,7 @@ const CardProjectDetails = ({ formInputs }) => {
 						</div>
 					</div>
 
-					<div className="space-y-3">
+					<div className="space-y-1">
 						<div className="flex items-center gap-2">
 							<IoDocumentTextOutline className="h-5 w-5 text-blue-600" />
 							<h3 className="font-semibold text-gray-900">Description</h3>
@@ -47,7 +47,7 @@ const CardProjectDetails = ({ formInputs }) => {
 						</div>
 					</div>
 
-					<div className="space-y-3">
+					<div className="space-y-1">
 						<div className="flex items-center gap-2">
 							<IoHeartOutline className="h-5 w-5 text-blue-600" />
 							<h3 className="font-semibold text-gray-900">Creator Motivations</h3>
@@ -65,7 +65,7 @@ const CardProjectDetails = ({ formInputs }) => {
 						</div>
 					</div>
 
-					<div className="space-y-3">
+					<div className="space-y-2">
 						<div className="flex items-center gap-2">
 							<IoTrailSignOutline className="h-5 w-5 text-blue-600" />
 							<h3 className="font-semibold text-gray-900">Objectives</h3>

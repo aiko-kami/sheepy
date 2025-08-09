@@ -4,28 +4,28 @@ import Cover from "@/components/ProjectEdit/GeneralTab/Cover";
 import Tags from "@/components/ProjectEdit/GeneralTab/Tags";
 import Motivation from "@/components/ProjectEdit/GeneralTab/Motivation";
 
-const General = ({ formState, setFormState, onChange }) => {
+const General = ({ formInputs, setFormInputs, onChange }) => {
 	return (
 		<>
 			{/* Project title and category */}
 			<div className="mb-8 lg:mb-10">
-				<TitleCategory formState={formState} setFormState={setFormState} onChange={onChange} />
+				<TitleCategory formInputs={formInputs} setFormInputs={setFormInputs} onChange={onChange} />
 			</div>
 			{/* Project summary, description and goals */}
 			<div className="mb-8 lg:mb-10">
-				<Summary formState={formState} onChange={onChange} />
+				<Summary formInputs={formInputs} onChange={onChange} />
 			</div>
 			{/* Project cover */}
 			<div className="mb-8 lg:mb-10">
-				<Cover setFormState={setFormState} />
+				<Cover setFormInputs={setFormInputs} />
 			</div>
 			{/* Project tags */}
 			<div className="mb-8 lg:mb-10">
-				<Tags formState={formState} setFormState={setFormState} />
+				<Tags formInputs={formInputs} setFormInputs={setFormInputs} />
 			</div>
 			{/* Project creator motivation, objectives, phases */}
 			<div className="mb-8 lg:mb-10">
-				<Motivation formState={formState} onChange={onChange} />
+				<Motivation formInputs={formInputs} onChange={onChange} />
 			</div>
 		</>
 	);

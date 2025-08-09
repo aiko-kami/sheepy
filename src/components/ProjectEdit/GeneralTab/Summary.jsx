@@ -2,7 +2,7 @@ import { IoDocumentText } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 
-const Summary = ({ formState, onChange }) => {
+const Summary = ({ formInputs, onChange }) => {
 	return (
 		<>
 			{/* Project summary, description and goals */}
@@ -19,7 +19,7 @@ const Summary = ({ formState, onChange }) => {
 						label="Project summary:"
 						labelStyle="block mb-2"
 						inputName="projectSummary"
-						inputValue={formState.projectSummary}
+						inputValue={formInputs.projectSummary}
 						onChange={onChange}
 						placeholder="Summarize your project in a few sentences... (300 characters max)"
 						maxLength={300}
@@ -33,7 +33,7 @@ const Summary = ({ formState, onChange }) => {
 						label="Project description:"
 						labelStyle="block mb-2"
 						inputName="projectDescription"
-						inputValue={formState.projectDescription}
+						inputValue={formInputs.projectDescription}
 						onChange={onChange}
 						placeholder="What's the story behind your project?... (10 000 characters max)"
 						maxLength={10000}
@@ -47,7 +47,7 @@ const Summary = ({ formState, onChange }) => {
 						label="Project goal:"
 						labelStyle="block mb-2"
 						inputName="projectGoal"
-						inputValue={formState.projectGoal}
+						inputValue={formInputs.projectGoal}
 						onChange={onChange}
 						placeholder="What is the main goal of your project?... (500 characters max)"
 						maxLength={500}

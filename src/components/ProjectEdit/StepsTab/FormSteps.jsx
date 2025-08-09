@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from "react";
+
 import { Button } from "@/components/Buttons/Buttons";
 import Steps from "@/components/ProjectEdit/StepsTab/Steps";
 import SideMenu from "@/components/ProjectEdit/SideMenu";
 
 const FormSteps = ({ project }) => {
-	const [formState, setFormState] = useState({
+	const [formInputs, setFormInputs] = useState({
 		projectId: project.projectId,
 		updatedBy: project.steps.updatedBy,
 		createdAt: project.steps.createdAt,
@@ -15,7 +16,7 @@ const FormSteps = ({ project }) => {
 	});
 
 	const onChange = (updatedSteps) => {
-		setFormState((prevState) => ({
+		setFormInputs((prevState) => ({
 			...prevState,
 			projectSteps: updatedSteps,
 		}));
@@ -24,12 +25,12 @@ const FormSteps = ({ project }) => {
 	const onSubmit = (event) => {
 		event.preventDefault();
 		// Handle form submission
-		console.log("🚀 ~ onSubmit ~ The project has been updated:", formState);
+		console.log("🚀 ~ onSubmit ~ The project has been updated:", formInputs);
 	};
 
 	const addStep = () => {
 		const newStep = {
-			id: `${(formState.projectSteps.length || 0) + 1}`,
+			id: `${(formInputs.projectSteps.length || 0) + 1}`,
 			title: "",
 			details: "",
 			status: "",
@@ -37,7 +38,7 @@ const FormSteps = ({ project }) => {
 		};
 
 		// Update the form state with the new step
-		const updatedSteps = [...formState.projectSteps, newStep];
+		const updatedSteps = [...formInputs.projectSteps, newStep];
 		onChange(updatedSteps);
 	};
 
@@ -51,7 +52,7 @@ const FormSteps = ({ project }) => {
 					</div>
 					<div className="col-span-4 lg:px-2 lg:pl-10">
 						{/* Project steps information */}
-						<Steps formState={formState} onChange={onChange} addStep={addStep} />
+						<Steps formInputs={formInputs} onChange={onChange} addStep={addStep} />
 						<div className="flex justify-center">
 							<Button
 								btnProps={{

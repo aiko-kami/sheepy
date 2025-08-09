@@ -1,12 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import { FaUserShield } from "react-icons/fa6";
 
 import UserPrivacyTable from "@/components/Tables/UserPrivacyTable";
-import { FaUserShield } from "react-icons/fa6";
 import { Button } from "@/components/Buttons/Buttons";
+
 import { ApiUpdateUserSettingsPrivacy } from "@/lib/api/usersClient";
+
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { handleFormChange } from "@/utils/formHandlers";
 
 const MySettingsPrivacy = ({ userPrivacySettings }) => {
 	const [formInputs, setFormInputs] = useState({
@@ -20,14 +23,7 @@ const MySettingsPrivacy = ({ userPrivacySettings }) => {
 		privacyProjectLike: userPrivacySettings.privacyProjectLike,
 	});
 
-	const onChange = (e) => {
-		const { name, value, type, checked } = e.target;
-		const inputValue = type === "checkbox" ? checked : value;
-		setFormInputs((prevState) => ({
-			...prevState,
-			[name]: inputValue,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	// Handle form submission
 	const handleSubmit = async (e) => {

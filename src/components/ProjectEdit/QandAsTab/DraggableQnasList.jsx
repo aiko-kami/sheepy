@@ -3,13 +3,13 @@ import { DndContext, closestCenter } from "@dnd-kit/core";
 import { SortableContext, arrayMove } from "@dnd-kit/sortable";
 import DraggableQnaItem from "@/components/ProjectEdit/QandAsTab/DraggableQnaItem";
 
-const DraggableQnasList = ({ formState, onChange }) => {
+const DraggableQnasList = ({ formInputs, onChange }) => {
 	const [items, setItems] = useState([]);
 
-	// Initialize items based on formState.projectQnas
+	// Initialize items based on formInputs.projectQnas
 	useEffect(() => {
-		if (formState?.projectQnas) {
-			const transformedItems = formState.projectQnas.map((qna, index) => ({
+		if (formInputs?.projectQnas) {
+			const transformedItems = formInputs.projectQnas.map((qna, index) => ({
 				id: `${index + 1}`,
 				question: qna.question,
 				response: qna.response,
@@ -17,7 +17,7 @@ const DraggableQnasList = ({ formState, onChange }) => {
 			}));
 			setItems(transformedItems);
 		}
-	}, [formState.projectQnas]);
+	}, [formInputs.projectQnas]);
 
 	// Handle the end of dragging
 	const handleDragEnd = (event) => {

@@ -2,32 +2,31 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { ApiSignUp } from "@/lib/api/auth";
+
 import { Button } from "@/components/Buttons/Buttons";
 import InputField from "@/components/Forms/InputField";
 import Triforce from "@/components/Loaders/Triforce";
+
+import { ApiSignUp } from "@/lib/api/auth";
+
 import { showErrorToast } from "@/utils/toast";
+import { handleFormChange } from "@/utils/formHandlers";
 
 const SignUpForm = ({ setModalDisplay }) => {
 	const router = useRouter();
 
-	const [formData, setFormData] = useState({
+	const [formInputs, setFormInputs] = useState({
 		username: "",
 		email: "",
 		password: "",
 		confirmPassword: "",
 	});
-	const { username, email, password, confirmPassword } = formData;
+	const { username, email, password, confirmPassword } = formInputs;
 
 	const [isSignedUp, setIsSignedUp] = useState(false);
 	const [loading, setLoading] = useState(false);
 
-	const onChange = (e) => {
-		setFormData((prevState) => ({
-			...prevState,
-			[e.target.name]: e.target.value,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();

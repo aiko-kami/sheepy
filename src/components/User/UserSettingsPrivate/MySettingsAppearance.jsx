@@ -1,16 +1,20 @@
 "use client";
 
 import { useState } from "react";
-
 import Image from "next/image";
 import { IoSunny } from "react-icons/io5";
+
 import colorModeLight from "@/public/images/colorModeLight.png";
 import colorModeNight from "@/public/images/colorModeNight.png";
 import colorModeDark from "@/public/images/colorModeDark.png";
 import colorModeUnreal from "@/public/images/colorModeUnreal.png";
+
 import { Button } from "@/components/Buttons/Buttons";
+
 import { ApiUpdateUserSettingsAppearance } from "@/lib/api/usersClient";
+
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { handleFormChange } from "@/utils/formHandlers";
 
 const MySettingsAppearance = ({ appearanceSettings }) => {
 	const [formInputs, setFormInputs] = useState({
@@ -49,14 +53,7 @@ const MySettingsAppearance = ({ appearanceSettings }) => {
 		}));
 	};
 
-	const onChange = (e) => {
-		const { name, value, type, checked } = e.target;
-		const inputValue = type === "checkbox" ? checked : value;
-		setFormInputs((prevState) => ({
-			...prevState,
-			[name]: inputValue,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	// Handle form submission
 	const handleSubmit = async (e) => {

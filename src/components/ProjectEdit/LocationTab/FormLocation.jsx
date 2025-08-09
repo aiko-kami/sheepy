@@ -3,30 +3,24 @@
 import { useState } from "react";
 
 import { Button } from "@/components/Buttons/Buttons";
-
 import Location from "@/components/ProjectEdit/LocationTab/Location";
 import SideMenu from "@/components/ProjectEdit/SideMenu";
 
+import { handleFormChange } from "@/utils/formHandlers";
+
 const FormLocation = ({ project }) => {
-	const [formState, setFormState] = useState({
+	const [formInputs, setFormInputs] = useState({
 		locationOnlineOnly: project.locationOnlineOnly || false,
 		projectLocationCity: project.locationCity || "",
 		projectLocationCountry: project.locationCountry || "",
 	});
 
-	const onChange = (e) => {
-		const { name, value, type, checked } = e.target;
-		const inputValue = type === "checkbox" ? checked : value;
-		setFormState((prevState) => ({
-			...prevState,
-			[name]: inputValue,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	const onSubmit = (event) => {
 		event.preventDefault();
 		// Handle form submission
-		console.log("🚀 ~ onSubmit ~ The project has been updated:", formState);
+		console.log("🚀 ~ onSubmit ~ The project has been updated:", formInputs);
 	};
 
 	return (
@@ -39,7 +33,7 @@ const FormLocation = ({ project }) => {
 					</div>
 					<div className="col-span-4 lg:px-2 lg:pl-10">
 						{/* Project general information */}
-						<Location formState={formState} onChange={onChange} />
+						<Location formInputs={formInputs} onChange={onChange} />
 						<div className="flex justify-center">
 							<Button
 								btnProps={{

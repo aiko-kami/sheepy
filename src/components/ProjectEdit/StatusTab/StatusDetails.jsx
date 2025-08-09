@@ -4,7 +4,7 @@ import DatePickerField from "@/components/Forms/DatePickerField";
 import { SelectField } from "@/components/Forms/SelectField";
 import InputField from "@/components/Forms/InputField";
 
-const StatusDetails = ({ formState, onChange }) => {
+const StatusDetails = ({ formInputs, onChange }) => {
 	const optionsList = [
 		{ value: "draft", option: "Draft" },
 		{ value: "submitted", option: "Submitted" },
@@ -30,20 +30,20 @@ const StatusDetails = ({ formState, onChange }) => {
 						{/* Project status input */}
 						<div className="flex-1 mb-6 lg:mb-0 max-w-60 sm:mr-2">
 							<div className="text-sm">Project status</div>
-							<SelectField inputName="projectStatus" possibleValues={optionsList} inputValue={formState.projectStatus} onChange={onChange} />
+							<SelectField inputName="projectStatus" possibleValues={optionsList} inputValue={formInputs.projectStatus} onChange={onChange} />
 						</div>
 
 						{/* Project start date input */}
 						<div className="flex-1 max-w-60">
 							<div className="text-sm">Project start date</div>
-							<DatePickerField value={formState.projectStartDate} onChange={onChange} />
+							<DatePickerField value={formInputs.projectStartDate} onChange={onChange} />
 						</div>
 					</div>
 				</div>
 
 				{/* Project status reason */}
 				<div className="max-w-180 mb-6 xl:mb-8">
-					<InputField inputName="statusReason" inputType="text" label="Reason to change project status" inputValue={formState.statusReason} onChange={onChange} />
+					<InputField inputName="statusReason" inputType="text" label="Reason to change project status" inputValue={formInputs.statusReason} onChange={onChange} />
 				</div>
 				<div className="flex justify-center">
 					<Button

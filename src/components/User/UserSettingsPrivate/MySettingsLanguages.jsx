@@ -1,12 +1,15 @@
 "use client";
 
 import { useState } from "react";
-
 import { IoChatbubbleEllipses } from "react-icons/io5";
+
 import { SelectField } from "@/components/Forms/SelectField";
 import { Button } from "@/components/Buttons/Buttons";
+
 import { ApiUpdateUserSettingsLanguage } from "@/lib/api/usersClient";
+
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { handleFormChange } from "@/utils/formHandlers";
 
 const MySettingsLanguages = ({ languageSettings }) => {
 	const [formInputs, setFormInputs] = useState({
@@ -20,14 +23,7 @@ const MySettingsLanguages = ({ languageSettings }) => {
 		option: language,
 	}));
 
-	const onChange = (e) => {
-		const { name, value, type, checked } = e.target;
-		const inputValue = type === "checkbox" ? checked : value;
-		setFormInputs((prevState) => ({
-			...prevState,
-			[name]: inputValue,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	// Handle form submission
 	const handleSubmit = async (e) => {

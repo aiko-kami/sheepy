@@ -7,33 +7,29 @@ import { Status, Badge } from "@/components/Badges/Badges";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 import { SelectRoundedField } from "@/components/Forms/SelectField";
 
+import { handleFormChange } from "@/utils/formHandlers";
+
 const ProjectRequestEditModal = ({ closeModalEdit, joinProject }) => {
-	const [formState, setFormState] = useState({
+	const [formInputs, setFormInputs] = useState({
 		joinProjectId: joinProject.joinProjectId,
 		projectId: joinProject.project.projectId,
 		selectedRole: joinProject.talent,
 		message: joinProject.message,
 	});
 
-	const onChange = (event) => {
-		const { name, value } = event.target;
-		setFormState((prevState) => ({
-			...prevState,
-			[name]: value,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	const onSaveDraft = (event) => {
 		event.preventDefault();
 		closeModalEdit();
 		// Handle form save draft
-		console.log("🚀 ~ onSaveDraft ~ form data:", formState);
+		console.log("🚀 ~ onSaveDraft ~ form data:", formInputs);
 	};
 
 	const onSubmit = (event) => {
 		event.preventDefault();
 		// Handle form submission
-		console.log("🚀 ~ onSubmit ~ The message has been sent:", formState);
+		console.log("🚀 ~ onSubmit ~ The message has been sent:", formInputs);
 		closeModalEdit();
 	};
 
@@ -72,7 +68,7 @@ const ProjectRequestEditModal = ({ closeModalEdit, joinProject }) => {
 
 			{/* Role */}
 			<div className="mb-6">
-				<SelectRoundedField inputName="selectedRole" possibleValues={optionsList} inputValue={formState.selectedRole} label="Select the role you want:" onChange={onChange} />
+				<SelectRoundedField inputName="selectedRole" possibleValues={optionsList} inputValue={formInputs.selectedRole} label="Select the role you want:" onChange={onChange} />
 			</div>
 
 			{/* Send message form */}
@@ -82,7 +78,7 @@ const ProjectRequestEditModal = ({ closeModalEdit, joinProject }) => {
 						label="Describe why you want to join this project:"
 						labelStyle="block mb-2"
 						inputName="message"
-						inputValue={formState.message}
+						inputValue={formInputs.message}
 						onChange={onChange}
 						placeholder="Share your motivation for joining this project and introduce yourself briefly..."
 						maxLength={1000}

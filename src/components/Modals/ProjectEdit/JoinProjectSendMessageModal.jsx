@@ -7,25 +7,21 @@ import { Button } from "@/components/Buttons/Buttons";
 import { Status } from "@/components/Badges/Badges";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 
+import { handleFormChange } from "@/utils/formHandlers";
+
 const JoinProjectSendMessageModal = ({ closeModalSendMessage, joinProject, type }) => {
-	const [formState, setFormState] = useState({
+	const [formInputs, setFormInputs] = useState({
 		joinProjectId: joinProject.joinProjectId,
 		userId: joinProject.user.userId,
 		message: "",
 	});
 
-	const onChange = (event) => {
-		const { name, value } = event.target;
-		setFormState((prevState) => ({
-			...prevState,
-			[name]: value,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	const onSubmit = (event) => {
 		event.preventDefault();
 		// Handle form submission
-		console.log("🚀 ~ onSubmit ~ The message has been sent:", formState);
+		console.log("🚀 ~ onSubmit ~ The message has been sent:", formInputs);
 		closeModalSendMessage();
 	};
 
@@ -93,7 +89,7 @@ const JoinProjectSendMessageModal = ({ closeModalSendMessage, joinProject, type 
 						label="Your message for the user:"
 						labelStyle="block mb-2"
 						inputName="message"
-						inputValue={formState.message}
+						inputValue={formInputs.message}
 						onChange={onChange}
 						placeholder="Write your message...(1000 characters max)"
 						maxLength={1000}

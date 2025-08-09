@@ -1,30 +1,25 @@
 "use client";
 
 import { useState } from "react";
-
 import Image from "next/image";
+
 import { Button } from "@/components/Buttons/Buttons";
 import DatePickerField from "@/components/Forms/DatePickerField";
 import InputField from "@/components/Forms/InputField";
 
+import { handleFormChange } from "@/utils/formHandlers";
+
 const UpdateMemberModal = ({ closeModalUpdate, member }) => {
-	const [formState, setFormState] = useState({
+	const [formInputs, setFormInputs] = useState({
 		memberId: member.userId,
 		role: "",
 		memberStartDate: null,
 	});
 
-	const onChange = (e) => {
-		const { name, value, type, checked } = e.target;
-		const inputValue = type === "checkbox" ? checked : value;
-		setFormState((prevState) => ({
-			...prevState,
-			[name]: inputValue,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	const setMemberStartDate = (newValue) => {
-		setFormState((prevState) => ({
+		setFormInputs((prevState) => ({
 			...prevState,
 			memberStartDate: newValue,
 		}));
@@ -33,7 +28,7 @@ const UpdateMemberModal = ({ closeModalUpdate, member }) => {
 	const onSubmit = (event) => {
 		event.preventDefault();
 		// Handle form submission
-		console.log("🚀 ~ onSubmit ~ The member has been updated:", formState);
+		console.log("🚀 ~ onSubmit ~ The member has been updated:", formInputs);
 		closeModalUpdate();
 	};
 
@@ -62,7 +57,7 @@ const UpdateMemberModal = ({ closeModalUpdate, member }) => {
 
 					{/* New role */}
 					<div className="max-w-80 mb-6">
-						<InputField inputName="role" inputType="text" label="New role" inputValue={formState.role} onChange={onChange} />
+						<InputField inputName="role" inputType="text" label="New role" inputValue={formInputs.role} onChange={onChange} />
 					</div>
 
 					{/* User current start date on the project */}
@@ -73,7 +68,7 @@ const UpdateMemberModal = ({ closeModalUpdate, member }) => {
 
 					{/* Start date picker */}
 					<div className="max-w-80 mb-6">
-						<DatePickerField label="Change member start date" value={formState.memberStartDate} onChange={(newValue) => setMemberStartDate(newValue)} />
+						<DatePickerField label="Change member start date" value={formInputs.memberStartDate} onChange={(newValue) => setMemberStartDate(newValue)} />
 					</div>
 				</div>
 

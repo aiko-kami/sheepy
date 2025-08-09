@@ -1,11 +1,11 @@
 import LocationDetails from "@/components/ProjectEdit/LocationTab/LocationDetails";
 
-const Location = ({ formState, onChange }) => {
+const Location = ({ formInputs, onChange }) => {
 	return (
 		<>
 			{/* Project location */}
 			<div className="mb-8 lg:mb-10">
-				<LocationDetails formState={formState} onChange={onChange} />
+				<LocationDetails formInputs={formInputs} onChange={onChange} />
 			</div>
 		</>
 	);

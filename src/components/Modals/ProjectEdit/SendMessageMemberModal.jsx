@@ -6,25 +6,20 @@ import Image from "next/image";
 import { Button } from "@/components/Buttons/Buttons";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 
+import { handleFormChange } from "@/utils/formHandlers";
+
 const SendMessageMemberModal = ({ closeModalMessage, member }) => {
-	const [formState, setFormState] = useState({
+	const [formInputs, setFormInputs] = useState({
 		memberId: member.userId,
 		message: "",
 	});
 
-	const onChange = (e) => {
-		const { name, value, type, checked } = e.target;
-		const inputValue = type === "checkbox" ? checked : value;
-		setFormState((prevState) => ({
-			...prevState,
-			[name]: inputValue,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	const onSubmit = (event) => {
 		event.preventDefault();
 		// Handle form submission
-		console.log("🚀 ~ onSubmit ~ The member has been updated:", formState);
+		console.log("🚀 ~ onSubmit ~ The member has been updated:", formInputs);
 		closeModalMessage();
 	};
 
@@ -64,7 +59,7 @@ const SendMessageMemberModal = ({ closeModalMessage, member }) => {
 						label="Your message for the member:"
 						labelStyle="block mb-2"
 						inputName="message"
-						inputValue={formState.message}
+						inputValue={formInputs.message}
 						onChange={onChange}
 						placeholder="Write your message...(1000 characters max)"
 						maxLength={1000}

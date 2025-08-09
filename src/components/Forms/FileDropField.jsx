@@ -16,7 +16,7 @@ const isValidFileSize = (file, maxSize) => {
 	return null;
 };
 
-const FileDropField = ({ setFormState, fileTypesAllowed, maxFileSizeAllowed }) => {
+const FileDropField = ({ setFormInputs, fileTypesAllowed, maxFileSizeAllowed }) => {
 	const [file, setFile] = useState(null);
 	const [thumbnail, setThumbnail] = useState(null); // To store preview URL for the image file
 	const [isDragOver, setIsDragOver] = useState(false);
@@ -91,7 +91,7 @@ const FileDropField = ({ setFormState, fileTypesAllowed, maxFileSizeAllowed }) =
 	};
 
 	useEffect(() => {
-		setFormState((prevState) => ({
+		setFormInputs((prevState) => ({
 			...prevState,
 			projectCover: file,
 		}));
@@ -101,7 +101,7 @@ const FileDropField = ({ setFormState, fileTypesAllowed, maxFileSizeAllowed }) =
 				URL.revokeObjectURL(thumbnail);
 			}
 		};
-	}, [file, thumbnail, setFormState]);
+	}, [file, thumbnail, setFormInputs]);
 
 	return (
 		<>

@@ -6,8 +6,11 @@ import { IoAtOutline } from "react-icons/io5";
 
 import { Button } from "@/components/Buttons/Buttons";
 import InputField from "@/components/Forms/InputField";
+
 import { ApiUpdateUserEmail } from "@/lib/api/usersClient";
+
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { handleFormChange } from "@/utils/formHandlers";
 
 const UserCardEmail = ({ user }) => {
 	const router = useRouter();
@@ -16,13 +19,7 @@ const UserCardEmail = ({ user }) => {
 		email: user.email,
 	});
 
-	const onChange = (e) => {
-		const { name, value } = e.target;
-		setFormInputs((prevState) => ({
-			...prevState,
-			[name]: value,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	// Handle form submission
 	const handleSubmit = async (e) => {

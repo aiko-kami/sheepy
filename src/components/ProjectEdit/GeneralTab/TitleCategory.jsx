@@ -8,7 +8,7 @@ import InputField from "@/components/Forms/InputField";
 
 import { ApiGetAllCategories } from "@/lib/api/categories";
 
-const TitleCategory = ({ formState, onChange, setFormState }) => {
+const TitleCategory = ({ formInputs, onChange, setFormInputs }) => {
 	const [categories, setCategories] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
@@ -48,18 +48,18 @@ const TitleCategory = ({ formState, onChange, setFormState }) => {
 	// Set sub-categories when the component mounts and when selectedCategory changes
 	useEffect(() => {
 		if (!loading && categories.length > 0) {
-			const selectedSubCategories = getSubCategories(formState.projectCategory);
+			const selectedSubCategories = getSubCategories(formInputs.projectCategory);
 			setSubCategories(selectedSubCategories);
-			const subCategoryExists = selectedSubCategories.some((sub) => sub.name === formState.projectSubCategory);
+			const subCategoryExists = selectedSubCategories.some((sub) => sub.name === formInputs.projectSubCategory);
 
 			if (!subCategoryExists) {
-				setFormState((prevState) => ({
+				setFormInputs((prevState) => ({
 					...prevState,
 					projectSubCategory: "",
 				}));
 			}
 		}
-	}, [formState.projectCategory, loading, categories]);
+	}, [formInputs.projectCategory, loading, categories]);
 
 	// Update the state when the category changes
 	const handleCategoryChange = (e) => {
@@ -67,7 +67,7 @@ const TitleCategory = ({ formState, onChange, setFormState }) => {
 		onChange(e); // Update the main form state
 		const selectedSubCategories = getSubCategories(value);
 		setSubCategories(selectedSubCategories);
-		setFormState((prevState) => ({
+		setFormInputs((prevState) => ({
 			...prevState,
 			projectSubCategory: selectedSubCategories[0]?.name || "",
 		}));
@@ -91,19 +91,19 @@ const TitleCategory = ({ formState, onChange, setFormState }) => {
 			<div className="md:pl-4">
 				{/* Project title */}
 				<div className="mb-6 xl:mb-8">
-					<InputField inputName="projectTitle" inputType="text" label="Project title" inputValue={formState.projectTitle} onChange={onChange} />
+					<InputField inputName="projectTitle" inputType="text" label="Project title" inputValue={formInputs.projectTitle} onChange={onChange} />
 				</div>
 				<div className="mb-8 max-w-180">
 					<div className="flex flex-col lg:flex-row justify-between">
 						{/* Project category */}
 						<div className="flex-1 mb-6 lg:mb-0 lg:mr-2">
 							<div className="text-sm">Project category</div>
-							<SelectField inputName="projectCategory" possibleValues={optionsListCat} inputValue={formState.projectCategory} onChange={handleCategoryChange} />
+							<SelectField inputName="projectCategory" possibleValues={optionsListCat} inputValue={formInputs.projectCategory} onChange={handleCategoryChange} />
 						</div>
 						{/* Project sub-category */}
 						<div className="flex-1 min-h-[3.5rem] lg:ml-2">
 							<div className="text-sm">Project sub-category</div>
-							<SelectField inputName="projectSubCategory" possibleValues={optionsListSubcat} inputValue={formState.projectSubCategory} onChange={onChange} />
+							<SelectField inputName="projectSubCategory" possibleValues={optionsListSubcat} inputValue={formInputs.projectSubCategory} onChange={onChange} />
 						</div>
 					</div>
 				</div>

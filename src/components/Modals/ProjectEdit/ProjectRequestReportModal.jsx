@@ -8,24 +8,20 @@ import InputField from "@/components/Forms/InputField";
 import { Button } from "@/components/Buttons/Buttons";
 import { Status } from "@/components/Badges/Badges";
 
+import { handleFormChange } from "@/utils/formHandlers";
+
 const ProjectRequestReportModal = ({ closeModalReport, request }) => {
-	const [formState, setFormState] = useState({
+	const [formInputs, setFormInputs] = useState({
 		reportReason: "spam",
 		reportReasonText: "",
 	});
 
-	const onChange = (event) => {
-		const { name, value } = event.target;
-		setFormState((prevState) => ({
-			...prevState,
-			[name]: value,
-		}));
-	};
+	const onChange = handleFormChange(setFormInputs);
 
 	const onSubmit = (event) => {
 		event.preventDefault();
 		// Handle form submission
-		console.log("🚀 ~ onSubmit ~ The request has been reported:", formState);
+		console.log("🚀 ~ onSubmit ~ The request has been reported:", formInputs);
 		closeModalReport();
 	};
 
@@ -76,11 +72,11 @@ const ProjectRequestReportModal = ({ closeModalReport, request }) => {
 			{/* Report form */}
 			<form onSubmit={onSubmit}>
 				<div className="mb-6">
-					<SelectRoundedField inputName="reportReason" possibleValues={optionsList} inputValue={formState.reportReason} label="Why do you want to report this request?" onChange={onChange} />
+					<SelectRoundedField inputName="reportReason" possibleValues={optionsList} inputValue={formInputs.reportReason} label="Why do you want to report this request?" onChange={onChange} />
 				</div>
 
 				<div className="mb-6">
-					<InputField inputName="reportReasonText" inputType="text" label="Provide additional information if needed" inputValue={formState.reportReasonText} onChange={onChange} />
+					<InputField inputName="reportReasonText" inputType="text" label="Provide additional information if needed" inputValue={formInputs.reportReasonText} onChange={onChange} />
 				</div>
 
 				{/* Report validation */}
