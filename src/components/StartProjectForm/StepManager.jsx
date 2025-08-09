@@ -55,6 +55,7 @@ const StepManager = () => {
 	const [tagError, setTagError] = useState("");
 
 	const [talentNeededInput, setTalentNeededInput] = useState("");
+	const [talentNeededError, setTalentNeededError] = useState("");
 
 	const [objectiveInput, setObjectiveInput] = useState("");
 	const [objectiveError, setObjectiveError] = useState("");
@@ -82,12 +83,22 @@ const StepManager = () => {
 	};
 
 	const addTalentNeeded = () => {
-		if (talentNeededInput && !formInputs.talentsNeeded.includes(talentNeededInput) && formInputs.talentsNeeded.length < 20) {
+		if (!talentNeededInput) {
+			setTalentNeededError("Please enter a talent.");
+		}
+		if (talentNeededInput && formInputs.talentsNeeded.includes(talentNeededInput)) {
+			setTalentNeededError("This talent is already present in the list.");
+		}
+		if (talentNeededInput && formInputs.talentsNeeded.length > 20) {
+			setTalentNeededError("You can only add up to 20 talents.");
+		}
+		if (talentNeededInput && !formInputs.talentsNeeded.includes(talentNeededInput) && formInputs.talentsNeeded.length <= 20) {
 			setFormInputs((prevState) => ({
 				...prevState,
 				talentsNeeded: [...prevState.talentsNeeded, talentNeededInput],
 			}));
 			setTalentNeededInput("");
+			setTalentNeededError("");
 		}
 	};
 
@@ -244,10 +255,10 @@ const StepManager = () => {
 		};
 		try {
 			if (formAction === "save-draft") {
-				await ApiCreateProjectDraft(payload);
+				const projectDraft = await ApiCreateProjectDraft(payload);
 				showSuccessToast("Draft project saved!");
 			} else if (formAction === "save-draft-modal") {
-				await ApiSubmitProject(payload);
+				const projectDraft = await ApiCreateProjectDraft(payload);
 				showSuccessToast("Draft project saved!");
 				setTimeout(() => {
 					router.push("/");
@@ -313,6 +324,7 @@ const StepManager = () => {
 								addTalentNeeded={addTalentNeeded}
 								removeTalentNeeded={removeTalentNeeded}
 								handleTalentNeededInputChange={handleTalentNeededInputChange}
+								talentNeededError={talentNeededError}
 								talentNeededProfilePicture={projectForm.talentNeededProfilePicture}
 							/>
 						)}

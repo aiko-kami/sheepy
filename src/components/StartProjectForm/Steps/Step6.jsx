@@ -6,7 +6,7 @@ import InputField from "@/components/Forms/InputField";
 import { Button } from "@/components/Buttons/Buttons";
 import { IoAddCircleOutline, IoCloseCircleOutline } from "react-icons/io5";
 
-const StepSix = ({ formInputs, talentNeededInput, addTalentNeeded, removeTalentNeeded, handleTalentNeededInputChange, talentNeededProfilePicture }) => {
+const StepSix = ({ formInputs, talentNeededInput, addTalentNeeded, removeTalentNeeded, handleTalentNeededInputChange, talentNeededError, talentNeededProfilePicture }) => {
 	return (
 		<>
 			<div className="container min-w-full m-auto pr-2 lg:px-8 text-justify xl:grid grid-cols-5 gap-8">
@@ -20,47 +20,51 @@ const StepSix = ({ formInputs, talentNeededInput, addTalentNeeded, removeTalentN
 						<div className="flex flex-col items-center w-full">
 							<div className="w-full sm:w-100 xl:w-120">
 								{/* Talents needed input field */}
-								<div className="flex items-center my-6">
-									<div className="w-full mr-2">
-										<InputField
-											inputName="talentNeeded"
-											inputType="text"
-											label="Add a talent you're looking for"
-											inputValue={talentNeededInput}
-											onChange={handleTalentNeededInputChange}
-											onKeyDown={(e) => {
-												if (e.key === "Enter") {
-													e.preventDefault();
-													addTalentNeeded();
-												}
-											}}
-										/>
-									</div>
-									<div className="min-w-fit">
-										<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "blue", btnRounded: "std", action: addTalentNeeded }}>
-											<div className="flex">
-												Add talent <IoAddCircleOutline className="text-xl ml-2" />
-											</div>
-										</Button>
-									</div>
-								</div>
-								{/* List of talents needed */}
-								<div className="min-h-32">
-									{formInputs.talentsNeeded.length > 0 && (
-										<div className="flex flex-col gap-2">
-											{formInputs.talentsNeeded.map((talent, index) => (
-												<div key={index} className="flex items-center p-2">
-													<button title="Remove talent" type="button" className="text-gray-300 mr-8 hover:text-white transition duration-150 ease-in-out" onClick={() => removeTalentNeeded(talent)}>
-														<IoCloseCircleOutline className="text-2xl" />
-													</button>
-													<span className="flex items-center">
-														<Image src={talentNeededProfilePicture} className="object-cover rounded-full w-10 h-10 mr-3" alt="talent profile picture" height={0} width={0} sizes="100vw" />
-														{talent}
-													</span>
-												</div>
-											))}
+								<div className="relative">
+									<div className="flex items-center my-6">
+										<div className="w-full mr-2">
+											<InputField
+												inputName="talentNeeded"
+												inputType="text"
+												label="Add a talent you're looking for"
+												inputValue={talentNeededInput}
+												onChange={handleTalentNeededInputChange}
+												onKeyDown={(e) => {
+													if (e.key === "Enter") {
+														e.preventDefault();
+														addTalentNeeded();
+													}
+												}}
+											/>
 										</div>
-									)}
+										<div className="min-w-fit">
+											<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "blue", btnRounded: "std", action: addTalentNeeded }}>
+												<div className="flex">
+													Add talent <IoAddCircleOutline className="text-xl ml-2" />
+												</div>
+											</Button>
+										</div>
+									</div>
+									<div className="absolute left-0 top-12 mb-2 min-h-6 text-sm">{talentNeededError && <p className="text-xs text-red-600">{talentNeededError}</p>}</div>
+
+									{/* List of talents needed */}
+									<div className="min-h-32">
+										{formInputs.talentsNeeded.length > 0 && (
+											<div className="flex flex-col gap-2">
+												{formInputs.talentsNeeded.map((talent, index) => (
+													<div key={index} className="flex items-center p-2">
+														<button title="Remove talent" type="button" className="text-gray-300 mr-8 hover:text-white transition duration-150 ease-in-out" onClick={() => removeTalentNeeded(talent)}>
+															<IoCloseCircleOutline className="text-2xl" />
+														</button>
+														<span className="flex items-center">
+															<Image src={talentNeededProfilePicture} className="object-cover rounded-full w-10 h-10 mr-3" alt="talent profile picture" height={0} width={0} sizes="100vw" />
+															{talent}
+														</span>
+													</div>
+												))}
+											</div>
+										)}
+									</div>
 								</div>
 							</div>
 						</div>
