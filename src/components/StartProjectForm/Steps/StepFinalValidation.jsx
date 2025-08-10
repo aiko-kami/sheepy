@@ -25,7 +25,7 @@ const StepFinalValidation = ({ formInputs, requiredFields, talentNeededProfilePi
 	return (
 		<>
 			<div className="container min-w-full m-auto pr-2 sm:px-4 xl:px-30 text-justify mb-6">
-				<h1 className="text-4xl md:text-4xl font-bold mb-8 text-center">Review your project</h1>
+				<h1 className="text-4xl md:text-4xl font-bold mb-8 text-center drop-shadow-md">Review your project</h1>
 				<p className="text-center text-lg text-gray-300 mb-4 mx-auto">Take a moment to review all the information before submitting.</p>
 
 				{/* alert for empty fields */}

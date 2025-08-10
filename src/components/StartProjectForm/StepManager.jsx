@@ -1,10 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 
 import { WindowFrame } from "@/components/StartProjectForm/windowFrame";
-import StartProject from "@/components/StartProjectForm/StartProject";
+import StepStartProject from "@/components/StartProjectForm/StepStartProject";
 import StepOne from "@/components/StartProjectForm/Steps/Step1";
 import StepTwo from "@/components/StartProjectForm/Steps/Step2";
 import StepThree from "@/components/StartProjectForm/Steps/Step3";
@@ -17,7 +16,7 @@ import ProgressBar from "@/components/StartProjectForm/ProgressBar";
 import ButtonsNavigation from "@/components/StartProjectForm/ButtonsNavigation";
 
 import { ApiGetAllCategories } from "@/lib/api/categories";
-import { ApiCreateProjectDraft, ApiSubmitProject } from "@/lib/api/projectCore";
+import { ApiCreateProjectDraft, ApiUpdateProjectDraft, ApiSubmitProject } from "@/lib/api/projectCore";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { handleFormChange } from "@/utils/formHandlers";
@@ -25,11 +24,11 @@ import { handleFormChange } from "@/utils/formHandlers";
 import projectForm from "@/mock/projectForm.json";
 
 const StepManager = () => {
-	const router = useRouter();
+	const totalSteps = 7; // Total number of steps
 
 	const [currentStep, setCurrentStep] = useState(0);
 	const [percent, setPercent] = useState(0);
-	const totalSteps = 7; // Total number of steps
+
 	const [categories, setCategories] = useState([]);
 
 	const [formInputs, setFormInputs] = useState({
@@ -49,6 +48,7 @@ const StepManager = () => {
 		projectStartDate: null,
 		tags: [],
 		talentsNeeded: [],
+		projectId: "",
 	});
 
 	const [tagInput, setTagInput] = useState("");
@@ -254,19 +254,37 @@ const StepManager = () => {
 			talentsNeeded: formInputs.talentsNeeded,
 		};
 		try {
-			if (formAction === "save-draft") {
-				const projectDraft = await ApiCreateProjectDraft(payload);
-				showSuccessToast("Draft project saved!");
-			} else if (formAction === "save-draft-modal") {
-				const projectDraft = await ApiCreateProjectDraft(payload);
-				showSuccessToast("Draft project saved!");
-				setTimeout(() => {
-					router.push("/");
-				}, 1000); // Delay just enough for modal unmount
+			if (formAction === "save-draft" || formAction === "save-draft-modal") {
+				let projectDraft;
+
+				if (formInputs.projectId) {
+					// Updating existing draft
+					projectDraft = await ApiUpdateProjectDraft(formInputs.projectId, payload);
+					showSuccessToast("Draft project updated!");
+				} else {
+					// Creating new draft
+					projectDraft = await ApiCreateProjectDraft(payload);
+					if (projectDraft?.projectId) {
+						setFormInputs((prev) => ({
+							...prev,
+							projectId: projectDraft.projectId, // Store the new ID
+						}));
+					}
+					showSuccessToast("Draft project saved!");
+				}
 			} else if (formAction === "submit-project") {
-				await ApiSubmitProject(payload);
-				goToStep(totalSteps + 1);
-				showSuccessToast("Project submitted successfully!");
+				if (formInputs.projectId) {
+					// Submit existing draft
+					payload.projectId = formInputs.projectId;
+					await ApiSubmitProject(payload);
+					goToStep(totalSteps + 1);
+					showSuccessToast("Project submitted successfully!");
+				} else {
+					// Submit new project
+					await ApiSubmitProject(payload);
+					goToStep(totalSteps + 1);
+					showSuccessToast("Project submitted successfully!");
+				}
 			}
 		} catch (error) {
 			showErrorToast(error.message);
@@ -277,7 +295,7 @@ const StepManager = () => {
 		<>
 			<form onSubmit={handleSubmit}>
 				<WindowFrame title="Project Creation" currentStep={currentStep}>
-					{currentStep === 0 && <StartProject goToStep={goToStep} />}
+					{currentStep === 0 && <StepStartProject goToStep={goToStep} />}
 					{currentStep > 0 && currentStep <= totalSteps && <ProgressBar currentStep={currentStep} totalSteps={totalSteps} percent={percent} />}
 					<div className={`${currentStep > 0 && currentStep < totalSteps ? "h-140" : "hidden"} h-140 overflow-y-auto mb-4 py-1 xl:pt-20`}>
 						{/* Step 1: Fill in the project title, category, and sub-category */}
@@ -342,7 +360,7 @@ const StepManager = () => {
 						)}
 					</div>
 					{/* Step 8: Show confirmation that the project has been submitted */}
-					{currentStep === 8 && <StepProjectSubmitted goToStep={goToStep} />}
+					{currentStep === 8 && <StepProjectSubmitted goToStep={goToStep} formInputs={formInputs} categories={categories} talentNeededProfilePicture={projectForm.talentNeededProfilePicture} />}
 
 					<ButtonsNavigation goToStep={goToStep} currentStep={currentStep} totalSteps={totalSteps} formInputs={formInputs} isProjectReadyToSubmit={isProjectReadyToSubmit} />
 				</WindowFrame>

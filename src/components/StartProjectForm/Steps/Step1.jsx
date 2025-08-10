@@ -90,7 +90,7 @@ const StepOne = ({ categories, formInputs, onChange }) => {
 							{formInputs.selectedCategoryId && (
 								<div className="p-3 border border-gray-300 rounded bg-gray-200">
 									<div className="font-semibold mb-2 text-gray-700 leading-none">{categories.find((cat) => cat.id === formInputs.selectedCategoryId)?.name} category description</div>
-									<div className="text-sm text-gray-700">{categories.find((cat) => cat.id === formInputs.selectedCategoryId)?.description || "No description available."}</div>
+									<div className="text-sm text-gray-700">{categories.find((cat) => cat.categoryId === formInputs.selectedCategoryId)?.description || "No description available."}</div>
 								</div>
 							)}
 						</div>

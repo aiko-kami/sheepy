@@ -11,10 +11,34 @@ export async function ApiCreateProjectDraft(projectInputs) {
 			body: JSON.stringify({ projectInputs }),
 		});
 		const json = await res.json();
+		console.log("API response:", json);
 
 		if (!res.ok) {
 			// Try to read backend error message if available
 			const errorMessage = json?.message || "Failed to create project draft";
+			throw new Error(errorMessage);
+		}
+		return json.data;
+	} catch (error) {
+		throw error;
+	}
+}
+
+export async function ApiUpdateProjectDraft(projectId, projectInputs) {
+	try {
+		const res = await fetch(`${BASE_URL}/projects/updateProjectDraft/${projectId}`, {
+			method: "PATCH",
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ projectInputs }),
+		});
+		const json = await res.json();
+
+		if (!res.ok) {
+			// Try to read backend error message if available
+			const errorMessage = json?.message || "Failed to update project draft";
 			throw new Error(errorMessage);
 		}
 		return json.data.project;
