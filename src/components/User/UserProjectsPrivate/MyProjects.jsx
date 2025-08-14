@@ -8,16 +8,11 @@ import MyProjectsFilter from "@/components/User/UserProjectsPrivate/MyProjectsFi
 import MyProjectsCards from "@/components/User/UserProjectsPrivate/MyProjectCards";
 import MyJoinProjectsCards from "@/components/User/UserProjectsPrivate/MyJoinProjectCards";
 import Notification from "@/components/Badges/Notification";
-import DisplaySwitch from "@/components/Buttons/DisplaySwitch";
+import DisplaySwitch from "@/components/Buttons/DisplaySwitch-V1";
 
 const MyProjects = ({ user }) => {
 	const [displayMode, setDisplayMode] = useState(user.settings.displayMode);
 	const [selectedProjectType, setSelectedProjectType] = useState("all");
-
-	const switchDisplay = () => {
-		displayMode === "table" && setDisplayMode("cards");
-		displayMode === "cards" && setDisplayMode("table");
-	};
 
 	const projects = user.projects;
 	const notifications = user.notifications;

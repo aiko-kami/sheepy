@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import DisplaySwitch from "@/components/Buttons/DisplaySwitch";
+import DisplaySwitch from "@/components/Buttons/DisplaySwitch-V1";
 import TabNavItem from "@/components/Tabs/TabNavItem";
 import TabContent from "@/components/Tabs/TabContent";
 import { ProjectHorizontalCard } from "@/components/Cards/Projects/ProjectCards";

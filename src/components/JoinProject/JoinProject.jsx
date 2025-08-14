@@ -3,15 +3,10 @@
 import { useState } from "react";
 import { ProjectCard, ProjectCardSkeleton } from "@/components/Cards/Projects/ProjectCards";
 import ProjectTable from "@/components/Tables/ProjectTable";
-import DisplaySwitch from "@/components/Buttons/DisplaySwitch";
+import DisplaySwitch from "@/components/Buttons/DisplaySwitch-V1";
 
-const MyProjects = ({ projects }) => {
-	const [displayMode, setDisplayMode] = useState("table");
-
-	const switchDisplay = () => {
-		displayMode === "table" && setDisplayMode("cards");
-		displayMode === "cards" && setDisplayMode("table");
-	};
+const JoinProject = ({ projects }) => {
+	const [displayMode, setDisplayMode] = useState("cards");
 
 	return (
 		<>
@@ -20,7 +15,7 @@ const MyProjects = ({ projects }) => {
 				<DisplaySwitch displayMode={displayMode} setDisplayMode={setDisplayMode} />
 			</div>
 
-			{displayMode === "table" && (
+			{displayMode === "cards" && (
 				<div className="grid justify-evenly grid-cols-2 gap-2 sm:gap-6 lg:grid-cols-3 xl:grid-cols-5">
 					{projects.map((project, index) => {
 						return (
@@ -35,7 +30,7 @@ const MyProjects = ({ projects }) => {
 					<ProjectCardSkeleton />
 				</div>
 			)}
-			{displayMode === "cards" && (
+			{displayMode === "table" && (
 				<div className="relative overflow-x-auto shadow-md sm:rounded-lg">
 					<ProjectTable projects={projects} />
 				</div>
@@ -44,4 +39,4 @@ const MyProjects = ({ projects }) => {
 	);
 };
 
-export default MyProjects;
+export default JoinProject;

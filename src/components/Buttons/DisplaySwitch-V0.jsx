@@ -1,4 +1,4 @@
-import { IoGridOutline, IoReorderFour } from "react-icons/io5";
+import { IoGridOutline, IoList } from "react-icons/io5";
 
 const DisplaySwitch = ({ displayMode, setDisplayMode }) => {
 	const switchDisplay = () => {
@@ -19,7 +19,7 @@ const DisplaySwitch = ({ displayMode, setDisplayMode }) => {
 				)}
 				{displayMode === "cards" && (
 					<button onClick={switchDisplay}>
-						<IoReorderFour className="text-3xl hover:text-blue-400 duration-100 transition ease-in-out" title="Display project as a table" />
+						<IoList className="text-3xl hover:text-blue-400 duration-100 transition ease-in-out" title="Display project as a table" />
 					</button>
 				)}
 			</div>
