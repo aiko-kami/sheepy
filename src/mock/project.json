@@ -93,7 +93,7 @@
 			"name": "screenwriting",
 			"link": "/tags/screenwriting",
 			"colors": {
-				"bgColor": "border border-1 border-gray-500 text-white"
+				"bgColor": "border border-2 border-gray-500 text-white"
 			}
 		}
 	],
@@ -267,7 +267,7 @@
 			}
 		]
 	},
-	"creator": {
+	"owner": {
 		"userId": "12345",
 		"username": "Brad_Anderson",
 		"profilePicture": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS6uBna-8pXaBpL3QVYaFdHUoXdqasFujc_Fj44cIKgiFh9F9bU"

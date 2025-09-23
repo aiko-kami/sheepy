@@ -4,11 +4,10 @@ import Link from "next/link";
 const ProjectMembers = ({ members }) => {
 	return (
 		<>
-			<h2 className="font-semibold text-3xl mb-3">Members</h2>
-			<hr className="h-px mb-3 bg-gray-200 border-0 dark:bg-gray-700" />
-			<div className="mt-5 mb-8">
+			<div className="lg:mx-4 border rounded-xl p-6 bg-slate-800/50 border-slate-700 backdrop-blur-sm shadow-xl mb-4 sm:mb-8">
+				<h2 className="text-xl font-bold mb-6">Members</h2>
 				{members.map((member, index) => (
-					<div key={index} className="text-gray-300 text-lg mb-4 flex items-center">
+					<div key={index} className="text-gray-300 text-lg mb-4 last:mb-0 flex items-center">
 						<Link href={`/users/${member.userId}`}>
 							<Image src={member.profilePicture} className="object-cover rounded-full w-16 h-16 mr-3" alt="member profile picture" height={0} width={0} sizes="100vw" />
 						</Link>

@@ -43,11 +43,11 @@ const DetailsDetails = ({ project }) => {
 						<IoBulbOutline className="absolute right-3 top-3 text-5xl p-2 bg-sky-900 rounded-md" />
 						<h3 className="flex text-lg mb-4 ">Project creator</h3>
 						<div className="flex items-center justify-center">
-							<Link href={`/users/${project.creator.userId}`}>
-								<Image src={project.creator.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-12 h-12 rounded-full shadow-md mr-1" />
+							<Link href={`/users/${project.owner.userId}`}>
+								<Image src={project.owner.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-12 h-12 rounded-full shadow-md mr-1" />
 							</Link>
 							<div className="font-semibold text-lg">
-								<Link href={`/users/${project.creator.userId}`}>{project.creator.username}</Link>
+								<Link href={`/users/${project.owner.userId}`}>{project.owner.username}</Link>
 							</div>
 						</div>
 					</div>

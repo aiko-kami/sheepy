@@ -3,10 +3,12 @@ import Image from "next/image";
 const ProjectDescription = ({ project }) => {
 	return (
 		<>
-			<h2 className="font-semibold text-3xl mb-4">The project in details</h2>
-			<p className="mb-2 text-justify">{project.description}</p>
-			<Image src={project.coverDescription} className="w-full h-80 object-cover my-4" alt="Card" width={600} height={225} />
-			<p className="mb-2 text-justify">{project.description}</p>
+			<div className="lg:mx-4 border rounded-xl p-6 bg-slate-800/50 border-slate-700 backdrop-blur-sm shadow-xl">
+				<h2 className="text-xl font-bold mb-6">The project in details</h2>
+				<p className="text-justify text-slate-300 leading-relaxed">{project.description}</p>
+				<Image src={project.coverDescription} className="w-full h-80 object-cover my-4" alt="Card" width={600} height={225} />
+				<p className="text-justify text-slate-300 leading-relaxed">{project.description}</p>
+			</div>
 		</>
 	);
 };

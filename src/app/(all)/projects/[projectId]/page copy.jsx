@@ -7,16 +7,37 @@ import ProjectMembers from "@/components/ProjectPublic/ProjectMembers";
 import StepsQAComments from "@/components/ProjectPublic/StepsQAComments";
 import SimilarProjects from "@/components/ProjectPublic/SimilarProjects";
 
-import project from "@/mock/project.json";
-
 import { ApiGetProjectPublicData } from "@/lib/api/projectCore";
+import { normalizeProjectData } from "@/utils/projectHandlers";
 
 export const metadata = {
 	title: "Project - Sheepy",
 	description: "Project public page",
 };
 
-const ProjectPublicPage = () => {
+const ProjectPublicPage = async ({ params }) => {
+	const { projectId } = params;
+
+	let project;
+
+	try {
+		const rawProject = await ApiGetProjectPublicData(projectId);
+		project = normalizeProjectData(rawProject);
+
+		console.log("🚀 ~ ProjectPublicPage ~ project:", project);
+	} catch (err) {
+		console.error("Failed to load project:", err);
+		// Option 1: render a user-friendly message
+		return <p>Something went wrong when retrieving the project</p>;
+		// Option 2: throw (and let Next.js handle via error.js or not-found.js)
+		// throw err;
+	}
+
+	if (!project) {
+		// This check is useful if the API returns no project but still 200
+		return <p>Project not found</p>;
+	}
+
 	return (
 		<div className="container mx-auto py-8 hyphens-auto">
 			{/* Project cover with title and creator and list with category, location, likes, project status and project summary */}

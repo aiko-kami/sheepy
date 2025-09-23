@@ -53,7 +53,7 @@ const StepProjectSubmitted = ({ goToStep, formInputs, categories, talentNeededPr
 											) : (
 												<div className="w-9/10 p-3 bg-teal-100 border-l-4 border-teal-500 rounded-r-md">
 													<p className="text-teal-700 text-sm font-medium">
-														<span className="italic">Optional field</span> – You can add this information later
+														<span className="italic">Optional field</span> – You can add this later
 													</p>
 												</div>
 											)}

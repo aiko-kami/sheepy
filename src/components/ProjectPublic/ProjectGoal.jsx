@@ -1,9 +1,10 @@
 const ProjectGoal = ({ goal }) => {
 	return (
 		<>
-			<h2 className="font-semibold text-3xl mb-3">Goal</h2>
-			<hr className="h-px mb-3 bg-gray-200 border-0 dark:bg-gray-700" />
-			<p className="mb-8 text-justify">{goal}</p>
+			<div className="lg:mx-4 border rounded-xl p-6 bg-slate-800/50 border-slate-700 backdrop-blur-sm shadow-xl mb-4 sm:mb-8">
+				<h2 className="text-xl font-bold mb-6">Goal</h2>
+				<p className="text-justify text-slate-300 leading-relaxed">{goal}</p>
+			</div>
 		</>
 	);
 };
