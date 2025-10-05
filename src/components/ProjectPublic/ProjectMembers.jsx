@@ -8,11 +8,11 @@ const ProjectMembers = ({ members }) => {
 				<h2 className="text-xl font-bold mb-6">Members</h2>
 				{members.map((member, index) => (
 					<div key={index} className="text-gray-300 text-lg mb-4 last:mb-0 flex items-center">
-						<Link href={`/users/${member.userId}`}>
-							<Image src={member.profilePicture} className="object-cover rounded-full w-16 h-16 mr-3" alt="member profile picture" height={0} width={0} sizes="100vw" />
+						<Link href={`/users/${member.user.userId}`}>
+							<Image src={member.user.profilePicture.link} className="object-cover rounded-full w-16 h-16 mr-3" alt="member profile picture" height={0} width={0} sizes="100vw" />
 						</Link>
-						<Link href={`/users/${member.userId}`} className="font-semibold">
-							{member.username}
+						<Link href={`/users/${member.user.userId}`} className="font-semibold">
+							{member.user.username}
 						</Link>
 						<span className="mr-1">, </span>
 						<p>{member.role}</p>

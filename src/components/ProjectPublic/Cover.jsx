@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { IoLocationOutline, IoHeartOutline, IoHeart, IoFitness, IoBookmarkOutline, IoShareSocialOutline } from "react-icons/io5";
+import { IoLocationOutline, IoGlobeOutline, IoHeartOutline, IoHeart, IoFitness, IoBookmarkOutline, IoShareSocialOutline } from "react-icons/io5";
 
 import ActionButtons from "@/components/ProjectPublic/ActionButtons";
 import { Badge, BadgeRounded } from "@/components/Badges/Badges";
@@ -11,7 +11,7 @@ const Cover = ({ project }) => {
 		<>
 			<div className="relative mb-3">
 				{/* Project cover */}
-				<Image src={project.cover} className="w-full h-110 object-cover rounded-xl" alt="Card" width={0} height={0} sizes="100vw" />
+				<Image src={project.cover} className="w-full h-110 object-cover rounded-xl" alt="Project cover" width={0} height={0} sizes="100vw" />
 
 				{/* Transparent veil on the cover */}
 				<div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent rounded-xl" />
@@ -56,13 +56,22 @@ const Cover = ({ project }) => {
 
 					{/* Project sub-category */}
 					<li className="flex mb-2 sm:mb-0 sm:ml-4 justify-center" title="Project sub-category">
-						<BadgeRounded badge={project.subCategory} size={"sm"} />
+						<BadgeRounded badge={project.subCategoryDetails} size={"sm"} />
 					</li>
 
 					{/* Project location */}
-					<li className="flex mb-2 sm:mb-0 sm:ml-4 col-span-2 justify-center">
-						<IoLocationOutline className="text-gray-400 mr-1 text-xl" title="Project location" />
-						<p>{project.locationCity}</p>
+					<li className="flex mb-2 sm:mb-0 sm:ml-4 col-span-2 justify-center items-center">
+						{project.location.onlineOnly ? (
+							<>
+								<IoGlobeOutline className="text-blue-500 mr-1 text-xl" title="Online project" />
+								<p className="font-medium">Online only</p>
+							</>
+						) : (
+							<>
+								<IoLocationOutline className="text-gray-400 mr-1 text-xl" title="Project location" />
+								<p className="text-gray-700">{project.location.locationCity}</p>
+							</>
+						)}
 					</li>
 
 					{/* Project likes */}
@@ -77,8 +86,8 @@ const Cover = ({ project }) => {
 
 					{/* Project status */}
 					<li className="flex sm:ml-4">
-						<IoFitness className={`${project.status.textColor} mr-1 text-xl justify-center`} title="Project status" />
-						<p className={`${project.status.textColor} font-semibold`}>{project.status.name}</p>
+						<IoFitness className={`text-${project.statusInfo.currentStatus.colors.colorBase} mr-1 text-xl justify-center`} title="Project status" />
+						<p className={`text-${project.statusInfo.currentStatus.colors.colorBase} font-semibold`}>{project.statusInfo.currentStatus.status}</p>
 					</li>
 
 					{/* Buttons Join project, Like and Share */}

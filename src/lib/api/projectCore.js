@@ -11,8 +11,6 @@ export async function ApiCreateProjectDraft(projectInputs) {
 			body: JSON.stringify({ projectInputs }),
 		});
 		const json = await res.json();
-		console.log("API response:", json);
-
 		if (!res.ok) {
 			// Try to read backend error message if available
 			const errorMessage = json?.message || "Failed to create project draft";
@@ -72,7 +70,6 @@ export async function ApiSubmitProject(projectInputs) {
 
 export async function ApiGetProjectPublicData(projectId) {
 	try {
-		console.log("Calling backend:", `${BASE_URL}/projects/projectPublic/${projectId}`);
 		const res = await fetch(`${BASE_URL}/projects/projectPublic/${projectId}`, {
 			method: "get",
 			credentials: "include",

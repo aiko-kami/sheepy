@@ -457,5 +457,6 @@ module.exports = {
 		"border-yellow-500",
 		"border-yellow-600",
 		"border-yellow-700",
+		"text-green-600",
 	],
 };
