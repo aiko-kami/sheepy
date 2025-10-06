@@ -5,7 +5,7 @@ const QAs = ({ qnas = [] }) => {
 	return (
 		<>
 			{qnas.length === 0 ? (
-				<p className="py-8 text-center">Currently, no questions have been posted. Be the first to ask!</p>
+				<p className="py-8 text-center italic">No questions have been posted yet</p>
 			) : (
 				<ul className="">
 					{qnas.map((qna, index) => (

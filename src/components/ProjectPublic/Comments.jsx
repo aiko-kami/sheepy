@@ -1,14 +1,21 @@
 "use client";
 
-import React from "react";
+import { useState, React } from "react";
 
 import Comment from "@/components/ProjectPublic/Comment";
+import CommentReplyForm from "@/components/Forms/CommentReplyForm";
 
 const Comments = ({ comments = [] }) => {
+	const [displayReply, setDisplayReply] = useState(true);
+
+	const handleReplySubmit = () => {
+		setDisplayReply(true);
+	};
+
 	return (
 		<>
 			{comments.length === 0 ? (
-				<p className="py-8 text-center">Currently, no comments have been posted. Be the first to ask!</p>
+				<p className="py-8 text-center italic">No comments have been posted. Be the first!</p>
 			) : (
 				<div className="container w-full mx-auto lg:max-w-7/8">
 					{comments.map((comment, index) => (
@@ -30,6 +37,7 @@ const Comments = ({ comments = [] }) => {
 					))}
 				</div>
 			)}
+			<CommentReplyForm displayReply={displayReply} handleReplySubmit={handleReplySubmit} />
 		</>
 	);
 };

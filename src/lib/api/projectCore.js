@@ -80,6 +80,8 @@ export async function ApiGetProjectPublicData(projectId) {
 		});
 		const json = await res.json();
 
+		console.log("🚀 ~ ApiGetProjectPublicData ~ json:", json);
+
 		if (!res.ok) {
 			// Try to read backend error message if available
 			const errorMessage = json?.message || "Failed to retrive project";

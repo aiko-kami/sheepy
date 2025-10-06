@@ -18,19 +18,19 @@ const StepsQAComments = ({ project }) => {
 		{
 			id: "tabSteps",
 			label: "Steps",
-			count: project.stepsCount,
+			count: project.stepsCount || 0,
 			icon: IoExtensionPuzzleOutline,
 		},
 		{
 			id: "tabQAs",
 			label: "Q&A",
-			count: project.qnasCount,
+			count: project.qnasCount || 0,
 			icon: IoHelpCircleOutline,
 		},
 		{
 			id: "tabComments",
 			label: "Comments",
-			count: project.commentsCount,
+			count: project.commentsCount || 0,
 			icon: IoChatboxEllipsesOutline,
 		},
 	];
@@ -70,7 +70,7 @@ const StepsQAComments = ({ project }) => {
 					<Steps steps={project.steps.stepsList} />
 				</TabContent>
 				<TabContent id="tabQAs" activeTab={activeTab}>
-					<QAs qnas={project.qnas.qnasList} />
+					<QAs qnas={project.qnas?.qnasList} />
 				</TabContent>
 				<TabContent id="tabComments" activeTab={activeTab}>
 					<Comments comments={project.comments} />

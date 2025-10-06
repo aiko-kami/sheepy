@@ -5,7 +5,6 @@ import Link from "next/link";
 import { DateTime } from "luxon";
 import { IoArrowUndoOutline, IoClose } from "react-icons/io5";
 
-import { Badge } from "@/components/Badges/Badges";
 import CommentReplyForm from "@/components/Forms/CommentReplyForm";
 
 const Comment = ({ comment }) => {

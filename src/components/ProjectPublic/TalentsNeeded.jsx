@@ -36,10 +36,10 @@ const TalentsNeeded = ({ project }) => {
 						<React.Fragment key={index}>
 							<div className="text-slate-300 text-lg mb-6 last:mb-0 mr-2 flex items-center h-full col-span-2">
 								<Image src={project.talentProfilePicture} className="object-cover rounded-full w-10 h-10 mr-3" alt="talent profile picture" height={0} width={0} sizes="100vw" />
-								<p className="overflow-auto hyphens-auto ">{talent.role}</p>
+								<p className="overflow-auto hyphens-auto ">{talent}</p>
 							</div>
 							<div className="flex items-center justify-end">
-								<Button btnProps={{ btnSize: "sm", type: "button", action: () => showModal(talent.role) }}>
+								<Button btnProps={{ btnSize: "sm", type: "button", action: () => showModal(talent) }}>
 									<div className="flex">
 										Apply
 										<IoArrowForward className="text-lg ml-1 mt-0.5" />

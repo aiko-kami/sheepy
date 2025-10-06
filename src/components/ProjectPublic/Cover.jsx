@@ -11,7 +11,7 @@ const Cover = ({ project }) => {
 		<>
 			<div className="relative mb-3">
 				{/* Project cover */}
-				<Image src={project.cover} className="w-full h-110 object-cover rounded-xl" alt="Project cover" width={0} height={0} sizes="100vw" />
+				<Image src={project.cover.link} className="w-full h-110 object-cover rounded-xl" alt="Project cover" width={0} height={0} sizes="100vw" />
 
 				{/* Transparent veil on the cover */}
 				<div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent rounded-xl" />

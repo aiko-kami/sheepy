@@ -12,8 +12,19 @@ export function normalizeProjectData(projectData) {
 		  }
 		: null;
 
+	const stepsList = projectData.steps && Array.isArray(projectData.steps.stepsList) ? projectData.steps.stepsList : [];
+	const stepsCount = stepsList.length;
+
+	const qasList = projectData.QAs && Array.isArray(projectData.QAs.QAsList) ? projectData.QAs.QAsList : [];
+	const qnasCount = qasList.length;
+
+	const talentProfilePicture = "https://p7.hiclipart.com/preview/355/848/997/computer-icons-user-profile-google-account-photos-icon-account.jpg";
+
 	return {
 		...projectData,
 		owner,
+		stepsCount,
+		qnasCount,
+		talentProfilePicture,
 	};
 }

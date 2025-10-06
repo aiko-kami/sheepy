@@ -1,6 +1,7 @@
 import Cover from "@/components/ProjectPublic/Cover";
 import ProjectDescription from "@/components/ProjectPublic/ProjectDescription";
 import ProjectGoal from "@/components/ProjectPublic/ProjectGoal";
+import ProjectNotFound from "@/components/ProjectPublic/ProjectNotFound";
 import TalentsNeeded from "@/components/ProjectPublic/TalentsNeeded";
 import ProjectTags from "@/components/ProjectPublic/ProjectTags";
 import ProjectMembers from "@/components/ProjectPublic/ProjectMembers";
@@ -26,7 +27,11 @@ const ProjectPublicPage = async ({ params }) => {
 	} catch (err) {
 		console.error("Failed to load project:", err);
 		// Option 1: render a user-friendly message
-		return <p>Something went wrong when retrieving the project</p>;
+		return (
+			<>
+				<ProjectNotFound />
+			</>
+		);
 		// Option 2: throw (and let Next.js handle via error.js or not-found.js)
 		// throw err;
 	}
