@@ -11,6 +11,7 @@ const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown
 	const handleLogout = async () => {
 		try {
 			const user = await ApiLogout();
+
 			logoutUser();
 			window.location.href = "/";
 		} catch (error) {

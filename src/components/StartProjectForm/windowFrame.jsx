@@ -24,7 +24,7 @@ export const WindowFrame = ({ title, currentStep, children }) => {
 
 	return (
 		<>
-			<div className="bg-black/50 backdrop-blur-sm z-40" />
+			<div className="bg-black/50 z-40" />
 
 			<div className="flex items-center justify-center">
 				<div

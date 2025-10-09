@@ -17,10 +17,14 @@ const CardProjectTalents = ({ formInputs, talentNeededProfilePicture }) => {
 					<div className="flex gap-1">
 						{Array.isArray(formInputs.talentsNeeded) && formInputs.talentsNeeded.length > 0 ? (
 							<div className="space-y-3 w-full">
-								{formInputs.talentsNeeded.map((talent, index) => (
-									<div key={index} className="flex items-center gap-3 p-3 bg-sky-200 rounded-lg border border-sky-300">
-										<Image src={talentNeededProfilePicture} className="object-cover rounded-full w-10 h-10 mr-3" alt="talent profile picture" height={0} width={0} sizes="100vw" />
-										<span className="font-medium text-sky-900">{talent}</span>
+								{formInputs.talentsNeeded.map((talentNeeded, index) => (
+									<div key={index} className="flex items-start gap-4 p-4 bg-sky-200 rounded-lg border border-sky-300">
+										{/* Profile picture on the left */}
+										<Image src={talentNeededProfilePicture} alt="talent profile picture" className="object-cover rounded-full w-12 h-12 flex-shrink-0" height={48} width={48} sizes="100vw" />
+										<div className="flex flex-col">
+											<span className="font-semibold text-sky-900">{talentNeeded.talent}</span>
+											{talentNeeded.description && <p className="text-sm text-sky-800">{talentNeeded.description}</p>}
+										</div>
 									</div>
 								))}
 							</div>

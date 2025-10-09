@@ -29,17 +29,17 @@ const TalentsNeeded = ({ project }) => {
 
 	return (
 		<>
-			<div className="lg:mx-4 border rounded-xl p-6 bg-slate-800/50 border-slate-700 backdrop-blur-sm shadow-xl mb-4 sm:mb-8">
+			<div className="lg:mx-4 border rounded-xl p-6 bg-slate-800/50 border-slate-700 shadow-xl mb-4 sm:mb-8">
 				<h2 className="text-xl font-bold mb-6">Talents needed</h2>
 				<div className="grid grid-cols-3 sm:grid-cols-1 md:grid-cols-3 lg:mx-8">
-					{project.talentsNeeded.map((talent, index) => (
+					{project.talentsNeeded.map((talentNeeded, index) => (
 						<React.Fragment key={index}>
 							<div className="text-slate-300 text-lg mb-6 last:mb-0 mr-2 flex items-center h-full col-span-2">
 								<Image src={project.talentProfilePicture} className="object-cover rounded-full w-10 h-10 mr-3" alt="talent profile picture" height={0} width={0} sizes="100vw" />
-								<p className="overflow-auto hyphens-auto ">{talent}</p>
+								<p className="overflow-auto hyphens-auto ">{talentNeeded.talent}</p>
 							</div>
 							<div className="flex items-center justify-end">
-								<Button btnProps={{ btnSize: "sm", type: "button", action: () => showModal(talent) }}>
+								<Button btnProps={{ btnSize: "sm", type: "button", action: () => showModal(talentNeeded.talent) }}>
 									<div className="flex">
 										Apply
 										<IoArrowForward className="text-lg ml-1 mt-0.5" />
@@ -48,6 +48,7 @@ const TalentsNeeded = ({ project }) => {
 							</div>
 						</React.Fragment>
 					))}
+
 					<Modal modalDisplay={modalDisplay} closeModal={closeModal} modalSize={"xl"} modalTitle={"You want to join this project?"}>
 						<ProjectApplicationModal closeModal={closeModal} talentsNeeded={project.talentsNeeded} roleSelected={selectedRole} />
 					</Modal>

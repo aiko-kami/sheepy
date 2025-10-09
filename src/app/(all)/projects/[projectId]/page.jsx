@@ -62,7 +62,7 @@ const ProjectPublicPage = async ({ params }) => {
 				</div>
 				<div className="sm:col-span-2 sm:order-1 order-2 mb-4 sm:mb-0">
 					{/* Project description */}
-					<ProjectDescription project={project} />
+					<ProjectDescription description={project.description} />
 				</div>
 			</div>
 			{/* Q&A and comments */}

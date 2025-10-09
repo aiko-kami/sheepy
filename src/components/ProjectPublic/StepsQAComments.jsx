@@ -67,7 +67,7 @@ const StepsQAComments = ({ project }) => {
 			{/* Tabs content */}
 			<div id="defaultTabContent" className="lg:px-8">
 				<TabContent id="tabSteps" activeTab={activeTab}>
-					<Steps steps={project.steps.stepsList} />
+					<Steps steps={project.steps?.stepsList} />
 				</TabContent>
 				<TabContent id="tabQAs" activeTab={activeTab}>
 					<QAs qnas={project.qnas?.qnasList} />

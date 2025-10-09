@@ -12,7 +12,7 @@ const StepProjectSubmitted = ({ goToStep, formInputs, categories, talentNeededPr
 
 	return (
 		<>
-			<div className="flex items-center justify-center">
+			<div className="flex items-center justify-center pt-4">
 				<div className="max-w-4xl mx-auto">
 					{/* Hero Icon */}
 					<div className="text-center">
@@ -70,17 +70,17 @@ const StepProjectSubmitted = ({ goToStep, formInputs, categories, talentNeededPr
 							<h3 className="text-lg font-semibold text-gray-100 mb-2 text-left">Talents</h3>
 
 							<div className="grid grid-flow-row xl:grid-cols-3 gap-4">
-								{formInputs.talentsNeeded.map((talent, index) => (
+								{formInputs.talentsNeeded.map((talentNeeded, index) => (
 									<div key={index} className="flex items-center gap-3 p-3 bg-sky-200 rounded-lg border border-sky-300">
 										<Image src={talentNeededProfilePicture} className="object-cover rounded-full w-10 h-10 mr-3" alt="talent profile picture" height={0} width={0} sizes="100vw" />
-										<span className="font-medium text-sky-900">{talent}</span>
+										<span className="font-medium text-sky-900">{talentNeeded.talent}</span>
 									</div>
 								))}
 							</div>
 						</div>
 
 						{/* What's next */}
-						<div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 border border-blue-700/50 rounded-2xl p-8 mb-12 backdrop-blur-sm">
+						<div className="bg-gradient-to-r from-blue-900/30 to-purple-900/30 border border-blue-700/50 rounded-2xl p-8 mb-12">
 							<h3 className="text-2xl font-bold text-gray-100 mb-6 flex items-center">
 								<IoArrowRedoOutline className="h-6 w-6 mr-3 text-yellow-400" />
 								What Happens Next?
@@ -107,7 +107,7 @@ const StepProjectSubmitted = ({ goToStep, formInputs, categories, talentNeededPr
 							</div>
 						</div>
 					</div>
-					<div className="mb-8 text-center">
+					<div className="mb-14 text-center">
 						<Link href="/">
 							<Button
 								btnProps={{

@@ -59,7 +59,7 @@ const StepStartProject = ({ goToStep }) => {
 								{/* Features Grid */}
 								<div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-8">
 									{/* Step 1 */}
-									<div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6 backdrop-blur-sm">
+									<div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6">
 										<div className="flex items-center">
 											<div className="w-10 h-10 bg-blue-900/50 rounded-lg flex items-center justify-center mb-2 border border-blue-700">
 												<span className="text-blue-400 text-xl font-bold">1</span>
@@ -70,7 +70,7 @@ const StepStartProject = ({ goToStep }) => {
 									</div>
 
 									{/* Step 2 */}
-									<div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6 backdrop-blur-sm">
+									<div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6">
 										<div className="flex items-center">
 											<div className="w-10 h-10 bg-green-900/50 rounded-lg flex items-center justify-center mb-2 border border-green-700">
 												<span className="text-green-400 text-xl font-bold">2</span>
@@ -81,7 +81,7 @@ const StepStartProject = ({ goToStep }) => {
 									</div>
 
 									{/* Step 3 */}
-									<div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6 backdrop-blur-sm">
+									<div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6">
 										<div className="flex items-center">
 											<div className="w-10 h-10 bg-purple-900/50 rounded-lg flex items-center justify-center mb-2 border border-purple-700">
 												<span className="text-purple-400 text-xl font-bold">3</span>
@@ -92,7 +92,7 @@ const StepStartProject = ({ goToStep }) => {
 									</div>
 
 									{/* Step 4 */}
-									<div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6 backdrop-blur-sm">
+									<div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6">
 										<div className="flex items-center">
 											<div className="w-10 h-10 bg-orange-900/50 rounded-lg flex items-center justify-center mb-2 border border-orange-700">
 												<span className="text-orange-400 text-xl font-bold">4</span>
@@ -103,7 +103,7 @@ const StepStartProject = ({ goToStep }) => {
 									</div>
 
 									{/* Step 5 */}
-									<div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6 backdrop-blur-sm">
+									<div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6">
 										<div className="flex items-center">
 											<div className="w-10 h-10 bg-teal-900/50 rounded-lg flex items-center justify-center mb-2 border border-teal-700">
 												<span className="text-teal-400 text-xl font-bold">5</span>
@@ -114,7 +114,7 @@ const StepStartProject = ({ goToStep }) => {
 									</div>
 
 									{/* Step 6 */}
-									<div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6 backdrop-blur-sm">
+									<div className="bg-gray-800/50 border border-gray-700 rounded-lg p-6">
 										<div className="flex items-center">
 											<div className="w-10 h-10 bg-pink-900/50 rounded-lg flex items-center justify-center mb-2 border border-pink-700">
 												<span className="text-pink-400 text-xl font-bold">6</span>

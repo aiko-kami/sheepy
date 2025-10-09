@@ -54,11 +54,11 @@ const StepManager = () => {
 	const [tagInput, setTagInput] = useState("");
 	const [tagError, setTagError] = useState("");
 
-	const [talentNeededInput, setTalentNeededInput] = useState("");
+	const [talentNeededTalentInput, setTalentNeededTalentInput] = useState("");
+	const [talentNeededDescriptionInput, setTalentNeededDescriptionInput] = useState("");
 	const [talentNeededError, setTalentNeededError] = useState("");
 
 	const [objectiveInput, setObjectiveInput] = useState("");
-	const [objectiveError, setObjectiveError] = useState("");
 
 	const onChange = handleFormChange(setFormInputs);
 
@@ -83,34 +83,44 @@ const StepManager = () => {
 	};
 
 	const addTalentNeeded = () => {
-		if (!talentNeededInput) {
-			setTalentNeededError("Please enter a talent.");
+		const talent = (talentNeededTalentInput || "").trim();
+		const description = (talentNeededDescriptionInput || "").trim();
+
+		// Basic validations with early returns
+		if (!talent) return showErrorToast("Please enter a talent.");
+
+		if (!description) return showErrorToast("Please enter a description.");
+
+		// Case-insensitive duplicate check (assumes stored items have .talent)
+		const exists = formInputs.talentsNeeded.some((t) => String(t.talent || "").toLowerCase() === talent.toLowerCase());
+		if (exists) return showErrorToast("This talent is already present in the list.");
+
+		// Max limit check (max 20)
+		if (formInputs.talentsNeeded.length >= 20) {
+			return showErrorToast("You can only add up to 20 talents.");
 		}
-		if (talentNeededInput && formInputs.talentsNeeded.includes(talentNeededInput)) {
-			setTalentNeededError("This talent is already present in the list.");
-		}
-		if (talentNeededInput && formInputs.talentsNeeded.length > 20) {
-			setTalentNeededError("You can only add up to 20 talents.");
-		}
-		if (talentNeededInput && !formInputs.talentsNeeded.includes(talentNeededInput) && formInputs.talentsNeeded.length <= 20) {
-			setFormInputs((prevState) => ({
-				...prevState,
-				talentsNeeded: [...prevState.talentsNeeded, talentNeededInput],
-			}));
-			setTalentNeededInput("");
-			setTalentNeededError("");
-		}
+
+		// Add new talent
+		setFormInputs((prev) => ({
+			...prev,
+			talentsNeeded: [...(prev.talentsNeeded || []), { talent, description }],
+		}));
+
+		// Reset inputs & error
+		setTalentNeededTalentInput("");
+		setTalentNeededDescriptionInput("");
+		setTalentNeededError("");
 	};
 
 	const addObjective = () => {
 		if (!objectiveInput) {
-			setObjectiveError("Please enter an objective.");
+			showErrorToast("Please enter an objective.");
 		}
 		if (objectiveInput && formInputs.projectObjectives.includes(objectiveInput)) {
-			setObjectiveError("This project objective is already present in the list.");
+			showErrorToast("This project objective is already present in the list.");
 		}
 		if (objectiveInput && formInputs.projectObjectives.length >= 10) {
-			setObjectiveError("You can only add up to 10 project objectives.");
+			showErrorToast("You can only add up to 10 project objectives.");
 		}
 		if (objectiveInput && !formInputs.projectObjectives.includes(objectiveInput) && formInputs.projectObjectives.length < 10) {
 			setFormInputs((prevState) => ({
@@ -118,7 +128,6 @@ const StepManager = () => {
 				projectObjectives: [...prevState.projectObjectives, objectiveInput],
 			}));
 			setObjectiveInput("");
-			setObjectiveError("");
 		}
 	};
 
@@ -132,7 +141,7 @@ const StepManager = () => {
 	const removeTalentNeeded = (talentToRemove) => {
 		setFormInputs((prevState) => ({
 			...prevState,
-			talentsNeeded: prevState.talentsNeeded.filter((talent) => talent !== talentToRemove),
+			talentsNeeded: prevState.talentsNeeded.filter((t) => t.talent !== talentToRemove),
 		}));
 	};
 
@@ -148,12 +157,15 @@ const StepManager = () => {
 		setTagInput(e.target.value);
 	};
 
-	const handleTalentNeededInputChange = (e) => {
-		setTalentNeededInput(e.target.value);
+	const handleTalentNeededTalentInputChange = (e) => {
+		setTalentNeededTalentInput(e.target.value);
+	};
+
+	const handleTalentNeededDescriptionInputChange = (e) => {
+		setTalentNeededDescriptionInput(e.target.value);
 	};
 
 	const handleObjectiveInputChange = (e) => {
-		setObjectiveError("");
 		setObjectiveInput(e.target.value);
 	};
 
@@ -316,7 +328,6 @@ const StepManager = () => {
 								addObjective={addObjective}
 								removeObjective={removeObjective}
 								handleObjectiveInputChange={handleObjectiveInputChange}
-								objectiveError={objectiveError}
 							/>
 						)}
 
@@ -338,10 +349,12 @@ const StepManager = () => {
 						{currentStep === 6 && (
 							<StepSix
 								formInputs={formInputs}
-								talentNeededInput={talentNeededInput}
+								talentNeededTalentInput={talentNeededTalentInput}
+								talentNeededDescriptionInput={talentNeededDescriptionInput}
 								addTalentNeeded={addTalentNeeded}
 								removeTalentNeeded={removeTalentNeeded}
-								handleTalentNeededInputChange={handleTalentNeededInputChange}
+								handleTalentNeededTalentInputChange={handleTalentNeededTalentInputChange}
+								handleTalentNeededDescriptionInputChange={handleTalentNeededDescriptionInputChange}
 								talentNeededError={talentNeededError}
 								talentNeededProfilePicture={projectForm.talentNeededProfilePicture}
 							/>

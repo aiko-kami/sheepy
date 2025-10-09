@@ -5,7 +5,7 @@ import InputField from "@/components/Forms/InputField";
 import { Button } from "@/components/Buttons/Buttons";
 import { IoAddCircleOutline, IoCloseCircleOutline } from "react-icons/io5";
 
-const StepFour = ({ formInputs, onChange, objectiveInput, addObjective, removeObjective, handleObjectiveInputChange, objectiveError }) => {
+const StepFour = ({ formInputs, onChange, objectiveInput, addObjective, removeObjective, handleObjectiveInputChange }) => {
 	return (
 		<>
 			<div className="container min-w-full m-auto lg:px-8 text-justify xl:grid grid-cols-5 gap-8">
@@ -61,7 +61,6 @@ const StepFour = ({ formInputs, onChange, objectiveInput, addObjective, removeOb
 										</Button>
 									</div>
 								</div>
-								<div className="absolute left-0 top-12 mb-2 min-h-6 text-sm">{objectiveError && <p className="text-xs text-red-600">{objectiveError}</p>}</div>
 
 								{/* List of project objectives */}
 								<div className="mt-2 min-h-32">
