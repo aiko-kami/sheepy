@@ -1,4 +1,6 @@
 import Cover from "@/components/ProjectPublic/Cover";
+import OverviewBar from "@/components/ProjectPublic/OverviewBar";
+import ProjectSummary from "@/components/ProjectPublic/ProjectSummary";
 import ProjectDescription from "@/components/ProjectPublic/ProjectDescription";
 import ProjectGoal from "@/components/ProjectPublic/ProjectGoal";
 import ProjectNotFound from "@/components/ProjectPublic/ProjectNotFound";
@@ -45,6 +47,8 @@ const ProjectPublicPage = async ({ params }) => {
 		<div className="container mx-auto py-8 hyphens-auto">
 			{/* Project cover with title and creator and list with category, location, likes, project status and project summary */}
 			<Cover project={project} />
+			<OverviewBar project={project} />
+			<ProjectSummary summary={project.summary} />
 
 			<div className="sm:grid sm:grid-cols-3 mb-4 sm:mb-12">
 				<div className="sm:col-start-3 order-1 sm:order-2">
