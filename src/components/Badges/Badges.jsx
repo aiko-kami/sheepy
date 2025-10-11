@@ -41,11 +41,6 @@ const Badge = ({ badge, size, clickable = true }) => {
 };
 
 const BadgeRounded = ({ badge, size, clickable = true }) => {
-	const { name } = badge;
-	const { bgColor, bgColorHover } = badge.colors;
-
-	const link = `/search?search=${badge.name.toLowerCase()}&tab=tabTags`;
-
 	let textSizeClass;
 	switch (size) {
 		case "xs":
@@ -63,6 +58,15 @@ const BadgeRounded = ({ badge, size, clickable = true }) => {
 		default:
 			textSizeClass = "text-base";
 	}
+
+	// Handle missing or invalid badge
+	if (!badge || !badge.name || !badge.colors) {
+		return <span className={`py-1 px-2.5 text-white font-bold text-nowrap rounded bg-gray-500 ${textSizeClass}`}>Not found</span>;
+	}
+
+	const { name } = badge;
+	const { bgColor, bgColorHover } = badge.colors;
+	const link = `/search?search=${badge.name.toLowerCase()}&tab=tabTags`;
 
 	const classes = `pt-1 pb-1.5 px-2.5 text-blue-800 font-medium text-nowrap duration-200 rounded-full ${textSizeClass} ${bgColor} ${clickable ? `hover:${bgColorHover} cursor-pointer` : ""}`;
 
@@ -118,6 +122,11 @@ const Status = ({ name, size, rounded, bgColor }) => {
 			break;
 		default:
 			roundedClass = "rounded";
+	}
+
+	// Handle missing or invalid badge
+	if (!name || !bgColor) {
+		return <span className={`py-1 px-2.5 text-white font-bold text-nowrap rounded bg-gray-500 ${textSizeClass}`}>Not found</span>;
 	}
 
 	return (

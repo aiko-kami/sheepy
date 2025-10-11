@@ -4,6 +4,9 @@ import ActionButtons from "@/components/ProjectPublic/ActionButtons";
 import { Badge, BadgeRounded } from "@/components/Badges/Badges";
 
 const OverviewBar = ({ project }) => {
+	const statusColorClass = project.statusInfo?.currentStatus?.colors?.colorBase;
+	const colorClassStatus = statusColorClass && !statusColorClass.startsWith("#") ? `text-${statusColorClass}` : "text-gray-400";
+
 	return (
 		<>
 			{/* Category, location, likes, project status */}
@@ -28,7 +31,11 @@ const OverviewBar = ({ project }) => {
 					) : (
 						<>
 							<IoLocationOutline className="text-gray-400 mr-1 text-xl" title="Project location" />
-							<p className="text-gray-700">{project.location.locationCity}</p>
+							<p className="font-semibold">
+								{project.location.city && project.location.country
+									? `${project.location.city}, ${project.location.country}`
+									: project.location.city || project.location.country || <span className="italic text-gray-400">Location not specified</span>}
+							</p>
 						</>
 					)}
 				</li>
@@ -45,8 +52,8 @@ const OverviewBar = ({ project }) => {
 
 				{/* Project status */}
 				<li className="flex sm:ml-4">
-					<IoFitness className={`text-${project.statusInfo.currentStatus.colors.colorBase} mr-1 text-xl justify-center`} title="Project status" />
-					<p className={`text-${project.statusInfo.currentStatus.colors.colorBase} font-semibold`}>{project.statusInfo.currentStatus.status}</p>
+					<IoFitness className={`${colorClassStatus} mr-1 text-xl justify-center`} title="Project status" />
+					<p className={`${colorClassStatus} font-semibold`}>{project.statusInfo.currentStatus.status}</p>
 				</li>
 
 				{/* Buttons Join project, Like and Share */}

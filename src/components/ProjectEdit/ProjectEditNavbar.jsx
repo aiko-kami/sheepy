@@ -72,7 +72,7 @@ const ProjectEditNavbar = () => {
 						Details
 					</Link>
 				</li>
-			</ul>{" "}
+			</ul>
 		</>
 	);
 };

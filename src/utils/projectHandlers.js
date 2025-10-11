@@ -26,5 +26,17 @@ export function normalizeProjectData(projectData) {
 		stepsCount,
 		qnasCount,
 		talentProfilePicture,
+		category: {
+			...projectData.category,
+			link: `/categories/${projectData.category.link}`,
+		},
 	};
+}
+
+export function normalizeCategoryLink(category) {
+	if (!category) return null;
+
+	const categoryLink = `/categories/${category.link}`;
+
+	return categoryLink;
 }

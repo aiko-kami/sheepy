@@ -21,7 +21,7 @@ const Contacts = ({ contacts, onSelectContact }) => {
 							</p>
 						</div>
 					</div>
-				))}{" "}
+				))}
 			</div>
 		</>
 	);

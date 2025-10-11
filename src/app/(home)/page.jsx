@@ -1,4 +1,6 @@
-import { MosaicFour, MosaicSix, MosaicCategories } from "@/components/Cards/Projects/Mosaic";
+import MosaicFour from "@/components/Cards/Projects/MosaicFour";
+import MosaicSix from "@/components/Cards/Projects/MosaicSix";
+import MosaicCategories from "@/components/Cards/Projects/MosaicCategories";
 import PresentationBanner from "@/components/PresentationBanner";
 import CarouselProjects from "@/components/Carousel/CarouselProjects";
 import RecentProjects from "@/components/Cards/Projects/RecentProjects";

@@ -40,7 +40,7 @@ const RightsTable = ({ members, formState, onChange, onSelectAll, headers }) => 
 								<td scope="row" className="p-2 md:px-4 md:py-2">
 									<MemberUserCell member={member} />
 								</td>
-								{/* Individual Rights Checkboxes */}{" "}
+								{/* Individual Rights Checkboxes */}
 								{headers.labels.map((header, index) => {
 									const isChecked = memberState?.memberRights[header.right] ?? false;
 									return (

@@ -38,10 +38,9 @@ const CategoryHorizontalCard = ({ category, animate }) => {
 									</div>
 								);
 							})}
-						</div>{" "}
+						</div>
 					</div>
 				</div>
-				{/* Username, location, description and talents */}
 			</div>
 		</>
 	);
