@@ -1,26 +1,52 @@
 import Cover from "@/components/ProjectPublic/Cover";
+import OverviewBar from "@/components/ProjectPublic/OverviewBar";
+import ProjectSummary from "@/components/ProjectPublic/ProjectSummary";
 import ProjectDescription from "@/components/ProjectPublic/ProjectDescription";
 import ProjectGoal from "@/components/ProjectPublic/ProjectGoal";
+import ProjectNotFound from "@/components/ProjectPublic/ProjectNotFound";
 import TalentsNeeded from "@/components/ProjectPublic/TalentsNeeded";
 import ProjectTags from "@/components/ProjectPublic/ProjectTags";
 import ProjectMembers from "@/components/ProjectPublic/ProjectMembers";
 import StepsQAComments from "@/components/ProjectPublic/StepsQAComments";
 import SimilarProjects from "@/components/ProjectPublic/SimilarProjects";
 
-import project from "@/mock/project.json";
-
-import { ApiGetProjectPublicData } from "@/lib/api/projectCore";
+import { ApiGetProjectPublicDataByLink } from "@/lib/api/projectCore";
+import { normalizeProjectData } from "@/utils/projectHandlers";
 
 export const metadata = {
 	title: "Project - Sheepy",
 	description: "Project public page",
 };
 
-const ProjectPublicPage = () => {
+const ProjectPublicPage = async ({ params }) => {
+	const { projectLink } = params;
+
+	let project;
+
+	try {
+		const rawProject = await ApiGetProjectPublicDataByLink(projectLink);
+		project = normalizeProjectData(rawProject);
+	} catch (err) {
+		console.error("Failed to load project:", err);
+		return (
+			<>
+				<ProjectNotFound />
+			</>
+		);
+	}
+
+	if (!project) {
+		return <ProjectNotFound />;
+	}
+
 	return (
 		<div className="container mx-auto py-8 hyphens-auto">
-			{/* Project cover with title and creator and list with category, location, likes, project status and project summary */}
+			{/* Project cover with title and creator */}
 			<Cover project={project} />
+			{/* List with category, location, likes and project status */}
+			<OverviewBar project={project} />
+			{/* Summary */}
+			<ProjectSummary summary={project.summary} />
 
 			<div className="sm:grid sm:grid-cols-3 mb-4 sm:mb-12">
 				<div className="sm:col-start-3 order-1 sm:order-2">
@@ -38,7 +64,7 @@ const ProjectPublicPage = () => {
 				</div>
 				<div className="sm:col-span-2 sm:order-1 order-2 mb-4 sm:mb-0">
 					{/* Project description */}
-					<ProjectDescription project={project} />
+					<ProjectDescription description={project.description} />
 				</div>
 			</div>
 			{/* Q&A and comments */}

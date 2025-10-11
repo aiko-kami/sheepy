@@ -68,9 +68,32 @@ export async function ApiSubmitProject(projectInputs) {
 	}
 }
 
-export async function ApiGetProjectPublicData(projectId) {
+export async function ApiGetProjectPublicDataById(projectId) {
 	try {
-		const res = await fetch(`${BASE_URL}/projects/projectPublic/${projectId}`, {
+		const res = await fetch(`${BASE_URL}/projects/projectPublic/id/${projectId}`, {
+			method: "get",
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			cache: "no-store",
+		});
+		const json = await res.json();
+
+		if (!res.ok) {
+			// Try to read backend error message if available
+			const errorMessage = json?.message || "Failed to retrive project";
+			throw new Error(errorMessage);
+		}
+		return json.data.project;
+	} catch (error) {
+		throw error;
+	}
+}
+
+export async function ApiGetProjectPublicDataByLink(projectLink) {
+	try {
+		const res = await fetch(`${BASE_URL}/projects/projectPublic/link/${projectLink}`, {
 			method: "get",
 			credentials: "include",
 			headers: {
