@@ -6,6 +6,26 @@ import { toastOptions } from "@/config/toastConfig";
 export const metadata = {
 	title: "Make It",
 	description: "Bring your projects to life",
+	robots: "index, follow",
+	openGraph: {
+		title: "Make It",
+		description: "Bring your projects to life",
+		type: "website",
+		url: "https://www.makeit-lab.com",
+		siteName: "Make It",
+		images: [
+			{
+				url: "https://www.makeit-lab.com/logo_MakeIt_yellow.png",
+				width: 1023,
+				height: 297,
+				alt: "Make It — bring your projects to life",
+			},
+		],
+	},
+	icons: {
+		icon: "/images/favicon-32x32.png",
+		apple: "/images/apple-touch-icon.png",
+	},
 };
 
 export default function RootLayout({ children }) {
