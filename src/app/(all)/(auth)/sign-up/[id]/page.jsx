@@ -1,6 +1,6 @@
 import VerifyEmailMenu from "@/components/Auth/SignUp/VerifyEmailMenu";
 export const metadata = {
-	title: "Email verification - Sheepy",
+	title: "Email verification - Make It",
 	description: "Email verification page",
 };
 

@@ -15,8 +15,8 @@ const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) =>
 	});
 
 	const optionsList = talentsNeeded.map((talent) => ({
-		value: talent.role,
-		option: talent.role,
+		value: talent.talent,
+		option: talent.talent,
 	}));
 
 	const onSaveDraft = (event) => {

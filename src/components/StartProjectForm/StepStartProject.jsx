@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
-import { IoArrowForwardOutline, IoRocketOutline, IoHeartOutline } from "react-icons/io5";
+import { IoArrowForwardOutline, IoRocketOutline, IoHeartOutline, IoEnterOutline, IoPersonAddOutline } from "react-icons/io5";
+
 import { Button } from "@/components/Buttons/Buttons";
 import Triforce from "@/components/Loaders/Triforce";
 
@@ -146,31 +147,27 @@ const StepStartProject = ({ goToStep }) => {
 						) : (
 							<>
 								{/* Main content when user is not logged */}
-								<div className="max-w-3xl mx-auto mb-8">
+								<div className="mx-auto mb-8">
 									<p className="text-lg md:text-xl text-gray-300 leading-relaxed">Create your free account to start building your first project.</p>
 								</div>
-								<div className="flex items-center justify-around gap-4 max-w-md mx-auto mb-10">
-									<button
-										onClick={() => router.push("/sign-up")}
-										className="leading-snug shadow-lg transition duration-150 ease-in-out text-base px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded-lg"
-										data-mdb-ripple="true"
-										data-mdb-ripple-color="light"
-									>
-										Register
-									</button>
-									<div className="flex items-center space-x-3 text-gray-400 mx-3">
+								<div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mx-auto mb-10">
+									<Button btnProps={{ type: "button", wFull: true, btnColor: "green", action: () => router.push("/sign-up") }}>
+										<div className="flex items-center justify-center">
+											<IoPersonAddOutline className="text-xl mr-2 mt-0.5" /> Create account
+										</div>
+									</Button>
+
+									<div className="flex items-center space-x-3 text-gray-400 justify-center">
 										<div className="h-px w-8 bg-gray-600"></div>
 										<span className="text-lg">or</span>
 										<div className="h-px w-8 bg-gray-600"></div>
 									</div>
-									<button
-										onClick={() => router.push("/login")}
-										className="leading-snug shadow-lg transition duration-150 ease-in-out text-base px-6 py-2 text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded-lg"
-										data-mdb-ripple="true"
-										data-mdb-ripple-color="light"
-									>
-										Login
-									</button>
+
+									<Button btnProps={{ type: "button", wFull: true, action: () => router.push("/login") }}>
+										<div className="flex items-center justify-center">
+											<IoEnterOutline className="text-2xl mr-2 mt-0.5" /> Login
+										</div>
+									</Button>
 								</div>
 							</>
 						)}

@@ -1,6 +1,6 @@
 import ForgotPasswordMenu from "@/components/Auth/ForgotPassword/ForgotPasswordMenu";
 export const metadata = {
-	title: "Forgot password - Sheepy",
+	title: "Forgot password - Make It",
 	description: "Forgot password page",
 };
 

@@ -4,26 +4,26 @@ const DiversityAndIntegrationPage = () => {
 			<div className="container mx-auto p-8 text-justify">
 				<h1 className="text-7xl mt-12 mb-20 text-center">Diversity and Integration</h1>
 				<p className="mb-4">
-					At Sheepy, we believe that diversity is the key to unlocking creativity and innovation. Our mission is to help you bring your projects to life, and we know that the best projects are built
+					At Make It, we believe that diversity is the key to unlocking creativity and innovation. Our mission is to help you bring your projects to life, and we know that the best projects are built
 					by diverse teams with a wide range of perspectives, experiences, and skills.
 				</p>
 
 				<h2 className="text-2xl font-semibold mt-8 mb-4">Our Commitment to Inclusion</h2>
 				<p className="mb-4">
-					Sheepy is designed to be a platform where everyone, regardless of background, can find opportunities to contribute to exciting projects and bring their unique ideas to life. We are committed
-					to fostering an inclusive environment where all members feel valued, respected, and empowered.
+					Make It is designed to be a platform where everyone, regardless of background, can find opportunities to contribute to exciting projects and bring their unique ideas to life. We are
+					committed to fostering an inclusive environment where all members feel valued, respected, and empowered.
 				</p>
 
 				<h2 className="text-2xl font-semibold mt-8 mb-4">Connecting Diverse Talents with Groundbreaking Ideas</h2>
 				<p className="mb-4">
-					Whether you're a creative artist, a tech wizard, a culinary enthusiast, an aspiring entrepreneur, or a seasoned professional in any field, Sheepy welcomes you. We celebrate diversity in all
+					Whether you're a creative artist, a tech wizard, a culinary enthusiast, an aspiring entrepreneur, or a seasoned professional in any field, Make It welcomes you. We celebrate diversity in all
 					its forms, including race, gender, age, sexual orientation, disability, and cultural background. Our platform is built to ensure that every member can find their place and thrive.
 				</p>
 
 				<h2 className="text-2xl font-semibold mt-8 mb-4">Features Promoting Diversity and Integration</h2>
 				<ul className="list-disc list-inside mb-4">
 					<li className="mb-2">
-						<strong>Inclusive Project Proposals:</strong> When you post a project on Sheepy, you're inviting a global community of talented individuals to join you. We encourage project creators to
+						<strong>Inclusive Project Proposals:</strong> When you post a project on Make It, you're inviting a global community of talented individuals to join you. We encourage project creators to
 						actively seek out diverse talents, knowing that a variety of perspectives can enhance creativity and lead to more innovative solutions.
 					</li>
 					<li className="mb-2">
@@ -40,7 +40,7 @@ const DiversityAndIntegrationPage = () => {
 
 				<h2 className="text-2xl font-semibold mt-8 mb-4">Join Us in Celebrating Diversity</h2>
 				<p className="mb-4">
-					At Sheepy, we are proud of the diverse community we've built and are always striving to make it even more inclusive. By bringing together a wide range of talents and perspectives, we can
+					At Make It, we are proud of the diverse community we've built and are always striving to make it even more inclusive. By bringing together a wide range of talents and perspectives, we can
 					help each other achieve extraordinary things. Join us today and be part of a community where your unique contributions are celebrated, and your projects can truly come to life.
 				</p>
 
@@ -55,7 +55,7 @@ const DiversityAndIntegrationPage = () => {
 				</ul>
 
 				<p className="mb-8">
-					Together, let's make Sheepy a place where diversity and integration are not just goals but everyday realities. Your projects, your talents, our community – united in creativity and
+					Together, let's make Make It a place where diversity and integration are not just goals but everyday realities. Your projects, your talents, our community – united in creativity and
 					innovation.
 				</p>
 			</div>

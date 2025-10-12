@@ -2,12 +2,12 @@
 	"terms_of_use": [
 		{
 			"tag": "h2",
-			"content": "Welcome to Sheepy!",
+			"content": "Welcome to Make It!",
 			"className": "text-lg font-semibold mb-1"
 		},
 		{
 			"tag": "p",
-			"content": "Thank you for choosing Sheepy to help bring your projects to life. By accessing or using the Sheepy platform, you agree to comply with and be bound by the following Terms of Use. Please read them carefully before using our services.",
+			"content": "Thank you for choosing Make It to help bring your projects to life. By accessing or using the Make It platform, you agree to comply with and be bound by the following Terms of Use. Please read them carefully before using our services.",
 			"className": "mb-6"
 		},
 		{
@@ -17,7 +17,7 @@
 		},
 		{
 			"tag": "p",
-			"content": "By using Sheepy, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use. If you do not agree to these terms, you may not use the platform.",
+			"content": "By using Make It, you acknowledge that you have read, understood, and agree to be bound by these Terms of Use. If you do not agree to these terms, you may not use the platform.",
 			"className": "mb-6"
 		},
 		{
@@ -27,7 +27,7 @@
 		},
 		{
 			"tag": "p",
-			"content": "Sheepy is dedicated to connecting passionate and skilled individuals with innovative project ideas. Our mission is to help you bring your projects to life by providing a platform where talents and ideas converge.",
+			"content": "Make It is dedicated to connecting passionate and skilled individuals with innovative project ideas. Our mission is to help you bring your projects to life by providing a platform where talents and ideas converge.",
 			"className": "mb-6"
 		},
 		{
@@ -37,7 +37,7 @@
 		},
 		{
 			"tag": "p",
-			"content": "In the context of Sheepy, a project is any idea or goal you wish to achieve that requires collaboration with others. This can range from creative endeavors like making a film or starting a band to technical projects like developing software or launching a new product.",
+			"content": "In the context of Make It, a project is any idea or goal you wish to achieve that requires collaboration with others. This can range from creative endeavors like making a film or starting a band to technical projects like developing software or launching a new product.",
 			"className": "mb-6"
 		},
 		{
@@ -57,7 +57,7 @@
 		},
 		{
 			"tag": "p",
-			"content": "Ownership of Content: You retain ownership of any content, including project ideas and talent profiles, that you submit to the platform. However, by submitting content, you grant Sheepy a non-exclusive, worldwide, royalty-free license to use, display, reproduce, and distribute your content on the platform.",
+			"content": "Ownership of Content: You retain ownership of any content, including project ideas and talent profiles, that you submit to the platform. However, by submitting content, you grant Make It a non-exclusive, worldwide, royalty-free license to use, display, reproduce, and distribute your content on the platform.",
 			"className": "mb-6"
 		},
 		{
@@ -86,7 +86,7 @@
 				},
 				{
 					"tag": "li",
-					"content": "Engage in any activity that could harm the reputation or functionality of the Sheepy platform.",
+					"content": "Engage in any activity that could harm the reputation or functionality of the Make It platform.",
 					"className": "ml-2 mb-1"
 				},
 				{
@@ -103,7 +103,7 @@
 		},
 		{
 			"tag": "p",
-			"content": "Sheepy reserves the right to suspend or terminate your account if you violate these Terms of Use or engage in any conduct that Sheepy deems inappropriate or harmful to the community.",
+			"content": "Make It reserves the right to suspend or terminate your account if you violate these Terms of Use or engage in any conduct that Make It deems inappropriate or harmful to the community.",
 			"className": "mb-6"
 		},
 		{
@@ -113,7 +113,7 @@
 		},
 		{
 			"tag": "p",
-			"content": "Sheepy provides the platform \"as is\" without warranties of any kind. We do not guarantee the accuracy, reliability, or suitability of the content provided by users or the success of any project.",
+			"content": "Make It provides the platform \"as is\" without warranties of any kind. We do not guarantee the accuracy, reliability, or suitability of the content provided by users or the success of any project.",
 			"className": "mb-6"
 		},
 		{
@@ -123,7 +123,7 @@
 		},
 		{
 			"tag": "p",
-			"content": "Sheepy is not liable for any direct, indirect, incidental, or consequential damages arising from your use of the platform. This includes, but is not limited to, any loss of profits, data, or other intangible losses.",
+			"content": "Make It is not liable for any direct, indirect, incidental, or consequential damages arising from your use of the platform. This includes, but is not limited to, any loss of profits, data, or other intangible losses.",
 			"className": "mb-6"
 		},
 		{
@@ -133,7 +133,7 @@
 		},
 		{
 			"tag": "p",
-			"content": "You agree to indemnify and hold harmless Sheepy, its officers, directors, employees, and agents from any claims, damages, losses, liabilities, costs, or expenses arising from your use of the platform or violation of these Terms of Use.",
+			"content": "You agree to indemnify and hold harmless Make It, its officers, directors, employees, and agents from any claims, damages, losses, liabilities, costs, or expenses arising from your use of the platform or violation of these Terms of Use.",
 			"className": "mb-6"
 		},
 		{
@@ -143,7 +143,7 @@
 		},
 		{
 			"tag": "p",
-			"content": "Sheepy reserves the right to modify these Terms of Use at any time. We will notify users of any significant changes through the platform or via email. Your continued use of the platform after such changes constitutes your acceptance of the new terms.",
+			"content": "Make It reserves the right to modify these Terms of Use at any time. We will notify users of any significant changes through the platform or via email. Your continued use of the platform after such changes constitutes your acceptance of the new terms.",
 			"className": "mb-6"
 		},
 		{
@@ -168,7 +168,7 @@
 		},
 		{
 			"tag": "p",
-			"content": "By using Sheepy, you acknowledge that you have read, understood, and agree to these Terms of Use. Thank you for being a part of the Sheepy community, where ideas and talents come together to create something extraordinary.",
+			"content": "By using Make It, you acknowledge that you have read, understood, and agree to these Terms of Use. Thank you for being a part of the Make It community, where ideas and talents come together to create something extraordinary.",
 			"className": "mb-6"
 		}
 	]

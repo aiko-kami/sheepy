@@ -1,7 +1,7 @@
 "use client";
 
 const Button = ({ children, btnProps }) => {
-	const { type, btnSize, btnColor, btnRounded, action = () => {}, name, value, disabled = false } = btnProps;
+	const { type, btnSize, wFull = false, btnColor, btnRounded, action = () => {}, name, value, disabled = false } = btnProps;
 
 	let size;
 	switch (btnSize) {
@@ -62,8 +62,8 @@ const Button = ({ children, btnProps }) => {
 			break;
 		case "grayBorder":
 			color = isDisabled
-				? "text-white border border-2 box-border border-gray-300 bg-gray-200 opacity-40"
-				: "text-white border border-2 box-border border-gray-600 hover:bg-gray-600 active:bg-gray-700";
+				? "text-white border border-2 box-border border-slate-300 bg-slate-200 opacity-40"
+				: "text-white border border-2 box-border bg-slate-700 border-slate-600 hover:bg-slate-600 active:bg-slate-700";
 			break;
 		default:
 			color = isDisabled ? "text-white bg-blue-300 opacity-40" : "text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800";
@@ -100,7 +100,7 @@ const Button = ({ children, btnProps }) => {
 			name={name}
 			value={value}
 			disabled={disabled}
-			className={`leading-snug shadow-lg transition duration-150 ease-in-out ${size} ${color} ${rounded}`}
+			className={`leading-snug shadow-lg transition duration-150 ease-in-out ${size} ${color} ${rounded} ${wFull ? "w-full" : ""}`}
 			data-mdb-ripple="true"
 			data-mdb-ripple-color="light"
 		>

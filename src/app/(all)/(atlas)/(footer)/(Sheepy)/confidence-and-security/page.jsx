@@ -4,7 +4,7 @@ const ConfidenceAndSecurityPage = () => {
 			<div className="container mx-auto p-8 text-justify">
 				<h1 className="text-7xl mt-12 mb-20 text-center">Confidence and Security</h1>
 				<p className="mb-4">
-					At Sheepy, your confidence and security are our top priorities. We understand that working on collaborative projects requires a safe and trustworthy environment. That’s why we are committed
+					At Make It, your confidence and security are our top priorities. We understand that working on collaborative projects requires a safe and trustworthy environment. That’s why we are committed
 					to providing robust security measures and fostering a community where you can feel confident about your engagements.
 				</p>
 
@@ -12,7 +12,7 @@ const ConfidenceAndSecurityPage = () => {
 				<p className="mb-4">We employ the latest security technologies and best practices to protect your personal information and project data. Here’s how we ensure your security:</p>
 				<ul className="list-disc list-inside mb-4">
 					<li className="mb-2">
-						<strong>Data Encryption:</strong> All data transmitted on Sheepy is encrypted using SSL technology, ensuring that your information remains confidential and secure.
+						<strong>Data Encryption:</strong> All data transmitted on Make It is encrypted using SSL technology, ensuring that your information remains confidential and secure.
 					</li>
 					<li className="mb-2">
 						<strong>Secure Authentication:</strong> We provide secure login method to protect your account from unauthorized access.
@@ -51,7 +51,7 @@ const ConfidenceAndSecurityPage = () => {
 
 				<h2 className="text-2xl font-semibold mt-8 mb-4">Join Us in Building a Secure Platform</h2>
 				<p className="mb-4">
-					At Sheepy, we are dedicated to maintaining a secure and trustworthy platform where you can confidently collaborate on your projects. Together, we can create a safe environment that nurtures
+					At Make It, we are dedicated to maintaining a secure and trustworthy platform where you can confidently collaborate on your projects. Together, we can create a safe environment that nurtures
 					creativity and innovation.
 				</p>
 

@@ -6,7 +6,7 @@ import UserCardProjects from "@/components/User/UserProfilePublic/UserCardProjec
 import user from "@/mock/user.json";
 
 export const metadata = {
-	title: "Talent - Sheepy",
+	title: "Talent - Make It",
 	description: "User profile public page",
 };
 

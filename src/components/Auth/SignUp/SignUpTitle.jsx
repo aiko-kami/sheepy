@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import sheepLogo from "@/public/sheepyLogo.png";
+import MakeItLogo from "@/public/MakeItLogo.png";
 
 const SignUpTitle = () => {
 	return (
@@ -12,7 +12,7 @@ const SignUpTitle = () => {
 					community!
 				</h1>
 
-				<Image src={sheepLogo} width={75} height={75} alt="Sheepy Logo" className="mx-auto" />
+				<Image src={MakeItLogo} alt="Make It Logo" width={200} height={200} className="mx-auto" />
 			</div>
 		</>
 	);

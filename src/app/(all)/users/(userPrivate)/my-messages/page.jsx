@@ -4,7 +4,7 @@ import user from "@/mock/user.json";
 import messages from "@/mock/messages.json";
 
 export const metadata = {
-	title: "My messages - Sheepy",
+	title: "My messages - Make It",
 	description: "User personal messages page",
 };
 

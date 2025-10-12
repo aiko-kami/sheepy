@@ -3,7 +3,7 @@ import MyProjects from "@/components/User/UserProjectsPrivate/MyProjects";
 import user from "@/mock/user.json";
 
 export const metadata = {
-	title: "Settings - Sheepy",
+	title: "Settings - Make It",
 	description: "User personal projects page",
 };
 

@@ -4,7 +4,7 @@ import { Toaster } from "react-hot-toast";
 import { toastOptions } from "@/config/toastConfig";
 
 export const metadata = {
-	title: "Sheepy",
+	title: "Make It",
 	description: "Bring your projects to life",
 };
 

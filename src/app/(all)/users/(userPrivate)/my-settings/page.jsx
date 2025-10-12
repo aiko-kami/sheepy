@@ -1,7 +1,7 @@
 import MySettings from "@/components/User/UserSettingsPrivate/MySettings";
 
 export const metadata = {
-	title: "My settings - Sheepy",
+	title: "My settings - Make It",
 	description: "User personal settings page",
 };
 

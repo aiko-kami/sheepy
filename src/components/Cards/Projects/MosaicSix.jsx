@@ -53,7 +53,7 @@ const MosaicSix = () => {
 				</div>
 			) : error ? (
 				<p className="text-center text-red-600">Error: {error}</p>
-			) : selectedProjects && selectedProjects.length !== 0 ? (
+			) : selectedProjects && selectedProjects.length >= 6 ? (
 				<div className="grid grid-cols-2 md:grid-cols-4 gap-6">
 					<div className="col-span-2 md:row-span-2 block">
 						<div className="relative w-full">
@@ -137,8 +137,8 @@ const MosaicSix = () => {
 					</div>
 				</div>
 			) : (
-				<p className=" text-xl text-center pt-10">
-					<span className="italic">No projects found</span> 😕
+				<p className=" text-xl text-center py-10">
+					<span className="italic">Selected projects not found</span> 😕
 				</p>
 			)}
 		</>

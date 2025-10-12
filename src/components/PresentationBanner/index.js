@@ -8,7 +8,7 @@ import heart from "@/public/assets/svg/features/heart.svg";
 const PresentationBanner = () => {
 	return (
 		<>
-			<h2 className="text-center text-4xl">What makes Sheepy the best for your ideas?</h2>
+			<h2 className="text-center text-4xl">What makes Make It the best for your ideas?</h2>
 			<div className="grid grid-cols-2 lg:grid-cols-4 mx-auto">
 				<div className="mt-6 mx-2 flex flex-col items-center">
 					<Image src={explore} alt="explore-badge" />

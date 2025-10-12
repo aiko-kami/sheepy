@@ -1,6 +1,6 @@
 import SignUpMenu from "@/components/Auth/SignUp/SignUpMenu";
 export const metadata = {
-	title: "Sign-up - Sheepy",
+	title: "Sign-up - Make It",
 	description: "Sign-up page",
 };
 

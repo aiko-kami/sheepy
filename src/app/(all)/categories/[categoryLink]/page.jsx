@@ -3,7 +3,7 @@ import { ApiGetCategoryWithLink } from "@/lib/api/categories";
 import projectsToJoin from "@/mock/projectsToJoin.json";
 
 export const metadata = {
-	title: "Category - Sheepy",
+	title: "Category - Make It",
 	description: "Category page with projects linked to the category",
 };
 

@@ -1,7 +1,7 @@
 import UserProfileMenu from "@/components/User/UserProfilePrivate/UserProfileMenu";
 
 export const metadata = {
-	title: "My profile - Sheepy",
+	title: "My profile - Make It",
 	description: "User personal profile page",
 };
 

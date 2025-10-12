@@ -3,7 +3,7 @@ import FormQandAs from "@/components/ProjectEdit/QandAsTab/FormQandAs";
 import project from "@/mock/project.json";
 
 export const metadata = {
-	title: "Edit project - Sheepy",
+	title: "Edit project - Make It",
 	description: "Project edition page",
 };
 

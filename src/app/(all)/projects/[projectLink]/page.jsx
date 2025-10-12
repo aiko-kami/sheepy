@@ -14,7 +14,7 @@ import { ApiGetProjectPublicDataByLink } from "@/lib/api/projectCore";
 import { normalizeProjectData } from "@/utils/projectHandlers";
 
 export const metadata = {
-	title: "Project - Sheepy",
+	title: "Project - Make It",
 	description: "Project public page",
 };
 

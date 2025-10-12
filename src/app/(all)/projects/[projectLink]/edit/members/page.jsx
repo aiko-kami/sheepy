@@ -4,7 +4,7 @@ import project from "@/mock/project.json";
 import user from "@/mock/user.json";
 
 export const metadata = {
-	title: "Edit project - Sheepy",
+	title: "Edit project - Make It",
 	description: "Project edition page",
 };
 

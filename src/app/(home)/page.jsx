@@ -9,7 +9,7 @@ import TalentsYouNeed from "@/components/Cards/Talents/TalentsYouNeed";
 import Link from "next/link";
 
 export const metadata = {
-	title: "Sheepy",
+	title: "Make It",
 	description: "Home page",
 };
 

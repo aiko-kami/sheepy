@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer = () => {
 	const currentYear = new Date().getFullYear();
@@ -8,13 +9,14 @@ const Footer = () => {
 				<div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8 ">
 					<div className="md:flex md:justify-between">
 						<div className="mb-6 md:mb-0">
-							<Link href="/" className="flex items-center">
-								<span className="self-center text-2xl font-semibold whitespace-nowrap">Sheepy</span>
+							<Link href="/" className="flex flex-col items-center">
+								<Image src="/MakeItLogo2.png" alt="Make It Logo" width={50} height={50} />
+								<div className="self-center text-2xl font-semibold whitespace-nowrap font-oldenburg">Make It!</div>
 							</Link>
 						</div>
 						<div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3 md:w-1/2">
 							<div>
-								<h2 className="mb-6 text-sm font-bold uppercase">Sheepy</h2>
+								<h2 className="mb-6 text-sm font-bold uppercase">Make It</h2>
 								<ul className="text-secondary font-medium">
 									<li className="mb-4">
 										<Link href="/about-us" className="hover:underline">

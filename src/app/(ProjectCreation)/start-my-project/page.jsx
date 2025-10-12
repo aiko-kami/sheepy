@@ -1,7 +1,7 @@
 import StepManager from "@/components/StartProjectForm/StepManager";
 
 export const metadata = {
-	title: "Start project - Sheepy",
+	title: "Start project - Make It",
 	description: "Start new project page",
 };
 

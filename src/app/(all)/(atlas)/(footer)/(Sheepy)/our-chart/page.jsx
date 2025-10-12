@@ -4,7 +4,7 @@ const OurChartPage = () => {
 			<div className="container mx-auto p-8 text-justify">
 				<h1 className="text-7xl mt-12 mb-20 text-center">Our Chart</h1>
 				<p className="mb-4">
-					At Sheepy, our mission is to empower creators and innovators by connecting them with the right talents and resources. We believe in a holistic approach that values impact over profit,
+					At Make It, our mission is to empower creators and innovators by connecting them with the right talents and resources. We believe in a holistic approach that values impact over profit,
 					fostering a community where creativity and collaboration thrive.
 				</p>
 
@@ -17,7 +17,7 @@ const OurChartPage = () => {
 				</ul>
 
 				<h2 className="text-2xl font-semibold mt-8 mb-4">2. Upholding Ethical Practices</h2>
-				<p className="mb-4">Integrity is at the heart of Sheepy. We are committed to maintaining transparency, privacy, and fairness in all our operations. Our promises include:</p>
+				<p className="mb-4">Integrity is at the heart of Make It. We are committed to maintaining transparency, privacy, and fairness in all our operations. Our promises include:</p>
 				<ul className="list-disc list-inside mb-4">
 					<li className="mb-2">Respecting user privacy and never selling data to third parties.</li>
 					<li className="mb-2">Providing clear and fair terms of use and privacy policies.</li>
@@ -26,7 +26,7 @@ const OurChartPage = () => {
 				</ul>
 
 				<h2 className="text-2xl font-semibold mt-8 mb-4">3. Fostering Creativity and Inclusion</h2>
-				<p className="mb-4">We believe that a diverse and inclusive community is essential for innovation. Sheepy is committed to:</p>
+				<p className="mb-4">We believe that a diverse and inclusive community is essential for innovation. Make It is committed to:</p>
 				<ul className="list-disc list-inside mb-4">
 					<li className="mb-2">Supporting arts and education programs, especially in underserved communities.</li>
 					<li className="mb-2">Creating opportunities for mentorship and skills development.</li>

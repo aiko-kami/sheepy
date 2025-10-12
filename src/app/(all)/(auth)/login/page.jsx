@@ -1,7 +1,7 @@
 import LoginMenu from "@/components/Auth/Login/LoginMenu";
 
 export const metadata = {
-	title: "Login - Sheepy",
+	title: "Login - Make It",
 	description: "Login page",
 };
 

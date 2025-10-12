@@ -8,22 +8,32 @@ import { IoArrowForward } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import Modal from "@/components/Modals/Modal";
 import ProjectApplicationModal from "@/components/Modals/ProjectPublic/ProjectApplicationModal";
+import AuthModal from "@/components/Modals/Auth/AuthModal";
 
 import { useAuth } from "@/contexts/AuthContext";
 
 const TalentsNeeded = ({ project }) => {
 	const { user } = useAuth();
 
-	const [modalDisplay, setModalDisplay] = useState(false);
+	const [modalApplyDisplay, setModalApplyDisplay] = useState(false);
+	const [modalAuthDisplay, setModalAuthDisplay] = useState(false);
 	const [selectedRole, setSelectedRole] = useState("");
 
 	const showModal = (role) => {
-		setSelectedRole(role);
-		setModalDisplay(true);
+		if (!user) {
+			setModalAuthDisplay(true);
+		} else {
+			setSelectedRole(role);
+			setModalApplyDisplay(true);
+		}
 	};
 
-	const closeModal = () => {
-		setModalDisplay(false);
+	const closeApplyModal = () => {
+		setModalApplyDisplay(false);
+		setSelectedRole("");
+	};
+	const closeAuthModal = () => {
+		setModalAuthDisplay(false);
 		setSelectedRole("");
 	};
 
@@ -49,8 +59,11 @@ const TalentsNeeded = ({ project }) => {
 						</React.Fragment>
 					))}
 
-					<Modal modalDisplay={modalDisplay} closeModal={closeModal} modalSize={"xl"} modalTitle={"You want to join this project?"}>
-						<ProjectApplicationModal closeModal={closeModal} talentsNeeded={project.talentsNeeded} roleSelected={selectedRole} />
+					<Modal modalDisplay={modalApplyDisplay} closeModal={closeApplyModal} modalSize={"xl"} modalTitle={"You want to join this project?"}>
+						<ProjectApplicationModal closeModal={closeApplyModal} talentsNeeded={project.talentsNeeded} roleSelected={selectedRole} />
+					</Modal>
+					<Modal modalDisplay={modalAuthDisplay} closeModal={closeAuthModal} modalSize={"sm"} modalTitle={"Account required"}>
+						<AuthModal closeModal={closeAuthModal} />
 					</Modal>
 				</div>
 			</div>
