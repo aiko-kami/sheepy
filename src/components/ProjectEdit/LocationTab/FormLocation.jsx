@@ -10,9 +10,9 @@ import { handleFormChange } from "@/utils/formHandlers";
 
 const FormLocation = ({ project }) => {
 	const [formInputs, setFormInputs] = useState({
-		locationOnlineOnly: project.locationOnlineOnly || false,
-		projectLocationCity: project.locationCity || "",
-		projectLocationCountry: project.locationCountry || "",
+		locationOnlineOnly: project.location.onlineOnly || false,
+		projectLocationCity: project.location.city || "",
+		projectLocationCountry: project.location.country || "",
 	});
 
 	const onChange = handleFormChange(setFormInputs);

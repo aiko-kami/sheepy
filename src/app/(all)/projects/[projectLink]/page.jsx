@@ -3,7 +3,7 @@ import OverviewBar from "@/components/ProjectPublic/OverviewBar";
 import ProjectSummary from "@/components/ProjectPublic/ProjectSummary";
 import ProjectDescription from "@/components/ProjectPublic/ProjectDescription";
 import ProjectGoal from "@/components/ProjectPublic/ProjectGoal";
-import ProjectNotFound from "@/components/ProjectPublic/ProjectNotFound";
+import ProjectNotFound from "@/components/Errors/ProjectNotFound";
 import TalentsNeeded from "@/components/ProjectPublic/TalentsNeeded";
 import ProjectTags from "@/components/ProjectPublic/ProjectTags";
 import ProjectMembers from "@/components/ProjectPublic/ProjectMembers";
