@@ -8,6 +8,8 @@ import { Button } from "@/components/Buttons/Buttons";
 import { IoAddCircleOutline, IoCloseCircleOutline } from "react-icons/io5";
 
 const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTagInputChange, tagError, setProjectStartDate }) => {
+	console.log("🚀 ~ StepFive ~ formInputs:", formInputs.projectStartDate);
+
 	const optionsList = [
 		{
 			value: "public",

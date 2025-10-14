@@ -2,8 +2,12 @@ import Link from "next/link";
 import { Status } from "@/components/Badges/Badges";
 
 const SideMenu = ({ project }) => {
-	const { statusInfo, projectId } = project;
-	const status = statusInfo.currentStatus;
+	const status = project?.statusInfo?.currentStatus;
+	const projectId = project?.projectId;
+
+	if (!project || !status) {
+		return <div className="border-2 border-slate-500 bg-slate-300 rounded-2xl py-6 px-4 text-center text-gray-500">No project data available</div>;
+	}
 
 	return (
 		<>

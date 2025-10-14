@@ -1,7 +1,7 @@
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 import { cookies } from "next/headers";
 
-export async function ApiGetEditProjectGetLocation(projectId) {
+export async function ApiGetEditProjectGetLocation(projectLink) {
 	const cookieStore = cookies();
 	const cookieHeader = cookieStore
 		.getAll()
@@ -9,7 +9,47 @@ export async function ApiGetEditProjectGetLocation(projectId) {
 		.join("; ");
 
 	try {
-		const res = await fetch(`${BASE_URL}/projectEdition/location/${projectId}`, {
+		const res = await fetch(`${BASE_URL}/projectEdition/location/${projectLink}`, {
+			method: "get",
+			headers: {
+				Cookie: cookieHeader,
+			},
+			cache: "no-store",
+		});
+
+		// Parse JSON
+		let json = null;
+		try {
+			json = await res.json();
+		} catch {
+			json = null;
+		}
+
+		return {
+			ok: res.ok,
+			status: res.status,
+			data: json?.data?.project || null,
+			message: json?.message || null,
+		};
+	} catch (error) {
+		return {
+			ok: false,
+			status: res.status,
+			data: null,
+			message: error.message || "Unexpected error",
+		};
+	}
+}
+
+export async function ApiGetEditProjectGetStatus(projectLink) {
+	const cookieStore = cookies();
+	const cookieHeader = cookieStore
+		.getAll()
+		.map(({ name, value }) => `${name}=${value}`)
+		.join("; ");
+
+	try {
+		const res = await fetch(`${BASE_URL}/projectEdition/status/${projectLink}`, {
 			method: "get",
 			headers: {
 				Cookie: cookieHeader,

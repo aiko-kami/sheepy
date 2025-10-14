@@ -1,6 +1,6 @@
+import { redirect } from "next/navigation";
 import FormLocation from "@/components/ProjectEdit/LocationTab/FormLocation";
 import ProjectNotFound from "@/components/Errors/ProjectNotFound";
-import AccessDenied from "@/components/Errors/AccessDenied";
 
 import { ApiGetEditProjectGetLocation } from "@/lib/api/projectEditionServer";
 
@@ -16,7 +16,7 @@ const ProjectEditLocationPage = async ({ params }) => {
 
 	if (!result.ok) {
 		if (result.status === 401 || result.status === 403) {
-			return <AccessDenied />;
+			redirect("/access-denied");
 		}
 
 		return <ProjectNotFound message={result.message} />;

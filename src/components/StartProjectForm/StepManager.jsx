@@ -261,10 +261,11 @@ const StepManager = () => {
 			locationCity: formInputs.locationCity,
 			locationOnlineOnly: formInputs.locationOnlineOnly,
 			visibility: formInputs.projectVisibility,
-			startDate: formInputs.projectStartDate ? formInputs.projectStartDate.toUTC().toISO() : "",
+			startDate: formInputs.projectStartDate ? formInputs.projectStartDate.toISODate() : "",
 			tags: formInputs.tags,
 			talentsNeeded: formInputs.talentsNeeded,
 		};
+
 		try {
 			if (formAction === "save-draft" || formAction === "save-draft-modal") {
 				let projectDraft;
