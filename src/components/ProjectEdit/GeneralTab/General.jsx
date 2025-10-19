@@ -4,7 +4,7 @@ import Cover from "@/components/ProjectEdit/GeneralTab/Cover";
 import Tags from "@/components/ProjectEdit/GeneralTab/Tags";
 import Motivation from "@/components/ProjectEdit/GeneralTab/Motivation";
 
-const General = ({ formInputs, setFormInputs, onChange }) => {
+const General = ({ formInputs, setFormInputs, onChange, tagsList }) => {
 	return (
 		<>
 			{/* Project title and category */}
@@ -21,7 +21,7 @@ const General = ({ formInputs, setFormInputs, onChange }) => {
 			</div>
 			{/* Project tags */}
 			<div className="mb-8 lg:mb-10">
-				<Tags formInputs={formInputs} setFormInputs={setFormInputs} />
+				<Tags formInputs={formInputs} setFormInputs={setFormInputs} tagsList={tagsList} />
 			</div>
 			{/* Project creator motivation, objectives, phases */}
 			<div className="mb-8 lg:mb-10">

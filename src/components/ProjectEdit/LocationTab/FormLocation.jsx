@@ -8,11 +8,11 @@ import SideMenu from "@/components/ProjectEdit/SideMenu";
 
 import { handleFormChange } from "@/utils/formHandlers";
 
-const FormLocation = ({ project }) => {
+const FormLocation = ({ projectId, status, statusBgColor, onlineOnly, city, country }) => {
 	const [formInputs, setFormInputs] = useState({
-		locationOnlineOnly: project.location.onlineOnly || false,
-		projectLocationCity: project.location.city || "",
-		projectLocationCountry: project.location.country || "",
+		locationOnlineOnly: onlineOnly || false,
+		projectLocationCity: city || "",
+		projectLocationCountry: country || "",
 	});
 
 	const onChange = handleFormChange(setFormInputs);
@@ -29,7 +29,7 @@ const FormLocation = ({ project }) => {
 				<div className="lg:grid grid-cols-5">
 					<div className="p-2 mb-6">
 						{/* Project Status and links */}
-						<SideMenu project={project} />
+						<SideMenu projectId={projectId} status={status} statusBgColor={statusBgColor} />
 					</div>
 					<div className="col-span-4 lg:px-2 lg:pl-10">
 						{/* Project general information */}

@@ -1,7 +1,7 @@
 import { IoHourglassOutline, IoTime } from "react-icons/io5";
 import StatusHistoryTable from "@/components/Tables/ProjectEdit/StatusHistoryTable";
 
-const StatusHistory = ({ status }) => {
+const StatusHistory = ({ statusHistory }) => {
 	return (
 		<>
 			{/* Project status history */}
@@ -15,9 +15,9 @@ const StatusHistory = ({ status }) => {
 				{/* Project status */}
 				<div className="mb-8">
 					{/* Status history table */}
-					{status.statusHistory && status.statusHistory.length !== 0 ? (
+					{statusHistory && statusHistory.length !== 0 ? (
 						<div className="w-full overflow-x-auto shadow-md sm:rounded-lg">
-							<StatusHistoryTable statusHistory={status.statusHistory} />
+							<StatusHistoryTable statusHistory={statusHistory} />
 						</div>
 					) : (
 						<p className=" text-xl text-center pt-10">

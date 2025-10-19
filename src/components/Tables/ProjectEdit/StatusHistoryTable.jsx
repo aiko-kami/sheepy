@@ -4,8 +4,6 @@ import { Status } from "@/components/Badges/Badges";
 import { DateTime } from "luxon";
 
 const StatusHistoryTable = ({ statusHistory }) => {
-	console.log("🚀 ~ StatusHistoryTable ~ status:", statusHistory);
-
 	return (
 		<>
 			<table className="w-full text-xs md:text-sm shadow-lg">
@@ -36,12 +34,12 @@ const StatusHistoryTable = ({ statusHistory }) => {
 							diffInHours < 1
 								? dt.toRelative({ base: now }) // "23 minutes ago"
 								: `${dt.toFormat("dd LLL yyyy • HH:mm")} (${dt.zoneName})`; // absolute time
-						const statusName = stat.status.status;
-						const statusColor = stat.status.colors.bgColor;
-						const statusReason = stat.reason;
-						const updaterUserId = stat.updatedBy.userId;
-						const updaterUsername = stat.updatedBy.username;
-						const updaterProfilePicture = stat.updatedBy.profilePicture.link;
+						const statusName = stat?.status?.status;
+						const statusColor = stat?.status?.colors?.bgColor;
+						const statusReason = stat?.reason;
+						const updaterUserId = stat?.updatedBy?.userId;
+						const updaterUsername = stat?.updatedBy?.username;
+						const updaterProfilePicture = stat?.updatedBy?.profilePicture?.link;
 
 						return (
 							<tr key={index} className="border-b bg-gray-800 border-gray-700 hover:bg-gray-600">

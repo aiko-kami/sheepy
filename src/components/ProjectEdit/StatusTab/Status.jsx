@@ -2,7 +2,7 @@ import StatusDetails from "@/components/ProjectEdit/StatusTab/StatusDetails";
 import Visibility from "@/components/ProjectEdit/StatusTab/Visibility";
 import StatusHistory from "@/components/ProjectEdit/StatusTab/StatusHistory";
 
-const Status = ({ formInputs, onChange, status }) => {
+const Status = ({ formInputs, onChange, statusHistory }) => {
 	return (
 		<>
 			{/* Project status */}
@@ -14,7 +14,7 @@ const Status = ({ formInputs, onChange, status }) => {
 				<Visibility formInputs={formInputs} onChange={onChange} />
 			</div>
 			{/* Project status history */}
-			<StatusHistory status={status} />
+			<StatusHistory statusHistory={statusHistory} />
 		</>
 	);
 };

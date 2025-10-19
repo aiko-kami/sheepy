@@ -1,11 +1,12 @@
 import { redirect } from "next/navigation";
+
 import FormLocation from "@/components/ProjectEdit/LocationTab/FormLocation";
 import ProjectNotFound from "@/components/Errors/ProjectNotFound";
 
 import { ApiGetEditProjectGetLocation } from "@/lib/api/projectEditionServer";
 
 export const metadata = {
-	title: "Edit project - Make It",
+	title: "Edit project | Make It",
 	description: "Project edition page",
 };
 
@@ -24,13 +25,20 @@ const ProjectEditLocationPage = async ({ params }) => {
 
 	const project = result.data;
 
+	const projectId = project?.projectId;
+	const status = project?.statusInfo?.currentStatus.status;
+	const statusBgColor = project?.statusInfo?.currentStatus.colors.bgColor;
+	const onlineOnly = project?.location?.onlineOnly;
+	const city = project?.location?.city;
+	const country = project?.location?.country;
+
 	if (!project) {
 		return <ProjectNotFound />;
 	}
 
 	return (
 		<div className="container mx-auto hyphens-auto">
-			<FormLocation project={project} />
+			<FormLocation projectId={projectId} status={status} statusBgColor={statusBgColor} onlineOnly={onlineOnly} city={city} country={country} />
 		</div>
 	);
 };

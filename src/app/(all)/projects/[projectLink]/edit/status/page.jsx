@@ -6,7 +6,7 @@ import ProjectNotFound from "@/components/Errors/ProjectNotFound";
 import { ApiGetEditProjectGetStatus } from "@/lib/api/projectEditionServer";
 
 export const metadata = {
-	title: "Edit project - Make It",
+	title: "Edit project | Make It",
 	description: "Project edition page",
 };
 
@@ -25,13 +25,20 @@ const ProjectEditStatusPage = async ({ params }) => {
 
 	const project = result.data;
 
+	const projectId = project?.projectId;
+	const status = project?.statusInfo?.currentStatus.status;
+	const statusBgColor = project?.statusInfo?.currentStatus.colors.bgColor;
+	const statusHistory = project?.statusInfo?.statusHistory;
+	const visibility = project?.visibility;
+	const startDate = project?.startDate;
+
 	if (!project) {
 		return <ProjectNotFound />;
 	}
 
 	return (
 		<div className="container mx-auto hyphens-auto">
-			<FormStatus project={project} />
+			<FormStatus projectId={projectId} status={status} statusBgColor={statusBgColor} statusHistory={statusHistory} visibility={visibility} startDate={startDate} />
 		</div>
 	);
 };
