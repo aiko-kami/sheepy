@@ -3,8 +3,7 @@ import { IoLocationOutline, IoGlobeOutline, IoHeartOutline, IoHeart, IoFitness }
 import ActionButtons from "@/components/ProjectPublic/ActionButtons";
 import { Badge, BadgeRounded } from "@/components/Badges/Badges";
 
-const OverviewBar = ({ project }) => {
-	const statusColorClass = project.statusInfo?.currentStatus?.colors?.colorBase;
+const OverviewBar = ({ category, subCategoryDetails, location, likes, status, statusColorClass, projectLink, talentsNeeded }) => {
 	const colorClassStatus = statusColorClass && !statusColorClass.startsWith("#") ? `text-${statusColorClass}` : "text-gray-400";
 
 	return (
@@ -13,17 +12,17 @@ const OverviewBar = ({ project }) => {
 			<ul className="sm:flex sm:mb-8 lg:px-2 grid grid-cols-2 items-center text-sm">
 				{/* Project sub-category */}
 				<li className="flex mb-2 sm:mb-0 justify-center" title="Project category">
-					<Badge badge={project.category} size={"sm"} />
+					<Badge badge={category} size={"sm"} />
 				</li>
 
 				{/* Project sub-category */}
 				<li className="flex mb-2 sm:mb-0 sm:ml-4 justify-center" title="Project sub-category">
-					<BadgeRounded badge={project.subCategoryDetails} size={"sm"} />
+					<BadgeRounded badge={subCategoryDetails} size={"sm"} />
 				</li>
 
 				{/* Project location */}
 				<li className="flex mb-2 sm:mb-0 sm:ml-4 col-span-2 justify-center items-center">
-					{project.location.onlineOnly ? (
+					{location.onlineOnly ? (
 						<>
 							<IoGlobeOutline className="text-blue-500 mr-1 text-xl" title="Online project" />
 							<p className="font-medium">Online only</p>
@@ -32,9 +31,9 @@ const OverviewBar = ({ project }) => {
 						<>
 							<IoLocationOutline className="text-gray-400 mr-1 text-xl" title="Project location" />
 							<p className="font-semibold">
-								{project.location.city && project.location.country
-									? `${project.location.city}, ${project.location.country}`
-									: project.location.city || project.location.country || <span className="italic text-gray-400">Location not specified</span>}
+								{location.city && location.country
+									? `${location.city}, ${location.country}`
+									: location.city || location.country || <span className="italic text-gray-400">Location not specified</span>}
 							</p>
 						</>
 					)}
@@ -47,18 +46,18 @@ const OverviewBar = ({ project }) => {
 						{/* Filled on hover */}
 						<IoHeart className="text-pink-600 hidden group-hover:block" />
 					</button>
-					<p>{project.likes} likes</p>
+					<p>{likes} likes</p>
 				</li>
 
 				{/* Project status */}
 				<li className="flex sm:ml-4">
 					<IoFitness className={`${colorClassStatus} mr-1 text-xl justify-center`} title="Project status" />
-					<p className={`${colorClassStatus} font-semibold`}>{project.statusInfo.currentStatus.status}</p>
+					<p className={`${colorClassStatus} font-semibold`}>{status}</p>
 				</li>
 
 				{/* Buttons Join project, Like and Share */}
 				<li className="flex ml-auto">
-					<ActionButtons project={project} />
+					<ActionButtons projectLink={projectLink} talentsNeeded={talentsNeeded} />
 				</li>
 			</ul>
 		</>

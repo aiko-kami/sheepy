@@ -8,9 +8,7 @@ import Modal from "@/components/Modals/Modal";
 import ProjectApplicationModal from "@/components/Modals/ProjectPublic/ProjectApplicationModal";
 import { Button } from "@/components/Buttons/Buttons";
 
-const ActionButtons = ({ project }) => {
-	console.log("🚀 ~ ActionButtons ~ project:", project);
-
+const ActionButtons = ({ projectLink, talentsNeeded }) => {
 	const [modalDisplay, setModalDisplay] = useState(false);
 
 	const showModal = () => {
@@ -32,7 +30,7 @@ const ActionButtons = ({ project }) => {
 					</Button>
 				</div>
 				<div className="">
-					<Link href={`/projects/${project.link}/edit/general`}>
+					<Link href={`/projects/${projectLink}/edit/general`}>
 						<Button btnProps={{ btnSize: "std", type: "button", btnColor: "green" }}>
 							<div className="flex items-center">
 								Edit project <IoBuild className="text-2xl ml-2 mt-0.5" />
@@ -42,7 +40,7 @@ const ActionButtons = ({ project }) => {
 				</div>
 			</div>
 			<Modal modalDisplay={modalDisplay} closeModal={closeModal} modalSize={"xl"} modalTitle={"You want to join this project?"}>
-				<ProjectApplicationModal closeModal={closeModal} talentsNeeded={project.talentsNeeded} />
+				<ProjectApplicationModal closeModal={closeModal} talentsNeeded={talentsNeeded} />
 			</Modal>
 		</>
 	);

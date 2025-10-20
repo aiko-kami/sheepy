@@ -2,7 +2,7 @@ import { BadgeRounded } from "@/components/Badges/Badges";
 
 const ProjectTags = ({ tags }) => {
 	tags = (tags || []).map((tag) => ({
-		name: tag,
+		name: tag.name,
 		colors: {
 			colorBase: "gray-700",
 			bgColor: "bg-gray-100",

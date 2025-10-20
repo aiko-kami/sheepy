@@ -11,26 +11,26 @@ import QAs from "@/components/ProjectPublic/QAs";
 import Comments from "@/components/ProjectPublic/Comments";
 import Notification from "@/components/Badges/Notification";
 
-const StepsQAComments = ({ project }) => {
+const StepsQAComments = ({ projectCount, steps, qnas, comments }) => {
 	const [activeTab, setActiveTab] = useState("tabSteps");
 
 	const tabData = [
 		{
 			id: "tabSteps",
 			label: "Steps",
-			count: project.stepsCount || 0,
+			count: projectCount.stepsCount || 0,
 			icon: IoExtensionPuzzleOutline,
 		},
 		{
 			id: "tabQAs",
 			label: "Q&A",
-			count: project.qnasCount || 0,
+			count: projectCount.qnasCount || 0,
 			icon: IoHelpCircleOutline,
 		},
 		{
 			id: "tabComments",
 			label: "Comments",
-			count: project.commentsCount || 0,
+			count: projectCount.commentsCount || 0,
 			icon: IoChatboxEllipsesOutline,
 		},
 	];
@@ -67,13 +67,13 @@ const StepsQAComments = ({ project }) => {
 			{/* Tabs content */}
 			<div id="defaultTabContent" className="lg:px-8">
 				<TabContent id="tabSteps" activeTab={activeTab}>
-					<Steps steps={project.steps?.stepsList} />
+					<Steps steps={steps?.stepsList} />
 				</TabContent>
 				<TabContent id="tabQAs" activeTab={activeTab}>
-					<QAs qnas={project.qnas?.qnasList} />
+					<QAs qnas={qnas?.qnasList} />
 				</TabContent>
 				<TabContent id="tabComments" activeTab={activeTab}>
-					<Comments comments={project.comments} />
+					<Comments comments={comments} />
 				</TabContent>
 			</div>
 		</>

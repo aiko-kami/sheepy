@@ -18,13 +18,14 @@ export function normalizeProjectData(projectData) {
 	const qasList = projectData.QAs && Array.isArray(projectData.QAs.QAsList) ? projectData.QAs.QAsList : [];
 	const qnasCount = qasList.length;
 
+	const projectCount = { stepsCount, qnasCount };
+
 	const talentProfilePicture = "https://p7.hiclipart.com/preview/355/848/997/computer-icons-user-profile-google-account-photos-icon-account.jpg";
 
 	return {
 		...projectData,
 		owner,
-		stepsCount,
-		qnasCount,
+		projectCount,
 		talentProfilePicture,
 		category: {
 			...projectData.category,

@@ -92,8 +92,10 @@ export async function ApiGetProjectPublicDataById(projectId) {
 }
 
 export async function ApiGetProjectPublicDataByLink(projectLink) {
+	let res = null;
+
 	try {
-		const res = await fetch(`${BASE_URL}/projects/projectPublic/link/${projectLink}`, {
+		res = await fetch(`${BASE_URL}/projects/projectPublic/link/${projectLink}`, {
 			method: "get",
 			credentials: "include",
 			headers: {
@@ -101,17 +103,40 @@ export async function ApiGetProjectPublicDataByLink(projectLink) {
 			},
 			cache: "no-store",
 		});
-		const json = await res.json();
-
-		if (!res.ok) {
-			// Try to read backend error message if available
-			const errorMessage = json?.message || "Failed to retrive project";
-			throw new Error(errorMessage);
-		}
-		return json.data.project;
 	} catch (error) {
-		throw error;
+		// Fetch failed (network error, aborted, DNS, etc.) — res is null here
+		return {
+			ok: false,
+			status: 520, // arbitrary, "unknown error"
+			data: null,
+			message: error?.message || "Network or fetch error",
+		};
 	}
+
+	// Parse JSON
+	let json = null;
+
+	try {
+		// Vérifier le content-type peut éviter des erreurs de parsing
+		const contentType = res.headers.get("content-type") || "";
+		if (contentType.includes("application/json")) {
+			json = await res.json();
+		} else {
+			// Si ce n'est pas du JSON, lire le texte (utile pour debug)
+			const text = await res.text();
+			json = { message: text };
+		}
+	} catch (parseError) {
+		// JSON parse failed — on continue mais on garde res.status
+		json = null;
+	}
+
+	return {
+		ok: res.ok,
+		status: res.status ?? 520,
+		data: json?.data ?? null,
+		message: json?.message ?? (res.ok ? null : "Unexpected response"),
+	};
 }
 
 /* 

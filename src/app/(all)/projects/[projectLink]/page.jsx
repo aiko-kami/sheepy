@@ -2,6 +2,7 @@ import Cover from "@/components/ProjectPublic/Cover";
 import OverviewBar from "@/components/ProjectPublic/OverviewBar";
 import ProjectSummary from "@/components/ProjectPublic/ProjectSummary";
 import ProjectDescription from "@/components/ProjectPublic/ProjectDescription";
+import ProjectCreatorMotivation from "@/components/ProjectPublic/ProjectCreatorMotivation";
 import ProjectGoal from "@/components/ProjectPublic/ProjectGoal";
 import ProjectNotFound from "@/components/Errors/ProjectNotFound";
 import TalentsNeeded from "@/components/ProjectPublic/TalentsNeeded";
@@ -21,58 +22,87 @@ export const metadata = {
 const ProjectPublicPage = async ({ params }) => {
 	const { projectLink } = params;
 
-	let project;
-
-	try {
-		const rawProject = await ApiGetProjectPublicDataByLink(projectLink);
-		project = normalizeProjectData(rawProject);
-	} catch (err) {
-		console.error("Failed to load project:", err);
-		return (
-			<>
-				<ProjectNotFound />
-			</>
-		);
+	const result = await ApiGetProjectPublicDataByLink(projectLink);
+	if (!result.ok) {
+		return <ProjectNotFound message={result.message} />;
 	}
 
+	const project = normalizeProjectData(result.data.project);
 	if (!project) {
 		return <ProjectNotFound />;
 	}
 
+	const projectId = project.projectId;
+	const status = project.statusInfo?.currentStatus.status;
+	const statusColorClass = project.statusInfo?.currentStatus.colors.bgColor;
+	const title = project.title;
+	const owner = project.owner;
+	const { userId: ownerUserId, username: ownerUsername, profilePicture: ownerProfilePicture } = owner;
+	const coverLink = project.cover.link;
+	const category = project.category;
+	const subCategoryDetails = project.subCategoryDetails;
+	const location = project.location;
+	const likes = project.likes;
+	const talentsNeeded = project.talentsNeeded;
+	const talentProfilePicture = project.talentProfilePicture;
+	const summary = project.summary;
+	const goal = project.goal;
+	const members = project.members;
+	const description = project.description;
+	const tags = project.tags;
+	const similarProjects = project.similarProjects;
+	const projectCount = project.projectCount;
+	const steps = project.steps;
+	const qnas = project.qnas;
+	const comments = project.comments;
+	const creatorMotivation = project.creatorMotivation;
+	const objectives = project.objectives;
+
 	return (
 		<div className="container mx-auto py-8 hyphens-auto">
 			{/* Project cover with title and creator */}
-			<Cover project={project} />
+			<Cover title={title} coverLink={coverLink} ownerUserId={ownerUserId} ownerUsername={ownerUsername} ownerProfilePicture={ownerProfilePicture} />
 			{/* List with category, location, likes and project status */}
-			<OverviewBar project={project} />
+			<OverviewBar
+				category={category}
+				subCategoryDetails={subCategoryDetails}
+				statusColorClass={statusColorClass}
+				location={location}
+				likes={likes}
+				status={status}
+				projectLink={projectLink}
+				talentsNeeded={talentsNeeded}
+			/>
 			{/* Summary */}
-			<ProjectSummary summary={project.summary} />
-
+			<ProjectSummary summary={summary} />
 			<div className="sm:grid sm:grid-cols-3 mb-4 sm:mb-12">
 				<div className="sm:col-start-3 order-1 sm:order-2">
 					{/* Goal */}
-					<ProjectGoal goal={project.goal} />
+					<ProjectGoal goal={goal} />
+
+					{/* Creator motivation */}
+					<ProjectCreatorMotivation creatorMotivation={creatorMotivation} />
 
 					{/* Talents needed */}
-					<TalentsNeeded project={project} />
+					<TalentsNeeded talentsNeeded={talentsNeeded} talentProfilePicture={talentProfilePicture} />
 
 					{/* Tags */}
-					<ProjectTags tags={project.tags} />
+					<ProjectTags tags={tags} />
 
 					{/* Members */}
-					<ProjectMembers members={project.members} />
+					<ProjectMembers members={members} />
 				</div>
 				<div className="sm:col-span-2 sm:order-1 order-2 mb-4 sm:mb-0">
 					{/* Project description */}
-					<ProjectDescription description={project.description} />
+					<ProjectDescription description={description} />
 				</div>
 			</div>
 			{/* Q&A and comments */}
 			<div className="mb-4 sm:mb-12">
-				<StepsQAComments project={project} />
+				<StepsQAComments projectCount={projectCount} steps={steps} qnas={qnas} comments={comments} />
 			</div>
 			<div className="mb-4">
-				<SimilarProjects projects={project.similarProjects} />
+				<SimilarProjects similarProjects={similarProjects} />
 			</div>
 		</div>
 	);
