@@ -50,6 +50,7 @@ const ProjectEditGeneralPage = async ({ params }) => {
 			<FormGeneral
 				project={project}
 				projectId={projectId}
+				projectLink={projectLink}
 				status={status}
 				statusBgColor={statusBgColor}
 				title={title}

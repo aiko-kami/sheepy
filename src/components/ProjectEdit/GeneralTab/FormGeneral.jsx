@@ -7,7 +7,7 @@ import SideMenu from "@/components/ProjectEdit/SideMenu";
 
 import { handleFormChange } from "@/utils/formHandlers";
 
-const FormGeneral = ({ projectId, status, statusBgColor, title, category, subCategory, goal, summary, description, cover, tags, tagsList, creatorMotivation, objectives }) => {
+const FormGeneral = ({ projectId, projectLink, status, statusBgColor, title, category, subCategory, goal, summary, description, cover, tags, tagsList, creatorMotivation, objectives }) => {
 	const [formInputs, setFormInputs] = useState({
 		projectTitle: title || "",
 		projectCategory: category.name || "",
@@ -18,7 +18,8 @@ const FormGeneral = ({ projectId, status, statusBgColor, title, category, subCat
 		projectCover: cover || "",
 		creatorMotivation: creatorMotivation || "",
 		projectObjectives: objectives || "",
-		projectTags: tags || [],
+		projectTagsExisting: tags || [],
+		projectTagsNew: [],
 	});
 
 	const onChange = handleFormChange(setFormInputs);
@@ -36,7 +37,7 @@ const FormGeneral = ({ projectId, status, statusBgColor, title, category, subCat
 				<div className="lg:grid grid-cols-5">
 					<div className="p-2 mb-6">
 						{/* Project Status and links */}
-						<SideMenu projectId={projectId} status={status} statusBgColor={statusBgColor} />
+						<SideMenu projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} />
 					</div>
 					<div className="col-span-4 lg:px-2 lg:pl-10">
 						{/* Project general information */}

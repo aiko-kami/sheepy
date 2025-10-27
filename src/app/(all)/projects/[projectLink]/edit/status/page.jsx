@@ -38,7 +38,7 @@ const ProjectEditStatusPage = async ({ params }) => {
 
 	return (
 		<div className="container mx-auto hyphens-auto">
-			<FormStatus projectId={projectId} status={status} statusBgColor={statusBgColor} statusHistory={statusHistory} visibility={visibility} startDate={startDate} />
+			<FormStatus projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} statusHistory={statusHistory} visibility={visibility} startDate={startDate} />
 		</div>
 	);
 };

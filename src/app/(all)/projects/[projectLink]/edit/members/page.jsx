@@ -8,10 +8,12 @@ export const metadata = {
 	description: "Project edition page",
 };
 
-const ProjectEditMembersPage = () => {
+const ProjectEditMembersPage = ({ params }) => {
+	const { projectLink } = params;
+
 	return (
 		<div className="container mx-auto hyphens-auto">
-			<FormMembers project={project} user={user} />
+			<FormMembers project={project} user={user} projectLink={projectLink} />
 		</div>
 	);
 };

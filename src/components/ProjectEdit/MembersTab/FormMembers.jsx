@@ -4,13 +4,13 @@ import { useState } from "react";
 import Members from "@/components/ProjectEdit/MembersTab/Members";
 import SideMenu from "@/components/ProjectEdit/SideMenu";
 
-const FormMembers = ({ project, user }) => {
+const FormMembers = ({ project, user, projectLink }) => {
 	return (
 		<>
 			<div className="lg:grid grid-cols-5">
 				<div className="p-2 mb-6">
 					{/* Project Status and links */}
-					<SideMenu project={project} />
+					<SideMenu project={project} projectLink={projectLink} />
 				</div>
 				<div className="col-span-4 lg:px-2 lg:pl-10">
 					{/* Project members information */}

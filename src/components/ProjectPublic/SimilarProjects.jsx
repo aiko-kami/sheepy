@@ -1,15 +1,18 @@
-import { ProjectHorizontalCard } from "@/components/Cards/Projects/ProjectCards";
+import { ProjectCard } from "@/components/Cards/Projects/ProjectCards";
+import project from "@/mock/project.json";
 
-const SimilarProjects = ({ similarProjects }) => {
+const similarProjects = project.similarProjects;
+
+const SimilarProjects = ({}) => {
 	return (
 		<>
 			<h2 className="font-semibold text-3xl mb-3">Check out similar projects</h2>
 			<hr className="h-px mb-6 bg-gray-200 border-0 dark:bg-gray-700" />
 			{similarProjects && similarProjects.length !== 0 ? (
-				<ul className="grid sm:grid-cols-2 gap-4">
+				<ul className="grid sm:grid-cols-5 gap-4">
 					{similarProjects.map((project, index) => (
 						<li key={index}>
-							<ProjectHorizontalCard project={project} animate={true} />
+							<ProjectCard project={project} animate={true} />
 						</li>
 					))}
 				</ul>

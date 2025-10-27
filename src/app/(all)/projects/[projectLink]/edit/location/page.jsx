@@ -38,7 +38,7 @@ const ProjectEditLocationPage = async ({ params }) => {
 
 	return (
 		<div className="container mx-auto hyphens-auto">
-			<FormLocation projectId={projectId} status={status} statusBgColor={statusBgColor} onlineOnly={onlineOnly} city={city} country={country} />
+			<FormLocation projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} onlineOnly={onlineOnly} city={city} country={country} />
 		</div>
 	);
 };

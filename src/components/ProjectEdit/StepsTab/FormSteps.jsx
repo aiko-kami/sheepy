@@ -6,7 +6,7 @@ import { Button } from "@/components/Buttons/Buttons";
 import Steps from "@/components/ProjectEdit/StepsTab/Steps";
 import SideMenu from "@/components/ProjectEdit/SideMenu";
 
-const FormSteps = ({ project }) => {
+const FormSteps = ({ project, projectLink }) => {
 	const [formInputs, setFormInputs] = useState({
 		projectId: project.projectId,
 		updatedBy: project.steps.updatedBy,
@@ -48,7 +48,7 @@ const FormSteps = ({ project }) => {
 				<div className="lg:grid grid-cols-5">
 					<div className="p-2 mb-6">
 						{/* Project Status and links */}
-						<SideMenu project={project} />
+						<SideMenu project={project} projectLink={projectLink} />
 					</div>
 					<div className="col-span-4 lg:px-2 lg:pl-10">
 						{/* Project steps information */}
