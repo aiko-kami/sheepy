@@ -9,14 +9,14 @@ const Cover = ({ title, coverLink, ownerUserId, ownerUsername, ownerProfilePictu
 		<>
 			<div className="relative mb-3">
 				{/* Project cover */}
-				<Image src={coverLink} className="w-full h-110 object-cover rounded-xl" alt="Project cover" width={0} height={0} sizes="100vw" />
+				<Image src={coverLink} className="w-full h-60 md:h-110 object-cover rounded-xl" alt="Project cover" width={0} height={0} sizes="100vw" />
 
 				{/* Transparent veil on the cover */}
 				<div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 to-transparent rounded-xl" />
 
 				<div className="absolute bottom-4 left-4 flex flex-col">
 					{/* Title */}
-					<h1 className="text-5xl sm:text-6xl font-semibold mb-5">{title}</h1>
+					<h1 className="text-4xl md:text-6xl font-semibold mb-5">{title}</h1>
 
 					{/* Creator */}
 					<div className="text-lg flex items-center ml-2">

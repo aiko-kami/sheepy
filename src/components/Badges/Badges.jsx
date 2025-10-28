@@ -15,6 +15,9 @@ const Badge = ({ badge, size, clickable = true }) => {
 		case "xl":
 			textSizeClass = "text-lg";
 			break;
+		case "xs-sm":
+			textSizeClass = "text-xs md:text-sm";
+			break;
 		default:
 			textSizeClass = "text-base";
 	}
@@ -54,6 +57,9 @@ const BadgeRounded = ({ badge, size, clickable = true }) => {
 			break;
 		case "xl":
 			textSizeClass = "text-lg";
+			break;
+		case "xs-sm":
+			textSizeClass = "text-xs md:text-sm";
 			break;
 		default:
 			textSizeClass = "text-base";
@@ -95,6 +101,9 @@ const Status = ({ name, size, rounded, bgColor }) => {
 			break;
 		case "xl":
 			textSizeClass = "text-lg";
+			break;
+		case "xs-sm":
+			textSizeClass = "text-xs md:text-sm";
 			break;
 		default:
 			textSizeClass = "text-base";

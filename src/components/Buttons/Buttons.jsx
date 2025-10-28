@@ -26,6 +26,9 @@ const Button = ({ children, btnProps }) => {
 		case "lg":
 			size = "text-lg px-12 py-4 font-semibold";
 			break;
+		case "sm-std":
+			size = "text-sm font-medium px-3 py-2 md:text-base md:px-4";
+			break;
 		default:
 			size = "text-base px-4 py-2";
 	}
