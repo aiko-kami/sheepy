@@ -6,13 +6,13 @@ import { Button } from "@/components/Buttons/Buttons";
 import Steps from "@/components/ProjectEdit/StepsTab/Steps";
 import SideMenu from "@/components/ProjectEdit/SideMenu";
 
-const FormSteps = ({ project, projectLink }) => {
+const FormSteps = ({ projectId, projectLink, status, statusBgColor, steps }) => {
 	const [formInputs, setFormInputs] = useState({
-		projectId: project.projectId,
-		updatedBy: project.steps.updatedBy,
-		createdAt: project.steps.createdAt,
-		updatedAt: project.steps.updatedAt,
-		projectSteps: project.steps.stepsList,
+		projectId: projectId,
+		updatedBy: steps.updatedBy,
+		createdAt: steps.createdAt,
+		updatedAt: steps.updatedAt,
+		projectSteps: steps.stepsList,
 	});
 
 	const onChange = (updatedSteps) => {
@@ -48,7 +48,7 @@ const FormSteps = ({ project, projectLink }) => {
 				<div className="lg:grid grid-cols-5">
 					<div className="p-2 mb-6">
 						{/* Project Status and links */}
-						<SideMenu project={project} projectLink={projectLink} />
+						<SideMenu projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} />
 					</div>
 					<div className="col-span-4 lg:px-2 lg:pl-10">
 						{/* Project steps information */}

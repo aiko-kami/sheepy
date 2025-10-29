@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import FormGeneral from "@/components/ProjectEdit/GeneralTab/FormGeneral";
 import ProjectNotFound from "@/components/Errors/ProjectNotFound";
 
-import { ApiGetEditProjectGetGeneral } from "@/lib/api/projectEditionServer";
+import { ApiGetEditProjectGeneral } from "@/lib/api/projectEditionServer";
 
 export const metadata = {
 	title: "Edit project | Make It",
@@ -13,7 +13,7 @@ export const metadata = {
 const ProjectEditGeneralPage = async ({ params }) => {
 	const { projectLink } = params;
 
-	const result = await ApiGetEditProjectGetGeneral(projectLink);
+	const result = await ApiGetEditProjectGeneral(projectLink);
 	if (!result.ok) {
 		if (result.status === 401 || result.status === 403) {
 			redirect("/access-denied");

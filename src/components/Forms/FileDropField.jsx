@@ -16,9 +16,9 @@ const isValidFileSize = (file, maxSize) => {
 	return null;
 };
 
-const FileDropField = ({ setFormInputs, fileTypesAllowed, maxFileSizeAllowed }) => {
+const FileDropField = ({ formInputs, setFormInputs, fileTypesAllowed, maxFileSizeAllowed }) => {
 	const [file, setFile] = useState(null);
-	const [thumbnail, setThumbnail] = useState(null); // To store preview URL for the image file
+	const [thumbnail, setThumbnail] = useState(formInputs.projectCover); // To store preview URL for the image file
 	const [isDragOver, setIsDragOver] = useState(false);
 	const [fileError, setFileError] = useState("");
 

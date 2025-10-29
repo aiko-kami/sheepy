@@ -1,167 +1,129 @@
+// apiHelpers.js
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 import { cookies } from "next/headers";
 
-export async function ApiGetEditProjectGetGeneral(projectLink) {
+/**
+ * Build cookie header from next/headers cookies()
+ */
+function buildCookieHeader() {
 	const cookieStore = cookies();
-	const cookieHeader = cookieStore
+	return cookieStore
 		.getAll()
 		.map(({ name, value }) => `${name}=${value}`)
 		.join("; ");
+}
+
+/**
+ * Generic GET helper that:
+ * - attaches cookies,
+ * - does fetch with no-store,
+ * - safely parses JSON (falls back to text),
+ * - returns a normalized { ok, status, data, message } object.
+ *
+ * mapper: optional fn (json, res) => mappedData (default: json?.data ?? null)
+ */
+async function apiGet(path, mapper = (json, res) => json?.data ?? null) {
+	const url = `${BASE_URL}${path}`;
+	const cookieHeader = buildCookieHeader();
 
 	let res = null;
-
 	try {
-		res = await fetch(`${BASE_URL}/projectEdition/general/${projectLink}`, {
-			method: "get",
+		res = await fetch(url, {
+			method: "GET",
 			headers: {
 				Cookie: cookieHeader,
 			},
 			cache: "no-store",
 		});
 	} catch (error) {
-		// Fetch failed (network error, aborted, DNS, etc.) — res is null here
+		// network / fetch error
 		return {
 			ok: false,
-			status: 520, // arbitrary, "unknown error"
+			status: 520,
 			data: null,
 			message: error?.message || "Network or fetch error",
 		};
 	}
 
-	// Parse JSON
+	// parse response safely
 	let json = null;
-
 	try {
-		// Vérifier le content-type peut éviter des erreurs de parsing
 		const contentType = res.headers.get("content-type") || "";
 		if (contentType.includes("application/json")) {
 			json = await res.json();
 		} else {
-			// Si ce n'est pas du JSON, lire le texte (utile pour debug)
 			const text = await res.text();
 			json = { message: text };
 		}
 	} catch (parseError) {
-		// JSON parse failed — on continue mais on garde res.status
 		json = null;
 	}
 
+	// use mapper to shape the returned data
+	let mapped = null;
+	try {
+		mapped = mapper(json, res);
+	} catch (mapError) {
+		// mapping error should not break caller; return null data and a message
+		return {
+			ok: false,
+			status: res?.status ?? 520,
+			data: null,
+			message: mapError?.message || "Response mapping error",
+		};
+	}
+
 	return {
-		ok: res.ok,
-		status: res.status ?? 520,
-		data: json?.data ?? null,
+		ok: !!res.ok,
+		status: res?.status ?? 520,
+		data: mapped,
 		message: json?.message ?? (res.ok ? null : "Unexpected response"),
 	};
 }
 
-export async function ApiGetEditProjectGetStatus(projectLink) {
-	const cookieStore = cookies();
-	const cookieHeader = cookieStore
-		.getAll()
-		.map(({ name, value }) => `${name}=${value}`)
-		.join("; ");
+/* === Specific wrappers === */
 
-	let res = null;
-
-	try {
-		res = await fetch(`${BASE_URL}/projectEdition/status/${projectLink}`, {
-			method: "get",
-			headers: {
-				Cookie: cookieHeader,
-			},
-			cache: "no-store",
-		});
-
-		// Parse JSON
-		let json = null;
-		try {
-			json = await res?.json();
-		} catch {
-			json = null;
-		}
-
-		return {
-			ok: res.ok,
-			status: res?.status || 520,
-			data: json?.data?.project || null,
-			message: json?.message || null,
-		};
-	} catch (error) {
-		return {
-			ok: false,
-			status: res?.status || 520,
-			data: null,
-			message: error.message || "Unexpected error",
-		};
-	}
+export async function ApiGetEditProjectGeneral(projectLink) {
+	// default mapper returns json.data, which is what you originally used
+	return apiGet(`/projectEdition/general/${projectLink}`, (json) => json?.data ?? null);
 }
 
-export async function ApiGetEditProjectGetLocation(projectLink) {
-	const cookieStore = cookies();
-	const cookieHeader = cookieStore
-		.getAll()
-		.map(({ name, value }) => `${name}=${value}`)
-		.join("; ");
-
-	let res = null;
-
-	try {
-		res = await fetch(`${BASE_URL}/projectEdition/location/${projectLink}`, {
-			method: "get",
-			headers: {
-				Cookie: cookieHeader,
-			},
-			cache: "no-store",
-		});
-
-		// Parse JSON
-		let json = null;
-		try {
-			json = await res?.json();
-		} catch {
-			json = null;
-		}
-
-		return {
-			ok: res.ok,
-			status: res?.status || 520,
-			data: json?.data?.project || null,
-			message: json?.message || null,
-		};
-	} catch (error) {
-		return {
-			ok: false,
-			status: res?.status || 520,
-			data: null,
-			message: error.message || "Unexpected error",
-		};
-	}
+export async function ApiGetEditProjectMembers(projectLink) {
+	// same pattern as status
+	return apiGet(`/projectEdition/members/${projectLink}`, (json) => json?.data?.project ?? null);
 }
 
-/* 
+export async function ApiGetEditProjectRights(projectLink) {
+	// same pattern as status
+	return apiGet(`/projectEdition/rights/${projectLink}`, (json) => json?.data?.project ?? null);
+}
 
-// Project creation
-// createProjectDraft, updateProjectDraft, removeProjectDraft to be completed
-// submitProject to be refactor a bit
-projectRoute.post("/createProjectDraft", verifyAccess, projectController.createProjectDraft);
-projectRoute.patch("/updateProjectDraft/:projectId", verifyAccess, projectController.updateProjectDraft);
-projectRoute.delete("/removeProjectDraft/:projectId", verifyAccess, projectController.removeProjectDraft);
-projectRoute.post("/submitProject", verifyAccess, projectController.submitProject);
-projectRoute.post("/processProjectApproval", verifyAdminAccess, projectController.processProjectApproval);
+export async function ApiGetEditProjectStatus(projectLink) {
+	// mapper returns json.data.project (matching your previous code)
+	return apiGet(`/projectEdition/status/${projectLink}`, (json) => json?.data?.project ?? null);
+}
 
-// Project update
-projectRoute.patch("/updateProject/:projectId", verifyAccess, projectController.updateProject);
-projectRoute.patch("/updateProjectDraftSection/:projectId", verifyAccess, projectController.updateProjectDraftSection);
+export async function ApiGetEditProjectLocation(projectLink) {
+	// same pattern as status
+	return apiGet(`/projectEdition/location/${projectLink}`, (json) => json?.data?.project ?? null);
+}
 
-// Retrieve project data
-projectRoute.get("/projectData/:projectId", verifyAccess, projectController.retrieveProjectData);
-projectRoute.get("/projectOverview/:projectId", projectController.retrieveProjectOverview);
-projectRoute.get("/projectPublic/:projectId", projectController.retrieveProjectPublicData);
-projectRoute.get("/lastProjectsOverview", projectController.retrieveNewProjects);
-projectRoute.get("/submittedProjects", verifyAdminAccess, projectController.retrieveSubmittedProjects);
+export async function ApiGetEditProjectAttachments(projectLink) {
+	// same pattern as status
+	return apiGet(`/projectEdition/attachments/${projectLink}`, (json) => json?.data?.project ?? null);
+}
 
-// Count projects
-projectRoute.get("/nbProjects", projectController.countProjects);
-projectRoute.get("/nbProjectsPerCategory", projectController.countProjectsPerCategory);
+export async function ApiGetEditProjectSteps(projectLink) {
+	// same pattern as status
+	return apiGet(`/projectEdition/steps/${projectLink}`, (json) => json?.data?.project ?? null);
+}
 
- */
+export async function ApiGetEditProjectQAs(projectLink) {
+	// same pattern as status
+	return apiGet(`/projectEdition/QAs/${projectLink}`, (json) => json?.data?.project ?? null);
+}
+
+export async function ApiGetEditProjectDetails(projectLink) {
+	// same pattern as status
+	return apiGet(`/projectEdition/details/${projectLink}`, (json) => json?.data?.project ?? null);
+}

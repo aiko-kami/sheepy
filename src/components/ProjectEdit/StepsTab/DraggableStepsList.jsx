@@ -14,7 +14,7 @@ const DraggableStepsList = ({ formInputs, onChange }) => {
 				id: `${index + 1}`,
 				title: step.title,
 				details: step.details,
-				status: step.status,
+				status: step.status.status,
 				published: step.published,
 			}));
 			setItems(transformedItems);

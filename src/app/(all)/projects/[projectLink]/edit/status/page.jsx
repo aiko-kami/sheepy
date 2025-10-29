@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import FormStatus from "@/components/ProjectEdit/StatusTab/FormStatus";
 import ProjectNotFound from "@/components/Errors/ProjectNotFound";
 
-import { ApiGetEditProjectGetStatus } from "@/lib/api/projectEditionServer";
+import { ApiGetEditProjectStatus } from "@/lib/api/projectEditionServer";
 
 export const metadata = {
 	title: "Edit project | Make It",
@@ -13,8 +13,7 @@ export const metadata = {
 const ProjectEditStatusPage = async ({ params }) => {
 	const { projectLink } = params;
 
-	const result = await ApiGetEditProjectGetStatus(projectLink);
-
+	const result = await ApiGetEditProjectStatus(projectLink);
 	if (!result.ok) {
 		if (result.status === 401 || result.status === 403) {
 			redirect("/access-denied");

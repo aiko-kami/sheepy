@@ -17,7 +17,7 @@ const General = ({ formInputs, setFormInputs, onChange, tagsList }) => {
 			</div>
 			{/* Project cover */}
 			<div className="mb-8 lg:mb-10">
-				<Cover setFormInputs={setFormInputs} />
+				<Cover formInputs={formInputs} setFormInputs={setFormInputs} />
 			</div>
 			{/* Project tags */}
 			<div className="mb-8 lg:mb-10">

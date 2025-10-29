@@ -15,7 +15,7 @@ const FormGeneral = ({ projectId, projectLink, status, statusBgColor, title, cat
 		projectSummary: summary || "",
 		projectDescription: description || "",
 		projectGoal: goal || "",
-		projectCover: cover || "",
+		projectCover: cover.link || "",
 		creatorMotivation: creatorMotivation || "",
 		projectObjectives: objectives || "",
 		projectTagsExisting: tags || [],

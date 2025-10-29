@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FaExclamationTriangle } from "react-icons/fa";
 
-const ProjectNotFound = () => {
+const ProjectNotFound = ({ message }) => {
 	return (
 		<>
 			<main className="relative my-auto mx-2 md:mx-10 lg:mx-36">
@@ -14,6 +14,7 @@ const ProjectNotFound = () => {
 							<div className="text-center">
 								<h1 className="text-3xl font-bold mt-4 mb-2">404 - Project Not Found</h1>
 								<p className="text-gray-500 text-xl mb-10">Sorry, we couldn&apos;t find the project you are looking for... 😥</p>
+								<p className="text-gray-500 text-xl mb-10">{message}</p>
 
 								<div className="flex justify-center gap-6">
 									<Link href="/" className="bg-blue-800 hover:bg-blue-900 text-white font-bold py-4 px-6 rounded">

@@ -2,7 +2,7 @@ import { IoImages } from "react-icons/io5";
 import { FileDropField } from "@/components/Forms/FileDropField";
 import { Button } from "@/components/Buttons/Buttons";
 
-const Cover = ({ setFormInputs }) => {
+const Cover = ({ formInputs, setFormInputs }) => {
 	const fileTypesAllowed = {
 		"image/png": ".png",
 		"image/jpeg": ".jpg",
@@ -21,7 +21,7 @@ const Cover = ({ setFormInputs }) => {
 			<div className="md:pl-4">
 				{/* Project cover */}
 				<div className="mb-8">
-					<FileDropField setFormInputs={setFormInputs} fileTypesAllowed={fileTypesAllowed} maxFileSizeAllowed={maxFileSizeAllowed} />
+					<FileDropField formInputs={formInputs} setFormInputs={setFormInputs} fileTypesAllowed={fileTypesAllowed} maxFileSizeAllowed={maxFileSizeAllowed} />
 				</div>
 				<div className="flex justify-center">
 					<Button

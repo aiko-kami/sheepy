@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import FormLocation from "@/components/ProjectEdit/LocationTab/FormLocation";
 import ProjectNotFound from "@/components/Errors/ProjectNotFound";
 
-import { ApiGetEditProjectGetLocation } from "@/lib/api/projectEditionServer";
+import { ApiGetEditProjectLocation } from "@/lib/api/projectEditionServer";
 
 export const metadata = {
 	title: "Edit project | Make It",
@@ -13,7 +13,7 @@ export const metadata = {
 const ProjectEditLocationPage = async ({ params }) => {
 	const { projectLink } = params;
 
-	const result = await ApiGetEditProjectGetLocation(projectLink);
+	const result = await ApiGetEditProjectLocation(projectLink);
 
 	if (!result.ok) {
 		if (result.status === 401 || result.status === 403) {
