@@ -1,10 +1,29 @@
 import Link from "next/link";
 import Image from "next/image";
 import { IoChatbubblesSharp, IoAddOutline } from "react-icons/io5";
+import { DateTime } from "luxon";
+
 import DraggableQnasList from "@/components/ProjectEdit/QandAsTab/DraggableQnasList";
 import { Button } from "@/components/Buttons/Buttons";
 
 const QandAsDetails = ({ formInputs, onChange, addQna }) => {
+	const dt = DateTime.fromISO(formInputs.updatedAt).toLocal();
+	const now = DateTime.local();
+
+	const diffInHours = now.diff(dt, "hours").hours;
+
+	const isToday = dt.hasSame(now, "day");
+	const isYesterday = dt.hasSame(now.minus({ days: 1 }), "day");
+
+	const dateTime =
+		diffInHours < 1
+			? dt.toRelative({ base: now })
+			: isToday
+			? `Today • ${dt.toFormat("HH:mm")}`
+			: isYesterday
+			? `Yesterday • ${dt.toFormat("HH:mm")}`
+			: `${dt.toFormat("dd LLL yyyy • HH:mm")} (${dt.zoneName})`;
+
 	return (
 		<>
 			{/* Project Q&As */}
@@ -21,16 +40,23 @@ const QandAsDetails = ({ formInputs, onChange, addQna }) => {
 						<>
 							<div className="mb-4 flex items-center justify-end italic text-sm">
 								<span className="mr-2">Last update by</span>
-								<span className="flex items-center mr-2">
+								<span className="flex items-center mr-1">
 									<Link href={`/users/${formInputs.updatedBy.userId}`}>
-										<Image src={formInputs.updatedBy.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-9 h-9 rounded-full shadow-md mr-1" />
+										<Image
+											src={formInputs.updatedBy.profilePicture.link}
+											height={0}
+											width={0}
+											sizes="100vw"
+											alt="User profile picture"
+											className="object-cover min-w-9 h-9 rounded-full shadow-md mr-1"
+										/>
 									</Link>
-									<div className="lg:whitespace-nowrap">
+									<div className="lg:whitespace-nowrap font-semibold">
 										<Link href={`/users/${formInputs.updatedBy.userId}`}>{formInputs.updatedBy.username}</Link>
 									</div>
 									,
 								</span>
-								{formInputs.updatedAt}
+								{dateTime}
 							</div>
 						</>
 					)}

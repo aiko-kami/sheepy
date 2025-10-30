@@ -1,17 +1,18 @@
 "use client";
 
 import { useState } from "react";
+
 import { Button } from "@/components/Buttons/Buttons";
 import QandAs from "@/components/ProjectEdit/QandAsTab/QandAs";
 import SideMenu from "@/components/ProjectEdit/SideMenu";
 
-const FormQandAs = ({ project, projectLink }) => {
+const FormQandAs = ({ projectId, projectLink, status, statusBgColor, QAs }) => {
 	const [formInputs, setFormInputs] = useState({
-		projectId: project.projectId,
-		updatedBy: project.qnas.updatedBy,
-		createdAt: project.qnas.createdAt,
-		updatedAt: project.qnas.updatedAt,
-		projectQnas: project.qnas.qnasList,
+		projectId: projectId,
+		updatedBy: QAs.updatedBy,
+		createdAt: QAs.createdAt,
+		updatedAt: QAs.updatedAt,
+		projectQnas: QAs.QAsList,
 	});
 
 	const onChange = (updatedQnas) => {
@@ -46,7 +47,7 @@ const FormQandAs = ({ project, projectLink }) => {
 				<div className="lg:grid grid-cols-5">
 					<div className="p-2 mb-6">
 						{/* Project Status and links */}
-						<SideMenu project={project} projectLink={projectLink} />
+						<SideMenu projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} />
 					</div>
 					<div className="col-span-4 lg:px-2 lg:pl-10">
 						{/* Project Q&As information */}

@@ -7,7 +7,7 @@ import InputField from "@/components/Forms/InputField";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 import { ToggleField } from "@/components/Forms/ToggleField";
 
-const DraggableQnaItem = ({ item, items, setItems, onChange }) => {
+const DraggableQnaItem = ({ item, index, items, setItems, onChange }) => {
 	const { id, question, response, published } = item;
 
 	const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id });
@@ -61,7 +61,7 @@ const DraggableQnaItem = ({ item, items, setItems, onChange }) => {
 
 			{/* Draggable item content */}
 			<div className="w-9/10 mx-auto">
-				<h2 className="font-semibold text-xl mb-6">Q&A {id}</h2>
+				<h2 className="font-semibold text-xl mb-6">Q&A {index + 1}</h2>
 				<div className="ml-2 mb-4 max-w-160">
 					<InputField label="Question:" inputName={`question-${id}`} inputType="text" inputValue={question} onChange={(e) => updateField("question", e.target.value)} />
 				</div>

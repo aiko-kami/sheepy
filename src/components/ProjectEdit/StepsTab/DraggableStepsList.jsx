@@ -5,8 +5,6 @@ import { SortableContext, arrayMove } from "@dnd-kit/sortable";
 import DraggableStepItem from "@/components/ProjectEdit/StepsTab/DraggableStepItem";
 
 const DraggableStepsList = ({ formInputs, onChange }) => {
-	console.log("🚀 ~ DraggableStepsList ~ formInputs.projectSteps:", formInputs.projectSteps[0].status);
-
 	const [items, setItems] = useState([]);
 
 	// Initialize items based on formInputs.projectSteps

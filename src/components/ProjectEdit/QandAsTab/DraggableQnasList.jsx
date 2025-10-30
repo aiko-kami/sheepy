@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { DndContext, closestCenter } from "@dnd-kit/core";
 import { SortableContext, arrayMove } from "@dnd-kit/sortable";
+
 import DraggableQnaItem from "@/components/ProjectEdit/QandAsTab/DraggableQnaItem";
 
 const DraggableQnasList = ({ formInputs, onChange }) => {
@@ -10,10 +11,9 @@ const DraggableQnasList = ({ formInputs, onChange }) => {
 	useEffect(() => {
 		if (formInputs?.projectQnas) {
 			const transformedItems = formInputs.projectQnas.map((qna, index) => ({
-				id: `${index + 1}`,
-				question: qna.question,
-				response: qna.response,
-				published: qna.published,
+				id: qna.id ?? `generated-${index}-${qna.question ?? ""}`,
+				// preserve all original fields
+				...qna,
 			}));
 			setItems(transformedItems);
 		}
@@ -37,10 +37,11 @@ const DraggableQnasList = ({ formInputs, onChange }) => {
 		<DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
 			<SortableContext items={items.map((item) => item.id)}>
 				<div>
-					{items.map((item) => (
+					{items.map((item, index) => (
 						<DraggableQnaItem
 							key={item.id}
 							item={item}
+							index={index}
 							items={items}
 							setItems={setItems} // Pass down the state setter
 							onChange={onChange}
