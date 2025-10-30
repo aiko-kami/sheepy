@@ -5,17 +5,17 @@ import { SortableContext, arrayMove } from "@dnd-kit/sortable";
 import DraggableStepItem from "@/components/ProjectEdit/StepsTab/DraggableStepItem";
 
 const DraggableStepsList = ({ formInputs, onChange }) => {
+	console.log("🚀 ~ DraggableStepsList ~ formInputs.projectSteps:", formInputs.projectSteps[0].status);
+
 	const [items, setItems] = useState([]);
 
 	// Initialize items based on formInputs.projectSteps
 	useEffect(() => {
 		if (formInputs?.projectSteps) {
 			const transformedItems = formInputs.projectSteps.map((step, index) => ({
-				id: `${index + 1}`,
-				title: step.title,
-				details: step.details,
-				status: step.status.status,
-				published: step.published,
+				id: step.id ?? `generated-${index}-${step.title ?? ""}`,
+				// preserve all original fields
+				...step,
 			}));
 			setItems(transformedItems);
 		}
@@ -39,10 +39,11 @@ const DraggableStepsList = ({ formInputs, onChange }) => {
 		<DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
 			<SortableContext items={items.map((item) => item.id)}>
 				<div>
-					{items.map((item) => (
+					{items.map((item, index) => (
 						<DraggableStepItem
 							key={item.id}
 							item={item}
+							index={index}
 							items={items}
 							setItems={setItems} // Pass down the state setter
 							onChange={onChange}

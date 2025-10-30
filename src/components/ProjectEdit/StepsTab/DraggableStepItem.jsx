@@ -7,7 +7,7 @@ import InputField from "@/components/Forms/InputField";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 import { ToggleField } from "@/components/Forms/ToggleField";
 
-const DraggableStepItem = ({ item, items, setItems, onChange }) => {
+const DraggableStepItem = ({ item, index, items, setItems, onChange }) => {
 	const { id, title, details, status, published } = item;
 
 	const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id });
@@ -61,7 +61,9 @@ const DraggableStepItem = ({ item, items, setItems, onChange }) => {
 
 			{/* Draggable item content */}
 			<div className="w-9/10 mx-auto">
-				<h2 className="font-semibold text-xl mb-6">Step {id}</h2>
+				<h2 className="font-semibold text-xl mb-6">
+					Step {index + 1}: {item.title}
+				</h2>
 				<div className="ml-2 mb-4 max-w-160">
 					<InputField label="Step Title:" inputName={`title-${id}`} inputType="text" inputValue={title} onChange={(e) => updateField("title", e.target.value)} />
 				</div>
