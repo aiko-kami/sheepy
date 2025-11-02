@@ -8,7 +8,7 @@ import { TextAreaField } from "@/components/Forms/TextAreaField";
 
 import { handleFormChange } from "@/utils/formHandlers";
 
-const SendMessageMemberModal = ({ closeModalMessage, member }) => {
+const SendMessageMemberModal = ({ member, talent, startDate, closeModalMessage }) => {
 	const [formInputs, setFormInputs] = useState({
 		memberId: member.userId,
 		message: "",
@@ -33,7 +33,7 @@ const SendMessageMemberModal = ({ closeModalMessage, member }) => {
 					<div className="mb-6 xl:flex items-center">
 						<h2 className="text-lg text-gray-400 font-semibold mb-1">Member:</h2>
 						<div className="flex items-center pl-1 xl:pl-4">
-							<Image src={member.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
+							<Image src={member.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
 							<div className="font-semibold">{member.username}</div>
 						</div>
 					</div>
@@ -42,12 +42,12 @@ const SendMessageMemberModal = ({ closeModalMessage, member }) => {
 				{/* Role and start date */}
 				<div className="lg:grid lg:grid-cols-2 justify-around">
 					<div className="xl:flex items-baseline mb-6 lg:mb-0">
-						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Role:</h2>
-						<p className="pl-1 xl:pl-2">{member.role}</p>
+						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Talent:</h2>
+						<p className="pl-1 xl:pl-2">{talent}</p>
 					</div>
 					<div className="xl:flex justify-center">
 						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Start date:</h2>
-						<p className="pl-1 xl:pl-2">{member.startDate}</p>
+						<p className="pl-1 xl:pl-2">{startDate}</p>
 					</div>
 				</div>
 			</div>

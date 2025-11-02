@@ -11,7 +11,7 @@ import Link from "next/link";
 
 import { IoBuildOutline, IoCloseCircleOutline, IoChatboxEllipsesOutline, IoPersonOutline } from "react-icons/io5";
 
-const MembersActions = ({ projectId, member, projectPermissions, iconSize }) => {
+const MembersActions = ({ projectId, member, role, talent, startDate, projectPermissions, iconSize }) => {
 	const [modalDisplayUpdate, setModalDisplayUpdate] = useState(false);
 	const [modalDisplayMessage, setModalDisplayMessage] = useState(false);
 	const [modalDisplayRemove, setModalDisplayRemove] = useState(false);
@@ -52,13 +52,13 @@ const MembersActions = ({ projectId, member, projectPermissions, iconSize }) => 
 
 	return (
 		<>
-			{projectPermissions.canEditMembers && (
+			{!projectPermissions?.canEditMembers && (
 				<>
 					<button type="button" onClick={showModalUpdate}>
 						<IoBuildOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Edit member" />
 					</button>
 					<Modal modalDisplay={modalDisplayUpdate} closeModal={closeModalUpdate} modalSize={"std"} modalTitle={"Update member"}>
-						<UpdateMemberModal member={member} closeModalUpdate={closeModalUpdate} />
+						<UpdateMemberModal member={member} role={role} talent={talent} startDate={startDate} closeModalUpdate={closeModalUpdate} />
 					</Modal>
 				</>
 			)}
@@ -67,19 +67,19 @@ const MembersActions = ({ projectId, member, projectPermissions, iconSize }) => 
 					<IoChatboxEllipsesOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
 				</button>
 				<Modal modalDisplay={modalDisplayMessage} closeModal={closeModalMessage} modalSize={"std"} modalTitle={"Send a message"}>
-					<SendMessageMemberModal member={member} closeModalMessage={closeModalMessage} />
+					<SendMessageMemberModal member={member} talent={talent} startDate={startDate} closeModalMessage={closeModalMessage} />
 				</Modal>
 			</>
 			<Link href={`/users/${member.userId}`}>
 				<IoPersonOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Visit user profile" />
 			</Link>
-			{projectPermissions.canRemoveMembers && (
+			{!projectPermissions?.canRemoveMembers && (
 				<>
 					<button type="button" onClick={showModalRemove}>
 						<IoCloseCircleOutline className={`m-1 hover:text-red-400 duration-100 transition ease-in-out ${size}`} title="Remove from the project" />
 					</button>
 					<Modal modalDisplay={modalDisplayRemove} closeModal={closeModalRemove} closeModalWithBackground={closeModalRemove} modalSize={"std"} modalTitle={"Remove member from the project"}>
-						<RemoveMemberModal member={member} closeModalRemove={closeModalRemove} />
+						<RemoveMemberModal member={member} role={role} talent={talent} startDate={startDate} closeModalRemove={closeModalRemove} />
 					</Modal>
 				</>
 			)}

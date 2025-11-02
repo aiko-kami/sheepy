@@ -1,20 +1,18 @@
-"use client";
-
 import MembersDetails from "@/components/ProjectEdit/MembersTab/MembersDetails";
 import TalentsNeeded from "@/components/ProjectEdit/MembersTab/TalentsNeeded";
 import JoinRequests from "@/components/ProjectEdit/MembersTab/JoinRequests";
 import JoinInvitations from "@/components/ProjectEdit/MembersTab/JoinInvitations";
 
-const Members = ({ project, user }) => {
+const Members = ({ project, user, members, talentsNeeded }) => {
 	return (
 		<>
 			{/* Project members */}
 			<div className="mb-8 lg:mb-14">
-				<MembersDetails project={project} user={user} />
+				<MembersDetails project={project} user={user} members={members} />
 			</div>
 			{/* Talents needed */}
 			<div className="mb-8 lg:mb-14">
-				<TalentsNeeded project={project} user={user} />
+				<TalentsNeeded project={project} user={user} talentsNeeded={talentsNeeded} />
 			</div>
 			{/* Requests to join the project */}
 			<div className="mb-8 lg:mb-14">

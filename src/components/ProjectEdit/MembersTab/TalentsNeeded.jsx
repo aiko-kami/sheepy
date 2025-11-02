@@ -1,59 +1,19 @@
+"use client";
+
 import { useState, useRef } from "react";
 
-import { IoPersonAdd, IoAddCircleOutline, IoCloseCircleOutline } from "react-icons/io5";
+import { IoPersonAdd } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
-import InputField from "@/components/Forms/InputField";
+import TalentNeededField from "@/components/Forms/TalentNeededField";
 
-const TalentsNeeded = ({ project, user }) => {
-	const roleList = project.talentsNeeded.map((talent) => talent.role);
-	const [formState, setFormState] = useState({
+const TalentsNeeded = ({ project, user, talentsNeeded }) => {
+	const [formInputs, setFormInputs] = useState({
 		userUpdater: user.userId,
 		projectId: project.projectId,
-		projectTalentsNeeded: roleList,
+		talentsNeeded: talentsNeeded,
 	});
 
 	const inputRef = useRef(null); // Create a reference to the input field
-	const [talentInput, setTalentInput] = useState("");
-	const [talentError, setTalentError] = useState("");
-
-	const addTalent = () => {
-		if (!talentInput) {
-			setTalentError("Please enter a talent needed.");
-		}
-		if (talentInput && formState.projectTalentsNeeded.includes(talentInput)) {
-			setTalentError("This talent is already present in the list.");
-		}
-		if (talentInput && formState.projectTalentsNeeded.length >= 40) {
-			setTalentError("You can only add up to 40 talents needed.");
-		}
-		if (talentInput && !formState.projectTalentsNeeded.includes(talentInput) && formState.projectTalentsNeeded.length < 40) {
-			setFormState((prevState) => ({
-				...prevState,
-				projectTalentsNeeded: [...prevState.projectTalentsNeeded, talentInput],
-			}));
-			setTalentInput("");
-			setTalentError("");
-		}
-	};
-
-	const removeTalent = (talentToRemove) => {
-		setFormState((prevState) => ({
-			...prevState,
-			projectTalentsNeeded: prevState.projectTalentsNeeded.filter((talent) => talent !== talentToRemove),
-		}));
-	};
-
-	const handleTalentInputChange = (e) => {
-		setTalentError("");
-		setTalentInput(e.target.value);
-	};
-
-	const handleAddTalent = () => {
-		addTalent();
-		if (inputRef.current) {
-			inputRef.current.focus(); // Focus on the input field after adding the talent
-		}
-	};
 
 	const onSubmit = (event) => {
 		event.preventDefault();
@@ -72,37 +32,8 @@ const TalentsNeeded = ({ project, user }) => {
 			<form onSubmit={onSubmit}>
 				<div className="md:pl-4">
 					{/* Project talents */}
-					<div className="mb-8 max-w-140 relative">
-						{/* Talent input field */}
-						<div className="flex items-center">
-							<div className="w-full mr-2">
-								<InputField inputName="talentsNeeded" inputType="text" label="Talents needed for the project" inputValue={talentInput} onChange={handleTalentInputChange} ref={inputRef} />
-							</div>
-							<div className="min-w-fit">
-								<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "blue", btnRounded: "std", action: handleAddTalent }}>
-									<div className="flex">
-										Add talent needed <IoAddCircleOutline className="text-xl ml-2" />
-									</div>
-								</Button>
-							</div>
-						</div>
-						<div className="absolute left-0 top-12 mb-2 min-h-6 text-sm">{talentError && <p className="text-xs text-red-600">{talentError}</p>}</div>
-					</div>
-
-					{/* List of talents needed */}
-					<div className="mb-8">
-						{formState.projectTalentsNeeded.length > 0 && (
-							<div className="flex flex-wrap gap-4">
-								{formState.projectTalentsNeeded.map((talent, index) => (
-									<span key={index} className="flex items-center px-3 pt-1 pb-1.5 mt-1 bg-base-440 text-lg rounded">
-										{talent}
-										<button type="button" className="ml-2 mt-0.5 hover:text-gray-300 transition duration-150 ease-in-out" onClick={() => removeTalent(talent)}>
-											<IoCloseCircleOutline className="text-lg" title="Remove tag" />
-										</button>
-									</span>
-								))}
-							</div>
-						)}
+					<div className="w-full sm:w-100 xl:w-150 mb-8">
+						<TalentNeededField talentsNeeded={formInputs.talentsNeeded} setFormInputs={setFormInputs} />
 					</div>
 					<div className="flex justify-center">
 						<Button

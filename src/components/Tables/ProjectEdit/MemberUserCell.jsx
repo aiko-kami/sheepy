@@ -6,7 +6,7 @@ import Image from "next/image";
 import Modal from "@/components/Modals/Modal";
 import UpdateMemberModal from "@/components/Modals/ProjectEdit/UpdateMemberModal";
 
-const MemberUserCell = ({ member }) => {
+const MemberUserCell = ({ member, role }) => {
 	const [modalDisplayDetails, setModalDisplayDetails] = useState(false);
 
 	const showModalDetails = () => {
@@ -20,14 +20,14 @@ const MemberUserCell = ({ member }) => {
 		<>
 			<div className="flex items-center">
 				<button type="button" onClick={showModalDetails}>
-					<Image src={member.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-9 h-9 rounded-full shadow-md mr-4" />
+					<Image src={member.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-9 h-9 rounded-full shadow-md mr-4" />
 				</button>
 				<div className="font-semibold text-base lg:whitespace-nowrap">
 					<button type="button" onClick={showModalDetails}>
 						<span>{member.username}</span>
 					</button>
 				</div>
-				{member.isOwner && (
+				{role === "owner" && (
 					<div className="sm:ml-3">
 						<span className="py-1 px-2.5 text-white font-bold text-xs text-nowrap rounded cursor-default bg-blue-500">Project Owner</span>
 					</div>

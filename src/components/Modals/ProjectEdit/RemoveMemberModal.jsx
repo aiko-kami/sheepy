@@ -5,7 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/Buttons/Buttons";
 
-const RemoveMemberModal = ({ closeModalRemove, member }) => {
+const RemoveMemberModal = ({ member, role, talent, startDate, closeModalRemove }) => {
 	const [formState, setFormState] = useState({
 		memberId: member.userId,
 	});
@@ -22,9 +22,9 @@ const RemoveMemberModal = ({ closeModalRemove, member }) => {
 			<form onSubmit={onSubmit}>
 				{/* User profile picture and username */}
 				<div className="flex items-center px-8 mb-6">
-					<Image src={member.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-16 h-16 rounded-full shadow-md mr-4" />
+					<Image src={member.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-16 h-16 rounded-full shadow-md mr-4" />
 					<div className="font-semibold text-lg lg:whitespace-nowrap">{member.username}</div>
-					{member.isOwner && (
+					{role === "owner" && (
 						<div className="sm:ml-3">
 							<span className="py-1 px-2.5 text-white font-bold text-nowrap duration-200 rounded cursor-default bg-blue-500">Project Owner</span>
 						</div>
@@ -34,14 +34,14 @@ const RemoveMemberModal = ({ closeModalRemove, member }) => {
 				<div className="xl:grid xl:grid-cols-2 px-8 mb-6">
 					{/* User current role on the project */}
 					<div className="sm:flex items-baseline xl:justify-center mb-6 xl:mb-0">
-						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Current role:</h2>
-						<p className="pl-1 xl:pl-2">{member.role}</p>
+						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Talent:</h2>
+						<p className="pl-1 xl:pl-2">{talent}</p>
 					</div>
 
 					{/* User current start date on the project */}
 					<div className="sm:flex items-baseline xl:justify-center mb-6 xl:mb-0">
 						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Start date:</h2>
-						<p className="pl-1 xl:pl-2">{member.startDate}</p>
+						<p className="pl-1 xl:pl-2">{startDate}</p>
 					</div>
 				</div>
 
