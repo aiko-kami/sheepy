@@ -15,9 +15,9 @@ const MembersDetails = ({ project, user, members }) => {
 				{/* Project members */}
 				<div className="mb-8 flex justify-center">
 					{/* Status history table */}
-					{project.members && project.members.length !== 0 ? (
+					{members && members.length !== 0 ? (
 						<div className="w-full overflow-x-auto shadow-md sm:rounded-lg">
-							<MembersTable members={project.members} projectId={project.projectId} projectPermissions={project.permissions} />
+							<MembersTable members={members} projectId={project.projectId} projectPermissions={project.permissions} />
 						</div>
 					) : (
 						<p className=" text-xl text-center pt-10">

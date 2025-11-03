@@ -30,9 +30,7 @@ const ProjectEditMembersPage = async ({ params }) => {
 	const status = project?.statusInfo?.currentStatus.status;
 	const statusBgColor = project?.statusInfo?.currentStatus.colors.bgColor;
 	const members = project?.members;
-
 	const talentsNeeded = project?.talentsNeeded;
-	console.log("🚀 ~ ProjectEditMembersPage ~ talentsNeeded:", talentsNeeded);
 
 	if (!project) {
 		return <ProjectNotFound />;

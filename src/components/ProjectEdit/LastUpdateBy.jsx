@@ -1,29 +1,14 @@
 import Link from "next/link";
 import Image from "next/image";
-import { DateTime } from "luxon";
+import { formatIsoTimestamp } from "@/utils/dateHandlers";
 
 const LastUpdateBy = ({ updatedBy, updatedAt }) => {
-	const dt = DateTime.fromISO(updatedAt).toLocal();
-	const now = DateTime.local();
-
-	const diffInHours = now.diff(dt, "hours").hours;
-
-	const isToday = dt.hasSame(now, "day");
-	const isYesterday = dt.hasSame(now.minus({ days: 1 }), "day");
-
-	const dateTime =
-		diffInHours < 1
-			? dt.toRelative({ base: now })
-			: isToday
-			? `Today • ${dt.toFormat("HH:mm")}`
-			: isYesterday
-			? `Yesterday • ${dt.toFormat("HH:mm")}`
-			: `${dt.toFormat("dd LLL yyyy • HH:mm")} (${dt.zoneName})`;
+	const dateTime = formatIsoTimestamp(updatedAt);
 
 	return (
 		<>
 			{updatedBy.userId &&
-				(dt.isValid ? (
+				(dateTime.isValid ? (
 					// Original full layout when date is valid
 					<div className="mb-4 flex items-center justify-end italic text-sm">
 						<span className="mr-2">Last update by</span>
@@ -37,7 +22,7 @@ const LastUpdateBy = ({ updatedBy, updatedAt }) => {
 							,
 						</span>
 
-						{dateTime}
+						{dateTime.formatted}
 					</div>
 				) : (
 					// Simplified layout when date is invalid — only picture + username

@@ -1,7 +1,4 @@
-import Link from "next/link";
-import Image from "next/image";
 import { IoChatbubblesSharp, IoAddOutline } from "react-icons/io5";
-import { DateTime } from "luxon";
 
 import DraggableQnasList from "@/components/ProjectEdit/QandAsTab/DraggableQnasList";
 import LastUpdateBy from "@/components/ProjectEdit/LastUpdateBy";

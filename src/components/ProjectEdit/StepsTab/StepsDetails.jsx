@@ -1,7 +1,4 @@
-import Link from "next/link";
-import Image from "next/image";
 import { IoExtensionPuzzle, IoAddOutline } from "react-icons/io5";
-import { DateTime } from "luxon";
 
 import DraggableStepsList from "@/components/ProjectEdit/StepsTab/DraggableStepsList";
 import LastUpdateBy from "@/components/ProjectEdit/LastUpdateBy";

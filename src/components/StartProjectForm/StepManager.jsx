@@ -21,7 +21,6 @@ import { ApiCreateProjectDraft, ApiUpdateProjectDraft, ApiSubmitProject } from "
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { handleFormChange } from "@/utils/formHandlers";
 
-import projectForm from "@/mock/projectForm.json";
 import userTalentNeeded from "@/public/images/userTalentNeeded.jpg";
 
 const StepManager = () => {
@@ -311,14 +310,14 @@ const StepManager = () => {
 							<StepFinalValidation
 								formInputs={formInputs}
 								requiredFields={requiredFields}
-								talentNeededProfilePicture={projectForm.talentNeededProfilePicture}
+								talentNeededProfilePicture={userTalentNeeded}
 								categories={categories}
 								isProjectReadyToSubmit={isProjectReadyToSubmit}
 							/>
 						)}
 					</div>
 					{/* Step 8: Show confirmation that the project has been submitted */}
-					{currentStep === 8 && <StepProjectSubmitted goToStep={goToStep} formInputs={formInputs} categories={categories} talentNeededProfilePicture={projectForm.talentNeededProfilePicture} />}
+					{currentStep === 8 && <StepProjectSubmitted goToStep={goToStep} formInputs={formInputs} categories={categories} talentNeededProfilePicture={userTalentNeeded} />}
 
 					<ButtonsNavigation goToStep={goToStep} currentStep={currentStep} totalSteps={totalSteps} formInputs={formInputs} isProjectReadyToSubmit={isProjectReadyToSubmit} />
 				</WindowFrame>
