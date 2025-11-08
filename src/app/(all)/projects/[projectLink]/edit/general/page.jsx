@@ -46,26 +46,24 @@ const ProjectEditGeneralPage = async ({ params }) => {
 	}
 
 	return (
-		<div className="container mx-auto hyphens-auto">
-			<FormGeneral
-				project={project}
-				projectId={projectId}
-				projectLink={projectLink}
-				status={status}
-				statusBgColor={statusBgColor}
-				title={title}
-				category={category}
-				subCategory={subCategory}
-				goal={goal}
-				summary={summary}
-				description={description}
-				cover={cover}
-				tags={tags}
-				tagsList={tagsList}
-				creatorMotivation={creatorMotivation}
-				objectives={objectives}
-			/>
-		</div>
+		<FormGeneral
+			project={project}
+			projectId={projectId}
+			projectLink={projectLink}
+			status={status}
+			statusBgColor={statusBgColor}
+			title={title}
+			category={category}
+			subCategory={subCategory}
+			goal={goal}
+			summary={summary}
+			description={description}
+			cover={cover}
+			tags={tags}
+			tagsList={tagsList}
+			creatorMotivation={creatorMotivation}
+			objectives={objectives}
+		/>
 	);
 };
 

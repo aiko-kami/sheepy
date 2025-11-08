@@ -16,11 +16,11 @@ const ProjectNotFound = ({ message }) => {
 								<p className="text-gray-500 text-xl mb-10">Sorry, we couldn&apos;t find the project you are looking for... 😥</p>
 								<p className="text-gray-500 text-xl mb-10">{message}</p>
 
-								<div className="flex justify-center gap-6">
-									<Link href="/" className="bg-blue-800 hover:bg-blue-900 text-white font-bold py-4 px-6 rounded">
+								<div className="flex flex-col sm:flex-row justify-center gap-6 flex-nowrap">
+									<Link href="/" className="bg-blue-800 hover:bg-blue-900 text-white font-bold py-4 px-2 sm:px-6 rounded whitespace-nowrap">
 										Go back to home page
 									</Link>
-									<Link href="/projects/join-a-project" className="bg-blue-800 hover:bg-blue-900 text-white font-bold py-4 px-6 rounded">
+									<Link href="/projects/join-a-project" className="bg-blue-800 hover:bg-blue-900 text-white font-bold py-4 px-2 sm:px-6 rounded whitespace-nowrap">
 										Browse projects
 									</Link>
 								</div>

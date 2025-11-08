@@ -35,11 +35,7 @@ const ProjectEditStatusPage = async ({ params }) => {
 		return <ProjectNotFound />;
 	}
 
-	return (
-		<div className="container mx-auto hyphens-auto">
-			<FormStatus projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} statusHistory={statusHistory} visibility={visibility} startDate={startDate} />
-		</div>
-	);
+	return <FormStatus projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} statusHistory={statusHistory} visibility={visibility} startDate={startDate} />;
 };
 
 export default ProjectEditStatusPage;

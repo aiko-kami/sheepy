@@ -36,11 +36,7 @@ const ProjectEditLocationPage = async ({ params }) => {
 		return <ProjectNotFound />;
 	}
 
-	return (
-		<div className="container mx-auto hyphens-auto">
-			<FormLocation projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} onlineOnly={onlineOnly} city={city} country={country} />
-		</div>
-	);
+	return <FormLocation projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} onlineOnly={onlineOnly} city={city} country={country} />;
 };
 
 export default ProjectEditLocationPage;

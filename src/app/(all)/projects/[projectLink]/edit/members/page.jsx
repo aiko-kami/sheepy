@@ -16,6 +16,10 @@ const ProjectEditMembersPage = async ({ params }) => {
 	const { projectLink } = params;
 
 	const result = await ApiGetEditProjectMembers(projectLink);
+
+	console.log("🚀 ~ ProjectEditMembersPage ~ result:", result);
+	console.dir(result, { depth: null, colors: true });
+
 	if (!result.ok) {
 		if (result.status === 401 || result.status === 403) {
 			redirect("/access-denied");
@@ -36,11 +40,7 @@ const ProjectEditMembersPage = async ({ params }) => {
 		return <ProjectNotFound />;
 	}
 
-	return (
-		<div className="container mx-auto hyphens-auto">
-			<FormMembers project={project} user={user} projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} members={members} talentsNeeded={talentsNeeded} />
-		</div>
-	);
+	return <FormMembers project={project} user={user} projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} members={members} talentsNeeded={talentsNeeded} />;
 };
 
 export default ProjectEditMembersPage;

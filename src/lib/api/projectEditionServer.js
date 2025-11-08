@@ -83,47 +83,42 @@ async function apiGet(path, mapper = (json, res) => json?.data ?? null) {
 
 /* === Specific wrappers === */
 
+export async function ApiGetEditUserRights(projectLink) {
+	return apiGet(`/projectEdition/userRights/${projectLink}`, (json) => json?.data ?? null);
+}
+
 export async function ApiGetEditProjectGeneral(projectLink) {
-	// default mapper returns json.data, which is what you originally used
 	return apiGet(`/projectEdition/general/${projectLink}`, (json) => json?.data ?? null);
 }
 
 export async function ApiGetEditProjectMembers(projectLink) {
-	// same pattern as status
 	return apiGet(`/projectEdition/members/${projectLink}`, (json) => json?.data?.project ?? null);
 }
 
 export async function ApiGetEditProjectRights(projectLink) {
-	// same pattern as status
 	return apiGet(`/projectEdition/rights/${projectLink}`, (json) => json?.data?.project ?? null);
 }
 
 export async function ApiGetEditProjectStatus(projectLink) {
-	// mapper returns json.data.project (matching your previous code)
 	return apiGet(`/projectEdition/status/${projectLink}`, (json) => json?.data?.project ?? null);
 }
 
 export async function ApiGetEditProjectLocation(projectLink) {
-	// same pattern as status
 	return apiGet(`/projectEdition/location/${projectLink}`, (json) => json?.data?.project ?? null);
 }
 
 export async function ApiGetEditProjectAttachments(projectLink) {
-	// same pattern as status
 	return apiGet(`/projectEdition/attachments/${projectLink}`, (json) => json?.data?.project ?? null);
 }
 
 export async function ApiGetEditProjectSteps(projectLink) {
-	// same pattern as status
 	return apiGet(`/projectEdition/steps/${projectLink}`, (json) => json?.data?.project ?? null);
 }
 
 export async function ApiGetEditProjectQAs(projectLink) {
-	// same pattern as status
 	return apiGet(`/projectEdition/QAs/${projectLink}`, (json) => json?.data?.project ?? null);
 }
 
 export async function ApiGetEditProjectDetails(projectLink) {
-	// same pattern as status
 	return apiGet(`/projectEdition/details/${projectLink}`, (json) => json?.data?.project ?? null);
 }

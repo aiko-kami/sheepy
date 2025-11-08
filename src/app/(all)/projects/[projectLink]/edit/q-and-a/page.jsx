@@ -34,11 +34,7 @@ const ProjectEditQandAPage = async ({ params }) => {
 		return <ProjectNotFound />;
 	}
 
-	return (
-		<div className="container mx-auto hyphens-auto">
-			<FormQandAs projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} QAs={QAs} />
-		</div>
-	);
+	return <FormQandAs projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} QAs={QAs} />;
 };
 
 export default ProjectEditQandAPage;

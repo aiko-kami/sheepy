@@ -14,7 +14,7 @@ const QandAsDetails = ({ formInputs, onChange, addQna }) => {
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
-			<div className="pl-4">
+			<div className="md:pl-4">
 				{/* Project Q&As*/}
 				<div className="mb-8">
 					<LastUpdateBy updatedBy={formInputs.updatedBy} updatedAt={formInputs.updatedAt} />
@@ -27,7 +27,7 @@ const QandAsDetails = ({ formInputs, onChange, addQna }) => {
 						</p>
 					)}
 				</div>
-				<div className="mb-6">
+				<div className="mb-b">
 					<Button
 						btnProps={{
 							type: "button",
@@ -38,6 +38,16 @@ const QandAsDetails = ({ formInputs, onChange, addQna }) => {
 						<div className="flex items-center">
 							New Q&A <IoAddOutline className="text-2xl ml-2 mt-0.5" />
 						</div>
+					</Button>
+				</div>
+				<div className="flex justify-center">
+					<Button
+						btnProps={{
+							type: "submit",
+							btnColor: "blue",
+						}}
+					>
+						Save project
 					</Button>
 				</div>
 			</div>

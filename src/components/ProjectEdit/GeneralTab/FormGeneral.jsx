@@ -3,7 +3,6 @@
 import { useState } from "react";
 
 import General from "@/components/ProjectEdit/GeneralTab/General";
-import SideMenu from "@/components/ProjectEdit/SideMenu";
 
 import { handleFormChange } from "@/utils/formHandlers";
 
@@ -34,16 +33,8 @@ const FormGeneral = ({ projectId, projectLink, status, statusBgColor, title, cat
 	return (
 		<>
 			<form onSubmit={onSubmit}>
-				<div className="lg:grid grid-cols-5">
-					<div className="p-2 mb-6">
-						{/* Project Status and links */}
-						<SideMenu projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} />
-					</div>
-					<div className="col-span-4 lg:px-2 lg:pl-10">
-						{/* Project general information */}
-						<General formInputs={formInputs} setFormInputs={setFormInputs} onChange={onChange} tagsList={tagsList} />
-					</div>
-				</div>
+				{/* Project general information */}
+				<General formInputs={formInputs} setFormInputs={setFormInputs} onChange={onChange} tagsList={tagsList} />
 			</form>
 		</>
 	);

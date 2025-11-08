@@ -33,11 +33,7 @@ const ProjectEditStepsPage = async ({ params }) => {
 		return <ProjectNotFound />;
 	}
 
-	return (
-		<div className="container mx-auto hyphens-auto">
-			<FormSteps projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} steps={steps} />
-		</div>
-	);
+	return <FormSteps projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} steps={steps} />;
 };
 
 export default ProjectEditStepsPage;

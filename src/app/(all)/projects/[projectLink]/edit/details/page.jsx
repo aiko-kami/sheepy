@@ -10,11 +10,7 @@ export const metadata = {
 const ProjectEditDetailsPage = ({ params }) => {
 	const { projectLink } = params;
 
-	return (
-		<div className="container mx-auto hyphens-auto">
-			<FormDetails project={project} projectLink={projectLink} />
-		</div>
-	);
+	return <FormDetails project={project} projectLink={projectLink} />;
 };
 
 export default ProjectEditDetailsPage;

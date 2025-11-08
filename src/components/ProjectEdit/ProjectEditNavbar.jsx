@@ -3,75 +3,66 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const ProjectEditNavbar = () => {
+const ProjectEditNavbar = ({ projectRights }) => {
+	const {
+		canEditSectionGeneral,
+		canEditSectionMembers,
+		canEditSectionRights,
+		canEditSectionStatus,
+		canEditSectionLocation,
+		canEditSectionAttachments,
+		canEditSectionSteps,
+		canEditSectionQAs,
+		canEditSectionDetails,
+	} = projectRights.permissions;
 	const pathname = usePathname();
 
 	// Extract the projectId from the URL
 	// Assuming the URL structure is /projects/[projectId]/edit/[subPage]
 	const pathParts = pathname?.split("/");
 	const projectId = pathParts[2]; // Get the project ID from the 3rd part of the URL
-
-	// Define the base path for links
 	const projectBasePath = `/projects/${projectId}/edit`;
 
+	//Links table
+	const links = [
+		{ slug: "general", label: "General", disabled: !canEditSectionGeneral },
+		{ slug: "members", label: "Members", disabled: !canEditSectionMembers },
+		{ slug: "rights", label: "Rights", disabled: !canEditSectionRights },
+		{ slug: "status", label: "Status", disabled: !canEditSectionStatus },
+		{ slug: "location", label: "Location", disabled: !canEditSectionLocation },
+		{ slug: "attachments", label: "Attachments", disabled: !canEditSectionAttachments },
+		{ slug: "steps", label: "Steps", disabled: !canEditSectionSteps },
+		{ slug: "q-and-a", label: "Q&As", disabled: !canEditSectionQAs },
+		{ slug: "details", label: "Details", disabled: !canEditSectionDetails },
+	];
+
 	// Function to assign active link classes dynamically
-	const getLinkClasses = (href) => {
+	const getLinkClasses = (href, disabled = false) => {
 		// Default to "General" if the base path matches without sub-path
 		const isActive = pathname === href || (pathname === projectBasePath && href === `${projectBasePath}/general`);
 
-		return `inline-block p-3 min-w-20 md:min-w-26 rounded-lg xl:rounded-b-none rounded-t-lg ${
-			isActive ? "text-blue-500 bg-gray-800" : "text-gray-500 bg-gray-700 hover:bg-gray-800 hover:text-gray-300"
-		}`;
+		if (disabled) {
+			return "inline-block p-3 min-w-full text-gray-500 cursor-default opacity-60";
+		}
+
+		return `inline-block p-3 min-w-full rounded-lg ${isActive ? "text-white bg-blue-600" : "text-gray-300 hover:bg-gray-700/80 hover:text-white"}`;
 	};
 
 	return (
 		<>
-			<ul className="flex flex-wrap justify-center xl:justify-end text-sm md:text-base font-medium text-center xl:border-b border-gray-700">
-				<li className="mb-2 xl:mb-0 me-1">
-					<Link href={`${projectBasePath}/general`} className={getLinkClasses(`${projectBasePath}/general`)} aria-current={pathname === `${projectBasePath}/general` ? "page" : undefined}>
-						General
-					</Link>
-				</li>
-				<li className="mb-2 xl:mb-0 me-1">
-					<Link href={`${projectBasePath}/members`} className={getLinkClasses(`${projectBasePath}/members`)} aria-current={pathname === `${projectBasePath}/members` ? "page" : undefined}>
-						Members
-					</Link>
-				</li>
-				<li className="mb-2 xl:mb-0 me-1">
-					<Link href={`${projectBasePath}/rights`} className={getLinkClasses(`${projectBasePath}/rights`)} aria-current={pathname === `${projectBasePath}/rights` ? "page" : undefined}>
-						Rights
-					</Link>
-				</li>
-				<li className="mb-2 xl:mb-0 me-1">
-					<Link href={`${projectBasePath}/status`} className={getLinkClasses(`${projectBasePath}/status`)} aria-current={pathname === `${projectBasePath}/status` ? "page" : undefined}>
-						Status
-					</Link>
-				</li>
-				<li className="mb-2 xl:mb-0 me-1">
-					<Link href={`${projectBasePath}/location`} className={getLinkClasses(`${projectBasePath}/location`)} aria-current={pathname === `${projectBasePath}/location` ? "page" : undefined}>
-						Location
-					</Link>
-				</li>
-				<li className="mb-2 xl:mb-0 me-1">
-					<Link href={`${projectBasePath}/attachments`} className={getLinkClasses(`${projectBasePath}/attachments`)} aria-current={pathname === `${projectBasePath}/attachments` ? "page" : undefined}>
-						Attachments
-					</Link>
-				</li>
-				<li className="mb-2 xl:mb-0 me-1">
-					<Link href={`${projectBasePath}/steps`} className={getLinkClasses(`${projectBasePath}/steps`)} aria-current={pathname === `${projectBasePath}/steps` ? "page" : undefined}>
-						Steps
-					</Link>
-				</li>
-				<li className="mb-2 xl:mb-0 me-1">
-					<Link href={`${projectBasePath}/q-and-a`} className={getLinkClasses(`${projectBasePath}/q-and-a`)} aria-current={pathname === `${projectBasePath}/q-and-a` ? "page" : undefined}>
-						Q&As
-					</Link>
-				</li>
-				<li className="mb-2 xl:mb-0">
-					<Link href={`${projectBasePath}/details`} className={getLinkClasses(`${projectBasePath}/details`)} aria-current={pathname === `${projectBasePath}/details` ? "page" : undefined}>
-						Details
-					</Link>
-				</li>
+			<ul className="grid grid-cols-3 md:grid-cols-6 xl:grid-cols-9 gap-1 text-sm font-medium text-center rounded-lg bg-slate-800/70 border border-slate-700 p-1 mb-12">
+				{links.map(({ slug, label, disabled }) => {
+					const href = `${projectBasePath}/${slug}`;
+					const isCurrent = pathname === href || (slug === "general" && pathname === projectBasePath);
+
+					return (
+						<li key={slug}>
+							<Link href={disabled ? "#" : href} className={getLinkClasses(href, disabled)} aria-current={isCurrent ? "page" : undefined}>
+								{label}
+							</Link>
+						</li>
+					);
+				})}
 			</ul>
 		</>
 	);

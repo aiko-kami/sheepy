@@ -13,12 +13,12 @@ const LocationDetails = ({ formInputs, onChange }) => {
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
-			<div className="pl-4">
+			<div className="md:pl-4">
 				{/* Project location */}
 				<div className="mb-8">
 					<ToggleField inputName="locationOnlineOnly" checked={formInputs.locationOnlineOnly} label="Project online only" onChange={onChange} />
 				</div>
-				<div className="max-w-140">
+				<div className="max-w-140 mb-8">
 					<div className="mb-6 xl:mb-8">
 						<InputField
 							inputName="projectLocationCountry"
@@ -32,6 +32,16 @@ const LocationDetails = ({ formInputs, onChange }) => {
 					<div>
 						<InputField inputName="projectLocationCity" inputType="text" label="City" inputValue={formInputs.projectLocationCity} onChange={onChange} disabled={formInputs.locationOnlineOnly} />
 					</div>
+				</div>
+				<div className="flex justify-center">
+					<Button
+						btnProps={{
+							type: "submit",
+							btnColor: "blue",
+						}}
+					>
+						Save project
+					</Button>
 				</div>
 			</div>
 		</>

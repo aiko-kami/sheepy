@@ -10,11 +10,7 @@ export const metadata = {
 const ProjectEditAttachmentsPage = ({ params }) => {
 	const { projectLink } = params;
 
-	return (
-		<div className="container mx-auto hyphens-auto">
-			<FormAttachments project={project} projectLink={projectLink} />
-		</div>
-	);
+	return <FormAttachments project={project} projectLink={projectLink} />;
 };
 
 export default ProjectEditAttachmentsPage;

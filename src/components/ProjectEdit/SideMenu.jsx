@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Status } from "@/components/Badges/Badges";
 
-const SideMenu = ({ projectId, projectLink, status, statusBgColor }) => {
+const SideMenu = ({ projectLink, status, statusBgColor }) => {
 	return (
 		<>
 			<ul className="border-2 rounded-2xl py-6 px-4 text-center">
