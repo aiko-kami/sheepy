@@ -4,7 +4,7 @@ import ProjectSummary from "@/components/ProjectPublic/ProjectSummary";
 import ProjectDescription from "@/components/ProjectPublic/ProjectDescription";
 import ProjectCreatorMotivation from "@/components/ProjectPublic/ProjectCreatorMotivation";
 import ProjectGoal from "@/components/ProjectPublic/ProjectGoal";
-import ProjectNotFound from "@/components/Errors/ProjectNotFound";
+import Error from "@/components/Errors/Error";
 import TalentsNeeded from "@/components/ProjectPublic/TalentsNeeded";
 import ProjectTags from "@/components/ProjectPublic/ProjectTags";
 import ProjectMembers from "@/components/ProjectPublic/ProjectMembers";
@@ -24,12 +24,12 @@ const ProjectPublicPage = async ({ params }) => {
 
 	const result = await ApiGetProjectPublicDataByLink(projectLink);
 	if (!result.ok) {
-		return <ProjectNotFound message={result.message} />;
+		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" extraMessage={result.message} />;
 	}
 
 	const project = normalizeProjectData(result.data.project);
 	if (!project) {
-		return <ProjectNotFound />;
+		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" />;
 	}
 
 	const projectId = project.projectId;

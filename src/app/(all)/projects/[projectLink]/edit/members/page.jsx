@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 
 import FormMembers from "@/components/ProjectEdit/MembersTab/FormMembers";
-import ProjectNotFound from "@/components/Errors/ProjectNotFound";
+import Error from "@/components/Errors/Error";
 
 import { ApiGetEditProjectMembers } from "@/lib/api/projectEditionServer";
 
@@ -25,22 +25,20 @@ const ProjectEditMembersPage = async ({ params }) => {
 			redirect("/access-denied");
 		}
 
-		return <ProjectNotFound message={result.message} />;
+		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" extraMessage={result.message} />;
 	}
 
 	const project = result.data;
 
 	const projectId = project?.projectId;
-	const status = project?.statusInfo?.currentStatus.status;
-	const statusBgColor = project?.statusInfo?.currentStatus.colors.bgColor;
 	const members = project?.members;
 	const talentsNeeded = project?.talentsNeeded;
 
 	if (!project) {
-		return <ProjectNotFound />;
+		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" />;
 	}
 
-	return <FormMembers project={project} user={user} projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} members={members} talentsNeeded={talentsNeeded} />;
+	return <FormMembers project={project} user={user} projectId={projectId} members={members} talentsNeeded={talentsNeeded} />;
 };
 
 export default ProjectEditMembersPage;

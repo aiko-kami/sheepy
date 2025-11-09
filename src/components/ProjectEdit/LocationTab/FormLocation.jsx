@@ -7,8 +7,9 @@ import Location from "@/components/ProjectEdit/LocationTab/Location";
 
 import { handleFormChange } from "@/utils/formHandlers";
 
-const FormLocation = ({ projectId, projectLink, status, statusBgColor, onlineOnly, city, country }) => {
+const FormLocation = ({ projectId, onlineOnly, city, country }) => {
 	const [formInputs, setFormInputs] = useState({
+		projectId: projectId,
 		locationOnlineOnly: onlineOnly || false,
 		projectLocationCity: city || "",
 		projectLocationCountry: country || "",

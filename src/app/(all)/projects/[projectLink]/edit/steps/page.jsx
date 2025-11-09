@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 
 import FormSteps from "@/components/ProjectEdit/StepsTab/FormSteps";
-import ProjectNotFound from "@/components/Errors/ProjectNotFound";
+import Error from "@/components/Errors/Error";
 
 import { ApiGetEditProjectSteps } from "@/lib/api/projectEditionServer";
 
@@ -19,21 +19,19 @@ const ProjectEditStepsPage = async ({ params }) => {
 			redirect("/access-denied");
 		}
 
-		return <ProjectNotFound message={result.message} />;
+		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" extraMessage={result.message} />;
 	}
 
 	const project = result.data;
 
 	const projectId = project?.projectId;
-	const status = project?.statusInfo?.currentStatus.status;
-	const statusBgColor = project?.statusInfo?.currentStatus.colors.bgColor;
 	const steps = project?.steps;
 
 	if (!project) {
-		return <ProjectNotFound />;
+		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" />;
 	}
 
-	return <FormSteps projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} steps={steps} />;
+	return <FormSteps projectId={projectId} steps={steps} />;
 };
 
 export default ProjectEditStepsPage;

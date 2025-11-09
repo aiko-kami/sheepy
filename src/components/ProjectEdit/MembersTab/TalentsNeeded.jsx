@@ -6,10 +6,10 @@ import { IoPersonAdd } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import TalentNeededField from "@/components/Forms/TalentNeededField";
 
-const TalentsNeeded = ({ project, user, talentsNeeded }) => {
+const TalentsNeeded = ({ projectId, user, talentsNeeded }) => {
 	const [formInputs, setFormInputs] = useState({
 		userUpdater: user.userId,
-		projectId: project.projectId,
+		projectId: projectId,
 		talentsNeeded: talentsNeeded,
 	});
 

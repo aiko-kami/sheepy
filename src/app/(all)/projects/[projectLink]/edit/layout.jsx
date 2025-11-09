@@ -1,6 +1,8 @@
+import { redirect } from "next/navigation";
+
 import SideMenu from "@/components/ProjectEdit/SideMenu";
 import ProjectEditNavbar from "@/components/ProjectEdit/ProjectEditNavbar";
-import ProjectNotFound from "@/components/Errors/ProjectNotFound";
+import Error from "@/components/Errors/Error";
 
 import { ApiGetEditUserRights } from "@/lib/api/projectEditionServer";
 
@@ -13,7 +15,7 @@ export default async function RootLayout({ params, children }) {
 			redirect("/access-denied");
 		}
 
-		return <ProjectNotFound message={result.message} />;
+		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" extraMessage={result.message} />;
 	}
 
 	const projectRights = result.data.projectRights;

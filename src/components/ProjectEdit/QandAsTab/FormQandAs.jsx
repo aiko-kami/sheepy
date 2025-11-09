@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Button } from "@/components/Buttons/Buttons";
 import QandAs from "@/components/ProjectEdit/QandAsTab/QandAs";
 
-const FormQandAs = ({ projectId, projectLink, status, statusBgColor, QAs }) => {
+const FormQandAs = ({ projectId, QAs }) => {
 	const [formInputs, setFormInputs] = useState({
 		projectId: projectId,
 		updatedBy: QAs.updatedBy,

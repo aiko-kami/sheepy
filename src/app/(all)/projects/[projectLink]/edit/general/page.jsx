@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 
 import FormGeneral from "@/components/ProjectEdit/GeneralTab/FormGeneral";
-import ProjectNotFound from "@/components/Errors/ProjectNotFound";
+import Error from "@/components/Errors/Error";
 
 import { ApiGetEditProjectGeneral } from "@/lib/api/projectEditionServer";
 
@@ -19,7 +19,7 @@ const ProjectEditGeneralPage = async ({ params }) => {
 			redirect("/access-denied");
 		}
 
-		return <ProjectNotFound message={result.message} />;
+		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" extraMessage={result.message} />;
 	}
 
 	const project = result.data?.project;
@@ -42,16 +42,12 @@ const ProjectEditGeneralPage = async ({ params }) => {
 	const objectives = project?.objectives;
 
 	if (!project) {
-		return <ProjectNotFound />;
+		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" />;
 	}
 
 	return (
 		<FormGeneral
-			project={project}
 			projectId={projectId}
-			projectLink={projectLink}
-			status={status}
-			statusBgColor={statusBgColor}
 			title={title}
 			category={category}
 			subCategory={subCategory}

@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Button } from "@/components/Buttons/Buttons";
 import Steps from "@/components/ProjectEdit/StepsTab/Steps";
 
-const FormSteps = ({ projectId, projectLink, status, statusBgColor, steps }) => {
+const FormSteps = ({ projectId, steps }) => {
 	const [formInputs, setFormInputs] = useState({
 		projectId: projectId,
 		updatedBy: steps.updatedBy,

@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 
 import FormQandAs from "@/components/ProjectEdit/QandAsTab/FormQandAs";
 
-import ProjectNotFound from "@/components/Errors/ProjectNotFound";
+import Error from "@/components/Errors/Error";
 
 import { ApiGetEditProjectQAs } from "@/lib/api/projectEditionServer";
 
@@ -20,21 +20,19 @@ const ProjectEditQandAPage = async ({ params }) => {
 			redirect("/access-denied");
 		}
 
-		return <ProjectNotFound message={result.message} />;
+		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" extraMessage={result.message} />;
 	}
 
 	const project = result.data;
 
 	const projectId = project?.projectId;
-	const status = project?.statusInfo?.currentStatus.status;
-	const statusBgColor = project?.statusInfo?.currentStatus.colors.bgColor;
 	const QAs = project?.QAs;
 
 	if (!project) {
-		return <ProjectNotFound />;
+		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" />;
 	}
 
-	return <FormQandAs projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} QAs={QAs} />;
+	return <FormQandAs projectId={projectId} QAs={QAs} />;
 };
 
 export default ProjectEditQandAPage;

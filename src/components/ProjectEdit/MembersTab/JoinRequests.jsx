@@ -1,7 +1,7 @@
 import { IoArrowDownCircle } from "react-icons/io5";
 import JoinRequestsTable from "@/components/Tables/ProjectEdit/JoinRequestsTable";
 
-const RequestsTable = ({ project, user }) => {
+const RequestsTable = ({ project, projectId, user }) => {
 	return (
 		<>
 			{/* Join requests */}
@@ -17,7 +17,7 @@ const RequestsTable = ({ project, user }) => {
 					{/* requests */}
 					{project.requests && project.requests.length !== 0 ? (
 						<div className="w-full overflow-x-auto shadow-md sm:rounded-lg">
-							<JoinRequestsTable requests={project.requests} projectId={project.projectId} projectPermissions={project.permissions} />
+							<JoinRequestsTable requests={project.requests} projectId={projectId} projectPermissions={project.permissions} />
 						</div>
 					) : (
 						<p className=" text-xl text-center pt-10">

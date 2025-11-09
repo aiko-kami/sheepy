@@ -3,8 +3,7 @@ import InvitationUserCell from "@/components/Tables/ProjectEdit/InvitationUserCe
 import InvitationMessageCell from "@/components/Tables/ProjectEdit/InvitationMessageCell";
 import ProjectInvitationsActions from "@/components/IconsActions/ProjectInvitationsActions";
 
-const InvitationsTable = ({ invitations, project, projectPermissions }) => {
-	const { projectId, talentsNeeded } = project;
+const InvitationsTable = ({ invitations, project, projectId, projectPermissions }) => {
 	return (
 		<>
 			<table className="w-full text-xs md:text-sm shadow-lg">
@@ -49,7 +48,7 @@ const InvitationsTable = ({ invitations, project, projectPermissions }) => {
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2">
 									<div className="flex justify-center flex-nowrap">
-										<ProjectInvitationsActions projectId={projectId} invitation={invitation} talentsNeeded={talentsNeeded} projectPermissions={projectPermissions} />
+										<ProjectInvitationsActions projectId={projectId} invitation={invitation} talentsNeeded={project.talentsNeeded} projectPermissions={projectPermissions} />
 									</div>
 								</td>
 							</tr>

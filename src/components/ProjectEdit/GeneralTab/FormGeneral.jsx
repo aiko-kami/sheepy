@@ -6,8 +6,9 @@ import General from "@/components/ProjectEdit/GeneralTab/General";
 
 import { handleFormChange } from "@/utils/formHandlers";
 
-const FormGeneral = ({ projectId, projectLink, status, statusBgColor, title, category, subCategory, goal, summary, description, cover, tags, tagsList, creatorMotivation, objectives }) => {
+const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, description, cover, tags, tagsList, creatorMotivation, objectives }) => {
 	const [formInputs, setFormInputs] = useState({
+		projectId: projectId,
 		projectTitle: title || "",
 		projectCategory: category.name || "",
 		projectSubCategory: subCategory || "",

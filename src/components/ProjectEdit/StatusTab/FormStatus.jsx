@@ -7,8 +7,9 @@ import Status from "@/components/ProjectEdit/StatusTab/Status";
 
 import { handleFormChange } from "@/utils/formHandlers";
 
-const FormStatus = ({ projectId, projectLink, statusHistory, status, statusBgColor, startDate, visibility }) => {
+const FormStatus = ({ projectId, statusHistory, status, startDate, visibility }) => {
 	const [formInputs, setFormInputs] = useState({
+		projectId: projectId,
 		projectStatus: status || "",
 		projectStartDate: DateTime.fromISO(startDate) || null,
 		projectVisibility: visibility || "",

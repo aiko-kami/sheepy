@@ -1,7 +1,7 @@
 import { redirect } from "next/navigation";
 
 import FormLocation from "@/components/ProjectEdit/LocationTab/FormLocation";
-import ProjectNotFound from "@/components/Errors/ProjectNotFound";
+import Error from "@/components/Errors/Error";
 
 import { ApiGetEditProjectLocation } from "@/lib/api/projectEditionServer";
 
@@ -20,23 +20,21 @@ const ProjectEditLocationPage = async ({ params }) => {
 			redirect("/access-denied");
 		}
 
-		return <ProjectNotFound message={result.message} />;
+		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" extraMessage={result.message} />;
 	}
 
 	const project = result.data;
 
 	const projectId = project?.projectId;
-	const status = project?.statusInfo?.currentStatus.status;
-	const statusBgColor = project?.statusInfo?.currentStatus.colors.bgColor;
 	const onlineOnly = project?.location?.onlineOnly;
 	const city = project?.location?.city;
 	const country = project?.location?.country;
 
 	if (!project) {
-		return <ProjectNotFound />;
+		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" />;
 	}
 
-	return <FormLocation projectId={projectId} projectLink={projectLink} status={status} statusBgColor={statusBgColor} onlineOnly={onlineOnly} city={city} country={country} />;
+	return <FormLocation projectId={projectId} onlineOnly={onlineOnly} city={city} country={country} />;
 };
 
 export default ProjectEditLocationPage;
