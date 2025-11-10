@@ -6,7 +6,7 @@ import Image from "next/image";
 import Modal from "@/components/Modals/Modal";
 import UpdateMemberModal from "@/components/Modals/ProjectEdit/UpdateMemberModal";
 
-const MemberUserCell = ({ member, role }) => {
+const MemberUserCell = ({ user, role }) => {
 	const [modalDisplayDetails, setModalDisplayDetails] = useState(false);
 
 	const showModalDetails = () => {
@@ -20,11 +20,11 @@ const MemberUserCell = ({ member, role }) => {
 		<>
 			<div className="flex items-center">
 				<button type="button" onClick={showModalDetails}>
-					<Image src={member.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-9 h-9 rounded-full shadow-md mr-4" />
+					<Image src={user.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-9 h-9 rounded-full shadow-md mr-4" />
 				</button>
 				<div className="font-semibold text-base lg:whitespace-nowrap">
 					<button type="button" onClick={showModalDetails}>
-						<span>{member.username}</span>
+						<span>{user.username}</span>
 					</button>
 				</div>
 				{role === "owner" && (
@@ -34,7 +34,7 @@ const MemberUserCell = ({ member, role }) => {
 				)}
 			</div>
 			<Modal modalDisplay={modalDisplayDetails} closeModal={closeModalDetails} modalSize={"std"} modalTitle={"Update member"}>
-				<UpdateMemberModal member={member} closeModal={closeModalDetails} />
+				<UpdateMemberModal user={user} closeModal={closeModalDetails} />
 			</Modal>
 		</>
 	);

@@ -17,8 +17,8 @@ const ProjectEditMembersPage = async ({ params }) => {
 
 	const result = await ApiGetEditProjectMembers(projectLink);
 
-	console.log("🚀 ~ ProjectEditMembersPage ~ result:", result);
-	console.dir(result, { depth: null, colors: true });
+	//	console.log("🚀 ~ ProjectEditMembersPage ~ result:", result);
+	//	console.dir(result, { depth: null, colors: true });
 
 	if (!result.ok) {
 		if (result.status === 401 || result.status === 403) {

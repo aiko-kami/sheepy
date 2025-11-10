@@ -26,7 +26,7 @@ export default async function RootLayout({ params, children }) {
 	return (
 		<>
 			<div className="sm:mt-10 xl:mb-16">
-				<h1 className="text-center text-3xl font-semibold mb-8">Project edition rg erg</h1>
+				<h1 className="text-center text-3xl font-semibold mb-8">Project edition</h1>
 			</div>
 			<div className="container mx-auto hyphens-auto">
 				<div className="lg:grid grid-cols-5">

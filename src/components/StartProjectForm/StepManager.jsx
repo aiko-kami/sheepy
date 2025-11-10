@@ -30,6 +30,7 @@ const StepManager = () => {
 	const [percent, setPercent] = useState(0);
 
 	const [categories, setCategories] = useState([]);
+	const [tagsList, setTagsList] = useState([]);
 
 	const [formInputs, setFormInputs] = useState({
 		projectTitle: "",
@@ -46,51 +47,24 @@ const StepManager = () => {
 		locationCity: "",
 		projectVisibility: "public",
 		projectStartDate: null,
-		tags: [],
+		projectTagsNew: [],
 		talentsNeeded: [],
 		projectId: "",
 	});
-
-	const [tagInput, setTagInput] = useState("");
-	const [tagError, setTagError] = useState("");
-
-	const [talentNeededTalentInput, setTalentNeededTalentInput] = useState("");
-	const [talentNeededDescriptionInput, setTalentNeededDescriptionInput] = useState("");
-	const [talentNeededError, setTalentNeededError] = useState("");
 
 	const [objectiveInput, setObjectiveInput] = useState("");
 
 	const onChange = handleFormChange(setFormInputs);
 
-	const addTag = () => {
-		if (!tagInput) {
-			setTagError("Please enter a tag.");
-		}
-		if (tagInput && formInputs.tags.includes(tagInput)) {
-			setTagError("This tag is already present in the list.");
-		}
-		if (tagInput && formInputs.tags.length >= 8) {
-			setTagError("You can only add up to 8 tags.");
-		}
-		if (tagInput && !formInputs.tags.includes(tagInput) && formInputs.tags.length < 8) {
-			setFormInputs((prevState) => ({
-				...prevState,
-				tags: [...prevState.tags, tagInput],
-			}));
-			setTagInput("");
-			setTagError("");
-		}
-	};
-
 	const addObjective = () => {
 		if (!objectiveInput) {
-			showErrorToast("Please enter an objective.");
+			showErrorToast("Please enter an objective");
 		}
 		if (objectiveInput && formInputs.projectObjectives.includes(objectiveInput)) {
-			showErrorToast("This project objective is already present in the list.");
+			showErrorToast("This project objective is already present in the list");
 		}
 		if (objectiveInput && formInputs.projectObjectives.length >= 10) {
-			showErrorToast("You can only add up to 10 project objectives.");
+			showErrorToast("You can only add up to 10 project objectives");
 		}
 		if (objectiveInput && !formInputs.projectObjectives.includes(objectiveInput) && formInputs.projectObjectives.length < 10) {
 			setFormInputs((prevState) => ({
@@ -101,23 +75,11 @@ const StepManager = () => {
 		}
 	};
 
-	const removeTag = (tagToRemove) => {
-		setFormInputs((prevState) => ({
-			...prevState,
-			tags: prevState.tags.filter((tag) => tag !== tagToRemove),
-		}));
-	};
-
 	const removeObjective = (objectiveToRemove) => {
 		setFormInputs((prevState) => ({
 			...prevState,
 			projectObjectives: prevState.projectObjectives.filter((objective) => objective !== objectiveToRemove),
 		}));
-	};
-
-	const handleTagInputChange = (e) => {
-		setTagError("");
-		setTagInput(e.target.value);
 	};
 
 	const handleObjectiveInputChange = (e) => {
@@ -167,7 +129,7 @@ const StepManager = () => {
 			if (data) {
 				setCategories(data);
 			} else {
-				showErrorToast("Failed to load categories.");
+				showErrorToast("Failed to load categories");
 			}
 		};
 		fetchCategories();
@@ -217,7 +179,7 @@ const StepManager = () => {
 			locationOnlineOnly: formInputs.locationOnlineOnly,
 			visibility: formInputs.projectVisibility,
 			startDate: formInputs.projectStartDate ? formInputs.projectStartDate.toISODate() : "",
-			tags: formInputs.tags,
+			tags: formInputs.projectTagsNew,
 			talentsNeeded: formInputs.talentsNeeded,
 		};
 
@@ -288,18 +250,7 @@ const StepManager = () => {
 						)}
 
 						{/* Step 5: Fill in the project project online-only, project location, project privacy, project start date, and tags */}
-						{currentStep === 5 && (
-							<StepFive
-								formInputs={formInputs}
-								onChange={onChange}
-								tagInput={tagInput}
-								addTag={addTag}
-								removeTag={removeTag}
-								handleTagInputChange={handleTagInputChange}
-								tagError={tagError}
-								setProjectStartDate={setProjectStartDate}
-							/>
-						)}
+						{currentStep === 5 && <StepFive formInputs={formInputs} setFormInputs={setFormInputs} onChange={onChange} tagsList={tagsList} setProjectStartDate={setProjectStartDate} />}
 
 						{/* Step 6: Fill in the talents needed */}
 						{currentStep === 6 && <StepSix formInputs={formInputs} setFormInputs={setFormInputs} />}

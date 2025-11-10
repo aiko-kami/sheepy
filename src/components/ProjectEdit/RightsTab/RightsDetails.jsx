@@ -6,11 +6,11 @@ import { IoSettingsSharp } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import RightsTable from "@/components/Tables/ProjectEdit/RightsTable";
 
-const RightsDetails = ({ project, headers, children }) => {
+const RightsDetails = ({ projectId, membersProjectRights, headers, children }) => {
 	const [formState, setFormState] = useState(
-		project.members.map((member) => ({
-			userId: member.userId,
-			memberRights: { ...member.memberRights },
+		membersProjectRights.map((member) => ({
+			userId: member.user.userId,
+			permissions: { ...member.permissions },
 		}))
 	);
 
@@ -20,9 +20,9 @@ const RightsDetails = ({ project, headers, children }) => {
 				if (member.userId === userId) {
 					return {
 						...member,
-						memberRights: {
-							...member.memberRights,
-							[right]: !member.memberRights[right],
+						permissions: {
+							...member.permissions,
+							[right]: !member.permissions[right],
 						},
 					};
 				}
@@ -36,14 +36,14 @@ const RightsDetails = ({ project, headers, children }) => {
 		setFormState((prevState) =>
 			prevState.map((member) => {
 				if (member.userId === userId) {
-					const areAllSelected = Object.values(member.memberRights).every(Boolean);
+					const areAllSelected = Object.values(member.permissions).every(Boolean);
 					// Toggle all rights based on current state
-					const updatedRights = Object.keys(member.memberRights).reduce((rights, key) => {
+					const updatedRights = Object.keys(member.permissions).reduce((rights, key) => {
 						rights[key] = !areAllSelected;
 						return rights;
 					}, {});
 
-					return { ...member, memberRights: updatedRights };
+					return { ...member, permissions: updatedRights };
 				}
 				return member;
 			})
@@ -54,7 +54,7 @@ const RightsDetails = ({ project, headers, children }) => {
 		event.preventDefault();
 		// Handle form submission
 		const formDataToSubmit = {
-			projectId: project.projectId,
+			projectId: projectId,
 			members: formState,
 		};
 
@@ -72,11 +72,11 @@ const RightsDetails = ({ project, headers, children }) => {
 					{/* Project members */}
 					<div className="mb-8 flex justify-center">
 						{/* General rights members table */}
-						{project.members && project.members.length !== 0 ? (
+						{membersProjectRights && membersProjectRights.length !== 0 ? (
 							<>
 								<div className="w-full">
 									<div className="mb-8 w-full overflow-x-auto shadow-md sm:rounded-lg">
-										<RightsTable members={project.members} formState={formState} onChange={handleCheckboxChange} onSelectAll={handleSelectAll} headers={headers} />
+										<RightsTable members={membersProjectRights} formState={formState} onChange={handleCheckboxChange} onSelectAll={handleSelectAll} headers={headers} />
 									</div>
 									{/* Submit Button */}
 									<div className="flex justify-center">

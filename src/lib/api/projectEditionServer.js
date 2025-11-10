@@ -96,7 +96,7 @@ export async function ApiGetEditProjectMembers(projectLink) {
 }
 
 export async function ApiGetEditProjectRights(projectLink) {
-	return apiGet(`/projectEdition/rights/${projectLink}`, (json) => json?.data?.project ?? null);
+	return apiGet(`/projectEdition/rights/${projectLink}`, (json) => json?.data ?? null);
 }
 
 export async function ApiGetEditProjectStatus(projectLink) {

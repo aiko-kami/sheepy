@@ -33,25 +33,25 @@ const RightsTable = ({ members, formState, onChange, onSelectAll, headers }) => 
 				</thead>
 				<tbody>
 					{members.map((member, memberIndex) => {
-						const memberState = formState.find((m) => m.userId === member.userId);
+						const memberState = formState.find((m) => m.userId === member.user.userId);
 
 						return (
 							<tr key={memberIndex} className="border-b bg-gray-800 border-gray-700 hover:bg-gray-600">
 								<td scope="row" className="p-2 md:px-4 md:py-2">
-									<MemberUserCell member={member} />
+									<MemberUserCell user={member.user} />
 								</td>
 								{/* Individual Rights Checkboxes */}
 								{headers.labels.map((header, index) => {
-									const isChecked = memberState?.memberRights[header.right] ?? false;
+									const isChecked = memberState?.permissions[header.right] ?? false;
 									return (
 										<td key={index} scope="row" className="p-2 md:px-4 md:py-2 text-center">
 											<div className="flex items-center justify-center">
 												<input
-													id={`checkbox-${member.userId}-${header.right}`}
+													id={`checkbox-${member.user.userId}-${header.right}`}
 													type="checkbox"
 													className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"
-													checked={isChecked}
-													onChange={() => onChange(member.userId, header.right)}
+													checked={!!isChecked}
+													onChange={() => onChange(member.user.userId, header.right)}
 												/>
 											</div>
 										</td>
@@ -63,7 +63,7 @@ const RightsTable = ({ members, formState, onChange, onSelectAll, headers }) => 
 										<input
 											type="checkbox"
 											className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"
-											onChange={() => onSelectAll(member.userId)}
+											onChange={() => onSelectAll(member.user.userId)}
 											checked={false} // Checked if all rights are true
 										/>
 									</div>

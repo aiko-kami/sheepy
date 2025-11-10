@@ -49,11 +49,11 @@ const TagInputField = ({ formInputs, setFormInputs, tagsList = [] }) => {
 	const addExistingTag = (tagObject) => {
 		if (!tagObject) return;
 		if (totalSelectedCount >= MAX_TAGS) {
-			showErrorToast(`You can only add up to ${MAX_TAGS} tags.`);
+			showErrorToast(`You can only add up to ${MAX_TAGS} tags`);
 			return;
 		}
 		if (selectedExistingIds.has(tagObject.tagId) || selectedNewNames.has(normalize(tagObject.name))) {
-			showErrorToast("This tag is already present in the list.");
+			showErrorToast("This tag is already present in the list");
 			return;
 		}
 
@@ -80,16 +80,16 @@ const TagInputField = ({ formInputs, setFormInputs, tagsList = [] }) => {
 	const addNewTag = (name) => {
 		const trimmed = String(name || "").trim();
 		if (!trimmed) {
-			showErrorToast("Please enter a tag name.");
+			showErrorToast("Please enter a tag name");
 			return;
 		}
 		if (totalSelectedCount >= MAX_TAGS) {
-			showErrorToast(`You can only add up to ${MAX_TAGS} tags.`);
+			showErrorToast(`You can only add up to ${MAX_TAGS} tags`);
 			return;
 		}
 		const cap = normalize(trimmed);
 		if (selectedNewNames.has(cap) || existingTags.some((t) => normalize(t.name) === cap)) {
-			showErrorToast("This tag is already present in the list.");
+			showErrorToast("This tag is already present in the list");
 			return;
 		}
 

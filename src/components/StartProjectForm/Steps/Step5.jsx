@@ -4,12 +4,9 @@ import InputField from "@/components/Forms/InputField";
 import { SelectField } from "@/components/Forms/SelectField";
 import { ToggleField } from "@/components/Forms/ToggleField";
 import DatePickerField from "@/components/Forms/DatePickerField";
-import { Button } from "@/components/Buttons/Buttons";
-import { IoAddCircleOutline, IoCloseCircleOutline } from "react-icons/io5";
+import TagInputField from "@/components/Forms/TagInputField/TagInputField";
 
-const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTagInputChange, tagError, setProjectStartDate }) => {
-	console.log("🚀 ~ StepFive ~ formInputs:", formInputs.projectStartDate);
-
+const StepFive = ({ formInputs, setFormInputs, onChange, tagsList, setProjectStartDate }) => {
 	const optionsList = [
 		{
 			value: "public",
@@ -71,50 +68,7 @@ const StepFive = ({ formInputs, onChange, tagInput, addTag, removeTag, handleTag
 								<div className="mb-6 w-60">
 									<DatePickerField label="Set a start date (optional)" value={formInputs.projectStartDate} onChange={(newValue) => setProjectStartDate(newValue)} />
 								</div>
-								{/* Tag input field */}
-								<div className="relative">
-									<div className="flex items-center">
-										<div className="w-full mr-2 mb-6">
-											<InputField
-												inputName="tag"
-												inputType="text"
-												label="Tag (optional)"
-												inputValue={tagInput}
-												onChange={handleTagInputChange}
-												onKeyDown={(e) => {
-													if (e.key === "Enter") {
-														e.preventDefault();
-														addTag();
-													}
-												}}
-											/>
-										</div>
-										<div className="min-w-fit">
-											<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "blue", btnRounded: "std", action: addTag }}>
-												<div className="flex">
-													Add tag <IoAddCircleOutline className="text-xl ml-2" />
-												</div>
-											</Button>
-										</div>
-									</div>
-									<div className="absolute left-0 top-12 mb-2 min-h-6 text-sm">{tagError && <p className="text-xs text-red-600">{tagError}</p>}</div>
-
-									{/* List of tags */}
-									<div className="mt-2 min-h-32">
-										{formInputs.tags.length > 0 && (
-											<div className="flex flex-wrap gap-2">
-												{formInputs.tags.map((tag, index) => (
-													<span key={index} className="flex items-center px-3 pt-0.5 pb-1 mt-1 bg-gray-200 text-gray-800 rounded-full">
-														{tag}
-														<button type="button" className="ml-1 text-gray-600 hover:text-gray-800 transition duration-150 ease-in-out" onClick={() => removeTag(tag)}>
-															<IoCloseCircleOutline className="text-lg" title="Remove tag" />
-														</button>
-													</span>
-												))}
-											</div>
-										)}
-									</div>
-								</div>
+								<TagInputField formInputs={formInputs} setFormInputs={setFormInputs} tagsList={tagsList} />
 							</div>
 						</div>
 					</div>

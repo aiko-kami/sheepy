@@ -51,7 +51,7 @@ const DraggableStepItem = ({ item, index, items, setItems, onChange }) => {
 	};
 
 	return (
-		<div ref={setNodeRef} style={style} className="flex p-4 mb-4 relative bg-gray-700 text-white rounded-md shadow-lg">
+		<div ref={setNodeRef} style={style} className="flex p-4 mb-4 relative bg-slate-800/70 text-white rounded-md shadow-lg">
 			{/* Icons for Move Up, Move Down, and Drag Handle */}
 			<div className="flex flex-col items-center justify-between mr-4 min-h-full text-gray-300">
 				<IoCaretUpOutline className="w-5 h-5 cursor-pointer hover:text-blue-400 mb-1" onClick={() => moveItem("up")} title="Move before" />
@@ -81,7 +81,7 @@ const DraggableStepItem = ({ item, index, items, setItems, onChange }) => {
 					/>
 				</div>
 				<div className="ml-2 mb-4 max-w-80">
-					<InputField label="Status:" inputName={`status-${id}`} inputType="text" inputValue={status} onChange={(e) => updateField("status", e.target.value)} />
+					<InputField label="Status:" inputName={`status-${id}`} inputType="text" inputValue={status.status} onChange={(e) => updateField("status", e.target.value)} />
 				</div>
 				<div className="ml-2 mb-2">
 					<ToggleField label="Published" inputName={`published-${id}`} checked={published} onChange={(e) => updateField("published", e.target.checked)} />

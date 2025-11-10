@@ -3,43 +3,43 @@ import { IoLockOpen, IoSettingsSharp, IoPeople, IoDocuments } from "react-icons/
 
 import RightsDetails from "@/components/ProjectEdit/RightsTab/RightsDetails";
 
-const Rights = ({ project }) => {
+const Rights = ({ projectId, membersProjectRights }) => {
 	const headersGlobal = {
 		type: "project",
 		labels: [
-			{ label: "status", right: "canUpdateProjectStatus" },
-			{ label: "visibility", right: "canUpdateProjectVisibility" },
-			{ label: "location", right: "canUpdateProjectLocation" },
-			{ label: "steps", right: "canUpdateProjectSteps" },
-			{ label: "Q&As", right: "canUpdateProjectQnAs" },
-			{ label: "members rights", right: "canUpdateMembersRights" },
+			{ label: "status", right: "canEditStatus" },
+			{ label: "visibility", right: "canEditVisibility" },
+			{ label: "location", right: "canEditLocation" },
+			{ label: "steps", right: "canEditSteps" },
+			{ label: "Q&As", right: "canEditQAs" },
+			{ label: "members rights", right: "canEditRights" },
 		],
 	};
 
 	const headersGeneral = {
 		type: "project",
 		labels: [
-			{ label: "title", right: "canUpdateProjectTitle" },
-			{ label: "category", right: "canUpdateProjectCategory" },
-			{ label: "sub-category", right: "canUpdateProjectSubCategory" },
-			{ label: "summary", right: "canUpdateProjectSummary" },
-			{ label: "description", right: "canUpdateProjectDescription" },
-			{ label: "goal", right: "canUpdateProjectGoal" },
-			{ label: "cover", right: "canUpdateProjectCover" },
-			{ label: "tags", right: "canUpdateProjectTags" },
+			{ label: "title", right: "canEditTitle" },
+			{ label: "category", right: "canEditCategory" },
+			{ label: "sub-category", right: "canEditSubCategory" },
+			{ label: "summary", right: "canEditSummary" },
+			{ label: "description", right: "canEditDescription" },
+			{ label: "goal", right: "canEditGoal" },
+			{ label: "cover", right: "canEditCover" },
+			{ label: "tags", right: "canEditTags" },
 		],
 	};
 
 	const headersMembers = {
 		type: "members",
 		labels: [
-			{ label: "edit members", right: "canUpdateEditMembers" },
+			{ label: "edit members", right: "canEditMembers" },
 			{ label: "remove members", right: "canRemoveMembers" },
-			{ label: "talents needed", right: "canUpdateTalentsNeeded" },
-			{ label: "view requests", right: "canViewRequests" },
-			{ label: "edit requests", right: "canEditRequests" },
-			{ label: "view invitations", right: "canViewInvitations" },
-			{ label: "edit invitations", right: "canEditInvitations" },
+			{ label: "talents needed", right: "canEditTalentsNeeded" },
+			{ label: "view requests", right: "canViewJoinProjectRequests" },
+			{ label: "edit requests", right: "canEditJoinProjectRequests" },
+			{ label: "view invitations", right: "canViewJoinProjectInvitations" },
+			{ label: "edit invitations", right: "canEditJoinProjectInvitations" },
 		],
 	};
 
@@ -47,43 +47,43 @@ const Rights = ({ project }) => {
 		type: "attachments",
 		labels: [
 			{ label: "view document", right: "canViewAttachments" },
-			{ label: "add document", right: "canUpdateAddAttachments" },
-			{ label: "edit document", right: "canUpdateEditAttachments" },
-			{ label: "remove document", right: "canUpdateRemoveAttachments" },
+			{ label: "add document", right: "canAddAttachments" },
+			{ label: "edit document", right: "canEditAttachments" },
+			{ label: "remove document", right: "canRemoveAttachments" },
 		],
 	};
 
 	const headersCopy = {
 		type: "project",
-		labels: ["start date", "phase", "objectives", "motivation", "visibility"],
+		labels: ["start date", "phase", "objectives", "motivation"],
 	};
 
 	return (
 		<>
 			{/* Users project rights */}
 			<div className="mb-8 lg:mb-14">
-				<RightsDetails project={project} headers={headersGlobal}>
+				<RightsDetails projectId={projectId} membersProjectRights={membersProjectRights} headers={headersGlobal}>
 					<IoLockOpen className="mr-2 text-2xl" />
 					Global users rights
 				</RightsDetails>
 			</div>
 			{/* General rights */}
 			<div className="mb-8 lg:mb-14">
-				<RightsDetails project={project} headers={headersGeneral}>
+				<RightsDetails projectId={projectId} membersProjectRights={membersProjectRights} headers={headersGeneral}>
 					<IoSettingsSharp className="mr-2 text-2xl" />
 					General users rights
 				</RightsDetails>
 			</div>
 			{/* Members rights */}
 			<div className="mb-8 lg:mb-14">
-				<RightsDetails project={project} headers={headersMembers}>
+				<RightsDetails projectId={projectId} membersProjectRights={membersProjectRights} headers={headersMembers}>
 					<IoPeople className="mr-2 text-2xl" />
 					Members Users rights
 				</RightsDetails>
 			</div>
 			{/* Attachments rights */}
 			<div className="mb-8 lg:mb-14">
-				<RightsDetails project={project} headers={headersAttachments}>
+				<RightsDetails projectId={projectId} membersProjectRights={membersProjectRights} headers={headersAttachments}>
 					<IoDocuments className="mr-2 text-2xl" />
 					Attachments users rights
 				</RightsDetails>

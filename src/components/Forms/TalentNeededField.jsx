@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 import InputField from "@/components/Forms/InputField";
 import { Button } from "@/components/Buttons/Buttons";
 import { IoAddCircleOutline, IoCloseCircleOutline } from "react-icons/io5";
@@ -19,17 +20,17 @@ const TalentNeededField = ({ talentsNeeded, setFormInputs }) => {
 		const description = (talentNeededDescriptionInput || "").trim();
 
 		// Basic validations with early returns
-		if (!talent) return showErrorToast("Please enter a talent.");
+		if (!talent) return showErrorToast("Please enter a talent");
 
-		if (!description) return showErrorToast("Please enter a description.");
+		if (!description) return showErrorToast("Please enter a description");
 
 		// Case-insensitive duplicate check (assumes stored items have .talent)
 		const alreadyExists = talentsNeeded.some((t) => String(t.talent || "").toLowerCase() === talent.toLowerCase());
-		if (alreadyExists) return showErrorToast("This talent is already present in the list.");
+		if (alreadyExists) return showErrorToast("This talent is already present in the list");
 
 		// Max limit check (max 20)
 		if (talentsNeeded.length >= 20) {
-			return showErrorToast("You can only add up to 20 talents.");
+			return showErrorToast("You can only add up to 20 talents");
 		}
 
 		// Add new talent
@@ -103,24 +104,39 @@ const TalentNeededField = ({ talentsNeeded, setFormInputs }) => {
 			</div>
 			{/* List of talents needed */}
 			<div className="min-h-16">
-				{talentsNeeded.length > 0 && (
-					<div className="flex flex-col gap-2">
-						{talentsNeeded.map((talentNeeded, index) => (
-							<div key={index} className="flex items-center p-2 pb-2.5 rounded-lg bg-gradient-to-r from-indigo-900 to-blue-900">
-								<button title="Remove talent" type="button" className="text-gray-300 mr-8 hover:text-white transition duration-150 ease-in-out" onClick={() => removeTalentNeeded(talentNeeded.talent)}>
-									<IoCloseCircleOutline className="text-2xl" />
-								</button>
-								<span className="flex items-center">
-									<Image src={talentNeededProfilePicture} className="object-cover rounded-full w-10 h-10 mr-3" alt="talent profile picture" height={0} width={0} sizes="100vw" />
-									<div className="flex flex-col">
-										<span className="font-semibold">{talentNeeded.talent}</span>
-										<p className="text-sm">{talentNeeded.description}</p>
-									</div>
-								</span>
-							</div>
-						))}
-					</div>
-				)}
+				<AnimatePresence>
+					{talentsNeeded.length > 0 && (
+						<div className="flex flex-col gap-2">
+							{talentsNeeded.map((talentNeeded, index) => (
+								<motion.div
+									key={talentNeeded.talent}
+									initial={{ opacity: 0, y: -20 }}
+									animate={{ opacity: 1, y: 0 }}
+									exit={{ opacity: 0, y: 20 }}
+									transition={{ duration: 0.25 }}
+									layout
+									className="flex items-center p-2 pb-2.5 rounded-lg bg-gradient-to-r from-indigo-900 to-blue-900 shadow-sm"
+								>
+									<button
+										title="Remove talent"
+										type="button"
+										className="text-gray-300 mr-8 hover:text-white transition duration-150 ease-in-out"
+										onClick={() => removeTalentNeeded(talentNeeded.talent)}
+									>
+										<IoCloseCircleOutline className="text-2xl" />
+									</button>
+									<span className="flex items-center">
+										<Image src={talentNeededProfilePicture} className="object-cover rounded-full w-10 h-10 mr-3" alt="talent profile picture" height={0} width={0} sizes="100vw" />
+										<div className="flex flex-col">
+											<span className="font-semibold">{talentNeeded.talent}</span>
+											<p className="text-sm">{talentNeeded.description}</p>
+										</div>
+									</span>
+								</motion.div>
+							))}
+						</div>
+					)}
+				</AnimatePresence>
 			</div>
 		</>
 	);

@@ -1,10 +1,10 @@
 import Rights from "@/components/ProjectEdit/RightsTab/Rights";
 
-const FormRights = ({ project, projectLink }) => {
+const FormRights = ({ projectId, membersProjectRights }) => {
 	return (
 		<>
 			{/* Project rights information */}
-			<Rights project={project} />
+			<Rights projectId={projectId} membersProjectRights={membersProjectRights} />
 		</>
 	);
 };

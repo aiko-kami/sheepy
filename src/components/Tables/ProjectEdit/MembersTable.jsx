@@ -32,7 +32,7 @@ const MembersTable = ({ members, projectId, projectPermissions }) => {
 						return (
 							<tr key={index} className="border-b bg-gray-800 border-gray-700 hover:bg-gray-600">
 								<td scope="row" className="p-2 md:px-4 md:py-2">
-									<MemberUserCell member={user} role={role} />
+									<MemberUserCell user={user} role={role} />
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2 text-center">
 									<div className="text-gray-400 whitespace-nowrap">{talent}</div>
@@ -42,7 +42,7 @@ const MembersTable = ({ members, projectId, projectPermissions }) => {
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2">
 									<div className="flex justify-center flex-nowrap">
-										<MembersActions projectId={projectId} member={user} role={role} talent={talent} startDate={startDate.formatted} projectPermissions={projectPermissions} />
+										<MembersActions projectId={projectId} user={user} role={role} talent={talent} startDate={startDate.formatted} projectPermissions={projectPermissions} />
 									</div>
 								</td>
 							</tr>

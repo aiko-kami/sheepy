@@ -12,15 +12,15 @@ const UserLanguages = ({ user, formInputs, setFormInputs }) => {
 
 	const addLanguage = () => {
 		if (!languageInput) {
-			showErrorToast("Please enter a language.");
+			showErrorToast("Please enter a language");
 			return;
 		}
 		if (formInputs.languages.includes(languageInput)) {
-			showErrorToast("This language is already present in the list.");
+			showErrorToast("This language is already present in the list");
 			return;
 		}
 		if (formInputs.languages.length >= 8) {
-			showErrorToast("You can only add up to 8 languages.");
+			showErrorToast("You can only add up to 8 languages");
 			return;
 		}
 

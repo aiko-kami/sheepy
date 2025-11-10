@@ -98,8 +98,8 @@ const CardProjectLocationSettingsTags = ({ formInputs }) => {
 							<h3 className="font-semibold text-gray-900">Tags</h3>
 						</div>
 						<div className="ml-7 flex gap-1">
-							{Array.isArray(formInputs.tags) && formInputs.tags.length > 0 ? (
-								formInputs.tags.map((tag, index) => (
+							{Array.isArray(formInputs.projectTagsNew) && formInputs.projectTagsNew.length > 0 ? (
+								formInputs.projectTagsNew.map((tag, index) => (
 									<span key={index} className="inline-flex items-center px-3 pt-0.5 pb-1 mt-1 rounded-full bg-blue-100 text-blue-800 border border-blue-200">
 										{tag}
 									</span>
