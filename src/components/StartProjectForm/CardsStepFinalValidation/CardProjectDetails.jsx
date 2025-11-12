@@ -73,7 +73,7 @@ const CardProjectDetails = ({ formInputs }) => {
 						<div className="mx-7 flex flex-col gap-2">
 							{Array.isArray(formInputs.projectObjectives) && formInputs.projectObjectives.length > 0 ? (
 								formInputs.projectObjectives.map((objective, index) => (
-									<div key={index} className="px-3 pt-0.5 pb-1 rounded-2xl bg-purple-100 text-purple-800 border border-purple-200">
+									<div key={index} className="px-3 pt-1 pb-1.5 rounded-2xl bg-purple-100 text-purple-800 border border-purple-200">
 										{objective}
 									</div>
 								))

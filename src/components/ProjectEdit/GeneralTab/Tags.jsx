@@ -12,7 +12,9 @@ const Tags = ({ formInputs, setFormInputs, tagsList = [] }) => {
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
 			<div className="md:pl-4">
-				<TagInputField formInputs={formInputs} setFormInputs={setFormInputs} tagsList={tagsList} />
+				<div className="mb-8">
+					<TagInputField formInputs={formInputs} setFormInputs={setFormInputs} tagsList={tagsList} />
+				</div>
 				<div className="flex justify-center">
 					<Button
 						btnProps={{

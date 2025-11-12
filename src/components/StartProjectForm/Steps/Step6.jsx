@@ -1,4 +1,4 @@
-import TalentNeededField from "@/components/Forms/TalentNeededField";
+import TalentInputField from "@/components/Forms/TalentNeededInputField/TalentInputField";
 
 const StepSix = ({ formInputs, setFormInputs }) => {
 	return (
@@ -14,8 +14,8 @@ const StepSix = ({ formInputs, setFormInputs }) => {
 						<div className="flex flex-col items-center w-full">
 							<div className="w-full sm:w-100 xl:w-120">
 								{/* Talents needed input field */}
-								<div>
-									<TalentNeededField talentsNeeded={formInputs.talentsNeeded} setFormInputs={setFormInputs} />
+								<div className="mb-6">
+									<TalentInputField talentsNeeded={formInputs.talentsNeeded} setFormInputs={setFormInputs} />
 								</div>
 							</div>
 						</div>

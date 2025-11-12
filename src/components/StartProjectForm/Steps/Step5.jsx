@@ -1,10 +1,7 @@
-"use client";
-
-import InputField from "@/components/Forms/InputField";
 import { SelectField } from "@/components/Forms/SelectField";
-import { ToggleField } from "@/components/Forms/ToggleField";
 import DatePickerField from "@/components/Forms/DatePickerField";
 import TagInputField from "@/components/Forms/TagInputField/TagInputField";
+import LocationInputField from "@/components/Forms/LocationInputField";
 
 const StepFive = ({ formInputs, setFormInputs, onChange, tagsList, setProjectStartDate }) => {
 	const optionsList = [
@@ -44,20 +41,8 @@ const StepFive = ({ formInputs, setFormInputs, onChange, tagsList, setProjectSta
 					<div className="flex justify-end items-center">
 						<div className="flex flex-col items-center w-full">
 							<div className="w-full sm:w-100 xl:w-120">
-								{/* Location online only (toggle button) */}
-								<div className="mb-4">
-									<ToggleField inputName="locationOnlineOnly" checked={formInputs.locationOnlineOnly} label="Project online only" onChange={onChange} />
-								</div>
-
-								{/* Location country */}
-								<div className="mb-6">
-									<InputField inputName="locationCountry" inputType="text" label="Country" inputValue={formInputs.locationCountry} onChange={onChange} disabled={formInputs.locationOnlineOnly} />
-								</div>
-
-								{/* Location city */}
-								<div className="mb-6">
-									<InputField inputName="locationCity" inputType="text" label="City" inputValue={formInputs.locationCity} onChange={onChange} disabled={formInputs.locationOnlineOnly} />
-								</div>
+								{/* Project location */}
+								<LocationInputField locationOnlineOnly={formInputs.locationOnlineOnly} locationCountry={formInputs.locationCountry} locationCity={formInputs.locationCity} onChange={onChange} />
 
 								{/* Project visibility */}
 								<div className="mb-6">
@@ -68,7 +53,11 @@ const StepFive = ({ formInputs, setFormInputs, onChange, tagsList, setProjectSta
 								<div className="mb-6 w-60">
 									<DatePickerField label="Set a start date (optional)" value={formInputs.projectStartDate} onChange={(newValue) => setProjectStartDate(newValue)} />
 								</div>
-								<TagInputField formInputs={formInputs} setFormInputs={setFormInputs} tagsList={tagsList} />
+
+								{/* Tags */}
+								<div className="mb-6">
+									<TagInputField formInputs={formInputs} setFormInputs={setFormInputs} tagsList={tagsList} />
+								</div>
 							</div>
 						</div>
 					</div>

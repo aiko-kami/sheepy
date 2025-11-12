@@ -1,17 +1,13 @@
 "use client";
-
 import { useState } from "react";
 
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 import InputField from "@/components/Forms/InputField";
-import { Button } from "@/components/Buttons/Buttons";
-import { IoAddCircleOutline, IoCloseCircleOutline } from "react-icons/io5";
-import { showErrorToast } from "@/utils/toast";
-import talentNeededProfilePicture from "@/public/images/userTalentNeeded.jpg";
+import TalentsList from "@/components/Forms/TalentNeededInputField/TalentsList";
+import AddTalentButton from "@/components/Forms/TalentNeededInputField/AddTalentButton";
 
-// Using forwardRef to pass the ref down to the input element
-const TalentNeededField = ({ talentsNeeded, setFormInputs }) => {
+import { showErrorToast } from "@/utils/toast";
+
+const TagInputField = ({ talentsNeeded, setFormInputs }) => {
 	const [talentNeededTalentInput, setTalentNeededTalentInput] = useState("");
 	const [talentNeededDescriptionInput, setTalentNeededDescriptionInput] = useState("");
 
@@ -94,52 +90,17 @@ const TalentNeededField = ({ talentsNeeded, setFormInputs }) => {
 						/>
 					</div>
 					<div className="min-w-fit">
-						<Button btnProps={{ btnSize: "sm", type: "button", btnColor: "blue", btnRounded: "std", action: addTalentNeeded }}>
-							<div className="flex">
-								Add talent <IoAddCircleOutline className="text-xl ml-2" />
-							</div>
-						</Button>
+						<AddTalentButton handleAddTalent={addTalentNeeded} />
 					</div>
 				</div>
 			</div>
+
 			{/* List of talents needed */}
 			<div className="min-h-16">
-				<AnimatePresence>
-					{talentsNeeded.length > 0 && (
-						<div className="flex flex-col gap-2">
-							{talentsNeeded.map((talentNeeded, index) => (
-								<motion.div
-									key={talentNeeded.talent}
-									initial={{ opacity: 0, y: -20 }}
-									animate={{ opacity: 1, y: 0 }}
-									exit={{ opacity: 0, y: 20 }}
-									transition={{ duration: 0.25 }}
-									layout
-									className="flex items-center p-2 pb-2.5 rounded-lg bg-gradient-to-r from-indigo-900 to-blue-900 shadow-sm"
-								>
-									<button
-										title="Remove talent"
-										type="button"
-										className="text-gray-300 mr-8 hover:text-white transition duration-150 ease-in-out"
-										onClick={() => removeTalentNeeded(talentNeeded.talent)}
-									>
-										<IoCloseCircleOutline className="text-2xl" />
-									</button>
-									<span className="flex items-center">
-										<Image src={talentNeededProfilePicture} className="object-cover rounded-full w-10 h-10 mr-3" alt="talent profile picture" height={0} width={0} sizes="100vw" />
-										<div className="flex flex-col">
-											<span className="font-semibold">{talentNeeded.talent}</span>
-											<p className="text-sm">{talentNeeded.description}</p>
-										</div>
-									</span>
-								</motion.div>
-							))}
-						</div>
-					)}
-				</AnimatePresence>
+				<TalentsList talentsNeeded={talentsNeeded} removeTalentNeeded={removeTalentNeeded} />
 			</div>
 		</>
 	);
 };
 
-export default TalentNeededField;
+export default TagInputField;

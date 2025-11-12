@@ -25,7 +25,7 @@ const General = ({ formInputs, setFormInputs, onChange, tagsList }) => {
 			</div>
 			{/* Project creator motivation, objectives, phases */}
 			<div className="mb-8 lg:mb-10">
-				<Motivation formInputs={formInputs} onChange={onChange} />
+				<Motivation formInputs={formInputs} setFormInputs={setFormInputs} onChange={onChange} />
 			</div>
 		</>
 	);

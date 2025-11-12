@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 
 import { IoPersonAdd } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
-import TalentNeededField from "@/components/Forms/TalentNeededField";
+import TalentInputField from "@/components/Forms/TalentNeededInputField/TalentInputField";
 
 const TalentsNeeded = ({ projectId, user, talentsNeeded }) => {
 	const [formInputs, setFormInputs] = useState({
@@ -33,7 +33,7 @@ const TalentsNeeded = ({ projectId, user, talentsNeeded }) => {
 				<div className="md:pl-4">
 					{/* Project talents */}
 					<div className="w-full sm:w-100 xl:w-150 mb-8">
-						<TalentNeededField talentsNeeded={formInputs.talentsNeeded} setFormInputs={setFormInputs} />
+						<TalentInputField talentsNeeded={formInputs.talentsNeeded} setFormInputs={setFormInputs} />
 					</div>
 					<div className="flex justify-center">
 						<Button

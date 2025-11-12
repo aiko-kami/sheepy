@@ -49,8 +49,13 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 	useEffect(() => {
 		const fetchCategories = async () => {
 			try {
-				const data = await ApiGetAllCategories();
-				setCategories(data);
+				const result = await ApiGetAllCategories();
+
+				if (result.ok && result.data) {
+					setCategories(result.data);
+				} else {
+					showErrorToast(result.message || "Failed to load categories");
+				}
 			} catch (err) {
 				setErrorCategories(err.message);
 			} finally {

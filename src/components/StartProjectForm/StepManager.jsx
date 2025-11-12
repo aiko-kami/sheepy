@@ -16,6 +16,7 @@ import ProgressBar from "@/components/StartProjectForm/ProgressBar";
 import ButtonsNavigation from "@/components/StartProjectForm/ButtonsNavigation";
 
 import { ApiGetAllCategories } from "@/lib/api/categories";
+import { ApiGetAllTags } from "@/lib/api/tags";
 import { ApiCreateProjectDraft, ApiUpdateProjectDraft, ApiSubmitProject } from "@/lib/api/projectCore";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
@@ -52,39 +53,7 @@ const StepManager = () => {
 		projectId: "",
 	});
 
-	const [objectiveInput, setObjectiveInput] = useState("");
-
 	const onChange = handleFormChange(setFormInputs);
-
-	const addObjective = () => {
-		if (!objectiveInput) {
-			showErrorToast("Please enter an objective");
-		}
-		if (objectiveInput && formInputs.projectObjectives.includes(objectiveInput)) {
-			showErrorToast("This project objective is already present in the list");
-		}
-		if (objectiveInput && formInputs.projectObjectives.length >= 10) {
-			showErrorToast("You can only add up to 10 project objectives");
-		}
-		if (objectiveInput && !formInputs.projectObjectives.includes(objectiveInput) && formInputs.projectObjectives.length < 10) {
-			setFormInputs((prevState) => ({
-				...prevState,
-				projectObjectives: [...prevState.projectObjectives, objectiveInput],
-			}));
-			setObjectiveInput("");
-		}
-	};
-
-	const removeObjective = (objectiveToRemove) => {
-		setFormInputs((prevState) => ({
-			...prevState,
-			projectObjectives: prevState.projectObjectives.filter((objective) => objective !== objectiveToRemove),
-		}));
-	};
-
-	const handleObjectiveInputChange = (e) => {
-		setObjectiveInput(e.target.value);
-	};
 
 	const setProjectStartDate = (newValue) => {
 		setFormInputs((prevState) => ({
@@ -125,14 +94,26 @@ const StepManager = () => {
 	// Fetch categories on mount
 	useEffect(() => {
 		const fetchCategories = async () => {
-			const data = await ApiGetAllCategories();
-			if (data) {
-				setCategories(data);
+			const result = await ApiGetAllCategories();
+
+			if (result.ok && result.data) {
+				setCategories(result.data);
 			} else {
-				showErrorToast("Failed to load categories");
+				showErrorToast(result.message || "Failed to load categories");
 			}
 		};
+		const fetchTags = async () => {
+			const result = await ApiGetAllTags();
+
+			if (result.ok && result.data) {
+				setTagsList(result.data);
+			} else {
+				showErrorToast(result.message || "Failed to load tags");
+			}
+		};
+
 		fetchCategories();
+		fetchTags();
 	}, []);
 
 	// Update subcategory when category changes
@@ -238,16 +219,7 @@ const StepManager = () => {
 						{currentStep === 3 && <StepThree formInputs={formInputs} onChange={onChange} />}
 
 						{/* Step 4: Fill in the creator motivations and objectives */}
-						{currentStep === 4 && (
-							<StepFour
-								formInputs={formInputs}
-								onChange={onChange}
-								objectiveInput={objectiveInput}
-								addObjective={addObjective}
-								removeObjective={removeObjective}
-								handleObjectiveInputChange={handleObjectiveInputChange}
-							/>
-						)}
+						{currentStep === 4 && <StepFour formInputs={formInputs} setFormInputs={setFormInputs} onChange={onChange} />}
 
 						{/* Step 5: Fill in the project project online-only, project location, project privacy, project start date, and tags */}
 						{currentStep === 5 && <StepFive formInputs={formInputs} setFormInputs={setFormInputs} onChange={onChange} tagsList={tagsList} setProjectStartDate={setProjectStartDate} />}

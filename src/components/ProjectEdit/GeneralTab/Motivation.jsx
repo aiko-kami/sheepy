@@ -1,8 +1,9 @@
 import { IoSparklesSharp } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
+import ObjectiveInputField from "@/components/Forms/ObjectiveInputField/ObjectiveInputField";
 
-const Motivation = ({ formInputs, onChange }) => {
+const Motivation = ({ formInputs, setFormInputs, onChange }) => {
 	return (
 		<>
 			{/* Creator motivation, project objectives and phases */}
@@ -27,20 +28,12 @@ const Motivation = ({ formInputs, onChange }) => {
 						required={true}
 					/>
 				</div>
+
 				{/* Project objectives */}
 				<div className="mb-6 xl:mb-8">
-					<TextAreaField
-						label="Objectives (optional):"
-						labelStyle="block mb-2"
-						inputName="projectObjectives"
-						inputValue={formInputs.projectObjectives}
-						onChange={onChange}
-						placeholder="What are the intermediate steps or milestones necessary for your project to succeed?..."
-						maxLength={500}
-						rows="5"
-						required={false}
-					/>
+					<ObjectiveInputField objectives={formInputs.projectObjectives} setFormInputs={setFormInputs} />
 				</div>
+
 				{/* Project phases */}
 				<div className="mb-8">
 					<TextAreaField
@@ -55,6 +48,7 @@ const Motivation = ({ formInputs, onChange }) => {
 						required={true}
 					/>
 				</div>
+
 				<div className="flex justify-center">
 					<Button
 						btnProps={{

@@ -28,7 +28,7 @@ const MemberUserCell = ({ user, role }) => {
 					</button>
 				</div>
 				{role === "owner" && (
-					<div className="sm:ml-3">
+					<div className="ml-3">
 						<span className="py-1 px-2.5 text-white font-bold text-xs text-nowrap rounded cursor-default bg-blue-500">Project Owner</span>
 					</div>
 				)}

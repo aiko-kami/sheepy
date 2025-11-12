@@ -10,15 +10,17 @@ export const metadata = {
 const CategoryPage = async ({ params }) => {
 	const { categoryLink } = params;
 
-	const category = await ApiGetCategoryWithLink(categoryLink);
-
-	if (!category) {
+	const result = await ApiGetCategoryWithLink(categoryLink);
+	if (!result.ok || !result.data) {
 		return (
 			<div className="container mx-auto py-8">
 				<h1 className="text-3xl font-semibold mb-4">Category not found</h1>
+				<p className="text-gray-400 mt-2">{result.message || "Something went wrong."}</p>
 			</div>
 		);
 	}
+
+	const category = result.data;
 
 	return (
 		<div className="container mx-auto py-8">

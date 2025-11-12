@@ -1,8 +1,6 @@
 import { IoLocationSharp } from "react-icons/io5";
-import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/Buttons/Buttons";
-import { ToggleField } from "@/components/Forms/ToggleField";
-import InputField from "@/components/Forms/InputField";
+import LocationInputField from "@/components/Forms/LocationInputField";
 
 const LocationDetails = ({ formInputs, onChange }) => {
 	return (
@@ -16,37 +14,8 @@ const LocationDetails = ({ formInputs, onChange }) => {
 
 			<div className="md:pl-4">
 				{/* Project location */}
-				<div className="mb-8">
-					<ToggleField inputName="locationOnlineOnly" checked={formInputs.locationOnlineOnly} label="Project online only" onChange={onChange} />
-				</div>
-				<AnimatePresence mode="wait">
-					{!formInputs.locationOnlineOnly && (
-						<motion.div
-							key="location-fields"
-							initial={{ opacity: 0, height: 0, y: -10 }}
-							animate={{ opacity: 1, height: "auto", y: 0 }}
-							exit={{ opacity: 0, height: 0, y: -10 }}
-							transition={{ duration: 0.3, ease: "easeOut" }}
-							className="overflow-hidden"
-						>
-							<div className="max-w-140 mb-8 pt-2">
-								<div className="mb-6 xl:mb-8">
-									<InputField
-										inputName="projectLocationCountry"
-										inputType="text"
-										label="Project country"
-										inputValue={formInputs.projectLocationCountry}
-										onChange={onChange}
-										disabled={formInputs.locationOnlineOnly}
-									/>
-								</div>
-								<div>
-									<InputField inputName="projectLocationCity" inputType="text" label="City" inputValue={formInputs.projectLocationCity} onChange={onChange} disabled={formInputs.locationOnlineOnly} />
-								</div>
-							</div>
-						</motion.div>
-					)}
-				</AnimatePresence>
+				<LocationInputField locationOnlineOnly={formInputs.locationOnlineOnly} locationCountry={formInputs.projectLocationCountry} locationCity={formInputs.projectLocationCity} onChange={onChange} />
+
 				<div className="flex justify-center">
 					<Button
 						btnProps={{

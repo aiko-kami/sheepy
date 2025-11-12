@@ -3,7 +3,7 @@ import { useState, useRef, useMemo, useEffect } from "react";
 
 import InputField from "@/components/Forms/InputField";
 import SuggestionsList from "@/components/Forms/TagInputField/SuggestionsList";
-import TagList from "@/components/Forms/TagInputField/TagList";
+import TagsList from "@/components/Forms/TagInputField/TagsList";
 import AddTagButton from "@/components/Forms/TagInputField/AddTagButton";
 import { showErrorToast } from "@/utils/toast";
 
@@ -222,9 +222,7 @@ const TagInputField = ({ formInputs, setFormInputs, tagsList = [] }) => {
 				</div>
 			</div>
 
-			<div className="mb-8">
-				<TagList tags={unifiedTagsList} handleRemoveTag={removeTag} />
-			</div>
+			<TagsList tags={unifiedTagsList} handleRemoveTag={removeTag} />
 		</>
 	);
 };

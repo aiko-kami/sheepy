@@ -1,7 +1,7 @@
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
 
-const TagList = ({ tags = [], handleRemoveTag }) => {
+const TagsList = ({ tags = [], handleRemoveTag }) => {
 	if (!tags || tags.length === 0) return null;
 
 	return (
@@ -13,7 +13,7 @@ const TagList = ({ tags = [], handleRemoveTag }) => {
 						initial={{ opacity: 0, scale: 0.9, x: -20 }}
 						animate={{ opacity: 1, scale: 1, x: 0 }}
 						exit={{ opacity: 0, scale: 0.9, x: 20 }}
-						transition={{ duration: 0.2, ease: "easeOut" }}
+						transition={{ duration: 0.25, ease: "easeOut" }}
 						layout
 						className="flex items-center px-3 pt-0.5 pb-1 mt-1 bg-gray-200 text-gray-800 rounded-full shadow-sm"
 					>
@@ -28,4 +28,4 @@ const TagList = ({ tags = [], handleRemoveTag }) => {
 	);
 };
 
-export default TagList;
+export default TagsList;

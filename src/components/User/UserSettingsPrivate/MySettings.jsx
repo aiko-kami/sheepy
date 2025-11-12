@@ -5,7 +5,12 @@ import MySettingsNotifications from "@/components/User/UserSettingsPrivate/MySet
 import { ApiGetUserSettingsServer } from "@/lib/api/usersServer";
 
 const MySettings = async () => {
-	const userSettings = await ApiGetUserSettingsServer();
+	const userSettingsResponse = await ApiGetUserSettingsServer();
+	if (!userSettingsResponse.ok) {
+		return <p>Error loading user: {userResponse.message}</p>;
+	}
+
+	const userSettings = userSettingsResponse.data;
 
 	if (!userSettings) {
 		return <div>Could not load settings.</div>;

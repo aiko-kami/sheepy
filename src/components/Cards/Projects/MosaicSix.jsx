@@ -12,9 +12,6 @@ import { ApiGetProjectCrush } from "@/lib/api/projectsExtended";
 
 const MosaicSix = () => {
 	const [selectedProjects, setSelectedProjects] = useState([]);
-
-	console.log("🚀 ~ MosaicSix ~ selectedProjects:", selectedProjects);
-
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
 

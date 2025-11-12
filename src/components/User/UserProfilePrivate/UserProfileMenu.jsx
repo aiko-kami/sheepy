@@ -5,7 +5,12 @@ import UserCardPassword from "@/components/User/UserProfilePrivate/UserCardPassw
 import { ApiGetUserFromSessionServer } from "@/lib/api/usersServer";
 
 const UserProfileMenu = async () => {
-	const user = await ApiGetUserFromSessionServer();
+	const userResponse = await ApiGetUserFromSessionServer();
+	if (!userResponse.ok) {
+		return <p>Error loading user: {userResponse.message}</p>;
+	}
+
+	const user = userResponse.data;
 
 	if (!user) {
 		return <div>You must be logged in to view your profile.</div>;
