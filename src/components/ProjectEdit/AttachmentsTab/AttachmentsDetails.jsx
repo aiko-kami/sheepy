@@ -8,15 +8,16 @@ import { Button } from "@/components/Buttons/Buttons";
 
 import AttachmentsTable from "@/components/Tables/ProjectEdit/AttachmentsTable";
 
-const AttachmentsDetails = ({ project }) => {
-	const [formState, setFormState] = useState({
+const AttachmentsDetails = ({ projectId, attachments, userPermissions }) => {
+	const [formInputs, setFormInputs] = useState({
+		projectId: projectId,
 		newAttachments: [],
 	});
 
 	const onSubmit = (event) => {
 		event.preventDefault();
 		// Handle form submission
-		console.log("🚀 ~ onSubmit ~ The project has been updated:", formState);
+		console.log("🚀 ~ onSubmit ~ The project has been updated:", formInputs);
 	};
 
 	const fileTypesAllowed = {
@@ -48,7 +49,7 @@ const AttachmentsDetails = ({ project }) => {
 					{/* Add project attachments */}
 					<form onSubmit={onSubmit}>
 						<div className="mb-6 xl:mb-10">
-							<FilesDropField onFilesSelected={setFormState} fileTypesAllowed={fileTypesAllowed} maxFileSizeAllowed={maxFileSizeAllowed} />
+							<FilesDropField onFilesSelected={setFormInputs} fileTypesAllowed={fileTypesAllowed} maxFileSizeAllowed={maxFileSizeAllowed} />
 						</div>
 						<div className="flex justify-center mb-6 xl:mb-10">
 							<Button
@@ -65,9 +66,9 @@ const AttachmentsDetails = ({ project }) => {
 					<div className="md:px-4">
 						{/* Project attachments */}
 						<div className="mb-8 flex justify-center">
-							{project.attachments && (
+							{attachments && (
 								<div className="w-full overflow-x-auto shadow-md sm:rounded-lg">
-									<AttachmentsTable attachments={project.attachments} projectId={project.projectId} permissions={project.permissions} />
+									<AttachmentsTable attachments={attachments} projectId={projectId} userPermissions={userPermissions} />
 								</div>
 							)}
 						</div>

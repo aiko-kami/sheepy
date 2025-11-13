@@ -103,7 +103,7 @@ const Button = ({ children, btnProps }) => {
 			name={name}
 			value={value}
 			disabled={disabled}
-			className={`leading-snug shadow-lg transition duration-150 ease-in-out ${size} ${color} ${rounded} ${wFull ? "w-full" : ""}`}
+			className={`leading-snug text-nowrap shadow-lg transition duration-150 ease-in-out ${size} ${color} ${rounded} ${wFull ? "w-full" : ""}`}
 			data-mdb-ripple="true"
 			data-mdb-ripple-color="light"
 		>

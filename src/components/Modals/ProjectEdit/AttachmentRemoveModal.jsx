@@ -1,6 +1,6 @@
 import { Button } from "@/components/Buttons/Buttons";
-import { DateTime } from "luxon";
 import Image from "next/image";
+import { IoDocumentOutline, IoAlertCircleOutline } from "react-icons/io5";
 
 const AttachmentRemoveModal = ({ closeModalRemove, attachment, projectId }) => {
 	const removeAttachment = () => {
@@ -10,59 +10,31 @@ const AttachmentRemoveModal = ({ closeModalRemove, attachment, projectId }) => {
 	return (
 		<>
 			{/* Attachment details */}
-			<h2 className="text-xl text-center font-semibold mb-1">Attachment details</h2>
-			<div className="mb-10 border-2 border-gray-400 rounded-md p-4 pb-5">
-				{/* File name */}
-				<div className="mb-6 lg:mb-4">
-					<div className="xl:flex items-center">
-						<h2 className="text-lg text-gray-400 font-semibold mb-2 lg:mb-0">File name:</h2>
-						<p className="pl-1 xl:pl-2 font-semibold">{attachment.fileName}</p>
+			<div className="mb-4 p-3 flex items-center justify-between gap-3 bg-slate-800/70 rounded-lg border border-slate-700">
+				<div className="">
+					<div className="flex items-start gap-3">
+						<IoDocumentOutline className="w-5 h-5 text-slate-500 mt-0.5" />
+						<span className="font-medium text-white truncate">{attachment.title}</span>
 					</div>
+					<p className="pl-8 text-slate-400 text-sm">{attachment.size}</p>
 				</div>
-
-				{/* File type and file size */}
-				<div className="lg:grid lg:grid-cols-2">
-					<div className="xl:flex items-center mb-6 lg:mb-4">
-						<h2 className="text-lg text-gray-400 font-semibold mb-2 lg:mb-0 mr-2">File type:</h2>
-						<div className="flex items-center">
-							<Image src={attachment.fileTypeIcon} height={0} width={0} sizes="100vw" alt="File type picture" className="object-cover min-w-8 h-8 shadow-md mr-2" />
-							<div className="text-base whitespace-nowrap">{attachment.fileType}</div>
-						</div>
-					</div>
-					<div className="xl:flex items-center min-h-full mb-6 lg:mb-4">
-						<h2 className="text-lg text-gray-400 font-semibold mb-2 lg:mb-0">File size:</h2>
-						<p className="pl-1 xl:pl-2">{attachment.fileSize}</p>
-					</div>
-				</div>
-
-				{/* Uploaded by and Uploaded at */}
-				<div className="lg:grid lg:grid-cols-2">
-					<div className="xl:flex items-center mb-6 lg:mb-0">
-						<h2 className="text-lg text-gray-400 font-semibold mb-2 lg:mb-0 mr-2">Uploaded by:</h2>
-						<div className="flex items-center">
-							<Image src={attachment.uploadedBy.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-9 h-9 rounded-full shadow-md mr-2" />
-							<div className="whitespace-nowrap">{attachment.uploadedBy.username}</div>
-						</div>
-					</div>
-					<div>
-						<div className="xl:flex items-center min-h-full">
-							<h2 className="text-lg text-gray-400 font-semibold mb-2 lg:mb-0">Uploaded at:</h2>
-							<div className="pl-1 xl:pl-2">
-								<div className="whitespace-nowrap" title={DateTime.fromISO(attachment.createdAt, { locale: "en" }).toJSDate().toString()}>
-									{DateTime.fromISO(attachment.createdAt, { locale: "en" }).toRelative()}
-								</div>
-							</div>
-						</div>
-					</div>
+				<div className="flex items-center text-sm">
+					<span className="mr-2">by</span>
+					<Image src={attachment.updatedBy.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-2" />
+					<div className="whitespace-nowrap font-semibold">{attachment.updatedBy.username}</div>
 				</div>
 			</div>
 
-			{/* Remove validation */}
-			<h2 className="text-lg font-semibold text-center mb-6">Are you sure you want to remove this attachment from the project?</h2>
+			<div className="flex items-start mb-12 gap-3 p-4 bg-red-950/30 border border-red-900/50 rounded-lg">
+				<IoAlertCircleOutline className="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" />
+				<p className="text-sm text-red-200 leading-relaxed">
+					<span className="font-semibold">This action cannot be undone.</span> The file will be permanently removed.
+				</p>
+			</div>
 
 			{/* Buttons */}
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 justify-center">
-				<div className="col-span-2 md:col-span-1 grid xl:px-1/5">
+				<div className="col-span-2 md:col-span-1 grid">
 					<Button
 						btnProps={{
 							type: "button",
@@ -72,7 +44,7 @@ const AttachmentRemoveModal = ({ closeModalRemove, attachment, projectId }) => {
 						Close
 					</Button>
 				</div>
-				<div className="col-span-2 md:col-span-1 grid xl:px-1/5">
+				<div className="col-span-2 md:col-span-1 grid">
 					<Button
 						btnProps={{
 							type: "button",
@@ -80,7 +52,7 @@ const AttachmentRemoveModal = ({ closeModalRemove, attachment, projectId }) => {
 							action: removeAttachment,
 						}}
 					>
-						Remove attachment
+						Remove file
 					</Button>
 				</div>
 			</div>

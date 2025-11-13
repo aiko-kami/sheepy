@@ -23,13 +23,10 @@ const ProjectEditGeneralPage = async ({ params }) => {
 	}
 
 	const project = result.data?.project;
-	const projectTags = result.data?.project.tags;
 
 	const tagsList = result.data?.tagsList;
 
 	const projectId = project?.projectId;
-	const status = project?.statusInfo?.currentStatus.status;
-	const statusBgColor = project?.statusInfo?.currentStatus.colors.bgColor;
 	const title = project?.title;
 	const category = project?.category;
 	const subCategory = project?.subCategory;

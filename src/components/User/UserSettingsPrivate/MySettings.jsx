@@ -6,8 +6,11 @@ import { ApiGetUserSettingsServer } from "@/lib/api/usersServer";
 
 const MySettings = async () => {
 	const userSettingsResponse = await ApiGetUserSettingsServer();
+
+	console.log("🚀 ~ MySettings ~ userSettingsResponse:", userSettingsResponse);
+
 	if (!userSettingsResponse.ok) {
-		return <p>Error loading user: {userResponse.message}</p>;
+		return <p>Error loading user: {userSettingsResponse.message}</p>;
 	}
 
 	const userSettings = userSettingsResponse.data;

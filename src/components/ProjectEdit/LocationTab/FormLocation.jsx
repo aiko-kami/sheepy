@@ -1,10 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
-import { Button } from "@/components/Buttons/Buttons";
 import Location from "@/components/ProjectEdit/LocationTab/Location";
-
 import { handleFormChange } from "@/utils/formHandlers";
 
 const FormLocation = ({ projectId, onlineOnly, city, country }) => {

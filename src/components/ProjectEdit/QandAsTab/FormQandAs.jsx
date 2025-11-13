@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-
-import { Button } from "@/components/Buttons/Buttons";
 import QandAs from "@/components/ProjectEdit/QandAsTab/QandAs";
 
 const FormQandAs = ({ projectId, QAs }) => {

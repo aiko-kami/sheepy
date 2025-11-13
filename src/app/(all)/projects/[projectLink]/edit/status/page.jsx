@@ -25,7 +25,7 @@ const ProjectEditStatusPage = async ({ params }) => {
 	const project = result.data;
 
 	const projectId = project?.projectId;
-	const status = project?.statusInfo?.currentStatus.status;
+	const status = project?.statusInfo?.currentStatus?.status;
 	const statusHistory = project?.statusInfo?.statusHistory;
 	const visibility = project?.visibility;
 	const startDate = project?.startDate;

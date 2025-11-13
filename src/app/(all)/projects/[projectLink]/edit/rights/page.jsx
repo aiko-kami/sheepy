@@ -22,8 +22,8 @@ const ProjectEditRightsPage = async ({ params }) => {
 		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" extraMessage={result.message} />;
 	}
 
-	const projectId = result.data.projectId;
-	const membersProjectRights = result.data.membersProjectRights;
+	const projectId = result.data?.projectId;
+	const membersProjectRights = result.data?.membersProjectRights;
 
 	if (!projectId) {
 		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" />;

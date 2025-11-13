@@ -9,7 +9,7 @@ import AttachmentReportModal from "@/components/Modals/ProjectEdit/AttachmentRep
 
 import { IoEyeOutline, IoCloseCircleOutline, IoArrowDownCircleOutline, IoWarningOutline } from "react-icons/io5";
 
-const AttachmentsActions = ({ projectId, attachment, permissions, iconSize }) => {
+const AttachmentsActions = ({ projectId, attachment, userPermissions, iconSize }) => {
 	const [modalDisplayRemove, setModalDisplayRemove] = useState(false);
 	const [modalDisplayReport, setModalDisplayReport] = useState(false);
 
@@ -43,36 +43,36 @@ const AttachmentsActions = ({ projectId, attachment, permissions, iconSize }) =>
 
 	return (
 		<>
-			{permissions.canViewAttachments && (
+			{userPermissions.canViewAttachments && (
 				<>
-					<Link href={attachment.fileLink} rel="noopener noreferrer" target="_blank">
+					<Link href={attachment.link} rel="noopener noreferrer" target="_blank">
 						<IoEyeOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="View attachment" />
 					</Link>
 				</>
 			)}
-			{permissions.canUpdateRemoveAttachments && (
+			{userPermissions.canRemoveAttachments && (
 				<>
 					<button type="button" onClick={showModalRemove}>
 						<IoCloseCircleOutline className={`m-1 hover:text-red-400 duration-100 transition ease-in-out ${size}`} title="Remove attachment" />
 					</button>
-					<Modal modalDisplay={modalDisplayRemove} closeModal={closeModalRemove} closeModalWithBackground={closeModalRemove} modalSize={"std"} modalTitle={"Remove attachment"}>
+					<Modal modalDisplay={modalDisplayRemove} closeModal={closeModalRemove} closeModalWithBackground={closeModalRemove} modalSize={"sm"} modalTitle={"Remove attachment"}>
 						<AttachmentRemoveModal attachment={attachment} projectId={projectId} closeModalRemove={closeModalRemove} />
 					</Modal>
 				</>
 			)}
-			{permissions.canViewAttachments && (
+			{userPermissions.canViewAttachments && (
 				<>
 					<button type="button">
 						<IoArrowDownCircleOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Download" />
 					</button>
 				</>
 			)}
-			{permissions.canViewAttachments && (
+			{userPermissions.canViewAttachments && (
 				<>
 					<button type="button" onClick={showModalReport}>
 						<IoWarningOutline className={`m-1 hover:text-yellow-500 duration-100 transition ease-in-out ${size}`} title="Report" />
 					</button>
-					<Modal modalDisplay={modalDisplayReport} closeModal={closeModalReport} modalSize={"std"} modalTitle={"Report attachment"}>
+					<Modal modalDisplay={modalDisplayReport} closeModal={closeModalReport} modalSize={"sm"} modalTitle={"Report attachment"}>
 						<AttachmentReportModal attachment={attachment} projectId={projectId} closeModalReport={closeModalReport} />
 					</Modal>
 				</>

@@ -25,7 +25,7 @@ export async function ApiGetEditProjectLocation(projectLink) {
 }
 
 export async function ApiGetEditProjectAttachments(projectLink) {
-	return apiGet(`/projectEdition/attachments/${projectLink}`, (json) => json?.data?.project ?? null);
+	return apiGet(`/projectEdition/attachments/${projectLink}`, (json) => json?.data ?? null);
 }
 
 export async function ApiGetEditProjectSteps(projectLink) {

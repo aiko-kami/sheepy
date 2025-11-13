@@ -1,9 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
 import General from "@/components/ProjectEdit/GeneralTab/General";
-
 import { handleFormChange } from "@/utils/formHandlers";
 
 const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, description, cover, tags, tagsList, creatorMotivation, objectives }) => {

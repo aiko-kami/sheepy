@@ -1,12 +1,10 @@
 import Attachments from "@/components/ProjectEdit/AttachmentsTab/Attachments";
-import SideMenu from "@/components/ProjectEdit/SideMenu";
-import ProjectEditNavbar from "@/components/ProjectEdit/ProjectEditNavbar";
 
-const FormAttachments = ({ project, projectLink }) => {
+const FormAttachments = ({ projectId, attachments, userPermissions }) => {
 	return (
 		<>
 			{/* Project Attachments information */}
-			<Attachments project={project} />
+			<Attachments projectId={projectId} attachments={attachments} userPermissions={userPermissions} />
 		</>
 	);
 };
