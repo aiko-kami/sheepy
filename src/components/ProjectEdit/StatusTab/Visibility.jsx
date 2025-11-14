@@ -19,7 +19,7 @@ const Visibility = ({ formInputs, onChange }) => {
 
 			<div className="md:pl-4">
 				{/* Project visibility input */}
-				<div className="max-w-50 mb-6 xl:mb-8">
+				<div className="max-w-50 mb-8">
 					<div className="text-sm">Project visibility</div>
 					<SelectField inputName="projectVisibility" possibleValues={optionsList} inputValue={formInputs.projectVisibility} onChange={onChange} />
 				</div>

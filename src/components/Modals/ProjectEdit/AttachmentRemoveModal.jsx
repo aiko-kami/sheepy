@@ -10,15 +10,15 @@ const AttachmentRemoveModal = ({ closeModalRemove, attachment, projectId }) => {
 	return (
 		<>
 			{/* Attachment details */}
-			<div className="mb-4 p-3 flex items-center justify-between gap-3 bg-slate-800/70 rounded-lg border border-slate-700">
-				<div className="">
+			<div className="mb-4 p-3 xs:flex items-center justify-between gap-3 bg-slate-800/70 rounded-lg border border-slate-700">
+				<div>
 					<div className="flex items-start gap-3">
 						<IoDocumentOutline className="w-5 h-5 text-slate-500 mt-0.5" />
 						<span className="font-medium text-white truncate">{attachment.title}</span>
 					</div>
 					<p className="pl-8 text-slate-400 text-sm">{attachment.size}</p>
 				</div>
-				<div className="flex items-center text-sm">
+				<div className="justify-center xs:justify-end mt-4 xs:mt-0 flex items-center text-sm">
 					<span className="mr-2">by</span>
 					<Image src={attachment.updatedBy.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-2" />
 					<div className="whitespace-nowrap font-semibold">{attachment.updatedBy.username}</div>

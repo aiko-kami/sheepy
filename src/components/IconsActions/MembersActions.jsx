@@ -67,7 +67,7 @@ const MembersActions = ({ projectId, user, role, talent, startDate, projectPermi
 					<IoChatboxEllipsesOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
 				</button>
 				<Modal modalDisplay={modalDisplayMessage} closeModal={closeModalMessage} modalSize={"std"} modalTitle={"Send a message"}>
-					<SendMessageMemberModal member={user} talent={talent} startDate={startDate} closeModalMessage={closeModalMessage} />
+					<SendMessageMemberModal member={user} closeModalMessage={closeModalMessage} />
 				</Modal>
 			</>
 			<Link href={`/users/${user.userId}`}>

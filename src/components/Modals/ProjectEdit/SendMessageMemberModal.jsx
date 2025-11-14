@@ -8,12 +8,13 @@ import { TextAreaField } from "@/components/Forms/TextAreaField";
 
 import { handleFormChange } from "@/utils/formHandlers";
 
-const SendMessageMemberModal = ({ member, talent, startDate, closeModalMessage }) => {
+const SendMessageMemberModal = ({ member, closeModalMessage }) => {
 	const [formInputs, setFormInputs] = useState({
 		memberId: member.userId,
 		message: "",
 	});
 
+	const MESSAGE_MAX_LENGTH = 1000;
 	const onChange = handleFormChange(setFormInputs);
 
 	const onSubmit = (event) => {
@@ -26,29 +27,11 @@ const SendMessageMemberModal = ({ member, talent, startDate, closeModalMessage }
 	return (
 		<>
 			{/* User, invitation message and talent requested */}
-			<h2 className="text-xl text-center font-semibold mb-1">Member details</h2>
-			<div className="mb-6 border-2 border-gray-400 rounded-md p-4 pb-5">
-				<div className="lg:grid lg:grid-cols-2 justify-around">
-					{/* Member */}
-					<div className="mb-6 xl:flex items-center">
-						<h2 className="text-lg text-gray-400 font-semibold mb-1">Member:</h2>
-						<div className="flex items-center pl-1 xl:pl-4">
-							<Image src={member.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
-							<div className="font-semibold">{member.username}</div>
-						</div>
-					</div>
-				</div>
-
-				{/* Role and start date */}
-				<div className="lg:grid lg:grid-cols-2 justify-around">
-					<div className="xl:flex items-baseline mb-6 lg:mb-0">
-						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Talent:</h2>
-						<p className="pl-1 xl:pl-2">{talent}</p>
-					</div>
-					<div className="xl:flex justify-center">
-						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Start date:</h2>
-						<p className="pl-1 xl:pl-2">{startDate}</p>
-					</div>
+			<div className="flex items-center gap-3 ml-1 mb-6">
+				<span className="text-gray-400">To:</span>
+				<div className="flex items-center gap-2 bg-slate-900 rounded-full pr-4 py-1">
+					<img src={member.profilePicture.link || "/placeholder.svg"} alt={member.username} className="w-10 h-10 rounded-full" />
+					<span className="text-white font-medium">{member.username}</span>
 				</div>
 			</div>
 
@@ -56,16 +39,18 @@ const SendMessageMemberModal = ({ member, talent, startDate, closeModalMessage }
 			<form onSubmit={onSubmit}>
 				<div className="mb-8">
 					<TextAreaField
-						label="Your message for the member:"
 						labelStyle="block mb-2"
 						inputName="message"
 						inputValue={formInputs.message}
 						onChange={onChange}
-						placeholder="Write your message...(1000 characters max)"
+						placeholder="Write your message..."
 						maxLength={1000}
 						rows="6"
 						required={true}
 					/>
+					<div className="text-right text-sm text-gray-400 mt-0.5 mr-2">
+						{formInputs.message.length}/{MESSAGE_MAX_LENGTH}
+					</div>
 				</div>
 				{/* Buttons */}
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 justify-center">

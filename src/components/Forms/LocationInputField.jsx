@@ -19,7 +19,7 @@ const LocationInputField = ({ locationOnlineOnly, locationCountry, locationCity,
 						className="overflow-hidden"
 					>
 						<div className="max-w-140 mb-8 pt-2">
-							<div className="mb-6 xl:mb-8">
+							<div className="mb-8">
 								<InputField inputName="locationCountry" inputType="text" label="Country" inputValue={locationCountry} onChange={onChange} disabled={locationOnlineOnly} />
 							</div>
 							<div>

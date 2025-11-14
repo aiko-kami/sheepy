@@ -9,9 +9,9 @@ import InputField from "@/components/Forms/InputField";
 
 import { handleFormChange } from "@/utils/formHandlers";
 
-const UpdateMemberModal = ({ user, role, talent, startDate, closeModalUpdate }) => {
+const UpdateMemberModal = ({ member, role, talent, startDate, closeModalUpdate }) => {
 	const [formInputs, setFormInputs] = useState({
-		memberId: user.userId,
+		memberId: member.userId,
 		newTalent: "",
 		memberStartDate: null,
 	});
@@ -38,8 +38,8 @@ const UpdateMemberModal = ({ user, role, talent, startDate, closeModalUpdate }) 
 				{/* User profile picture and username */}
 				<div className="md:flex items-center mb-6">
 					<div className="flex items-center mb-4 md:mb-0">
-						<Image src={user.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-16 h-16 rounded-full shadow-md mr-4" />
-						<div className="font-semibold text-lg lg:whitespace-nowrap">{user.username}</div>
+						<Image src={member.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-16 h-16 rounded-full shadow-md mr-4" />
+						<div className="font-semibold text-lg lg:whitespace-nowrap">{member.username}</div>
 					</div>
 					{role === "owner" && (
 						<div className="sm:ml-3">

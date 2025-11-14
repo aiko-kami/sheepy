@@ -27,7 +27,7 @@ const QandAsDetails = ({ formInputs, onChange, addQna }) => {
 						</p>
 					)}
 				</div>
-				<div className="mb-b">
+				<div className="mb-8">
 					<Button
 						btnProps={{
 							type: "button",

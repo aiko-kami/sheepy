@@ -42,7 +42,7 @@ const StatusDetails = ({ formInputs, onChange }) => {
 				</div>
 
 				{/* Project status reason */}
-				<div className="max-w-180 mb-6 xl:mb-8">
+				<div className="max-w-180 mb-8">
 					<InputField inputName="statusReason" inputType="text" label="Reason to change project status" inputValue={formInputs.statusReason} onChange={onChange} />
 				</div>
 				<div className="flex justify-center">

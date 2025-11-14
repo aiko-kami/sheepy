@@ -46,9 +46,20 @@ const AttachmentsDetails = ({ projectId, attachments, userPermissions }) => {
 				<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
 				<div className="md:pl-4">
+					{/* Project attachments */}
+					<div className="md:px-4 mb-12">
+						<div className="flex justify-center">
+							{attachments && (
+								<div className="w-full overflow-x-auto shadow-md sm:rounded-lg">
+									<AttachmentsTable attachments={attachments} projectId={projectId} userPermissions={userPermissions} />
+								</div>
+							)}
+						</div>
+					</div>
+
 					{/* Add project attachments */}
 					<form onSubmit={onSubmit}>
-						<div className="mb-6 xl:mb-10">
+						<div className="mb-8">
 							<FilesDropField onFilesSelected={setFormInputs} fileTypesAllowed={fileTypesAllowed} maxFileSizeAllowed={maxFileSizeAllowed} />
 						</div>
 						<div className="flex justify-center mb-6 xl:mb-10">
@@ -62,17 +73,6 @@ const AttachmentsDetails = ({ projectId, attachments, userPermissions }) => {
 							</Button>
 						</div>
 					</form>
-
-					<div className="md:px-4">
-						{/* Project attachments */}
-						<div className="mb-8 flex justify-center">
-							{attachments && (
-								<div className="w-full overflow-x-auto shadow-md sm:rounded-lg">
-									<AttachmentsTable attachments={attachments} projectId={projectId} userPermissions={userPermissions} />
-								</div>
-							)}
-						</div>
-					</div>
 				</div>
 			</div>
 		</>
