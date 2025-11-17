@@ -35,8 +35,6 @@ const ProjectPublicPage = async ({ params }) => {
 	const projectId = project.projectId;
 	const status = project.statusInfo?.currentStatus?.status;
 
-	console.log("🚀 ~ ProjectPublicPage ~ status:", status);
-
 	const statusColorClass = project.statusInfo?.currentStatus?.colors?.bgColor;
 	const title = project.title;
 	const owner = project.owner;

@@ -33,12 +33,14 @@ const RightsTable = ({ members, formState, onChange, onSelectAll, headers }) => 
 				</thead>
 				<tbody>
 					{members.map((member, memberIndex) => {
+						console.log("🚀 ~ RightsTable ~ member:", member);
+
 						const memberState = formState.find((m) => m.userId === member.user.userId);
 
 						return (
 							<tr key={memberIndex} className="border-b bg-gray-800 border-gray-700 hover:bg-gray-600">
 								<td scope="row" className="p-2 md:px-4 md:py-2">
-									<MemberUserCell user={member.user} />
+									<MemberUserCell user={member.user} role={member.role} />
 								</td>
 								{/* Individual Rights Checkboxes */}
 								{headers.labels.map((header, index) => {

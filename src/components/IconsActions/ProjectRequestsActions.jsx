@@ -8,8 +8,9 @@ import ProjectRequestAcceptModal from "@/components/Modals/ProjectEdit/ProjectRe
 import ProjectRequestDeclineModal from "@/components/Modals/ProjectEdit/ProjectRequestDeclineModal";
 import JoinProjectSendMessageModal from "@/components/Modals/ProjectEdit/JoinProjectSendMessageModal";
 import ProjectRequestReportModal from "@/components/Modals/ProjectEdit/ProjectRequestReportModal";
+import IconButton from "@/components/Buttons/IconButton";
 
-import { IoEyeOutline, IoCheckmarkCircleOutline, IoCloseCircleOutline, IoMailOutline, IoWarningOutline } from "react-icons/io5";
+import { IoEyeOutline, IoCheckmarkCircleOutline, IoCloseCircleOutline, IoMailOutline, IoWarningOutline, IoBan } from "react-icons/io5";
 
 const ProjectRequestsActions = ({ projectId, request, userPermissions, iconSize }) => {
 	const [modalDisplayDetails, setModalDisplayDetails] = useState(false);
@@ -68,9 +69,9 @@ const ProjectRequestsActions = ({ projectId, request, userPermissions, iconSize 
 		<>
 			{userPermissions.canViewJoinProjectRequests && (
 				<>
-					<button type="button" onClick={showModalDetails}>
-						<IoEyeOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="View request" />
-					</button>
+					<IconButton btnColor={"cyan"} action={showModalDetails}>
+						<IoEyeOutline className={size} title="View request" />
+					</IconButton>
 					<Modal modalDisplay={modalDisplayDetails} closeModal={closeModalDetails} closeModalWithBackground={closeModalDetails} modalSize={"std"} modalTitle={"View request"}>
 						<JoinProjectDetailsModal joinProject={request} type={"request"} />
 					</Modal>
@@ -78,21 +79,23 @@ const ProjectRequestsActions = ({ projectId, request, userPermissions, iconSize 
 			)}
 			{userPermissions.canViewJoinProjectRequests && userPermissions.canEditJoinProjectRequests && (
 				<>
-					<button type="button" onClick={showModalAccept}>
-						<IoCheckmarkCircleOutline className={`m-1 hover:text-green-400 duration-100 transition ease-in-out ${size}`} title="Accept request" />
-					</button>
+					<IconButton btnColor={"green"} action={showModalAccept}>
+						<IoCheckmarkCircleOutline className={size} title="Accept request" />
+					</IconButton>
 					<Modal modalDisplay={modalDisplayAccept} closeModal={closeModalAccept} closeModalWithBackground={closeModalAccept} modalSize={"std"} modalTitle={"Accept request"}>
 						<ProjectRequestAcceptModal request={request} closeModalAccept={closeModalAccept} projectId={projectId} />
 					</Modal>
-					<button type="button" onClick={showModalDecline}>
-						<IoCloseCircleOutline className={`m-1 hover:text-red-400 duration-100 transition ease-in-out ${size}`} title="Decline request" />
-					</button>
+
+					<IconButton btnColor={"red"} action={showModalDecline}>
+						<IoCloseCircleOutline className={size} title="Decline request" />
+					</IconButton>
 					<Modal modalDisplay={modalDisplayDecline} closeModal={closeModalDecline} closeModalWithBackground={closeModalDecline} modalSize={"std"} modalTitle={"Decline request"}>
 						<ProjectRequestDeclineModal request={request} closeModalDecline={closeModalDecline} projectId={projectId} />
 					</Modal>
-					<button type="button" onClick={showModalSendMessage}>
-						<IoMailOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
-					</button>
+
+					<IconButton btnColor={"violet"} action={showModalSendMessage}>
+						<IoMailOutline className={size} title="Send a message" />
+					</IconButton>
 					<Modal modalDisplay={modalDisplaySendMessage} closeModal={closeModalSendMessage} modalSize={"std"} modalTitle={"Send a message"}>
 						<JoinProjectSendMessageModal joinProject={request} closeModalSendMessage={closeModalSendMessage} type={"request"} projectId={projectId} />
 					</Modal>
@@ -100,14 +103,15 @@ const ProjectRequestsActions = ({ projectId, request, userPermissions, iconSize 
 			)}
 			{userPermissions.canViewJoinProjectRequests && (
 				<>
-					<button type="button" onClick={showModalReport}>
-						<IoWarningOutline className={`m-1 hover:text-yellow-500 duration-100 transition ease-in-out ${size}`} title="Report" />
-					</button>
+					<IconButton btnColor={"amber"} action={showModalReport}>
+						<IoWarningOutline className={size} title="Report" />
+					</IconButton>
 					<Modal modalDisplay={modalDisplayReport} closeModal={closeModalReport} modalSize={"std"} modalTitle={"Report project request"}>
 						<ProjectRequestReportModal request={request} closeModalReport={closeModalReport} projectId={projectId} />
 					</Modal>
 				</>
 			)}
+			{!userPermissions.canViewJoinProjectRequests && !userPermissions.canEditJoinProjectRequests && <IoBan className={`text-gray-500 ${size}`} title="No action allowed" />}
 		</>
 	);
 };

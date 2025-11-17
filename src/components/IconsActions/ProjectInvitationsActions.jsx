@@ -7,8 +7,9 @@ import JoinProjectDetailsModal from "@/components/Modals/ProjectEdit/JoinProject
 import ProjectInvitationEditModal from "@/components/Modals/ProjectEdit/ProjectInvitationEditModal";
 import ProjectInvitationCancelModal from "@/components/Modals/ProjectEdit/ProjectInvitationCancelModal";
 import JoinProjectSendMessageModal from "@/components/Modals/ProjectEdit/JoinProjectSendMessageModal";
+import IconButton from "@/components/Buttons/IconButton";
 
-import { IoEyeOutline, IoCreateOutline, IoCloseCircleOutline, IoMailOutline } from "react-icons/io5";
+import { IoEyeOutline, IoCreateOutline, IoCloseCircleOutline, IoMailOutline, IoBan } from "react-icons/io5";
 
 const ProjectInvitationsActions = ({ projectId, invitation, talentsNeeded, userPermissions, iconSize }) => {
 	const [modalDisplayDetails, setModalDisplayDetails] = useState(false);
@@ -60,9 +61,9 @@ const ProjectInvitationsActions = ({ projectId, invitation, talentsNeeded, userP
 		<>
 			{userPermissions.canViewJoinProjectInvitations && (
 				<>
-					<button type="button" onClick={showModalDetails}>
-						<IoEyeOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="View invitation" />
-					</button>
+					<IconButton btnColor={"cyan"} action={showModalDetails}>
+						<IoEyeOutline className={size} title="View invitation" />
+					</IconButton>
 					<Modal modalDisplay={modalDisplayDetails} closeModal={closeModalDetails} closeModalWithBackground={closeModalDetails} modalSize={"std"} modalTitle={"View invitation"}>
 						<JoinProjectDetailsModal joinProject={invitation} type={"invitation"} />
 					</Modal>
@@ -70,26 +71,29 @@ const ProjectInvitationsActions = ({ projectId, invitation, talentsNeeded, userP
 			)}
 			{userPermissions.canViewJoinProjectInvitations && userPermissions.canEditJoinProjectInvitations && (
 				<>
-					<button type="button" onClick={showModalEdit}>
-						<IoCreateOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Edit invitation" />
-					</button>
+					<IconButton btnColor={"blue"} action={showModalEdit}>
+						<IoCreateOutline className={size} title="Edit invitation" />
+					</IconButton>
 					<Modal modalDisplay={modalDisplayEdit} closeModal={closeModalEdit} modalSize={"std"} modalTitle={"Edit invitation"}>
 						<ProjectInvitationEditModal invitation={invitation} closeModalEdit={closeModalEdit} projectId={projectId} talentsNeeded={talentsNeeded} />
 					</Modal>
-					<button type="button" onClick={showModalCancel}>
-						<IoCloseCircleOutline className={`m-1 hover:text-red-400 duration-100 transition ease-in-out ${size}`} title="Cancel invitation" />
-					</button>
+
+					<IconButton btnColor={"red"} action={showModalCancel}>
+						<IoCloseCircleOutline className={size} title="Cancel invitation" />
+					</IconButton>
 					<Modal modalDisplay={modalDisplayCancel} closeModal={closeModalCancel} closeModalWithBackground={closeModalCancel} modalSize={"std"} modalTitle={"Cancel invitation"}>
 						<ProjectInvitationCancelModal invitation={invitation} closeModalCancel={closeModalCancel} projectId={projectId} />
 					</Modal>
-					<button type="button" onClick={showModalSendMessage}>
-						<IoMailOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
-					</button>
+
+					<IconButton btnColor={"violet"} action={showModalSendMessage}>
+						<IoMailOutline className={size} title="Send a message" />
+					</IconButton>
 					<Modal modalDisplay={modalDisplaySendMessage} closeModal={closeModalSendMessage} modalSize={"std"} modalTitle={"Send a message"}>
 						<JoinProjectSendMessageModal joinProject={invitation} closeModalSendMessage={closeModalSendMessage} type={"invitation"} projectId={projectId} />
 					</Modal>
 				</>
 			)}
+			{!userPermissions.canViewJoinProjectInvitations && !userPermissions.canEditJoinProjectInvitations && <IoBan className={`text-gray-500 ${size}`} title="No action allowed" />}
 		</>
 	);
 };

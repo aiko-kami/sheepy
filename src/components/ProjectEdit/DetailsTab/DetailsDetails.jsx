@@ -5,18 +5,18 @@ import Link from "next/link";
 import Image from "next/image";
 import { DateTime } from "luxon";
 
-import { IoBarChartSharp, IoHeart, IoBulbOutline, IoCalendar, IoPersonCircleOutline, IoTimeOutline, IoStar } from "react-icons/io5";
+import { IoBarChartSharp, IoBulbOutline, IoCalendar, IoPersonCircleOutline, IoTimeOutline, IoStar } from "react-icons/io5";
 
-const DetailsDetails = ({ project }) => {
+const DetailsDetails = ({ project, creator, owners, createdAt, updatedAt, updatedBy, likes, crush }) => {
 	// Manage the toggle state
 	const [isCreationRelative, setIsCreationRelative] = useState(true);
 	const [isLastUpdateRelative, setIsLastUpdateRelative] = useState(true);
 
 	// Format the dates
-	const projectCreationDateRelative = DateTime.fromISO(project.createdAt, { locale: "en" }).toRelative();
-	const projectCreationDate = DateTime.fromISO(project.createdAt, { locale: "en" }).toJSDate().toString();
-	const projectLastUpdateDateRelative = DateTime.fromISO(project.updatedAt, { locale: "en" }).toRelative();
-	const projectLastUpdateDate = DateTime.fromISO(project.updatedAt, { locale: "en" }).toJSDate().toString();
+	const projectCreationDateRelative = DateTime.fromISO(createdAt, { locale: "en" }).toRelative();
+	const projectCreationDate = DateTime.fromISO(createdAt, { locale: "en" }).toJSDate().toString();
+	const projectLastUpdateDateRelative = DateTime.fromISO(updatedAt, { locale: "en" }).toRelative();
+	const projectLastUpdateDate = DateTime.fromISO(updatedAt, { locale: "en" }).toJSDate().toString();
 
 	// Toggle between relative and absolute dates
 	const handleToggleDateCreation = () => {
@@ -25,8 +25,6 @@ const DetailsDetails = ({ project }) => {
 	const handleToggleDateLastUpdate = () => {
 		setIsLastUpdateRelative(!isLastUpdateRelative);
 	};
-
-	const projectOwners = project.members.filter((member) => member.isOwner);
 
 	return (
 		<>
@@ -45,11 +43,11 @@ const DetailsDetails = ({ project }) => {
 						<IoBulbOutline className="absolute right-3 top-3 text-5xl p-2 bg-sky-900 rounded-md" />
 						<h3 className="flex text-lg mb-4 ">Project creator</h3>
 						<div className="flex items-center justify-center">
-							<Link href={`/users/${project.owner.userId}`}>
-								<Image src={project.owner.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-12 h-12 rounded-full shadow-md mr-1" />
+							<Link href={`/users/${creator?.userId}`}>
+								<Image src={creator?.profilePicture?.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-12 h-12 rounded-full shadow-md mr-1" />
 							</Link>
 							<div className="font-semibold text-lg">
-								<Link href={`/users/${project.owner.userId}`}>{project.owner.username}</Link>
+								<Link href={`/users/${creator?.userId}`}>{creator?.username}</Link>
 							</div>
 						</div>
 					</div>
@@ -57,15 +55,15 @@ const DetailsDetails = ({ project }) => {
 					{/* Project owner(s) */}
 					<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 mb-3 xl:mb-0 xl:col-span-2">
 						<IoPersonCircleOutline className="absolute right-3 top-3 text-5xl p-2 bg-sky-900 rounded-md" />
-						<span className="text-lg py-1 px-2.5 rounded bg-blue-500">Project {projectOwners.length > 1 ? "owners" : "owner"}</span>
+						<span className="text-lg py-1 px-2.5 rounded bg-blue-500">Project {owners?.length > 1 ? "owners" : "owner"}</span>
 						<div className="mt-4 pl-12">
-							{projectOwners.map((owner) => (
-								<span key={owner.userId} className={`flex items-center ${projectOwners.length > 1 ? "mb-3" : ""}`}>
-									<Link href={`/users/${owner.userId}`}>
-										<Image src={owner.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-12 h-12 rounded-full shadow-md mr-1" />
+							{owners?.map((owner) => (
+								<span key={owner?.user?.userId} className={`flex items-center ${owners?.length > 1 ? "mb-3" : ""}`}>
+									<Link href={`/users/${owner?.user?.userId}`}>
+										<Image src={owner?.user?.profilePicture?.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-12 h-12 rounded-full shadow-md mr-1" />
 									</Link>
 									<div className="font-semibold text-lg">
-										<Link href={`/users/${owner.userId}`}>{owner.username}</Link>
+										<Link href={`/users/${owner?.user?.userId}`}>{owner?.user?.username}</Link>
 									</div>
 								</span>
 							))}
@@ -103,18 +101,18 @@ const DetailsDetails = ({ project }) => {
 						<div className="flex items-center justify-center">
 							<span className="ml-8 lg:ml-0 mr-2">by</span>
 							<div className="flex items-center justify-center">
-								<Link href={`/users/${project.updatedBy.userId}`}>
-									<Image src={project.updatedBy.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-12 h-12 rounded-full shadow-md mr-1" />
+								<Link href={`/users/${updatedBy?.userId}`}>
+									<Image src={updatedBy?.profilePicture?.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-12 h-12 rounded-full shadow-md mr-1" />
 								</Link>
 								<div className="font-semibold text-lg">
-									<Link href={`/users/${project.updatedBy.userId}`}>{project.updatedBy.username}</Link>
+									<Link href={`/users/${updatedBy?.userId}`}>{updatedBy?.username}</Link>
 								</div>
 							</div>
 						</div>
 					</div>
 
 					{/* Project number of likes */}
-					{(project.likes || project.likes === 0) && (
+					{(likes || likes === 0) && (
 						<div className="bg-base-550 rounded-md min-h-50 relative mb-3 xl:mb-0">
 							<div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
 								<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 24 24">
@@ -122,14 +120,14 @@ const DetailsDetails = ({ project }) => {
 								</svg>
 							</div>
 							<div className="absolute top-4/9 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-3xl">
-								<span className="font-semibold ">{project.likes}</span>&nbsp;
-								{project.likes > 1 ? "Likes" : "Like"}
+								<span className="font-semibold ">{likes}</span>&nbsp;
+								{likes > 1 ? "Likes" : "Like"}
 							</div>
 						</div>
 					)}
 
 					{/* Project crush */}
-					{project.selection.crush && (
+					{crush && (
 						<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 mb-3 xl:mb-0 xl:col-span-2">
 							<IoStar className="absolute right-3 top-3 text-5xl p-2 bg-sky-900 rounded-md" />
 							<h3 className="flex text-lg mb-4">Selection</h3>
@@ -142,56 +140,6 @@ const DetailsDetails = ({ project }) => {
 					)}
 
 					{/* Project new */}
-					{project.selection.new && (
-						<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 mb-3 xl:mb-0 xl:col-span-2">
-							<IoStar className="absolute right-3 top-3 text-5xl p-2 bg-sky-900 rounded-md" />
-							<h3 className="flex text-lg mb-4">Selection</h3>
-							<div className="flex flex-col items-center justify-center">
-								<div className="mb-4">Your project has been selected as</div>
-								<span className="mb-3 py-1 px-2.5 font-bold text-3xl text-nowrap rounded cursor-default bg-teal-500">NEW</span>
-								<div className="mb-2 text-xs italic">New projects are visible in the dedicated section</div>
-							</div>
-						</div>
-					)}
-
-					{/* Project urgent */}
-					{project.selection.urgent && (
-						<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 mb-3 xl:mb-0 xl:col-span-2">
-							<IoStar className="absolute right-3 top-3 text-5xl p-2 bg-sky-900 rounded-md" />
-							<h3 className="flex text-lg mb-4">Selection</h3>
-							<div className="flex flex-col items-center justify-center">
-								<div className="mb-4">Your project has been selected as</div>
-								<span className="mb-3 py-1 px-2.5 font-bold text-3xl text-nowrap rounded cursor-default bg-pink-600">URGENT</span>
-								<div className="mb-2 text-xs italic">Urgent projects are visible in the dedicated section</div>
-							</div>
-						</div>
-					)}
-
-					{/* Project sustainable */}
-					{project.selection.sustainable && (
-						<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 mb-3 xl:mb-0 xl:col-span-2">
-							<IoStar className="absolute right-3 top-3 text-5xl p-2 bg-sky-900 rounded-md" />
-							<h3 className="flex text-lg mb-4">Selection</h3>
-							<div className="flex flex-col items-center justify-center">
-								<div className="mb-4">Your project has been selected as</div>
-								<span className="mb-3 py-1 px-2.5 font-bold text-3xl text-nowrap rounded cursor-default bg-green-500">SUSTAINBLE</span>
-								<div className="mb-2 text-xs italic">Sustainable projects are visible in the dedicated section</div>
-							</div>
-						</div>
-					)}
-
-					{/* Project trending */}
-					{project.selection.trending && (
-						<div className="bg-base-550 rounded-md relative min-h-30 py-4 px-3 mb-3 xl:mb-0 xl:col-span-2">
-							<IoStar className="absolute right-3 top-3 text-5xl p-2 bg-sky-900 rounded-md" />
-							<h3 className="flex text-lg mb-4">Selection</h3>
-							<div className="flex flex-col items-center justify-center">
-								<div className="mb-4">Your project has been selected as</div>
-								<span className="mb-3 py-1 px-2.5 font-bold text-3xl text-nowrap rounded cursor-default bg-violet-500">TRENDING</span>
-								<div className="mb-2 text-xs italic">Trending projects are visible in the dedicated section</div>
-							</div>
-						</div>
-					)}
 				</div>
 			</div>
 		</>
