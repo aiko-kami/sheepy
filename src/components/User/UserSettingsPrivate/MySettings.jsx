@@ -1,7 +1,11 @@
+import { redirect } from "next/navigation";
+
 import MySettingsPrivacy from "@/components/User/UserSettingsPrivate/MySettingsPrivacy";
 import MySettingsAppearance from "@/components/User/UserSettingsPrivate/MySettingsAppearance";
 import MySettingsLanguages from "@/components/User/UserSettingsPrivate/MySettingsLanguages";
 import MySettingsNotifications from "@/components/User/UserSettingsPrivate/MySettingsNotifications";
+import Error from "@/components/Errors/Error";
+
 import { ApiGetUserSettingsServer } from "@/lib/api/usersServer";
 
 const MySettings = async () => {
