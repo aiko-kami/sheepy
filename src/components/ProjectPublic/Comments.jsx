@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, React } from "react";
+import React, { useState } from "react";
 
 import Comment from "@/components/ProjectPublic/Comment";
 import CommentReplyForm from "@/components/Forms/CommentReplyForm";
