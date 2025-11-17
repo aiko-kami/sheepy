@@ -20,8 +20,8 @@ const TitleCategory = ({ formInputs, onChange, setFormInputs }) => {
 			try {
 				const result = await ApiGetAllCategories();
 
-				if (result.ok && result.data) {
-					setCategories(result.data);
+				if (result.ok && result.data?.categories) {
+					setCategories(result.data.categories);
 				} else {
 					showErrorToast(result.message || "Failed to load categories");
 				}

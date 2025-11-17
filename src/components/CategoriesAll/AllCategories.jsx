@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import CategoryHorizontalCard from "@/components/Cards/Categories/CategoryHorizontalCard";
 import Triforce from "@/components/Loaders/Triforce";
+import { showErrorToast } from "@/utils/toast";
 
 import { ApiGetAllCategories } from "@/lib/api/categories";
 
@@ -16,8 +17,8 @@ const AllCategories = () => {
 			try {
 				const result = await ApiGetAllCategories();
 
-				if (result.ok && result.data) {
-					setCategories(result.data);
+				if (result.ok && result.data?.categories) {
+					setCategories(result.data.categories);
 				} else {
 					showErrorToast(result.message || "Failed to load categories");
 				}

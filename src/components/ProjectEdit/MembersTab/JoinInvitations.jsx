@@ -8,7 +8,7 @@ import { Button } from "@/components/Buttons/Buttons";
 import Modal from "@/components/Modals/Modal";
 import ProjectNewInvitationModal from "@/components/Modals/ProjectEdit/ProjectNewInvitationModal";
 
-const JoinInvitations = ({ project, projectId, user }) => {
+const JoinInvitations = ({ talentsNeeded, projectId, joinProjectInvitations, user, userPermissions }) => {
 	const [modalDisplayNewInvitation, setModalDisplayNewInvitation] = useState(false);
 
 	const showModalNewInvitation = () => {
@@ -48,9 +48,9 @@ const JoinInvitations = ({ project, projectId, user }) => {
 					</div>
 
 					{/* invitations */}
-					{project.invitations && project.invitations.length !== 0 ? (
+					{joinProjectInvitations && joinProjectInvitations.length !== 0 ? (
 						<div className="w-full overflow-x-auto shadow-md sm:rounded-lg mb-6">
-							<InvitationsTable invitations={project.invitations} project={project} projectId={projectId} projectPermissions={project.permissions} />
+							<InvitationsTable joinProjectInvitations={joinProjectInvitations} talentsNeeded={talentsNeeded} projectId={projectId} userPermissions={userPermissions} />
 						</div>
 					) : (
 						<p className=" text-xl text-center pt-10">

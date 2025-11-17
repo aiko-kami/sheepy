@@ -3,7 +3,7 @@ import InvitationUserCell from "@/components/Tables/ProjectEdit/InvitationUserCe
 import InvitationMessageCell from "@/components/Tables/ProjectEdit/InvitationMessageCell";
 import ProjectInvitationsActions from "@/components/IconsActions/ProjectInvitationsActions";
 
-const InvitationsTable = ({ invitations, project, projectId, projectPermissions }) => {
+const InvitationsTable = ({ joinProjectInvitations, talentsNeeded, projectId, userPermissions }) => {
 	return (
 		<>
 			<table className="w-full text-xs md:text-sm shadow-lg">
@@ -27,28 +27,26 @@ const InvitationsTable = ({ invitations, project, projectId, projectPermissions 
 					</tr>
 				</thead>
 				<tbody>
-					{invitations.map((invitation, index) => {
+					{joinProjectInvitations.map((invitation, index) => {
 						return (
 							<tr key={index} className="border-b bg-gray-800 border-gray-700 hover:bg-gray-600">
 								<td scope="row" className="p-2 md:px-4 md:py-2">
 									<InvitationUserCell invitation={invitation} />
 								</td>
-								<td scope="row" className="p-2 md:px-4 md:py-2 text-center">
-									<div className="text-gray-400 whitespace-nowrap">{invitation.role}</div>
+								<td scope="row" className="p-2 md:px-4 md:py-2 text-left">
+									<div className="text-gray-400 whitespace-nowrap">{invitation.talent}</div>
 								</td>
-								<td scope="row" className="p-2 md:px-4 md:py-2 text-center">
+								<td scope="row" className="p-2 md:px-4 md:py-2 text-left max-w-100">
 									<InvitationMessageCell invitation={invitation} />
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2 text-center">
 									<div className="text-gray-400 whitespace-nowrap">
-										<button type="button">
-											<Status name={invitation.status.name} size={"xs"} rounded={"xs"} bgColor={invitation.status.bgColor} />
-										</button>
+										<Status name={invitation.status.status} size={"xs"} rounded={"xs"} bgColor={invitation.status.colors.bgColor} />
 									</div>
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2">
 									<div className="flex justify-center flex-nowrap">
-										<ProjectInvitationsActions projectId={projectId} invitation={invitation} talentsNeeded={project.talentsNeeded} projectPermissions={projectPermissions} />
+										<ProjectInvitationsActions projectId={projectId} invitation={invitation} talentsNeeded={talentsNeeded} userPermissions={userPermissions} />
 									</div>
 								</td>
 							</tr>

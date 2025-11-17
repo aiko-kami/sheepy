@@ -43,8 +43,8 @@ const ProjectRequestReportModal = ({ closeModalReport, request }) => {
 				<div className="mb-6 xl:flex items-center">
 					<h2 className="text-lg text-gray-400 font-semibold mb-1">Sender:</h2>
 					<div className="flex items-center pl-1 xl:pl-4">
-						<Image src={request.user.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
-						<div className="font-semibold">{request.user.username}</div>
+						<Image src={request.sender.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
+						<div className="font-semibold">{request.sender.username}</div>
 					</div>
 				</div>
 
@@ -57,13 +57,13 @@ const ProjectRequestReportModal = ({ closeModalReport, request }) => {
 				<div className="lg:grid lg:grid-cols-2 justify-around">
 					<div className="xl:flex items-baseline mb-6 lg:mb-0">
 						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Talent requested:</h2>
-						<p className="pl-1 xl:pl-2">{request.role}</p>
+						<p className="pl-1 xl:pl-2">{request.talent}</p>
 					</div>
 					<div>
 						<div className="xl:flex justify-center">
 							<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Request status:</h2>
 							<div className="pl-1 xl:pl-2">
-								<Status name={request.status.name} size={"sm"} bgColor={request.status.bgColor} />
+								<Status name={request.status.status} size={"sm"} bgColor={request.status.colors.bgColor} />
 							</div>
 						</div>
 					</div>

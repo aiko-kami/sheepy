@@ -1,10 +1,10 @@
 import Members from "@/components/ProjectEdit/MembersTab/Members";
 
-const FormMembers = ({ project, user, projectId, members, talentsNeeded }) => {
+const FormMembers = ({ projectId, user, userPermissions, members, talentsNeeded, joinProject }) => {
 	return (
 		<>
 			{/* Project members information */}
-			<Members project={project} projectId={projectId} user={user} members={members} talentsNeeded={talentsNeeded} />
+			<Members projectId={projectId} user={user} userPermissions={userPermissions} members={members} talentsNeeded={talentsNeeded} joinProject={joinProject} />
 		</>
 	);
 };

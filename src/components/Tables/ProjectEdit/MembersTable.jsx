@@ -2,7 +2,7 @@ import MemberUserCell from "@/components/Tables/ProjectEdit/MemberUserCell";
 import MembersActions from "@/components/IconsActions/MembersActions";
 import { formatIsoTimestamp } from "@/utils/dateHandlers";
 
-const MembersTable = ({ members, projectId, projectPermissions }) => {
+const MembersTable = ({ members, projectId, userPermissions }) => {
 	return (
 		<>
 			<table className="w-full text-xs md:text-sm shadow-lg">
@@ -42,7 +42,7 @@ const MembersTable = ({ members, projectId, projectPermissions }) => {
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2">
 									<div className="flex justify-center flex-nowrap">
-										<MembersActions projectId={projectId} user={user} role={role} talent={talent} startDate={startDate.formatted} projectPermissions={projectPermissions} />
+										<MembersActions projectId={projectId} user={user} role={role} talent={talent} startDate={startDate.formatted} userPermissions={userPermissions} />
 									</div>
 								</td>
 							</tr>

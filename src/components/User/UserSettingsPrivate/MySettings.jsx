@@ -5,15 +5,18 @@ import MySettingsNotifications from "@/components/User/UserSettingsPrivate/MySet
 import { ApiGetUserSettingsServer } from "@/lib/api/usersServer";
 
 const MySettings = async () => {
-	const userSettingsResponse = await ApiGetUserSettingsServer();
-	if (!userSettingsResponse.ok) {
-		return <p>Error loading user: {userSettingsResponse.message}</p>;
+	const result = await ApiGetUserSettingsServer();
+	if (!result.ok) {
+		if (result.status === 401 || result.status === 403) {
+			redirect("/access-denied");
+		}
+
+		return <Error title="404 - User settings Not Found" message="Sorry, we couldn’t find the user settings you are looking for... 😥" extraMessage={result.message} />;
 	}
 
-	const userSettings = userSettingsResponse.data;
-
+	const userSettings = result.data?.userSettings;
 	if (!userSettings) {
-		return <div>Could not load settings.</div>;
+		return <Error title="404 - User settings Not Found" message="Sorry, we couldn’t find the user settings you are looking for... 😥" />;
 	}
 
 	return (

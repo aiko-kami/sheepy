@@ -28,17 +28,20 @@ const ProjectEditMembersPage = async ({ params }) => {
 		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" extraMessage={result.message} />;
 	}
 
-	const project = result.data;
+	const project = result.data?.project;
 
 	const projectId = project?.projectId;
 	const members = project?.members;
-	const talentsNeeded = project?.talentsNeeded;
 
+	const userPermissions = result.data?.userPermissions;
+
+	const talentsNeeded = project?.talentsNeeded;
+	const joinProject = result.data?.joinProject;
 	if (!project) {
 		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" />;
 	}
 
-	return <FormMembers project={project} user={user} projectId={projectId} members={members} talentsNeeded={talentsNeeded} />;
+	return <FormMembers projectId={projectId} user={user} userPermissions={userPermissions} members={members} talentsNeeded={talentsNeeded} joinProject={joinProject} />;
 };
 
 export default ProjectEditMembersPage;

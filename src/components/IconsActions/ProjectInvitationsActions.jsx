@@ -10,7 +10,7 @@ import JoinProjectSendMessageModal from "@/components/Modals/ProjectEdit/JoinPro
 
 import { IoEyeOutline, IoCreateOutline, IoCloseCircleOutline, IoMailOutline } from "react-icons/io5";
 
-const ProjectInvitationsActions = ({ projectId, invitation, talentsNeeded, projectPermissions, iconSize }) => {
+const ProjectInvitationsActions = ({ projectId, invitation, talentsNeeded, userPermissions, iconSize }) => {
 	const [modalDisplayDetails, setModalDisplayDetails] = useState(false);
 	const [modalDisplayEdit, setModalDisplayEdit] = useState(false);
 	const [modalDisplayCancel, setModalDisplayCancel] = useState(false);
@@ -58,7 +58,7 @@ const ProjectInvitationsActions = ({ projectId, invitation, talentsNeeded, proje
 
 	return (
 		<>
-			{invitation.actions.view && (
+			{userPermissions.canViewJoinProjectInvitations && (
 				<>
 					<button type="button" onClick={showModalDetails}>
 						<IoEyeOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="View invitation" />
@@ -68,7 +68,7 @@ const ProjectInvitationsActions = ({ projectId, invitation, talentsNeeded, proje
 					</Modal>
 				</>
 			)}
-			{invitation.actions.edit && (
+			{userPermissions.canViewJoinProjectInvitations && userPermissions.canEditJoinProjectInvitations && (
 				<>
 					<button type="button" onClick={showModalEdit}>
 						<IoCreateOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Edit invitation" />
@@ -76,20 +76,12 @@ const ProjectInvitationsActions = ({ projectId, invitation, talentsNeeded, proje
 					<Modal modalDisplay={modalDisplayEdit} closeModal={closeModalEdit} modalSize={"std"} modalTitle={"Edit invitation"}>
 						<ProjectInvitationEditModal invitation={invitation} closeModalEdit={closeModalEdit} projectId={projectId} talentsNeeded={talentsNeeded} />
 					</Modal>
-				</>
-			)}
-			{invitation.actions.cancel && (
-				<>
 					<button type="button" onClick={showModalCancel}>
 						<IoCloseCircleOutline className={`m-1 hover:text-red-400 duration-100 transition ease-in-out ${size}`} title="Cancel invitation" />
 					</button>
 					<Modal modalDisplay={modalDisplayCancel} closeModal={closeModalCancel} closeModalWithBackground={closeModalCancel} modalSize={"std"} modalTitle={"Cancel invitation"}>
 						<ProjectInvitationCancelModal invitation={invitation} closeModalCancel={closeModalCancel} projectId={projectId} />
 					</Modal>
-				</>
-			)}
-			{invitation.actions.sendMessage && (
-				<>
 					<button type="button" onClick={showModalSendMessage}>
 						<IoMailOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
 					</button>

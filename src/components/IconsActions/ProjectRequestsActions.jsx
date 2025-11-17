@@ -11,7 +11,7 @@ import ProjectRequestReportModal from "@/components/Modals/ProjectEdit/ProjectRe
 
 import { IoEyeOutline, IoCheckmarkCircleOutline, IoCloseCircleOutline, IoMailOutline, IoWarningOutline } from "react-icons/io5";
 
-const ProjectRequestsActions = ({ projectId, request, projectPermissions, iconSize }) => {
+const ProjectRequestsActions = ({ projectId, request, userPermissions, iconSize }) => {
 	const [modalDisplayDetails, setModalDisplayDetails] = useState(false);
 	const [modalDisplayAccept, setModalDisplayAccept] = useState(false);
 	const [modalDisplayDecline, setModalDisplayDecline] = useState(false);
@@ -66,7 +66,7 @@ const ProjectRequestsActions = ({ projectId, request, projectPermissions, iconSi
 
 	return (
 		<>
-			{request.actions.view && (
+			{userPermissions.canViewJoinProjectRequests && (
 				<>
 					<button type="button" onClick={showModalDetails}>
 						<IoEyeOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="View request" />
@@ -76,7 +76,7 @@ const ProjectRequestsActions = ({ projectId, request, projectPermissions, iconSi
 					</Modal>
 				</>
 			)}
-			{request.actions.accept && (
+			{userPermissions.canViewJoinProjectRequests && userPermissions.canEditJoinProjectRequests && (
 				<>
 					<button type="button" onClick={showModalAccept}>
 						<IoCheckmarkCircleOutline className={`m-1 hover:text-green-400 duration-100 transition ease-in-out ${size}`} title="Accept request" />
@@ -84,20 +84,12 @@ const ProjectRequestsActions = ({ projectId, request, projectPermissions, iconSi
 					<Modal modalDisplay={modalDisplayAccept} closeModal={closeModalAccept} closeModalWithBackground={closeModalAccept} modalSize={"std"} modalTitle={"Accept request"}>
 						<ProjectRequestAcceptModal request={request} closeModalAccept={closeModalAccept} projectId={projectId} />
 					</Modal>
-				</>
-			)}
-			{request.actions.decline && (
-				<>
 					<button type="button" onClick={showModalDecline}>
 						<IoCloseCircleOutline className={`m-1 hover:text-red-400 duration-100 transition ease-in-out ${size}`} title="Decline request" />
 					</button>
 					<Modal modalDisplay={modalDisplayDecline} closeModal={closeModalDecline} closeModalWithBackground={closeModalDecline} modalSize={"std"} modalTitle={"Decline request"}>
 						<ProjectRequestDeclineModal request={request} closeModalDecline={closeModalDecline} projectId={projectId} />
 					</Modal>
-				</>
-			)}
-			{request.actions.sendMessage && (
-				<>
 					<button type="button" onClick={showModalSendMessage}>
 						<IoMailOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
 					</button>
@@ -106,7 +98,7 @@ const ProjectRequestsActions = ({ projectId, request, projectPermissions, iconSi
 					</Modal>
 				</>
 			)}
-			{request.actions.report && (
+			{userPermissions.canViewJoinProjectRequests && (
 				<>
 					<button type="button" onClick={showModalReport}>
 						<IoWarningOutline className={`m-1 hover:text-yellow-500 duration-100 transition ease-in-out ${size}`} title="Report" />

@@ -11,7 +11,7 @@ import Link from "next/link";
 
 import { IoBuildOutline, IoCloseCircleOutline, IoChatboxEllipsesOutline, IoPersonOutline } from "react-icons/io5";
 
-const MembersActions = ({ projectId, user, role, talent, startDate, projectPermissions, iconSize }) => {
+const MembersActions = ({ projectId, user, role, talent, startDate, userPermissions, iconSize }) => {
 	const [modalDisplayUpdate, setModalDisplayUpdate] = useState(false);
 	const [modalDisplayMessage, setModalDisplayMessage] = useState(false);
 	const [modalDisplayRemove, setModalDisplayRemove] = useState(false);
@@ -52,7 +52,7 @@ const MembersActions = ({ projectId, user, role, talent, startDate, projectPermi
 
 	return (
 		<>
-			{!projectPermissions?.canEditMembers && (
+			{!userPermissions?.canEditMembers && (
 				<>
 					<button type="button" onClick={showModalUpdate}>
 						<IoBuildOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Edit member" />
@@ -73,7 +73,7 @@ const MembersActions = ({ projectId, user, role, talent, startDate, projectPermi
 			<Link href={`/users/${user.userId}`}>
 				<IoPersonOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Visit user profile" />
 			</Link>
-			{!projectPermissions?.canRemoveMembers && (
+			{!userPermissions?.canRemoveMembers && (
 				<>
 					<button type="button" onClick={showModalRemove}>
 						<IoCloseCircleOutline className={`m-1 hover:text-red-400 duration-100 transition ease-in-out ${size}`} title="Remove from the project" />

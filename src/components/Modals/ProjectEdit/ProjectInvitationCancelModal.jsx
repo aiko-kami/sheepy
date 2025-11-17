@@ -16,16 +16,16 @@ const ProjectInvitationCancelModal = ({ closeModalCancel, invitation }) => {
 					<div className="mb-6 xl:flex items-center">
 						<h2 className="text-lg text-gray-400 font-semibold mb-1">Receiver:</h2>
 						<div className="flex items-center pl-1 xl:pl-4">
-							<Image src={invitation.user.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
-							<div className="font-semibold">{invitation.user.username}</div>
+							<Image src={invitation.receiver.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
+							<div className="font-semibold">{invitation.receiver.username}</div>
 						</div>
 					</div>
 
 					{/* Sender from the project */}
 					<div className="mb-6 xl:flex items-center justify-center">
-						<h2 className="text-lg text-gray-400 font-semibold mb-1">Sent from:</h2>
+						<h2 className="text-lg text-gray-400 font-semibold mb-1">Sent by:</h2>
 						<div className="flex items-center pl-1 xl:pl-4">
-							<Image src={invitation.sender.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
+							<Image src={invitation.sender.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
 							<div className="font-semibold">{invitation.sender.username}</div>
 						</div>
 					</div>
@@ -40,13 +40,13 @@ const ProjectInvitationCancelModal = ({ closeModalCancel, invitation }) => {
 				<div className="lg:grid lg:grid-cols-2 justify-around">
 					<div className="xl:flex items-baseline mb-6 lg:mb-0">
 						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Talent requested:</h2>
-						<p className="pl-1 xl:pl-2">{invitation.role}</p>
+						<p className="pl-1 xl:pl-2">{invitation.talent}</p>
 					</div>
 					<div>
 						<div className="xl:flex justify-center">
 							<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Invitation status:</h2>
 							<div className="pl-1 xl:pl-2">
-								<Status name={invitation.status.name} size={"sm"} bgColor={invitation.status.bgColor} />
+								<Status name={invitation.status.status} size={"sm"} bgColor={invitation.status.colors.bgColor} />
 							</div>
 						</div>
 					</div>

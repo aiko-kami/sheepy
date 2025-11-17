@@ -3,24 +3,24 @@ import TalentsNeeded from "@/components/ProjectEdit/MembersTab/TalentsNeeded";
 import JoinRequests from "@/components/ProjectEdit/MembersTab/JoinRequests";
 import JoinInvitations from "@/components/ProjectEdit/MembersTab/JoinInvitations";
 
-const Members = ({ project, projectId, user, members, talentsNeeded }) => {
+const Members = ({ projectId, user, userPermissions, members, talentsNeeded, joinProject }) => {
 	return (
 		<>
 			{/* Project members */}
 			<div className="mb-8 lg:mb-14">
-				<MembersDetails project={project} user={user} members={members} />
+				<MembersDetails user={user} userPermissions={userPermissions} members={members} />
 			</div>
 			{/* Talents needed */}
 			<div className="mb-8 lg:mb-14">
-				<TalentsNeeded project={project} projectId={projectId} user={user} talentsNeeded={talentsNeeded} />
+				<TalentsNeeded projectId={projectId} user={user} talentsNeeded={talentsNeeded} />
 			</div>
 			{/* Requests to join the project */}
 			<div className="mb-8 lg:mb-14">
-				<JoinRequests project={project} projectId={projectId} user={user} />
+				<JoinRequests projectId={projectId} joinProjectRequests={joinProject.joinRequests} user={user} userPermissions={userPermissions} />
 			</div>
 			{/* Invitations to join the project */}
 			<div className="mb-8 lg:mb-14">
-				<JoinInvitations project={project} projectId={projectId} user={user} />
+				<JoinInvitations projectId={projectId} talentsNeeded={talentsNeeded} joinProjectInvitations={joinProject.joinInvitations} user={user} userPermissions={userPermissions} />
 			</div>
 		</>
 	);

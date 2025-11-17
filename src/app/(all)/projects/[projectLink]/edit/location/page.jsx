@@ -23,7 +23,7 @@ const ProjectEditLocationPage = async ({ params }) => {
 		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" extraMessage={result.message} />;
 	}
 
-	const project = result.data;
+	const project = result.data?.project;
 
 	const projectId = project?.projectId;
 	const onlineOnly = project?.location?.onlineOnly;

@@ -95,18 +95,16 @@ const StepManager = () => {
 	useEffect(() => {
 		const fetchCategories = async () => {
 			const result = await ApiGetAllCategories();
-
-			if (result.ok && result.data) {
-				setCategories(result.data);
+			if (result.ok && result.data?.categories) {
+				setCategories(result.data.categories);
 			} else {
 				showErrorToast(result.message || "Failed to load categories");
 			}
 		};
 		const fetchTags = async () => {
 			const result = await ApiGetAllTags();
-
-			if (result.ok && result.data) {
-				setTagsList(result.data);
+			if (result.ok && result.data?.tags) {
+				setTagsList(result.data.tags);
 			} else {
 				showErrorToast(result.message || "Failed to load tags");
 			}

@@ -1,11 +1,11 @@
 import { apiGet } from "@/lib/api/ApiHelpers";
 
 export async function ApiGetUserFromSessionServer() {
-	return apiGet(`/users/myData`, (json) => json?.data?.user ?? null);
+	return apiGet(`/users/myData`);
 }
 
 export async function ApiGetUserSettingsServer() {
-	return apiGet(`/users/mySettings`, (json) => json?.data?.userSettings ?? null);
+	return apiGet(`/users/mySettings`);
 }
 
 /* 

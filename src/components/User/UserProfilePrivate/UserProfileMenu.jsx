@@ -1,19 +1,25 @@
+import { redirect } from "next/navigation";
+
 import UserCardPictureBio from "@/components/User/UserProfilePrivate/UserCardPictureBio";
 import UserCardDetails from "@/components/User/UserProfilePrivate/UserCardDetails";
 import UserCardEmail from "@/components/User/UserProfilePrivate/UserCardEmail";
 import UserCardPassword from "@/components/User/UserProfilePrivate/UserCardPassword";
 import { ApiGetUserFromSessionServer } from "@/lib/api/usersServer";
+import Error from "@/components/Errors/Error";
 
 const UserProfileMenu = async () => {
-	const userResponse = await ApiGetUserFromSessionServer();
-	if (!userResponse.ok) {
-		return <p>Error loading user: {userResponse.message}</p>;
+	const result = await ApiGetUserFromSessionServer();
+	if (!result.ok) {
+		if (result.status === 401 || result.status === 403) {
+			redirect("/access-denied");
+		}
+
+		return <Error title="404 - User Not Found" message="Sorry, we couldn’t find the user you are looking for... 😥" extraMessage={result.message} />;
 	}
 
-	const user = userResponse.data;
-
+	const user = result.data?.user;
 	if (!user) {
-		return <div>You must be logged in to view your profile.</div>;
+		return <Error title="404 - User Not Found" message="Sorry, we couldn’t find the user you are looking for... 😥" />;
 	}
 
 	return (

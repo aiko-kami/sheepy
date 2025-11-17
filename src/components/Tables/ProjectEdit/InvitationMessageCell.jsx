@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import Modal from "@/components/Modals/Modal";
-import UpdateMemberModal from "@/components/Modals/ProjectEdit/UpdateMemberModal";
+import JoinProjectDetailsModal from "@/components/Modals/ProjectEdit/JoinProjectDetailsModal";
 
 const InvitationMessageCell = ({ invitation }) => {
 	const [modalDisplayDetails, setModalDisplayDetails] = useState(false);
@@ -17,11 +17,11 @@ const InvitationMessageCell = ({ invitation }) => {
 
 	return (
 		<>
-			<button type="button" onClick={showModalDetails}>
-				<div className="text-gray-400 whitespace-nowrap">{invitation.message}</div>
-			</button>
-			<Modal modalDisplay={modalDisplayDetails} closeModal={closeModalDetails} modalSize={"std"} modalTitle={"Invitation"}>
-				<UpdateMemberModal closeModal={closeModalDetails} />
+			<div onClick={showModalDetails} className="text-gray-400 whitespace-nowrap overflow-hidden text-ellipsis cursor-pointer hover:text-white transition duration-75 ease-in-out">
+				{invitation.message}
+			</div>
+			<Modal modalDisplay={modalDisplayDetails} closeModal={closeModalDetails} closeModalWithBackground={closeModalDetails} modalSize={"std"} modalTitle={"View invitation"}>
+				<JoinProjectDetailsModal joinProject={invitation} type={"invitation"} />
 			</Modal>
 		</>
 	);

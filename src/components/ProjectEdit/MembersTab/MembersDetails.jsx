@@ -1,7 +1,7 @@
 import { IoPeople } from "react-icons/io5";
 import MembersTable from "@/components/Tables/ProjectEdit/MembersTable";
 
-const MembersDetails = ({ project, projectId, user, members }) => {
+const MembersDetails = ({ projectId, user, userPermissions, members }) => {
 	return (
 		<>
 			{/* Project members */}
@@ -17,7 +17,7 @@ const MembersDetails = ({ project, projectId, user, members }) => {
 					{/* Status history table */}
 					{members && members.length !== 0 ? (
 						<div className="w-full overflow-x-auto shadow-md sm:rounded-lg">
-							<MembersTable members={members} projectId={projectId} projectPermissions={project.permissions} />
+							<MembersTable members={members} projectId={projectId} userPermissions={userPermissions} />
 						</div>
 					) : (
 						<p className=" text-xl text-center pt-10">

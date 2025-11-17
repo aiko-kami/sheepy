@@ -11,11 +11,13 @@ import { SelectRoundedField } from "@/components/Forms/SelectField";
 import { handleFormChange } from "@/utils/formHandlers";
 
 const ProjectInvitationEditModal = ({ closeModalEdit, invitation, projectId, talentsNeeded }) => {
+	console.log("🚀 ~ ProjectInvitationEditModal ~ talentsNeeded:", talentsNeeded);
+
 	const [formInputs, setFormInputs] = useState({
 		joinProjectId: invitation.joinProjectId,
-		userId: invitation.user.userId,
+		userId: invitation.receiver.userId,
 		projectId: projectId,
-		selectedRole: invitation.role,
+		selectedRole: invitation.talent,
 		message: invitation.message,
 	});
 
@@ -35,9 +37,9 @@ const ProjectInvitationEditModal = ({ closeModalEdit, invitation, projectId, tal
 		closeModalEdit();
 	};
 
-	const optionsList = talentsNeeded.map((talent) => ({
-		value: talent.role,
-		option: talent.role,
+	const optionsList = talentsNeeded.map((tal) => ({
+		value: tal.talent,
+		option: tal.talent,
 	}));
 
 	return (
@@ -46,8 +48,8 @@ const ProjectInvitationEditModal = ({ closeModalEdit, invitation, projectId, tal
 			<div className="mb-6 xl:flex items-center">
 				<h2 className="text-lg text-gray-400 font-semibold mb-1">To:</h2>
 				<div className="flex items-center pl-1 xl:pl-4">
-					<Image src={invitation.user.profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
-					<div className="font-semibold">{invitation.user.username}</div>
+					<Image src={invitation.receiver.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
+					<div className="font-semibold">{invitation.receiver.username}</div>
 				</div>
 			</div>
 

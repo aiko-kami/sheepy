@@ -25,8 +25,6 @@ const ProjectEditAttachmentsPage = async ({ params }) => {
 	const projectId = project?.projectId;
 	const attachments = project?.privateData?.attachments;
 
-	console.log("🚀 ~ ProjectEditAttachmentsPage ~ attachments:", attachments);
-
 	const userPermissions = result.data?.userPermissions;
 
 	if (!project) {
