@@ -2,7 +2,7 @@ import { IoDocumentText } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 
-const Summary = ({ formInputs, onChange }) => {
+const Summary = ({ formInputs, onChange, userPermissions }) => {
 	return (
 		<>
 			{/* Project summary, description and goals */}

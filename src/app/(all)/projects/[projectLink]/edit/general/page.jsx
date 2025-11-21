@@ -38,6 +38,8 @@ const ProjectEditGeneralPage = async ({ params }) => {
 	const creatorMotivation = project?.creatorMotivation;
 	const objectives = project?.objectives;
 
+	const userPermissions = result.data?.userPermissions;
+
 	if (!project) {
 		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" />;
 	}
@@ -56,6 +58,7 @@ const ProjectEditGeneralPage = async ({ params }) => {
 			tagsList={tagsList}
 			creatorMotivation={creatorMotivation}
 			objectives={objectives}
+			userPermissions={userPermissions}
 		/>
 	);
 };

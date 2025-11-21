@@ -2,7 +2,7 @@ import { IoImages } from "react-icons/io5";
 import { FileDropField } from "@/components/Forms/FileDropField";
 import { Button } from "@/components/Buttons/Buttons";
 
-const Cover = ({ formInputs, setFormInputs }) => {
+const Cover = ({ formInputs, setFormInputs, userPermissions }) => {
 	const fileTypesAllowed = {
 		"image/png": ".png",
 		"image/jpeg": ".jpg",

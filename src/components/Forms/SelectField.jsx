@@ -7,8 +7,8 @@ const SelectField = ({ inputName, possibleValues, inputValue, onChange, disabled
 				value={inputValue}
 				onChange={onChange}
 				disabled={disabled}
-				className={`block py-3 px-1 w-full bg-transparent border-0 border-b-2 border-gray-600 focus:outline-none hover:border-gray-500 hover:shadow-lg ${
-					inputValue === "" ? "text-gray-400" : "text-white"
+				className={`block py-3 px-1 w-full bg-transparent border-0 border-b-2 border-gray-600 focus:outline-none ${inputValue === "" ? "text-gray-400" : "text-white"} disabled:text-gray-500 ${
+					!disabled ? "hover:border-gray-500 hover:shadow-lg" : ""
 				}`}
 			>
 				{possibleValues.map((element, index) => (

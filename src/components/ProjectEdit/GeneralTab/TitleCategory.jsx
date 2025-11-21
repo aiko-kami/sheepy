@@ -8,7 +8,7 @@ import InputField from "@/components/Forms/InputField";
 
 import { ApiGetAllCategories } from "@/lib/api/categories";
 
-const TitleCategory = ({ formInputs, onChange, setFormInputs }) => {
+const TitleCategory = ({ formInputs, onChange, setFormInputs, userPermissions }) => {
 	const [categories, setCategories] = useState([]);
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState(null);
@@ -96,32 +96,50 @@ const TitleCategory = ({ formInputs, onChange, setFormInputs }) => {
 			<div className="md:pl-4">
 				{/* Project title */}
 				<div className="mb-6 xl:mb-8">
-					<InputField inputName="projectTitle" inputType="text" label="Project title" inputValue={formInputs.projectTitle} onChange={onChange} />
+					<InputField inputName="projectTitle" inputType="text" label="Project title" inputValue={formInputs.projectTitle} onChange={onChange} disabled={!userPermissions.canEditTitle} />
+					{!userPermissions.canEditTitle && <p className="text-xs italic text-pink-700 mt-1">You do not have permission to edit the project title</p>}
 				</div>
 				<div className="mb-8 max-w-180">
 					<div className="flex flex-col lg:flex-row justify-between">
 						{/* Project category */}
 						<div className="flex-1 mb-6 lg:mb-0 lg:mr-2">
 							<div className="text-sm">Project category</div>
-							<SelectField inputName="projectCategory" possibleValues={optionsListCat} inputValue={formInputs.projectCategory} onChange={handleCategoryChange} />
+							<SelectField
+								inputName="projectCategory"
+								possibleValues={optionsListCat}
+								inputValue={formInputs.projectCategory}
+								onChange={handleCategoryChange}
+								disabled={!userPermissions.canEditCategory}
+							/>
+							{!userPermissions.canEditCategory && <p className="text-xs italic text-pink-700 mt-1">You do not have permission to edit the project category</p>}
 						</div>
 						{/* Project sub-category */}
 						<div className="flex-1 min-h-[3.5rem] lg:ml-2">
 							<div className="text-sm">Project sub-category</div>
-							<SelectField inputName="projectSubCategory" possibleValues={optionsListSubcat} inputValue={formInputs.projectSubCategory} onChange={onChange} />
+							<SelectField
+								inputName="projectSubCategory"
+								possibleValues={optionsListSubcat}
+								inputValue={formInputs.projectSubCategory}
+								onChange={onChange}
+								disabled={!userPermissions.canEditSubCategory}
+							/>
+							{!userPermissions.canEditSubCategory && <p className="text-xs italic text-pink-700 mt-1">You do not have permission to edit the project sub-category</p>}
 						</div>
 					</div>
 				</div>
-				<div className="flex justify-center">
-					<Button
-						btnProps={{
-							type: "submit",
-							btnColor: "blue",
-						}}
-					>
-						Save project
-					</Button>
-				</div>
+				{(userPermissions.canEditTitle || userPermissions.canEditCategory || userPermissions.canEditSubCategory) && (
+					<div className="flex justify-center">
+						<Button
+							btnProps={{
+								type: "submit",
+								btnColor: "blue",
+								disabled: !userPermissions.canEditTitle && !userPermissions.canEditCategory && !userPermissions.canEditSubCategory,
+							}}
+						>
+							Save project
+						</Button>
+					</div>
+				)}
 			</div>
 		</>
 	);

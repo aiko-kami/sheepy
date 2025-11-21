@@ -2,7 +2,7 @@ import { IoPricetag } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import TagInputField from "@/components/Forms/TagInputField/TagInputField";
 
-const Tags = ({ formInputs, setFormInputs, tagsList = [] }) => {
+const Tags = ({ formInputs, setFormInputs, tagsList = [], userPermissions }) => {
 	return (
 		<div>
 			<h2 className="flex items-center text-xl mb-3 sm:ml-4">

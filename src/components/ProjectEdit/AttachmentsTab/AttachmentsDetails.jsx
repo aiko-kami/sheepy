@@ -9,6 +9,8 @@ import { Button } from "@/components/Buttons/Buttons";
 import AttachmentsTable from "@/components/Tables/ProjectEdit/AttachmentsTable";
 
 const AttachmentsDetails = ({ projectId, attachments, userPermissions }) => {
+	console.log("🚀 ~ AttachmentsDetails ~ userPermissions:", userPermissions);
+
 	const [formInputs, setFormInputs] = useState({
 		projectId: projectId,
 		newAttachments: [],
@@ -58,21 +60,23 @@ const AttachmentsDetails = ({ projectId, attachments, userPermissions }) => {
 					</div>
 
 					{/* Add project attachments */}
-					<form onSubmit={onSubmit}>
-						<div className="mb-8">
-							<FilesDropField onFilesSelected={setFormInputs} fileTypesAllowed={fileTypesAllowed} maxFileSizeAllowed={maxFileSizeAllowed} />
-						</div>
-						<div className="flex justify-center mb-6 xl:mb-10">
-							<Button
-								btnProps={{
-									type: "submit",
-									btnColor: "blue",
-								}}
-							>
-								Save project
-							</Button>
-						</div>
-					</form>
+					{userPermissions.canAddAttachments && (
+						<form onSubmit={onSubmit}>
+							<div className="mb-8">
+								<FilesDropField onFilesSelected={setFormInputs} fileTypesAllowed={fileTypesAllowed} maxFileSizeAllowed={maxFileSizeAllowed} />
+							</div>
+							<div className="flex justify-center mb-6 xl:mb-10">
+								<Button
+									btnProps={{
+										type: "submit",
+										btnColor: "blue",
+									}}
+								>
+									Save project
+								</Button>
+							</div>
+						</form>
+					)}
 				</div>
 			</div>
 		</>

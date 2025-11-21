@@ -4,7 +4,7 @@ import { useState } from "react";
 import General from "@/components/ProjectEdit/GeneralTab/General";
 import { handleFormChange } from "@/utils/formHandlers";
 
-const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, description, cover, tags, tagsList, creatorMotivation, objectives }) => {
+const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, description, cover, tags, tagsList, creatorMotivation, objectives, userPermissions }) => {
 	const [formInputs, setFormInputs] = useState({
 		projectId: projectId,
 		projectTitle: title || "",
@@ -33,7 +33,7 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 		<>
 			<form onSubmit={onSubmit}>
 				{/* Project general information */}
-				<General formInputs={formInputs} setFormInputs={setFormInputs} onChange={onChange} tagsList={tagsList} />
+				<General formInputs={formInputs} setFormInputs={setFormInputs} onChange={onChange} tagsList={tagsList} userPermissions={userPermissions} />
 			</form>
 		</>
 	);

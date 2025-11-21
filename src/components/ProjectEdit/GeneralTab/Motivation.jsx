@@ -3,7 +3,7 @@ import { Button } from "@/components/Buttons/Buttons";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 import ObjectiveInputField from "@/components/Forms/ObjectiveInputField/ObjectiveInputField";
 
-const Motivation = ({ formInputs, setFormInputs, onChange }) => {
+const Motivation = ({ formInputs, setFormInputs, onChange, userPermissions }) => {
 	return (
 		<>
 			{/* Creator motivation, project objectives and phases */}
