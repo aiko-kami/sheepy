@@ -13,18 +13,23 @@ const Tags = ({ formInputs, setFormInputs, tagsList = [], userPermissions }) => 
 
 			<div className="md:pl-4">
 				<div className="mb-8">
-					<TagInputField formInputs={formInputs} setFormInputs={setFormInputs} tagsList={tagsList} />
+					{!userPermissions.canEditTags && <p className="text-xs italic text-pink-700 mb-3">You do not have permission to edit the project tags</p>}
+
+					<TagInputField formInputs={formInputs} setFormInputs={setFormInputs} tagsList={tagsList} disabled={!userPermissions.canEditTags} />
 				</div>
-				<div className="flex justify-center">
-					<Button
-						btnProps={{
-							type: "submit",
-							btnColor: "blue",
-						}}
-					>
-						Save project
-					</Button>
-				</div>
+				{userPermissions.canEditTags && (
+					<div className="flex justify-center">
+						<Button
+							btnProps={{
+								type: "submit",
+								btnColor: "blue",
+								disabled: !userPermissions.canEditTags,
+							}}
+						>
+							Save tags
+						</Button>
+					</div>
+				)}
 			</div>
 		</div>
 	);

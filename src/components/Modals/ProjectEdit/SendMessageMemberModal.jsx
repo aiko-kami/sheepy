@@ -44,13 +44,10 @@ const SendMessageMemberModal = ({ member, closeModalMessage }) => {
 						inputValue={formInputs.message}
 						onChange={onChange}
 						placeholder="Write your message..."
-						maxLength={1000}
+						maxLength={MESSAGE_MAX_LENGTH}
 						rows="6"
 						required={true}
 					/>
-					<div className="text-right text-sm text-gray-400 mt-0.5 mr-2">
-						{formInputs.message.length}/{MESSAGE_MAX_LENGTH}
-					</div>
 				</div>
 				{/* Buttons */}
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 justify-center">

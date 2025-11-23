@@ -50,13 +50,13 @@ const ProjectEditNavbar = ({ projectRights }) => {
 
 	return (
 		<>
-			<ul className="grid grid-cols-3 md:grid-cols-6 xl:grid-cols-9 gap-1 text-sm font-medium text-center rounded-lg bg-slate-800/70 border border-slate-700 p-1 mb-12">
+			<ul className="grid grid-cols-3 md:grid-cols-12 xl:grid-cols-9 gap-1 text-sm font-medium text-center rounded-lg bg-slate-800/70 border border-slate-700 p-1 mb-12">
 				{links.map(({ slug, label, disabled }) => {
 					const href = `${projectBasePath}/${slug}`;
 					const isCurrent = pathname === href || (slug === "general" && pathname === projectBasePath);
 
 					return (
-						<li key={slug}>
+						<li key={slug} className={`md:col-span-2 xl:col-span-1 ${slug === "steps" && "md:col-start-4 xl:col-start-auto"}`}>
 							<Link href={disabled ? "#" : href} className={getLinkClasses(href, disabled)} aria-current={isCurrent ? "page" : undefined}>
 								{label}
 							</Link>

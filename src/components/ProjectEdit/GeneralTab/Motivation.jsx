@@ -17,8 +17,8 @@ const Motivation = ({ formInputs, setFormInputs, onChange, userPermissions }) =>
 				{/* Creator motivation */}
 				<div className="mb-6 xl:mb-8">
 					<TextAreaField
-						label="Creator motivation (optional):"
-						labelStyle="block mb-2"
+						label="Creator motivation:"
+						labelStyle="block"
 						inputName="creatorMotivation"
 						inputValue={formInputs.creatorMotivation}
 						onChange={onChange}
@@ -26,39 +26,47 @@ const Motivation = ({ formInputs, setFormInputs, onChange, userPermissions }) =>
 						maxLength={500}
 						rows="4"
 						required={true}
+						disabled={!userPermissions.canEditCreatorMotivation}
+						disabledMessage={!userPermissions.canEditCreatorMotivation && "You do not have permission to edit the creator motivation"}
 					/>
 				</div>
 
 				{/* Project objectives */}
 				<div className="mb-6 xl:mb-8">
-					<ObjectiveInputField objectives={formInputs.projectObjectives} setFormInputs={setFormInputs} />
+					<div className={`block ${!userPermissions.canEditObjectives && "text-gray-500"}`}>Objectives:</div>
+					{!userPermissions.canEditObjectives && <p className="text-xs italic text-pink-700 mb-3">You do not have permission to edit the project objectives</p>}
+					<ObjectiveInputField objectives={formInputs.projectObjectives} setFormInputs={setFormInputs} disabled={!userPermissions.canEditObjectives} />
 				</div>
 
 				{/* Project phases */}
 				<div className="mb-8">
 					<TextAreaField
 						label="Project phases:"
-						labelStyle="block mb-2"
+						labelStyle="block"
 						inputName="projectGoal"
-						inputValue={formInputs.projectGoal}
+						inputValue={formInputs.projectPhases}
 						onChange={onChange}
-						placeholder="What is the main goal of your project?... (500 characters max)"
+						placeholder="Describe the different phases of your project..."
 						maxLength={500}
 						rows="6"
-						required={true}
+						disabled={!userPermissions.canEditPhase}
+						disabledMessage={!userPermissions.canEditPhase && "You do not have permission to edit the project phases"}
 					/>
 				</div>
 
-				<div className="flex justify-center">
-					<Button
-						btnProps={{
-							type: "submit",
-							btnColor: "blue",
-						}}
-					>
-						Save project
-					</Button>
-				</div>
+				{(userPermissions.canEditCreatorMotivation || userPermissions.canEditObjectives || userPermissions.canEditPhase) && (
+					<div className="flex justify-center">
+						<Button
+							btnProps={{
+								type: "submit",
+								btnColor: "blue",
+								disabled: !userPermissions.canEditCreatorMotivation && !userPermissions.canEditObjectives && !userPermissions.canEditPhase,
+							}}
+						>
+							Save project
+						</Button>
+					</div>
+				)}
 			</div>
 		</>
 	);

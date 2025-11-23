@@ -30,32 +30,37 @@ const JoinInvitations = ({ talentsNeeded, projectId, joinProjectInvitations, use
 			<div className="md:px-4">
 				{/* Join invitations */}
 				<div className="mb-8">
-					<div className="pl-2 mb-6">
-						<Button
-							btnProps={{
-								type: "button",
-								btnColor: "blue",
-								action: showModalNewInvitation,
-							}}
-						>
-							<div className="flex items-center">
-								New invitation <IoAddOutline className="text-2xl ml-2 mt-0.5" />
+					{userPermissions.canViewJoinProjectInvitations ? (
+						<>
+							<div className="pl-2 mb-6">
+								<Button
+									btnProps={{
+										type: "button",
+										btnColor: "blue",
+										action: showModalNewInvitation,
+									}}
+								>
+									<div className="flex items-center">
+										New invitation <IoAddOutline className="text-2xl ml-2 mt-0.5" />
+									</div>
+								</Button>
+								<Modal modalDisplay={modalDisplayNewInvitation} closeModal={closeModalNewInvitation} modalSize={"std"} modalTitle={"New invitation"}>
+									<ProjectNewInvitationModal closeModal={closeModalNewInvitation} />
+								</Modal>
 							</div>
-						</Button>
-						<Modal modalDisplay={modalDisplayNewInvitation} closeModal={closeModalNewInvitation} modalSize={"std"} modalTitle={"New invitation"}>
-							<ProjectNewInvitationModal closeModal={closeModalNewInvitation} />
-						</Modal>
-					</div>
 
-					{/* invitations */}
-					{joinProjectInvitations && joinProjectInvitations.length !== 0 ? (
-						<div className="w-full overflow-x-auto shadow-md sm:rounded-lg mb-6">
-							<InvitationsTable joinProjectInvitations={joinProjectInvitations} talentsNeeded={talentsNeeded} projectId={projectId} userPermissions={userPermissions} />
-						</div>
+							{joinProjectInvitations && joinProjectInvitations.length !== 0 ? (
+								<div className="w-full overflow-x-auto shadow-md sm:rounded-lg mb-6">
+									<InvitationsTable joinProjectInvitations={joinProjectInvitations} talentsNeeded={talentsNeeded} projectId={projectId} userPermissions={userPermissions} />
+								</div>
+							) : (
+								<p className=" text-xl text-center pt-10">
+									<span className="italic">No invitations found</span>
+								</p>
+							)}
+						</>
 					) : (
-						<p className=" text-xl text-center pt-10">
-							<span className="italic">No invitations found</span>
-						</p>
+						<p className="text-center italic text-pink-700">You do not have permission to view the invitations to join the project</p>
 					)}
 				</div>
 			</div>

@@ -1,11 +1,14 @@
-const TextAreaField = ({ label, labelStyle, inputStyle, inputName, inputValue, onChange, placeholder, maxLength, rows, disabled = false, required, resize = "none" }) => {
+const TextAreaField = ({ label, labelStyle, inputStyle, inputName, inputValue = "", onChange, placeholder, maxLength, rows, disabled = false, disabledMessage, required = false, resize = "none" }) => {
 	const resizeClass = `resize-${resize}`;
 
 	return (
 		<>
-			<label htmlFor={inputName} className={`${labelStyle} ${disabled && "text-gray-500"}`}>
-				{label}
-			</label>
+			<div className="mb-2">
+				<label htmlFor={inputName} className={`${labelStyle} ${disabled && "text-gray-500"}`}>
+					{label}
+				</label>
+				{disabled && disabledMessage && <p className="text-xs italic text-pink-700 ml-1">{disabledMessage}</p>}
+			</div>
 			<textarea
 				name={inputName}
 				id={inputName}
@@ -20,6 +23,10 @@ const TextAreaField = ({ label, labelStyle, inputStyle, inputName, inputValue, o
 				required={required}
 				disabled={disabled}
 			></textarea>
+			{}
+			<div className="text-right text-sm text-gray-400 mt-0.5 mr-2">
+				{inputValue.length}/{maxLength}
+			</div>
 		</>
 	);
 };

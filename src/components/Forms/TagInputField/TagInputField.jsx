@@ -7,7 +7,7 @@ import TagsList from "@/components/Forms/TagInputField/TagsList";
 import AddTagButton from "@/components/Forms/TagInputField/AddTagButton";
 import { showErrorToast } from "@/utils/toast";
 
-const TagInputField = ({ formInputs, setFormInputs, tagsList = [] }) => {
+const TagInputField = ({ formInputs, setFormInputs, tagsList = [], disabled = false }) => {
 	const wrapperRef = useRef(null);
 	const inputRef = useRef(null);
 
@@ -196,33 +196,36 @@ const TagInputField = ({ formInputs, setFormInputs, tagsList = [] }) => {
 
 	return (
 		<>
-			<div className="mb-6 max-w-140 relative">
-				<div className="flex items-center">
-					<div className="w-full mr-2 relative" ref={wrapperRef}>
-						<InputField
-							inputName="projectTags"
-							inputType="text"
-							label="Choose a tag"
-							inputValue={query}
-							onChange={onInputChange}
-							onKeyDown={onInputKeyDown}
-							ref={inputRef}
-							autoComplete="off"
-							aria-autocomplete="list"
-							aria-expanded={openSuggestions}
-							aria-controls="tag-suggestions"
-						/>
+			{!disabled && (
+				<div className="mb-6 max-w-140 relative">
+					<div className="flex items-center">
+						<div className="w-full mr-2 relative" ref={wrapperRef}>
+							<InputField
+								inputName="projectTags"
+								inputType="text"
+								label="Choose a tag"
+								inputValue={query}
+								onChange={onInputChange}
+								onKeyDown={onInputKeyDown}
+								ref={inputRef}
+								disabled={disabled}
+								autoComplete="off"
+								aria-autocomplete="list"
+								aria-expanded={openSuggestions}
+								aria-controls="tag-suggestions"
+							/>
 
-						{openSuggestions && suggestions.length > 0 && <SuggestionsList id="tag-suggestions" tags={suggestions} highlightIndex={highlightIndex} onClick={(t) => addExistingTag(t)} />}
-					</div>
+							{openSuggestions && suggestions.length > 0 && <SuggestionsList id="tag-suggestions" tags={suggestions} highlightIndex={highlightIndex} onClick={(t) => addExistingTag(t)} />}
+						</div>
 
-					<div className="min-w-fit">
-						<AddTagButton handleAddTag={addTag} />
+						<div className="min-w-fit">
+							<AddTagButton handleAddTag={addTag} />
+						</div>
 					</div>
 				</div>
-			</div>
+			)}
 
-			<TagsList tags={unifiedTagsList} handleRemoveTag={removeTag} />
+			<TagsList tags={unifiedTagsList} handleRemoveTag={removeTag} disabled={disabled} />
 		</>
 	);
 };

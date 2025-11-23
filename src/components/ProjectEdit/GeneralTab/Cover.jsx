@@ -33,7 +33,7 @@ const Cover = ({ formInputs, setFormInputs, userPermissions }) => {
 								disabled: !userPermissions.canEditCover,
 							}}
 						>
-							Save project
+							Save cover
 						</Button>
 					</div>
 				)}

@@ -17,7 +17,7 @@ const Summary = ({ formInputs, onChange, userPermissions }) => {
 				<div className="mb-6 xl:mb-8">
 					<TextAreaField
 						label="Project summary:"
-						labelStyle="block mb-2"
+						labelStyle="block"
 						inputName="projectSummary"
 						inputValue={formInputs.projectSummary}
 						onChange={onChange}
@@ -26,14 +26,14 @@ const Summary = ({ formInputs, onChange, userPermissions }) => {
 						rows="6"
 						required={true}
 						disabled={!userPermissions.canEditSummary}
+						disabledMessage={!userPermissions.canEditSummary && "You do not have permission to edit the project summary"}
 					/>
-					{!userPermissions.canEditSummary && <p className="text-xs italic text-pink-700 mt-1 ml-1">You do not have permission to edit the project summary</p>}
 				</div>
 				{/* Project description */}
 				<div className="mb-6 xl:mb-8">
 					<TextAreaField
 						label="Project description:"
-						labelStyle="block mb-2"
+						labelStyle="block"
 						inputName="projectDescription"
 						inputValue={formInputs.projectDescription}
 						onChange={onChange}
@@ -42,14 +42,14 @@ const Summary = ({ formInputs, onChange, userPermissions }) => {
 						rows="20"
 						required={true}
 						disabled={!userPermissions.canEditDescription}
+						disabledMessage={!userPermissions.canEditDescription && "You do not have permission to edit the project description"}
 					/>
-					{!userPermissions.canEditDescription && <p className="text-xs italic text-pink-700 mt-1 ml-1">You do not have permission to edit the project description</p>}
 				</div>
 				{/* Project goals */}
 				<div className="mb-8">
 					<TextAreaField
 						label="Project goal:"
-						labelStyle="block mb-2"
+						labelStyle="block"
 						inputName="projectGoal"
 						inputValue={formInputs.projectGoal}
 						onChange={onChange}
@@ -58,8 +58,8 @@ const Summary = ({ formInputs, onChange, userPermissions }) => {
 						rows="6"
 						required={true}
 						disabled={!userPermissions.canEditGoal}
+						disabledMessage={!userPermissions.canEditGoal && "You do not have permission to edit the project goal"}
 					/>
-					{!userPermissions.canEditGoal && <p className="text-xs italic text-pink-700 mt-1 ml-1">You do not have permission to edit the project goal</p>}
 				</div>
 				{(userPermissions.canEditSummary || userPermissions.canEditDescription || userPermissions.canEditGoal) && (
 					<div className="flex justify-center">

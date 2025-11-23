@@ -7,7 +7,7 @@ import AddObjectiveButton from "@/components/Forms/ObjectiveInputField/AddObject
 
 import { showErrorToast } from "@/utils/toast";
 
-const ObjectiveInputField = ({ objectives, setFormInputs }) => {
+const ObjectiveInputField = ({ objectives, setFormInputs, disabled = false }) => {
 	const [objectiveInput, setObjectiveInput] = useState("");
 
 	const addObjective = () => {
@@ -48,31 +48,34 @@ const ObjectiveInputField = ({ objectives, setFormInputs }) => {
 
 	return (
 		<>
-			<div className="mb-6 max-w-200 relative">
-				<div className="flex items-center">
-					<div className="w-full mr-2 relative">
-						<InputField
-							inputName="objective"
-							inputType="text"
-							label="Set objectives (optional)"
-							inputValue={objectiveInput}
-							onChange={handleObjectiveInputChange}
-							onKeyDown={(e) => {
-								if (e.key === "Enter") {
-									e.preventDefault();
-									addObjective();
-								}
-							}}
-						/>
-					</div>
+			{!disabled && (
+				<div className="mt-3 mb-6 max-w-200 relative">
+					<div className="flex items-center">
+						<div className="w-full mr-2 relative">
+							<InputField
+								inputName="objective"
+								inputType="text"
+								label="Set objectives"
+								inputValue={objectiveInput}
+								onChange={handleObjectiveInputChange}
+								disabled={disabled}
+								onKeyDown={(e) => {
+									if (e.key === "Enter") {
+										e.preventDefault();
+										addObjective();
+									}
+								}}
+							/>
+						</div>
 
-					<div className="min-w-fit">
-						<AddObjectiveButton handleAddObjective={addObjective} />
+						<div className="min-w-fit">
+							<AddObjectiveButton handleAddObjective={addObjective} />
+						</div>
 					</div>
 				</div>
-			</div>
+			)}
 
-			<ObjectivesList objectives={objectives} handleRemoveObjective={removeObjective} />
+			<ObjectivesList objectives={objectives} handleRemoveObjective={removeObjective} disabled={disabled} />
 		</>
 	);
 };

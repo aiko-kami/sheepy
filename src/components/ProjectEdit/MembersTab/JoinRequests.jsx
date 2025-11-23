@@ -14,15 +14,21 @@ const RequestsTable = ({ projectId, joinProjectRequests, user, userPermissions }
 			<div className="md:px-4">
 				{/* Join requests */}
 				<div className="mb-8 flex justify-center">
-					{/* requests */}
-					{joinProjectRequests && joinProjectRequests.length !== 0 ? (
-						<div className="w-full overflow-x-auto shadow-md sm:rounded-lg">
-							<JoinRequestsTable joinProjectRequests={joinProjectRequests} projectId={projectId} userPermissions={userPermissions} />
-						</div>
+					{userPermissions.canViewJoinProjectRequests ? (
+						<>
+							{/* requests */}
+							{joinProjectRequests && joinProjectRequests.length !== 0 ? (
+								<div className="w-full overflow-x-auto shadow-md sm:rounded-lg">
+									<JoinRequestsTable joinProjectRequests={joinProjectRequests} projectId={projectId} userPermissions={userPermissions} />
+								</div>
+							) : (
+								<p className=" text-xl text-center pt-10">
+									<span className="italic">No requests found</span>
+								</p>
+							)}
+						</>
 					) : (
-						<p className=" text-xl text-center pt-10">
-							<span className="italic">No requests found</span>
-						</p>
+						<p className="text-center italic text-pink-700">You do not have permission to view the requests to join the project</p>
 					)}
 				</div>
 			</div>

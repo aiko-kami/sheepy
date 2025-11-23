@@ -111,7 +111,7 @@ const ProjectRequestsActions = ({ projectId, request, userPermissions, iconSize 
 					</Modal>
 				</>
 			)}
-			{!userPermissions.canViewJoinProjectRequests && !userPermissions.canEditJoinProjectRequests && <IoBan className={`text-gray-500 ${size}`} title="No action allowed" />}
+			{!userPermissions.canViewJoinProjectRequests && <IoBan className={`text-gray-500 ${size}`} title="No action allowed" />}
 		</>
 	);
 };

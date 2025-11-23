@@ -93,7 +93,7 @@ const ProjectInvitationsActions = ({ projectId, invitation, talentsNeeded, userP
 					</Modal>
 				</>
 			)}
-			{!userPermissions.canViewJoinProjectInvitations && !userPermissions.canEditJoinProjectInvitations && <IoBan className={`text-gray-500 ${size}`} title="No action allowed" />}
+			{!userPermissions.canViewJoinProjectInvitations && <IoBan className={`text-gray-500 ${size}`} title="No action allowed" />}
 		</>
 	);
 };

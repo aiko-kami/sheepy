@@ -12,7 +12,7 @@ const Members = ({ projectId, user, userPermissions, members, talentsNeeded, joi
 			</div>
 			{/* Talents needed */}
 			<div className="mb-8 lg:mb-14">
-				<TalentsNeeded projectId={projectId} user={user} talentsNeeded={talentsNeeded} />
+				<TalentsNeeded projectId={projectId} user={user} talentsNeeded={talentsNeeded} userPermissions={userPermissions} />
 			</div>
 			{/* Requests to join the project */}
 			<div className="mb-8 lg:mb-14">

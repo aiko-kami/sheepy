@@ -7,7 +7,7 @@ import AddTalentButton from "@/components/Forms/TalentNeededInputField/AddTalent
 
 import { showErrorToast } from "@/utils/toast";
 
-const TagInputField = ({ talentsNeeded, setFormInputs }) => {
+const TagInputField = ({ talentsNeeded, setFormInputs, disabled = false }) => {
 	const [talentNeededTalentInput, setTalentNeededTalentInput] = useState("");
 	const [talentNeededDescriptionInput, setTalentNeededDescriptionInput] = useState("");
 
@@ -57,16 +57,33 @@ const TagInputField = ({ talentsNeeded, setFormInputs }) => {
 
 	return (
 		<>
-			<div className="relative">
-				<div className="flex items-end my-6">
-					<div className="w-full mr-2">
-						<div className="mb-4">
+			{!disabled && (
+				<div className="relative">
+					<div className="flex items-end my-6">
+						<div className="w-full mr-2">
+							<div className="mb-4">
+								<InputField
+									inputName="talentNeeded"
+									inputType="text"
+									label="Add a talent you're looking for"
+									inputValue={talentNeededTalentInput}
+									onChange={handleTalentNeededTalentInputChange}
+									disabled={disabled}
+									onKeyDown={(e) => {
+										if (e.key === "Enter") {
+											e.preventDefault();
+											addTalentNeeded();
+										}
+									}}
+								/>
+							</div>
 							<InputField
 								inputName="talentNeeded"
 								inputType="text"
-								label="Add a talent you're looking for"
-								inputValue={talentNeededTalentInput}
-								onChange={handleTalentNeededTalentInputChange}
+								label="Add a short description"
+								inputValue={talentNeededDescriptionInput}
+								onChange={handleTalentNeededDescriptionInputChange}
+								disabled={disabled}
 								onKeyDown={(e) => {
 									if (e.key === "Enter") {
 										e.preventDefault();
@@ -75,29 +92,16 @@ const TagInputField = ({ talentsNeeded, setFormInputs }) => {
 								}}
 							/>
 						</div>
-						<InputField
-							inputName="talentNeeded"
-							inputType="text"
-							label="Add a short description"
-							inputValue={talentNeededDescriptionInput}
-							onChange={handleTalentNeededDescriptionInputChange}
-							onKeyDown={(e) => {
-								if (e.key === "Enter") {
-									e.preventDefault();
-									addTalentNeeded();
-								}
-							}}
-						/>
-					</div>
-					<div className="min-w-fit">
-						<AddTalentButton handleAddTalent={addTalentNeeded} />
+						<div className="min-w-fit">
+							<AddTalentButton handleAddTalent={addTalentNeeded} />
+						</div>
 					</div>
 				</div>
-			</div>
+			)}
 
 			{/* List of talents needed */}
 			<div className="min-h-16">
-				<TalentsList talentsNeeded={talentsNeeded} removeTalentNeeded={removeTalentNeeded} />
+				<TalentsList talentsNeeded={talentsNeeded} removeTalentNeeded={removeTalentNeeded} disabled={disabled} />
 			</div>
 		</>
 	);

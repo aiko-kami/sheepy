@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import talentNeededProfilePicture from "@/public/images/userTalentNeeded.jpg";
 
-const TalentsList = ({ talentsNeeded = [], removeTalentNeeded }) => {
+const TalentsList = ({ talentsNeeded = [], removeTalentNeeded, disabled = false }) => {
 	if (!talentsNeeded || talentsNeeded.length === 0) return null;
 
 	return (
@@ -20,10 +20,17 @@ const TalentsList = ({ talentsNeeded = [], removeTalentNeeded }) => {
 						layout
 						className="flex items-center p-2 pb-2.5 rounded-lg bg-gradient-to-r from-indigo-900 to-blue-900 shadow-sm"
 					>
-						<button title="Remove talent" type="button" className="text-gray-300 mr-8 hover:text-white transition duration-150 ease-in-out" onClick={() => removeTalentNeeded(talentNeeded.talent)}>
-							<IoCloseCircleOutline className="text-2xl" />
-						</button>
-						<span className="flex items-center">
+						{!disabled && (
+							<button
+								title="Remove talent"
+								type="button"
+								className="text-gray-300 ml-1 mr-5 hover:text-white transition duration-150 ease-in-out"
+								onClick={() => removeTalentNeeded(talentNeeded.talent)}
+							>
+								<IoCloseCircleOutline className="text-2xl" />
+							</button>
+						)}
+						<span className="flex items-center ml-3">
 							<Image src={talentNeededProfilePicture} className="object-cover rounded-full w-10 h-10 mr-3" alt="talent profile picture" height={0} width={0} sizes="100vw" />
 							<div className="flex flex-col">
 								<span className="font-semibold">{talentNeeded.talent}</span>
