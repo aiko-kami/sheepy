@@ -1,9 +1,9 @@
-const TextAreaField = ({ label, labelStyle, inputStyle, inputName, inputValue, onChange, placeholder, maxLength, rows, required, resize = "none" }) => {
+const TextAreaField = ({ label, labelStyle, inputStyle, inputName, inputValue, onChange, placeholder, maxLength, rows, disabled = false, required, resize = "none" }) => {
 	const resizeClass = `resize-${resize}`;
 
 	return (
 		<>
-			<label htmlFor={inputName} className={labelStyle}>
+			<label htmlFor={inputName} className={`${labelStyle} ${disabled && "text-gray-500"}`}>
 				{label}
 			</label>
 			<textarea
@@ -11,22 +11,25 @@ const TextAreaField = ({ label, labelStyle, inputStyle, inputName, inputValue, o
 				id={inputName}
 				value={inputValue}
 				onChange={onChange}
-				className={`block p-2 w-full text-sm bg-slate-700/70 rounded-lg border border-gray-600 placeholder-gray-400 ${resizeClass} ${inputStyle}`}
+				className={`block p-2 w-full text-sm bg-slate-700/70 rounded-lg border border-gray-600 placeholder-gray-400 ${resizeClass} ${inputStyle} ${
+					disabled ? "text-gray-400" : "text-white hover:shadow-lg hover:border-gray-500 focus:outline-none focus:ring-0 focus:border-blue-500"
+				}`}
 				placeholder={placeholder}
 				maxLength={maxLength}
 				rows={rows}
 				required={required}
+				disabled={disabled}
 			></textarea>
 		</>
 	);
 };
 
-const TextAreaCommentField = ({ label, labelStyle, inputStyle, inputName, inputValue, onChange, placeholder, maxLength, rows, required, resize = "none" }) => {
+const TextAreaCommentField = ({ label, labelStyle, inputStyle, inputName, inputValue, onChange, placeholder, maxLength, rows, disabled = false, required, resize = "none" }) => {
 	const resizeClass = `resize-${resize}`;
 
 	return (
 		<>
-			<label htmlFor={inputName} className={labelStyle}>
+			<label htmlFor={inputName} className={`${labelStyle} ${disabled && "text-gray-500"}`}>
 				{label}
 			</label>
 			<textarea
@@ -34,11 +37,14 @@ const TextAreaCommentField = ({ label, labelStyle, inputStyle, inputName, inputV
 				id={inputName}
 				value={inputValue}
 				onChange={onChange}
-				className={`w-full resize-none rounded-t-lg p-2 bg-gray-800 border-0 focus:ring-0 placeholder-gray-400 ${resizeClass} ${inputStyle}`}
+				className={`w-full resize-none rounded-t-lg p-2 bg-gray-800 border-0 focus:ring-0 placeholder-gray-400 ${resizeClass} ${inputStyle} ${
+					disabled ? "text-gray-400" : "text-white hover:shadow-lg hover:border-gray-500 focus:outline-none focus:ring-0 focus:border-blue-500"
+				}`}
 				placeholder={placeholder}
 				maxLength={maxLength}
 				rows={rows}
 				required={required}
+				disabled={disabled}
 			></textarea>
 		</>
 	);

@@ -16,7 +16,7 @@ const isValidFileSize = (file, maxSize) => {
 	return null;
 };
 
-const FileDropField = ({ formInputs, setFormInputs, fileTypesAllowed, maxFileSizeAllowed }) => {
+const FileDropField = ({ formInputs, setFormInputs, fileTypesAllowed, maxFileSizeAllowed, disabled = false }) => {
 	const [file, setFile] = useState(null);
 	const [thumbnail, setThumbnail] = useState(formInputs.projectCover); // To store preview URL for the image file
 	const [isDragOver, setIsDragOver] = useState(false);
@@ -105,61 +105,65 @@ const FileDropField = ({ formInputs, setFormInputs, fileTypesAllowed, maxFileSiz
 
 	return (
 		<>
-			<div className="flex justify-center">
-				<div
-					className={`rounded-3xl border-2 border-dashed w-7/8 sm:w-2/3 h-70 relative ${isDragOver ? "border-green-400" : "border-blue-400"}`}
-					onDrop={(e) => {
-						handleDrop(e);
-						setIsDragOver(false);
-					}}
-					onDragOver={(e) => {
-						e.preventDefault();
-						setIsDragOver(true);
-					}}
-					onDragEnter={handleDragEnter}
-					onDragLeave={handleDragLeave}
-					style={
-						isDragOver
-							? {
-									backgroundImage: `repeating-linear-gradient(45deg, rgba(102, 187, 106, 0.2) 0, rgba(102, 187, 106, 0.2) 10px, transparent 10px, transparent 20px)`,
-							  }
-							: {}
-					}
-				>
-					<div className="flex justify-center items-center h-full">
-						<div className="flex flex-col justify-center items-center">
-							<label htmlFor="browseCover" className="cursor-pointer">
-								<IoPushOutline className={`text-6xl ${isDragOver ? "text-green-400" : "text-blue-400"}`} />
-							</label>
-							<div>Drag and drop file here</div>
-							<div className="mb-2">or</div>
-							<input type="file" hidden id="browseCover" onChange={handleFileChange} accept={acceptedMimeTypes} />
-							<label
-								htmlFor="browseCover"
-								className="text-base px-4 py-2 mb-2 text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded leading-snug shadow-lg transition duration-150 ease-in-out"
-							>
-								Choose a file
-							</label>
-							<div className="text-xs">Only {allowedExtensions} files are accepted</div>
-							<div className="text-xs mb-2">File size must be under {maxFileSizeMB} MB</div>
-							{/* Error message (displayed only if an error) */}
-							<div className="absolute bottom-6">{fileError && <p className="text-xs text-red-600">{fileError}</p>}</div>
+			{!disabled && (
+				<div className="flex justify-center mb-4">
+					<div
+						className={`rounded-3xl border-2 border-dashed w-7/8 sm:w-2/3 h-70 relative ${isDragOver ? "border-green-400" : "border-blue-400"}`}
+						onDrop={(e) => {
+							handleDrop(e);
+							setIsDragOver(false);
+						}}
+						onDragOver={(e) => {
+							e.preventDefault();
+							setIsDragOver(true);
+						}}
+						onDragEnter={handleDragEnter}
+						onDragLeave={handleDragLeave}
+						style={
+							isDragOver
+								? {
+										backgroundImage: `repeating-linear-gradient(45deg, rgba(102, 187, 106, 0.2) 0, rgba(102, 187, 106, 0.2) 10px, transparent 10px, transparent 20px)`,
+								  }
+								: {}
+						}
+					>
+						<div className="flex justify-center items-center h-full">
+							<div className="flex flex-col justify-center items-center">
+								<label htmlFor="browseCover" className="cursor-pointer">
+									<IoPushOutline className={`text-6xl ${isDragOver ? "text-green-400" : "text-blue-400"}`} />
+								</label>
+								<div>Drag and drop file here</div>
+								<div className="mb-2">or</div>
+								<input type="file" hidden id="browseCover" onChange={handleFileChange} accept={acceptedMimeTypes} />
+								<label
+									htmlFor="browseCover"
+									className="text-base px-4 py-2 mb-2 text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded leading-snug shadow-lg transition duration-150 ease-in-out"
+								>
+									Choose a file
+								</label>
+								<div className="text-xs">Only {allowedExtensions} files are accepted</div>
+								<div className="text-xs mb-2">File size must be under {maxFileSizeMB} MB</div>
+								{/* Error message (displayed only if an error) */}
+								<div className="absolute bottom-6">{fileError && <p className="text-xs text-red-600">{fileError}</p>}</div>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+			)}
 
 			{/* Display Thumbnail */}
 			{thumbnail && (
-				<div className="flex justify-center mt-4">
+				<div className="flex justify-center">
 					<div className="relative">
 						<img src={thumbnail} alt="Preview" className="w-full max-h-100 object-cover rounded-lg" />
-						<button type="button" className="text-red-400 text-sm absolute right-2 top-2 inline-flex justify-center items-center hover:text-red-500" onClick={handleRemoveFile}>
-							<svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-								<path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-							</svg>
-							<span className="sr-only">Remove file</span>
-						</button>
+						{!disabled && (
+							<button type="button" className="text-red-400 text-sm absolute right-2 top-2 inline-flex justify-center items-center hover:text-red-500" onClick={handleRemoveFile} disabled={disabled}>
+								<svg className="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+									<path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+								</svg>
+								<span className="sr-only">Remove file</span>
+							</button>
+						)}
 					</div>
 				</div>
 			)}

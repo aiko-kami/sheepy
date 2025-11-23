@@ -20,19 +20,23 @@ const Cover = ({ formInputs, setFormInputs, userPermissions }) => {
 
 			<div className="md:pl-4">
 				{/* Project cover */}
+				{!userPermissions.canEditCover && <p className="text-xs italic text-pink-700 mb-2">You do not have permission to edit the project cover</p>}
 				<div className="mb-8">
-					<FileDropField formInputs={formInputs} setFormInputs={setFormInputs} fileTypesAllowed={fileTypesAllowed} maxFileSizeAllowed={maxFileSizeAllowed} />
+					<FileDropField formInputs={formInputs} setFormInputs={setFormInputs} fileTypesAllowed={fileTypesAllowed} maxFileSizeAllowed={maxFileSizeAllowed} disabled={!userPermissions.canEditCover} />
 				</div>
-				<div className="flex justify-center">
-					<Button
-						btnProps={{
-							type: "submit",
-							btnColor: "blue",
-						}}
-					>
-						Save project
-					</Button>
-				</div>
+				{userPermissions.canEditCover && (
+					<div className="flex justify-center">
+						<Button
+							btnProps={{
+								type: "submit",
+								btnColor: "blue",
+								disabled: !userPermissions.canEditCover,
+							}}
+						>
+							Save project
+						</Button>
+					</div>
+				)}
 			</div>
 		</>
 	);

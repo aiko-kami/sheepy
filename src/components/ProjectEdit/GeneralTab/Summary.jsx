@@ -25,7 +25,9 @@ const Summary = ({ formInputs, onChange, userPermissions }) => {
 						maxLength={300}
 						rows="6"
 						required={true}
+						disabled={!userPermissions.canEditSummary}
 					/>
+					{!userPermissions.canEditSummary && <p className="text-xs italic text-pink-700 mt-1 ml-1">You do not have permission to edit the project summary</p>}
 				</div>
 				{/* Project description */}
 				<div className="mb-6 xl:mb-8">
@@ -39,7 +41,9 @@ const Summary = ({ formInputs, onChange, userPermissions }) => {
 						maxLength={10000}
 						rows="20"
 						required={true}
+						disabled={!userPermissions.canEditDescription}
 					/>
+					{!userPermissions.canEditDescription && <p className="text-xs italic text-pink-700 mt-1 ml-1">You do not have permission to edit the project description</p>}
 				</div>
 				{/* Project goals */}
 				<div className="mb-8">
@@ -53,18 +57,23 @@ const Summary = ({ formInputs, onChange, userPermissions }) => {
 						maxLength={500}
 						rows="6"
 						required={true}
+						disabled={!userPermissions.canEditGoal}
 					/>
+					{!userPermissions.canEditGoal && <p className="text-xs italic text-pink-700 mt-1 ml-1">You do not have permission to edit the project goal</p>}
 				</div>
-				<div className="flex justify-center">
-					<Button
-						btnProps={{
-							type: "submit",
-							btnColor: "blue",
-						}}
-					>
-						Save project
-					</Button>
-				</div>
+				{(userPermissions.canEditSummary || userPermissions.canEditDescription || userPermissions.canEditGoal) && (
+					<div className="flex justify-center">
+						<Button
+							btnProps={{
+								type: "submit",
+								btnColor: "blue",
+								disabled: !userPermissions.canEditSummary && !userPermissions.canEditDescription && !userPermissions.canEditGoal,
+							}}
+						>
+							Save project
+						</Button>
+					</div>
+				)}
 			</div>
 		</>
 	);
