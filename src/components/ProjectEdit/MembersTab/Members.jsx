@@ -16,11 +16,11 @@ const Members = ({ projectId, user, userPermissions, members, talentsNeeded, joi
 			</div>
 			{/* Requests to join the project */}
 			<div className="mb-8 lg:mb-14">
-				<JoinRequests projectId={projectId} joinProjectRequests={joinProject.joinRequests} user={user} userPermissions={userPermissions} />
+				<JoinRequests projectId={projectId} joinProjectRequests={joinProject?.joinRequests} user={user} userPermissions={userPermissions} />
 			</div>
 			{/* Invitations to join the project */}
 			<div className="mb-8 lg:mb-14">
-				<JoinInvitations projectId={projectId} talentsNeeded={talentsNeeded} joinProjectInvitations={joinProject.joinInvitations} user={user} userPermissions={userPermissions} />
+				<JoinInvitations projectId={projectId} talentsNeeded={talentsNeeded} joinProjectInvitations={joinProject?.joinInvitations} user={user} userPermissions={userPermissions} />
 			</div>
 		</>
 	);
