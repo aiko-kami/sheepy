@@ -32,22 +32,24 @@ const JoinInvitations = ({ talentsNeeded, projectId, joinProjectInvitations, use
 				<div className="mb-8">
 					{userPermissions.canViewJoinProjectInvitations ? (
 						<>
-							<div className="pl-2 mb-6">
-								<Button
-									btnProps={{
-										type: "button",
-										btnColor: "blue",
-										action: showModalNewInvitation,
-									}}
-								>
-									<div className="flex items-center">
-										New invitation <IoAddOutline className="text-2xl ml-2 mt-0.5" />
-									</div>
-								</Button>
-								<Modal modalDisplay={modalDisplayNewInvitation} closeModal={closeModalNewInvitation} modalSize={"std"} modalTitle={"New invitation"}>
-									<ProjectNewInvitationModal closeModal={closeModalNewInvitation} />
-								</Modal>
-							</div>
+							{userPermissions.canEditJoinProjectInvitations && (
+								<div className="pl-2 mb-6">
+									<Button
+										btnProps={{
+											type: "button",
+											btnColor: "blue",
+											action: showModalNewInvitation,
+										}}
+									>
+										<div className="flex items-center">
+											New invitation <IoAddOutline className="text-2xl ml-2 mt-0.5" />
+										</div>
+									</Button>
+									<Modal modalDisplay={modalDisplayNewInvitation} closeModal={closeModalNewInvitation} modalSize={"std"} modalTitle={"New invitation"}>
+										<ProjectNewInvitationModal closeModal={closeModalNewInvitation} />
+									</Modal>
+								</div>
+							)}
 
 							{joinProjectInvitations && joinProjectInvitations.length !== 0 ? (
 								<div className="w-full overflow-x-auto shadow-md sm:rounded-lg mb-6">
