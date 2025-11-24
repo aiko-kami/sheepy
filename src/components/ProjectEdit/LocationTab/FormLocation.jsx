@@ -4,7 +4,7 @@ import { useState } from "react";
 import Location from "@/components/ProjectEdit/LocationTab/Location";
 import { handleFormChange } from "@/utils/formHandlers";
 
-const FormLocation = ({ projectId, onlineOnly, city, country }) => {
+const FormLocation = ({ projectId, onlineOnly, city, country, userPermissions }) => {
 	const [formInputs, setFormInputs] = useState({
 		projectId: projectId,
 		locationOnlineOnly: onlineOnly || false,
@@ -24,7 +24,7 @@ const FormLocation = ({ projectId, onlineOnly, city, country }) => {
 		<>
 			<form onSubmit={onSubmit}>
 				{/* Project location information */}
-				<Location formInputs={formInputs} onChange={onChange} />
+				<Location formInputs={formInputs} onChange={onChange} userPermissions={userPermissions} />
 			</form>
 		</>
 	);

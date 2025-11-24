@@ -30,11 +30,13 @@ const ProjectEditLocationPage = async ({ params }) => {
 	const city = project?.location?.city;
 	const country = project?.location?.country;
 
+	const userPermissions = result.data?.userPermissions;
+
 	if (!project) {
 		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" />;
 	}
 
-	return <FormLocation projectId={projectId} onlineOnly={onlineOnly} city={city} country={country} />;
+	return <FormLocation projectId={projectId} onlineOnly={onlineOnly} city={city} country={country} userPermissions={userPermissions} />;
 };
 
 export default ProjectEditLocationPage;
