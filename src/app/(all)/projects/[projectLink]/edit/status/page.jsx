@@ -30,11 +30,13 @@ const ProjectEditStatusPage = async ({ params }) => {
 	const visibility = project?.visibility;
 	const startDate = project?.startDate;
 
+	const userPermissions = result.data?.userPermissions;
+
 	if (!project) {
 		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" />;
 	}
 
-	return <FormStatus projectId={projectId} projectLink={projectLink} status={status} statusHistory={statusHistory} visibility={visibility} startDate={startDate} />;
+	return <FormStatus projectId={projectId} projectLink={projectLink} status={status} statusHistory={statusHistory} visibility={visibility} startDate={startDate} userPermissions={userPermissions} />;
 };
 
 export default ProjectEditStatusPage;

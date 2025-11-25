@@ -53,6 +53,7 @@ const AddAttachments = ({ projectId, userPermissions }) => {
 								btnProps={{
 									type: "submit",
 									btnColor: "blue",
+									disabled: !userPermissions.canAddAttachments,
 								}}
 							>
 								Save attachments

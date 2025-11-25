@@ -28,6 +28,7 @@ const LocationDetails = ({ formInputs, onChange, userPermissions }) => {
 								btnProps={{
 									type: "submit",
 									btnColor: "blue",
+									disabled: !userPermissions.canEditLocation,
 								}}
 							>
 								Save project

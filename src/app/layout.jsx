@@ -1,5 +1,7 @@
 import "./globals.css";
+import "rsuite/dist/rsuite-no-reset.min.css";
 import { AppProvider } from "../contexts/AppProvider";
+import { CustomProvider } from "rsuite";
 import { Toaster } from "react-hot-toast";
 import { toastOptions } from "@/config/toastConfig";
 
@@ -39,8 +41,10 @@ export default function RootLayout({ children }) {
 				<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png" />
 				<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png" />
 				<AppProvider>
-					{children}
-					<Toaster {...toastOptions} />
+					<CustomProvider theme="dark">
+						{children}
+						<Toaster {...toastOptions} />
+					</CustomProvider>
 				</AppProvider>
 			</body>
 		</html>
