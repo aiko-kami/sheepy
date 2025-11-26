@@ -25,11 +25,13 @@ const ProjectEditQandAPage = async ({ params }) => {
 	const projectId = project?.projectId;
 	const QAs = project?.QAs;
 
+	const userPermissions = result.data?.userPermissions;
+
 	if (!project) {
 		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" />;
 	}
 
-	return <FormQandAs projectId={projectId} QAs={QAs} />;
+	return <FormQandAs projectId={projectId} QAs={QAs} userPermissions={userPermissions} />;
 };
 
 export default ProjectEditQandAPage;

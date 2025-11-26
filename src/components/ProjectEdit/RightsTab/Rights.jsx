@@ -3,7 +3,7 @@ import { IoLockOpen, IoSettingsSharp, IoPeople, IoDocuments } from "react-icons/
 
 import RightsDetails from "@/components/ProjectEdit/RightsTab/RightsDetails";
 
-const Rights = ({ projectId, membersProjectRights }) => {
+const Rights = ({ projectId, membersProjectRights, userPermissions }) => {
 	const headersGlobal = {
 		type: "project",
 		labels: [
@@ -62,28 +62,28 @@ const Rights = ({ projectId, membersProjectRights }) => {
 		<>
 			{/* Users project rights */}
 			<div className="mb-8 lg:mb-14">
-				<RightsDetails projectId={projectId} membersProjectRights={membersProjectRights} headers={headersGlobal}>
+				<RightsDetails projectId={projectId} membersProjectRights={membersProjectRights} headers={headersGlobal} userPermissions={userPermissions}>
 					<IoLockOpen className="mr-2 text-2xl" />
 					Global users rights
 				</RightsDetails>
 			</div>
 			{/* General rights */}
 			<div className="mb-8 lg:mb-14">
-				<RightsDetails projectId={projectId} membersProjectRights={membersProjectRights} headers={headersGeneral}>
+				<RightsDetails projectId={projectId} membersProjectRights={membersProjectRights} headers={headersGeneral} userPermissions={userPermissions}>
 					<IoSettingsSharp className="mr-2 text-2xl" />
 					General users rights
 				</RightsDetails>
 			</div>
 			{/* Members rights */}
 			<div className="mb-8 lg:mb-14">
-				<RightsDetails projectId={projectId} membersProjectRights={membersProjectRights} headers={headersMembers}>
+				<RightsDetails projectId={projectId} membersProjectRights={membersProjectRights} headers={headersMembers} userPermissions={userPermissions}>
 					<IoPeople className="mr-2 text-2xl" />
 					Members Users rights
 				</RightsDetails>
 			</div>
 			{/* Attachments rights */}
 			<div className="mb-8 lg:mb-14">
-				<RightsDetails projectId={projectId} membersProjectRights={membersProjectRights} headers={headersAttachments}>
+				<RightsDetails projectId={projectId} membersProjectRights={membersProjectRights} headers={headersAttachments} userPermissions={userPermissions}>
 					<IoDocuments className="mr-2 text-2xl" />
 					Attachments users rights
 				</RightsDetails>

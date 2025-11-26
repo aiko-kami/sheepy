@@ -1,10 +1,11 @@
 import { IoExtensionPuzzle, IoAddOutline } from "react-icons/io5";
 
 import DraggableStepsList from "@/components/ProjectEdit/StepsTab/DraggableStepsList";
+import StaticStepsList from "@/components/ProjectEdit/StepsTab/StaticStepsList";
 import LastUpdateBy from "@/components/ProjectEdit/LastUpdateBy";
 import { Button } from "@/components/Buttons/Buttons";
 
-const StepsDetails = ({ formInputs, onChange, addStep }) => {
+const StepsDetails = ({ formInputs, onChange, addStep, userPermissions }) => {
 	return (
 		<>
 			{/* Project steps */}
@@ -20,7 +21,11 @@ const StepsDetails = ({ formInputs, onChange, addStep }) => {
 					<LastUpdateBy updatedBy={formInputs.updatedBy} updatedAt={formInputs.updatedAt} />
 
 					{formInputs.projectSteps && formInputs.projectSteps.length !== 0 ? (
-						<DraggableStepsList formInputs={formInputs} onChange={onChange} />
+						userPermissions.canEditSteps ? (
+							<DraggableStepsList formInputs={formInputs} onChange={onChange} />
+						) : (
+							<StaticStepsList steps={formInputs.projectSteps} />
+						)
 					) : (
 						<p className=" text-xl text-center pt-10">
 							<span className="italic">Your project does not have any step yet</span>

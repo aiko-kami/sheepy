@@ -3,7 +3,7 @@
 import { useState } from "react";
 import QandAs from "@/components/ProjectEdit/QandAsTab/QandAs";
 
-const FormQandAs = ({ projectId, QAs }) => {
+const FormQandAs = ({ projectId, QAs, userPermissions }) => {
 	const [formInputs, setFormInputs] = useState({
 		projectId: projectId,
 		updatedBy: QAs.updatedBy,
@@ -42,7 +42,7 @@ const FormQandAs = ({ projectId, QAs }) => {
 		<>
 			<form onSubmit={onSubmit}>
 				{/* Project Q&As information */}
-				<QandAs formInputs={formInputs} onChange={onChange} addQna={addQna} />
+				<QandAs formInputs={formInputs} onChange={onChange} addQna={addQna} userPermissions={userPermissions} />
 			</form>
 		</>
 	);

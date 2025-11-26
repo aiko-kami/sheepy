@@ -6,7 +6,7 @@ import { IoSettingsSharp } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import RightsTable from "@/components/Tables/ProjectEdit/RightsTable";
 
-const RightsDetails = ({ projectId, membersProjectRights, headers, children }) => {
+const RightsDetails = ({ projectId, membersProjectRights, headers, userPermissions, children }) => {
 	const [formState, setFormState] = useState(
 		membersProjectRights.map((member) => ({
 			userId: member.user.userId,
@@ -75,20 +75,32 @@ const RightsDetails = ({ projectId, membersProjectRights, headers, children }) =
 						{membersProjectRights && membersProjectRights.length !== 0 ? (
 							<>
 								<div className="w-full">
-									<div className="mb-8 w-full overflow-x-auto shadow-md sm:rounded-lg">
-										<RightsTable members={membersProjectRights} formState={formState} onChange={handleCheckboxChange} onSelectAll={handleSelectAll} headers={headers} />
+									{!userPermissions.canEditRights && <p className="text-xs text-right italic text-pink-700 mb-2 mr-2">You do not have permission to edit user rights</p>}
+									<div className="w-full mb-8 overflow-x-auto shadow-md sm:rounded-lg">
+										{/* Rights Table */}
+
+										<RightsTable
+											members={membersProjectRights}
+											formState={formState}
+											onChange={handleCheckboxChange}
+											onSelectAll={handleSelectAll}
+											headers={headers}
+											userPermissions={userPermissions}
+										/>
 									</div>
 									{/* Submit Button */}
-									<div className="flex justify-center">
-										<Button
-											btnProps={{
-												type: "submit",
-												btnColor: "blue",
-											}}
-										>
-											Update rights
-										</Button>
-									</div>
+									{userPermissions.canEditRights && (
+										<div className="flex justify-center">
+											<Button
+												btnProps={{
+													type: "submit",
+													btnColor: "blue",
+												}}
+											>
+												Update rights
+											</Button>
+										</div>
+									)}
 								</div>
 							</>
 						) : (

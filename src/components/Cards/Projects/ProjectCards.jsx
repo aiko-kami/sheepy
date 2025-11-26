@@ -148,7 +148,7 @@ const JoinProjectHorizontalCardActions = ({ joinProject, animate, type }) => {
 					</div>
 					<p className="line-clamp-2 mb-3">{message}</p>
 					<div className="flex items-center justify-end gap-2">
-						<Status name={joinProject.status.name} size={"xs"} rounded={"xs"} bgColor={joinProject.status.bgColor} />
+						<Status name={joinProject.status.name} size={"xs"} rounded={"std"} bgColor={joinProject.status.bgColor} />
 						<div className="flex justify-end text-gray-300">
 							{type === "invitation" && <UserInvitationsActions invitation={joinProject} iconSize={"lg"} />}
 							{type === "request" && <UserRequestsActions request={joinProject} iconSize={"lg"} />}

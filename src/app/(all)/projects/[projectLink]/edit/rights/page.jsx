@@ -25,11 +25,13 @@ const ProjectEditRightsPage = async ({ params }) => {
 	const projectId = result.data?.projectId;
 	const membersProjectRights = result.data?.membersProjectRights;
 
+	const userPermissions = result.data?.userPermissions;
+
 	if (!projectId) {
 		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" />;
 	}
 
-	return <FormRights projectId={projectId} membersProjectRights={membersProjectRights} />;
+	return <FormRights projectId={projectId} membersProjectRights={membersProjectRights} userPermissions={userPermissions} />;
 };
 
 export default ProjectEditRightsPage;

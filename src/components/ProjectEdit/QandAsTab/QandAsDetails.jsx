@@ -4,7 +4,7 @@ import DraggableQnasList from "@/components/ProjectEdit/QandAsTab/DraggableQnasL
 import LastUpdateBy from "@/components/ProjectEdit/LastUpdateBy";
 import { Button } from "@/components/Buttons/Buttons";
 
-const QandAsDetails = ({ formInputs, onChange, addQna }) => {
+const QandAsDetails = ({ formInputs, onChange, addQna, userPermissions }) => {
 	return (
 		<>
 			{/* Project Q&As */}

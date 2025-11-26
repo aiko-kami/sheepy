@@ -1,6 +1,6 @@
 import MemberUserCell from "@/components/Tables/ProjectEdit/MemberUserCell";
 
-const RightsTable = ({ members, formState, onChange, onSelectAll, headers }) => {
+const RightsTable = ({ members, formState, onChange, onSelectAll, headers, userPermissions }) => {
 	return (
 		<>
 			<table className="w-full text-xs md:text-sm shadow-lg">
@@ -33,8 +33,6 @@ const RightsTable = ({ members, formState, onChange, onSelectAll, headers }) => 
 				</thead>
 				<tbody>
 					{members.map((member, memberIndex) => {
-						console.log("🚀 ~ RightsTable ~ member:", member);
-
 						const memberState = formState.find((m) => m.userId === member.user.userId);
 
 						return (
@@ -54,6 +52,7 @@ const RightsTable = ({ members, formState, onChange, onSelectAll, headers }) => 
 													className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"
 													checked={!!isChecked}
 													onChange={() => onChange(member.user.userId, header.right)}
+													disabled={!userPermissions.canEditRights}
 												/>
 											</div>
 										</td>
@@ -67,6 +66,7 @@ const RightsTable = ({ members, formState, onChange, onSelectAll, headers }) => 
 											className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"
 											onChange={() => onSelectAll(member.user.userId)}
 											checked={false} // Checked if all rights are true
+											disabled={!userPermissions.canEditRights}
 										/>
 									</div>
 								</td>

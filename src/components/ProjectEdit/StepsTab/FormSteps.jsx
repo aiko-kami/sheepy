@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Button } from "@/components/Buttons/Buttons";
 import Steps from "@/components/ProjectEdit/StepsTab/Steps";
 
-const FormSteps = ({ projectId, steps }) => {
+const FormSteps = ({ projectId, steps, userPermissions }) => {
 	const [formInputs, setFormInputs] = useState({
 		projectId: projectId,
 		updatedBy: steps.updatedBy,
@@ -45,7 +45,7 @@ const FormSteps = ({ projectId, steps }) => {
 		<>
 			<form onSubmit={onSubmit}>
 				{/* Project steps information */}
-				<Steps formInputs={formInputs} onChange={onChange} addStep={addStep} />
+				<Steps formInputs={formInputs} onChange={onChange} addStep={addStep} userPermissions={userPermissions} />
 			</form>
 		</>
 	);

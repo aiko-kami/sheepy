@@ -62,7 +62,7 @@ const DraggableStepItem = ({ item, index, items, setItems, onChange }) => {
 			{/* Draggable item content */}
 			<div className="w-9/10 mx-auto">
 				<h2 className="font-semibold text-xl mb-6">
-					Step {index + 1}: {item.title}
+					Step {index + 1}: {title}
 				</h2>
 				<div className="ml-2 mb-4 max-w-160">
 					<InputField label="Step Title:" inputName={`title-${id}`} inputType="text" inputValue={title} onChange={(e) => updateField("title", e.target.value)} />
