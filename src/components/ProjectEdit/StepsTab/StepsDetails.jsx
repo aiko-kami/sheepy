@@ -3,6 +3,8 @@ import { IoExtensionPuzzle, IoAddOutline } from "react-icons/io5";
 import DraggableStepsList from "@/components/ProjectEdit/StepsTab/DraggableStepsList";
 import StaticStepsList from "@/components/ProjectEdit/StepsTab/StaticStepsList";
 import LastUpdateBy from "@/components/ProjectEdit/LastUpdateBy";
+import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
+import ERRORS from "@/lib/constants/errors";
 import { Button } from "@/components/Buttons/Buttons";
 
 const StepsDetails = ({ formInputs, onChange, addStep, userPermissions }) => {
@@ -15,46 +17,54 @@ const StepsDetails = ({ formInputs, onChange, addStep, userPermissions }) => {
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
-			<div className="md:pl-4">
+			<div className="md:px-4">
 				{/* Project steps*/}
-				<div className="mb-8">
-					<LastUpdateBy updatedBy={formInputs.updatedBy} updatedAt={formInputs.updatedAt} />
-
+				<div className="mb-6">
+					{!userPermissions.canEditSteps && (
+						<div className="mb-4">
+							<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.EDIT_STEPS} />
+						</div>
+					)}
 					{formInputs.projectSteps && formInputs.projectSteps.length !== 0 ? (
-						userPermissions.canEditSteps ? (
-							<DraggableStepsList formInputs={formInputs} onChange={onChange} />
-						) : (
-							<StaticStepsList steps={formInputs.projectSteps} />
-						)
+						<>
+							{userPermissions.canEditSteps ? <DraggableStepsList formInputs={formInputs} onChange={onChange} /> : <StaticStepsList steps={formInputs.projectSteps} />}
+							<LastUpdateBy updatedBy={formInputs.updatedBy} updatedAt={formInputs.updatedAt} />
+						</>
 					) : (
 						<p className=" text-xl text-center pt-10">
 							<span className="italic">Your project does not have any step yet</span>
 						</p>
 					)}
 				</div>
-				<div className="mb-8">
-					<Button
-						btnProps={{
-							type: "button",
-							btnColor: "blue",
-							action: addStep,
-						}}
-					>
-						<div className="flex items-center">
-							New step <IoAddOutline className="text-2xl ml-2 mt-0.5" />
+				{userPermissions.canEditSteps && (
+					<>
+						<div className="mb-8">
+							<Button
+								btnProps={{
+									type: "button",
+									btnColor: "blue",
+									action: addStep,
+									disabled: !userPermissions.canEditSteps,
+								}}
+							>
+								<div className="flex items-center">
+									New step <IoAddOutline className="text-2xl ml-2 mt-0.5" />
+								</div>
+							</Button>
 						</div>
-					</Button>
-				</div>
-				<div className="flex justify-center">
-					<Button
-						btnProps={{
-							type: "submit",
-							btnColor: "blue",
-						}}
-					>
-						Save project
-					</Button>
-				</div>
+						<div className="flex justify-center">
+							<Button
+								btnProps={{
+									type: "submit",
+									btnColor: "blue",
+									disabled: !userPermissions.canEditSteps,
+								}}
+							>
+								Save project
+							</Button>
+						</div>
+					</>
+				)}
 			</div>
 		</>
 	);

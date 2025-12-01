@@ -1,20 +1,15 @@
 import { IoFitness } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
-import DatePickerField from "@/components/Forms/DatePickerFieldNew";
 import { SelectField } from "@/components/Forms/SelectField";
 import InputField from "@/components/Forms/InputField";
+import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
+import ERRORS from "@/lib/constants/errors";
 
-const StatusDetails = ({ formInputs, onChange, handleStartDateChange, userPermissions }) => {
-	const optionsList = [
-		{ value: "draft", option: "Draft" },
-		{ value: "submitted", option: "Submitted" },
-		{ value: "active", option: "Active" },
-		{ value: "on hold", option: "On hold" },
-		{ value: "completed", option: "Completed" },
-		{ value: "archived", option: "Archived" },
-		{ value: "cancelled", option: "Cancelled" },
-	];
-
+const StatusDetails = ({ formInputs, onChange, statusesList, userPermissions }) => {
+	const optionsList = statusesList.map((item) => ({
+		value: item.statusId,
+		option: item.status.charAt(0).toUpperCase() + item.status.slice(1),
+	}));
 	return (
 		<>
 			{/* Project status */}
@@ -24,29 +19,23 @@ const StatusDetails = ({ formInputs, onChange, handleStartDateChange, userPermis
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
-			<div className="md:pl-4">
-				<div className="mb-8 max-w-170">
+			<div className="md:px-4">
+				<div className="mb-8">
+					{!userPermissions.canEditStatus && (
+						<div className="mb-4">
+							<PermissionsErrorPane messages={ERRORS.PROJECT_EDIT.EDIT_STATUS} />
+						</div>
+					)}
 					<div className="flex flex-col lg:flex-row justify-between">
 						{/* Project status input */}
-						<div className="mb-6 lg:mb-0 sm:mr-2">
+						<div className="mb-6 lg:mb-0 sm:mr-2 w-full">
 							<div className="flex-1 sm:min-w-60 max-w-80">
 								<div className="text-sm">Project status</div>
-								<SelectField inputName="projectStatus" possibleValues={optionsList} inputValue={formInputs.projectStatus} onChange={onChange} disabled={!userPermissions.canEditStatus} />
+								<SelectField inputName="statusId" possibleValues={optionsList} inputValue={formInputs.statusId} onChange={onChange} disabled={!userPermissions.canEditStatus} />
 							</div>
-							{!userPermissions.canEditStatus && <p className="text-xs italic text-pink-700 mt-1">You do not have permission to edit the project status</p>}
-						</div>
-
-						{/* Project start date input */}
-						<div>
-							<div className="flex-1">
-								<div className="text-sm">Project start date</div>
-								<DatePickerField value={formInputs.projectStartDate} label={"Select a start date"} onChange={handleStartDateChange} disabled={!userPermissions.canEditStartDate} />
-							</div>
-							{!userPermissions.canEditStartDate && <p className="text-xs italic text-pink-700 mt-1">You do not have permission to edit the project start date</p>}
 						</div>
 					</div>
 				</div>
-
 				{/* Project status reason */}
 				{userPermissions.canEditStatus && (
 					<div className="max-w-180 mb-8">
@@ -60,13 +49,15 @@ const StatusDetails = ({ formInputs, onChange, handleStartDateChange, userPermis
 						/>
 					</div>
 				)}
-				{(userPermissions.canEditStatus || userPermissions.canEditStartDate) && (
+				{userPermissions.canEditStatus && (
 					<div className="flex justify-center">
 						<Button
 							btnProps={{
 								type: "submit",
+								name: "action",
+								value: "submit-status",
 								btnColor: "blue",
-								disabled: !userPermissions.canEditStatus && !userPermissions.canEditStartDate,
+								disabled: !userPermissions.canEditStatus,
 							}}
 						>
 							Update status

@@ -5,6 +5,8 @@ import { IoRocketSharp } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import { SelectField } from "@/components/Forms/SelectField";
 import InputField from "@/components/Forms/InputField";
+import { PermissionsErrorText } from "@/components/Errors/PermissionsError";
+import ERRORS from "@/lib/constants/errors";
 
 import { ApiGetAllCategories } from "@/lib/api/categories";
 
@@ -93,11 +95,18 @@ const TitleCategory = ({ formInputs, onChange, setFormInputs, userPermissions })
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
-			<div className="md:pl-4">
+			<div className="md:px-4">
 				{/* Project title */}
 				<div className="mb-6 xl:mb-8">
-					<InputField inputName="projectTitle" inputType="text" label="Project title" inputValue={formInputs.projectTitle} onChange={onChange} disabled={!userPermissions.canEditTitle} />
-					{!userPermissions.canEditTitle && <p className="text-xs italic text-pink-700 mt-1">You do not have permission to edit the project title</p>}
+					<InputField
+						inputName="projectTitle"
+						inputType="text"
+						label="Project title"
+						inputValue={formInputs.projectTitle}
+						onChange={onChange}
+						disabled={!userPermissions.canEditTitle}
+						disabledMessage={ERRORS.PROJECT_EDIT.EDIT_TITLE}
+					/>
 				</div>
 				<div className="mb-8 max-w-180">
 					<div className="flex flex-col lg:flex-row justify-between">
@@ -110,8 +119,8 @@ const TitleCategory = ({ formInputs, onChange, setFormInputs, userPermissions })
 								inputValue={formInputs.projectCategory}
 								onChange={handleCategoryChange}
 								disabled={!userPermissions.canEditCategory}
+								disabledMessage={ERRORS.PROJECT_EDIT.EDIT_CATEGORY}
 							/>
-							{!userPermissions.canEditCategory && <p className="text-xs italic text-pink-700 mt-1">You do not have permission to edit the project category</p>}
 						</div>
 						{/* Project sub-category */}
 						<div className="flex-1 min-h-[3.5rem] lg:ml-2">
@@ -122,8 +131,8 @@ const TitleCategory = ({ formInputs, onChange, setFormInputs, userPermissions })
 								inputValue={formInputs.projectSubCategory}
 								onChange={onChange}
 								disabled={!userPermissions.canEditSubCategory}
+								disabledMessage={ERRORS.PROJECT_EDIT.EDIT_SUBCATEGORY}
 							/>
-							{!userPermissions.canEditSubCategory && <p className="text-xs italic text-pink-700 mt-1">You do not have permission to edit the project sub-category</p>}
 						</div>
 					</div>
 				</div>

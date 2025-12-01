@@ -1,8 +1,6 @@
 "use client";
 
 import { useState } from "react";
-
-import { Button } from "@/components/Buttons/Buttons";
 import Steps from "@/components/ProjectEdit/StepsTab/Steps";
 
 const FormSteps = ({ projectId, steps, userPermissions }) => {

@@ -77,7 +77,7 @@ export async function serverApiGet(path, mapper = (json) => json?.data ?? null) 
 }
 
 /**
- * Client-side fetch helper.
+ * Client-side fetch helpers.
  * Uses credentials: 'include' so browser cookies are sent when allowed.
  */
 async function clientApiGet(path, mapper = (json) => json?.data ?? null) {
@@ -131,10 +131,55 @@ async function clientApiGet(path, mapper = (json) => json?.data ?? null) {
 	};
 }
 
+async function clientApiSend(path, method = "POST", body = null, mapper = (json) => json?.data ?? null) {
+	const url = `${BASE_URL}${path}`;
+	let res = null;
+
+	try {
+		res = await fetch(url, {
+			method,
+			credentials: "include",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: body ? JSON.stringify(body) : null,
+			cache: "no-store",
+		});
+	} catch (error) {
+		return { ok: false, status: 0, data: null, message: error?.message || "Network or fetch error" };
+	}
+
+	let json = null;
+	try {
+		json = await res.json();
+	} catch {
+		json = null;
+	}
+
+	let mapped = null;
+	try {
+		mapped = mapper(json, res);
+	} catch (mapError) {
+		return {
+			ok: false,
+			status: res?.status ?? 520,
+			data: null,
+			message: mapError?.message || "Response mapping error",
+		};
+	}
+
+	return {
+		ok: res.ok,
+		status: res.status,
+		data: mapped,
+		message: json?.message ?? (res.ok ? null : "Unexpected response"),
+	};
+}
+
 /**
- * Unified apiGet. Detects runtime and delegates to server/client helper.
- * - On server (no window) uses serverApiGet (and next/headers to read cookies)
- * - On client uses clientApiGet
+ * Unified wrappers. Detects runtime and delegates to server/client helper.
+ * - On server (no window) uses server... (and next/headers to read cookies)
+ * - On client uses client...
  */
 export async function apiGet(path, mapper = (json) => json?.data ?? null) {
 	if (typeof window === "undefined") {
@@ -143,5 +188,21 @@ export async function apiGet(path, mapper = (json) => json?.data ?? null) {
 	} else {
 		// client
 		return clientApiGet(path, mapper);
+	}
+}
+
+export async function apiPost(path, body, mapper = (json) => json?.data ?? null) {
+	if (typeof window === "undefined") {
+		return serverApiSend(path, "POST", body, mapper);
+	} else {
+		return clientApiSend(path, "POST", body, mapper);
+	}
+}
+
+export async function apiPatch(path, body, mapper = (json) => json?.data ?? null) {
+	if (typeof window === "undefined") {
+		return serverApiSend(path, "PATCH", body, mapper);
+	} else {
+		return clientApiSend(path, "PATCH", body, mapper);
 	}
 }

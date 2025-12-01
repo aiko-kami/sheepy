@@ -7,6 +7,8 @@ import InvitationsTable from "@/components/Tables/ProjectEdit/InvitationsTable";
 import { Button } from "@/components/Buttons/Buttons";
 import Modal from "@/components/Modals/Modal";
 import ProjectNewInvitationModal from "@/components/Modals/ProjectEdit/ProjectNewInvitationModal";
+import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
+import ERRORS from "@/lib/constants/errors";
 
 const JoinInvitations = ({ talentsNeeded, projectId, joinProjectInvitations, user, userPermissions }) => {
 	const [modalDisplayNewInvitation, setModalDisplayNewInvitation] = useState(false);
@@ -62,7 +64,9 @@ const JoinInvitations = ({ talentsNeeded, projectId, joinProjectInvitations, use
 							)}
 						</>
 					) : (
-						<p className="text-center italic text-pink-700">You do not have permission to view the invitations to join the project</p>
+						<div className="w-full">
+							<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.VIEW_INVITATIONS} />
+						</div>
 					)}
 				</div>
 			</div>

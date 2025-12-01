@@ -1,5 +1,7 @@
 import { IoDocuments } from "react-icons/io5";
 import AttachmentsTable from "@/components/Tables/ProjectEdit/AttachmentsTable";
+import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
+import ERRORS from "@/lib/constants/errors";
 
 const AttachmentsDetails = ({ projectId, attachments, userPermissions }) => {
 	return (
@@ -11,7 +13,7 @@ const AttachmentsDetails = ({ projectId, attachments, userPermissions }) => {
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
-			<div className="md:pl-4">
+			<div className="md:px-4">
 				{/* Project attachments */}
 				{userPermissions.canViewAttachments ? (
 					<div className="md:px-4 mb-12">
@@ -24,7 +26,7 @@ const AttachmentsDetails = ({ projectId, attachments, userPermissions }) => {
 						</div>
 					</div>
 				) : (
-					<p className="text-center italic text-pink-700">You do not have permission to view the project attachments</p>
+					<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.VIEW_ATTACHMENTS} />
 				)}
 			</div>
 		</>

@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { IoSettingsSharp } from "react-icons/io5";
 
+import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
+import ERRORS from "@/lib/constants/errors";
 import { Button } from "@/components/Buttons/Buttons";
 import RightsTable from "@/components/Tables/ProjectEdit/RightsTable";
 
@@ -75,7 +76,11 @@ const RightsDetails = ({ projectId, membersProjectRights, headers, userPermissio
 						{membersProjectRights && membersProjectRights.length !== 0 ? (
 							<>
 								<div className="w-full">
-									{!userPermissions.canEditRights && <p className="text-xs text-right italic text-pink-700 mb-2 mr-2">You do not have permission to edit user rights</p>}
+									{!userPermissions.canEditRights && (
+										<div className="mb-4">
+											<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.EDIT_RIGHTS} />
+										</div>
+									)}
 									<div className="w-full mb-8 overflow-x-auto shadow-md sm:rounded-lg">
 										{/* Rights Table */}
 

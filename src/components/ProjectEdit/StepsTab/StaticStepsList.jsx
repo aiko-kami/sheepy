@@ -3,15 +3,14 @@ import { Status } from "@/components/Badges/Badges";
 
 const StaticStepsList = ({ steps }) => {
 	return (
-		<>
+		<div className="flex flex-col space-y-4">
 			{steps.map((step, index) => {
-				console.log("🚀 ~ StaticStepsList ~ step:", step);
 				return (
-					<div key={step.id} className="p-4 mb-4 bg-slate-800/70 text-white rounded-md shadow-lg border border-gray-700">
+					<div key={step.id ?? `step-${index}`} className="p-4 pb-6 bg-slate-800/70 text-white rounded-md shadow-lg border border-gray-700">
 						<h2 className="font-semibold text-xl mb-6">
 							Step {index + 1}: {step.title}
 						</h2>
-						<div className="ml-2 mb-6">
+						<div className="ml-2 mb-5">
 							<p>{step.details}</p>
 						</div>
 						<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-4" />
@@ -35,7 +34,7 @@ const StaticStepsList = ({ steps }) => {
 					</div>
 				);
 			})}
-		</>
+		</div>
 	);
 };
 

@@ -36,7 +36,7 @@ const DraggableStepsList = ({ formInputs, onChange }) => {
 	return (
 		<DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
 			<SortableContext items={items.map((item) => item.id)}>
-				<div>
+				<div className="flex flex-col space-y-4">
 					{items.map((item, index) => (
 						<DraggableStepItem
 							key={item.id}

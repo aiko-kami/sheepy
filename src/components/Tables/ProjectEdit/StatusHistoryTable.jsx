@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Status } from "@/components/Badges/Badges";
 import { DateTime } from "luxon";
 
-const StatusHistoryTable = ({ statusHistory }) => {
+const StatusHistoryTable = ({ statusHistory = [] }) => {
 	return (
 		<>
 			<table className="w-full text-xs md:text-sm shadow-lg">
@@ -25,15 +25,7 @@ const StatusHistoryTable = ({ statusHistory }) => {
 				</thead>
 				<tbody>
 					{statusHistory.map((stat, index) => {
-						const dt = DateTime.fromISO(stat.timestamp).toLocal();
-						const now = DateTime.local();
-
-						const diffInHours = now.diff(dt, "hours").hours;
-
-						const dateTime =
-							diffInHours < 1
-								? dt.toRelative({ base: now }) // "23 minutes ago"
-								: `${dt.toFormat("dd LLL yyyy • HH:mm")} (${dt.zoneName})`; // absolute time
+						const displayDate = stat?.formattedDate;
 						const statusName = stat?.status?.status;
 						const statusColor = stat?.status?.colors?.bgColor;
 						const statusReason = stat?.reason;
@@ -44,7 +36,7 @@ const StatusHistoryTable = ({ statusHistory }) => {
 						return (
 							<tr key={index} className="border-b bg-gray-800 border-gray-700 hover:bg-gray-600">
 								<td scope="row" className="p-2 md:px-4 md:py-2 text-center">
-									<div className="text-gray-400 whitespace-nowrap">{dateTime}</div>
+									<div className="text-gray-400 whitespace-nowrap">{displayDate}</div>
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2 text-center">
 									<Status name={statusName} size={"xs"} rounded={"xs"} bgColor={statusColor} />

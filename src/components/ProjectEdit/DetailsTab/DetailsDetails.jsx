@@ -35,7 +35,7 @@ const DetailsDetails = ({ project, creator, owners, createdAt, updatedAt, update
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
-			<div>
+			<div className="md:px-4">
 				{/* Project details and stats */}
 				<div className="mb-8 md:grid md:grid-cols-2 xl:grid-cols-6 gap-3">
 					{/* Project creator */}

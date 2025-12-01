@@ -49,7 +49,7 @@ const ObjectiveInputField = ({ objectives, setFormInputs, disabled = false }) =>
 	return (
 		<>
 			{!disabled && (
-				<div className="mt-3 mb-6 max-w-200 relative">
+				<div className="mb-6 max-w-200 relative">
 					<div className="flex items-center">
 						<div className="w-full mr-2 relative">
 							<InputField

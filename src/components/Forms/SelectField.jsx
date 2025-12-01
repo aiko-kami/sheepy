@@ -1,4 +1,6 @@
-const SelectField = ({ inputName, possibleValues, inputValue, onChange, disabled = false }) => {
+import { PermissionsErrorText } from "@/components/Errors/PermissionsError";
+
+const SelectField = ({ inputName, possibleValues, inputValue, onChange, disabled = false, disabledMessage = "" }) => {
 	return (
 		<>
 			<select
@@ -17,6 +19,11 @@ const SelectField = ({ inputName, possibleValues, inputValue, onChange, disabled
 					</option>
 				))}
 			</select>
+			{disabled && (
+				<div className="mt-2">
+					<PermissionsErrorText message={disabledMessage} />
+				</div>
+			)}
 		</>
 	);
 };

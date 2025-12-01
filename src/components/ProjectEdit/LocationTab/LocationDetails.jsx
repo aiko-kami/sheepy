@@ -1,6 +1,8 @@
 import { IoLocationSharp, IoGlobeOutline, IoLocationOutline } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import LocationInputField from "@/components/Forms/LocationInputField";
+import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
+import ERRORS from "@/lib/constants/errors";
 
 const LocationDetails = ({ formInputs, onChange, userPermissions }) => {
 	return (
@@ -12,16 +14,11 @@ const LocationDetails = ({ formInputs, onChange, userPermissions }) => {
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
-			<div className="md:pl-4">
+			<div className="md:px-4">
 				{userPermissions?.canEditLocation ? (
 					<>
 						{/* Project location */}
-						<LocationInputField
-							locationOnlineOnly={formInputs.locationOnlineOnly}
-							locationCountry={formInputs.projectLocationCountry}
-							locationCity={formInputs.projectLocationCity}
-							onChange={onChange}
-						/>
+						<LocationInputField locationOnlineOnly={formInputs.locationOnlineOnly} locationCountry={formInputs.locationCountry} locationCity={formInputs.locationCity} onChange={onChange} />
 
 						<div className="flex justify-center">
 							<Button
@@ -37,7 +34,9 @@ const LocationDetails = ({ formInputs, onChange, userPermissions }) => {
 					</>
 				) : (
 					<>
-						<p className="text-xs italic text-pink-700 mb-3">You do not have permission to edit the project location</p>
+						<div className="mb-4">
+							<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.EDIT_LOCATION} />
+						</div>
 						<div className="flex items-center gap-1">
 							{formInputs.locationOnlineOnly ? (
 								<>
@@ -51,7 +50,7 @@ const LocationDetails = ({ formInputs, onChange, userPermissions }) => {
 								</>
 							) : (
 								<>
-									{!formInputs.projectLocationCity & !formInputs.projectLocationCountry ? (
+									{!formInputs.locationCity & !formInputs.locationCountry ? (
 										<div className="w-full sm:w-100 p-3 bg-red-100 border-l-4 border-red-500 rounded-r-md">
 											<p className="text-red-700 text-sm font-medium italic">Missing field</p>
 										</div>
@@ -61,9 +60,9 @@ const LocationDetails = ({ formInputs, onChange, userPermissions }) => {
 												<IoLocationOutline className="w-6 h-6 text-blue-300" />
 												<div>
 													<p className="text-lg font-medium text-white">
-														{formInputs.projectLocationCity && <span>{formInputs.projectLocationCity}</span>}
-														{formInputs.projectLocationCity && formInputs.projectLocationCountry && <span>, </span>}
-														<span>{formInputs.projectLocationCountry}</span>
+														{formInputs.locationCity && <span>{formInputs.locationCity}</span>}
+														{formInputs.locationCity && formInputs.locationCountry && <span>, </span>}
+														<span>{formInputs.locationCountry}</span>
 													</p>
 												</div>
 											</div>

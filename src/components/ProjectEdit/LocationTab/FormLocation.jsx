@@ -4,20 +4,36 @@ import { useState } from "react";
 import Location from "@/components/ProjectEdit/LocationTab/Location";
 import { handleFormChange } from "@/utils/formHandlers";
 
+import { ApiPostUpdateProjectLocation } from "@/lib/api/projectEditionServer";
+
+import { showSuccessToast, showErrorToast } from "@/utils/toast";
+
 const FormLocation = ({ projectId, onlineOnly, city, country, userPermissions }) => {
 	const [formInputs, setFormInputs] = useState({
 		projectId: projectId,
 		locationOnlineOnly: onlineOnly || false,
-		projectLocationCity: city || "",
-		projectLocationCountry: country || "",
+		locationCity: city || "",
+		locationCountry: country || "",
 	});
 
 	const onChange = handleFormChange(setFormInputs);
 
-	const onSubmit = (event) => {
+	const onSubmit = async (event) => {
 		event.preventDefault();
-		// Handle form submission
-		console.log("🚀 ~ onSubmit ~ The project has been updated:", formInputs);
+
+		const payload = {
+			locationOnlineOnly: formInputs.locationOnlineOnly,
+			locationCity: formInputs.locationCity,
+			locationCountry: formInputs.locationCountry,
+		};
+
+		const result = await ApiPostUpdateProjectLocation(projectId, payload);
+
+		if (!result.ok) {
+			showErrorToast(result.message || "Failed to update project location.");
+			return;
+		}
+		showSuccessToast("The project location has been updated.");
 	};
 
 	return (

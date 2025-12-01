@@ -1,6 +1,7 @@
 import { IoDocumentText } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
+import ERRORS from "@/lib/constants/errors";
 
 const Summary = ({ formInputs, onChange, userPermissions }) => {
 	return (
@@ -12,7 +13,7 @@ const Summary = ({ formInputs, onChange, userPermissions }) => {
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
-			<div className="md:pl-4">
+			<div className="md:px-4">
 				{/* Project summary */}
 				<div className="mb-6 xl:mb-8">
 					<TextAreaField
@@ -26,7 +27,7 @@ const Summary = ({ formInputs, onChange, userPermissions }) => {
 						rows="6"
 						required={true}
 						disabled={!userPermissions.canEditSummary}
-						disabledMessage={!userPermissions.canEditSummary && "You do not have permission to edit the project summary"}
+						disabledMessage={!userPermissions.canEditSummary && ERRORS.PROJECT_EDIT.EDIT_SUMMARY}
 					/>
 				</div>
 				{/* Project description */}
@@ -42,7 +43,7 @@ const Summary = ({ formInputs, onChange, userPermissions }) => {
 						rows="20"
 						required={true}
 						disabled={!userPermissions.canEditDescription}
-						disabledMessage={!userPermissions.canEditDescription && "You do not have permission to edit the project description"}
+						disabledMessage={!userPermissions.canEditDescription && ERRORS.PROJECT_EDIT.EDIT_DESCRIPTION}
 					/>
 				</div>
 				{/* Project goals */}
@@ -58,7 +59,7 @@ const Summary = ({ formInputs, onChange, userPermissions }) => {
 						rows="6"
 						required={true}
 						disabled={!userPermissions.canEditGoal}
-						disabledMessage={!userPermissions.canEditGoal && "You do not have permission to edit the project goal"}
+						disabledMessage={!userPermissions.canEditGoal && ERRORS.PROJECT_EDIT.EDIT_GOAL}
 					/>
 				</div>
 				{(userPermissions.canEditSummary || userPermissions.canEditDescription || userPermissions.canEditGoal) && (

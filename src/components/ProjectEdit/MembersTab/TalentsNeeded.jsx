@@ -4,6 +4,9 @@ import { useState, useRef } from "react";
 
 import { IoPersonAdd } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
+import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
+import ERRORS from "@/lib/constants/errors";
+
 import TalentInputField from "@/components/Forms/TalentNeededInputField/TalentInputField";
 
 const TalentsNeeded = ({ projectId, user, talentsNeeded, userPermissions }) => {
@@ -31,11 +34,14 @@ const TalentsNeeded = ({ projectId, user, talentsNeeded, userPermissions }) => {
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
 			<form onSubmit={onSubmit}>
-				<div className="md:pl-4">
+				<div className="md:px-4">
 					{/* Project talents */}
+					{!userPermissions.canEditTalentsNeeded && (
+						<div className="mb-4">
+							<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.EDIT_TALENTS_NEEDED} />
+						</div>
+					)}
 					<div className="w-full sm:w-100 xl:w-150 mb-8">
-						{!userPermissions.canEditTalentsNeeded && <p className="text-xs italic text-pink-700 mb-3">You do not have permission to edit the talents needed</p>}
-
 						<TalentInputField talentsNeeded={formInputs.talentsNeeded} setFormInputs={setFormInputs} disabled={!userPermissions.canEditTalentsNeeded} />
 					</div>
 					{userPermissions.canEditTalentsNeeded && (

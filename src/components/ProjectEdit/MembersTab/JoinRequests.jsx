@@ -1,5 +1,7 @@
 import { IoArrowDownCircle } from "react-icons/io5";
 import JoinRequestsTable from "@/components/Tables/ProjectEdit/JoinRequestsTable";
+import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
+import ERRORS from "@/lib/constants/errors";
 
 const RequestsTable = ({ projectId, joinProjectRequests, user, userPermissions }) => {
 	return (
@@ -28,7 +30,9 @@ const RequestsTable = ({ projectId, joinProjectRequests, user, userPermissions }
 							)}
 						</>
 					) : (
-						<p className="text-center italic text-pink-700">You do not have permission to view the requests to join the project</p>
+						<div className="w-full">
+							<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.VIEW_REQUESTS} />
+						</div>
 					)}
 				</div>
 			</div>

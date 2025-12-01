@@ -1,3 +1,5 @@
+import { PermissionsErrorText } from "@/components/Errors/PermissionsError";
+
 const TextAreaField = ({ label, labelStyle, inputStyle, inputName, inputValue = "", onChange, placeholder, maxLength, rows, disabled = false, disabledMessage, required = false, resize = "none" }) => {
 	const resizeClass = `resize-${resize}`;
 
@@ -7,7 +9,11 @@ const TextAreaField = ({ label, labelStyle, inputStyle, inputName, inputValue = 
 				<label htmlFor={inputName} className={`${labelStyle} ${disabled && "text-gray-500"}`}>
 					{label}
 				</label>
-				{disabled && disabledMessage && <p className="text-xs italic text-pink-700 ml-1">{disabledMessage}</p>}
+				{disabled && disabledMessage && (
+					<div className="mt-1 ml-1">
+						<PermissionsErrorText message={disabledMessage} />
+					</div>
+				)}
 			</div>
 			<textarea
 				name={inputName}

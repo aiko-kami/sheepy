@@ -2,6 +2,8 @@ import { IoSparklesSharp } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 import ObjectiveInputField from "@/components/Forms/ObjectiveInputField/ObjectiveInputField";
+import { PermissionsErrorText } from "@/components/Errors/PermissionsError";
+import ERRORS from "@/lib/constants/errors";
 
 const Motivation = ({ formInputs, setFormInputs, onChange, userPermissions }) => {
 	return (
@@ -13,7 +15,7 @@ const Motivation = ({ formInputs, setFormInputs, onChange, userPermissions }) =>
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
-			<div className="md:pl-4">
+			<div className="md:px-4">
 				{/* Creator motivation */}
 				<div className="mb-6 xl:mb-8">
 					<TextAreaField
@@ -27,14 +29,18 @@ const Motivation = ({ formInputs, setFormInputs, onChange, userPermissions }) =>
 						rows="4"
 						required={true}
 						disabled={!userPermissions.canEditCreatorMotivation}
-						disabledMessage={!userPermissions.canEditCreatorMotivation && "You do not have permission to edit the creator motivation"}
+						disabledMessage={!userPermissions.canEditCreatorMotivation && ERRORS.PROJECT_EDIT.EDIT_MOTIVATION}
 					/>
 				</div>
 
 				{/* Project objectives */}
 				<div className="mb-6 xl:mb-8">
 					<div className={`block ${!userPermissions.canEditObjectives && "text-gray-500"}`}>Objectives:</div>
-					{!userPermissions.canEditObjectives && <p className="text-xs italic text-pink-700 mb-3">You do not have permission to edit the project objectives</p>}
+					{!userPermissions.canEditObjectives && (
+						<div className="mb-2 mt-1 ml-1">
+							<PermissionsErrorText message={ERRORS.PROJECT_EDIT.EDIT_OBJECTIVES} />
+						</div>
+					)}
 					<ObjectiveInputField objectives={formInputs.projectObjectives} setFormInputs={setFormInputs} disabled={!userPermissions.canEditObjectives} />
 				</div>
 
@@ -50,7 +56,7 @@ const Motivation = ({ formInputs, setFormInputs, onChange, userPermissions }) =>
 						maxLength={500}
 						rows="6"
 						disabled={!userPermissions.canEditPhase}
-						disabledMessage={!userPermissions.canEditPhase && "You do not have permission to edit the project phases"}
+						disabledMessage={!userPermissions.canEditPhase && ERRORS.PROJECT_EDIT.EDIT_PHASES}
 					/>
 				</div>
 

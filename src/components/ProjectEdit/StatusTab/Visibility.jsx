@@ -1,12 +1,22 @@
 import { IoEyeSharp } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
+import DatePickerField from "@/components/Forms/DatePickerFieldNew";
 import { SelectField } from "@/components/Forms/SelectField";
+import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
+import ERRORS from "@/lib/constants/errors";
 
-const Visibility = ({ formInputs, onChange, userPermissions }) => {
+const Visibility = ({ formInputs, onChange, handleStartDateChange, userPermissions }) => {
 	const optionsList = [
 		{ value: "public", option: "Public" },
 		{ value: "private", option: "Private" },
 	];
+
+	userPermissions.canEditVisibility = true;
+	userPermissions.canEditStartDate = false;
+
+	const messages = [];
+	if (!userPermissions.canEditVisibility) messages.push(ERRORS.PROJECT_EDIT.EDIT_VISIBILITY);
+	if (!userPermissions.canEditStartDate) messages.push(ERRORS.PROJECT_EDIT.EDIT_START_DATE);
 
 	return (
 		<>
@@ -17,25 +27,44 @@ const Visibility = ({ formInputs, onChange, userPermissions }) => {
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
-			<div className="md:pl-4">
-				{/* Project visibility input */}
+			<div className="md:px-4">
 				<div className="mb-8">
-					<div className="max-w-50">
-						<div className="text-sm">Project visibility</div>
-						<SelectField inputName="projectVisibility" possibleValues={optionsList} inputValue={formInputs.projectVisibility} onChange={onChange} disabled={!userPermissions.canEditVisibility} />
+					{(!userPermissions.canEditVisibility || !userPermissions.canEditStartDate) && (
+						<div className="mb-4">
+							<PermissionsErrorPane messages={messages} />
+						</div>
+					)}
+
+					<div className="flex flex-col lg:flex-row justify-between max-w-150">
+						{/* Project visibility input */}
+						<div className="mb-6 lg:mb-0 sm:mr-2">
+							<div className="flex-1 sm:min-w-60 max-w-70">
+								<div className="text-sm">Project visibility</div>
+								<SelectField inputName="projectVisibility" possibleValues={optionsList} inputValue={formInputs.projectVisibility} onChange={onChange} disabled={!userPermissions.canEditVisibility} />
+							</div>
+						</div>
+
+						{/* Project start date input */}
+						<div>
+							<div className="flex-1">
+								<div className="text-sm mb-2">Project start date</div>
+								<DatePickerField value={formInputs.projectStartDate} label={"Select a start date"} onChange={handleStartDateChange} disabled={!userPermissions.canEditStartDate} />
+							</div>
+						</div>
 					</div>
-					{!userPermissions.canEditVisibility && <p className="text-xs italic text-pink-700 mt-1">You do not have permission to edit the project visibility</p>}
 				</div>
 				{userPermissions.canEditVisibility && (
 					<div className="flex justify-center">
 						<Button
 							btnProps={{
 								type: "submit",
+								name: "action",
+								value: "submit-visibility",
 								btnColor: "blue",
 								disabled: !userPermissions.canEditVisibility,
 							}}
 						>
-							Update visibility
+							Update project
 						</Button>
 					</div>
 				)}

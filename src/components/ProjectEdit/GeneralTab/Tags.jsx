@@ -1,6 +1,8 @@
 import { IoPricetag } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import TagInputField from "@/components/Forms/TagInputField/TagInputField";
+import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
+import ERRORS from "@/lib/constants/errors";
 
 const Tags = ({ formInputs, setFormInputs, tagsList = [], userPermissions }) => {
 	return (
@@ -11,10 +13,13 @@ const Tags = ({ formInputs, setFormInputs, tagsList = [], userPermissions }) => 
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
-			<div className="md:pl-4">
+			<div className="md:px-4">
 				<div className="mb-8">
-					{!userPermissions.canEditTags && <p className="text-xs italic text-pink-700 mb-3">You do not have permission to edit the project tags</p>}
-
+					{!userPermissions.canEditTags && (
+						<div className="mb-4">
+							<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.EDIT_TAGS} />
+						</div>
+					)}
 					<TagInputField formInputs={formInputs} setFormInputs={setFormInputs} tagsList={tagsList} disabled={!userPermissions.canEditTags} />
 				</div>
 				{userPermissions.canEditTags && (

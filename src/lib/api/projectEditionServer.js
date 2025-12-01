@@ -1,4 +1,4 @@
-import { apiGet } from "@/lib/api/ApiHelpers";
+import { apiGet, apiPost, apiPatch } from "@/lib/api/ApiHelpers";
 
 export async function ApiGetEditUserRights(projectLink) {
 	return apiGet(`/projectEdition/userRights/${projectLink}`);
@@ -38,4 +38,16 @@ export async function ApiGetEditProjectQAs(projectLink) {
 
 export async function ApiGetEditProjectDetails(projectLink) {
 	return apiGet(`/projectEdition/details/${projectLink}`);
+}
+
+export async function ApiPostUpdateProjectStatus(projectId, data) {
+	return apiPatch(`/projectEdition/status/${projectId}`, data);
+}
+
+export async function ApiPostUpdateProjectVisibility(projectId, data) {
+	return apiPatch(`/projectEdition/visibility/${projectId}`, data);
+}
+
+export async function ApiPostUpdateProjectLocation(projectId, data) {
+	return apiPatch(`/projectEdition/location/${projectId}`, data);
 }

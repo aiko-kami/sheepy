@@ -51,7 +51,7 @@ const DraggableStepItem = ({ item, index, items, setItems, onChange }) => {
 	};
 
 	return (
-		<div ref={setNodeRef} style={style} className="flex p-4 mb-4 relative bg-slate-800/70 text-white rounded-md shadow-lg">
+		<div ref={setNodeRef} style={style} className="flex p-4 relative bg-slate-800/70 text-white rounded-md shadow-lg">
 			{/* Icons for Move Up, Move Down, and Drag Handle */}
 			<div className="flex flex-col items-center justify-between mr-4 min-h-full text-gray-300">
 				<IoCaretUpOutline className="w-5 h-5 cursor-pointer hover:text-blue-400 mb-1" onClick={() => moveItem("up")} title="Move before" />

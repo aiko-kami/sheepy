@@ -5,6 +5,8 @@ import { useState } from "react";
 import { IoAddCircle } from "react-icons/io5";
 import { FilesDropField } from "@/components/Forms/FileDropField";
 import { Button } from "@/components/Buttons/Buttons";
+import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
+import ERRORS from "@/lib/constants/errors";
 
 const AddAttachments = ({ projectId, userPermissions }) => {
 	const [formInputs, setFormInputs] = useState({
@@ -42,7 +44,7 @@ const AddAttachments = ({ projectId, userPermissions }) => {
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
-			<div className="md:pl-4">
+			<div className="md:px-4">
 				{userPermissions.canViewAttachments && userPermissions.canAddAttachments ? (
 					<form onSubmit={onSubmit}>
 						<div className="mb-8">
@@ -61,7 +63,7 @@ const AddAttachments = ({ projectId, userPermissions }) => {
 						</div>
 					</form>
 				) : (
-					<p className="text-center italic text-pink-700">You do not have permission to add attachments to the project</p>
+					<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.ADD_ATTACHMENTS} />
 				)}
 			</div>
 		</>

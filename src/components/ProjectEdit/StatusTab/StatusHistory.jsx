@@ -1,4 +1,4 @@
-import { IoHourglassOutline, IoTime } from "react-icons/io5";
+import { IoTime } from "react-icons/io5";
 import StatusHistoryTable from "@/components/Tables/ProjectEdit/StatusHistoryTable";
 
 const StatusHistory = ({ statusHistory }) => {
