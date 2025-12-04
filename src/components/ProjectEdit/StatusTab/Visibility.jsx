@@ -11,9 +11,6 @@ const Visibility = ({ formInputs, onChange, handleStartDateChange, userPermissio
 		{ value: "private", option: "Private" },
 	];
 
-	userPermissions.canEditVisibility = true;
-	userPermissions.canEditStartDate = false;
-
 	const messages = [];
 	if (!userPermissions.canEditVisibility) messages.push(ERRORS.PROJECT_EDIT.EDIT_VISIBILITY);
 	if (!userPermissions.canEditStartDate) messages.push(ERRORS.PROJECT_EDIT.EDIT_START_DATE);

@@ -31,7 +31,7 @@ const FormStatus = ({ projectId, statusHistory, status, statusesList, startDate,
 		try {
 			if (formAction === "submit-status") {
 				const payload = {
-					newStatus: formInputs.statusId,
+					newStatusId: formInputs.statusId,
 					statusReason: formInputs.statusReason || "",
 				};
 
@@ -56,7 +56,7 @@ const FormStatus = ({ projectId, statusHistory, status, statusesList, startDate,
 					showErrorToast(result.message || "Failed to update project location.");
 					return;
 				}
-				showSuccessToast("The project visibility has been updated.");
+				showSuccessToast("The project has been updated.");
 			}
 		} catch (error) {
 			showErrorToast(error.message);
