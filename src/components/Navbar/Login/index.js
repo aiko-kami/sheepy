@@ -41,10 +41,10 @@ const Login = ({ isHomePage = false }) => {
 		<div className="flex h-full m-auto" ref={ref}>
 			{!user ? (
 				<>
-					<Link href="/sign-up" className="inline-flex items-center px-2 py-1.5 duration-200 tn:m-2">
+					<Link href="/sign-up" className="inline-flex items-center px-1 md:px-2 py-1.5 duration-200 tn:m-2">
 						Register
 					</Link>
-					<Link href="/login" className="inline-flex items-center px-2 py-1.5 duration-200 tn:m-2">
+					<Link href="/login" className="inline-flex items-center px-1 md:px-2 py-1.5 duration-200 tn:m-2">
 						Login
 					</Link>
 				</>

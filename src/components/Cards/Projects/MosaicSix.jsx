@@ -19,7 +19,6 @@ const MosaicSix = () => {
 		const fetchSelectedProjects = async () => {
 			try {
 				const projects = await ApiGetProjectCrush();
-
 				if (!Array.isArray(projects)) {
 					throw new Error("Invalid projects response");
 				}

@@ -60,7 +60,7 @@ const ProjectPublicPage = async ({ params }) => {
 	const objectives = project.objectives;
 
 	return (
-		<div className="container mx-auto py-8 hyphens-auto">
+		<div className="container mx-auto py-8 hyphens-auto space-y-4 lg:space-y-6">
 			{/* Project cover with title and creator */}
 			<Cover title={title} coverLink={coverLink} ownerUserId={ownerUserId} ownerUsername={ownerUsername} ownerProfilePicture={ownerProfilePicture} />
 			{/* List with category, location, likes and project status */}
@@ -76,8 +76,8 @@ const ProjectPublicPage = async ({ params }) => {
 			/>
 			{/* Summary */}
 			<ProjectSummary summary={summary} />
-			<div className="sm:grid sm:grid-cols-3 mb-4 sm:mb-12">
-				<div className="sm:col-start-3 order-1 sm:order-2">
+			<div className="sm:grid sm:grid-cols-3 gap-6 mb-4 sm:mb-12 space-y-4 lg:space-y-6">
+				<div className="sm:col-start-3 order-1 sm:order-2 space-y-4 lg:space-y-6">
 					{/* Goal */}
 					<ProjectGoal goal={goal} />
 

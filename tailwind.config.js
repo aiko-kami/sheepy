@@ -10,7 +10,6 @@ module.exports = {
 			lg: "1024px",
 			xl: "1280px",
 			"2xl": "1536px",
-			tn: "350px",
 		},
 		borderWidth: {
 			DEFAULT: "1px",

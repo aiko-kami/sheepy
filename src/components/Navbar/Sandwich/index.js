@@ -58,7 +58,7 @@ const Sandwich = () => {
 				<div className="inline-flex items-center">
 					<Link href="/" scroll={false} className="text-xl font-semibold inline-flex items-center hover:bg-slate-700 transition duration-300 rounded-lg px-4 py-1.5">
 						<Image src="/MakeItLogo2.png" alt="Make It Logo" width={50} height={50} className="md:mx-2 mr-1" />
-						<span className="hidden tn:inline-block font-oldenburg">Make It!</span>
+						<span className="hidden xs:inline-block font-oldenburg text-nowrap">Make It!</span>
 					</Link>
 				</div>
 			</div>

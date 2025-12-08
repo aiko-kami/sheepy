@@ -9,7 +9,7 @@ const OverviewBar = ({ category, subCategoryDetails, location, likes, status, st
 	return (
 		<>
 			{/* Category, location, likes, project status */}
-			<ul className="sm:flex mb-4 sm:mb-8 lg:px-2 items-center text-sm">
+			<ul className="sm:flex lg:px-2 items-start text-sm">
 				<div className="flex items-center justify-between mb-2 sm:mb-0">
 					<div className="flex gap-2">
 						{/* Project category */}
