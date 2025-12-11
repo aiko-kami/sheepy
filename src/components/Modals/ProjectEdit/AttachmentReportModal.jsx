@@ -6,6 +6,7 @@ import { IoDocumentOutline } from "react-icons/io5";
 import { SelectRoundedField } from "@/components/Forms/SelectField";
 import InputField from "@/components/Forms/InputField";
 import { Button } from "@/components/Buttons/Buttons";
+import { Avatar } from "@/components/Badges/Avatar";
 
 import { handleFormChange } from "@/utils/formHandlers";
 
@@ -48,7 +49,9 @@ const AttachmentReportModal = ({ closeModalReport, attachment, projectId }) => {
 				</div>
 				<div className="flex items-center text-sm">
 					<span className="mr-2">by</span>
-					<Image src={attachment.updatedBy.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-2" />
+					<div className="mr-2">
+						<Avatar img={attachment.updatedBy.profilePicture.link} size={"sm"} alt={"user profile picture"} />
+					</div>
 					<div className="whitespace-nowrap font-semibold">{attachment.updatedBy.username}</div>
 				</div>
 			</div>

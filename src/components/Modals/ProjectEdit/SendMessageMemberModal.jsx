@@ -30,7 +30,7 @@ const SendMessageMemberModal = ({ member, closeModalMessage }) => {
 			<div className="flex items-center gap-3 ml-1 mb-6">
 				<span className="text-gray-400">To:</span>
 				<div className="flex items-center gap-2 bg-slate-900 rounded-full pr-4 py-1">
-					<img src={member.profilePicture.link || "/placeholder.svg"} alt={member.username} className="w-10 h-10 rounded-full" />
+					<Image src={"/default-avatar.png"} height={0} width={0} sizes="100vw" alt={member.username} className="w-10 h-10 rounded-full" />
 					<span className="text-white font-medium">{member.username}</span>
 				</div>
 			</div>

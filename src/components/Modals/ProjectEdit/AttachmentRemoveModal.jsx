@@ -1,6 +1,8 @@
-import { Button } from "@/components/Buttons/Buttons";
 import Image from "next/image";
 import { IoDocumentOutline, IoAlertCircleOutline } from "react-icons/io5";
+
+import { Button } from "@/components/Buttons/Buttons";
+import { Avatar } from "@/components/Badges/Avatar";
 
 const AttachmentRemoveModal = ({ closeModalRemove, attachment, projectId }) => {
 	const removeAttachment = () => {
@@ -20,7 +22,10 @@ const AttachmentRemoveModal = ({ closeModalRemove, attachment, projectId }) => {
 				</div>
 				<div className="justify-center xs:justify-end mt-4 xs:mt-0 flex items-center text-sm">
 					<span className="mr-2">by</span>
-					<Image src={attachment.updatedBy.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-2" />
+					<div className="mr-2">
+						<Avatar img={attachment.updatedBy.profilePicture.link} size={"sm"} alt={"user profile picture"} />
+					</div>
+
 					<div className="whitespace-nowrap font-semibold">{attachment.updatedBy.username}</div>
 				</div>
 			</div>

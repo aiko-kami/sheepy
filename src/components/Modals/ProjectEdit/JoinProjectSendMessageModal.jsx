@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Button } from "@/components/Buttons/Buttons";
 import { Status } from "@/components/Badges/Badges";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
+import { Avatar } from "@/components/Badges/Avatar";
 
 import { handleFormChange } from "@/utils/formHandlers";
 
@@ -40,7 +41,9 @@ const JoinProjectSendMessageModal = ({ closeModalSendMessage, joinProject, type 
 					<div className="mb-6 xl:flex items-center">
 						<h2 className="text-lg text-gray-400 font-semibold mb-1">{label}</h2>
 						<div className="flex items-center pl-1 xl:pl-4">
-							<Image src={user.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
+							<div className="mr-2">
+								<Avatar img={user.profilePicture.link} size={"sm"} alt={"user profile picture"} />
+							</div>
 							<div className="font-semibold">{user.username}</div>
 						</div>
 					</div>
@@ -50,7 +53,9 @@ const JoinProjectSendMessageModal = ({ closeModalSendMessage, joinProject, type 
 						<div className="mb-6 xl:flex items-center justify-center">
 							<h2 className="text-lg text-gray-400 font-semibold mb-1">Sent by:</h2>
 							<div className="flex items-center pl-1 xl:pl-4">
-								<Image src={joinProject.sender.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
+								<div className="mr-2">
+									<Avatar img={joinProject.sender.profilePicture.link} size={"sm"} alt={"user profile picture"} />
+								</div>
 								<div className="font-semibold">{joinProject.sender.username}</div>
 							</div>
 						</div>
