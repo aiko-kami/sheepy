@@ -8,7 +8,7 @@ const Members = ({ projectId, user, userPermissions, members, talentsNeeded, joi
 		<>
 			{/* Project members */}
 			<div className="mb-8 lg:mb-14">
-				<MembersDetails user={user} userPermissions={userPermissions} members={members} />
+				<MembersDetails user={user} projectId={projectId} userPermissions={userPermissions} members={members} />
 			</div>
 			{/* Talents needed */}
 			<div className="mb-8 lg:mb-14">

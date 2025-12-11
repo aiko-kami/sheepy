@@ -250,3 +250,10 @@
 .embla__slide {
 	transition: 0.2s ease-in-out;
 }
+
+/* rsuite - date picker */
+/* Classes below ensure the calendar popup appears above modals. */
+
+.rs-picker-popup {
+	z-index: 99999 !important;
+}

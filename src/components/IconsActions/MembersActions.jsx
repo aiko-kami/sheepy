@@ -59,7 +59,7 @@ const MembersActions = ({ projectId, user, role, talent, startDate, userPermissi
 						<IoBuildOutline className={size} title="Edit member" />
 					</IconButton>
 					<Modal modalDisplay={modalDisplayUpdate} closeModal={closeModalUpdate} modalSize={"std"} modalTitle={"Update member"}>
-						<UpdateMemberModal member={user} role={role} talent={talent} startDate={startDate} closeModalUpdate={closeModalUpdate} />
+						<UpdateMemberModal user={user} projectId={projectId} role={role} talent={talent} startDate={startDate} closeModalUpdate={closeModalUpdate} />
 					</Modal>
 				</>
 			)}

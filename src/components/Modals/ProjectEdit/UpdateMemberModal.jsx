@@ -2,34 +2,54 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { DateTime } from "luxon";
 
 import { Button } from "@/components/Buttons/Buttons";
-import DatePickerField from "@/components/Forms/DatePickerField";
+import DatePickerField from "@/components/Forms/DatePickerFieldNew";
 import InputField from "@/components/Forms/InputField";
+import { ApiPostUpdateProjectMember } from "@/lib/api/projectEditionServer";
 
+import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { handleFormChange } from "@/utils/formHandlers";
 
-const UpdateMemberModal = ({ user, role, talent, startDate, closeModalUpdate }) => {
+const UpdateMemberModal = ({ user, projectId, role, talent, startDate, closeModalUpdate }) => {
+	const router = useRouter();
+
 	const [formInputs, setFormInputs] = useState({
 		memberId: user.userId,
-		newTalent: "",
+		memberTalent: "",
+		memberRole: "",
 		memberStartDate: null,
 	});
 
 	const onChange = handleFormChange(setFormInputs);
 
-	const setMemberStartDate = (newValue) => {
-		setFormInputs((prevState) => ({
-			...prevState,
-			memberStartDate: newValue,
-		}));
+	const handleStartDateChange = (date) => {
+		setFormInputs((prev) => ({ ...prev, memberStartDate: date }));
 	};
 
-	const onSubmit = (event) => {
+	const onSubmit = async (event) => {
 		event.preventDefault();
-		// Handle form submission
-		console.log("🚀 ~ onSubmit ~ The member has been updated:", formInputs);
-		closeModalUpdate();
+		try {
+			const payload = {
+				memberId: formInputs.memberId,
+				newTalent: formInputs.memberTalent,
+				newRole: formInputs.memberRole,
+				newStartDate: formInputs.memberStartDate === null ? "false" : DateTime.fromJSDate(formInputs.memberStartDate).toISODate(),
+			};
+			const result = await ApiPostUpdateProjectMember(projectId, payload);
+
+			if (!result.ok) {
+				showErrorToast(result.message || "Failed to update project member.");
+				return;
+			}
+			showSuccessToast("The project member has been updated.");
+			setFormInputs((prev) => ({ ...prev, memberTalent: "", memberRole: "", memberStartDate: null }));
+			router.refresh();
+		} catch (error) {
+			showErrorToast(error.message);
+		}
 	};
 
 	return (
@@ -57,18 +77,20 @@ const UpdateMemberModal = ({ user, role, talent, startDate, closeModalUpdate }) 
 
 					{/* New talent */}
 					<div className="max-w-80 mb-6">
-						<InputField inputName="talent" inputType="text" label="New talent" inputValue={formInputs.newTalent} onChange={onChange} />
+						<InputField inputName="memberTalent" inputType="text" label="New talent" inputValue={formInputs.memberTalent} onChange={onChange} />
 					</div>
 
 					{/* User current start date on the project */}
 					<div className="flex items-baseline mb-2 xl:mb-6">
 						<h2 className="text-lg text-gray-400 font-semibold">Start date:</h2>
-						<p className="pl-1 xl:pl-2">{startDate}</p>
+						<p className="pl-1 xl:pl-2" title={startDate.formattedAbsolute}>
+							{startDate.formattedRelative}
+						</p>
 					</div>
 
 					{/* Start date picker */}
-					<div className="max-w-80 mb-6">
-						<DatePickerField label="Change member start date" value={formInputs.memberStartDate} onChange={(newValue) => setMemberStartDate(newValue)} />
+					<div className="max-w-80 mb-6 z-50">
+						<DatePickerField label="Change member start date" value={formInputs.memberStartDate} onChange={handleStartDateChange} />
 					</div>
 				</div>
 

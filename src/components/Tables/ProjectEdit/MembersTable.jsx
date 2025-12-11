@@ -1,6 +1,6 @@
 import MemberUserCell from "@/components/Tables/ProjectEdit/MemberUserCell";
 import MembersActions from "@/components/IconsActions/MembersActions";
-import { formatIsoTimestamp } from "@/utils/dateHandlers";
+import { formatIsoToDate } from "@/utils/dateHandlers";
 
 const MembersTable = ({ members, projectId, userPermissions }) => {
 	return (
@@ -27,7 +27,7 @@ const MembersTable = ({ members, projectId, userPermissions }) => {
 						const user = member.user;
 						const role = member.role;
 						const talent = member.talent;
-						const startDate = formatIsoTimestamp(member.startDate);
+						const startDate = formatIsoToDate(member.startDate);
 
 						return (
 							<tr key={index} className="border-b bg-gray-800 border-gray-700 hover:bg-gray-600">
@@ -38,11 +38,13 @@ const MembersTable = ({ members, projectId, userPermissions }) => {
 									<div className="text-gray-400 whitespace-nowrap">{talent}</div>
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2 text-center">
-									<div className="text-gray-400 whitespace-nowrap">{startDate.formatted ? startDate.formatted : <span className="italic">No start date defined</span>}</div>
+									<div className="text-gray-400 whitespace-nowrap" title={startDate.formattedRelative ? startDate.formattedAbsolute : ""}>
+										{startDate.formattedRelative ? startDate.formattedRelative : <span className="italic">No start date defined</span>}
+									</div>
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2">
 									<div className="flex justify-center flex-nowrap">
-										<MembersActions projectId={projectId} user={user} role={role} talent={talent} startDate={startDate.formatted} userPermissions={userPermissions} />
+										<MembersActions projectId={projectId} user={user} role={role} talent={talent} startDate={startDate} userPermissions={userPermissions} />
 									</div>
 								</td>
 							</tr>

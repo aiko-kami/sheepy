@@ -1,5 +1,7 @@
 import { apiGet, apiPost, apiPatch } from "@/lib/api/ApiHelpers";
 
+//GET requests
+
 export async function ApiGetEditUserRights(projectLink) {
 	return apiGet(`/projectEdition/userRights/${projectLink}`);
 }
@@ -38,6 +40,12 @@ export async function ApiGetEditProjectQAs(projectLink) {
 
 export async function ApiGetEditProjectDetails(projectLink) {
 	return apiGet(`/projectEdition/details/${projectLink}`);
+}
+
+//PATCH requests
+
+export async function ApiPostUpdateProjectMember(projectId, data) {
+	return apiPatch(`/projectEdition/members/${projectId}`, data);
 }
 
 export async function ApiPostUpdateProjectStatus(projectId, data) {

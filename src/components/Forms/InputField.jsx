@@ -30,9 +30,11 @@ const InputField = React.forwardRef(({ inputName, inputType, inputValue, onChang
 				>
 					{label}
 				</label>
-				<div className="mt-2">
-					<PermissionsErrorText message={disabledMessage} />
-				</div>
+				{disabled && (
+					<div className="mt-2">
+						<PermissionsErrorText message={disabledMessage} />
+					</div>
+				)}
 			</div>
 		</>
 	);

@@ -31,3 +31,28 @@ export function formatIsoTimestamp(isoTimestamp) {
 
 	return { formatted, isValid: true };
 }
+
+export function formatIsoToDate(isoTimestamp) {
+	if (!isoTimestamp) {
+		return { formattedRelative: "", formattedAbsolute: "", isValid: false };
+	}
+
+	const dt = DateTime.fromISO(isoTimestamp).toLocal();
+	if (!dt.isValid) {
+		return { formattedRelative: "", formattedAbsolute: "", isValid: false };
+	}
+
+	const now = DateTime.local();
+	const formattedAbsolute = dt.toFormat("dd LLL yyyy");
+
+	let formattedRelative;
+	if (dt.hasSame(now, "day")) {
+		formattedRelative = "Today";
+	} else if (dt.hasSame(now.minus({ days: 1 }), "day")) {
+		formattedRelative = "Yesterday";
+	} else {
+		formattedRelative = dt.toFormat("dd LLL yyyy"); // e.g., 14 Jul 2025
+	}
+
+	return { formattedRelative, formattedAbsolute, isValid: true };
+}

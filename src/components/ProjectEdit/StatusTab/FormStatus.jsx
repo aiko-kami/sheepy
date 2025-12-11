@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import Status from "@/components/ProjectEdit/StatusTab/Status";
 import { handleFormChange } from "@/utils/formHandlers";
 
@@ -9,6 +10,8 @@ import { ApiPostUpdateProjectStatus, ApiPostUpdateProjectVisibility } from "@/li
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
 const FormStatus = ({ projectId, statusHistory, status, statusesList, startDate, visibility, userPermissions }) => {
+	const router = useRouter();
+
 	const [formInputs, setFormInputs] = useState({
 		projectId: projectId,
 		statusId: status.statusId || {},
@@ -42,6 +45,8 @@ const FormStatus = ({ projectId, statusHistory, status, statusesList, startDate,
 					return;
 				}
 				showSuccessToast("The project status has been updated.");
+				setFormInputs((prev) => ({ ...prev, statusReason: "" }));
+				router.refresh();
 			} else if (formAction === "submit-visibility") {
 				const payload = {};
 				if (userPermissions.canEditVisibility) {
@@ -49,6 +54,8 @@ const FormStatus = ({ projectId, statusHistory, status, statusesList, startDate,
 				}
 				if (userPermissions.canEditStartDate) {
 					payload.startDate = formInputs.projectStartDate || null;
+
+					console.log("🚀 ~ onSubmit ~ payload.startDate:", payload.startDate);
 				}
 				const result = await ApiPostUpdateProjectVisibility(projectId, payload);
 
