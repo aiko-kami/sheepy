@@ -33,17 +33,18 @@ export function formatIsoTimestamp(isoTimestamp) {
 }
 
 export function formatIsoToDate(isoTimestamp) {
-	if (!isoTimestamp) {
-		return { formattedRelative: "", formattedAbsolute: "", isValid: false };
+	if (isoTimestamp === null || isoTimestamp === undefined || isoTimestamp === "") {
+		return { formattedRelative: "", formattedAbsolute: "", formattedDate: "", isValid: false };
 	}
 
 	const dt = DateTime.fromISO(isoTimestamp).toLocal();
 	if (!dt.isValid) {
-		return { formattedRelative: "", formattedAbsolute: "", isValid: false };
+		return { formattedRelative: "", formattedAbsolute: "", formattedDate: "", isValid: false };
 	}
 
 	const now = DateTime.local();
 	const formattedAbsolute = dt.toFormat("dd LLL yyyy");
+	const formattedDate = dt.toJSDate();
 
 	let formattedRelative;
 	if (dt.hasSame(now, "day")) {
@@ -54,5 +55,5 @@ export function formatIsoToDate(isoTimestamp) {
 		formattedRelative = dt.toFormat("dd LLL yyyy"); // e.g., 14 Jul 2025
 	}
 
-	return { formattedRelative, formattedAbsolute, isValid: true };
+	return { formattedRelative, formattedAbsolute, formattedDate, isValid: true };
 }

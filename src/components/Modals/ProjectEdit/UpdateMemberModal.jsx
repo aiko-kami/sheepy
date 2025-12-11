@@ -18,9 +18,9 @@ const UpdateMemberModal = ({ user, projectId, role, talent, startDate, closeModa
 
 	const [formInputs, setFormInputs] = useState({
 		memberId: user.userId,
-		memberTalent: "",
-		memberRole: "",
-		memberStartDate: null,
+		memberTalent: talent,
+		memberRole: role,
+		memberStartDate: startDate.formattedDate,
 	});
 
 	const onChange = handleFormChange(setFormInputs);
@@ -45,7 +45,6 @@ const UpdateMemberModal = ({ user, projectId, role, talent, startDate, closeModa
 				return;
 			}
 			showSuccessToast("The project member has been updated.");
-			setFormInputs((prev) => ({ ...prev, memberTalent: "", memberRole: "", memberStartDate: null }));
 			router.refresh();
 		} catch (error) {
 			showErrorToast(error.message);
@@ -68,29 +67,18 @@ const UpdateMemberModal = ({ user, projectId, role, talent, startDate, closeModa
 					)}
 				</div>
 
-				<div className="sm:grid sm:grid-cols-1 xl:grid-cols-2 mb-6 items-end">
-					{/* User current talent on the project */}
-					<div className="flex items-baseline mb-2 xl:mb-6">
-						<h2 className="text-lg text-gray-400 font-semibold">Current talent:</h2>
-						<p className="pl-1 xl:pl-2">{talent}</p>
+				<div className="sm:grid sm:grid-cols-1 xl:grid-cols-2 mb-6 items-end gap-20">
+					{/* User talent on the project */}
+					<div className="max-w-80">
+						<InputField inputName="memberTalent" inputType="text" label="User talent" inputValue={formInputs.memberTalent} onChange={onChange} />
 					</div>
 
-					{/* New talent */}
-					<div className="max-w-80 mb-6">
-						<InputField inputName="memberTalent" inputType="text" label="New talent" inputValue={formInputs.memberTalent} onChange={onChange} />
-					</div>
-
-					{/* User current start date on the project */}
-					<div className="flex items-baseline mb-2 xl:mb-6">
-						<h2 className="text-lg text-gray-400 font-semibold">Start date:</h2>
-						<p className="pl-1 xl:pl-2" title={startDate.formattedAbsolute}>
-							{startDate.formattedRelative}
-						</p>
-					</div>
-
-					{/* Start date picker */}
-					<div className="max-w-80 mb-6 z-50">
-						<DatePickerField label="Change member start date" value={formInputs.memberStartDate} onChange={handleStartDateChange} />
+					{/* User start date on the project with date picker */}
+					<div className="">
+						<h2 className="text-lg text-gray-400 font-semibold mb-2">Start date:</h2>
+						<div className="max-w-80 z-50">
+							<DatePickerField label="Set member start date" value={formInputs.memberStartDate} onChange={handleStartDateChange} />
+						</div>
 					</div>
 				</div>
 
