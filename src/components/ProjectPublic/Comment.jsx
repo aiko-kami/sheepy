@@ -6,6 +6,7 @@ import { DateTime } from "luxon";
 import { IoArrowUndoOutline, IoClose } from "react-icons/io5";
 
 import CommentReplyForm from "@/components/Forms/CommentReplyForm";
+import { BadgeOwner } from "@/components/Badges/Badges";
 
 const Comment = ({ comment }) => {
 	const { username, userId, profilePicture, dateTime, message, isOwner, answers } = comment;
@@ -37,7 +38,7 @@ const Comment = ({ comment }) => {
 					<span className="ml-2 text-sm font-normal text-gray-300">{relativeDate}</span>
 					{isOwner && (
 						<div className="mt-1 sm:mt-0 sm:ml-2">
-							<span className="py-1 px-2.5 text-white font-bold text-xs text-nowrap duration-200 rounded cursor-default bg-blue-500">Project Owner</span>
+							<BadgeOwner size={"xs"} />
 						</div>
 					)}
 				</div>

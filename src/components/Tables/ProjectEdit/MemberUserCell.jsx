@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BadgeOwner } from "@/components/Badges/Badges";
 
 const MemberUserCell = ({ user, role }) => {
 	return (
@@ -15,7 +16,7 @@ const MemberUserCell = ({ user, role }) => {
 						</Link>
 					</div>
 				</div>
-				{role === "owner" && <span className="py-1 px-2.5 text-white font-bold text-xs text-nowrap rounded cursor-default bg-blue-500">Project Owner</span>}
+				{role === "owner" && <BadgeOwner size={"xs"} />}
 			</div>
 		</>
 	);

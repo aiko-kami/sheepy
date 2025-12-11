@@ -87,6 +87,31 @@ const BadgeRounded = ({ badge, size, clickable = true }) => {
 	}
 };
 
+const BadgeOwner = ({ size }) => {
+	let textSizeClass;
+	switch (size) {
+		case "xs":
+			textSizeClass = "text-xs";
+			break;
+		case "sm":
+			textSizeClass = "text-sm";
+			break;
+		case "std":
+			textSizeClass = "text-base";
+			break;
+		case "xl":
+			textSizeClass = "text-lg";
+			break;
+		case "xs-sm":
+			textSizeClass = "text-xs md:text-sm";
+			break;
+		default:
+			textSizeClass = "text-base";
+	}
+
+	return <span className={`py-1 px-2.5 text-white font-bold text-nowrap duration-200 rounded cursor-default bg-yellow-600 ${textSizeClass}`}>Project owner</span>;
+};
+
 const Status = ({ name, size, rounded, bgColor }) => {
 	let textSizeClass;
 	switch (size) {
@@ -145,4 +170,4 @@ const Status = ({ name, size, rounded, bgColor }) => {
 	);
 };
 
-export { Badge, BadgeRounded, Status };
+export { Badge, BadgeRounded, BadgeOwner, Status };

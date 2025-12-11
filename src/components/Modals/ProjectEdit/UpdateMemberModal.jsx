@@ -4,14 +4,18 @@ import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { DateTime } from "luxon";
+import { IoPersonOutline, IoCheckmark } from "react-icons/io5";
+import { LuUser, LuCrown, LuCheck } from "react-icons/lu";
 
 import { Button } from "@/components/Buttons/Buttons";
 import DatePickerField from "@/components/Forms/DatePickerFieldNew";
 import InputField from "@/components/Forms/InputField";
-import { ApiPostUpdateProjectMember } from "@/lib/api/projectEditionServer";
+import { BadgeOwner } from "@/components/Badges/Badges";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { handleFormChange } from "@/utils/formHandlers";
+
+import { ApiPostUpdateProjectMember } from "@/lib/api/projectEditionServer";
 
 const UpdateMemberModal = ({ user, projectId, role, talent, startDate, closeModalUpdate }) => {
 	const router = useRouter();
@@ -27,6 +31,10 @@ const UpdateMemberModal = ({ user, projectId, role, talent, startDate, closeModa
 
 	const handleStartDateChange = (date) => {
 		setFormInputs((prev) => ({ ...prev, memberStartDate: date }));
+	};
+
+	const handleRoleChange = (role) => {
+		setFormInputs((prev) => ({ ...prev, memberRole: role }));
 	};
 
 	const onSubmit = async (event) => {
@@ -45,6 +53,7 @@ const UpdateMemberModal = ({ user, projectId, role, talent, startDate, closeModa
 				return;
 			}
 			showSuccessToast("The project member has been updated.");
+			closeModalUpdate();
 			router.refresh();
 		} catch (error) {
 			showErrorToast(error.message);
@@ -61,25 +70,72 @@ const UpdateMemberModal = ({ user, projectId, role, talent, startDate, closeModa
 						<div className="font-semibold text-lg lg:whitespace-nowrap">{user.username}</div>
 					</div>
 					{role === "owner" && (
-						<div className="sm:ml-3">
-							<span className="py-1 px-2.5 text-white font-bold text-nowrap duration-200 rounded cursor-default bg-blue-500">Project Owner</span>
-						</div>
+						<>
+							<div className="sm:ml-3">
+								<BadgeOwner />
+							</div>
+						</>
 					)}
 				</div>
 
-				<div className="sm:grid sm:grid-cols-1 xl:grid-cols-2 mb-6 items-end gap-20">
+				<div className="sm:grid sm:grid-cols-1 xl:grid-cols-2 mb-10 items-end gap-20">
 					{/* User talent on the project */}
 					<div className="max-w-80">
 						<InputField inputName="memberTalent" inputType="text" label="User talent" inputValue={formInputs.memberTalent} onChange={onChange} />
 					</div>
 
 					{/* User start date on the project with date picker */}
-					<div className="">
-						<h2 className="text-lg text-gray-400 font-semibold mb-2">Start date:</h2>
-						<div className="max-w-80 z-50">
+					<div>
+						<h2 className="text-sm text-gray-400 mb-1">Start date:</h2>
+						<div className="w-80 z-50">
 							<DatePickerField label="Set member start date" value={formInputs.memberStartDate} onChange={handleStartDateChange} />
 						</div>
 					</div>
+				</div>
+
+				{/* User role on the project */}
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mb-12 mx-auto">
+					<button
+						type="button"
+						onClick={() => handleRoleChange("member")}
+						className={`p-6 rounded-xl border-2 transition-all text-left ${
+							formInputs.memberRole === "member" ? "border-blue-500 bg-blue-500/10 shadow-lg shadow-blue-500/20" : "border-slate-700 bg-slate-800/50 hover:border-slate-600"
+						}`}
+					>
+						<div className="flex items-start justify-between mb-3">
+							<div className={`p-3 rounded-lg ${formInputs.memberRole === "member" ? "bg-blue-500/20" : "bg-slate-700"}`}>
+								<LuUser className={`w-6 h-6 ${formInputs.memberRole === "member" ? "text-blue-400" : "text-slate-400"}`} />
+							</div>
+							{formInputs.memberRole === "member" && (
+								<div className="p-1 bg-blue-500 rounded-full">
+									<LuCheck className="w-4 h-4 text-white" />
+								</div>
+							)}
+						</div>
+						<h4 className={`font-semibold mb-2 ${formInputs.memberRole === "member" ? "text-white" : "text-slate-300"}`}>Project Member</h4>
+						<p className="text-sm text-slate-400">Collaborate on the project, view content, and contribute to team goals</p>
+					</button>
+
+					<button
+						type="button"
+						onClick={() => handleRoleChange("owner")}
+						className={`p-6 rounded-xl border-2 transition-all text-left ${
+							formInputs.memberRole === "owner" ? "border-amber-500 bg-amber-500/10 shadow-lg shadow-amber-500/20" : "border-slate-700 bg-slate-800/50 hover:border-slate-600"
+						}`}
+					>
+						<div className="flex items-start justify-between mb-3">
+							<div className={`p-3 rounded-lg ${formInputs.memberRole === "owner" ? "bg-amber-500/20" : "bg-slate-700"}`}>
+								<LuCrown className={`w-6 h-6 ${formInputs.memberRole === "owner" ? "text-amber-400" : "text-slate-400"}`} />
+							</div>
+							{formInputs.memberRole === "owner" && (
+								<div className="p-1 bg-amber-500 rounded-full">
+									<LuCheck className="w-4 h-4 text-white" />
+								</div>
+							)}
+						</div>
+						<h4 className={`font-semibold mb-2 ${formInputs.memberRole === "owner" ? "text-white" : "text-slate-300"}`}>Project Owner</h4>
+						<p className="text-sm text-slate-400">Full control over project settings, members, and other features</p>
+					</button>
 				</div>
 
 				{/* Buttons */}

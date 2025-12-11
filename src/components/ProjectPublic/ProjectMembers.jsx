@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import talentNeededProfilePicture from "@/public/images/userTalentNeeded.jpg";
+import { BadgeOwner } from "@/components/Badges/Badges";
 
 const ProjectMembers = ({ members }) => {
 	return (
@@ -24,7 +25,7 @@ const ProjectMembers = ({ members }) => {
 						</Link>
 						{member.role === "owner" && (
 							<div className="ml-2">
-								<span className="py-1 px-2.5 text-sm text-white font-bold text-nowrap rounded cursor-default bg-blue-500">Project Owner</span>
+								<BadgeOwner size={"sm"} />
 							</div>
 						)}
 					</div>

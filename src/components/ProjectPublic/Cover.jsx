@@ -3,6 +3,7 @@ import Link from "next/link";
 import { IoBookmarkOutline, IoShareSocialOutline } from "react-icons/io5";
 
 import { ButtonCircle } from "@/components/Buttons/Buttons";
+import talentNeededProfilePicture from "@/public/images/userTalentNeeded.jpg";
 
 const Cover = ({ title, coverLink, ownerUserId, ownerUsername, ownerProfilePicture }) => {
 	return (
@@ -26,7 +27,7 @@ const Cover = ({ title, coverLink, ownerUserId, ownerUsername, ownerProfilePictu
 								{ownerUsername}
 							</Link>
 							<Link href={`/users/${ownerUserId}`}>
-								<Image src={ownerProfilePicture} className="object-cover rounded-full w-10 h-10" alt="creator profile picture" height={0} width={0} sizes="100vw" />
+								<Image src={ownerProfilePicture || talentNeededProfilePicture} className="object-cover rounded-full w-10 h-10" alt="creator profile picture" height={0} width={0} sizes="100vw" />
 							</Link>
 						</div>
 

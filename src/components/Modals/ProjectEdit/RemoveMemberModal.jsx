@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import Image from "next/image";
 import { Button } from "@/components/Buttons/Buttons";
+import { BadgeOwner } from "@/components/Badges/Badges";
 
 const RemoveMemberModal = ({ member, role, talent, startDate, closeModalRemove }) => {
 	const [formState, setFormState] = useState({
@@ -26,7 +27,7 @@ const RemoveMemberModal = ({ member, role, talent, startDate, closeModalRemove }
 					<div className="font-semibold text-lg lg:whitespace-nowrap">{member.username}</div>
 					{role === "owner" && (
 						<div className="sm:ml-3">
-							<span className="py-1 px-2.5 text-white font-bold text-nowrap duration-200 rounded cursor-default bg-blue-500">Project Owner</span>
+							<BadgeOwner />
 						</div>
 					)}
 				</div>
