@@ -29,11 +29,13 @@ const AttachmentRemoveModal = ({ closeModalRemove, attachment, projectId }) => {
 				</div>
 			</div>
 
-			<div className="flex items-start mb-12 gap-3 p-4 bg-red-950/30 border border-red-900/50 rounded-lg">
+			{/* Warning message */}
+			<div className="flex items-start mb-10 gap-3 p-4 bg-red-950/30 border border-red-900/50 rounded-lg max-w-120 mx-auto">
 				<IoAlertCircleOutline className="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" />
-				<p className="text-sm text-red-200 leading-relaxed">
-					<span className="font-semibold">This action cannot be undone.</span> The file will be permanently removed.
-				</p>
+				<div>
+					<p className="text-sm text-red-200 leading-relaxed font-semibold">This action cannot be undone.</p>
+					<p className="text-sm text-red-200 leading-relaxed">The file will be permanently removed.</p>
+				</div>
 			</div>
 
 			{/* Buttons */}

@@ -1,21 +1,39 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { IoAlertCircleOutline } from "react-icons/io5";
 
 import { Button } from "@/components/Buttons/Buttons";
 import { BadgeOwner } from "@/components/Badges/Badges";
 import { Avatar } from "@/components/Badges/Avatar";
+import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { ApiDeleteRemoveProjectMember } from "@/lib/api/projectEditionServer";
 
-const RemoveMemberModal = ({ member, role, talent, startDate, closeModalRemove }) => {
-	const [formState, setFormState] = useState({
+const RemoveMemberModal = ({ member, projectId, role, talent, startDate, closeModalRemove }) => {
+	const router = useRouter();
+	const [formInputs, setFormInputs] = useState({
 		memberId: member.userId,
 	});
 
-	const onSubmit = (event) => {
+	const onSubmit = async (event) => {
 		event.preventDefault();
-		// Handle form submission
-		console.log("🚀 ~ onSubmit ~ The member has been removed:", formState);
-		closeModalRemove();
+		try {
+			const payload = {
+				memberId: formInputs.memberId,
+			};
+
+			const result = await ApiDeleteRemoveProjectMember(projectId, payload);
+			if (!result.ok) {
+				showErrorToast(result.message || "Failed to remove project member.");
+				return;
+			}
+			showSuccessToast("The project member has been removed.");
+			closeModalRemove();
+			router.refresh();
+		} catch (error) {
+			showErrorToast(error.message);
+		}
 	};
 
 	return (
@@ -50,7 +68,16 @@ const RemoveMemberModal = ({ member, role, talent, startDate, closeModalRemove }
 					</div>
 				</div>
 
-				{/* User current start date on the project */}
+				{/* Warning message */}
+				<div className="flex items-start mb-6 gap-3 p-4 bg-red-950/30 border border-red-900/50 rounded-lg max-w-120 mx-auto">
+					<IoAlertCircleOutline className="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" />
+					<div>
+						<p className="text-sm text-red-200 leading-relaxed font-semibold">This action cannot be undone.</p>
+						<p className="text-sm text-red-200 leading-relaxed">The member will be permanently removed from the project.</p>
+					</div>
+				</div>
+
+				{/* Confirmation */}
 				<h2 className="text-lg font-semibold text-center mb-6">Are you sure you want to remove {member.username} from the project?</h2>
 
 				{/* Buttons */}

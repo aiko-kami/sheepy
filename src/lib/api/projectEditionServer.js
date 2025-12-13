@@ -1,4 +1,4 @@
-import { apiGet, apiPost, apiPatch } from "@/lib/api/ApiHelpers";
+import { apiGet, apiPost, apiPatch, apiDelete } from "@/lib/api/ApiHelpers";
 
 //GET requests
 
@@ -58,4 +58,10 @@ export async function ApiPostUpdateProjectVisibility(projectId, data) {
 
 export async function ApiPostUpdateProjectLocation(projectId, data) {
 	return apiPatch(`/projectEdition/location/${projectId}`, data);
+}
+
+//DELETE requests
+
+export async function ApiDeleteRemoveProjectMember(projectId, data) {
+	return apiDelete(`/projectEdition/members/${projectId}`, data);
 }

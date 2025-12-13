@@ -81,7 +81,7 @@ const MembersActions = ({ projectId, user, role, talent, startDate, userPermissi
 						<IoCloseCircleOutline className={size} title="Remove from the project" />
 					</IconButton>
 					<Modal modalDisplay={modalDisplayRemove} closeModal={closeModalRemove} closeModalWithBackground={closeModalRemove} modalSize={"std"} modalTitle={"Remove member from the project"}>
-						<RemoveMemberModal member={user} role={role} talent={talent} startDate={startDate} closeModalRemove={closeModalRemove} />
+						<RemoveMemberModal member={user} projectId={projectId} role={role} talent={talent} startDate={startDate} closeModalRemove={closeModalRemove} />
 					</Modal>
 				</>
 			)}

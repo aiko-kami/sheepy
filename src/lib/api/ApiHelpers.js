@@ -206,3 +206,11 @@ export async function apiPatch(path, body, mapper = (json) => json?.data ?? null
 		return clientApiSend(path, "PATCH", body, mapper);
 	}
 }
+
+export async function apiDelete(path, body, mapper = (json) => json?.data ?? null) {
+	if (typeof window === "undefined") {
+		return serverApiSend(path, "DELETE", body, mapper);
+	} else {
+		return clientApiSend(path, "DELETE", body, mapper);
+	}
+}

@@ -45,8 +45,8 @@ const UpdateMemberModal = ({ user, projectId, role, talent, startDate, closeModa
 				newRole: formInputs.memberRole,
 				newStartDate: formInputs.memberStartDate === null ? "false" : DateTime.fromJSDate(formInputs.memberStartDate).toISODate(),
 			};
-			const result = await ApiPostUpdateProjectMember(projectId, payload);
 
+			const result = await ApiPostUpdateProjectMember(projectId, payload);
 			if (!result.ok) {
 				showErrorToast(result.message || "Failed to update project member.");
 				return;
