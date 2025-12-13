@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
-import { BadgeRounded } from "@/components/Badges/Badges";
 import { IoLocationOutline } from "react-icons/io5";
+import { BadgeRounded } from "@/components/Badges/Badges";
+import { Avatar } from "@/components/Badges/Avatar";
 
 const TalentHorizontalCard = ({ user, animate }) => {
 	const { userId, username, profilePicture, locationCity, locationCountry, description, talents } = user;
@@ -15,7 +15,7 @@ const TalentHorizontalCard = ({ user, animate }) => {
 				{/* Profile picture */}
 				<div className="hidden sm:flex col-span-1 justify-center">
 					<Link href={`/users/${userId}`}>
-						<Image src={profilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover w-34 h-34 rounded-full shadow-md" />
+						<Avatar img={profilePicture} size={"2xl"} alt="User profile picture" />
 					</Link>
 				</div>
 				{/* Username, location, description and talents */}

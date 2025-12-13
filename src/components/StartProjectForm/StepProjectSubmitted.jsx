@@ -1,9 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
-
 import { IoHomeOutline, IoRocketOutline, IoArrowRedoOutline } from "react-icons/io5";
 
 import { Badge, BadgeRounded } from "@/components/Badges/Badges";
+import { Avatar } from "@/components/Badges/Avatar";
 import { Button } from "@/components/Buttons/Buttons";
 
 const StepProjectSubmitted = ({ goToStep, formInputs, categories, talentNeededProfilePicture }) => {
@@ -72,7 +71,7 @@ const StepProjectSubmitted = ({ goToStep, formInputs, categories, talentNeededPr
 							<div className="grid grid-flow-row xl:grid-cols-3 gap-4">
 								{formInputs.talentsNeeded.map((talentNeeded, index) => (
 									<div key={index} className="flex items-center gap-3 p-3 bg-sky-200 rounded-lg border border-sky-300">
-										<Image src={talentNeededProfilePicture} className="object-cover rounded-full w-10 h-10 mr-3" alt="talent profile picture" height={0} width={0} sizes="100vw" />
+										<Avatar img={talentNeededProfilePicture} size={"std"} alt={"talent profile picture"} />
 										<span className="font-medium text-sky-900">{talentNeeded.talent}</span>
 									</div>
 								))}

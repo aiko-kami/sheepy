@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 import { Button } from "@/components/Buttons/Buttons";
 import { Status } from "@/components/Badges/Badges";

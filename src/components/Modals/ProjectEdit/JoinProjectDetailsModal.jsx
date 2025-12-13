@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Status } from "@/components/Badges/Badges";
 import { Avatar } from "@/components/Badges/Avatar";
 

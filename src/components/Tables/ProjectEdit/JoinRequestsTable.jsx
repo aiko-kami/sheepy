@@ -1,5 +1,5 @@
 import { Status } from "@/components/Badges/Badges";
-import JoinRequestUserCell from "@/components/Tables/ProjectEdit/JoinRequestUserCell";
+import UserCell from "@/components/Tables/ProjectEdit/UserCell";
 import JoinRequestMessageCell from "@/components/Tables/ProjectEdit/JoinRequestMessageCell";
 import ProjectRequestsActions from "@/components/IconsActions/ProjectRequestsActions";
 
@@ -31,7 +31,7 @@ const JoinRequestsTable = ({ joinProjectRequests, projectId, userPermissions }) 
 						return (
 							<tr key={index} className="border-b bg-gray-800 border-gray-700 hover:bg-gray-600">
 								<td scope="row" className="p-2 md:px-4 md:py-2">
-									<JoinRequestUserCell request={request} />
+									<UserCell userId={request.sender.userId} profilePicture={request.sender.profilePicture} username={request.sender.username} />
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2 text-left">
 									<div className="text-gray-400 whitespace-nowrap">{request.talent}</div>

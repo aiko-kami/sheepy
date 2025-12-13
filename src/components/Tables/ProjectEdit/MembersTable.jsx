@@ -1,4 +1,4 @@
-import MemberUserCell from "@/components/Tables/ProjectEdit/MemberUserCell";
+import UserCell from "@/components/Tables/ProjectEdit/UserCell";
 import MembersActions from "@/components/IconsActions/MembersActions";
 import { formatIsoToDate } from "@/utils/dateHandlers";
 
@@ -32,7 +32,7 @@ const MembersTable = ({ members, projectId, userPermissions }) => {
 						return (
 							<tr key={index} className="border-b bg-gray-800 border-gray-700 hover:bg-gray-600">
 								<td scope="row" className="p-2 md:px-4 md:py-2">
-									<MemberUserCell user={user} role={role} />
+									<UserCell userId={user.userId} profilePicture={user.profilePicture} username={user.username} owner={role === "owner"} />
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2 text-center">
 									<div className="text-gray-400 whitespace-nowrap">{talent}</div>

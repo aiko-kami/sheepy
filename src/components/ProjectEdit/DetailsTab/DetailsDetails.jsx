@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { DateTime } from "luxon";
 
 import { IoBarChartSharp, IoBulbOutline, IoCalendar, IoPersonCircleOutline, IoTimeOutline, IoStar } from "react-icons/io5";
+import { Avatar } from "@/components/Badges/Avatar";
 
 const DetailsDetails = ({ project, creator, owners, createdAt, updatedAt, updatedBy, likes, crush }) => {
 	// Manage the toggle state
@@ -44,7 +44,9 @@ const DetailsDetails = ({ project, creator, owners, createdAt, updatedAt, update
 						<h3 className="flex text-lg mb-4 ">Project creator</h3>
 						<div className="flex items-center justify-center">
 							<Link href={`/users/${creator?.userId}`}>
-								<Image src={creator?.profilePicture?.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-12 h-12 rounded-full shadow-md mr-1" />
+								<div className="mr-2">
+									<Avatar img={creator?.profilePicture?.link} size={"lg"} alt="User profile picture" />
+								</div>
 							</Link>
 							<div className="font-semibold text-lg">
 								<Link href={`/users/${creator?.userId}`}>{creator?.username}</Link>
@@ -60,7 +62,9 @@ const DetailsDetails = ({ project, creator, owners, createdAt, updatedAt, update
 							{owners?.map((owner) => (
 								<span key={owner?.user?.userId} className={`flex items-center ${owners?.length > 1 ? "mb-3" : ""}`}>
 									<Link href={`/users/${owner?.user?.userId}`}>
-										<Image src={owner?.user?.profilePicture?.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-12 h-12 rounded-full shadow-md mr-1" />
+										<div className="mr-2">
+											<Avatar img={owner?.user?.profilePicture?.link} size={"lg"} alt="User profile picture" />
+										</div>
 									</Link>
 									<div className="font-semibold text-lg">
 										<Link href={`/users/${owner?.user?.userId}`}>{owner?.user?.username}</Link>
@@ -102,7 +106,9 @@ const DetailsDetails = ({ project, creator, owners, createdAt, updatedAt, update
 							<span className="ml-8 lg:ml-0 mr-2">by</span>
 							<div className="flex items-center justify-center">
 								<Link href={`/users/${updatedBy?.userId}`}>
-									<Image src={updatedBy?.profilePicture?.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-12 h-12 rounded-full shadow-md mr-1" />
+									<div className="mr-2">
+										<Avatar img={updatedBy?.profilePicture?.link} size={"lg"} alt="User profile picture" />
+									</div>
 								</Link>
 								<div className="font-semibold text-lg">
 									<Link href={`/users/${updatedBy?.userId}`}>{updatedBy?.username}</Link>

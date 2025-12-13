@@ -1,24 +1,19 @@
-import Image from "next/image";
 import Link from "next/link";
-import talentNeededProfilePicture from "@/public/images/userTalentNeeded.jpg";
+
 import { BadgeOwner } from "@/components/Badges/Badges";
+import { Avatar } from "@/components/Badges/Avatar";
 
 const ProjectMembers = ({ members }) => {
 	return (
 		<>
-			<div className="border rounded-xl p-6 bg-slate-800/50 border-slate-700 shadow-xl">
+			<div className="border rounded-xl p-6 bg-slate-800/50 border-slate-700 shadow-xl overflow-auto">
 				<h2 className="text-xl font-bold mb-6">Members</h2>
 				{members.map((member, index) => (
 					<div key={index} className="text-gray-300 text-lg mb-5 last:mb-0 flex items-center">
 						<Link href={`/users/${member.user.userId}`}>
-							<Image
-								src={member.user.profilePicture?.link || talentNeededProfilePicture}
-								className="object-cover rounded-full w-16 h-16 mr-3"
-								alt="member profile picture"
-								height={0}
-								width={0}
-								sizes="100vw"
-							/>
+							<div className="mr-3">
+								<Avatar img={member.user.profilePicture?.link} size={"xl"} alt={"member profile picture"} />
+							</div>
 						</Link>
 						<Link href={`/users/${member.user.userId}`} className="font-semibold text-white">
 							{member.user.username}

@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { IoLocationOutline, IoBusinessOutline, IoChatbubbleEllipsesOutline, IoLinkOutline } from "react-icons/io5";
 import ProjectCounter from "@/components/Common/ProjectCounter";
+import { Avatar } from "@/components/Badges/Avatar";
 
 const UserCardAboutMe = ({ user }) => {
 	return (
@@ -17,8 +18,10 @@ const UserCardAboutMe = ({ user }) => {
 				/>
 			</div>
 			{/* Profile picture */}
-			<div className="h-40 w-40 tn:min-h-60 tn:min-w-60 relative mx-auto -mt-30">
-				<Image src={user.profilePicture} fill sizes="100vw, (min-width: 768px) 200px" alt="User profile picture" className="rounded-full object-cover border-5 border-base-500" />
+			<div className="flex justify-center relative mx-auto -mt-30">
+				<div className="rounded-full border-5 border-base-500 bg-white">
+					<Avatar img={user.profilePicture} size={"3xl"} alt={"user profile picture"} />
+				</div>
 			</div>
 			{/* User card text */}
 			<div className="px-6">

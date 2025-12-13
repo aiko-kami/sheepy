@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { IoDocumentOutline } from "react-icons/io5";
 import { SelectRoundedField } from "@/components/Forms/SelectField";
 import InputField from "@/components/Forms/InputField";

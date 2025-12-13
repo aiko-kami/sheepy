@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
+import { Avatar } from "@/components/Badges/Avatar";
 
 import talentNeededProfilePicture from "@/public/images/userTalentNeeded.jpg";
 
@@ -31,7 +31,9 @@ const TalentsList = ({ talentsNeeded = [], removeTalentNeeded, disabled = false 
 							</button>
 						)}
 						<span className="flex items-center ml-3">
-							<Image src={talentNeededProfilePicture} className="object-cover rounded-full w-10 h-10 mr-3" alt="talent profile picture" height={0} width={0} sizes="100vw" />
+							<div className="mr-3">
+								<Avatar img={talentNeededProfilePicture} size={"std"} alt={"Talent profile picture"} />
+							</div>
 							<div className="flex flex-col">
 								<span className="font-semibold">{talentNeeded.talent}</span>
 								<p className="text-sm">{talentNeeded.description}</p>

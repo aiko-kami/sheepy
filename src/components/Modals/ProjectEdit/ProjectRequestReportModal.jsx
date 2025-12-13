@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 import { SelectRoundedField } from "@/components/Forms/SelectField";
 import InputField from "@/components/Forms/InputField";
 import { Button } from "@/components/Buttons/Buttons";
 import { Status } from "@/components/Badges/Badges";
+import { Avatar } from "@/components/Badges/Avatar";
 
 import { handleFormChange } from "@/utils/formHandlers";
 
@@ -43,7 +43,9 @@ const ProjectRequestReportModal = ({ closeModalReport, request }) => {
 				<div className="mb-6 xl:flex items-center">
 					<h2 className="text-lg text-gray-400 font-semibold mb-1">Sender:</h2>
 					<div className="flex items-center pl-1 xl:pl-4">
-						<Image src={request.sender.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
+						<div className="mr-2">
+							<Avatar img={request.sender.profilePicture.link} size={"sm"} alt={"user profile picture"} />
+						</div>
 						<div className="font-semibold">{request.sender.username}</div>
 					</div>
 				</div>

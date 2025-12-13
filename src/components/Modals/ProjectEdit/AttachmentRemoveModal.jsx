@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { IoDocumentOutline, IoAlertCircleOutline } from "react-icons/io5";
 
 import { Button } from "@/components/Buttons/Buttons";

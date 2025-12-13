@@ -8,6 +8,8 @@ import { IoColorWandOutline } from "react-icons/io5";
 import BackgroundPicture from "@/components/User/UserProfilePrivate/BackgroundPicture";
 import Popover from "@/components/Popover";
 import PopoverContent from "./PopoverContent";
+import { Avatar } from "@/components/Badges/Avatar";
+
 import { useAuth } from "@/contexts/AuthContext";
 import defaultPicture from "@/public/images/default-profile-picture.png";
 import { ApiUpdateUserPicture, ApiUpdateUserBackgroundPicture, ApiRemoveUserPicture, ApiRemoveUserBackgroundPicture } from "@/lib/api/usersClient";
@@ -96,8 +98,10 @@ const ProfilePicture = ({ user }) => {
 		<>
 			<BackgroundPicture backgroundPicture={backgroundImage} />
 
-			<div className="h-40 w-40 tn:min-h-60 tn:min-w-60 relative mx-auto -mt-30">
-				<Image src={profileImage} fill sizes="100vw, (min-width: 768px) 200px" alt="User profile picture" className="rounded-full object-cover border-5 border-base-500 bg-white" />
+			<div className="flex justify-center relative mx-auto -mt-30">
+				<div className="rounded-full border-5 border-base-500 bg-white">
+					<Avatar img={profileImage} size={"3xl"} alt={"user profile picture"} />
+				</div>
 				{/* Trigger Icon */}
 				<div className="absolute right-0 bottom-0 tn:right-1 tn:bottom-1" onClick={() => setDisplayPopover(!displayPopover)} onMouseLeave={() => setDisplayPopover(false)}>
 					<IoColorWandOutline className="w-6 h-6 tn:w-7 tn:h-7" />

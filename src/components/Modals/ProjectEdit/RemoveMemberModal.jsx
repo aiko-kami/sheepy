@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 
-import Image from "next/image";
 import { Button } from "@/components/Buttons/Buttons";
 import { BadgeOwner } from "@/components/Badges/Badges";
+import { Avatar } from "@/components/Badges/Avatar";
 
 const RemoveMemberModal = ({ member, role, talent, startDate, closeModalRemove }) => {
 	const [formState, setFormState] = useState({
@@ -23,7 +23,9 @@ const RemoveMemberModal = ({ member, role, talent, startDate, closeModalRemove }
 			<form onSubmit={onSubmit}>
 				{/* User profile picture and username */}
 				<div className="flex items-center px-8 mb-6">
-					<Image src={member.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-16 h-16 rounded-full shadow-md mr-4" />
+					<div className="mr-2">
+						<Avatar img={member.profilePicture.link} size={"xl"} alt={"user profile picture"} />
+					</div>
 					<div className="font-semibold text-lg lg:whitespace-nowrap">{member.username}</div>
 					{role === "owner" && (
 						<div className="sm:ml-3">
@@ -42,7 +44,9 @@ const RemoveMemberModal = ({ member, role, talent, startDate, closeModalRemove }
 					{/* User current start date on the project */}
 					<div className="sm:flex items-baseline xl:justify-center mb-6 xl:mb-0">
 						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Start date:</h2>
-						<p className="pl-1 xl:pl-2">{startDate}</p>
+						<p className="pl-1 xl:pl-2" title={startDate.formattedRelative ? startDate.formattedAbsolute : ""}>
+							{startDate.formattedRelative ? startDate.formattedRelative : <span className="italic text-gray-300">No start date</span>}
+						</p>
 					</div>
 				</div>
 

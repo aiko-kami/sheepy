@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import React from "react";
 import { useState } from "react";
 import { IoArrowForward } from "react-icons/io5";
 
 import { Button } from "@/components/Buttons/Buttons";
+import { Avatar } from "@/components/Badges/Avatar";
 import Modal from "@/components/Modals/Modal";
 import ProjectApplicationModal from "@/components/Modals/ProjectPublic/ProjectApplicationModal";
 import AuthModal from "@/components/Modals/Auth/AuthModal";
@@ -45,7 +45,9 @@ const TalentsNeeded = ({ talentsNeeded, talentProfilePicture }) => {
 					{talentsNeeded.map((talentNeeded, index) => (
 						<React.Fragment key={index}>
 							<div className="text-slate-300 text-lg mb-6 last:mb-0 mr-2 flex items-center h-full col-span-2">
-								<Image src={talentProfilePicture} className="object-cover rounded-full w-10 h-10 mr-3" alt="talent profile picture" height={0} width={0} sizes="100vw" />
+								<div className="mr-3">
+									<Avatar img={talentProfilePicture} size={"std"} alt={"talent profile picture"} />
+								</div>
 								<p className="overflow-auto hyphens-auto ">{talentNeeded.talent}</p>
 							</div>
 							<div className="flex items-center justify-end">

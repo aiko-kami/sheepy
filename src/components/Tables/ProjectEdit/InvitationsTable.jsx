@@ -1,5 +1,5 @@
 import { Status } from "@/components/Badges/Badges";
-import InvitationUserCell from "@/components/Tables/ProjectEdit/InvitationUserCell";
+import UserCell from "@/components/Tables/ProjectEdit/UserCell";
 import InvitationMessageCell from "@/components/Tables/ProjectEdit/InvitationMessageCell";
 import ProjectInvitationsActions from "@/components/IconsActions/ProjectInvitationsActions";
 
@@ -31,7 +31,7 @@ const InvitationsTable = ({ joinProjectInvitations, talentsNeeded, projectId, us
 						return (
 							<tr key={index} className="border-b bg-gray-800 border-gray-700 hover:bg-gray-600">
 								<td scope="row" className="p-2 md:px-4 md:py-2">
-									<InvitationUserCell invitation={invitation} />
+									<UserCell userId={invitation.receiver.userId} profilePicture={invitation.receiver.profilePicture} username={invitation.receiver.username} />
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2 text-left">
 									<div className="text-gray-400 whitespace-nowrap">{invitation.talent}</div>

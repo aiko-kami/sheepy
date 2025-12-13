@@ -4,7 +4,6 @@ import { IoBookmarkOutline, IoShareSocialOutline } from "react-icons/io5";
 
 import { ButtonCircle } from "@/components/Buttons/Buttons";
 import { Avatar } from "@/components/Badges/Avatar";
-import talentNeededProfilePicture from "@/public/images/userTalentNeeded.jpg";
 
 const Cover = ({ title, coverLink, ownerUserId, ownerUsername, ownerProfilePicture }) => {
 	return (

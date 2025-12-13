@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { BadgeRounded } from "@/components/Badges/Badges";
+import { Avatar } from "@/components/Badges/Avatar";
 
 const UserCard = ({ user, animate }) => {
 	const { userId, username, profilePicture, description, talents, tags } = user;
@@ -13,7 +13,7 @@ const UserCard = ({ user, animate }) => {
 			<div className={`rounded-lg max-w-66 shadow-2xl bg-blue-900 p-4 ${animationClasses}`}>
 				<div className="flex flex-col items-center mb-2">
 					<Link href={`/users/${userId}`}>
-						<Image src={profilePicture} className="object-cover rounded-full w-58 h-58" alt="Card" height={0} width={0} sizes="100vw" />
+						<Avatar img={profilePicture} size={"3xl"} alt={username} />
 					</Link>
 				</div>
 				<div className="px-4 text-center">

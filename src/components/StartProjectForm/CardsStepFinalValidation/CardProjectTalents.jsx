@@ -1,6 +1,6 @@
 import Image from "next/image";
-
 import { IoPeople } from "react-icons/io5";
+import { Avatar } from "@/components/Badges/Avatar";
 
 const CardProjectTalents = ({ formInputs, talentNeededProfilePicture }) => {
 	return (
@@ -20,7 +20,8 @@ const CardProjectTalents = ({ formInputs, talentNeededProfilePicture }) => {
 								{formInputs.talentsNeeded.map((talentNeeded, index) => (
 									<div key={index} className="flex items-start gap-4 p-4 bg-gradient-to-r from-cyan-200 to-blue-400 rounded-lg">
 										{/* Profile picture on the left */}
-										<Image src={talentNeededProfilePicture} alt="talent profile picture" className="object-cover rounded-full w-12 h-12 flex-shrink-0" height={48} width={48} sizes="100vw" />
+										<Avatar img={talentNeededProfilePicture} size={"lg"} alt={"Talent profile picture"} />
+										{/* Talent info on the right */}
 										<div className="flex flex-col">
 											<span className="font-semibold text-sky-900">{talentNeeded.talent}</span>
 											{talentNeeded.description && <p className="text-sm text-sky-800">{talentNeeded.description}</p>}

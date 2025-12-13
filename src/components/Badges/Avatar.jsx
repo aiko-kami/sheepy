@@ -11,15 +11,28 @@ const Avatar = ({ img, size, alt = "" }) => {
 			imgSizeClass = "w-7 h-7";
 			break;
 		case "std":
-			imgSizeClass = "w-8 h-8";
+			imgSizeClass = "w-10 h-10";
+			break;
+		case "lg":
+			imgSizeClass = "w-12 h-12";
 			break;
 		case "xl":
-			imgSizeClass = "w-10 h-10";
+			imgSizeClass = "w-16 h-16";
+			break;
+		case "2xl":
+			imgSizeClass = "w-34 h-34";
+			break;
+		case "3xl":
+			imgSizeClass = "w-48 h-48 md:w-60 md:h-60";
 			break;
 		default:
 			imgSizeClass = "w-8 h-8";
 	}
-	return <Image src={img || talentNeededProfilePicture} className={`rounded-full object-cover ${imgSizeClass}`} alt={alt} height={0} width={0} sizes="100vw" />;
+	return (
+		<div className={`shrink-0 ${imgSizeClass}`}>
+			<Image src={img || talentNeededProfilePicture} className={`w-full h-full rounded-full object-cover`} alt={alt} height={0} width={0} sizes="100vw" />
+		</div>
+	);
 };
 
 export { Avatar };

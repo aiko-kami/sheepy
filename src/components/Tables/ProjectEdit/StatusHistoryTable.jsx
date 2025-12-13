@@ -1,7 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Status } from "@/components/Badges/Badges";
-import { DateTime } from "luxon";
+import { Avatar } from "@/components/Badges/Avatar";
 
 const StatusHistoryTable = ({ statusHistory = [] }) => {
 	return (
@@ -44,7 +43,9 @@ const StatusHistoryTable = ({ statusHistory = [] }) => {
 								<td scope="row" className="p-2 md:px-4 md:py-2 text-center">
 									<div className="flex items-center">
 										<Link href={`/users/${updaterUserId}`}>
-											<Image src={updaterProfilePicture} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-9 h-9 rounded-full shadow-md mr-4" />
+											<div className="mr-2">
+												<Avatar img={updaterProfilePicture} size={"std"} alt="User profile picture" />
+											</div>
 										</Link>
 										<div className="font-semibold text-base lg:whitespace-nowrap">
 											<Link href={`/users/${updaterUserId}`}>{updaterUsername}</Link>

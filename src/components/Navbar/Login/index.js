@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { useAuth } from "@/contexts/AuthContext";
 import Dropdown from "./Dropdown";
 import Notification from "@/components/Badges/Notification";
+import { Avatar } from "@/components/Badges/Avatar";
 
 const Login = ({ isHomePage = false }) => {
 	const { user } = useAuth();
@@ -51,14 +51,13 @@ const Login = ({ isHomePage = false }) => {
 			) : (
 				<div className="inline-flex items-center sm:px-2">
 					<button
-						className="flex text-sm bg-base-100 relative rounded-full w-12 md:me-0 hover:ring-4 hover:ring-slate-700 duration-200"
+						className="flex text-sm relative rounded-full hover:ring-4 hover:ring-slate-700 duration-200"
 						type="button"
 						aria-expanded={dropdownOpen ? "true" : "false"}
 						onClick={() => setDropdownOpen(!dropdownOpen)}
 					>
 						<span className="sr-only">Open user menu</span>
-						<Image className="rounded-full object-cover w-12 h-12" src={user.profilePicture.link || "/default-avatar.png"} alt="User picture" width={48} height={48} />
-
+						<Avatar img={user.profilePicture.link} size={"lg"} alt={"user profile picture"} />
 						{user.notifications?.globalNotif > 0 && (
 							<div className="absolute -bottom-2 right-10 z-10">
 								<Notification value={user.notifications.globalNotif} size={"xs"} notifColor={"pink"} ringMode={isHomePage ? "home" : "std"} />

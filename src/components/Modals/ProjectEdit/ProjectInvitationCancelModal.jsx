@@ -1,6 +1,6 @@
 import { Button } from "@/components/Buttons/Buttons";
 import { Status } from "@/components/Badges/Badges";
-import Image from "next/image";
+import { Avatar } from "@/components/Badges/Avatar";
 
 const ProjectInvitationCancelModal = ({ closeModalCancel, invitation }) => {
 	const cancelInvitation = () => {
@@ -16,7 +16,9 @@ const ProjectInvitationCancelModal = ({ closeModalCancel, invitation }) => {
 					<div className="mb-6 xl:flex items-center">
 						<h2 className="text-lg text-gray-400 font-semibold mb-1">Receiver:</h2>
 						<div className="flex items-center pl-1 xl:pl-4">
-							<Image src={invitation.receiver.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
+							<div className="mr-2">
+								<Avatar img={invitation.receiver.profilePicture.link} size={"sm"} alt={"user profile picture"} />
+							</div>
 							<div className="font-semibold">{invitation.receiver.username}</div>
 						</div>
 					</div>
@@ -25,7 +27,9 @@ const ProjectInvitationCancelModal = ({ closeModalCancel, invitation }) => {
 					<div className="mb-6 xl:flex items-center justify-center">
 						<h2 className="text-lg text-gray-400 font-semibold mb-1">Sent by:</h2>
 						<div className="flex items-center pl-1 xl:pl-4">
-							<Image src={invitation.sender.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
+							<div className="mr-2">
+								<Avatar img={invitation.sender.profilePicture.link} size={"sm"} alt={"user profile picture"} />
+							</div>
 							<div className="font-semibold">{invitation.sender.username}</div>
 						</div>
 					</div>

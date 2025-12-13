@@ -1,10 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 
 import { Button } from "@/components/Buttons/Buttons";
-import { Status, Badge } from "@/components/Badges/Badges";
+import { Avatar } from "@/components/Badges/Avatar";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 import { SelectRoundedField } from "@/components/Forms/SelectField";
 
@@ -48,7 +47,9 @@ const ProjectInvitationEditModal = ({ closeModalEdit, invitation, projectId, tal
 			<div className="mb-6 xl:flex items-center">
 				<h2 className="text-lg text-gray-400 font-semibold mb-1">To:</h2>
 				<div className="flex items-center pl-1 xl:pl-4">
-					<Image src={invitation.receiver.profilePicture.link} height={0} width={0} sizes="100vw" alt="User profile picture" className="object-cover min-w-7 h-7 rounded-full shadow-md mr-4" />
+					<div className="mr-2">
+						<Avatar img={invitation.receiver.profilePicture.link} size={"sm"} alt={"user profile picture"} />
+					</div>
 					<div className="font-semibold">{invitation.receiver.username}</div>
 				</div>
 			</div>
