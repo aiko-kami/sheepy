@@ -2,6 +2,8 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
+import Modal from "@/components/Modals/Modal";
+import RemoveTalentNeededModal from "@/components/Modals/ProjectEdit/RemoveTalentNeededModal";
 import InputField from "@/components/Forms/InputField";
 import TalentsList from "@/components/Forms/TalentNeededInputField/TalentsList";
 import AddTalentButton from "@/components/Forms/TalentNeededInputField/AddTalentButton";
@@ -15,6 +17,8 @@ const TalentInputForm = ({ projectId, talentsNeeded, setFormInputs, disabled = f
 
 	const [talentNeededTalentInput, setTalentNeededTalentInput] = useState("");
 	const [talentNeededDescriptionInput, setTalentNeededDescriptionInput] = useState("");
+	const [modalDisplayRemove, setModalDisplayRemove] = useState(false);
+	const [talentToRemove, setTalentToRemove] = useState(null);
 
 	const addTalentNeeded = async () => {
 		const talent = (talentNeededTalentInput || "").trim();
@@ -58,9 +62,24 @@ const TalentInputForm = ({ projectId, talentsNeeded, setFormInputs, disabled = f
 		setTalentNeededDescriptionInput(e.target.value);
 	};
 
-	const removeTalentNeeded = async (talentToRemove) => {
+	const closeModalRemove = () => {
+		setTalentToRemove(null);
+		setModalDisplayRemove(false);
+	};
+
+	const removeTalentNeeded = async (talent) => {
 		// Basic validations with early returns
-		if (!talentToRemove) return showErrorToast("Please select a talent to remove");
+		if (!talent) {
+			showErrorToast("Please select a talent to remove");
+			return;
+		}
+
+		setTalentToRemove(talent);
+		setModalDisplayRemove(true);
+	};
+
+	const confirmRemoveTalentNeeded = async () => {
+		if (!talentToRemove) return;
 
 		const payload = {
 			talent: talentToRemove,
@@ -75,6 +94,9 @@ const TalentInputForm = ({ projectId, talentsNeeded, setFormInputs, disabled = f
 		router.refresh();
 		setTalentNeededTalentInput("");
 		setTalentNeededDescriptionInput("");
+		setTalentToRemove(null);
+		setModalDisplayRemove(false);
+
 		showSuccessToast("The talent needed has been removed.");
 	};
 
@@ -126,6 +148,11 @@ const TalentInputForm = ({ projectId, talentsNeeded, setFormInputs, disabled = f
 			<div className="min-h-16">
 				<TalentsList talentsNeeded={talentsNeeded} removeTalentNeeded={removeTalentNeeded} disabled={disabled} />
 			</div>
+			{!disabled && (
+				<Modal modalDisplay={modalDisplayRemove} closeModal={closeModalRemove} closeModalWithBackground={closeModalRemove} modalSize={"sm"} modalTitle={"Remove talent needed"}>
+					<RemoveTalentNeededModal talent={talentToRemove} onConfirm={confirmRemoveTalentNeeded} closeModalRemove={closeModalRemove} />
+				</Modal>
+			)}
 		</>
 	);
 };

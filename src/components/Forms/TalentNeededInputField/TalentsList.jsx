@@ -18,7 +18,7 @@ const TalentsList = ({ talentsNeeded = [], removeTalentNeeded, disabled = false 
 						exit={{ opacity: 0, scale: 0.9, y: -10 }}
 						transition={{ duration: 0.25, ease: "easeOut" }}
 						layout
-						className="flex items-center p-2 pb-2.5 rounded-lg bg-gradient-to-r from-indigo-900 to-blue-900 shadow-sm"
+						className="flex items-center px-2 py-3 rounded-lg bg-gradient-to-r from-indigo-900 to-blue-900 shadow-sm"
 					>
 						{!disabled && (
 							<button

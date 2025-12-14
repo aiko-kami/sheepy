@@ -1,29 +1,12 @@
 "use client";
 
-import { useState, useRef } from "react";
-
 import { IoPersonAdd } from "react-icons/io5";
-import { Button } from "@/components/Buttons/Buttons";
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
 import ERRORS from "@/lib/constants/errors";
 
-import TalentInputField from "@/components/Forms/TalentNeededInputField/TalentInputField";
+import TalentInputForm from "@/components/Forms/TalentNeededInputForm/TalentInputForm";
 
-const TalentsNeeded = ({ projectId, user, talentsNeeded, userPermissions }) => {
-	const [formInputs, setFormInputs] = useState({
-		userUpdater: user.userId,
-		projectId: projectId,
-		talentsNeeded: talentsNeeded,
-	});
-
-	const inputRef = useRef(null); // Create a reference to the input field
-
-	const onSubmit = (event) => {
-		event.preventDefault();
-		// Handle form submission
-		console.log("🚀 ~ onSubmit ~ The project has been updated:", formState);
-	};
-
+const TalentsNeeded = ({ projectId, talentsNeeded, userPermissions }) => {
 	return (
 		<>
 			{/* Project members */}
@@ -33,32 +16,17 @@ const TalentsNeeded = ({ projectId, user, talentsNeeded, userPermissions }) => {
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
-			<form onSubmit={onSubmit}>
-				<div className="md:px-4">
-					{/* Project talents */}
-					{!userPermissions.canEditTalentsNeeded && (
-						<div className="mb-4">
-							<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.EDIT_TALENTS_NEEDED} />
-						</div>
-					)}
-					<div className="w-full sm:w-100 xl:w-150 mb-8">
-						<TalentInputField talentsNeeded={formInputs.talentsNeeded} setFormInputs={setFormInputs} disabled={!userPermissions.canEditTalentsNeeded} />
+			<div className="md:px-4">
+				{/* Project talents */}
+				{!userPermissions.canEditTalentsNeeded && (
+					<div className="mb-4">
+						<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.EDIT_TALENTS_NEEDED} />
 					</div>
-					{userPermissions.canEditTalentsNeeded && (
-						<div className="flex justify-center">
-							<Button
-								btnProps={{
-									type: "submit",
-									btnColor: "blue",
-									disabled: !userPermissions.canEditTalentsNeeded,
-								}}
-							>
-								Save talents
-							</Button>
-						</div>
-					)}
+				)}
+				<div className="w-full sm:w-100 xl:w-150 mb-8">
+					<TalentInputForm projectId={projectId} talentsNeeded={talentsNeeded} disabled={!userPermissions.canEditTalentsNeeded} />
 				</div>
-			</form>
+			</div>
 		</>
 	);
 };

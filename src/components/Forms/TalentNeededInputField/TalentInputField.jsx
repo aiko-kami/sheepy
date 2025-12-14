@@ -7,7 +7,7 @@ import AddTalentButton from "@/components/Forms/TalentNeededInputField/AddTalent
 
 import { showErrorToast } from "@/utils/toast";
 
-const TagInputField = ({ talentsNeeded, setFormInputs, disabled = false }) => {
+const TalentInputField = ({ talentsNeeded, setFormInputs, disabled = false }) => {
 	const [talentNeededTalentInput, setTalentNeededTalentInput] = useState("");
 	const [talentNeededDescriptionInput, setTalentNeededDescriptionInput] = useState("");
 
@@ -107,4 +107,4 @@ const TagInputField = ({ talentsNeeded, setFormInputs, disabled = false }) => {
 	);
 };
 
-export default TagInputField;
+export default TalentInputField;

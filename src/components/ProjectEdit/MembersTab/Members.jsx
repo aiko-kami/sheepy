@@ -1,6 +1,5 @@
 import MembersDetails from "@/components/ProjectEdit/MembersTab/MembersDetails";
 import TalentsNeeded from "@/components/ProjectEdit/MembersTab/TalentsNeeded";
-import TalentsNeededTest from "@/components/ProjectEdit/MembersTab/TalentsNeededTest";
 import JoinRequests from "@/components/ProjectEdit/MembersTab/JoinRequests";
 import JoinInvitations from "@/components/ProjectEdit/MembersTab/JoinInvitations";
 
@@ -13,11 +12,7 @@ const Members = ({ projectId, user, userPermissions, members, talentsNeeded, joi
 			</div>
 			{/* Talents needed */}
 			<div className="mb-8 lg:mb-14">
-				<TalentsNeeded projectId={projectId} user={user} talentsNeeded={talentsNeeded} userPermissions={userPermissions} />
-			</div>
-			{/* Talents needed Test*/}
-			<div className="mb-8 lg:mb-14">
-				<TalentsNeededTest projectId={projectId} talentsNeeded={talentsNeeded} userPermissions={userPermissions} />
+				<TalentsNeeded projectId={projectId} talentsNeeded={talentsNeeded} userPermissions={userPermissions} />
 			</div>
 			{/* Requests to join the project */}
 			<div className="mb-8 lg:mb-14">
