@@ -12,7 +12,7 @@ import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
 import { ApiPostAddTalentNeeded, ApiPostDeleteTalentNeeded } from "@/lib/api/projectEditionServer";
 
-const TalentInputForm = ({ projectId, talentsNeeded, setFormInputs, disabled = false }) => {
+const TalentInputForm = ({ projectId, talentsNeeded, disabled = false }) => {
 	const router = useRouter();
 
 	const [talentNeededTalentInput, setTalentNeededTalentInput] = useState("");
