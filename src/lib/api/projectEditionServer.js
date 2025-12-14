@@ -60,8 +60,16 @@ export async function ApiPostUpdateProjectLocation(projectId, data) {
 	return apiPatch(`/projectEdition/location/${projectId}`, data);
 }
 
+export async function ApiPostAddTalentNeeded(projectId, data) {
+	return apiPost(`/projectEdition/talentNeeded/${projectId}`, data);
+}
+
 //DELETE requests
 
 export async function ApiDeleteRemoveProjectMember(projectId, data) {
 	return apiDelete(`/projectEdition/members/${projectId}`, data);
+}
+
+export async function ApiPostDeleteTalentNeeded(projectId, data) {
+	return apiDelete(`/projectEdition/talentNeeded/${projectId}`, data);
 }
