@@ -2,8 +2,10 @@ import { IoDocumentOutline, IoAlertCircleOutline } from "react-icons/io5";
 
 import { Button } from "@/components/Buttons/Buttons";
 import { Avatar } from "@/components/Badges/Avatar";
+import Warning from "@/components/Errors/Warning";
+import WARNINGS from "@/lib/constants/warnings";
 
-const AttachmentRemoveModal = ({ closeModalRemove, attachment, projectId }) => {
+const AttachmentRemoveModal = ({ attachment, projectId, closeModalRemove }) => {
 	const removeAttachment = () => {
 		console.log("🚀 ~ removeAttachment: the attachment has been removed");
 		closeModalRemove();
@@ -30,12 +32,8 @@ const AttachmentRemoveModal = ({ closeModalRemove, attachment, projectId }) => {
 			</div>
 
 			{/* Warning message */}
-			<div className="flex items-start mb-10 gap-3 p-4 bg-red-950/30 border border-red-900/50 rounded-lg max-w-120 mx-auto">
-				<IoAlertCircleOutline className="w-5 h-5 text-red-400 mt-0.5 flex-shrink-0" />
-				<div>
-					<p className="text-sm text-red-200 leading-relaxed font-semibold">This action cannot be undone.</p>
-					<p className="text-sm text-red-200 leading-relaxed">The file will be permanently removed.</p>
-				</div>
+			<div className="mb-8">
+				<Warning warningInputs={WARNINGS.PROJECT_EDIT.FILE} />
 			</div>
 
 			{/* Buttons */}
