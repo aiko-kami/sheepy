@@ -35,6 +35,8 @@ const Cover = ({ formInputs, setFormInputs, userPermissions }) => {
 						<Button
 							btnProps={{
 								type: "submit",
+								name: "action",
+								value: "submit-cover",
 								btnColor: "blue",
 								disabled: !userPermissions.canEditCover,
 							}}

@@ -44,6 +44,18 @@ export async function ApiGetEditProjectDetails(projectLink) {
 
 //PATCH requests
 
+export async function ApiPostUpdateProjectTitleCategory(projectId, data) {
+	return apiPatch(`/projectEdition/titleCategory/${projectId}`, data);
+}
+
+export async function ApiPostUpdateProjectInformation(projectId, data) {
+	return apiPatch(`/projectEdition/information/${projectId}`, data);
+}
+
+export async function ApiPostUpdateProjectCover(projectId, data) {
+	return apiPatch(`/projectEdition/cover/${projectId}`, data);
+}
+
 export async function ApiPostUpdateProjectMember(projectId, data) {
 	return apiPatch(`/projectEdition/members/${projectId}`, data);
 }

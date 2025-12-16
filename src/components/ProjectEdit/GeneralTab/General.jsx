@@ -1,8 +1,8 @@
 import TitleCategory from "@/components/ProjectEdit/GeneralTab/TitleCategory";
-import Summary from "@/components/ProjectEdit/GeneralTab/Summary";
+import Information from "@/components/ProjectEdit/GeneralTab/Information";
 import Cover from "@/components/ProjectEdit/GeneralTab/Cover";
 import Tags from "@/components/ProjectEdit/GeneralTab/Tags";
-import Motivation from "@/components/ProjectEdit/GeneralTab/Motivation";
+import Objectives from "@/components/ProjectEdit/GeneralTab/Objectives";
 
 const General = ({ formInputs, setFormInputs, onChange, tagsList, userPermissions }) => {
 	return (
@@ -11,9 +11,9 @@ const General = ({ formInputs, setFormInputs, onChange, tagsList, userPermission
 			<div className="mb-8 lg:mb-10">
 				<TitleCategory formInputs={formInputs} setFormInputs={setFormInputs} onChange={onChange} userPermissions={userPermissions} />
 			</div>
-			{/* Project summary, description and goals */}
+			{/* Project summary, description, goal and creator motivation */}
 			<div className="mb-8 lg:mb-10">
-				<Summary formInputs={formInputs} onChange={onChange} userPermissions={userPermissions} />
+				<Information formInputs={formInputs} onChange={onChange} userPermissions={userPermissions} />
 			</div>
 			{/* Project cover */}
 			<div className="mb-8 lg:mb-10">
@@ -23,9 +23,9 @@ const General = ({ formInputs, setFormInputs, onChange, tagsList, userPermission
 			<div className="mb-8 lg:mb-10">
 				<Tags formInputs={formInputs} setFormInputs={setFormInputs} tagsList={tagsList} userPermissions={userPermissions} />
 			</div>
-			{/* Project creator motivation, objectives, phases */}
+			{/* Project objectives and phases */}
 			<div className="mb-8 lg:mb-10">
-				<Motivation formInputs={formInputs} setFormInputs={setFormInputs} onChange={onChange} userPermissions={userPermissions} />
+				<Objectives formInputs={formInputs} setFormInputs={setFormInputs} onChange={onChange} userPermissions={userPermissions} />
 			</div>
 		</>
 	);

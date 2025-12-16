@@ -141,6 +141,8 @@ const TitleCategory = ({ formInputs, onChange, setFormInputs, userPermissions })
 						<Button
 							btnProps={{
 								type: "submit",
+								name: "action",
+								value: "submit-titleCategory",
 								btnColor: "blue",
 								disabled: !userPermissions.canEditTitle && !userPermissions.canEditCategory && !userPermissions.canEditSubCategory,
 							}}

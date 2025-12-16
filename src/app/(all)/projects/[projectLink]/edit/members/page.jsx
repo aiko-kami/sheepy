@@ -17,7 +17,6 @@ const ProjectEditMembersPage = async ({ params }) => {
 
 	const result = await ApiGetEditProjectMembers(projectLink);
 
-	console.log("🚀 ~ ProjectEditMembersPage ~ result:", result);
 	//	console.dir(result, { depth: null, colors: true });
 
 	if (!result.ok) {
@@ -29,8 +28,6 @@ const ProjectEditMembersPage = async ({ params }) => {
 	}
 
 	const project = result.data?.project;
-
-	console.log("🚀 ~ ProjectEditMembersPage ~ project:", project);
 
 	const projectId = project?.projectId;
 	const members = project?.members;

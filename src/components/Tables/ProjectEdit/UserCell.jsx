@@ -18,7 +18,11 @@ const UserCell = ({ userId, profilePicture, username, owner = false }) => {
 						</Link>
 					</div>
 				</div>
-				{owner && <BadgeOwner size={"xs"} />}
+				{owner && (
+					<div className="ml-2">
+						<BadgeOwner size={"xs"} />
+					</div>
+				)}
 			</div>
 		</>
 	);

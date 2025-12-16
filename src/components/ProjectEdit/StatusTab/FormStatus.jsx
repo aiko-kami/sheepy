@@ -54,8 +54,6 @@ const FormStatus = ({ projectId, statusHistory, status, statusesList, startDate,
 				}
 				if (userPermissions.canEditStartDate) {
 					payload.startDate = formInputs.projectStartDate || null;
-
-					console.log("🚀 ~ onSubmit ~ payload.startDate:", payload.startDate);
 				}
 				const result = await ApiPostUpdateProjectVisibility(projectId, payload);
 

@@ -22,19 +22,6 @@ const Tags = ({ formInputs, setFormInputs, tagsList = [], userPermissions }) => 
 					)}
 					<TagInputField formInputs={formInputs} setFormInputs={setFormInputs} tagsList={tagsList} disabled={!userPermissions.canEditTags} />
 				</div>
-				{userPermissions.canEditTags && (
-					<div className="flex justify-center">
-						<Button
-							btnProps={{
-								type: "submit",
-								btnColor: "blue",
-								disabled: !userPermissions.canEditTags,
-							}}
-						>
-							Save tags
-						</Button>
-					</div>
-				)}
 			</div>
 		</div>
 	);

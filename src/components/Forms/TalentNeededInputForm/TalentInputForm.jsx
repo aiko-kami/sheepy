@@ -82,7 +82,7 @@ const TalentInputForm = ({ projectId, talentsNeeded, disabled = false }) => {
 		if (!talentToRemove) return;
 
 		const payload = {
-			talent: talentToRemove,
+			talent: talentToRemove.talent,
 		};
 
 		const result = await ApiPostDeleteTalentNeeded(projectId, payload);
@@ -148,9 +148,10 @@ const TalentInputForm = ({ projectId, talentsNeeded, disabled = false }) => {
 			<div className="min-h-16">
 				<TalentsList talentsNeeded={talentsNeeded} removeTalentNeeded={removeTalentNeeded} disabled={disabled} />
 			</div>
+
 			{!disabled && (
 				<Modal modalDisplay={modalDisplayRemove} closeModal={closeModalRemove} closeModalWithBackground={closeModalRemove} modalSize={"sm"} modalTitle={"Remove talent needed"}>
-					<RemoveTalentNeededModal talent={talentToRemove} onConfirm={confirmRemoveTalentNeeded} closeModalRemove={closeModalRemove} />
+					<RemoveTalentNeededModal talentNeeded={talentToRemove} onConfirm={confirmRemoveTalentNeeded} closeModalRemove={closeModalRemove} />
 				</Modal>
 			)}
 		</>

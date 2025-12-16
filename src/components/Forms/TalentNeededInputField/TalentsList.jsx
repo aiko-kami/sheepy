@@ -21,12 +21,7 @@ const TalentsList = ({ talentsNeeded = [], removeTalentNeeded, disabled = false 
 						className="flex items-center px-2 py-3 rounded-lg bg-gradient-to-r from-indigo-900 to-blue-900 shadow-sm"
 					>
 						{!disabled && (
-							<button
-								title="Remove talent"
-								type="button"
-								className="text-gray-300 ml-1 mr-5 hover:text-white transition duration-150 ease-in-out"
-								onClick={() => removeTalentNeeded(talentNeeded.talent)}
-							>
+							<button title="Remove talent" type="button" className="text-gray-300 ml-1 mr-5 hover:text-white transition duration-150 ease-in-out" onClick={() => removeTalentNeeded(talentNeeded)}>
 								<IoCloseCircleOutline className="text-2xl" />
 							</button>
 						)}
