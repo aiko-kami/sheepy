@@ -1,14 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+
 import General from "@/components/ProjectEdit/GeneralTab/General";
 import { handleFormChange } from "@/utils/formHandlers";
 
-import { ApiPostUpdateProjectTitleCategory, ApiPostUpdateProjectInformation, ApiPostUpdateProjectCover } from "@/lib/api/projectEditionServer";
+import { ApiPostUpdateProjectTitleCategory, ApiPostUpdateProjectInformation, ApiPatchUpdateProjectCover } from "@/lib/api/projectEditionServer";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
 const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, description, cover, tags, tagsList, creatorMotivation, objectives, userPermissions }) => {
+	const router = useRouter();
+
 	const [formInputs, setFormInputs] = useState({
 		projectId: projectId,
 		projectTitle: title || "",
@@ -35,13 +39,13 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 			if (formAction === "submit-titleCategory") {
 				const payload = {};
 				if (userPermissions.canEditTitle) {
-					payload.projectTitle = formInputs.projectTitle;
+					payload.title = formInputs.projectTitle;
 				}
 				if (userPermissions.canEditCategory) {
-					payload.projectCategory = formInputs.projectCategory;
+					payload.category = formInputs.projectCategory;
 				}
 				if (userPermissions.canEditSubCategory) {
-					payload.projectSubCategory = formInputs.projectSubCategory;
+					payload.subCategory = formInputs.projectSubCategory;
 				}
 
 				const result = await ApiPostUpdateProjectTitleCategory(projectId, payload);
@@ -55,13 +59,13 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 			} else if (formAction === "submit-information") {
 				const payload = {};
 				if (userPermissions.canEditSummary) {
-					payload.projectSummary = formInputs.projectSummary;
+					payload.summary = formInputs.projectSummary;
 				}
 				if (userPermissions.canEditDescription) {
-					payload.projectDescription = formInputs.projectDescription;
+					payload.description = formInputs.projectDescription;
 				}
 				if (userPermissions.canEditGoal) {
-					payload.projectGoal = formInputs.projectGoal;
+					payload.goal = formInputs.projectGoal;
 				}
 				if (userPermissions.creatorMotivation) {
 					payload.creatorMotivation = formInputs.creatorMotivation;
@@ -75,18 +79,18 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 				}
 				showSuccessToast("The project has been updated.");
 			} else if (formAction === "submit-cover") {
-				const payload = {};
-				if (userPermissions.canEditCover) {
-					payload.projectCover = formInputs.projectCover;
-				}
+				const payload = new FormData();
+				if (formInputs.projectCover && userPermissions.canEditCover) {
+					payload.append("image", formInputs.projectCover);
+					console.log("🚀 ~ onSubmit ~ payload:", payload);
+					const result = await ApiPatchUpdateProjectCover(projectId, payload);
 
-				const result = await ApiPostUpdateProjectCover(projectId, payload);
-
-				if (!result.ok) {
-					showErrorToast(result.message || "Failed to update project cover.");
-					return;
+					if (!result.ok) {
+						showErrorToast(result.message || "Failed to update project cover.");
+						return;
+					}
+					showSuccessToast("The project cover has been updated.");
 				}
-				showSuccessToast("The project cover has been updated.");
 			}
 		} catch (error) {
 			showErrorToast(error.message);

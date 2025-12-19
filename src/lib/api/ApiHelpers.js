@@ -176,6 +176,39 @@ async function clientApiSend(path, method = "POST", body = null, mapper = (json)
 	};
 }
 
+export async function clientApiSendMultipart(path, method = "POST", formData) {
+	const url = `${BASE_URL}${path}`;
+
+	let res;
+	try {
+		res = await fetch(url, {
+			method,
+			credentials: "include",
+			body: formData,
+			cache: "no-store",
+		});
+	} catch (error) {
+		return {
+			ok: false,
+			status: 0,
+			data: null,
+			message: error?.message || "Network or fetch error",
+		};
+	}
+
+	let json = null;
+	try {
+		json = await res.json();
+	} catch {}
+
+	return {
+		ok: res.ok,
+		status: res.status,
+		data: json?.data ?? null,
+		message: json?.message ?? (res.ok ? null : "Unexpected response"),
+	};
+}
+
 /**
  * Unified wrappers. Detects runtime and delegates to server/client helper.
  * - On server (no window) uses server... (and next/headers to read cookies)

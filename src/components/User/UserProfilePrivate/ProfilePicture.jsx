@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { IoColorWandOutline } from "react-icons/io5";

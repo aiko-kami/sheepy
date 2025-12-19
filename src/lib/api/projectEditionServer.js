@@ -1,4 +1,4 @@
-import { apiGet, apiPost, apiPatch, apiDelete } from "@/lib/api/ApiHelpers";
+import { apiGet, apiPost, apiPatch, apiDelete, clientApiSendMultipart } from "@/lib/api/ApiHelpers";
 
 //GET requests
 
@@ -52,8 +52,8 @@ export async function ApiPostUpdateProjectInformation(projectId, data) {
 	return apiPatch(`/projectEdition/information/${projectId}`, data);
 }
 
-export async function ApiPostUpdateProjectCover(projectId, data) {
-	return apiPatch(`/projectEdition/cover/${projectId}`, data);
+export async function ApiPatchUpdateProjectCover(projectId, formData) {
+	return clientApiSendMultipart(`/projectEdition/cover/${projectId}`, "PATCH", formData);
 }
 
 export async function ApiPostUpdateProjectMember(projectId, data) {
