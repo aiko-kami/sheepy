@@ -1,10 +1,10 @@
 import { IoPricetag } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
-import TagInputField from "@/components/Forms/TagInputField/TagInputField";
+import TagInputForm from "@/components/Forms/TagInputForm/TagInputForm";
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
 import ERRORS from "@/lib/constants/errors";
 
-const Tags = ({ formInputs, setFormInputs, tagsList = [], userPermissions }) => {
+const Tags = ({ projectId, tags, tagsList = [], userPermissions }) => {
 	return (
 		<div>
 			<h2 className="flex items-center text-xl mb-3 sm:ml-4">
@@ -20,7 +20,7 @@ const Tags = ({ formInputs, setFormInputs, tagsList = [], userPermissions }) => 
 							<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.EDIT_TAGS} />
 						</div>
 					)}
-					<TagInputField formInputs={formInputs} setFormInputs={setFormInputs} tagsList={tagsList} disabled={!userPermissions.canEditTags} />
+					<TagInputForm projectId={projectId} tags={tags} tagsList={tagsList} disabled={!userPermissions.canEditTags} />
 				</div>
 			</div>
 		</div>

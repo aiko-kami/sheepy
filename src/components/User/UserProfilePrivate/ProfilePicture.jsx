@@ -25,45 +25,41 @@ const ProfilePicture = ({ user }) => {
 	const fileInputBackgroundRef = useRef(null);
 
 	// Profile Picture
-	const handleProfilePictureChange = async (file) => {
-		try {
-			const localImageURL = URL.createObjectURL(file);
+	const onProfileInputChange = async (e) => {
+		const file = e.target.files?.[0];
+		if (file) {
+			try {
+				const localImageURL = URL.createObjectURL(file);
 
-			await ApiUpdateUserPicture(file);
-			await refreshUser();
+				await ApiUpdateUserPicture(file);
+				await refreshUser();
 
-			showSuccessToast("Profile picture updated successfully!");
-			setProfileImage(localImageURL);
-			router.push("/users/my-profile");
-		} catch (error) {
-			showErrorToast(error.message);
+				showSuccessToast("Profile picture updated successfully!");
+				setProfileImage(localImageURL);
+				router.push("/users/my-profile");
+			} catch (error) {
+				showErrorToast(error.message);
+			}
 		}
 	};
 
 	// Background Picture
-	const handleBackgroundPictureChange = async (file) => {
-		try {
-			const localImageURL = URL.createObjectURL(file);
+	const onBackgroundInputChange = async (e) => {
+		const file = e.target.files?.[0];
+		if (file) {
+			try {
+				const localImageURL = URL.createObjectURL(file);
 
-			await ApiUpdateUserBackgroundPicture(file);
-			await refreshUser();
+				await ApiUpdateUserBackgroundPicture(file);
+				await refreshUser();
 
-			showSuccessToast("Background picture updated successfully!");
-			setBackgroundImage(localImageURL);
-			router.push("/users/my-profile");
-		} catch (error) {
-			showErrorToast(error.message);
+				showSuccessToast("Background picture updated successfully!");
+				setBackgroundImage(localImageURL);
+				router.push("/users/my-profile");
+			} catch (error) {
+				showErrorToast(error.message);
+			}
 		}
-	};
-
-	const onProfileInputChange = (e) => {
-		const file = e.target.files?.[0];
-		if (file) handleProfilePictureChange(file);
-	};
-
-	const onBackgroundInputChange = (e) => {
-		const file = e.target.files?.[0];
-		if (file) handleBackgroundPictureChange(file);
 	};
 
 	const triggerProfileInput = () => fileInputProfileRef.current?.click();
@@ -97,24 +93,25 @@ const ProfilePicture = ({ user }) => {
 		<>
 			<BackgroundPicture backgroundPicture={backgroundImage} />
 
-			<div className="flex justify-center relative mx-auto -mt-30">
-				<div className="rounded-full border-5 border-base-500 bg-white">
+			<div className="flex justify-center mx-auto -mt-30">
+				<div className="rounded-full relative border-5 border-base-500 bg-white">
 					<Avatar img={profileImage} size={"3xl"} alt={"user profile picture"} />
-				</div>
-				{/* Trigger Icon */}
-				<div className="absolute right-0 bottom-0 tn:right-1 tn:bottom-1" onClick={() => setDisplayPopover(!displayPopover)} onMouseLeave={() => setDisplayPopover(false)}>
-					<IoColorWandOutline className="w-6 h-6 tn:w-7 tn:h-7" />
 
-					<Popover displayPopover={displayPopover} position="-mx-43 -my-8 sm:mx-7" style="text-gray-900 whitespace-nowrap bg-white rounded-sm shadow px-1">
-						<PopoverContent
-							onSelectPicture={triggerProfileInput}
-							onRemovePicture={handleRemoveProfilePicture}
-							onSelectBackground={triggerBackgroundInput}
-							onRemoveBackground={handleRemoveBackgroundPicture}
-							profileImage={profileImage}
-							backgroundImage={backgroundImage}
-						/>
-					</Popover>
+					{/* Trigger Icon */}
+					<div className="absolute right-0 bottom-0 md:right-1 md:bottom-1" onClick={() => setDisplayPopover(!displayPopover)} onMouseLeave={() => setDisplayPopover(false)}>
+						<IoColorWandOutline className="w-6 h-6 md:w-7 md:h-7" />
+
+						<Popover displayPopover={displayPopover} position="-mx-43 -my-8 sm:mx-7" style="text-gray-900 whitespace-nowrap bg-white rounded-sm shadow px-1">
+							<PopoverContent
+								onSelectPicture={triggerProfileInput}
+								onRemovePicture={handleRemoveProfilePicture}
+								onSelectBackground={triggerBackgroundInput}
+								onRemoveBackground={handleRemoveBackgroundPicture}
+								profileImage={profileImage}
+								backgroundImage={backgroundImage}
+							/>
+						</Popover>
+					</div>
 				</div>
 				{/* Hidden File Input */}
 				<input type="file" accept="image/*" ref={fileInputProfileRef} className="hidden" onChange={onProfileInputChange} />

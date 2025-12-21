@@ -14,7 +14,7 @@ import { Avatar } from "@/components/Badges/Avatar";
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { handleFormChange } from "@/utils/formHandlers";
 
-import { ApiPostUpdateProjectMember } from "@/lib/api/projectEditionServer";
+import { ApiPatchUpdateProjectMember } from "@/lib/api/projectEditionServer";
 
 const UpdateMemberModal = ({ user, projectId, role, talent, startDate, closeModalUpdate }) => {
 	const router = useRouter();
@@ -46,7 +46,7 @@ const UpdateMemberModal = ({ user, projectId, role, talent, startDate, closeModa
 				newStartDate: formInputs.memberStartDate === null ? "false" : DateTime.fromJSDate(formInputs.memberStartDate).toISODate(),
 			};
 
-			const result = await ApiPostUpdateProjectMember(projectId, payload);
+			const result = await ApiPatchUpdateProjectMember(projectId, payload);
 			if (!result.ok) {
 				showErrorToast(result.message || "Failed to update project member.");
 				return;

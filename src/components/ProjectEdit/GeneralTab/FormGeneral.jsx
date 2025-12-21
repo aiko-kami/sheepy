@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import General from "@/components/ProjectEdit/GeneralTab/General";
 import { handleFormChange } from "@/utils/formHandlers";
 
-import { ApiPostUpdateProjectTitleCategory, ApiPostUpdateProjectInformation, ApiPatchUpdateProjectCover } from "@/lib/api/projectEditionServer";
+import { ApiPatchUpdateProjectTitleCategory, ApiPatchUpdateProjectInformation, ApiPatchUpdateProjectCover } from "@/lib/api/projectEditionServer";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
@@ -48,7 +48,7 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 					payload.subCategory = formInputs.projectSubCategory;
 				}
 
-				const result = await ApiPostUpdateProjectTitleCategory(projectId, payload);
+				const result = await ApiPatchUpdateProjectTitleCategory(projectId, payload);
 
 				if (!result.ok) {
 					showErrorToast(result.message || "Failed to update project title and category.");
@@ -71,7 +71,7 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 					payload.creatorMotivation = formInputs.creatorMotivation;
 				}
 
-				const result = await ApiPostUpdateProjectInformation(projectId, payload);
+				const result = await ApiPatchUpdateProjectInformation(projectId, payload);
 
 				if (!result.ok) {
 					showErrorToast(result.message || "Failed to update project information.");
@@ -82,7 +82,7 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 				const payload = new FormData();
 				if (formInputs.projectCover && userPermissions.canEditCover) {
 					payload.append("image", formInputs.projectCover);
-					console.log("🚀 ~ onSubmit ~ payload:", payload);
+
 					const result = await ApiPatchUpdateProjectCover(projectId, payload);
 
 					if (!result.ok) {
@@ -101,7 +101,16 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 		<>
 			<form onSubmit={onSubmit}>
 				{/* Project general information */}
-				<General formInputs={formInputs} setFormInputs={setFormInputs} onChange={onChange} tagsList={tagsList} userPermissions={userPermissions} />
+				<General
+					projectId={projectId}
+					formInputs={formInputs}
+					setFormInputs={setFormInputs}
+					onChange={onChange}
+					objectives={objectives}
+					tags={tags}
+					tagsList={tagsList}
+					userPermissions={userPermissions}
+				/>
 			</form>
 		</>
 	);

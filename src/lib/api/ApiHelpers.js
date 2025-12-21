@@ -240,6 +240,10 @@ export async function apiPatch(path, body, mapper = (json) => json?.data ?? null
 	}
 }
 
+export async function apiPatchMultipart(path, body) {
+	return clientApiSendMultipart(path, "PATCH", body);
+}
+
 export async function apiDelete(path, body, mapper = (json) => json?.data ?? null) {
 	if (typeof window === "undefined") {
 		return serverApiSend(path, "DELETE", body, mapper);

@@ -14,9 +14,11 @@ export const AuthProvider = ({ children }) => {
 
 	const refreshUser = async () => {
 		try {
-			const userData = await ApiGetUserFromSessionClient();
-			if (userData) {
-				setUser(userData);
+			const result = await ApiGetUserFromSessionClient();
+
+			const user = result.data?.user;
+			if (user) {
+				setUser(user);
 			}
 		} catch (err) {
 			console.error("Failed to refresh user", err);

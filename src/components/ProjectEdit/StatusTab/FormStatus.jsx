@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Status from "@/components/ProjectEdit/StatusTab/Status";
 import { handleFormChange } from "@/utils/formHandlers";
 
-import { ApiPostUpdateProjectStatus, ApiPostUpdateProjectVisibility } from "@/lib/api/projectEditionServer";
+import { ApiPatchUpdateProjectStatus, ApiPatchUpdateProjectVisibility } from "@/lib/api/projectEditionServer";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
@@ -38,7 +38,7 @@ const FormStatus = ({ projectId, statusHistory, status, statusesList, startDate,
 					statusReason: formInputs.statusReason || "",
 				};
 
-				const result = await ApiPostUpdateProjectStatus(projectId, payload);
+				const result = await ApiPatchUpdateProjectStatus(projectId, payload);
 
 				if (!result.ok) {
 					showErrorToast(result.message || "Failed to update project location.");
@@ -55,7 +55,7 @@ const FormStatus = ({ projectId, statusHistory, status, statusesList, startDate,
 				if (userPermissions.canEditStartDate) {
 					payload.startDate = formInputs.projectStartDate || null;
 				}
-				const result = await ApiPostUpdateProjectVisibility(projectId, payload);
+				const result = await ApiPatchUpdateProjectVisibility(projectId, payload);
 
 				if (!result.ok) {
 					showErrorToast(result.message || "Failed to update project location.");

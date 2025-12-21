@@ -4,7 +4,7 @@ import Cover from "@/components/ProjectEdit/GeneralTab/Cover";
 import Tags from "@/components/ProjectEdit/GeneralTab/Tags";
 import Objectives from "@/components/ProjectEdit/GeneralTab/Objectives";
 
-const General = ({ formInputs, setFormInputs, onChange, tagsList, userPermissions }) => {
+const General = ({ projectId, formInputs, setFormInputs, onChange, objectives, tags, tagsList, userPermissions }) => {
 	return (
 		<>
 			{/* Project title and category */}
@@ -21,11 +21,11 @@ const General = ({ formInputs, setFormInputs, onChange, tagsList, userPermission
 			</div>
 			{/* Project tags */}
 			<div className="mb-8 lg:mb-10">
-				<Tags formInputs={formInputs} setFormInputs={setFormInputs} tagsList={tagsList} userPermissions={userPermissions} />
+				<Tags projectId={projectId} tags={tags} tagsList={tagsList} userPermissions={userPermissions} />
 			</div>
-			{/* Project objectives and phases */}
+			{/* Project objectives */}
 			<div className="mb-8 lg:mb-10">
-				<Objectives formInputs={formInputs} setFormInputs={setFormInputs} onChange={onChange} userPermissions={userPermissions} />
+				<Objectives projectId={projectId} objectives={objectives} userPermissions={userPermissions} />
 			</div>
 		</>
 	);

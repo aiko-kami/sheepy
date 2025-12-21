@@ -1,4 +1,4 @@
-import { apiGet, apiPost, apiPatch, apiDelete, clientApiSendMultipart } from "@/lib/api/ApiHelpers";
+import { apiGet, apiPost, apiPatch, apiDelete, apiPatchMultipart } from "@/lib/api/ApiHelpers";
 
 //GET requests
 
@@ -44,36 +44,46 @@ export async function ApiGetEditProjectDetails(projectLink) {
 
 //PATCH requests
 
-export async function ApiPostUpdateProjectTitleCategory(projectId, data) {
+export async function ApiPatchUpdateProjectTitleCategory(projectId, data) {
 	return apiPatch(`/projectEdition/titleCategory/${projectId}`, data);
 }
 
-export async function ApiPostUpdateProjectInformation(projectId, data) {
+export async function ApiPatchUpdateProjectInformation(projectId, data) {
 	return apiPatch(`/projectEdition/information/${projectId}`, data);
 }
 
-export async function ApiPatchUpdateProjectCover(projectId, formData) {
-	return clientApiSendMultipart(`/projectEdition/cover/${projectId}`, "PATCH", formData);
+export async function ApiPatchUpdateProjectCover(projectId, data) {
+	return apiPatchMultipart(`/projectEdition/cover/${projectId}`, data);
 }
 
-export async function ApiPostUpdateProjectMember(projectId, data) {
+export async function ApiPatchUpdateProjectMember(projectId, data) {
 	return apiPatch(`/projectEdition/members/${projectId}`, data);
 }
 
-export async function ApiPostUpdateProjectStatus(projectId, data) {
+export async function ApiPatchUpdateProjectStatus(projectId, data) {
 	return apiPatch(`/projectEdition/status/${projectId}`, data);
 }
 
-export async function ApiPostUpdateProjectVisibility(projectId, data) {
+export async function ApiPatchUpdateProjectVisibility(projectId, data) {
 	return apiPatch(`/projectEdition/visibility/${projectId}`, data);
 }
 
-export async function ApiPostUpdateProjectLocation(projectId, data) {
+export async function ApiPatchUpdateProjectLocation(projectId, data) {
 	return apiPatch(`/projectEdition/location/${projectId}`, data);
 }
 
+//POST requests
+
 export async function ApiPostAddTalentNeeded(projectId, data) {
 	return apiPost(`/projectEdition/talentNeeded/${projectId}`, data);
+}
+
+export async function ApiPostAddObjective(projectId, data) {
+	return apiPost(`/projectEdition/objective/${projectId}`, data);
+}
+
+export async function ApiPostAddTag(projectId, data) {
+	return apiPost(`/projectEdition/tag/${projectId}`, data);
 }
 
 //DELETE requests
@@ -84,4 +94,12 @@ export async function ApiDeleteRemoveProjectMember(projectId, data) {
 
 export async function ApiPostDeleteTalentNeeded(projectId, data) {
 	return apiDelete(`/projectEdition/talentNeeded/${projectId}`, data);
+}
+
+export async function ApiPostDeleteObjective(projectId, data) {
+	return apiDelete(`/projectEdition/objective/${projectId}`, data);
+}
+
+export async function ApiPostDeleteTag(projectId, data) {
+	return apiDelete(`/projectEdition/tag/${projectId}`, data);
 }

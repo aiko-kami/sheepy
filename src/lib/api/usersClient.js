@@ -1,43 +1,11 @@
+import { apiGet, apiPost, apiPatch, apiDelete, apiPatchMultipart } from "@/lib/api/ApiHelpers";
+
+//GET requests
+
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export async function ApiGetUserFromSessionClient() {
-	try {
-		const res = await fetch(`${BASE_URL}/users/myData`, {
-			credentials: "include",
-		});
-
-		const json = await res.json();
-
-		if (!res.ok) {
-			// Try to read backend error message if available
-			const errorMessage = json?.message || "Failed to fetch user";
-			throw new Error(errorMessage);
-		}
-
-		return json.data.user;
-	} catch (error) {
-		throw error;
-	}
-}
-
-export async function ApiGetUserSettingsClient() {
-	try {
-		const res = await fetch(`${BASE_URL}/users/mySettings`, {
-			credentials: "include",
-		});
-
-		const json = await res.json();
-
-		if (!res.ok) {
-			// Try to read backend error message if available
-			const errorMessage = json?.message || "Failed to fetch user settings";
-			throw new Error(errorMessage);
-		}
-
-		return json.data.userSettings;
-	} catch (error) {
-		throw error;
-	}
+	return apiGet("/users/myData");
 }
 
 export async function ApiUpdateUserBioDescription({ description, bio }) {
@@ -297,13 +265,13 @@ export async function ApiUpdateUserPassword({ oldPassword, newPassword, confirmN
 
 export async function ApiUpdateUserPicture(file) {
 	try {
-		const formData = new FormData();
-		formData.append("image", file); // match the backend's expected field name
+		const payload = new FormData();
+		payload.append("image", file); // match the backend's expected field name
 
 		const res = await fetch(`${BASE_URL}/users/updateMyPicture`, {
 			method: "POST",
 			credentials: "include",
-			body: formData, // no need to set Content-Type, fetch does it automatically
+			body: payload, // no need to set Content-Type, fetch does it automatically
 		});
 
 		const json = await res.json();
@@ -320,13 +288,13 @@ export async function ApiUpdateUserPicture(file) {
 
 export async function ApiUpdateUserBackgroundPicture(file) {
 	try {
-		const formData = new FormData();
-		formData.append("image", file); // match the backend's expected field name
+		const payload = new FormData();
+		payload.append("image", file); // match the backend's expected field name
 
 		const res = await fetch(`${BASE_URL}/users/updateMyBackgroundPicture`, {
 			method: "POST",
 			credentials: "include",
-			body: formData, // no need to set Content-Type, fetch does it automatically
+			body: payload, // no need to set Content-Type, fetch does it automatically
 		});
 
 		const json = await res.json();
