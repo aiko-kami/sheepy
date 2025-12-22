@@ -67,7 +67,7 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 				if (userPermissions.canEditGoal) {
 					payload.goal = formInputs.projectGoal;
 				}
-				if (userPermissions.creatorMotivation) {
+				if (userPermissions.canEditCreatorMotivation) {
 					payload.creatorMotivation = formInputs.creatorMotivation;
 				}
 
