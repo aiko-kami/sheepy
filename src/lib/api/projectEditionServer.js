@@ -88,18 +88,22 @@ export async function ApiPostAddTag(projectId, data) {
 
 //DELETE requests
 
-export async function ApiDeleteRemoveProjectMember(projectId, data) {
+export async function ApiDeleteProjectMember(projectId, data) {
 	return apiDelete(`/projectEdition/members/${projectId}`, data);
 }
 
-export async function ApiPostDeleteTalentNeeded(projectId, data) {
+export async function ApiDeleteProjectCover(projectId) {
+	return apiDelete(`/projectEdition/cover/${projectId}`);
+}
+
+export async function ApiDeleteTalentNeeded(projectId, data) {
 	return apiDelete(`/projectEdition/talentNeeded/${projectId}`, data);
 }
 
-export async function ApiPostDeleteObjective(projectId, data) {
+export async function ApiDeleteObjective(projectId, data) {
 	return apiDelete(`/projectEdition/objective/${projectId}`, data);
 }
 
-export async function ApiPostDeleteTag(projectId, data) {
+export async function ApiDeleteTag(projectId, data) {
 	return apiDelete(`/projectEdition/tag/${projectId}`, data);
 }

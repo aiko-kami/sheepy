@@ -9,7 +9,7 @@ import { BadgeOwner } from "@/components/Badges/Badges";
 import { Avatar } from "@/components/Badges/Avatar";
 import Warning from "@/components/Errors/Warning";
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
-import { ApiDeleteRemoveProjectMember } from "@/lib/api/projectEditionServer";
+import { ApiDeleteProjectMember } from "@/lib/api/projectEditionServer";
 import WARNINGS from "@/lib/constants/warnings";
 
 const RemoveMemberModal = ({ member, projectId, role, talent, startDate, closeModalRemove }) => {
@@ -25,7 +25,7 @@ const RemoveMemberModal = ({ member, projectId, role, talent, startDate, closeMo
 				memberId: formInputs.memberId,
 			};
 
-			const result = await ApiDeleteRemoveProjectMember(projectId, payload);
+			const result = await ApiDeleteProjectMember(projectId, payload);
 			if (!result.ok) {
 				showErrorToast(result.message || "Failed to remove project member.");
 				return;

@@ -10,7 +10,7 @@ import AddTalentButton from "@/components/Forms/TalentNeededInputField/AddTalent
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
-import { ApiPostAddTalentNeeded, ApiPostDeleteTalentNeeded } from "@/lib/api/projectEditionServer";
+import { ApiPostAddTalentNeeded, ApiDeleteTalentNeeded } from "@/lib/api/projectEditionServer";
 
 const TalentInputForm = ({ projectId, talentsNeeded, disabled = false }) => {
 	const router = useRouter();
@@ -85,7 +85,7 @@ const TalentInputForm = ({ projectId, talentsNeeded, disabled = false }) => {
 			talent: talentToRemove.talent,
 		};
 
-		const result = await ApiPostDeleteTalentNeeded(projectId, payload);
+		const result = await ApiDeleteTalentNeeded(projectId, payload);
 		if (!result.ok) {
 			showErrorToast(result.message || "Failed to remove talent needed.");
 			return;

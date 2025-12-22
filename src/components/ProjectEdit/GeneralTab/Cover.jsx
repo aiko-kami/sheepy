@@ -1,10 +1,13 @@
 import { IoImages } from "react-icons/io5";
 import { FileDropField } from "@/components/Forms/FileDropField";
 import { Button } from "@/components/Buttons/Buttons";
+import Modal from "@/components/Modals/Modal";
+import RemoveCoverModal from "@/components/Modals/ProjectEdit/RemoveCoverModal";
+
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
 import ERRORS from "@/lib/constants/errors";
 
-const Cover = ({ formInputs, setFormInputs, userPermissions }) => {
+const Cover = ({ formInputs, setFormInputs, userPermissions, closeModalCoverRemove, modalDisplayCoverRemove, confirmRemoveCover }) => {
 	const fileTypesAllowed = {
 		"image/png": ".png",
 		"image/jpeg": ".jpg",
@@ -31,19 +34,24 @@ const Cover = ({ formInputs, setFormInputs, userPermissions }) => {
 					<FileDropField formInputs={formInputs} setFormInputs={setFormInputs} fileTypesAllowed={fileTypesAllowed} maxFileSizeAllowed={maxFileSizeAllowed} disabled={!userPermissions.canEditCover} />
 				</div>
 				{userPermissions.canEditCover && (
-					<div className="flex justify-center">
-						<Button
-							btnProps={{
-								type: "submit",
-								name: "action",
-								value: "submit-cover",
-								btnColor: "blue",
-								disabled: !userPermissions.canEditCover,
-							}}
-						>
-							Save cover
-						</Button>
-					</div>
+					<>
+						<div className="flex justify-center">
+							<Button
+								btnProps={{
+									type: "submit",
+									name: "action",
+									value: "submit-cover",
+									btnColor: "blue",
+									disabled: !userPermissions.canEditCover,
+								}}
+							>
+								Save cover
+							</Button>
+						</div>
+						<Modal modalDisplay={modalDisplayCoverRemove} closeModal={closeModalCoverRemove} closeModalWithBackground={closeModalCoverRemove} modalSize={"sm"} modalTitle={"Remove cover"}>
+							<RemoveCoverModal onConfirm={confirmRemoveCover} closeModalRemove={closeModalCoverRemove} />
+						</Modal>
+					</>
 				)}
 			</div>
 		</>

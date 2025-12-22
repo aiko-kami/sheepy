@@ -10,7 +10,7 @@ import AddObjectiveButton from "@/components/Forms/ObjectiveInputForm/AddObjecti
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
-import { ApiPostAddObjective, ApiPostDeleteObjective } from "@/lib/api/projectEditionServer";
+import { ApiPostAddObjective, ApiDeleteObjective } from "@/lib/api/projectEditionServer";
 
 const ObjectiveInputForm = ({ projectId, objectives, disabled = false }) => {
 	const router = useRouter();
@@ -76,7 +76,7 @@ const ObjectiveInputForm = ({ projectId, objectives, disabled = false }) => {
 			objective: objectiveToRemove,
 		};
 
-		const result = await ApiPostDeleteObjective(projectId, payload);
+		const result = await ApiDeleteObjective(projectId, payload);
 		if (!result.ok) {
 			showErrorToast(result.message || "Failed to remove objective.");
 			return;

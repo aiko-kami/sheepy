@@ -10,7 +10,7 @@ import TagsList from "@/components/Forms/TagInputForm/TagsList";
 import AddTagButton from "@/components/Forms/TagInputForm/AddTagButton";
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
-import { ApiPostAddTag, ApiPostDeleteTag } from "@/lib/api/projectEditionServer";
+import { ApiPostAddTag, ApiDeleteTag } from "@/lib/api/projectEditionServer";
 
 const TagInputForm = ({ projectId, tags = [], tagsList = [], disabled = false }) => {
 	const router = useRouter();
@@ -164,7 +164,7 @@ const TagInputForm = ({ projectId, tags = [], tagsList = [], disabled = false })
 			tagId: tagToRemove.tagId,
 		};
 
-		const result = await ApiPostDeleteTag(projectId, payload);
+		const result = await ApiDeleteTag(projectId, payload);
 		if (!result.ok) {
 			showErrorToast(result.message || "Failed to remove tag.");
 			return;

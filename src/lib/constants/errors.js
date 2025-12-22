@@ -1,8 +1,10 @@
 const ERRORS = {
 	PROJECT_EDIT: {
+		EDIT_TITLE_CATEGORY: "You do not have permission to edit the project title or category.",
 		EDIT_TITLE: "You do not have permission to edit the project title.",
 		EDIT_CATEGORY: "You do not have permission to edit the project category.",
 		EDIT_SUBCATEGORY: "You do not have permission to edit the project sub-category.",
+		EDIT_INFORMATION: "You do not have permission to edit the project information.",
 		EDIT_SUMMARY: "You do not have permission to edit the project summary.",
 		EDIT_DESCRIPTION: "You do not have permission to edit the project description.",
 		EDIT_GOAL: "You do not have permission to edit the project goal.",

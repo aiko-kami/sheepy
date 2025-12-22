@@ -7,6 +7,7 @@ import General from "@/components/ProjectEdit/GeneralTab/General";
 import { handleFormChange } from "@/utils/formHandlers";
 
 import { ApiPatchUpdateProjectTitleCategory, ApiPatchUpdateProjectInformation, ApiPatchUpdateProjectCover } from "@/lib/api/projectEditionServer";
+import ERRORS from "@/lib/constants/errors";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
@@ -27,8 +28,25 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 		projectTagsExisting: tags || [],
 		projectTagsNew: [],
 	});
+	const [modalDisplayCoverRemove, setModalDisplayCoverRemove] = useState(false);
+
+	const closeModalCoverRemove = () => {
+		setModalDisplayCoverRemove(false);
+	};
 
 	const onChange = handleFormChange(setFormInputs);
+
+	const confirmRemoveCover = async () => {
+		const result = await ApiPatchUpdateProjectCover(projectId);
+
+		if (!result.ok) {
+			showErrorToast(result.message || "Failed to remove project cover.");
+			return;
+		}
+		router.refresh();
+		setModalDisplayCoverRemove(false);
+		showSuccessToast("The project cover has been removed.");
+	};
 
 	const onSubmit = async (event) => {
 		event.preventDefault();
@@ -37,6 +55,10 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 
 		try {
 			if (formAction === "submit-titleCategory") {
+				if (!userPermissions.canEditTitle && !userPermissions.canEditCategory && !userPermissions.canEditSubCategory) {
+					showErrorToast(ERRORS.PROJECT_EDIT.EDIT_TITLE_CATEGORY);
+					return;
+				}
 				const payload = {};
 				if (userPermissions.canEditTitle) {
 					payload.title = formInputs.projectTitle;
@@ -57,6 +79,11 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 				showSuccessToast("The project has been updated.");
 				router.refresh();
 			} else if (formAction === "submit-information") {
+				if (!userPermissions.canEditSummary && !userPermissions.canEditDescription && !userPermissions.canEditGoal && !userPermissions.canEditCreatorMotivation) {
+					showErrorToast(ERRORS.PROJECT_EDIT.EDIT_INFORMATION);
+					return;
+				}
+
 				const payload = {};
 				if (userPermissions.canEditSummary) {
 					payload.summary = formInputs.projectSummary;
@@ -80,8 +107,18 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 				showSuccessToast("The project has been updated.");
 				router.refresh();
 			} else if (formAction === "submit-cover") {
-				const payload = new FormData();
+				if (!userPermissions.canEditCover) {
+					showErrorToast(ERRORS.PROJECT_EDIT.EDIT_COVER);
+					return;
+				}
+
+				if (!formInputs.projectCover) {
+					setModalDisplayCoverRemove(true);
+					return;
+				}
+
 				if (formInputs.projectCover && userPermissions.canEditCover) {
+					const payload = new FormData();
 					payload.append("image", formInputs.projectCover);
 
 					const result = await ApiPatchUpdateProjectCover(projectId, payload);
@@ -91,6 +128,7 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 						return;
 					}
 					showSuccessToast("The project cover has been updated.");
+					router.refresh();
 				}
 			}
 		} catch (error) {
@@ -111,6 +149,9 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 					tags={tags}
 					tagsList={tagsList}
 					userPermissions={userPermissions}
+					closeModalCoverRemove={closeModalCoverRemove}
+					modalDisplayCoverRemove={modalDisplayCoverRemove}
+					confirmRemoveCover={confirmRemoveCover}
 				/>
 			</form>
 		</>
