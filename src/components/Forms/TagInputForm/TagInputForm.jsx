@@ -76,9 +76,6 @@ const TagInputForm = ({ projectId, tags = [], tagsList = [], disabled = false })
 		};
 
 		const result = await ApiPostAddTag(projectId, payload);
-
-		console.log("🚀 ~ addExistingTag ~ result:", result.data.tag);
-
 		if (!result.ok) {
 			showErrorToast(result.message || "Failed to add tag.");
 			return;

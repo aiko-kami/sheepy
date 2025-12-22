@@ -78,6 +78,7 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 					return;
 				}
 				showSuccessToast("The project has been updated.");
+				router.refresh();
 			} else if (formAction === "submit-cover") {
 				const payload = new FormData();
 				if (formInputs.projectCover && userPermissions.canEditCover) {
