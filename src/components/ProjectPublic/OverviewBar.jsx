@@ -60,7 +60,7 @@ const OverviewBar = ({ category, subCategoryDetails, location, likes, status, st
 						<p className={`${colorClassStatus} font-semibold`}>{status}</p>
 					</li>
 				</div>
-				{/* Buttons Join project, Like and Share */}
+				{/* Buttons Join project, Edite project */}
 				<li className="flex ml-auto text-nowrap">
 					<ActionButtons projectLink={projectLink} talentsNeeded={talentsNeeded} />
 				</li>

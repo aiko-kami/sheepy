@@ -44,31 +44,31 @@ export async function ApiGetEditProjectDetails(projectLink) {
 
 //PATCH requests
 
-export async function ApiPatchUpdateProjectTitleCategory(projectId, data) {
+export async function ApiUpdateProjectTitleCategory(projectId, data) {
 	return apiPatch(`/projectEdition/titleCategory/${projectId}`, data);
 }
 
-export async function ApiPatchUpdateProjectInformation(projectId, data) {
+export async function ApiUpdateProjectInformation(projectId, data) {
 	return apiPatch(`/projectEdition/information/${projectId}`, data);
 }
 
-export async function ApiPatchUpdateProjectCover(projectId, data) {
+export async function ApiUpdateProjectCover(projectId, data) {
 	return apiPatchMultipart(`/projectEdition/cover/${projectId}`, data);
 }
 
-export async function ApiPatchUpdateProjectMember(projectId, data) {
+export async function ApiUpdateProjectMember(projectId, data) {
 	return apiPatch(`/projectEdition/members/${projectId}`, data);
 }
 
-export async function ApiPatchUpdateProjectStatus(projectId, data) {
+export async function ApiUpdateProjectStatus(projectId, data) {
 	return apiPatch(`/projectEdition/status/${projectId}`, data);
 }
 
-export async function ApiPatchUpdateProjectVisibility(projectId, data) {
+export async function ApiUpdateProjectVisibility(projectId, data) {
 	return apiPatch(`/projectEdition/visibility/${projectId}`, data);
 }
 
-export async function ApiPatchUpdateProjectLocation(projectId, data) {
+export async function ApiUpdateProjectLocation(projectId, data) {
 	return apiPatch(`/projectEdition/location/${projectId}`, data);
 }
 

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Location from "@/components/ProjectEdit/LocationTab/Location";
 import { handleFormChange } from "@/utils/formHandlers";
 
-import { ApiPatchUpdateProjectLocation } from "@/lib/api/projectEditionServer";
+import { ApiUpdateProjectLocation } from "@/lib/api/projectEditionServer";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
@@ -27,7 +27,7 @@ const FormLocation = ({ projectId, onlineOnly, city, country, userPermissions })
 			locationCountry: formInputs.locationCountry,
 		};
 
-		const result = await ApiPatchUpdateProjectLocation(projectId, payload);
+		const result = await ApiUpdateProjectLocation(projectId, payload);
 
 		if (!result.ok) {
 			showErrorToast(result.message || "Failed to update project location.");

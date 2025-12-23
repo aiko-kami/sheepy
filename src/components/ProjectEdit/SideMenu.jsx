@@ -12,7 +12,7 @@ const SideMenu = ({ projectLink, status, statusBgColor }) => {
 					</div>
 				</li>
 				<li className="mb-3 rounded-lg bg-slate-800/70 border border-slate-700 hover:bg-slate-700 hover:text-blue-500 transition duration-150 ease-in-out">
-					<Link href={`/projects/${projectLink}`} className="flex justify-center w-full h-full p-2.5 rounded-lg">
+					<Link href={`/projects/${projectLink}`} prefetch={false} className="flex justify-center w-full h-full p-2.5 rounded-lg">
 						<IoEyeOutline className="mr-2 text-xl mt-0.5" />
 						View project public page
 					</Link>

@@ -7,15 +7,14 @@ import { SelectField } from "@/components/Forms/SelectField";
 import InputField from "@/components/Forms/InputField";
 import { PermissionsErrorText } from "@/components/Errors/PermissionsError";
 import ERRORS from "@/lib/constants/errors";
+import { showErrorToast } from "@/utils/toast";
 
 import { ApiGetAllCategories } from "@/lib/api/categories";
 
 const TitleCategory = ({ formInputs, onChange, setFormInputs, userPermissions }) => {
 	const [categories, setCategories] = useState([]);
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(null);
-
 	const [subCategories, setSubCategories] = useState([]);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		const fetchCategories = async () => {
@@ -27,13 +26,12 @@ const TitleCategory = ({ formInputs, onChange, setFormInputs, userPermissions })
 				} else {
 					showErrorToast(result.message || "Failed to load categories");
 				}
-			} catch (err) {
-				setError(err.message);
+			} catch (error) {
+				showErrorToast(error.message);
 			} finally {
 				setLoading(false);
 			}
 		};
-
 		fetchCategories();
 	}, []);
 
@@ -42,7 +40,7 @@ const TitleCategory = ({ formInputs, onChange, setFormInputs, userPermissions })
 	categories.forEach((category) => {
 		// Add the main category name
 		optionsListCat.push({
-			value: category.name,
+			value: category.categoryId,
 			option: category.name,
 		});
 	});
@@ -55,34 +53,36 @@ const TitleCategory = ({ formInputs, onChange, setFormInputs, userPermissions })
 	// Set sub-categories when the component mounts and when selectedCategory changes
 	useEffect(() => {
 		if (!loading && categories.length > 0) {
-			const selectedSubCategories = getSubCategories(formInputs.projectCategory);
+			const selectedSubCategories = getSubCategories(formInputs.projectCategoryId);
 			setSubCategories(selectedSubCategories);
+
 			const subCategoryExists = selectedSubCategories.some((sub) => sub.name === formInputs.projectSubCategory);
 
 			if (!subCategoryExists) {
 				setFormInputs((prevState) => ({
 					...prevState,
-					projectSubCategory: "",
+					projectSubCategory: selectedSubCategories[0]?.name || "",
 				}));
 			}
 		}
-	}, [formInputs.projectCategory, loading, categories]);
+	}, [formInputs.projectCategoryId, loading, categories]);
 
 	// Update the state when the category changes
 	const handleCategoryChange = (e) => {
-		const { name, value } = e.target;
-		onChange(e); // Update the main form state
-		const selectedSubCategories = getSubCategories(value);
-		setSubCategories(selectedSubCategories);
-		setFormInputs((prevState) => ({
-			...prevState,
-			projectSubCategory: selectedSubCategories[0]?.name || "",
+		const selectedCategoryId = e.target.value;
+
+		const selectedCategory = categories.find((cat) => cat.categoryId === selectedCategoryId);
+
+		setFormInputs((prev) => ({
+			...prev,
+			projectCategoryId: selectedCategoryId,
+			projectCategory: selectedCategory?.name || "",
 		}));
 	};
 
 	// Get sub-categories for the selected category
-	const getSubCategories = (categoryName) => {
-		const category = categories.find((cat) => cat.name === categoryName);
+	const getSubCategories = (categoryId) => {
+		const category = categories.find((cat) => cat.categoryId === categoryId);
 		return category ? category.subCategories : [];
 	};
 
@@ -114,9 +114,9 @@ const TitleCategory = ({ formInputs, onChange, setFormInputs, userPermissions })
 						<div className="flex-1 mb-6 lg:mb-0 lg:mr-2">
 							<div className="text-sm">Project category</div>
 							<SelectField
-								inputName="projectCategory"
+								inputName="projectCategoryId"
 								possibleValues={optionsListCat}
-								inputValue={formInputs.projectCategory}
+								inputValue={formInputs.projectCategoryId}
 								onChange={handleCategoryChange}
 								disabled={!userPermissions.canEditCategory}
 								disabledMessage={ERRORS.PROJECT_EDIT.EDIT_CATEGORY}

@@ -20,13 +20,14 @@ const ActionButtons = ({ projectLink, talentsNeeded }) => {
 
 	return (
 		<>
-			{/* Button join project */}
 			<div className="text-center flex justify-between w-full gap-4">
+				{/* Button join project */}
 				<Button btnProps={{ btnSize: "sm-std", type: "button", action: showModal }}>
 					<div className="flex items-center">
 						Apply <IoArrowForward className="text-2xl ml-2 mt-0.5" />
 					</div>
 				</Button>
+				{/* Button edit project */}
 				<Link href={`/projects/${projectLink}/edit/general`}>
 					<ButtonCircle btnProps={{ btnSize: "2xl", type: "button", btnColor: "green" }}>
 						<IoBuild />
