@@ -44,7 +44,7 @@ const RemoveMemberModal = ({ member, projectId, role, talent, startDate, closeMo
 				{/* User profile picture and username */}
 				<div className="flex items-center px-8 mb-6">
 					<div className="mr-2">
-						<Avatar img={member.profilePicture.link} size={"xl"} alt={"user profile picture"} />
+						<Avatar img={member.profilePicture?.link} size={"xl"} alt={"user profile picture"} />
 					</div>
 					<div className="font-semibold text-lg lg:whitespace-nowrap">{member.username}</div>
 					{role === "owner" && (

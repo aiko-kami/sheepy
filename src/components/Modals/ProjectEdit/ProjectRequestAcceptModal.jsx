@@ -17,7 +17,7 @@ const ProjectRequestAcceptModal = ({ closeModalAccept, request }) => {
 					<h2 className="text-lg text-gray-400 font-semibold mb-1">Sender:</h2>
 					<div className="flex items-center pl-1 xl:pl-4">
 						<div className="mr-2">
-							<Avatar img={request.sender.profilePicture.link} size={"sm"} alt={"user profile picture"} />
+							<Avatar img={request.sender.profilePicture?.link} size={"sm"} alt={"user profile picture"} />
 						</div>
 						<div className="font-semibold">{request.sender.username}</div>
 					</div>

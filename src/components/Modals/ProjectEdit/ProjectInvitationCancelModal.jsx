@@ -17,7 +17,7 @@ const ProjectInvitationCancelModal = ({ closeModalCancel, invitation }) => {
 						<h2 className="text-lg text-gray-400 font-semibold mb-1">Receiver:</h2>
 						<div className="flex items-center pl-1 xl:pl-4">
 							<div className="mr-2">
-								<Avatar img={invitation.receiver.profilePicture.link} size={"sm"} alt={"user profile picture"} />
+								<Avatar img={invitation.receiver.profilePicture?.link} size={"sm"} alt={"user profile picture"} />
 							</div>
 							<div className="font-semibold">{invitation.receiver.username}</div>
 						</div>
@@ -28,7 +28,7 @@ const ProjectInvitationCancelModal = ({ closeModalCancel, invitation }) => {
 						<h2 className="text-lg text-gray-400 font-semibold mb-1">Sent by:</h2>
 						<div className="flex items-center pl-1 xl:pl-4">
 							<div className="mr-2">
-								<Avatar img={invitation.sender.profilePicture.link} size={"sm"} alt={"user profile picture"} />
+								<Avatar img={invitation.sender.profilePicture?.link} size={"sm"} alt={"user profile picture"} />
 							</div>
 							<div className="font-semibold">{invitation.sender.username}</div>
 						</div>

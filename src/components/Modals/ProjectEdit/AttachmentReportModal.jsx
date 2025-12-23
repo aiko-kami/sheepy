@@ -49,7 +49,7 @@ const AttachmentReportModal = ({ closeModalReport, attachment, projectId }) => {
 				<div className="flex items-center text-sm">
 					<span className="mr-2">by</span>
 					<div className="mr-2">
-						<Avatar img={attachment.updatedBy.profilePicture.link} size={"sm"} alt={"user profile picture"} />
+						<Avatar img={attachment.updatedBy.profilePicture?.link} size={"sm"} alt={"user profile picture"} />
 					</div>
 					<div className="whitespace-nowrap font-semibold">{attachment.updatedBy.username}</div>
 				</div>

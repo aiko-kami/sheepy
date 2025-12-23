@@ -12,7 +12,7 @@ const JoinProjectDetailsModal = ({ joinProject, type }) => {
 					<h2 className="text-lg text-gray-400 font-semibold mb-1">{label}</h2>
 					<div className="flex items-center pl-1 xl:pl-4">
 						<div className="mr-2">
-							<Avatar img={user.profilePicture.link} size={"sm"} alt={"user profile picture"} />
+							<Avatar img={user.profilePicture?.link} size={"sm"} alt={"user profile picture"} />
 						</div>
 						<div className="font-semibold">{user.username}</div>
 					</div>
@@ -24,7 +24,7 @@ const JoinProjectDetailsModal = ({ joinProject, type }) => {
 						<h2 className="text-lg text-gray-400 font-semibold mb-1">Sent by:</h2>
 						<div className="flex items-center pl-1 xl:pl-4">
 							<div className="mr-2">
-								<Avatar img={joinProject.sender.profilePicture.link} size={"sm"} alt={"user profile picture"} />
+								<Avatar img={joinProject.sender.profilePicture?.link} size={"sm"} alt={"user profile picture"} />
 							</div>
 							<div className="font-semibold">{joinProject.sender.username}</div>
 						</div>

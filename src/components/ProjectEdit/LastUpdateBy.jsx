@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Avatar } from "@/components/Badges/Avatar";
 import { formatIsoTimestamp } from "@/utils/dateHandlers";
 
@@ -17,7 +16,7 @@ const LastUpdateBy = ({ updatedBy, updatedAt }) => {
 							<span className="flex items-center mr-1">
 								<Link href={`/users/${updatedBy.userId}`}>
 									<div className="mr-1">
-										<Avatar img={updatedBy.profilePicture.link} size={"sm"} alt={"user profile picture"} />
+										<Avatar img={updatedBy.profilePicture?.link} size={"sm"} alt={"user profile picture"} />
 									</div>
 								</Link>
 								<div className="lg:whitespace-nowrap font-semibold">
@@ -33,7 +32,7 @@ const LastUpdateBy = ({ updatedBy, updatedAt }) => {
 							<span className="flex items-center">
 								<Link href={`/users/${updatedBy.userId}`}>
 									<div className="mr-1">
-										<Avatar img={updatedBy.profilePicture.link} size={"sm"} alt={"user profile picture"} />
+										<Avatar img={updatedBy.profilePicture?.link} size={"sm"} alt={"user profile picture"} />
 									</div>
 								</Link>
 								<div className="font-semibold">

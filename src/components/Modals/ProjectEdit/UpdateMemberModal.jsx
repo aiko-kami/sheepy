@@ -66,7 +66,7 @@ const UpdateMemberModal = ({ user, projectId, role, talent, startDate, closeModa
 				<div className="md:flex items-center mb-6">
 					<div className="flex items-center mb-4 md:mb-0">
 						<div className="mr-2">
-							<Avatar img={user.profilePicture.link} size={"xl"} alt={"user profile picture"} />
+							<Avatar img={user.profilePicture?.link} size={"xl"} alt={"user profile picture"} />
 						</div>
 						<div className="font-semibold text-lg lg:whitespace-nowrap">{user.username}</div>
 					</div>

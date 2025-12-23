@@ -47,7 +47,7 @@ const AttachmentsTable = ({ attachments, projectId, userPermissions }) => {
 								<td scope="row" className="p-2 md:px-4 md:py-2 text-center">
 									<div className="flex items-center justify-start">
 										<div className="mr-2 lg:ml-6">
-											<Avatar img={attachment.updatedBy.profilePicture.link} size={"std"} alt={"user profile picture"} />
+											<Avatar img={attachment.updatedBy.profilePicture?.link} size={"std"} alt={"user profile picture"} />
 										</div>
 										<div className="text-gray-400 whitespace-nowrap">{attachment.updatedBy.username}</div>
 									</div>
