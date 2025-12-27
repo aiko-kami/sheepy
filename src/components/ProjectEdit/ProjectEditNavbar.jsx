@@ -45,7 +45,7 @@ const ProjectEditNavbar = ({ projectRights }) => {
 			return "inline-block p-3 min-w-full text-gray-500 cursor-default opacity-60";
 		}
 
-		return `inline-block p-3 min-w-full rounded-lg ${isActive ? "text-white bg-blue-600" : "text-gray-300 hover:bg-gray-700/80 hover:text-white transition duration-150 ease-in-out"}`;
+		return `inline-block p-3 min-w-full rounded-lg ${isActive ? "text-white bg-blue-600" : "text-gray-300 lg:hover:bg-gray-700/80 lg:hover:text-white transition duration-150 ease-in-out"}`;
 	};
 
 	return (
