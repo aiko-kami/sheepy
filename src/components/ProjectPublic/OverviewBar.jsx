@@ -6,19 +6,21 @@ import { Badge, BadgeRounded } from "@/components/Badges/Badges";
 const OverviewBar = ({ category, subCategoryDetails, location, likes, status, statusColorClass, projectLink, talentsNeeded }) => {
 	const colorClassStatus = statusColorClass && !statusColorClass.startsWith("#") ? `text-${statusColorClass}` : "text-gray-400";
 
+	const { onlineOnly = false, city = null, country = null } = location ?? {};
+
 	return (
 		<>
 			{/* Category, location, likes, project status */}
 			<ul className="flex flex-col md:flex-row lg:px-2 md:items-center text-sm space-y-3 md:space-y-0 md:gap-x-6">
 				{/* Project category and sub-category */}
-				<li className="flex text-nowrap space-x-2">
+				<li className="flex items-center text-nowrap space-x-2">
 					<Badge badge={category} size={"xs-sm"} title="Project category" />
 					<BadgeRounded badge={subCategoryDetails} size={"xs-sm"} title="Project sub-category" />
 				</li>
 
 				{/* Project location */}
 				<li className="flex text-nowrap">
-					{location.onlineOnly ? (
+					{onlineOnly ? (
 						<>
 							<IoGlobeOutline className="text-blue-500 mr-1 text-xl" title="Online project" />
 							<p className="font-medium">Online only</p>
@@ -26,23 +28,15 @@ const OverviewBar = ({ category, subCategoryDetails, location, likes, status, st
 					) : (
 						<>
 							<IoLocationOutline className="text-gray-400 mr-1 text-xl" title="Project location" />
-							<p className="font-semibold">
-								{location.city && location.country
-									? `${location.city}, ${location.country}`
-									: location.city || location.country || <span className="italic text-gray-400">Location not specified</span>}
-							</p>
+							<p className="font-semibold">{city && country ? `${city}, ${country}` : city || country || <span className="italic text-gray-400">Location not specified</span>}</p>
 						</>
 					)}
 				</li>
 
-				{/* Project status */}
+				{/* Project status and Project likes */}
 				<li className="flex text-nowrap">
 					<IoFitness className={`${colorClassStatus} mr-1 text-xl justify-center`} title="Project status" />
-					<p className={`${colorClassStatus} font-semibold`}>{status}</p>
-				</li>
-
-				{/* Project likes */}
-				<li className="flex text-nowrap">
+					<p className={`${colorClassStatus} font-semibold mr-2`}>{status ? <>{status}</> : <span className="italic text-gray-400">Status not found</span>}</p>
 					<button className="relative group mr-1 text-xl" title="Like this project">
 						<IoHeartOutline className="text-pink-600 group-hover:hidden" />
 						{/* Filled on hover */}

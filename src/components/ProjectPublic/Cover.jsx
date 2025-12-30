@@ -5,7 +5,7 @@ import { IoBookmarkOutline, IoShareSocialOutline } from "react-icons/io5";
 import { ButtonCircle } from "@/components/Buttons/Buttons";
 import { Avatar } from "@/components/Badges/Avatar";
 
-const Cover = ({ title, coverLink, ownerUserId, ownerUsername, ownerProfilePicture }) => {
+const Cover = ({ title, coverLink, creatorUserId, creatorUsername, creatorProfilePicture }) => {
 	return (
 		<>
 			<div className="relative mb-3 w-full h-50 sm:h-60 md:h-110 rounded-xl overflow-hidden">
@@ -32,12 +32,12 @@ const Cover = ({ title, coverLink, ownerUserId, ownerUsername, ownerProfilePictu
 						<div className="sm:text-lg flex items-center justify-between ml-2">
 							<div className="flex items-center">
 								<div className="flex items-center justify-center">
-									<Link href={`/users/${ownerUserId}`} className="rounded-full">
-										<Avatar img={ownerProfilePicture} size={"lg"} alt={"creator profile picture"} />
+									<Link href={`/users/${creatorUserId}`} className="rounded-full">
+										<Avatar img={creatorProfilePicture} size={"lg"} alt={"creator profile picture"} />
 									</Link>
-									<Link href={`/users/${ownerUserId}`} className="ml-1 mr-2 font-semibold hover:text-blue-400 duration-100 transition ease-in-out">
-										<span className="mx-1">by</span>
-										{ownerUsername}
+									<Link href={`/users/${creatorUserId}`} className="ml-1 mr-2 font-semibold hover:text-blue-400 duration-100 transition ease-in-out">
+										<span className="text-sm mx-1">by</span>
+										{creatorUsername}
 									</Link>
 								</div>
 							</div>
