@@ -9,59 +9,50 @@ const OverviewBar = ({ category, subCategoryDetails, location, likes, status, st
 	return (
 		<>
 			{/* Category, location, likes, project status */}
-			<ul className="sm:flex lg:px-2 items-start text-sm">
-				<div className="flex items-center justify-between mb-2 sm:mb-0">
-					<div className="flex gap-2">
-						{/* Project category */}
-						<li className="flex mb-2 sm:mb-0 justify-center" title="Project category">
-							<Badge badge={category} size={"xs-sm"} />
-						</li>
+			<ul className="flex flex-col md:flex-row lg:px-2 md:items-center text-sm space-y-3 md:space-y-0 md:gap-x-6">
+				{/* Project category and sub-category */}
+				<li className="flex text-nowrap space-x-2">
+					<Badge badge={category} size={"xs-sm"} title="Project category" />
+					<BadgeRounded badge={subCategoryDetails} size={"xs-sm"} title="Project sub-category" />
+				</li>
 
-						{/* Project sub-category */}
-						<li className="flex mb-2 sm:mb-0 sm:ml-4 justify-center" title="Project sub-category">
-							<BadgeRounded badge={subCategoryDetails} size={"xs-sm"} />
-						</li>
-					</div>
+				{/* Project location */}
+				<li className="flex text-nowrap">
+					{location.onlineOnly ? (
+						<>
+							<IoGlobeOutline className="text-blue-500 mr-1 text-xl" title="Online project" />
+							<p className="font-medium">Online only</p>
+						</>
+					) : (
+						<>
+							<IoLocationOutline className="text-gray-400 mr-1 text-xl" title="Project location" />
+							<p className="font-semibold">
+								{location.city && location.country
+									? `${location.city}, ${location.country}`
+									: location.city || location.country || <span className="italic text-gray-400">Location not specified</span>}
+							</p>
+						</>
+					)}
+				</li>
 
-					{/* Project location */}
-					<li className="flex mb-2 sm:mb-0 sm:ml-4 text-nowrap justify-center items-center">
-						{location.onlineOnly ? (
-							<>
-								<IoGlobeOutline className="text-blue-500 mr-1 text-xl" title="Online project" />
-								<p className="font-medium">Online only</p>
-							</>
-						) : (
-							<>
-								<IoLocationOutline className="text-gray-400 mr-1 text-xl" title="Project location" />
-								<p className="font-semibold">
-									{location.city && location.country
-										? `${location.city}, ${location.country}`
-										: location.city || location.country || <span className="italic text-gray-400">Location not specified</span>}
-								</p>
-							</>
-						)}
-					</li>
-				</div>
+				{/* Project status */}
+				<li className="flex text-nowrap">
+					<IoFitness className={`${colorClassStatus} mr-1 text-xl justify-center`} title="Project status" />
+					<p className={`${colorClassStatus} font-semibold`}>{status}</p>
+				</li>
 
 				{/* Project likes */}
-				<div className="flex items-center justify-end mb-2 sm:mb-0 gap-2">
-					<li className="flex mb-2 sm:mb-0 sm:ml-4 justify-center">
-						<button className="relative group mr-1 text-xl" title="Like this project">
-							<IoHeartOutline className="text-pink-600 group-hover:hidden" />
-							{/* Filled on hover */}
-							<IoHeart className="text-pink-600 hidden group-hover:block" />
-						</button>
-						<p>{likes} likes</p>
-					</li>
+				<li className="flex text-nowrap">
+					<button className="relative group mr-1 text-xl" title="Like this project">
+						<IoHeartOutline className="text-pink-600 group-hover:hidden" />
+						{/* Filled on hover */}
+						<IoHeart className="text-pink-600 hidden group-hover:block" />
+					</button>
+					<p>{likes} likes</p>
+				</li>
 
-					{/* Project status */}
-					<li className="flex mb-2 sm:mb-0 sm:ml-4">
-						<IoFitness className={`${colorClassStatus} mr-1 text-xl justify-center`} title="Project status" />
-						<p className={`${colorClassStatus} font-semibold`}>{status}</p>
-					</li>
-				</div>
-				{/* Buttons Join project, Edite project */}
-				<li className="flex ml-auto text-nowrap">
+				{/* Buttons Join project, Edit project */}
+				<li className="flex text-nowrap ml-auto">
 					<ActionButtons projectLink={projectLink} talentsNeeded={talentsNeeded} />
 				</li>
 			</ul>

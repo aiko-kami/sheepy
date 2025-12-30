@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Badge = ({ badge, size, clickable = true }) => {
+const Badge = ({ badge, size, clickable = true, title }) => {
 	let textSizeClass;
 	switch (size) {
 		case "xs":
@@ -24,7 +24,11 @@ const Badge = ({ badge, size, clickable = true }) => {
 
 	// Handle missing or invalid badge
 	if (!badge || !badge.name || !badge.colors) {
-		return <span className={`py-1 px-2.5 text-white font-bold text-nowrap rounded bg-gray-500 ${textSizeClass}`}>Not found</span>;
+		return (
+			<span className={`py-1 px-2.5 text-white font-bold text-nowrap rounded bg-gray-500 ${textSizeClass}`} title={title}>
+				Not found
+			</span>
+		);
 	}
 
 	const { name, link } = badge;
@@ -34,16 +38,20 @@ const Badge = ({ badge, size, clickable = true }) => {
 
 	if (clickable && link) {
 		return (
-			<Link href={link}>
+			<Link href={link} title={title}>
 				<span className={classes}>{name}</span>
 			</Link>
 		);
 	} else {
-		return <span className={classes}>{name}</span>;
+		return (
+			<span className={classes} title={title}>
+				{name}
+			</span>
+		);
 	}
 };
 
-const BadgeRounded = ({ badge, size, clickable = true }) => {
+const BadgeRounded = ({ badge, size, clickable = true, title }) => {
 	let textSizeClass;
 	switch (size) {
 		case "xs":
@@ -67,7 +75,11 @@ const BadgeRounded = ({ badge, size, clickable = true }) => {
 
 	// Handle missing or invalid badge
 	if (!badge || !badge.name || !badge.colors) {
-		return <span className={`py-1 px-2.5 text-white font-bold text-nowrap rounded bg-gray-500 ${textSizeClass}`}>Not found</span>;
+		return (
+			<span className={`py-1 px-2.5 text-white font-bold text-nowrap rounded bg-gray-500 ${textSizeClass}`} title={title}>
+				Not found
+			</span>
+		);
 	}
 
 	const { name } = badge;
@@ -78,12 +90,16 @@ const BadgeRounded = ({ badge, size, clickable = true }) => {
 
 	if (clickable) {
 		return (
-			<Link href={link}>
+			<Link href={link} title={title}>
 				<span className={classes}>{name}</span>
 			</Link>
 		);
 	} else {
-		return <span className={classes}>{name}</span>;
+		return (
+			<span className={classes} title={title}>
+				{name}
+			</span>
+		);
 	}
 };
 

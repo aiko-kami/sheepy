@@ -132,6 +132,9 @@ const ButtonCircle = ({ children, btnProps }) => {
 		case "2xl":
 			size = "text-2xl py-2 px-2";
 			break;
+		case "std-xl":
+			size = "text-base sm:text-xl py-2 px-2";
+			break;
 		default:
 			size = "text-base py-2 px-2";
 	}

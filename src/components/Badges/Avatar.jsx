@@ -25,8 +25,14 @@ const Avatar = ({ img, size, alt = "" }) => {
 		case "3xl":
 			imgSizeClass = "w-48 h-48 md:w-60 md:h-60";
 			break;
+		case "3xl":
+			imgSizeClass = "w-48 h-48 md:w-60 md:h-60";
+			break;
+		case "std-xl":
+			imgSizeClass = "w-10 h-10 sm:w-16 sm:h-16";
+			break;
 		default:
-			imgSizeClass = "w-8 h-8";
+			imgSizeClass = "w-10 h-10";
 	}
 	return (
 		<div className={`shrink-0 ${imgSizeClass}`}>
