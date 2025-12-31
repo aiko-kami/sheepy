@@ -8,7 +8,7 @@ import { SelectRoundedField } from "@/components/Forms/SelectField";
 
 import { handleFormChange } from "@/utils/formHandlers";
 
-const ProjectApplicationModal = ({ closeModal, talentsNeeded, roleSelected }) => {
+const ProjectApplicationModal = ({ closeModal, talentsNeeded = [], roleSelected }) => {
 	const [formInputs, setFormInputs] = useState({
 		selectedRole: "",
 		message: "",

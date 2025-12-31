@@ -1,14 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 import Modal from "@/components/Modals/Modal";
 import UpdateMemberModal from "@/components/Modals/ProjectEdit/UpdateMemberModal";
 import SendMessageMemberModal from "@/components/Modals/ProjectEdit/SendMessageMemberModal";
 import RemoveMemberModal from "@/components/Modals/ProjectEdit/RemoveMemberModal";
 import IconButton from "@/components/Buttons/IconButton";
-
-import Link from "next/link";
 
 import { IoBuildOutline, IoCloseCircleOutline, IoChatboxEllipsesOutline, IoPersonOutline } from "react-icons/io5";
 

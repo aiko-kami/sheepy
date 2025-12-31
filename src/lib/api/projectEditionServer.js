@@ -60,6 +60,10 @@ export async function ApiUpdateProjectMember(projectId, data) {
 	return apiPatch(`/projectEdition/members/${projectId}`, data);
 }
 
+export async function ApiUpdateProjectMembersRights(projectId, data) {
+	return apiPatch(`/projectEdition/rights/${projectId}`, data);
+}
+
 export async function ApiUpdateProjectStatus(projectId, data) {
 	return apiPatch(`/projectEdition/status/${projectId}`, data);
 }

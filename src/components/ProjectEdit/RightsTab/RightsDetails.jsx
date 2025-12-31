@@ -1,16 +1,24 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
-import ERRORS from "@/lib/constants/errors";
 import { Button } from "@/components/Buttons/Buttons";
 import RightsTable from "@/components/Tables/ProjectEdit/RightsTable";
 
+import { ApiUpdateProjectMembersRights } from "@/lib/api/projectEditionServer";
+import ERRORS from "@/lib/constants/errors";
+import { showErrorToast, showSuccessToast } from "@/utils/toast";
+import { filterPermissions } from "@/utils/formHandlers";
+
 const RightsDetails = ({ projectId, membersProjectRights, headers, userPermissions, children }) => {
+	const router = useRouter();
+
 	const [formState, setFormState] = useState(
 		membersProjectRights.map((member) => ({
 			userId: member.user.userId,
+			role: member.role,
 			permissions: { ...member.permissions },
 		}))
 	);
@@ -18,7 +26,7 @@ const RightsDetails = ({ projectId, membersProjectRights, headers, userPermissio
 	const handleCheckboxChange = (userId, right) => {
 		setFormState((prevState) => {
 			const newState = prevState.map((member) => {
-				if (member.userId === userId) {
+				if (member.userId === userId && member.role !== "owner") {
 					return {
 						...member,
 						permissions: {
@@ -36,8 +44,9 @@ const RightsDetails = ({ projectId, membersProjectRights, headers, userPermissio
 	const handleSelectAll = (userId) => {
 		setFormState((prevState) =>
 			prevState.map((member) => {
-				if (member.userId === userId) {
+				if (member.userId === userId && member.role !== "owner") {
 					const areAllSelected = Object.values(member.permissions).every(Boolean);
+
 					// Toggle all rights based on current state
 					const updatedRights = Object.keys(member.permissions).reduce((rights, key) => {
 						rights[key] = !areAllSelected;
@@ -51,15 +60,36 @@ const RightsDetails = ({ projectId, membersProjectRights, headers, userPermissio
 		);
 	};
 
-	const onSubmit = (event) => {
+	const onSubmit = async (event) => {
 		event.preventDefault();
-		// Handle form submission
-		const formDataToSubmit = {
-			projectId: projectId,
-			members: formState,
-		};
+		try {
+			if (!userPermissions.canEditRights) {
+				showErrorToast(ERRORS.PROJECT_EDIT.EDIT_RIGHTS);
+				return;
+			}
 
-		console.log("Updated rights data:", formDataToSubmit);
+			const allowedRights = headers.labels.map((l) => l.right);
+
+			const payload = {
+				projectId,
+				members: formState
+					.filter((member) => member.role !== "owner")
+					.map((member) => ({
+						userId: member.userId,
+						permissions: filterPermissions(member.permissions, allowedRights),
+					})),
+			};
+			const result = await ApiUpdateProjectMembersRights(projectId, payload);
+			if (!result.ok) {
+				showErrorToast(result.message || "Failed to update project rights.");
+				return;
+			}
+
+			showSuccessToast("Project rights have been updated.");
+			router.refresh();
+		} catch (error) {
+			showErrorToast(error.message);
+		}
 	};
 
 	return (

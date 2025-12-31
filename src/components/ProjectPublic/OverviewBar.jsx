@@ -34,15 +34,19 @@ const OverviewBar = ({ category, subCategoryDetails, location, likes, status, st
 				</li>
 
 				{/* Project status and Project likes */}
-				<li className="flex text-nowrap">
-					<IoFitness className={`${colorClassStatus} mr-1 text-xl justify-center`} title="Project status" />
-					<p className={`${colorClassStatus} font-semibold mr-2`}>{status ? <>{status}</> : <span className="italic text-gray-400">Status not found</span>}</p>
-					<button className="relative group mr-1 text-xl" title="Like this project">
-						<IoHeartOutline className="text-pink-600 group-hover:hidden" />
-						{/* Filled on hover */}
-						<IoHeart className="text-pink-600 hidden group-hover:block" />
-					</button>
-					<p>{likes} likes</p>
+				<li className="flex items-center text-nowrap md:gap-x-6">
+					<div className="flex items-center text-nowrap">
+						<IoFitness className={`${colorClassStatus} mr-1 text-xl justify-center`} title="Project status" />
+						{status || <span className="italic text-gray-400">Status not found</span>}
+					</div>
+					<div className="flex items-center text-nowrap">
+						<button className="relative group mr-1 text-xl" title="Like this project">
+							<IoHeartOutline className="text-pink-600 group-hover:hidden" />
+							{/* Filled on hover */}
+							<IoHeart className="text-pink-600 hidden group-hover:block" />
+						</button>
+						<p>{likes} likes</p>
+					</div>
 				</li>
 
 				{/* Buttons Join project, Edit project */}

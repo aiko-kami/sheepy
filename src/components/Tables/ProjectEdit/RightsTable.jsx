@@ -52,7 +52,7 @@ const RightsTable = ({ members, formState, onChange, onSelectAll, headers, userP
 													className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"
 													checked={!!isChecked}
 													onChange={() => onChange(member.user.userId, header.right)}
-													disabled={!userPermissions.canEditRights}
+													disabled={!userPermissions.canEditRights || member.role === "owner"}
 												/>
 											</div>
 										</td>
@@ -66,7 +66,7 @@ const RightsTable = ({ members, formState, onChange, onSelectAll, headers, userP
 											className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded"
 											onChange={() => onSelectAll(member.user.userId)}
 											checked={false} // Checked if all rights are true
-											disabled={!userPermissions.canEditRights}
+											disabled={!userPermissions.canEditRights || member.role === "owner"}
 										/>
 									</div>
 								</td>

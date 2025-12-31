@@ -79,7 +79,7 @@ const UpdateMemberModal = ({ user, projectId, role, talent, startDate, closeModa
 					)}
 				</div>
 
-				<div className="sm:grid sm:grid-cols-1 xl:grid-cols-2 mb-10 items-end gap-20">
+				<div className="sm:grid sm:grid-cols-1 xl:grid-cols-2 mb-10 items-end gap-20 max-w-2xl mx-auto">
 					{/* User talent on the project */}
 					<div className="max-w-80">
 						<InputField inputName="memberTalent" inputType="text" label="User talent" inputValue={formInputs.memberTalent} onChange={onChange} />

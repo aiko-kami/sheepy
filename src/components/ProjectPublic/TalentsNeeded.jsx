@@ -12,7 +12,7 @@ import AuthModal from "@/components/Modals/Auth/AuthModal";
 
 import { useAuth } from "@/contexts/AuthContext";
 
-const TalentsNeeded = ({ talentsNeeded, talentProfilePicture }) => {
+const TalentsNeeded = ({ talentsNeeded = [], talentProfilePicture }) => {
 	const { user } = useAuth();
 
 	const [modalApplyDisplay, setModalApplyDisplay] = useState(false);

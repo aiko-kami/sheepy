@@ -1,4 +1,3 @@
-import { Button } from "@/components/Buttons/Buttons";
 import { IoLockOpen, IoSettingsSharp, IoPeople, IoDocuments } from "react-icons/io5";
 
 import RightsDetails from "@/components/ProjectEdit/RightsTab/RightsDetails";
@@ -56,6 +55,15 @@ const Rights = ({ projectId, membersProjectRights, userPermissions }) => {
 	const headersCopy = {
 		type: "project",
 		labels: ["start date", "phase", "objectives", "motivation"],
+	};
+
+	const filterPermissions = (permissions, allowedRights) => {
+		return allowedRights.reduce((acc, right) => {
+			if (right in permissions) {
+				acc[right] = permissions[right];
+			}
+			return acc;
+		}, {});
 	};
 
 	return (

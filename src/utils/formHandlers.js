@@ -9,3 +9,12 @@ export function handleFormChange(setFormInputs) {
 		}));
 	};
 }
+
+export function filterPermissions(permissions, allowedRights) {
+	return allowedRights.reduce((acc, right) => {
+		if (right in permissions) {
+			acc[right] = permissions[right];
+		}
+		return acc;
+	}, {});
+}
