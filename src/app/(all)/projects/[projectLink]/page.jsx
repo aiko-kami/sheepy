@@ -56,7 +56,7 @@ const ProjectPublicPage = async ({ params }) => {
 	const similarProjects = project.similarProjects;
 	const projectCount = project.projectCount;
 	const steps = project.steps;
-	const qnas = project.qnas;
+	const qnas = project.QAs;
 	const comments = project.comments;
 	const creatorMotivation = project.creatorMotivation;
 	const objectives = project.objectives;

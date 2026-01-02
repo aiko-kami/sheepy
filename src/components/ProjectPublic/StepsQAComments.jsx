@@ -70,7 +70,7 @@ const StepsQAComments = ({ projectCount, steps, qnas, comments }) => {
 					<Steps steps={steps?.stepsList} />
 				</TabContent>
 				<TabContent id="tabQAs" activeTab={activeTab}>
-					<QAs qnas={qnas?.qnasList} />
+					<QAs qnas={qnas?.QAsList} />
 				</TabContent>
 				<TabContent id="tabComments" activeTab={activeTab}>
 					<Comments comments={comments} />

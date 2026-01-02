@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { DndContext, closestCenter } from "@dnd-kit/core";
 import { SortableContext, arrayMove } from "@dnd-kit/sortable";
-
 import DraggableQnaItem from "@/components/ProjectEdit/QandAsTab/DraggableQnaItem";
 
 const DraggableQnasList = ({ formInputs, onChange }) => {
@@ -9,28 +8,27 @@ const DraggableQnasList = ({ formInputs, onChange }) => {
 
 	// Initialize items based on formInputs.projectQnas
 	useEffect(() => {
-		if (formInputs?.projectQnas) {
-			const transformedItems = formInputs.projectQnas.map((qna, index) => ({
-				id: qna.id ?? `generated-${index}-${qna.question ?? ""}`,
-				// preserve all original fields
-				...qna,
-			}));
-			setItems(transformedItems);
+		if (Array.isArray(formInputs.projectQnas)) {
+			setItems(
+				formInputs.projectQnas.map((QA, index) => ({
+					...QA,
+					id: QA.id ?? `QA-${index}`,
+				}))
+			);
 		}
 	}, [formInputs.projectQnas]);
 
 	// Handle the end of dragging
 	const handleDragEnd = (event) => {
 		const { active, over } = event;
-		if (active.id !== over?.id) {
-			setItems((prevItems) => {
-				const oldIndex = prevItems.findIndex((item) => item.id === active.id);
-				const newIndex = prevItems.findIndex((item) => item.id === over?.id);
-				const updatedItems = arrayMove(prevItems, oldIndex, newIndex);
-				onChange(updatedItems);
-				return updatedItems;
-			});
-		}
+		if (!over || active.id === over.id) return;
+
+		const oldIndex = items.findIndex((i) => i.id === active.id);
+		const newIndex = items.findIndex((i) => i.id === over.id);
+
+		const newItems = arrayMove(items, oldIndex, newIndex);
+		setItems(newItems);
+		onChange(newItems);
 	};
 
 	return (

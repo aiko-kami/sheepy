@@ -35,7 +35,9 @@ const DraggableStepItem = ({ item, index, items, statusesList, setItems, onChang
 	// Move the item up or down
 	const moveItem = (direction) => {
 		const index = items.findIndex((i) => i.id === id);
-		if ((index === 0 && direction === "up") || (index === items.length - 1 && direction === "down")) return;
+		if ((index === 0 && direction === "up") || (index === items.length - 1 && direction === "down")) {
+			return; // Prevent out-of-bounds movement
+		}
 
 		const newIndex = direction === "up" ? index - 1 : index + 1;
 		const updatedItems = [...items];
@@ -66,7 +68,7 @@ const DraggableStepItem = ({ item, index, items, statusesList, setItems, onChang
 					Step {index + 1}: {title}
 				</h2>
 				<div className="ml-2 mb-4 max-w-160">
-					<InputField label="Step Title:" inputName={`title-${id}`} inputType="text" inputValue={title} onChange={(e) => updateField("title", e.target.value)} />
+					<InputField label="Step Title:" inputName={`title-${id}`} inputType="text" inputValue={title} required={true} onChange={(e) => updateField("title", e.target.value)} />
 				</div>
 				<div className="ml-2 mb-6">
 					<TextAreaField

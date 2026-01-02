@@ -2,7 +2,7 @@ import React from "react";
 import { PermissionsErrorText } from "@/components/Errors/PermissionsError";
 
 // Using forwardRef to pass the ref down to the input element
-const InputField = React.forwardRef(({ inputName, inputType, inputValue, onChange, onKeyDown, disabled = false, disabledMessage = "", label, children }, ref) => {
+const InputField = React.forwardRef(({ inputName, inputType, inputValue, onChange, onKeyDown, required = false, disabled = false, disabledMessage = "", label, children }, ref) => {
 	return (
 		<>
 			<div className="relative z-0 w-full">
@@ -16,6 +16,7 @@ const InputField = React.forwardRef(({ inputName, inputType, inputValue, onChang
 					value={inputValue ?? ""}
 					onChange={onChange}
 					onKeyDown={onKeyDown}
+					required={required}
 					className={`block pt-2.5 pb-2 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none focus:outline-none focus:ring-0 focus:border-blue-500 peer ${
 						disabled ? "text-gray-400" : "text-white hover:shadow-lg hover:border-gray-500"
 					}`}

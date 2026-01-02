@@ -4,8 +4,8 @@ import DraggableStepsList from "@/components/ProjectEdit/StepsTab/DraggableSteps
 import StaticStepsList from "@/components/ProjectEdit/StepsTab/StaticStepsList";
 import LastUpdateBy from "@/components/ProjectEdit/LastUpdateBy";
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
-import ERRORS from "@/lib/constants/errors";
 import { Button } from "@/components/Buttons/Buttons";
+import ERRORS from "@/lib/constants/errors";
 
 const StepsDetails = ({ formInputs, onChange, addStep, statusesList, userPermissions }) => {
 	return (

@@ -4,9 +4,8 @@ import DraggableQnasList from "@/components/ProjectEdit/QandAsTab/DraggableQnasL
 import StaticQnasList from "@/components/ProjectEdit/QandAsTab/StaticQnasList";
 import LastUpdateBy from "@/components/ProjectEdit/LastUpdateBy";
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
-import ERRORS from "@/lib/constants/errors";
-
 import { Button } from "@/components/Buttons/Buttons";
+import ERRORS from "@/lib/constants/errors";
 
 const QandAsDetails = ({ formInputs, onChange, addQna, userPermissions }) => {
 	return (

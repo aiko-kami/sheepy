@@ -21,11 +21,9 @@ const DraggableQnaItem = ({ item, index, items, setItems, onChange }) => {
 
 	// Update a specific field
 	const updateField = (fieldName, value) => {
-		setItems((prevItems) => {
-			const updatedItems = prevItems.map((i) => (i.id === id ? { ...i, [fieldName]: value } : i));
-			onChange(updatedItems);
-			return updatedItems;
-		});
+		const updatedItems = items.map((i) => (i.id === id ? { ...i, [fieldName]: value } : i));
+		setItems(updatedItems);
+		onChange(updatedItems);
 	};
 
 	// Move the item up or down
@@ -34,13 +32,13 @@ const DraggableQnaItem = ({ item, index, items, setItems, onChange }) => {
 		if ((index === 0 && direction === "up") || (index === items.length - 1 && direction === "down")) {
 			return; // Prevent out-of-bounds movement
 		}
+
 		const newIndex = direction === "up" ? index - 1 : index + 1;
-		setItems((prevItems) => {
-			const updatedItems = [...prevItems];
-			[updatedItems[index], updatedItems[newIndex]] = [updatedItems[newIndex], updatedItems[index]];
-			onChange(updatedItems);
-			return updatedItems;
-		});
+		const updatedItems = [...items];
+		[updatedItems[index], updatedItems[newIndex]] = [updatedItems[newIndex], updatedItems[index]];
+
+		setItems(updatedItems);
+		onChange(updatedItems);
 	};
 
 	// Delete the item
@@ -63,7 +61,7 @@ const DraggableQnaItem = ({ item, index, items, setItems, onChange }) => {
 			<div className="w-9/10 mx-auto">
 				<h2 className="font-semibold text-xl mb-6">Q&A {index + 1}</h2>
 				<div className="ml-2 mb-4 max-w-160">
-					<InputField label="Question:" inputName={`question-${id}`} inputType="text" inputValue={question} onChange={(e) => updateField("question", e.target.value)} />
+					<InputField label="Question:" inputName={`question-${id}`} inputType="text" inputValue={question} required={true} onChange={(e) => updateField("question", e.target.value)} />
 				</div>
 				<div className="ml-2 mb-6">
 					<TextAreaField
