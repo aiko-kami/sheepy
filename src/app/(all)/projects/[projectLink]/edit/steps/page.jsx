@@ -23,7 +23,7 @@ const ProjectEditStepsPage = async ({ params }) => {
 	}
 
 	const project = result.data?.project;
-
+	const statusesList = result.data?.statusesList;
 	const projectId = project?.projectId;
 	const steps = project?.steps;
 
@@ -33,7 +33,7 @@ const ProjectEditStepsPage = async ({ params }) => {
 		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" />;
 	}
 
-	return <FormSteps projectId={projectId} steps={steps} userPermissions={userPermissions} />;
+	return <FormSteps projectId={projectId} steps={steps} statusesList={statusesList} userPermissions={userPermissions} />;
 };
 
 export default ProjectEditStepsPage;

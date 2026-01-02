@@ -57,15 +57,6 @@ const Rights = ({ projectId, membersProjectRights, userPermissions }) => {
 		labels: ["start date", "phase", "objectives", "motivation"],
 	};
 
-	const filterPermissions = (permissions, allowedRights) => {
-		return allowedRights.reduce((acc, right) => {
-			if (right in permissions) {
-				acc[right] = permissions[right];
-			}
-			return acc;
-		}, {});
-	};
-
 	return (
 		<>
 			{/* Users project rights */}

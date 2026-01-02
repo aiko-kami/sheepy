@@ -7,7 +7,7 @@ import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
 import ERRORS from "@/lib/constants/errors";
 import { Button } from "@/components/Buttons/Buttons";
 
-const StepsDetails = ({ formInputs, onChange, addStep, userPermissions }) => {
+const StepsDetails = ({ formInputs, onChange, addStep, statusesList, userPermissions }) => {
 	return (
 		<>
 			{/* Project steps */}
@@ -27,7 +27,7 @@ const StepsDetails = ({ formInputs, onChange, addStep, userPermissions }) => {
 					)}
 					{formInputs.projectSteps && formInputs.projectSteps.length !== 0 ? (
 						<>
-							{userPermissions.canEditSteps ? <DraggableStepsList formInputs={formInputs} onChange={onChange} /> : <StaticStepsList steps={formInputs.projectSteps} />}
+							{userPermissions.canEditSteps ? <DraggableStepsList formInputs={formInputs} statusesList={statusesList} onChange={onChange} /> : <StaticStepsList steps={formInputs.projectSteps} />}
 							<LastUpdateBy updatedBy={formInputs.updatedBy} updatedAt={formInputs.updatedAt} />
 						</>
 					) : (

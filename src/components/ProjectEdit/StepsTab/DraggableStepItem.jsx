@@ -4,11 +4,17 @@ import { CSS } from "@dnd-kit/utilities";
 import { TbGripVertical } from "react-icons/tb";
 import { IoCaretUpOutline, IoCaretDown, IoTrashOutline } from "react-icons/io5";
 import InputField from "@/components/Forms/InputField";
+import { SelectField } from "@/components/Forms/SelectField";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 import { ToggleField } from "@/components/Forms/ToggleField";
 
-const DraggableStepItem = ({ item, index, items, setItems, onChange }) => {
-	const { id, title, details, status, published } = item;
+const DraggableStepItem = ({ item, index, items, statusesList, setItems, onChange }) => {
+	const optionsList = statusesList.map((opt) => ({
+		value: opt.statusId,
+		option: opt.status.charAt(0).toUpperCase() + opt.status.slice(1),
+	}));
+
+	const { id, title, details, statusId, published } = item;
 
 	const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id });
 
@@ -21,29 +27,24 @@ const DraggableStepItem = ({ item, index, items, setItems, onChange }) => {
 
 	// Update a specific field
 	const updateField = (fieldName, value) => {
-		setItems((prevItems) => {
-			const updatedItems = prevItems.map((i) => (i.id === id ? { ...i, [fieldName]: value } : i));
-			onChange(updatedItems);
-			return updatedItems;
-		});
+		const updatedItems = items.map((i) => (i.id === id ? { ...i, [fieldName]: value } : i));
+		setItems(updatedItems);
+		onChange(updatedItems);
 	};
 
 	// Move the item up or down
 	const moveItem = (direction) => {
 		const index = items.findIndex((i) => i.id === id);
-		if ((index === 0 && direction === "up") || (index === items.length - 1 && direction === "down")) {
-			return; // Prevent out-of-bounds movement
-		}
+		if ((index === 0 && direction === "up") || (index === items.length - 1 && direction === "down")) return;
+
 		const newIndex = direction === "up" ? index - 1 : index + 1;
-		setItems((prevItems) => {
-			const updatedItems = [...prevItems];
-			[updatedItems[index], updatedItems[newIndex]] = [updatedItems[newIndex], updatedItems[index]];
-			onChange(updatedItems);
-			return updatedItems;
-		});
+		const updatedItems = [...items];
+		[updatedItems[index], updatedItems[newIndex]] = [updatedItems[newIndex], updatedItems[index]];
+
+		setItems(updatedItems);
+		onChange(updatedItems);
 	};
 
-	// Delete the item
 	const handleDelete = () => {
 		const updatedItems = items.filter((i) => i.id !== id);
 		setItems(updatedItems);
@@ -80,8 +81,9 @@ const DraggableStepItem = ({ item, index, items, setItems, onChange }) => {
 						onChange={(e) => updateField("details", e.target.value)}
 					/>
 				</div>
-				<div className="ml-2 mb-4 max-w-80">
-					<InputField label="Status:" inputName={`status-${id}`} inputType="text" inputValue={status.status} onChange={(e) => updateField("status", e.target.value)} />
+				<div className="flex-1 ml-2 mb-4 sm:min-w-60 max-w-80">
+					<div className="text-sm">Status:</div>
+					<SelectField inputName="statusId" possibleValues={optionsList} inputValue={statusId} onChange={(e) => updateField("statusId", e.target.value)} />
 				</div>
 				<div className="ml-2 mb-2">
 					<ToggleField label="Published" inputName={`published-${id}`} checked={published} onChange={(e) => updateField("published", e.target.checked)} />

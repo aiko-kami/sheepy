@@ -1,36 +1,34 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { DndContext, closestCenter } from "@dnd-kit/core";
 import { SortableContext, arrayMove } from "@dnd-kit/sortable";
-
 import DraggableStepItem from "@/components/ProjectEdit/StepsTab/DraggableStepItem";
 
-const DraggableStepsList = ({ formInputs, onChange }) => {
+const DraggableStepsList = ({ formInputs, onChange, statusesList }) => {
 	const [items, setItems] = useState([]);
 
-	// Initialize items based on formInputs.projectSteps
+	// Initialize items from formInputs
 	useEffect(() => {
-		if (formInputs?.projectSteps) {
-			const transformedItems = formInputs.projectSteps.map((step, index) => ({
-				id: step.id ?? `generated-${index}-${step.title ?? ""}`,
-				// preserve all original fields
-				...step,
-			}));
-			setItems(transformedItems);
+		if (Array.isArray(formInputs.projectSteps)) {
+			setItems(
+				formInputs.projectSteps.map((step, index) => ({
+					...step,
+					id: step.id ?? `step-${index}`,
+				}))
+			);
 		}
 	}, [formInputs.projectSteps]);
 
-	// Handle the end of dragging
+	// Drag & drop
 	const handleDragEnd = (event) => {
 		const { active, over } = event;
-		if (active.id !== over?.id) {
-			setItems((prevItems) => {
-				const oldIndex = prevItems.findIndex((item) => item.id === active.id);
-				const newIndex = prevItems.findIndex((item) => item.id === over?.id);
-				const updatedItems = arrayMove(prevItems, oldIndex, newIndex);
-				onChange(updatedItems);
-				return updatedItems;
-			});
-		}
+		if (!over || active.id === over.id) return;
+
+		const oldIndex = items.findIndex((i) => i.id === active.id);
+		const newIndex = items.findIndex((i) => i.id === over.id);
+
+		const newItems = arrayMove(items, oldIndex, newIndex);
+		setItems(newItems);
+		onChange(newItems);
 	};
 
 	return (
@@ -43,7 +41,8 @@ const DraggableStepsList = ({ formInputs, onChange }) => {
 							item={item}
 							index={index}
 							items={items}
-							setItems={setItems} // Pass down the state setter
+							setItems={setItems} // <-- pass setItems
+							statusesList={statusesList}
 							onChange={onChange}
 						/>
 					))}

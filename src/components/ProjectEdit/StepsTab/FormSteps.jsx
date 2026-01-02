@@ -1,15 +1,28 @@
 "use client";
 
 import { useState } from "react";
-import Steps from "@/components/ProjectEdit/StepsTab/Steps";
+import { useRouter } from "next/navigation";
 
-const FormSteps = ({ projectId, steps, userPermissions }) => {
+import Steps from "@/components/ProjectEdit/StepsTab/Steps";
+import { ApiUpdateProjectSteps } from "@/lib/api/projectEditionServer";
+import ERRORS from "@/lib/constants/errors";
+import { showErrorToast, showSuccessToast } from "@/utils/toast";
+
+const FormSteps = ({ projectId, steps, statusesList, userPermissions }) => {
+	const router = useRouter();
+
 	const [formInputs, setFormInputs] = useState({
 		projectId: projectId,
 		updatedBy: steps.updatedBy,
 		createdAt: steps.createdAt,
 		updatedAt: steps.updatedAt,
-		projectSteps: steps.stepsList,
+		projectSteps: steps.stepsList.map((step, index) => ({
+			id: step.id ?? `step-${index}`,
+			title: step.title ?? "",
+			details: step.details ?? "",
+			published: Boolean(step.published),
+			statusId: step.status?.statusId ?? "",
+		})),
 	});
 
 	const onChange = (updatedSteps) => {
@@ -19,10 +32,35 @@ const FormSteps = ({ projectId, steps, userPermissions }) => {
 		}));
 	};
 
-	const onSubmit = (event) => {
+	const onSubmit = async (event) => {
 		event.preventDefault();
-		// Handle form submission
-		console.log("🚀 ~ onSubmit ~ The project has been updated:", formInputs);
+		try {
+			if (!userPermissions.canEditSteps) {
+				showErrorToast(ERRORS.PROJECT_EDIT.EDIT_STEPS);
+				return;
+			}
+
+			const payload = {
+				projectId,
+				steps: formInputs.projectSteps.map(({ title, details, published, statusId }) => ({
+					title,
+					details,
+					published,
+					statusId,
+				})),
+			};
+
+			const result = await ApiUpdateProjectSteps(projectId, payload);
+			if (!result.ok) {
+				showErrorToast(result.message || "Failed to update project steps.");
+				return;
+			}
+
+			showSuccessToast("Project steps have been updated.");
+			router.refresh();
+		} catch (error) {
+			showErrorToast(error.message);
+		}
 	};
 
 	const addStep = () => {
@@ -30,7 +68,7 @@ const FormSteps = ({ projectId, steps, userPermissions }) => {
 			id: `${(formInputs.projectSteps.length || 0) + 1}`,
 			title: "",
 			details: "",
-			status: "",
+			statusId: statusesList?.[0]?.statusId ?? null,
 			published: false,
 		};
 
@@ -43,7 +81,7 @@ const FormSteps = ({ projectId, steps, userPermissions }) => {
 		<>
 			<form onSubmit={onSubmit}>
 				{/* Project steps information */}
-				<Steps formInputs={formInputs} onChange={onChange} addStep={addStep} userPermissions={userPermissions} />
+				<Steps formInputs={formInputs} onChange={onChange} addStep={addStep} statusesList={statusesList} userPermissions={userPermissions} />
 			</form>
 		</>
 	);

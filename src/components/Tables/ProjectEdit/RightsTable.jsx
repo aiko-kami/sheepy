@@ -1,6 +1,6 @@
 import UserCell from "@/components/Tables/ProjectEdit/UserCell";
 
-const RightsTable = ({ members, formState, onChange, onSelectAll, headers, userPermissions }) => {
+const RightsTable = ({ members, formInputs, onChange, onSelectAll, headers, userPermissions }) => {
 	return (
 		<>
 			<table className="w-full text-xs md:text-sm shadow-lg">
@@ -33,7 +33,7 @@ const RightsTable = ({ members, formState, onChange, onSelectAll, headers, userP
 				</thead>
 				<tbody>
 					{members.map((member, memberIndex) => {
-						const memberState = formState.find((m) => m.userId === member.user.userId);
+						const memberState = formInputs.find((m) => m.userId === member.user.userId);
 
 						return (
 							<tr key={memberIndex} className="border-b bg-gray-800 border-gray-700 hover:bg-gray-600">

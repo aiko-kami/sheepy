@@ -15,7 +15,7 @@ import { filterPermissions } from "@/utils/formHandlers";
 const RightsDetails = ({ projectId, membersProjectRights, headers, userPermissions, children }) => {
 	const router = useRouter();
 
-	const [formState, setFormState] = useState(
+	const [formInputs, setFormInputs] = useState(
 		membersProjectRights.map((member) => ({
 			userId: member.user.userId,
 			role: member.role,
@@ -24,7 +24,7 @@ const RightsDetails = ({ projectId, membersProjectRights, headers, userPermissio
 	);
 
 	const handleCheckboxChange = (userId, right) => {
-		setFormState((prevState) => {
+		setFormInputs((prevState) => {
 			const newState = prevState.map((member) => {
 				if (member.userId === userId && member.role !== "owner") {
 					return {
@@ -42,7 +42,7 @@ const RightsDetails = ({ projectId, membersProjectRights, headers, userPermissio
 	};
 
 	const handleSelectAll = (userId) => {
-		setFormState((prevState) =>
+		setFormInputs((prevState) =>
 			prevState.map((member) => {
 				if (member.userId === userId && member.role !== "owner") {
 					const areAllSelected = Object.values(member.permissions).every(Boolean);
@@ -72,7 +72,7 @@ const RightsDetails = ({ projectId, membersProjectRights, headers, userPermissio
 
 			const payload = {
 				projectId,
-				members: formState
+				members: formInputs
 					.filter((member) => member.role !== "owner")
 					.map((member) => ({
 						userId: member.userId,
@@ -116,7 +116,7 @@ const RightsDetails = ({ projectId, membersProjectRights, headers, userPermissio
 
 										<RightsTable
 											members={membersProjectRights}
-											formState={formState}
+											formInputs={formInputs}
 											onChange={handleCheckboxChange}
 											onSelectAll={handleSelectAll}
 											headers={headers}

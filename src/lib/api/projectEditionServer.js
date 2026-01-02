@@ -76,6 +76,14 @@ export async function ApiUpdateProjectLocation(projectId, data) {
 	return apiPatch(`/projectEdition/location/${projectId}`, data);
 }
 
+export async function ApiUpdateProjectSteps(projectId, data) {
+	return apiPatch(`/projectEdition/steps/${projectId}`, data);
+}
+
+export async function ApiUpdateProjectQAs(projectId, data) {
+	return apiPatch(`/projectEdition/QAs/${projectId}`, data);
+}
+
 //POST requests
 
 export async function ApiPostAddTalentNeeded(projectId, data) {
