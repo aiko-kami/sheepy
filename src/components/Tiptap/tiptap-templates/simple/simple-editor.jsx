@@ -128,8 +128,6 @@ const MobileToolbarContent = ({ type, onBack }) => (
 );
 
 export function SimpleEditor({ label, value, onChange, editable = true, disabledMessage }) {
-	console.log("🚀 ~ SimpleEditor ~ value:", value);
-
 	const isMobile = useIsBreakpoint();
 	const { height } = useWindowSize();
 	const [mobileView, setMobileView] = useState("main");
@@ -195,7 +193,7 @@ export function SimpleEditor({ label, value, onChange, editable = true, disabled
 						...(isMobile
 							? {
 									bottom: `calc(100% - ${height - rect.y}px)`,
-							  }
+								}
 							: {}),
 					}}
 				>
