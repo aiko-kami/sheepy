@@ -1,6 +1,20 @@
 import { PermissionsErrorText } from "@/components/Errors/PermissionsError";
 
-const TextAreaField = ({ label, labelStyle, inputStyle, inputName, inputValue = "", onChange, placeholder, maxLength, rows, disabled = false, disabledMessage, required = false, resize = "none" }) => {
+const TextAreaField = ({
+	label = "",
+	labelStyle,
+	inputStyle,
+	inputName,
+	inputValue = "",
+	onChange,
+	placeholder = "",
+	maxLength,
+	rows,
+	disabled = false,
+	disabledMessage,
+	required = false,
+	resize = "none",
+}) => {
 	const resizeClass = `resize-${resize}`;
 
 	return (
@@ -29,7 +43,6 @@ const TextAreaField = ({ label, labelStyle, inputStyle, inputName, inputValue = 
 				required={required}
 				disabled={disabled}
 			></textarea>
-			{}
 			<div className="text-right text-sm text-gray-400 mt-0.5 mr-2">
 				{inputValue.length}/{maxLength}
 			</div>

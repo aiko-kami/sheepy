@@ -1,0 +1,586 @@
+@import url("https://fonts.googleapis.com/css2?family=Oldenburg&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "/src/styles/_variables.scss";
+@import "/src/styles/_keyframe-animations.scss";
+
+/* TEST only */
+/* Classes to test elements by adding a border */
+.test {
+	border-style: solid;
+	border-width: 2px;
+	border-color: rgb(34 197 94);
+}
+
+.test2 {
+	border-style: solid;
+	border-width: 2px;
+	border-color: rgb(192 38 211);
+}
+
+.test3 {
+	border-style: solid;
+	border-width: 2px;
+	border-color: rgb(79 70 229);
+}
+
+/* Themes */
+:root {
+	--color-primary: #1d4ed8;
+	--color-secondary: #9333ea;
+	--color-accent: #f59e0b;
+	--color-background: #ffffff;
+	--color-text: #111827;
+}
+
+/* Light theme */
+[data-theme="light"] {
+	--100: #111827;
+	--200: #e5e7eb;
+	--300: #d1d5db;
+	--400: #facc15;
+	--450: #fbbf24;
+	--500: #fafafa;
+	--550: #374151;
+	--600: #b0bac8;
+	--700: #111827;
+	--800: #0f172a;
+	--900: #000000;
+	--bg: #ffffff;
+	--text-primary: #111827;
+	--text-secondary: #374151;
+	--gradiant-dark: #b0bac8;
+	--gradiant-light: #fafafa;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+	--100: #f9fafb;
+	--200: #374151;
+	--300: #4b5563;
+	--400: #6b7280;
+	--450: #d1d5db;
+	--500: #1c1e29;
+	--550: #e5e7eb;
+	--600: #29283b;
+	--700: #6b7280;
+	--800: #4b5563;
+	--900: #9ca3af;
+	--bg: #111827;
+	--text-primary: #f9fafb;
+	--text-secondary: #9ca3af;
+	--gradiant-dark: #29283b;
+	--gradiant-light: #1c1e29;
+}
+
+/* Night theme */
+[data-theme="night"] {
+	--100: #ffffff;
+	--200: #bcbec5;
+	--300: #7e818d;
+	--400: #38bdf8;
+	--440: #3667a2;
+	--450: #071e34;
+	--500: #002464;
+	--550: #0c1322;
+	--600: #111646;
+	--700: #0a0e19;
+	--800: #05070f;
+	--900: #000000;
+	--bg: #1e293b;
+	--text: #0f172a;
+	--text-primary: #ffffff;
+	--text-secondary: #9ca3af;
+	--gradiant-dark: #111646;
+	--gradiant-light: #002464;
+}
+
+/* Unreal theme */
+[data-theme="unreal"] {
+	--100: #fbbf24; /* bright yellow */
+	--200: #f59e0b; /* golden yellow */
+	--300: #84cc16; /* bright green */
+	--400: #65a30d; /* darker green */
+	--450: #d97706; /* orange */
+	--500: #facc15; /* accent yellow */
+	--550: #f97316; /* orange accent */
+	--600: #fbbf24; /* bright yellow */
+	--700: #374151; /* dark header */
+	--800: #1f2937; /* dark content */
+	--900: #000000; /* black */
+	--bg: #fbbf24; /* yellow background */
+	--text: #374151; /* dark text */
+	--gradiant-dark: #84cc16; /* green gradient */
+	--gradiant-light: #facc15; /* yellow gradient */
+}
+
+/* embla - carousel */
+/* Classes with embla are for the carousel component */
+
+.embla {
+	max-width: 70rem;
+	margin: auto;
+	--slide-height: 19rem;
+	--slide-spacing: 1rem;
+	--slide-size: 100%;
+	--slide-spacing-sm: 1.6rem;
+	--slide-size-sm: 50%;
+	--slide-spacing-lg: 2rem;
+	--slide-size-lg: calc(100% / 3);
+}
+.embla__viewport {
+	overflow: hidden;
+}
+.embla__container {
+	backface-visibility: hidden;
+	display: flex;
+	touch-action: pan-y pinch-zoom;
+	margin-left: calc(var(--slide-spacing) * -1);
+}
+@media (min-width: 750px) {
+	.embla__container {
+		margin-left: calc(var(--slide-spacing-sm) * -1);
+	}
+}
+@media (min-width: 1200px) {
+	.embla__container {
+		margin-left: calc(var(--slide-spacing-lg) * -1);
+	}
+}
+.embla__slide {
+	flex: 0 0 var(--slide-size);
+	min-width: 0;
+	padding-left: var(--slide-spacing);
+}
+@media (min-width: 750px) {
+	.embla__slide {
+		flex: 0 0 var(--slide-size-sm);
+		min-width: 0;
+
+		padding-left: var(--slide-spacing-sm);
+	}
+}
+@media (min-width: 1200px) {
+	.embla__slide {
+		flex: 0 0 var(--slide-size-lg);
+		min-width: 0;
+		padding-left: var(--slide-spacing-lg);
+	}
+}
+.embla__controls {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	justify-content: space-between;
+	gap: 1.2rem;
+	margin-top: 0.6rem;
+}
+.embla__buttons {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 0.6rem;
+	align-items: center;
+}
+.embla__button {
+	-webkit-tap-highlight-color: rgba(230, 230, 230, 0.5);
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	touch-action: manipulation;
+	display: inline-flex;
+	text-decoration: none;
+	cursor: pointer;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	box-shadow: inset 0 0 0 0.1rem;
+	width: 2rem;
+	height: 2rem;
+	z-index: 1;
+	border-radius: 50%;
+	color: rgb(222, 222, 222);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.embla__button:disabled {
+	color: rgb(101, 101, 101);
+}
+.embla__button__svg {
+	width: 35%;
+	height: 35%;
+}
+.embla__dots {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	align-items: center;
+	margin-right: calc((2.6rem - 1.4rem) / 2 * -1);
+}
+.embla__dot {
+	-webkit-tap-highlight-color: rgba(230, 230, 230, 0.5);
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: transparent;
+	touch-action: manipulation;
+	display: inline-flex;
+	text-decoration: none;
+	cursor: pointer;
+	border: 0;
+	padding: 0;
+	margin: 0;
+	width: 2rem;
+	height: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 50%;
+}
+.embla__dot:after {
+	box-shadow: inset 0 0 0 0.1rem rgb(25, 25, 25);
+	width: 1rem;
+	height: 1rem;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	content: "";
+}
+.embla__dot--selected:after {
+	box-shadow: inset 0 0 0 0.1rem rgb(222, 222, 222);
+}
+.embla__slide {
+	transition: 0.2s ease-in-out;
+}
+
+/* rsuite - Date picker */
+/* Class ensure the calendar popup appears above modals. */
+
+.rs-picker-popup {
+	z-index: 99999 !important;
+}
+
+/* ===================================================== */
+/*                     TIPTAP EDITOR                     */
+/* ===================================================== */
+
+/* ----------------------------------------------------- */
+/* Editor container & scrolling                          */
+/* ----------------------------------------------------- */
+
+/* Make the editor fill its parent */
+.tiptap-editor .ProseMirror {
+	flex: 1;
+	height: auto;
+	overflow-y: auto;
+}
+
+/* Custom scrollbar (Firefox) */
+.tiptap-editor {
+	scrollbar-width: thin;
+	scrollbar-color: #64748b #1e293b; /* thumb / track */
+}
+
+/* Custom scrollbar (WebKit: Chrome, Edge, Safari) */
+.tiptap-editor::-webkit-scrollbar {
+	width: 10px;
+}
+
+.tiptap-editor::-webkit-scrollbar-track {
+	background: #1e293b;
+	border-radius: 9999px;
+}
+
+.tiptap-editor::-webkit-scrollbar-thumb {
+	background-color: #64748b;
+	border-radius: 9999px;
+}
+
+.tiptap-editor::-webkit-scrollbar-thumb:hover {
+	background-color: #94a3b8;
+}
+
+/* ===================================================== */
+/*                 BASE TYPOGRAPHY                        */
+/* ===================================================== */
+
+.ProseMirror {
+	/* Paragraphs */
+	p {
+		line-height: 1.7;
+	}
+
+	/* Inline code */
+	code {
+		background: rgb(15 23 42 / 0.8);
+		padding: 0.3rem;
+		border-radius: 0.25rem;
+		font-size: 0.8em;
+		font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+	}
+
+	/* Code blocks */
+	pre {
+		background: rgb(15 23 42);
+		border: 1px solid rgb(71 85 105); /* slate-600 */
+		border-radius: 0.5rem;
+		padding: 0.5rem 1rem 0.75rem;
+		margin: 1rem 0;
+		overflow-x: auto;
+		font-size: 0.875rem;
+		line-height: 1.5;
+	}
+
+	/* Reset inline code inside code blocks */
+	pre code {
+		background: none;
+		padding: 0;
+		border-radius: 0;
+		font-size: inherit;
+		color: inherit;
+	}
+}
+
+/* ===================================================== */
+/*                 BLOCKQUOTES (DARK)                    */
+/* ===================================================== */
+
+.ProseMirror blockquote {
+	position: relative;
+	margin: 1rem;
+	padding: 0.75rem 1.75rem;
+
+	border-left: 6px solid #6366f1; /* indigo accent */
+	background-color: rgba(99, 102, 241, 0.08);
+
+	color: #e5e7eb;
+	border-radius: 0.25rem;
+}
+
+/* Remove default paragraph spacing inside quotes */
+.ProseMirror blockquote p {
+	margin: 0;
+}
+
+/* Decorative opening quote */
+.ProseMirror blockquote::before {
+	content: "“";
+	position: absolute;
+	top: 0.2rem;
+	left: 0.2rem;
+
+	font-size: 3rem;
+	line-height: 1;
+	color: rgba(99, 102, 241, 0.25);
+
+	pointer-events: none;
+}
+
+/* ===================================================== */
+/*                    LINKS (DARK)                       */
+/* ===================================================== */
+
+.ProseMirror a {
+	color: #8b5cf6; /* violet / indigo accent */
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+
+	transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.ProseMirror a:hover {
+	color: #a78bfa;
+	text-decoration-color: #a78bfa;
+}
+
+.ProseMirror a:visited {
+	color: #7c3aed;
+}
+
+/* ===================================================== */
+/*                    LISTS (DARK)                       */
+/* ===================================================== */
+
+/* Shared list styles */
+.ProseMirror ul,
+.ProseMirror ol {
+	margin: 1rem 0;
+	padding-left: 1.5rem;
+
+	color: #e5e7eb;
+}
+
+/* Unordered lists */
+.ProseMirror ul {
+	list-style-type: disc;
+}
+
+.ProseMirror ul li::marker {
+	font-size: 1.1em;
+}
+
+/* Ordered lists */
+.ProseMirror ol {
+	list-style-type: decimal;
+}
+
+/* List items */
+.ProseMirror li {
+	margin: 0.4rem 0;
+	line-height: 1.6;
+}
+
+/* Nested lists */
+.ProseMirror ul ul,
+.ProseMirror ul ol,
+.ProseMirror ol ul,
+.ProseMirror ol ol {
+	margin: 0.4rem 0;
+	padding-left: 1.25rem;
+	opacity: 0.95;
+}
+
+/* ===================================================== */
+/*                  Rich text content                    */
+/* ===================================================== */
+
+/* Base typography */
+.rich-text-content {
+	color: #e5e7eb; /* default light gray text */
+}
+
+.rich-text-content p {
+	line-height: 1.7;
+}
+
+.rich-text-content code {
+	background: rgb(15 23 42 / 0.8);
+	padding: 0.3rem;
+	border-radius: 0.25rem;
+	font-size: 0.8em;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.rich-text-content pre {
+	background: rgb(15 23 42);
+	border: 1px solid rgb(71 85 105); /* slate-600 */
+	border-radius: 0.5rem;
+	padding: 0.5rem 1rem 0.75rem;
+	margin: 1rem 0;
+	overflow-x: auto;
+	font-size: 0.875rem;
+	line-height: 1.5;
+}
+
+.rich-text-content pre code {
+	background: none;
+	padding: 0;
+	border-radius: 0;
+	font-size: inherit;
+	color: inherit;
+}
+
+/* Headings */
+.rich-text-content h1 {
+	font-size: 2.25rem;
+	font-weight: 700;
+	margin: 1.5rem 0 1rem 0;
+}
+
+.rich-text-content h2 {
+	font-size: 1.875rem;
+	font-weight: 700;
+	margin: 1.25rem 0 0.75rem 0;
+}
+
+.rich-text-content h3 {
+	font-size: 1.5rem;
+	font-weight: 600;
+	margin: 1rem 0 0.5rem 0;
+}
+
+.rich-text-content h4 {
+	font-size: 1.25rem;
+	font-weight: 600;
+	margin: 0.75rem 0 0.5rem 0;
+}
+
+/* Blockquotes */
+.rich-text-content blockquote {
+	position: relative;
+	margin: 1rem 0;
+	padding: 0.75rem 1.75rem;
+	border-left: 6px solid #6366f1;
+	background-color: rgba(99, 102, 241, 0.08);
+	border-radius: 0.25rem;
+	color: #e5e7eb;
+}
+
+.rich-text-content blockquote p {
+	margin: 0;
+}
+
+.rich-text-content blockquote::before {
+	content: "“";
+	position: absolute;
+	top: 0.2rem;
+	left: 0.2rem;
+	font-size: 3rem;
+	line-height: 1;
+	color: rgba(99, 102, 241, 0.25);
+	pointer-events: none;
+}
+
+/* Links */
+.rich-text-content a {
+	color: #8b5cf6;
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+	transition: color 0.2s ease, text-decoration-color 0.2s ease;
+}
+
+.rich-text-content a:hover {
+	color: #a78bfa;
+	text-decoration-color: #a78bfa;
+}
+
+.rich-text-content a:visited {
+	color: #7c3aed;
+}
+
+/* Lists */
+.rich-text-content ul,
+.rich-text-content ol {
+	margin: 1rem 0;
+	padding-left: 1.5rem;
+	color: #e5e7eb;
+}
+
+.rich-text-content ul {
+	list-style-type: disc;
+}
+
+.rich-text-content ul li::marker {
+	font-size: 1.1em;
+}
+
+.rich-text-content ol {
+	list-style-type: decimal;
+}
+
+.rich-text-content li {
+	margin: 0.4rem 0;
+	line-height: 1.6;
+}
+
+/* Nested lists */
+.rich-text-content ul ul,
+.rich-text-content ul ol,
+.rich-text-content ol ul,
+.rich-text-content ol ol {
+	margin: 0.4rem 0;
+	padding-left: 1.25rem;
+	opacity: 0.95;
+}

@@ -1,4 +1,4 @@
-import "./globals.css";
+import "./globals.scss";
 import "rsuite/dist/rsuite-no-reset.min.css";
 import { AppProvider } from "../contexts/AppProvider";
 import { CustomProvider } from "rsuite";

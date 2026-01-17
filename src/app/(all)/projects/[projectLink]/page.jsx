@@ -3,6 +3,7 @@ import OverviewBar from "@/components/ProjectPublic/OverviewBar";
 import ProjectSummary from "@/components/ProjectPublic/ProjectSummary";
 import ProjectDescription from "@/components/ProjectPublic/ProjectDescription";
 import ProjectCreatorMotivation from "@/components/ProjectPublic/ProjectCreatorMotivation";
+import ProjectObjectives from "@/components/ProjectPublic/ProjectObjectives";
 import ProjectGoal from "@/components/ProjectPublic/ProjectGoal";
 import Error from "@/components/Errors/Error";
 import TalentsNeeded from "@/components/ProjectPublic/TalentsNeeded";
@@ -86,6 +87,9 @@ const ProjectPublicPage = async ({ params }) => {
 					{/* Creator motivation */}
 					<ProjectCreatorMotivation creatorMotivation={creatorMotivation} />
 
+					{/* Objectives */}
+					<ProjectObjectives objectives={objectives} />
+
 					{/* Talents needed */}
 					<TalentsNeeded talentsNeeded={talentsNeeded} talentProfilePicture={talentProfilePicture} />
 
@@ -95,7 +99,7 @@ const ProjectPublicPage = async ({ params }) => {
 					{/* Members */}
 					<ProjectMembers members={members} />
 				</div>
-				<div className="sm:col-span-2 sm:order-1 order-2 mb-4 sm:mb-0">
+				<div className="sm:col-span-2 sm:order-1 order-2 mb-4 sm:mb-0 space-y-4 lg:space-y-6">
 					{/* Project description */}
 					<ProjectDescription description={description} />
 				</div>

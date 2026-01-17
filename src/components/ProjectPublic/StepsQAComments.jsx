@@ -56,7 +56,7 @@ const StepsQAComments = ({ projectCount, steps, qnas, comments }) => {
 							</div>
 							<div className="relative">
 								<div className="absolute inline-flex items-center justify-center top-6 -left-3 sm:-left-3 rounded-full border-2 border-transparent">
-									<Notification value={count} size={"std"} notifColor={"gray"} />
+									<Notification value={count} size={"std"} notifColor={"blue"} />
 								</div>
 							</div>
 						</TabNavItem>

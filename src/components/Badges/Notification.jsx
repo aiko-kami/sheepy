@@ -2,13 +2,14 @@ const Notification = ({ value, size, notifColor, ringMode }) => {
 	let textSize;
 	switch (size) {
 		case "xs":
-			textSize = "text-[10px] px-2 min-h-[12px] min-w-[12px]";
+			textSize = "text-[10px] px-2 min-h-[16px] min-w-[16px]";
 			break;
 		case "sm":
 			textSize = "text-[12px] px-2 pb-0.5 h-6";
 			break;
 		case "std":
-			textSize = "text-sm px-2 pb-0.5 h-6";
+			textSize = "text-sm px-2 py-3 h-6";
+
 			break;
 		case "xl":
 			textSize = "text-lg";

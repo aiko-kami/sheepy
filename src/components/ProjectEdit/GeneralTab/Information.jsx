@@ -1,6 +1,7 @@
 import { IoDocumentText } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
+import RichTextEditorField from "@/components/Forms/RichTextEditorField/RichTextEditorField";
 import ERRORS from "@/lib/constants/errors";
 
 const Information = ({ formInputs, onChange, userPermissions }) => {
@@ -32,22 +33,19 @@ const Information = ({ formInputs, onChange, userPermissions }) => {
 				</div>
 				{/* Project description */}
 				<div className="mb-6 xl:mb-8">
-					<TextAreaField
+					<RichTextEditorField
 						label="Project description:"
-						labelStyle="block"
-						inputName="projectDescription"
-						inputValue={formInputs.projectDescription}
-						onChange={onChange}
+						value={formInputs.projectDescription}
+						onChange={(html) => onChange({ target: { name: "projectDescription", value: html } })}
 						placeholder="What's the story behind your project?... (10 000 characters max)"
 						maxLength={10000}
-						rows="20"
-						required={true}
-						disabled={!userPermissions.canEditDescription}
+						rows="10"
+						editable={userPermissions.canEditDescription}
 						disabledMessage={!userPermissions.canEditDescription && ERRORS.PROJECT_EDIT.EDIT_DESCRIPTION}
 					/>
 				</div>
 				{/* Project goal */}
-				<div className="mb-8">
+				<div className="mb-6 xl:mb-8">
 					<TextAreaField
 						label="Project goal:"
 						labelStyle="block"
@@ -63,7 +61,7 @@ const Information = ({ formInputs, onChange, userPermissions }) => {
 					/>
 				</div>
 				{/* Creator motivation */}
-				<div className="mb-8">
+				<div className="mb-6 xl:mb-8">
 					<TextAreaField
 						label="Creator motivation:"
 						labelStyle="block"
