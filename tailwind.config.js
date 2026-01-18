@@ -346,6 +346,10 @@ module.exports = {
 			fontFamily: {
 				oldenburg: ["Oldenburg", "sans-serif"],
 				rowdies: ["Rowdies", "sans-serif"],
+				inter: ["Inter", "sans-serif"],
+			},
+			fontWeight: {
+				550: "550",
 			},
 		},
 	},

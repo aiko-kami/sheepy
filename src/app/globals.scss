@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Oldenburg&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -386,7 +387,9 @@
 	text-decoration-thickness: 1px;
 	text-underline-offset: 3px;
 
-	transition: color 0.2s ease, text-decoration-color 0.2s ease;
+	transition:
+		color 0.2s ease,
+		text-decoration-color 0.2s ease;
 }
 
 .ProseMirror a:hover {
@@ -538,7 +541,9 @@
 	text-decoration: underline;
 	text-decoration-thickness: 1px;
 	text-underline-offset: 3px;
-	transition: color 0.2s ease, text-decoration-color 0.2s ease;
+	transition:
+		color 0.2s ease,
+		text-decoration-color 0.2s ease;
 }
 
 .rich-text-content a:hover {

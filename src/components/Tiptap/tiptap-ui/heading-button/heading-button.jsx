@@ -34,7 +34,7 @@ export const HeadingButton = forwardRef(({ editor: providedEditor, level, text, 
 			if (event.defaultPrevented) return;
 			handleToggle();
 		},
-		[handleToggle, onClick]
+		[handleToggle, onClick],
 	);
 
 	if (!isVisible) {

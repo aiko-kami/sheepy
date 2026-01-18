@@ -14,14 +14,14 @@ const MenuBar = ({ editor, isMobile = false }) => {
 	if (!editor) return null;
 	return (
 		<>
-			<div className="flex items-center bg-gray-600 rounded-t-md space-x-1 px-1 py-0.5">
+			<div className="flex items-center bg-gray-600 rounded-t-md space-x-1 px-1 py-0.5 overflow-x-auto">
 				<ToolbarGroup>
 					<UndoRedoButton action="undo" />
 					<UndoRedoButton action="redo" />
 				</ToolbarGroup>
 				<ToolbarSeparator />
 				<ToolbarGroup>
-					<HeadingDropdownMenu levels={[1, 2, 3, 4]} portal={isMobile} />
+					<HeadingDropdownMenu levels={[1, 2, 3, 7]} portal={isMobile} />
 					<ListDropdownMenu types={["bulletList", "orderedList", "taskList"]} portal={isMobile} />
 					<BlockquoteButton />
 					<CodeBlockButton />

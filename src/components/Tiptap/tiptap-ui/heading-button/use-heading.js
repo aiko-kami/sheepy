@@ -15,6 +15,7 @@ import { HeadingThreeIcon } from "@/components/Tiptap/tiptap-icons/heading-three
 import { HeadingFourIcon } from "@/components/Tiptap/tiptap-icons/heading-four-icon";
 import { HeadingFiveIcon } from "@/components/Tiptap/tiptap-icons/heading-five-icon";
 import { HeadingSixIcon } from "@/components/Tiptap/tiptap-icons/heading-six-icon";
+import { HeadingNormalIcon } from "@/components/Tiptap/tiptap-icons/heading-normal-icon";
 
 export const headingIcons = {
 	1: HeadingOneIcon,
@@ -23,6 +24,7 @@ export const headingIcons = {
 	4: HeadingFourIcon,
 	5: HeadingFiveIcon,
 	6: HeadingSixIcon,
+	7: HeadingNormalIcon,
 };
 
 export const HEADING_SHORTCUT_KEYS = {
@@ -32,6 +34,7 @@ export const HEADING_SHORTCUT_KEYS = {
 	4: "ctrl+alt+4",
 	5: "ctrl+alt+5",
 	6: "ctrl+alt+6",
+	7: "ctrl+alt+7",
 };
 
 /**
@@ -71,6 +74,12 @@ export function isHeadingActive(editor, level) {
  */
 export function toggleHeading(editor, level) {
 	if (!editor || !editor.isEditable) return false;
+
+	// Level 7 = "Normal text"
+	if (level === 7) {
+		editor.chain().focus().setParagraph().run();
+		return true;
+	}
 
 	const levels = Array.isArray(level) ? level : [level];
 	const toggleLevel = levels.find((l) => canToggle(editor, l));

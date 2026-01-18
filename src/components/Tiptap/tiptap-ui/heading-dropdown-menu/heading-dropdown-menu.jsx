@@ -35,7 +35,7 @@ export const HeadingDropdownMenu = forwardRef(({ editor: providedEditor, levels 
 			setIsOpen(open);
 			onOpenChange?.(open);
 		},
-		[canToggle, editor, onOpenChange]
+		[canToggle, editor, onOpenChange],
 	);
 
 	if (!isVisible) {
@@ -72,16 +72,9 @@ export const HeadingDropdownMenu = forwardRef(({ editor: providedEditor, levels 
 							{/* Heading levels */}
 							{levels.map((level) => (
 								<DropdownMenuItem key={`heading-${level}`} asChild>
-									<HeadingButton editor={editor} level={level} text={`Heading ${level}`} showTooltip={false} />
+									<HeadingButton editor={editor} level={level} text={level === 7 ? "Normal" : `Heading ${level}`} onClick={() => editor.chain().focus().setParagraph().run()} showTooltip={false} />
 								</DropdownMenuItem>
 							))}
-
-							{/* Normal text option */}
-							<DropdownMenuItem asChild>
-								<Button type="button" data-style="ghost" data-active-state={isParagraphActive ? "on" : "off"} onClick={() => editor.chain().focus().setParagraph().run()}>
-									Normal text
-								</Button>
-							</DropdownMenuItem>
 						</ButtonGroup>
 					</CardBody>
 				</Card>

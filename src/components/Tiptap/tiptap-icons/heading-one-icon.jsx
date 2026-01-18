@@ -2,7 +2,12 @@ import { memo } from "react";
 
 export const HeadingOneIcon = memo(({ className, ...props }) => {
 	return (
-		<svg width="24" height="24" className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" {...props}>
+		<div className={className}>
+			<span className="font-inter">H</span>
+			<span className="text-[10px]">1</span>
+		</div>
+
+		/* 		<svg width="24" height="24" className={className} viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" {...props}>
 			<path
 				d="M5 6C5 5.44772 4.55228 5 4 5C3.44772 5 3 5.44772 3 6V18C3 18.5523 3.44772 19 4 19C4.55228 19 5 18.5523 5 18V13H11V18C11 18.5523 11.4477 19 12 19C12.5523 19 13 18.5523 13 18V6C13 5.44772 12.5523 5 12 5C11.4477 5 11 5.44772 11 6V11H5V6Z"
 				fill="currentColor"
@@ -12,6 +17,7 @@ export const HeadingOneIcon = memo(({ className, ...props }) => {
 				fill="currentColor"
 			/>
 		</svg>
+ */
 	);
 });
 
