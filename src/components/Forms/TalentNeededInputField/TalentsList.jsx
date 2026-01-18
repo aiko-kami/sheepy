@@ -1,8 +1,7 @@
 import { IoCloseCircleOutline } from "react-icons/io5";
 import { motion, AnimatePresence } from "framer-motion";
 import { Avatar } from "@/components/Badges/Avatar";
-
-import talentNeededProfilePicture from "@/public/images/userTalentNeeded.jpg";
+import talentProfilePicture from "@/public/images/defaultAstronaut.jpg";
 
 const TalentsList = ({ talentsNeeded = [], removeTalentNeeded, disabled = false }) => {
 	if (!talentsNeeded || talentsNeeded.length === 0) return null;
@@ -27,7 +26,7 @@ const TalentsList = ({ talentsNeeded = [], removeTalentNeeded, disabled = false 
 						)}
 						<span className="flex items-center ml-3">
 							<div className="mr-3">
-								<Avatar img={talentNeededProfilePicture} size={"std"} alt={"Talent profile picture"} />
+								<Avatar img={talentProfilePicture} size={"std"} alt={"Talent profile picture"} />
 							</div>
 							<div className="flex flex-col">
 								<span className="font-semibold">{talentNeeded.talent}</span>

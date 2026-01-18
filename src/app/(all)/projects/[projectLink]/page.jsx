@@ -48,7 +48,6 @@ const ProjectPublicPage = async ({ params }) => {
 	const location = project.location;
 	const likes = project.likes;
 	const talentsNeeded = project.talentsNeeded;
-	const talentProfilePicture = project.talentProfilePicture;
 	const summary = project.summary;
 	const goal = project.goal;
 	const members = project.members;
@@ -91,7 +90,7 @@ const ProjectPublicPage = async ({ params }) => {
 					<ProjectObjectives objectives={objectives} />
 
 					{/* Talents needed */}
-					<TalentsNeeded talentsNeeded={talentsNeeded} talentProfilePicture={talentProfilePicture} />
+					<TalentsNeeded talentsNeeded={talentsNeeded} />
 
 					{/* Tags */}
 					<ProjectTags tags={tags} />

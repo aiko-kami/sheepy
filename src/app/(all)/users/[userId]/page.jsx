@@ -64,6 +64,9 @@ const UserDescriptionPage = async ({ params }) => {
 
 				{/* User card with talents */}
 				<UserCardTalents talents={talents} />
+
+				{/* User card with projects */}
+				<UserCardProjects projects={user.projects} />
 			</div>
 		</>
 	);

@@ -9,7 +9,7 @@ export function normalizeProjectData(projectData) {
 				userId: ownerMember.user?.userId || null,
 				username: ownerMember.user?.username || null,
 				profilePicture: ownerMember.user?.profilePicture?.link || null,
-		  }
+			}
 		: null;
 
 	const stepsList = projectData.steps && Array.isArray(projectData.steps.stepsList) ? projectData.steps.stepsList : [];
@@ -20,13 +20,10 @@ export function normalizeProjectData(projectData) {
 
 	const projectCount = { stepsCount, qnasCount };
 
-	const talentProfilePicture = "https://p7.hiclipart.com/preview/355/848/997/computer-icons-user-profile-google-account-photos-icon-account.jpg";
-
 	return {
 		...projectData,
 		owner,
 		projectCount,
-		talentProfilePicture,
 		category: {
 			...projectData.category,
 			link: `/categories/${projectData.category.link}`,

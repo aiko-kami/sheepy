@@ -9,10 +9,11 @@ import { Avatar } from "@/components/Badges/Avatar";
 import Modal from "@/components/Modals/Modal";
 import ProjectApplicationModal from "@/components/Modals/ProjectPublic/ProjectApplicationModal";
 import AuthModal from "@/components/Modals/Auth/AuthModal";
+import talentProfilePicture from "@/public/images/defaultAstronaut.jpg";
 
 import { useAuth } from "@/contexts/AuthContext";
 
-const TalentsNeeded = ({ talentsNeeded = [], talentProfilePicture }) => {
+const TalentsNeeded = ({ talentsNeeded = [] }) => {
 	const { user } = useAuth();
 
 	const [modalApplyDisplay, setModalApplyDisplay] = useState(false);
