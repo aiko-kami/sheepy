@@ -11,7 +11,7 @@ const OverviewBar = ({ category, subCategoryDetails, location, likes, status, st
 	return (
 		<>
 			{/* Category, location, likes, project status */}
-			<ul className="flex flex-col md:flex-row lg:px-2 md:items-center text-sm space-y-3 md:space-y-0 md:gap-x-6">
+			<ul className="flex flex-col md:flex-row lg:px-2 md:items-start text-sm space-y-3 md:space-y-0 md:gap-x-6">
 				{/* Project category and sub-category */}
 				<li className="flex items-center text-nowrap space-x-2">
 					<Badge badge={category} size={"xs-sm"} title="Project category" />
@@ -35,7 +35,7 @@ const OverviewBar = ({ category, subCategoryDetails, location, likes, status, st
 
 				{/* Project status and Project likes */}
 				<li className="flex items-center text-nowrap md:gap-x-6">
-					<div className="flex items-center text-nowrap">
+					<div className="flex items-center text-nowrap mr-2 md:mr-0">
 						<IoFitness className={`${colorClassStatus} mr-1 text-xl justify-center`} title="Project status" />
 						{status || <span className="italic text-gray-400">Status not found</span>}
 					</div>

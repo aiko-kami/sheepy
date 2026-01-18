@@ -79,7 +79,7 @@ const ProjectPublicPage = async ({ params }) => {
 			/>
 			{/* Summary */}
 			<ProjectSummary summary={summary} />
-			<div className="sm:grid sm:grid-cols-3 gap-6 mb-4 sm:mb-12 space-y-4 lg:space-y-6">
+			<div className="sm:grid sm:grid-cols-3 gap-6 mb-4 sm:mb-12 space-y-4 sm:space-y-0">
 				<div className="sm:col-start-3 order-1 sm:order-2 space-y-4 lg:space-y-6">
 					{/* Goal */}
 					<ProjectGoal goal={goal} />

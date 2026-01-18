@@ -8,7 +8,7 @@ import { Avatar } from "@/components/Badges/Avatar";
 const Cover = ({ title, coverLink, creatorUserId, creatorUsername, creatorProfilePicture }) => {
 	return (
 		<>
-			<div className="relative mb-3 w-full h-50 sm:h-60 md:h-110 rounded-xl overflow-hidden">
+			<div className="relative w-full h-50 sm:h-60 md:h-110 rounded-xl overflow-hidden">
 				{/* Project cover */}
 				{coverLink && coverLink !== "" ? (
 					<Image src={coverLink} className="absolute inset-0 w-full h-full object-cover" alt="Project cover" width={0} height={0} sizes="100vw" />

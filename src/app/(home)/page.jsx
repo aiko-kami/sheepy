@@ -42,7 +42,7 @@ const HomePage = async () => {
 			<div className="mb-12">
 				<div className="inline-flex">
 					<h2 className="font-semibold text-xl mr-4 mb-4">New Talents</h2>
-					<Link href="/users/01" className="text-xs mt-2.5 hover:underline">
+					<Link href="/talents/meet-talents" className="text-xs mt-2.5 hover:underline">
 						See more...
 					</Link>
 				</div>
@@ -62,7 +62,7 @@ const HomePage = async () => {
 			<div className="mb-12">
 				<div className="inline-flex">
 					<h2 className="font-semibold text-xl mr-4 mb-4">Talents you need</h2>
-					<Link href="/users/01" className="text-xs mt-2.5 hover:underline">
+					<Link href="/talents/meet-talents" className="text-xs mt-2.5 hover:underline">
 						See more...
 					</Link>
 				</div>
