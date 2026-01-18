@@ -14,6 +14,7 @@ import { handleFormChange } from "@/utils/formHandlers";
 const MySettingsPrivacy = ({ userPrivacySettings }) => {
 	const [formInputs, setFormInputs] = useState({
 		privacyProfilePicture: userPrivacySettings.privacyProfilePicture,
+		privacyBackgroundPicture: userPrivacySettings.privacyBackgroundPicture,
 		privacyBio: userPrivacySettings.privacyBio,
 		privacyLocationCity: userPrivacySettings.privacyLocationCity,
 		privacyLocationCountry: userPrivacySettings.privacyLocationCountry,

@@ -8,6 +8,10 @@ export async function ApiGetUserSettingsServer() {
 	return apiGet(`/users/mySettings`);
 }
 
+export async function ApiGetUserPublicData(userId) {
+	return apiGet(`/users/userPublic/${userId}`);
+}
+
 /* 
 // Me
 usersRoute.get("/myData", verifyAccess, userController.retrieveMyUserData);

@@ -7,6 +7,10 @@ const UserPrivacyTable = ({ formInputs, onChange }) => {
 			inputName: "privacyProfilePicture",
 		},
 		{
+			fieldLabelName: "Your background picture",
+			inputName: "privacyBackgroundPicture",
+		},
+		{
 			fieldLabelName: "Your bio",
 			inputName: "privacyBio",
 		},

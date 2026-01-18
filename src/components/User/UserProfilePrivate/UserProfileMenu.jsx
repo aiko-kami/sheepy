@@ -4,7 +4,7 @@ import UserCardPictureBio from "@/components/User/UserProfilePrivate/UserCardPic
 import UserCardDetails from "@/components/User/UserProfilePrivate/UserCardDetails";
 import UserCardEmail from "@/components/User/UserProfilePrivate/UserCardEmail";
 import UserCardPassword from "@/components/User/UserProfilePrivate/UserCardPassword";
-import { ApiGetUserFromSessionServer } from "@/lib/api/usersServer";
+import { ApiGetUserFromSessionServer } from "@/lib/api/userServer";
 import Error from "@/components/Errors/Error";
 
 const UserProfileMenu = async () => {

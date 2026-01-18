@@ -1,5 +1,5 @@
 import Image from "next/image";
-import talentNeededProfilePicture from "@/public/images/userTalentNeeded.jpg";
+import defaultProfilePicture from "@/public/images/defaultAstronaut.jpg";
 
 const Avatar = ({ img, size, alt = "" }) => {
 	let imgSizeClass;
@@ -36,7 +36,7 @@ const Avatar = ({ img, size, alt = "" }) => {
 	}
 	return (
 		<div className={`shrink-0 ${imgSizeClass}`}>
-			<Image src={img || talentNeededProfilePicture} className={`w-full h-full rounded-full object-cover`} alt={alt} height={0} width={0} sizes="100vw" />
+			<Image src={img || defaultProfilePicture} className={`w-full h-full rounded-full object-cover`} alt={alt} height={0} width={0} sizes="100vw" />
 		</div>
 	);
 };

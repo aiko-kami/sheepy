@@ -71,6 +71,7 @@ export async function ApiUpdateUserSettingsPrivacy(privacySettings) {
 	try {
 		const userNewData = {
 			privacyProfilePicture: privacySettings.privacyProfilePicture,
+			privacyBackgroundPicture: privacySettings.privacyBackgroundPicture,
 			privacyBio: privacySettings.privacyBio,
 			privacyLocationCity: privacySettings.privacyLocationCity,
 			privacyLocationCountry: privacySettings.privacyLocationCountry,

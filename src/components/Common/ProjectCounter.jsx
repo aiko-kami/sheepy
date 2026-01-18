@@ -1,4 +1,4 @@
-const ProjectCounter = ({ projectCount }) => {
+const ProjectCounter = ({ projectCount = {} }) => {
 	return (
 		<div className="flex justify-evenly my-8 text-gray-300">
 			<div className="text-center">

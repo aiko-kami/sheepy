@@ -6,7 +6,7 @@ import MySettingsLanguages from "@/components/User/UserSettingsPrivate/MySetting
 import MySettingsNotifications from "@/components/User/UserSettingsPrivate/MySettingsNotifications";
 import Error from "@/components/Errors/Error";
 
-import { ApiGetUserSettingsServer } from "@/lib/api/usersServer";
+import { ApiGetUserSettingsServer } from "@/lib/api/userServer";
 
 const MySettings = async () => {
 	const result = await ApiGetUserSettingsServer();
