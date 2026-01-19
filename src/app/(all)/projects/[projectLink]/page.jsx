@@ -64,7 +64,7 @@ const ProjectPublicPage = async ({ params }) => {
 	return (
 		<div className="container mx-auto py-8 hyphens-auto space-y-4 lg:space-y-6">
 			{/* Project cover with title and creator */}
-			<Cover title={title} coverLink={coverLink} creatorUserId={creatorUserId} creatorUsername={creatorUsername} creatorProfilePicture={creatorProfilePicture.link} />
+			<Cover title={title} coverLink={coverLink} creatorUserId={creatorUserId} creatorUsername={creatorUsername} creatorProfilePicture={creatorProfilePicture?.link} />
 			{/* List with category, location, likes and project status */}
 			<OverviewBar
 				category={category}

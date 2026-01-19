@@ -9,7 +9,7 @@ import { Avatar } from "@/components/Badges/Avatar";
 import Modal from "@/components/Modals/Modal";
 import ProjectApplicationModal from "@/components/Modals/ProjectPublic/ProjectApplicationModal";
 import AuthModal from "@/components/Modals/Auth/AuthModal";
-import talentProfilePicture from "@/public/images/defaultAstronaut.jpg";
+import talentNeededProfilePicture from "@/public/images/talentNeededProfilePicture.png";
 
 import { useAuth } from "@/contexts/AuthContext";
 
@@ -45,9 +45,9 @@ const TalentsNeeded = ({ talentsNeeded = [] }) => {
 				<div className="grid grid-cols-3 sm:grid-cols-1 md:grid-cols-3 lg:mx-8">
 					{talentsNeeded.map((talentNeeded, index) => (
 						<React.Fragment key={index}>
-							<div className="text-slate-300 text-lg mb-6 last:mb-0 mr-2 flex items-center h-full col-span-2">
+							<div className="text-slate-300 text-lg mb-3 last:mb-0 mr-2 flex items-center h-full col-span-2">
 								<div className="mr-3">
-									<Avatar img={talentProfilePicture} size={"std"} alt={"talent profile picture"} />
+									<Avatar img={talentNeededProfilePicture} size={"std-xl"} alt={"talent needed profile picture"} />
 								</div>
 								<p className="overflow-auto hyphens-auto ">{talentNeeded.talent}</p>
 							</div>

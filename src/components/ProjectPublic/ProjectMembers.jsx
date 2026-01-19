@@ -12,7 +12,7 @@ const ProjectMembers = ({ members = [] }) => {
 					<div key={index} className="text-gray-300 text-lg mb-5 last:mb-0 flex items-center">
 						<Link href={`/users/${member.user.userId}`}>
 							<div className="mr-3">
-								<Avatar img={member.user.profilePicture?.link} size={"std"} alt={"member profile picture"} />
+								<Avatar img={member.user.profilePicture?.link} size={"lg"} alt={"member profile picture"} />
 							</div>
 						</Link>
 						<Link href={`/users/${member.user.userId}`} className="font-semibold text-white">
