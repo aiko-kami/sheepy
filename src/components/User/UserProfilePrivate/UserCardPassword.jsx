@@ -12,7 +12,7 @@ import { ApiUpdateUserPassword } from "@/lib/api/usersClient";
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { handleFormChange } from "@/utils/formHandlers";
 
-const UserCardPassword = ({ user }) => {
+const UserCardPassword = () => {
 	const router = useRouter();
 
 	const [formInputs, setFormInputs] = useState({

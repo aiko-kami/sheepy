@@ -10,7 +10,7 @@ import ProjectNewInvitationModal from "@/components/Modals/ProjectEdit/ProjectNe
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
 import ERRORS from "@/lib/constants/errors";
 
-const JoinInvitations = ({ talentsNeeded, projectId, joinProjectInvitations, user, userPermissions }) => {
+const JoinInvitations = ({ talentsNeeded, projectId, joinProjectInvitations, userPermissions }) => {
 	const [modalDisplayNewInvitation, setModalDisplayNewInvitation] = useState(false);
 
 	const showModalNewInvitation = () => {

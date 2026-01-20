@@ -3,7 +3,7 @@ import JoinRequestsTable from "@/components/Tables/ProjectEdit/JoinRequestsTable
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
 import ERRORS from "@/lib/constants/errors";
 
-const RequestsTable = ({ projectId, joinProjectRequests, user, userPermissions }) => {
+const RequestsTable = ({ projectId, joinProjectRequests, userPermissions }) => {
 	return (
 		<>
 			{/* Join requests */}

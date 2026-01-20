@@ -7,7 +7,7 @@ import InputField from "@/components/Forms/InputField";
 import { Button } from "@/components/Buttons/Buttons";
 import { showErrorToast } from "@/utils/toast";
 
-const UserLanguages = ({ user, formInputs, setFormInputs }) => {
+const UserLanguages = ({ formInputs, setFormInputs }) => {
 	const [languageInput, setLanguageInput] = useState("");
 
 	const addLanguage = () => {
@@ -15,11 +15,11 @@ const UserLanguages = ({ user, formInputs, setFormInputs }) => {
 			showErrorToast("Please enter a language");
 			return;
 		}
-		if (formInputs.languages.includes(languageInput)) {
+		if (formInputs.languages?.includes(languageInput)) {
 			showErrorToast("This language is already present in the list");
 			return;
 		}
-		if (formInputs.languages.length >= 8) {
+		if (formInputs.languages?.length >= 8) {
 			showErrorToast("You can only add up to 8 languages");
 			return;
 		}
@@ -62,9 +62,9 @@ const UserLanguages = ({ user, formInputs, setFormInputs }) => {
 
 			{/* List of languages */}
 			<div className="mb-6">
-				{formInputs.languages.length > 0 && (
+				{formInputs.languages?.length > 0 && (
 					<div className="flex flex-wrap gap-2">
-						{formInputs.languages.map((language, index) => (
+						{formInputs.languages?.map((language, index) => (
 							<span key={index} className="flex items-center px-3 pt-0.5 pb-1 mt-1 bg-gray-200 text-gray-800 rounded-full">
 								{language}
 								<button type="button" className="ml-1 text-gray-600 hover:text-gray-800 transition duration-150 ease-in-out" onClick={() => removeLanguage(language)}>

@@ -1,57 +1,58 @@
+import { redirect } from "next/navigation";
+
 import UserCardAboutMe from "@/components/User/UserProfilePublic/UserCardAboutMe";
 import UserCardBio from "@/components/User/UserProfilePublic/UserCardBio";
 import UserCardTalents from "@/components/User/UserProfilePublic/UserCardTalents";
 import UserCardProjects from "@/components/User/UserProfilePublic/UserCardProjects";
 import Error from "@/components/Errors/Error";
 
-import user from "@/mock/user.json";
-
 import { ApiGetUserPublicData } from "@/lib/api/userServer";
+import ERRORS from "@/lib/constants/errors";
 
-export const metadata = {
-	title: "Talent - Make It",
-	description: "User profile public page",
-};
+import user2 from "@/mock/user.json";
 
 const UserDescriptionPage = async ({ params }) => {
 	const { userId } = params;
 
 	const result = await ApiGetUserPublicData(userId);
-	if (!result.ok) {
+	if (!result.ok || !result.data || !result.data.user) {
 		if (result.status === 401 || result.status === 403) {
 			redirect("/access-denied");
 		}
 
-		return <Error title="404 - User Not Found" message="Sorry, we couldn’t find the user you are looking for... 😥" extraMessage={result.message} />;
+		return <Error title={ERRORS.NOT_FOUND.USER_TITLE} message={ERRORS.NOT_FOUND.USER_MESSAGE} extraMessage={result.message} />;
 	}
 
-	const user2 = result.data?.user;
+	const user = result.data.user;
 
-	const username = user2?.username;
-	const profilePicture = user2?.profilePicture;
-	const backgroundPicture = user2?.backgroundPicture;
-	const description = user2?.description;
-	const projects = user2?.projects;
-	const locationCity = user2?.location?.city;
-	const locationCountry = user2?.location?.country;
-	const company = user2?.company;
-	const languages = user2?.languages;
-	const website = user2?.website;
-	const bio = user2?.bio;
+	const username = user?.username;
+	const profilePicture = user?.profilePicture;
+	const backgroundPicture = user?.backgroundPicture;
+	const description = user?.description;
+	const projects = user?.projects;
+	const projectCount = user2?.projects?.projectCount;
+	const locationCity = user?.location?.city;
+	const locationCountry = user?.location?.country;
+	const company = user?.company;
+	const languages = user?.languages;
+	const website = user?.website;
+	const bio = user?.bio;
 	const talents = user?.talents;
 
-	console.log("🚀 ~ UserDescriptionPage ~ user2:", user);
+	console.log("🚀 ~ UserDescriptionPage ~ talents:", user?.talents);
+	console.log("🚀 ~ UserDescriptionPage ~ talents2:", user2?.talents);
 
 	return (
 		<>
 			<div className="grid md:grid-cols-3 gap-8 my-8">
 				{/* User card with pictures and about me */}
 				<UserCardAboutMe
+					userId={userId}
 					username={username}
 					profilePicture={profilePicture}
 					backgroundPicture={backgroundPicture}
 					description={description}
-					projects={projects}
+					projectCount={projectCount}
 					locationCity={locationCity}
 					locationCountry={locationCountry}
 					company={company}
@@ -66,7 +67,7 @@ const UserDescriptionPage = async ({ params }) => {
 				<UserCardTalents talents={talents} />
 
 				{/* User card with projects */}
-				<UserCardProjects projects={user.projects} />
+				<UserCardProjects projects={user2.projects} />
 			</div>
 		</>
 	);

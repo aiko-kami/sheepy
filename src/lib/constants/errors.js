@@ -44,6 +44,22 @@ const ERRORS = {
 		UNAUTHORIZED: "You do not have permission to perform this action.",
 		UNKNOWN: "An unexpected error occurred. Please try again later.",
 	},
+
+	NOT_FOUND: {
+		USER_TITLE: "404 - User Not Found",
+		USER_MESSAGE: "Sorry, we couldn’t find the user you are looking for... 😥",
+		USER_SETTINGS_TITLE: "404 - User Not Found",
+		USER_SETTINGS_MESSAGE: "Sorry, we couldn’t find the user you are looking for... 😥",
+		PROJECT_TITLE: "404 - Project Not Found",
+		PROJECT_MESSAGE: "Sorry, we couldn’t find the project you are looking for... 😥",
+		CATEGORY_TITLE: "404 - Category Not Found",
+		CATEGORY_MESSAGE: "Sorry, we couldn’t find the category you are looking for... 😥",
+	},
+
+	ACCESS_DENIED: {
+		UNAUTHORIZED_TITLE: "401 - Access Denied",
+		UNAUTHORIZED_MESSAGE: "Sorry, you are not allowed to access this data... 😥",
+	},
 };
 
 export default ERRORS;

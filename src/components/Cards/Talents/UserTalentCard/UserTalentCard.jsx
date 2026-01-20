@@ -26,8 +26,8 @@ const UserTalentCard = ({ talent }) => {
 					</button>
 				</div>
 			</div>
-			<Modal modalDisplay={modalDisplay} closeModalWithBackground={closeModal} closeModal={closeModal} modalSize={"2xl"} modalTitle={"UX/UI Designer"}>
-				<UserTalentCardModal closeModal={closeModal} />
+			<Modal modalDisplay={modalDisplay} closeModalWithBackground={closeModal} closeModal={closeModal} modalSize={"2xl"} modalTitle={talent.name}>
+				<UserTalentCardModal closeModal={closeModal} talent={talent} />
 			</Modal>
 		</>
 	);

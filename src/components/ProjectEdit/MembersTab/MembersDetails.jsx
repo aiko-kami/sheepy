@@ -1,7 +1,7 @@
 import { IoPeople } from "react-icons/io5";
 import MembersTable from "@/components/Tables/ProjectEdit/MembersTable";
 
-const MembersDetails = ({ projectId, user, userPermissions, members }) => {
+const MembersDetails = ({ projectId, userPermissions, members }) => {
 	return (
 		<>
 			{/* Project members */}

@@ -14,12 +14,12 @@ import { ApiUpdateUserBioDescription } from "@/lib/api/usersClient";
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { handleFormChange } from "@/utils/formHandlers";
 
-const UserCardPictureBio = ({ user }) => {
+const UserCardPictureBio = ({ username, profilePicture, backgroundPicture, description, bio }) => {
 	const router = useRouter();
 
 	const [formInputs, setFormInputs] = useState({
-		description: user.description || "",
-		bio: user.bio.data || "",
+		description: description || "",
+		bio: bio || "",
 	});
 
 	const onChange = handleFormChange(setFormInputs);
@@ -45,13 +45,13 @@ const UserCardPictureBio = ({ user }) => {
 	return (
 		<div className="row-span-3">
 			<div className="bg-base-450 shadow-2xl relative pb-8">
-				<ProfilePicture user={user} />
+				<ProfilePicture profilePicture={profilePicture} backgroundPicture={backgroundPicture} />
 
 				{/* User card text */}
 				<div className="px-6">
 					{/* Username and description */}
 					<div className="text-center my-5">
-						<h1 className="text-3xl font-semibold">{user.username}</h1>
+						<h1 className="text-3xl font-semibold">{username}</h1>
 					</div>
 					{/* Projects counters */}
 					{/* <ProjectCounter projectCount={user.projects.projectCount} /> */}

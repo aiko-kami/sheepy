@@ -1,9 +1,9 @@
 import { redirect } from "next/navigation";
 import FormDetails from "@/components/ProjectEdit/DetailsTab/FormDetails";
 import Error from "@/components/Errors/Error";
-import { ApiGetEditProjectDetails } from "@/lib/api/projectEditionServer";
 
-import project from "@/mock/project.json";
+import { ApiGetEditProjectDetails } from "@/lib/api/projectEditionServer";
+import ERRORS from "@/lib/constants/errors";
 
 export const metadata = {
 	title: "Edit project - Make It",
@@ -14,15 +14,15 @@ const ProjectEditDetailsPage = async ({ params }) => {
 	const { projectLink } = params;
 
 	const result = await ApiGetEditProjectDetails(projectLink);
-	if (!result.ok) {
+	if (!result.ok || !result.data || !result.data.project) {
 		if (result.status === 401 || result.status === 403) {
 			redirect("/access-denied");
 		}
 
-		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" extraMessage={result.message} />;
+		return <Error title={ERRORS.NOT_FOUND.PROJECT_TITLE} message={ERRORS.NOT_FOUND.PROJECT_MESSAGE} extraMessage={result.message} />;
 	}
 
-	const project = result.data?.project;
+	const project = result.data.project;
 
 	const creator = project?.createdBy;
 	const owners = project?.owners;
@@ -31,10 +31,6 @@ const ProjectEditDetailsPage = async ({ params }) => {
 	const updatedBy = project?.updatedBy;
 	const likes = project?.likes;
 	const crush = project?.crush;
-
-	if (!project) {
-		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" />;
-	}
 
 	return <FormDetails project={project} creator={creator} owners={owners} createdAt={createdAt} updatedAt={updatedAt} updatedBy={updatedBy} likes={likes} crush={crush} />;
 };

@@ -12,11 +12,11 @@ import { ApiUpdateUserEmail } from "@/lib/api/usersClient";
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { handleFormChange } from "@/utils/formHandlers";
 
-const UserCardEmail = ({ user }) => {
+const UserCardEmail = ({ email }) => {
 	const router = useRouter();
 
 	const [formInputs, setFormInputs] = useState({
-		email: user.email,
+		email: email,
 	});
 
 	const onChange = handleFormChange(setFormInputs);

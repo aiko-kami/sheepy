@@ -56,12 +56,17 @@ const Button = ({ children, btnProps }) => {
 			color = isDisabled ? "text-white bg-orange-600 opacity-40" : "text-white bg-orange-600 hover:bg-orange-700 active:bg-orange-800";
 			break;
 		case "yellow":
-			color = isDisabled ? "text-white bg-yellow-600 opacity-40" : "text-white bg-yellow-600 hover:bg-yellow-700 active:bg-yellow-800";
+			color = isDisabled ? "text-white bg-yellow-500 opacity-40" : "text-white bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700";
 			break;
 		case "gradientBluePurple":
 			color = isDisabled
 				? "text-white bg-indigo-600 opacity-40"
 				: "text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 active:from-blue-800 active:to-indigo-800 shadow-2xl shadow-blue-500/25";
+			break;
+		case "gradientPurplePink":
+			color = isDisabled
+				? "text-white bg-pink-600 opacity-40"
+				: "text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 active:from-purple-800 active:to-pink-800 shadow-2xl shadow-purple-500/25";
 			break;
 		case "grayBorder":
 			color = isDisabled

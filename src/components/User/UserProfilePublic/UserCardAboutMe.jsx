@@ -1,21 +1,12 @@
 import { IoLocationOutline, IoBusinessOutline, IoChatbubbleEllipsesOutline, IoLinkOutline } from "react-icons/io5";
+import ProfilePicture from "@/components/User/UserProfilePublic/ProfilePicture";
 import ProjectCounter from "@/components/Common/ProjectCounter";
-import { Avatar } from "@/components/Badges/Avatar";
-import { Background } from "@/components/Badges/Background";
 
-const UserCardAboutMe = ({ username, profilePicture, backgroundPicture, description, projects, locationCity, locationCountry, company, languages, website }) => {
+const UserCardAboutMe = ({ userId, username, profilePicture, backgroundPicture, description, projectCount, locationCity, locationCountry, company, languages, website }) => {
 	return (
 		<div className="md:row-span-2 bg-base-450 shadow-2xl relative pb-8">
-			{/* background picture */}
-			<div className="h-46 relative">
-				<Background img={backgroundPicture?.link} alt={"user background picture"} />
-			</div>
-			{/* Profile picture */}
-			<div className="flex justify-center relative mx-auto -mt-30">
-				<div className="rounded-full border-5 border-base-500 bg-white">
-					<Avatar img={profilePicture?.link} size={"3xl"} alt={"user profile picture"} />
-				</div>
-			</div>
+			{/* Profile and background pictures */}
+			<ProfilePicture userId={userId} profilePicture={profilePicture} backgroundPicture={backgroundPicture} />
 			{/* User card text */}
 			<div className="px-6">
 				{/* Username and description */}
@@ -24,7 +15,7 @@ const UserCardAboutMe = ({ username, profilePicture, backgroundPicture, descript
 					<p className="text-gray-300">{description}</p>
 				</div>
 				{/* Projects counters */}
-				<ProjectCounter projects={projects} />
+				<ProjectCounter projectCount={projectCount} />
 				{/* User details */}
 				<div>
 					<h2 className="text-2xl font-semibold mb-4">More about me...</h2>

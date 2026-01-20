@@ -13,15 +13,15 @@ import { ApiUpdateUserDetails } from "@/lib/api/usersClient";
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { handleFormChange } from "@/utils/formHandlers";
 
-const UserCardDetails = ({ user }) => {
+const UserCardDetails = ({ locationCity, locationCountry, languages, company, website }) => {
 	const router = useRouter();
 
 	const [formInputs, setFormInputs] = useState({
-		locationCity: user.location.city.data,
-		locationCountry: user.location.country.data,
-		languages: user.languages.data,
-		company: user.company.data,
-		website: user.website.data,
+		locationCity: locationCity,
+		locationCountry: locationCountry,
+		languages: languages,
+		company: company,
+		website: website,
 	});
 
 	const onChange = handleFormChange(setFormInputs);
@@ -70,7 +70,7 @@ const UserCardDetails = ({ user }) => {
 								</InputField>
 							</div>
 							{/* Language */}
-							<UserLanguages user={user} formInputs={formInputs} setFormInputs={setFormInputs} />
+							<UserLanguages formInputs={formInputs} setFormInputs={setFormInputs} />
 							{/* Company */}
 							<div className="mb-6">
 								<InputField inputName={"company"} inputType={"text"} label={"Company"} inputValue={formInputs.company} onChange={onChange}>

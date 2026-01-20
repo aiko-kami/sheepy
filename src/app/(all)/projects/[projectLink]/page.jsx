@@ -13,6 +13,7 @@ import StepsQAComments from "@/components/ProjectPublic/StepsQAComments";
 import SimilarProjects from "@/components/ProjectPublic/SimilarProjects";
 
 import { ApiGetProjectPublicDataByLink } from "@/lib/api/projectCore";
+import ERRORS from "@/lib/constants/errors";
 import { normalizeProjectData } from "@/utils/projectHandlers";
 
 export const metadata = {
@@ -24,13 +25,13 @@ const ProjectPublicPage = async ({ params }) => {
 	const { projectLink } = params;
 
 	const result = await ApiGetProjectPublicDataByLink(projectLink);
-	if (!result.ok) {
-		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" extraMessage={result.message} />;
+	if (!result.ok || !result.data || !result.data.project) {
+		return <Error title={ERRORS.NOT_FOUND.PROJECT_TITLE} message={ERRORS.NOT_FOUND.PROJECT_MESSAGE} extraMessage={result.message} />;
 	}
 
 	const project = normalizeProjectData(result.data.project);
 	if (!project) {
-		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" />;
+		return <Error title={ERRORS.NOT_FOUND.PROJECT_TITLE} message={ERRORS.NOT_FOUND.PROJECT_MESSAGE} />;
 	}
 
 	const projectId = project.projectId;

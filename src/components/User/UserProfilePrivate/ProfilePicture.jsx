@@ -14,13 +14,13 @@ import defaultPicture from "@/public/images/default-profile-picture.png";
 import { ApiUpdateUserPicture, ApiUpdateUserBackgroundPicture, ApiRemoveUserPicture, ApiRemoveUserBackgroundPicture } from "@/lib/api/usersClient";
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
-const ProfilePicture = ({ user }) => {
+const ProfilePicture = ({ profilePicture, backgroundPicture }) => {
 	const router = useRouter();
 	const { refreshUser } = useAuth();
 
 	const [displayPopover, setDisplayPopover] = useState(false);
-	const [profileImage, setProfileImage] = useState(user.profilePicture?.link || defaultPicture.src);
-	const [backgroundImage, setBackgroundImage] = useState(user.backgroundPicture?.link || "");
+	const [profileImage, setProfileImage] = useState(profilePicture?.link || defaultPicture.src);
+	const [backgroundImage, setBackgroundImage] = useState(backgroundPicture?.link || "");
 	const fileInputProfileRef = useRef(null);
 	const fileInputBackgroundRef = useRef(null);
 

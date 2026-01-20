@@ -4,6 +4,7 @@ import FormGeneral from "@/components/ProjectEdit/GeneralTab/FormGeneral";
 import Error from "@/components/Errors/Error";
 
 import { ApiGetEditProjectGeneral } from "@/lib/api/projectEditionServer";
+import ERRORS from "@/lib/constants/errors";
 
 export const metadata = {
 	title: "Edit project | Make It",
@@ -14,17 +15,17 @@ const ProjectEditGeneralPage = async ({ params }) => {
 	const { projectLink } = params;
 
 	const result = await ApiGetEditProjectGeneral(projectLink);
-	if (!result.ok) {
+	if (!result.ok || !result.data || !result.data.project || !result.data.tagsList || !result.data.userPermissions) {
 		if (result.status === 401 || result.status === 403) {
 			redirect("/access-denied");
 		}
 
-		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" extraMessage={result.message} />;
+		return <Error title={ERRORS.NOT_FOUND.PROJECT_TITLE} message={ERRORS.NOT_FOUND.PROJECT_MESSAGE} extraMessage={result.message} />;
 	}
 
-	const project = result.data?.project;
+	const project = result.data.project;
 
-	const tagsList = result.data?.tagsList;
+	const tagsList = result.data.tagsList;
 
 	const projectId = project?.projectId;
 	const title = project?.title;
@@ -38,11 +39,7 @@ const ProjectEditGeneralPage = async ({ params }) => {
 	const creatorMotivation = project?.creatorMotivation;
 	const objectives = project?.objectives;
 
-	const userPermissions = result.data?.userPermissions;
-
-	if (!project) {
-		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" />;
-	}
+	const userPermissions = result.data.userPermissions;
 
 	return (
 		<FormGeneral

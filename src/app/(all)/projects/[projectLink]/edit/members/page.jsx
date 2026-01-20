@@ -4,8 +4,7 @@ import FormMembers from "@/components/ProjectEdit/MembersTab/FormMembers";
 import Error from "@/components/Errors/Error";
 
 import { ApiGetEditProjectMembers } from "@/lib/api/projectEditionServer";
-
-import user from "@/mock/user.json";
+import ERRORS from "@/lib/constants/errors";
 
 export const metadata = {
 	title: "Edit project - Make It",
@@ -19,28 +18,25 @@ const ProjectEditMembersPage = async ({ params }) => {
 
 	//	console.dir(result, { depth: null, colors: true });
 
-	if (!result.ok) {
+	if (!result.ok || !result.data || !result.data.project || !result.data.userPermissions || !result.data.joinProject) {
 		if (result.status === 401 || result.status === 403) {
 			redirect("/access-denied");
 		}
 
-		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" extraMessage={result.message} />;
+		return <Error title={ERRORS.NOT_FOUND.PROJECT_TITLE} message={ERRORS.NOT_FOUND.PROJECT_MESSAGE} extraMessage={result.message} />;
 	}
 
-	const project = result.data?.project;
+	const project = result.data.project;
 
 	const projectId = project?.projectId;
 	const members = project?.members;
-
-	const userPermissions = result.data?.userPermissions;
-
 	const talentsNeeded = project?.talentsNeeded;
-	const joinProject = result.data?.joinProject;
-	if (!project) {
-		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" />;
-	}
 
-	return <FormMembers projectId={projectId} user={user} userPermissions={userPermissions} members={members} talentsNeeded={talentsNeeded} joinProject={joinProject} />;
+	const userPermissions = result.data.userPermissions;
+
+	const joinProject = result.data.joinProject;
+
+	return <FormMembers projectId={projectId} userPermissions={userPermissions} members={members} talentsNeeded={talentsNeeded} joinProject={joinProject} />;
 };
 
 export default ProjectEditMembersPage;

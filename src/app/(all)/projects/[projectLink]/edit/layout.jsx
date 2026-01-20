@@ -5,17 +5,18 @@ import ProjectEditNavbar from "@/components/ProjectEdit/ProjectEditNavbar";
 import Error from "@/components/Errors/Error";
 
 import { ApiGetEditUserRights } from "@/lib/api/projectEditionServer";
+import ERRORS from "@/lib/constants/errors";
 
 export default async function RootLayout({ params, children }) {
 	const { projectLink } = params;
 
 	const result = await ApiGetEditUserRights(projectLink);
-	if (!result.ok) {
+	if (!result.ok || !result.data || !result.data.projectRights || !result.data.projectStatus) {
 		if (result.status === 401 || result.status === 403) {
 			redirect("/access-denied");
 		}
 
-		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" extraMessage={result.message} />;
+		return <Error title={ERRORS.NOT_FOUND.PROJECT_TITLE} message={ERRORS.NOT_FOUND.PROJECT_MESSAGE} extraMessage={result.message} />;
 	}
 
 	const projectRights = result.data.projectRights;

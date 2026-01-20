@@ -5,6 +5,7 @@ import Error from "@/components/Errors/Error";
 import { DateTime } from "luxon";
 
 import { ApiGetEditProjectStatus } from "@/lib/api/projectEditionServer";
+import ERRORS from "@/lib/constants/errors";
 
 export const metadata = {
 	title: "Edit project | Make It",
@@ -15,16 +16,16 @@ const ProjectEditStatusPage = async ({ params }) => {
 	const { projectLink } = params;
 
 	const result = await ApiGetEditProjectStatus(projectLink);
-	if (!result.ok) {
+	if (!result.ok || !result.data || !result.data.project || !result.data.statusesList || !result.data.userPermissions) {
 		if (result.status === 401 || result.status === 403) {
 			redirect("/access-denied");
 		}
 
-		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" extraMessage={result.message} />;
+		return <Error title={ERRORS.NOT_FOUND.PROJECT_TITLE} message={ERRORS.NOT_FOUND.PROJECT_MESSAGE} extraMessage={result.message} />;
 	}
 
-	const project = result.data?.project;
-	const statusesList = result.data?.statusesList;
+	const project = result.data.project;
+	const statusesList = result.data.statusesList;
 
 	const projectId = project?.projectId;
 	const status = project?.statusInfo?.currentStatus;
@@ -48,11 +49,7 @@ const ProjectEditStatusPage = async ({ params }) => {
 	const visibility = project?.visibility;
 	const startDate = project?.startDate;
 
-	const userPermissions = result.data?.userPermissions;
-
-	if (!project) {
-		return <Error title="404 - Project Not Found" message="Sorry, we couldn’t find the project you are looking for... 😥" />;
-	}
+	const userPermissions = result.data.userPermissions;
 
 	return (
 		<FormStatus
