@@ -12,7 +12,7 @@ import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
 import { ApiPostAddObjective, ApiDeleteObjective } from "@/lib/api/projectEditionServer";
 
-const ObjectiveInputForm = ({ projectId, objectives, disabled = false }) => {
+const ObjectiveInputForm = ({ projectId, objectives = [], disabled = false }) => {
 	const router = useRouter();
 
 	const [objectiveInput, setObjectiveInput] = useState("");
@@ -23,15 +23,15 @@ const ObjectiveInputForm = ({ projectId, objectives, disabled = false }) => {
 		const objective = (objectiveInput || "").trim();
 
 		// Basic validations with early returns
-		if (!objective) return showErrorToast("Please enter an objective");
+		if (!objective) return showErrorToast("Please enter an objective.");
 
 		// Case-insensitive duplicate check (assumes stored items have .objective)
 		const alreadyExists = objectives.some((obj) => String(obj || "").toLowerCase() === objective.toLowerCase());
-		if (alreadyExists) return showErrorToast("This objective is already present in the list");
+		if (alreadyExists) return showErrorToast("This objective is already present in the list.");
 
 		// Max limit check (max 20)
 		if (objectives.length >= 20) {
-			return showErrorToast("You can only add up to 20 objectives");
+			return showErrorToast("You can only add up to 20 objectives.");
 		}
 
 		const payload = {
@@ -46,7 +46,7 @@ const ObjectiveInputForm = ({ projectId, objectives, disabled = false }) => {
 
 		router.refresh();
 		setObjectiveInput("");
-		showSuccessToast("The objective has been added.");
+		showSuccessToast("objective added successfully.");
 	};
 
 	const handleObjectiveInputChange = (e) => {
@@ -61,7 +61,7 @@ const ObjectiveInputForm = ({ projectId, objectives, disabled = false }) => {
 	const removeObjective = async (objective) => {
 		// Basic validations with early returns
 		if (!objective) {
-			showErrorToast("Please select an objective to remove");
+			showErrorToast("Please select an objective to remove.");
 			return;
 		}
 
@@ -87,7 +87,7 @@ const ObjectiveInputForm = ({ projectId, objectives, disabled = false }) => {
 		setObjectiveToRemove(null);
 		setModalDisplayRemove(false);
 
-		showSuccessToast("The objective has been removed.");
+		showSuccessToast("Objective removed successfully.");
 	};
 
 	return (

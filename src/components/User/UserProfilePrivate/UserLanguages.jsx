@@ -67,8 +67,8 @@ const UserLanguages = ({ formInputs, setFormInputs }) => {
 						{formInputs.languages?.map((language, index) => (
 							<span key={index} className="flex items-center px-3 pt-0.5 pb-1 mt-1 bg-gray-200 text-gray-800 rounded-full">
 								{language}
-								<button type="button" className="ml-1 text-gray-600 hover:text-gray-800 transition duration-150 ease-in-out" onClick={() => removeLanguage(language)}>
-									<IoCloseCircleOutline className="text-lg" title="Remove language" />
+								<button type="button" className="ml-1.5 text-gray-600 hover:text-gray-800 transition duration-150 ease-in-out" onClick={() => removeLanguage(language)}>
+									<IoCloseCircleOutline className="text-lg mt-0.5" title="Remove language" />
 								</button>
 							</span>
 						))}

@@ -92,7 +92,7 @@ const ProjectRequestEditModal = ({ closeModalEdit, joinProject }) => {
 						<Button
 							btnProps={{
 								type: "button",
-								btnColor: "grayBorder",
+								btnColor: "grayOutline",
 								action: onSaveDraft,
 							}}
 						>

@@ -44,7 +44,7 @@ const UserCardPassword = () => {
 	};
 
 	return (
-		<div className="bg-base-450 shadow-2xl p-6 pb-8">
+		<div className="bg-slate-900/50 backdrop-blur-lg border border-slate-800 rounded-xl p-6 shadow-xl">
 			<h2 className="text-2xl font-semibold mb-6">My password</h2>
 			{/* User password */}
 			<div className="mx-0 px-6 pl-8">

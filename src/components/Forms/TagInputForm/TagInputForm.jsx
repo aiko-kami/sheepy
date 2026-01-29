@@ -63,11 +63,11 @@ const TagInputForm = ({ projectId, tags = [], tagsList = [], disabled = false })
 	const addExistingTag = async (tagObject) => {
 		if (!tagObject) return;
 		if (totalSelectedCount >= MAX_TAGS) {
-			showErrorToast(`You can only add up to ${MAX_TAGS} tags`);
+			showErrorToast(`You can only add up to ${MAX_TAGS} tags.`);
 			return;
 		}
 		if (selectedExistingIds.has(tagObject.tagId) || selectedNewNames.has(normalize(tagObject.name))) {
-			showErrorToast("This tag is already present in the list");
+			showErrorToast("This tag is already present in the list.");
 			return;
 		}
 
@@ -87,23 +87,23 @@ const TagInputForm = ({ projectId, tags = [], tagsList = [], disabled = false })
 		setOpenSuggestions(false);
 		setHighlightIndex(-1);
 		if (inputRef.current) inputRef.current.focus();
-		showSuccessToast("The tag has been added.");
+		showSuccessToast("Tag added successfully.");
 	};
 
 	// Add new tag (only store the tagName)
 	const addNewTag = async (name) => {
 		const tagTrimmed = String(name || "").trim();
 		if (!tagTrimmed) {
-			showErrorToast("Please enter a tag name");
+			showErrorToast("Please enter a tag name.");
 			return;
 		}
 		if (totalSelectedCount >= MAX_TAGS) {
-			showErrorToast(`You can only add up to ${MAX_TAGS} tags`);
+			showErrorToast(`You can only add up to ${MAX_TAGS} tags.`);
 			return;
 		}
 		const cap = normalize(tagTrimmed);
 		if (selectedNewNames.has(cap) || existingTags.some((t) => normalize(t.name) === cap)) {
-			showErrorToast("This tag is already present in the list");
+			showErrorToast("This tag is already present in the list.");
 			return;
 		}
 
@@ -123,7 +123,7 @@ const TagInputForm = ({ projectId, tags = [], tagsList = [], disabled = false })
 		setOpenSuggestions(false);
 		setHighlightIndex(-1);
 		if (inputRef.current) inputRef.current.focus();
-		showSuccessToast("The tag has been added.");
+		showSuccessToast("Tag added successfully.");
 	};
 
 	// Generic add: prefer suggestion exact match, else create new name
@@ -149,7 +149,7 @@ const TagInputForm = ({ projectId, tags = [], tagsList = [], disabled = false })
 	const removeTag = (tag) => {
 		// Basic validations with early returns
 		if (!tag) {
-			showErrorToast("Please select a tag to remove");
+			showErrorToast("Please select a tag to remove.");
 			return;
 		}
 
@@ -174,7 +174,7 @@ const TagInputForm = ({ projectId, tags = [], tagsList = [], disabled = false })
 
 		setTagToRemove(null);
 		setModalDisplayRemove(false);
-		showSuccessToast("The tag has been removed.");
+		showSuccessToast("Tag removed successfully.");
 	};
 
 	// Handlers

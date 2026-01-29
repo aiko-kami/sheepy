@@ -2,20 +2,38 @@ import { IoLocationOutline, IoBusinessOutline, IoChatbubbleEllipsesOutline, IoLi
 import ProfilePicture from "@/components/User/UserProfilePublic/ProfilePicture";
 import ProjectCounter from "@/components/Common/ProjectCounter";
 
-const UserCardAboutMe = ({ userId, username, profilePicture, backgroundPicture, description, projectCount, locationCity, locationCountry, company, languages, website }) => {
+const UserCardAboutMe = ({ userId, username, profilePicture, backgroundPicture, description, projectCount, locationCity, locationCountry, company, languages, website, quickSkills }) => {
 	return (
 		<div className="md:row-span-2 bg-base-450 shadow-2xl relative pb-8">
 			{/* Profile and background pictures */}
 			<ProfilePicture userId={userId} profilePicture={profilePicture} backgroundPicture={backgroundPicture} />
+
 			{/* User card text */}
 			<div className="px-6">
 				{/* Username and description */}
-				<div className="text-center my-5">
+				<div className="text-center my-4">
 					<h1 className="text-3xl font-semibold mb-1">{username}</h1>
 					<p className="text-gray-300">{description}</p>
 				</div>
+
+				{/* Quick skills */}
+				{quickSkills && quickSkills.length > 0 && (
+					<div className="mb-4">
+						<div className="flex flex-wrap justify-center gap-3">
+							{quickSkills.map((skill, index) => (
+								<span key={index} className="flex items-center px-3 pt-0.5 pb-1 bg-blue-500/20 text-blue-300 border border-blue-500/30 rounded-full text-sm shadow-sm">
+									{skill}
+								</span>
+							))}
+						</div>
+					</div>
+				)}
+
 				{/* Projects counters */}
-				<ProjectCounter projectCount={projectCount} />
+				<div className="my-6">
+					<ProjectCounter projectCount={projectCount} />
+				</div>
+
 				{/* User details */}
 				<div>
 					<h2 className="text-2xl font-semibold mb-4">More about me...</h2>

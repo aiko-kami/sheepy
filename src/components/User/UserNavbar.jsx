@@ -29,6 +29,11 @@ const UserNavbar = () => {
 					</Link>
 				</li>
 				<li className="w-full focus-within:z-10">
+					<Link href="/users/my-talents" className={`${getLinkClasses("/users/my-talents")} sm:border-r sm:border-gray-700`}>
+						My Talents
+					</Link>
+				</li>
+				<li className="w-full focus-within:z-10">
 					<Link href="/users/my-messages" className={`${getLinkClasses("/users/my-messages")} sm:border-r sm:border-gray-700`}>
 						My Messages
 					</Link>

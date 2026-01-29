@@ -44,11 +44,11 @@ const Cover = ({ title, coverLink, creatorUserId, creatorUsername, creatorProfil
 
 							{/* Buttons Like and Share */}
 							<div className="flex justify-center gap-4">
-								<ButtonCircle btnProps={{ btnSize: "std-xl", type: "button", btnColor: "grayBorder" }}>
+								<ButtonCircle btnProps={{ btnSize: "std-xl", type: "button", btnColor: "grayOutline" }}>
 									<IoBookmarkOutline />
 								</ButtonCircle>
 
-								<ButtonCircle btnProps={{ btnSize: "std-xl", type: "button", btnColor: "grayBorder" }}>
+								<ButtonCircle btnProps={{ btnSize: "std-xl", type: "button", btnColor: "grayOutline" }}>
 									<IoShareSocialOutline />
 								</ButtonCircle>
 							</div>

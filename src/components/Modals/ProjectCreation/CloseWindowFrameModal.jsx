@@ -20,7 +20,7 @@ const CloseWindowFrameModal = ({ closeModalCloseWindow }) => {
 				<Button
 					btnProps={{
 						type: "button",
-						btnColor: "grayBorder",
+						btnColor: "grayOutline",
 						action: closeModalCloseWindow,
 					}}
 				>

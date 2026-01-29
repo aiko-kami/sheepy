@@ -35,7 +35,7 @@ const Notification = ({ value, size, notifColor, ringMode }) => {
 		case "green":
 			color = "text-white bg-green-600";
 			break;
-		case "grayBorder":
+		case "grayOutline":
 			color = "text-gray-600 border border-2 box-border border-gray-600";
 			break;
 		default:

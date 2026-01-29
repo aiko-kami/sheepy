@@ -44,7 +44,7 @@ const UserCardPictureBio = ({ username, profilePicture, backgroundPicture, descr
 
 	return (
 		<div className="row-span-3">
-			<div className="bg-base-450 shadow-2xl relative pb-8">
+			<div className="bg-slate-900/50 backdrop-blur-lg border border-slate-800 rounded-xl shadow-xl relative pb-8 overflow-hidden">
 				<ProfilePicture profilePicture={profilePicture} backgroundPicture={backgroundPicture} />
 
 				{/* User card text */}

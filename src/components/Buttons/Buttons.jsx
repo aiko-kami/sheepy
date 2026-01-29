@@ -1,5 +1,113 @@
 "use client";
 
+function getButtonClasses(color, variant = "solid", disabled = false) {
+	const COLORS = {
+		gray: {
+			text: "text-white",
+			base: "bg-gray-500",
+			hover: "hover:bg-gray-600",
+			active: "active:bg-gray-800",
+			disabled: {
+				base: "bg-gray-500 opacity-40",
+			},
+		},
+		blue: {
+			text: "text-white",
+			base: "bg-blue-600",
+			hover: "hover:bg-blue-700",
+			active: "active:bg-blue-800",
+			disabled: {
+				base: "bg-blue-600 opacity-40",
+			},
+		},
+		green: {
+			text: "text-white",
+			base: "bg-green-600",
+			hover: "hover:bg-green-700",
+			active: "active:bg-green-800",
+			disabled: {
+				base: "bg-green-600 opacity-40",
+			},
+		},
+		red: {
+			text: "text-white",
+			base: "bg-red-600",
+			hover: "hover:bg-red-700",
+			active: "active:bg-red-800",
+			disabled: {
+				base: "bg-red-600 opacity-40",
+			},
+		},
+		pink: {
+			text: "text-white",
+			base: "bg-pink-400",
+			hover: "hover:bg-pink-500",
+			active: "active:bg-pink-700",
+			disabled: {
+				base: "bg-pink-400 opacity-40",
+			},
+		},
+		orange: {
+			text: "text-white",
+			base: "bg-orange-600",
+			hover: "hover:bg-orange-700",
+			active: "active:bg-orange-800",
+			disabled: {
+				base: "bg-orange-600 opacity-40",
+			},
+		},
+		yellow: {
+			text: "text-white",
+			base: "bg-yellow-500",
+			hover: "hover:bg-yellow-600",
+			active: "active:bg-yellow-700",
+			disabled: {
+				base: "bg-yellow-500 opacity-40",
+			},
+		},
+		gradientBluePurple: {
+			text: "text-white",
+			base: "bg-gradient-to-r from-blue-600 to-indigo-600",
+			hover: "hover:from-blue-700 hover:to-indigo-700",
+			active: "active:from-blue-800 active:to-indigo-800",
+			disabled: {
+				base: "bg-indigo-600 opacity-40",
+			},
+			shadow: "shadow-2xl shadow-blue-500/25",
+		},
+		gradientPurplePink: {
+			text: "text-white",
+			base: "bg-gradient-to-r from-purple-600 to-pink-600",
+			hover: "hover:from-purple-700 hover:to-pink-700",
+			active: "active:from-purple-800 active:to-pink-800",
+			disabled: {
+				base: "bg-pink-600 opacity-40",
+			},
+			shadow: "shadow-2xl shadow-purple-500/25",
+		},
+		grayOutline: {
+			text: "text-white",
+			base: "",
+			hover: "hover:bg-slate-600",
+			active: "active:bg-slate-700",
+			border: "border border-2 box-border border-slate-600",
+			disabled: {
+				text: "text-gray-900",
+				base: "bg-slate-200 opacity-40",
+				border: "border border-2 box-border border-slate-300",
+			},
+		},
+	};
+
+	const c = COLORS[color] || COLORS.blue;
+
+	if (disabled) {
+		return [c.disabled?.text ?? c.text, c.disabled?.base ?? c.base, c.disabled?.border ?? c.border, "opacity-40 cursor-not-allowed"].filter(Boolean).join(" ");
+	}
+
+	return [c.text, c.base, c.border, c.hover, c.active, c.shadow].filter(Boolean).join(" ");
+}
+
 const Button = ({ children, btnProps }) => {
 	const { type, btnSize, wFull = false, btnColor, btnRounded, action = () => {}, name, value, disabled = false } = btnProps;
 
@@ -33,50 +141,6 @@ const Button = ({ children, btnProps }) => {
 			size = "text-base px-4 py-2";
 	}
 
-	let color;
-	const isDisabled = btnProps?.disabled;
-
-	switch (btnColor) {
-		case "gray":
-			color = isDisabled ? "text-white bg-gray-500 opacity-40" : "text-white bg-gray-500 hover:bg-gray-600 active:bg-gray-800";
-			break;
-		case "blue":
-			color = isDisabled ? "text-white bg-blue-600 opacity-40" : "text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800";
-			break;
-		case "green":
-			color = isDisabled ? "text-white bg-green-600 opacity-40" : "text-white bg-green-600 hover:bg-green-700 active:bg-green-800";
-			break;
-		case "red":
-			color = isDisabled ? "text-white bg-red-600 opacity-40" : "text-white bg-red-600 hover:bg-red-700 active:bg-red-800";
-			break;
-		case "pink":
-			color = isDisabled ? "text-white bg-pink-400 opacity-40" : "text-white bg-pink-400 hover:bg-pink-500 active:bg-pink-700";
-			break;
-		case "orange":
-			color = isDisabled ? "text-white bg-orange-600 opacity-40" : "text-white bg-orange-600 hover:bg-orange-700 active:bg-orange-800";
-			break;
-		case "yellow":
-			color = isDisabled ? "text-white bg-yellow-500 opacity-40" : "text-white bg-yellow-500 hover:bg-yellow-600 active:bg-yellow-700";
-			break;
-		case "gradientBluePurple":
-			color = isDisabled
-				? "text-white bg-indigo-600 opacity-40"
-				: "text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 active:from-blue-800 active:to-indigo-800 shadow-2xl shadow-blue-500/25";
-			break;
-		case "gradientPurplePink":
-			color = isDisabled
-				? "text-white bg-pink-600 opacity-40"
-				: "text-white bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 active:from-purple-800 active:to-pink-800 shadow-2xl shadow-purple-500/25";
-			break;
-		case "grayBorder":
-			color = isDisabled
-				? "text-white border border-2 box-border border-slate-300 bg-slate-200 opacity-40"
-				: "text-white border border-2 box-border bg-slate-700 border-slate-600 hover:bg-slate-600 active:bg-slate-700";
-			break;
-		default:
-			color = isDisabled ? "text-white bg-blue-300 opacity-40" : "text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800";
-	}
-
 	let rounded;
 	switch (btnRounded) {
 		case "none":
@@ -101,6 +165,8 @@ const Button = ({ children, btnProps }) => {
 			rounded = "rounded";
 	}
 
+	const colorClasses = getButtonClasses(btnColor, disabled);
+
 	return (
 		<button
 			type={type}
@@ -108,7 +174,7 @@ const Button = ({ children, btnProps }) => {
 			name={name}
 			value={value}
 			disabled={disabled}
-			className={`leading-snug text-nowrap shadow-lg transition duration-150 ease-in-out ${size} ${color} ${rounded} ${wFull ? "w-full" : ""}`}
+			className={`leading-snug text-nowrap shadow-lg transition-all duration-150 ease-in-out ${size} ${rounded} ${wFull ? "w-full" : ""} ${colorClasses}`}
 			data-mdb-ripple="true"
 			data-mdb-ripple-color="light"
 		>
@@ -144,23 +210,7 @@ const ButtonCircle = ({ children, btnProps }) => {
 			size = "text-base py-2 px-2";
 	}
 
-	let color;
-	switch (btnColor) {
-		case "gray":
-			color = "text-white bg-gray-600 hover:bg-gray-700 active:bg-gray-800";
-			break;
-		case "blue":
-			color = "text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800";
-			break;
-		case "green":
-			color = "text-white bg-green-600 hover:bg-green-700 active:bg-green-800";
-			break;
-		case "grayBorder":
-			color = "text-white border border-2 box-border border-gray-600 hover:bg-gray-600 active:bg-gray-700";
-			break;
-		default:
-			color = "text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800";
-	}
+	const colorClasses = getButtonClasses(btnColor, disabled);
 
 	return (
 		<button
@@ -169,7 +219,7 @@ const ButtonCircle = ({ children, btnProps }) => {
 			name={name}
 			value={value}
 			disabled={disabled}
-			className={`rounded-full leading-snug hover:shadow-lg transition duration-150 ease-in-out ${size} ${color}`}
+			className={`rounded-full leading-snug hover:shadow-lg transition duration-150 ease-in-out ${size} ${colorClasses}`}
 			data-mdb-ripple="true"
 			data-mdb-ripple-color="light"
 		>

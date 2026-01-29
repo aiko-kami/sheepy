@@ -69,7 +69,7 @@ const ProjectApplicationModal = ({ closeModal, talentsNeeded = [], roleSelected 
 
 				{/* Button Send application (submit form) */}
 				<div className="flex gap-8 justify-center">
-					<Button btnProps={{ type: "button", btnColor: "grayBorder", action: onSaveDraft }}>Save draft</Button>
+					<Button btnProps={{ type: "button", btnColor: "grayOutline", action: onSaveDraft }}>Save draft</Button>
 					<Button btnProps={{ type: "submit" }}>Send my application</Button>
 				</div>
 			</form>

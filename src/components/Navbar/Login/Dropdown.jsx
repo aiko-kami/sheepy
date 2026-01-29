@@ -6,7 +6,7 @@ import Notification from "@/components/Badges/Notification";
 
 const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown }) => {
 	const { logoutUser } = useAuth();
-	const { myProfileNotif, myProjectsNotif, myMessagesNotif, mySettingsNotif, helpNotif } = notifications;
+	const { myProfileNotif, myProjectsNotif, myTalentsNotif, myMessagesNotif, mySettingsNotif, helpNotif } = notifications;
 
 	const handleLogout = async () => {
 		try {
@@ -43,6 +43,16 @@ const Dropdown = ({ username, userId, notifications, dropdownOpen, closeDropdown
 					)}
 					<Link href="/users/my-projects" onClick={closeDropdown} className="block py-2 hover:bg-gray-200 duration-200 active:text-base-450">
 						My Projects
+					</Link>
+				</li>
+				<li className="relative">
+					{myTalentsNotif > 0 && (
+						<div className="absolute top-1.5 right-4">
+							<Notification value={myTalentsNotif} size={"sm"} notifColor={"pink"} />
+						</div>
+					)}
+					<Link href="/users/my-talents" onClick={closeDropdown} className="block py-2 hover:bg-gray-200 duration-200 active:text-base-450">
+						My Talents
 					</Link>
 				</li>
 				<li className="relative">

@@ -1,4 +1,6 @@
-import { apiGet } from "@/lib/api/ApiHelpers";
+import { apiGet, apiPost, apiDelete } from "@/lib/api/ApiHelpers";
+
+//GET requests
 
 export async function ApiGetUserFromSessionServer() {
 	return apiGet(`/users/myData`);
@@ -10,6 +12,18 @@ export async function ApiGetUserSettingsServer() {
 
 export async function ApiGetUserPublicData(userId) {
 	return apiGet(`/users/userPublic/${userId}`);
+}
+
+//POST requests
+
+export async function ApiPostAddQuickSkill(data) {
+	return apiPost("/users/skill", data);
+}
+
+//DELETE requests
+
+export async function ApiDeleteQuickSkill(data) {
+	return apiDelete("/users/skill", data);
 }
 
 /* 

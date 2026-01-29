@@ -19,7 +19,7 @@ const ButtonsNavigation = ({ goToStep, currentStep, totalSteps, isProjectReadyTo
 								type: "submit",
 								name: "action",
 								value: "save-draft",
-								btnColor: "grayBorder",
+								btnColor: "grayOutline",
 								btnRounded: "std",
 							}}
 						>
@@ -67,7 +67,7 @@ const ButtonsNavigation = ({ goToStep, currentStep, totalSteps, isProjectReadyTo
 								type: "submit",
 								name: "action",
 								value: "save-draft",
-								btnColor: "grayBorder",
+								btnColor: "grayOutline",
 								btnRounded: "std",
 							}}
 						>
@@ -132,7 +132,7 @@ const ButtonsNavigation = ({ goToStep, currentStep, totalSteps, isProjectReadyTo
 								type: "submit",
 								name: "action",
 								value: "save-draft",
-								btnColor: "grayBorder",
+								btnColor: "grayOutline",
 								btnRounded: "std",
 							}}
 						>

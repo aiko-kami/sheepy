@@ -18,7 +18,7 @@ const TextAreaField = ({
 	const resizeClass = `resize-${resize}`;
 
 	return (
-		<>
+		<div>
 			<div className="mb-2">
 				<label htmlFor={inputName} className={`${labelStyle} ${disabled && "text-gray-500"}`}>
 					{label}
@@ -46,7 +46,7 @@ const TextAreaField = ({
 			<div className="text-right text-sm text-gray-400 mt-0.5 mr-2">
 				{inputValue.length}/{maxLength}
 			</div>
-		</>
+		</div>
 	);
 };
 
@@ -54,7 +54,7 @@ const TextAreaCommentField = ({ label, labelStyle, inputStyle, inputName, inputV
 	const resizeClass = `resize-${resize}`;
 
 	return (
-		<>
+		<div>
 			<label htmlFor={inputName} className={`${labelStyle} ${disabled && "text-gray-500"}`}>
 				{label}
 			</label>
@@ -72,7 +72,7 @@ const TextAreaCommentField = ({ label, labelStyle, inputStyle, inputName, inputV
 				required={required}
 				disabled={disabled}
 			></textarea>
-		</>
+		</div>
 	);
 };
 

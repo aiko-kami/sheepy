@@ -38,9 +38,9 @@ const UserDescriptionPage = async ({ params }) => {
 	const website = user?.website;
 	const bio = user?.bio;
 	const talents = user?.talents;
+	const quickSkills = user?.quickSkills;
 
-	console.log("🚀 ~ UserDescriptionPage ~ talents:", user?.talents);
-	console.log("🚀 ~ UserDescriptionPage ~ talents2:", user2?.talents);
+	console.log("🚀 ~ UserDescriptionPage ~ quickSkills:", quickSkills);
 
 	return (
 		<>
@@ -58,6 +58,7 @@ const UserDescriptionPage = async ({ params }) => {
 					company={company}
 					languages={languages}
 					website={website}
+					quickSkills={quickSkills}
 				/>
 
 				{/* User card with bio */}

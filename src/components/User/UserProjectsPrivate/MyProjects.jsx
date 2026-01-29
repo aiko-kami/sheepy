@@ -5,8 +5,8 @@ import { useState } from "react";
 import ProjectsActionsTable from "@/components/Tables/ProjectsActionsTable";
 import JoinProjectTable from "@/components/Tables/JoinProjectTable";
 import MyProjectsFilter from "@/components/User/UserProjectsPrivate/MyProjectsFilter";
-import MyProjectsCards from "@/components/User/UserProjectsPrivate/MyProjectCards";
-import MyJoinProjectsCards from "@/components/User/UserProjectsPrivate/MyJoinProjectCards";
+import MyProjectsCards from "@/components/User/UserProjectsPrivate/MyProjectsCards";
+import MyJoinProjectsCards from "@/components/User/UserProjectsPrivate/MyJoinProjectsCards";
 import Notification from "@/components/Badges/Notification";
 import DisplaySwitch from "@/components/Buttons/DisplaySwitch-V1";
 

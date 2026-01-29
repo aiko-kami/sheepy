@@ -20,7 +20,7 @@ const AuthModal = ({ closeModal }) => {
 			<div className="text-slate-300 text-base mb-8">You need to be logged in. Create an account or log in to continue.</div>
 			{/* Button Send application (submit form) */}
 			<div className="grid grid-cols-2 gap-8 justify-center">
-				<Button btnProps={{ type: "button", btnColor: "grayBorder", action: handleLogin }}>
+				<Button btnProps={{ type: "button", btnColor: "grayOutline", action: handleLogin }}>
 					<div className="flex items-center justify-center">
 						<IoEnterOutline className="text-2xl mr-2 mt-0.5" /> Login
 					</div>

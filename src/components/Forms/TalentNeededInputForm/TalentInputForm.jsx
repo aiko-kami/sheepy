@@ -25,16 +25,16 @@ const TalentInputForm = ({ projectId, talentsNeeded, disabled = false }) => {
 		const description = (talentNeededDescriptionInput || "").trim();
 
 		// Basic validations with early returns
-		if (!talent) return showErrorToast("Please enter a talent");
-		if (!description) return showErrorToast("Please enter a description");
+		if (!talent) return showErrorToast("Please enter a talent.");
+		if (!description) return showErrorToast("Please enter a description.");
 
 		// Case-insensitive duplicate check (assumes stored items have .talent)
 		const alreadyExists = talentsNeeded.some((t) => String(t.talent || "").toLowerCase() === talent.toLowerCase());
-		if (alreadyExists) return showErrorToast("This talent is already present in the list");
+		if (alreadyExists) return showErrorToast("This talent is already present in the list.");
 
 		// Max limit check (max 20)
 		if (talentsNeeded.length >= 20) {
-			return showErrorToast("You can only add up to 20 talents");
+			return showErrorToast("You can only add up to 20 talents.");
 		}
 
 		const payload = {
@@ -51,7 +51,7 @@ const TalentInputForm = ({ projectId, talentsNeeded, disabled = false }) => {
 		router.refresh();
 		setTalentNeededTalentInput("");
 		setTalentNeededDescriptionInput("");
-		showSuccessToast("The talent needed has been added.");
+		showSuccessToast("Talent needed added successfully.");
 	};
 
 	const handleTalentNeededTalentInputChange = (e) => {
@@ -70,7 +70,7 @@ const TalentInputForm = ({ projectId, talentsNeeded, disabled = false }) => {
 	const removeTalentNeeded = async (talent) => {
 		// Basic validations with early returns
 		if (!talent) {
-			showErrorToast("Please select a talent to remove");
+			showErrorToast("Please select a talent to remove.");
 			return;
 		}
 
@@ -97,7 +97,7 @@ const TalentInputForm = ({ projectId, talentsNeeded, disabled = false }) => {
 		setTalentToRemove(null);
 		setModalDisplayRemove(false);
 
-		showSuccessToast("The talent needed has been removed.");
+		showSuccessToast("Talent needed removed successfully.");
 	};
 
 	return (

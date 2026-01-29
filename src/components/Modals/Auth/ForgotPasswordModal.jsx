@@ -61,7 +61,7 @@ const ForgotPasswordModal = ({ closeModal }) => {
 							<Button
 								btnProps={{
 									type: "button",
-									btnColor: "grayBorder",
+									btnColor: "grayOutline",
 									action: closeModal,
 								}}
 							>

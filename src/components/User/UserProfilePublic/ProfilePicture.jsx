@@ -25,7 +25,7 @@ const ProfilePicture = ({ userId, profilePicture, backgroundPicture }) => {
 					<Avatar img={profilePicture?.link} size={"3xl"} alt={"user profile picture"} />
 					{/* Edit profile button */}
 					{isCurrentUser && (
-						<div className="absolute md:right-3 md:bottom-3">
+						<div className="absolute right-1 bottom-1 md:right-3 md:bottom-3">
 							<Link href="/users/my-profile" title="Edit my profile" className="bg-base-500 hover:bg-base-400 text-white p-2 rounded-full shadow-lg flex justify-center items-center">
 								<IoBuildOutline className="w-5 h-5" />
 							</Link>

@@ -19,8 +19,8 @@ const TagsList = ({ tags = [], removeTag, disabled = false }) => {
 					>
 						{tag.name}
 						{!disabled && (
-							<button type="button" className="ml-1 text-gray-600 hover:text-gray-800 transition duration-150 ease-in-out" onClick={() => removeTag(tag)} aria-label={`Remove ${tag.name}`}>
-								<IoCloseCircleOutline className="text-lg" title="Remove tag" />
+							<button type="button" className="ml-1.5 text-gray-600 hover:text-gray-800 transition duration-150 ease-in-out" onClick={() => removeTag(tag)} aria-label={`Remove ${tag.name}`}>
+								<IoCloseCircleOutline className="text-lg mt-0.5" title="Remove tag" />
 							</button>
 						)}
 					</motion.span>
