@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 import DraggableTalentsList from "@/components/User/UserTalentsPrivate/DraggableTalentsList";
 
-import { ApiUpdateProjectSteps } from "@/lib/api/projectEditionServer";
+import { ApiUpdateTalents } from "@/lib/api/userServer";
 import ERRORS from "@/lib/constants/errors";
 import { showErrorToast, showSuccessToast } from "@/utils/toast";
 
@@ -25,7 +25,7 @@ const Talents = ({ talents = [] }) => {
 			skills: talent.skills ?? [],
 			certifications: talent.certifications ?? [],
 			published: Boolean(talent.published),
-			expanded: false,
+			expanded: true,
 		})),
 	});
 
@@ -38,7 +38,7 @@ const Talents = ({ talents = [] }) => {
 
 	const addTalent = () => {
 		if (formInputs.userTalents.length >= 10) {
-			showErrorToast("You can only add up to 10 talents.");
+			showErrorToast(ERRORS.TALENTS_EDIT.MAXIMUM_LIMIT);
 			return;
 		}
 
@@ -51,6 +51,7 @@ const Talents = ({ talents = [] }) => {
 			skills: [],
 			certifications: [],
 			published: false,
+			expanded: true,
 		};
 
 		// Update the form state with the new step
@@ -60,6 +61,28 @@ const Talents = ({ talents = [] }) => {
 
 	const onSubmit = async (event) => {
 		event.preventDefault();
+
+		// Validation: Check if all talent names are filled
+		for (const talent of formInputs.userTalents) {
+			if (!talent.name || talent.name.trim() === "") {
+				showErrorToast(ERRORS.TALENTS_EDIT.NAME_REQUIRED);
+				return;
+			}
+			if (!talent.description || talent.description.trim() === "") {
+				showErrorToast(ERRORS.TALENTS_EDIT.DESCRIPTION_REQUIRED);
+				return;
+			}
+		}
+
+		// Validation: Check for duplicate talent names
+		const talentNames = formInputs.userTalents.map((talent) => talent.name.trim().toLowerCase());
+		const uniqueTalentNames = new Set(talentNames);
+		if (uniqueTalentNames.size !== talentNames.length) {
+			showErrorToast(ERRORS.TALENTS_EDIT.NAME_DUPLICATE);
+			return;
+		}
+
+		// All validations passed, proceed to submit the data
 		try {
 			const payload = {
 				talents: formInputs.userTalents.map(({ name, description, experience, portfolio, skills, certifications, published }) => ({
@@ -73,9 +96,9 @@ const Talents = ({ talents = [] }) => {
 				})),
 			};
 
-			const result = await ApiUpdateUserTalents(payload);
+			const result = await ApiUpdateTalents(payload);
 			if (!result.ok) {
-				showErrorToast(result.message || "Failed to update user talents.");
+				showErrorToast(result.message || ERRORS.TALENTS_EDIT.UPDATE_FAILED);
 				return;
 			}
 

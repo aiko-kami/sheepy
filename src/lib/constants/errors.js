@@ -60,6 +60,14 @@ const ERRORS = {
 		UNAUTHORIZED_TITLE: "401 - Access Denied",
 		UNAUTHORIZED_MESSAGE: "Sorry, you are not allowed to access this data... 😥",
 	},
+
+	TALENTS_EDIT: {
+		NAME_REQUIRED: "Talent name is required.",
+		DESCRIPTION_REQUIRED: "Talent description is required.",
+		NAME_DUPLICATE: "Duplicate talent names are not allowed.",
+		MAXIMUM_LIMIT: "You can only add up to 10 talents.",
+		UPDATE_FAILED: "Failed to update user talents.",
+	},
 };
 
 export default ERRORS;

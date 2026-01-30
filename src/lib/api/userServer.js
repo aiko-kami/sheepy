@@ -1,4 +1,4 @@
-import { apiGet, apiPost, apiDelete } from "@/lib/api/ApiHelpers";
+import { apiGet, apiPost, apiPatch, apiDelete } from "@/lib/api/ApiHelpers";
 
 //GET requests
 
@@ -18,6 +18,12 @@ export async function ApiGetUserPublicData(userId) {
 
 export async function ApiPostAddQuickSkill(data) {
 	return apiPost("/users/skill", data);
+}
+
+//PATCH requests
+
+export async function ApiUpdateTalents(data) {
+	return apiPatch("/users/talent/updateTalents", data);
 }
 
 //DELETE requests

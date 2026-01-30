@@ -7,7 +7,7 @@ import InputField from "@/components/Forms/InputField";
 import SkillsList from "@/components/Forms/SkillInputForm/SkillsList";
 import AddSkillButton from "@/components/Forms/SkillInputForm/AddSkillButton";
 
-import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { showErrorToast } from "@/utils/toast";
 
 const SkillInputForm = ({ skills = [], disabled = false }) => {
 	const [skillInput, setSkillInput] = useState("");
@@ -28,7 +28,7 @@ const SkillInputForm = ({ skills = [], disabled = false }) => {
 		if (skills.length >= 20) {
 			return showErrorToast("You can only add up to 20 skills.");
 		}
-
+		skills.push(skill);
 		setSkillInput("");
 	};
 
@@ -55,17 +55,17 @@ const SkillInputForm = ({ skills = [], disabled = false }) => {
 	const confirmRemoveSkill = async () => {
 		if (!skillToRemove) return;
 
+		const updatedSkills = skills.filter((s) => s !== skillToRemove);
+		skills.splice(0, skills.length, ...updatedSkills);
 		setSkillInput("");
 		setSkillToRemove(null);
 		setModalDisplayRemove(false);
-
-		showSuccessToast("The skill has been removed.");
 	};
 
 	return (
 		<div>
 			{!disabled && (
-				<div className="mb-6 max-w-140 relative">
+				<div className="mb-6 max-w-110 relative">
 					<div className="flex items-center">
 						<div className="w-full mr-2 relative">
 							<InputField

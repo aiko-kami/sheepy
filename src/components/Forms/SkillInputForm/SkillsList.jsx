@@ -14,7 +14,6 @@ const SkillsList = ({ skills = [], removeSkill, disabled = false }) => {
 						animate={{ opacity: 1, scale: 1, x: 0 }}
 						exit={{ opacity: 0, scale: 0.9, x: 20 }}
 						transition={{ duration: 0.25, ease: "easeOut" }}
-						layout
 						className="flex items-center px-3 pt-0.5 pb-1 bg-purple-500/30 text-purple-300 border border-purple-500/30 rounded-full shadow-sm"
 					>
 						{skill}

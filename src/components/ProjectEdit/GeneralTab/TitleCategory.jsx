@@ -24,7 +24,7 @@ const TitleCategory = ({ formInputs, onChange, setFormInputs, userPermissions })
 				if (result.ok && result.data?.categories) {
 					setCategories(result.data.categories);
 				} else {
-					showErrorToast(result.message || "Failed to load categories");
+					showErrorToast(result.message || ERRORS.CATEGORIES.LOAD_FAILED);
 				}
 			} catch (error) {
 				showErrorToast(error.message);

@@ -5,13 +5,21 @@ import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 import { TbGripVertical } from "react-icons/tb";
 import { IoCaretUpOutline, IoCaretDown, IoTrashOutline, IoChevronUpOutline, IoChevronDownOutline } from "react-icons/io5";
+
 import InputField from "@/components/Forms/InputField";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 import SkillInputForm from "@/components/Forms/SkillInputForm/SkillInputForm";
+import CertificationInputForm from "@/components/Forms/CertificationInputForm/CertificationInputForm";
 import { ToggleField } from "@/components/Forms/ToggleField";
+import Modal from "@/components/Modals/Modal";
+import RemoveTalentModal from "@/components/Modals/UserPrivate/RemoveTalentModal";
+import { showErrorToast } from "@/utils/toast";
 
 const DraggableTalentItem = ({ item, index, items, onChange }) => {
 	const { id, name, description, skills, experience, portfolio, certifications, published, expanded } = item;
+
+	const [modalDisplayRemove, setModalDisplayRemove] = useState(false);
+	const [talentToRemove, setTalentToRemove] = useState(null);
 
 	const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id });
 
@@ -48,9 +56,50 @@ const DraggableTalentItem = ({ item, index, items, onChange }) => {
 		onChange(updatedItems);
 	};
 
-	const handleDelete = () => {
+	const closeModalRemove = () => {
+		setTalentToRemove(null);
+		setModalDisplayRemove(false);
+	};
+
+	const removeTalent = async (talent) => {
+		// Basic validations with early returns
+		if (!talent) {
+			showErrorToast("Please select a talent to remove.");
+			return;
+		}
+
+		const { name, description, skills, experience, portfolio, certifications, published } = talent;
+
+		// Check if at least one field is not empty
+		const hasData =
+			(name && name.trim() !== "") ||
+			(description && description.trim() !== "") ||
+			(experience && experience.trim() !== "") ||
+			(portfolio && portfolio.trim() !== "") ||
+			published === true ||
+			(Array.isArray(skills) && skills.length > 0) ||
+			(Array.isArray(certifications) && certifications.length > 0);
+
+		setTalentToRemove(talent);
+
+		if (!hasData) {
+			// Nothing filled → remove immediately (or silently ignore)
+			const updatedItems = items.filter((i) => i.id !== id);
+			onChange(updatedItems);
+			setTalentToRemove(null);
+			return;
+		}
+
+		setModalDisplayRemove(true);
+	};
+
+	const confirmRemoveTalent = async () => {
+		if (!talentToRemove) return;
+
 		const updatedItems = items.filter((i) => i.id !== id);
 		onChange(updatedItems);
+		setTalentToRemove(null);
+		setModalDisplayRemove(false);
 	};
 
 	return (
@@ -66,7 +115,7 @@ const DraggableTalentItem = ({ item, index, items, onChange }) => {
 						type="button"
 						className="text-gray-400 bg-transparent rounded-lg text-sm w-9 h-9 inline-flex justify-center items-center hover:bg-gray-600 hover:text-red-400"
 						data-modal-hide="default-modal"
-						onClick={handleDelete}
+						onClick={() => removeTalent(item)}
 					>
 						<IoTrashOutline className="w-6 h-6 cursor-pointer" title="Remove talent" />
 					</button>
@@ -82,8 +131,9 @@ const DraggableTalentItem = ({ item, index, items, onChange }) => {
 						{expanded ? <IoChevronUpOutline className="w-6 h-6 cursor-pointer" title="Close talent" /> : <IoChevronDownOutline className="w-6 h-6 cursor-pointer" title="Open talent" />}
 					</button>
 				</div>
-				<button className="top-0 left-0 w-full h-full absolute z-0 cursor-grab" {...listeners} {...attributes} />
+				<button type="button" className="top-0 left-0 w-full h-full absolute z-0 cursor-grab" {...listeners} {...attributes} />
 			</div>
+
 			{/* Talent Details */}
 			<div className={`flex p-4 relative ${!expanded ? "hidden" : "block"}`}>
 				{/* Icons for Move Up, Move Down, and Drag Handle */}
@@ -95,10 +145,12 @@ const DraggableTalentItem = ({ item, index, items, onChange }) => {
 
 				{/* Draggable item content */}
 				<div className="w-9/10 mx-auto py-4 space-y-6">
+					{/* Talent name */}
 					<div className="max-w-160">
 						<InputField label="Talent name:" inputName={`name-${id}`} inputType="text" inputValue={name} required={true} onChange={(e) => updateField("name", e.target.value)} />
 					</div>
 
+					{/* Talent description */}
 					<TextAreaField
 						label="Talent Description:"
 						labelStyle="block mb-2"
@@ -107,15 +159,48 @@ const DraggableTalentItem = ({ item, index, items, onChange }) => {
 						placeholder="Add description about this talent...(1000 characters max)"
 						maxLength={1000}
 						rows="6"
-						required={true}
+						required={false}
 						onChange={(e) => updateField("description", e.target.value)}
 					/>
 
+					{/* Experience */}
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+						<InputField
+							label="Experience:"
+							inputName={`experience-${id}`}
+							inputType="text"
+							inputValue={experience}
+							placeholder="e.g.: 3 years, 2 projects completed, etc."
+							min="0"
+							required={false}
+							onChange={(e) => updateField("experience", e.target.value)}
+						/>
+
+						{/* Portfolio */}
+						<InputField
+							label="Portfolio:"
+							inputName={`portfolio-${id}`}
+							inputType="text"
+							inputValue={portfolio}
+							placeholder="e.g.: https://myportfolio.com"
+							required={false}
+							onChange={(e) => updateField("portfolio", e.target.value)}
+						/>
+					</div>
+
+					{/* Certifications */}
+					<CertificationInputForm certifications={certifications} />
+
+					{/* Skills */}
 					<SkillInputForm skills={skills} />
 
+					{/* Published Toggle */}
 					<ToggleField label="Published" inputName={`published-${id}`} checked={published} onChange={(e) => updateField("published", e.target.checked)} />
 				</div>
 			</div>
+			<Modal modalDisplay={modalDisplayRemove} closeModal={closeModalRemove} closeModalWithBackground={closeModalRemove} modalSize={"sm"} modalTitle={"Remove talent"}>
+				<RemoveTalentModal talent={talentToRemove} onConfirm={confirmRemoveTalent} closeModalRemove={closeModalRemove} />
+			</Modal>
 		</div>
 	);
 };
