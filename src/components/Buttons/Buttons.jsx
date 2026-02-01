@@ -114,7 +114,7 @@ const Button = ({ children, btnProps }) => {
 	let size;
 	switch (btnSize) {
 		case "xs":
-			size = "text-xs px-3.5 py-1.5";
+			size = "text-xs px-3 py-1.5";
 			break;
 		case "sm":
 			size = "text-sm font-medium px-3 py-2";

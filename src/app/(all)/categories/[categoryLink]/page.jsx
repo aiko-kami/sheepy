@@ -2,7 +2,7 @@ import Category from "@/components/Category/Category";
 import { ApiGetCategoryWithLink } from "@/lib/api/categories";
 import projectsToJoin from "@/mock/projectsToJoin.json";
 import Error from "@/components/Errors/Error";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 export const metadata = {
 	title: "Category - Make It",

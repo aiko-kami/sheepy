@@ -7,6 +7,7 @@ import { handleFormChange } from "@/utils/formHandlers";
 import { ApiUpdateProjectLocation } from "@/lib/api/projectEditionServer";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { SUCCESS, ERRORS } from "@/lib/constants";
 
 const FormLocation = ({ projectId, onlineOnly, city, country, userPermissions }) => {
 	const [formInputs, setFormInputs] = useState({
@@ -30,10 +31,10 @@ const FormLocation = ({ projectId, onlineOnly, city, country, userPermissions })
 		const result = await ApiUpdateProjectLocation(projectId, payload);
 
 		if (!result.ok) {
-			showErrorToast(result.message || "Failed to update project location.");
+			showErrorToast(result.message || ERRORS.PROJECT_LOCATION.UPDATE_FAILED);
 			return;
 		}
-		showSuccessToast("The project location has been updated.");
+		showSuccessToast(SUCCESS.PROJECT_LOCATION.UPDATE);
 	};
 
 	return (

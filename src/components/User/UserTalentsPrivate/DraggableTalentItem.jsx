@@ -14,18 +14,19 @@ import { ToggleField } from "@/components/Forms/ToggleField";
 import Modal from "@/components/Modals/Modal";
 import RemoveTalentModal from "@/components/Modals/UserPrivate/RemoveTalentModal";
 import { showErrorToast } from "@/utils/toast";
+import { ERRORS } from "@/lib/constants";
 
-const DraggableTalentItem = ({ item, index, items, onChange }) => {
+const DraggableTalentItem = ({ item, index, items, onChange, setIsProgrammaticMove }) => {
 	const { id, name, description, skills, experience, portfolio, certifications, published, expanded } = item;
 
 	const [modalDisplayRemove, setModalDisplayRemove] = useState(false);
 	const [talentToRemove, setTalentToRemove] = useState(null);
 
-	const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id });
+	const { attributes, listeners, setNodeRef, transform, transition, isDragging, isSorting } = useSortable({ id });
 
 	const style = {
-		transform: CSS.Transform.toString(transform),
-		transition,
+		transform: isDragging || isSorting ? CSS.Translate.toString(transform) : "none",
+		transition: isDragging || isSorting ? transition : "none",
 		opacity: isDragging ? 0.8 : 1,
 		zIndex: isDragging ? 1000 : "auto",
 	};
@@ -38,12 +39,14 @@ const DraggableTalentItem = ({ item, index, items, onChange }) => {
 
 	// Manage expanded state
 	const toggleExpanded = () => {
+		setIsProgrammaticMove(false);
 		const updated = items.map((i) => (i.id === id ? { ...i, expanded: !i.expanded } : i));
 		onChange(updated);
 	};
 
 	// Move the item up or down
 	const moveItem = (direction) => {
+		setIsProgrammaticMove(true);
 		const index = items.findIndex((i) => i.id === id);
 		if ((index === 0 && direction === "up") || (index === items.length - 1 && direction === "down")) {
 			return; // Prevent out-of-bounds movement
@@ -64,7 +67,7 @@ const DraggableTalentItem = ({ item, index, items, onChange }) => {
 	const removeTalent = async (talent) => {
 		// Basic validations with early returns
 		if (!talent) {
-			showErrorToast("Please select a talent to remove.");
+			showErrorToast(ERRORS.USER_TALENTS.EMPTY_TALENT_REMOVE);
 			return;
 		}
 
@@ -103,7 +106,7 @@ const DraggableTalentItem = ({ item, index, items, onChange }) => {
 	};
 
 	return (
-		<div ref={setNodeRef} style={style} className="relative border border-slate-700 bg-slate-800/70 text-white rounded-lg shadow-lg overflow-hidden">
+		<div ref={setNodeRef} style={style} className="relative border border-slate-700 bg-slate-800/70 text-white rounded-lg shadow-lg overflow-hidden will-change-transform">
 			{/* Talent Header */}
 			<div className="flex items-center justify-between p-4 bg-slate-600/50 cursor-pointer hover:bg-slate-500/70 transition-colors relative">
 				<div className="flex items-center gap-2">

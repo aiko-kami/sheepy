@@ -1,7 +1,7 @@
 import { IoDocuments } from "react-icons/io5";
 import AttachmentsTable from "@/components/Tables/ProjectEdit/AttachmentsTable";
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 const AttachmentsDetails = ({ projectId, attachments, userPermissions }) => {
 	return (
@@ -26,7 +26,7 @@ const AttachmentsDetails = ({ projectId, attachments, userPermissions }) => {
 						</div>
 					</div>
 				) : (
-					<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.VIEW_ATTACHMENTS} />
+					<PermissionsErrorPane message={ERRORS.PROJECT_PERMISSIONS.VIEW_ATTACHMENTS} />
 				)}
 			</div>
 		</>

@@ -14,6 +14,8 @@ import { Button } from "@/components/Buttons/Buttons";
 import { ApiUpdateUserSettingsAppearance } from "@/lib/api/usersClient";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { SUCCESS, ERRORS } from "@/lib/constants";
+
 import { handleFormChange } from "@/utils/formHandlers";
 
 const MySettingsAppearance = ({ appearanceSettings }) => {
@@ -60,9 +62,9 @@ const MySettingsAppearance = ({ appearanceSettings }) => {
 		e.preventDefault();
 		try {
 			await ApiUpdateUserSettingsAppearance(formInputs.appearance);
-			showSuccessToast("appearance successfully updated!");
+			showSuccessToast(SUCCESS.USER_SETTINGS.APPEARANCE);
 		} catch (error) {
-			showErrorToast(error.message);
+			showErrorToast(error.message || ERRORS.USER_SETTINGS.APPEARANCE);
 		}
 	};
 

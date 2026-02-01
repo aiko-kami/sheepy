@@ -13,7 +13,8 @@ import StepsQAComments from "@/components/ProjectPublic/StepsQAComments";
 import SimilarProjects from "@/components/ProjectPublic/SimilarProjects";
 
 import { ApiGetProjectPublicDataByLink } from "@/lib/api/projectCore";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
+
 import { normalizeProjectData } from "@/utils/projectHandlers";
 
 export const metadata = {

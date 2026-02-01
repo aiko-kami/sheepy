@@ -4,7 +4,7 @@ import FormMembers from "@/components/ProjectEdit/MembersTab/FormMembers";
 import Error from "@/components/Errors/Error";
 
 import { ApiGetEditProjectMembers } from "@/lib/api/projectEditionServer";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 export const metadata = {
 	title: "Edit project - Make It",

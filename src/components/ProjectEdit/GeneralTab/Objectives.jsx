@@ -1,7 +1,7 @@
 import { IoCompassOutline } from "react-icons/io5";
 import ObjectiveInputForm from "@/components/Forms/ObjectiveInputForm/ObjectiveInputForm";
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 const Objectives = ({ projectId, objectives, userPermissions }) => {
 	return (
@@ -17,7 +17,7 @@ const Objectives = ({ projectId, objectives, userPermissions }) => {
 				<div className="mb-8">
 					{!userPermissions.canEditObjectives && (
 						<div className="mb-4">
-							<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.EDIT_OBJECTIVES} />
+							<PermissionsErrorPane message={ERRORS.PROJECT_PERMISSIONS.EDIT_OBJECTIVES} />
 						</div>
 					)}
 					<ObjectiveInputForm projectId={projectId} objectives={objectives} disabled={!userPermissions.canEditObjectives} />

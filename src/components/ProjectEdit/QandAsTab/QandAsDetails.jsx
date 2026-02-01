@@ -5,7 +5,7 @@ import StaticQnasList from "@/components/ProjectEdit/QandAsTab/StaticQnasList";
 import LastUpdateBy from "@/components/ProjectEdit/LastUpdateBy";
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
 import { Button } from "@/components/Buttons/Buttons";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 const QandAsDetails = ({ formInputs, onChange, addQna, userPermissions }) => {
 	return (
@@ -22,7 +22,7 @@ const QandAsDetails = ({ formInputs, onChange, addQna, userPermissions }) => {
 				<div className="mb-6">
 					{!userPermissions.canEditQAs && (
 						<div className="mb-4">
-							<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.EDIT_QNAS} />
+							<PermissionsErrorPane message={ERRORS.PROJECT_PERMISSIONS.EDIT_QNAS} />
 						</div>
 					)}
 					{formInputs.projectQnas && formInputs.projectQnas.length !== 0 ? (

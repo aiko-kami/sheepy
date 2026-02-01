@@ -8,6 +8,7 @@ import CertificationsList from "@/components/Forms/CertificationInputForm/Certif
 import AddCertificationButton from "@/components/Forms/CertificationInputForm/AddCertificationButton";
 
 import { showErrorToast } from "@/utils/toast";
+import { ERRORS } from "@/lib/constants";
 
 const CertificationInputForm = ({ certifications = [], disabled = false }) => {
 	const [certificationInput, setCertificationInput] = useState("");
@@ -18,15 +19,15 @@ const CertificationInputForm = ({ certifications = [], disabled = false }) => {
 		const certification = (certificationInput || "").trim();
 
 		// Basic validations with early returns
-		if (!certification) return showErrorToast("Please enter a certification.");
+		if (!certification) return showErrorToast(ERRORS.USER_TALENTS.EMPTY_CERTIFICATION);
 
 		// Case-insensitive duplicate check (assumes stored items have .certification)
 		const alreadyExists = certifications.some((obj) => String(obj || "").toLowerCase() === certification.toLowerCase());
-		if (alreadyExists) return showErrorToast("This certification is already present in the list.");
+		if (alreadyExists) return showErrorToast(ERRORS.USER_TALENTS.DUPLICATE_CERTIFICATION);
 
 		// Max limit check (max 20)
 		if (certifications.length >= 20) {
-			return showErrorToast("You can only add up to 20 certifications.");
+			return showErrorToast(ERRORS.USER_TALENTS.MAXIMUM_CERTIFICATIONS_LIMIT);
 		}
 		certifications.push(certification);
 		setCertificationInput("");
@@ -44,7 +45,7 @@ const CertificationInputForm = ({ certifications = [], disabled = false }) => {
 	const removeCertification = async (certification) => {
 		// Basic validations with early returns
 		if (!certification) {
-			showErrorToast("Please select a certification to remove.");
+			showErrorToast(ERRORS.USER_TALENTS.EMPTY_CERTIFICATION_REMOVE);
 			return;
 		}
 

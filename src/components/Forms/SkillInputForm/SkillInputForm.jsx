@@ -8,6 +8,7 @@ import SkillsList from "@/components/Forms/SkillInputForm/SkillsList";
 import AddSkillButton from "@/components/Forms/SkillInputForm/AddSkillButton";
 
 import { showErrorToast } from "@/utils/toast";
+import { ERRORS } from "@/lib/constants";
 
 const SkillInputForm = ({ skills = [], disabled = false }) => {
 	const [skillInput, setSkillInput] = useState("");
@@ -18,15 +19,15 @@ const SkillInputForm = ({ skills = [], disabled = false }) => {
 		const skill = (skillInput || "").trim();
 
 		// Basic validations with early returns
-		if (!skill) return showErrorToast("Please enter a skill.");
+		if (!skill) return showErrorToast(ERRORS.USER_SKILLS.SKILL_REQUIRED);
 
 		// Case-insensitive duplicate check (assumes stored items have .skill)
 		const alreadyExists = skills.some((obj) => String(obj || "").toLowerCase() === skill.toLowerCase());
-		if (alreadyExists) return showErrorToast("This skill is already present in the list.");
+		if (alreadyExists) return showErrorToast(ERRORS.USER_SKILLS.DUPLICATE_SKILL);
 
 		// Max limit check (max 20)
 		if (skills.length >= 20) {
-			return showErrorToast("You can only add up to 20 skills.");
+			return showErrorToast(ERRORS.USER_SKILLS.MAXIMUM_LIMIT);
 		}
 		skills.push(skill);
 		setSkillInput("");
@@ -44,7 +45,7 @@ const SkillInputForm = ({ skills = [], disabled = false }) => {
 	const removeSkill = async (skill) => {
 		// Basic validations with early returns
 		if (!skill) {
-			showErrorToast("Please select a skill to remove.");
+			showErrorToast(ERRORS.USER_SKILLS.EMPTY_INPUT_REMOVE);
 			return;
 		}
 

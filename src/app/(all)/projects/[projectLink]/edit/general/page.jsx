@@ -4,7 +4,7 @@ import FormGeneral from "@/components/ProjectEdit/GeneralTab/FormGeneral";
 import Error from "@/components/Errors/Error";
 
 import { ApiGetEditProjectGeneral } from "@/lib/api/projectEditionServer";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 export const metadata = {
 	title: "Edit project | Make It",

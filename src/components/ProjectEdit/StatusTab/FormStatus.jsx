@@ -8,6 +8,7 @@ import { handleFormChange } from "@/utils/formHandlers";
 import { ApiUpdateProjectStatus, ApiUpdateProjectVisibility } from "@/lib/api/projectEditionServer";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { SUCCESS, ERRORS } from "@/lib/constants";
 
 const FormStatus = ({ projectId, statusHistory, status, statusesList, startDate, visibility, userPermissions }) => {
 	const router = useRouter();
@@ -41,10 +42,10 @@ const FormStatus = ({ projectId, statusHistory, status, statusesList, startDate,
 				const result = await ApiUpdateProjectStatus(projectId, payload);
 
 				if (!result.ok) {
-					showErrorToast(result.message || "Failed to update project location.");
+					showErrorToast(result.message || ERRORS.PROJECT_STATUS.UPDATE_FAILED);
 					return;
 				}
-				showSuccessToast("The project status has been updated.");
+				showSuccessToast(SUCCESS.PROJECT_STATUS.UPDATE);
 				setFormInputs((prev) => ({ ...prev, statusReason: "" }));
 				router.refresh();
 			} else if (formAction === "submit-visibility") {
@@ -58,13 +59,13 @@ const FormStatus = ({ projectId, statusHistory, status, statusesList, startDate,
 				const result = await ApiUpdateProjectVisibility(projectId, payload);
 
 				if (!result.ok) {
-					showErrorToast(result.message || "Failed to update project location.");
+					showErrorToast(result.message || ERRORS.PROJECT.UPDATE_FAILED);
 					return;
 				}
-				showSuccessToast("The project has been updated.");
+				showSuccessToast(SUCCESS.PROJECT.UPDATE);
 			}
 		} catch (error) {
-			showErrorToast(error.message);
+			showErrorToast(error.message || ERRORS.GENERIC.ERROR);
 		}
 	};
 

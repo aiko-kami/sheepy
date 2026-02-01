@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import CategoryHorizontalCard from "@/components/Cards/Categories/CategoryHorizontalCard";
 import Triforce from "@/components/Loaders/Triforce";
 import { showErrorToast } from "@/utils/toast";
+import { ERRORS } from "@/lib/constants";
 
 import { ApiGetAllCategories } from "@/lib/api/categories";
 
@@ -20,7 +21,7 @@ const AllCategories = () => {
 				if (result.ok && result.data?.categories) {
 					setCategories(result.data.categories);
 				} else {
-					showErrorToast(result.message || "Failed to load categories");
+					showErrorToast(result.message || ERRORS.PROJECT_CATEGORIES.LOAD_FAILED);
 				}
 			} catch (err) {
 				setError(err.message);

@@ -8,7 +8,7 @@ import MySettingsNotifications from "@/components/User/UserSettingsPrivate/MySet
 import Error from "@/components/Errors/Error";
 
 import { ApiGetUserSettingsServer } from "@/lib/api/userServer";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 export const metadata = {
 	title: "My settings - Make It",

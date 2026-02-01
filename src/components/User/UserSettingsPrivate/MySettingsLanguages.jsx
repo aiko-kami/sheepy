@@ -10,6 +10,7 @@ import { ApiUpdateUserSettingsLanguage } from "@/lib/api/usersClient";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { handleFormChange } from "@/utils/formHandlers";
+import { SUCCESS, ERRORS } from "@/lib/constants";
 
 const MySettingsLanguages = ({ languageSettings }) => {
 	const [formInputs, setFormInputs] = useState({
@@ -30,9 +31,9 @@ const MySettingsLanguages = ({ languageSettings }) => {
 		e.preventDefault();
 		try {
 			await ApiUpdateUserSettingsLanguage(formInputs.language);
-			showSuccessToast("Language successfully updated!");
+			showSuccessToast(SUCCESS.USER_SETTINGS.LANGUAGE);
 		} catch (error) {
-			showErrorToast(error.message);
+			showErrorToast(error.message || ERRORS.USER_SETTINGS.LANGUAGE);
 		}
 	};
 

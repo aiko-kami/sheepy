@@ -9,6 +9,7 @@ import { Button } from "@/components/Buttons/Buttons";
 import { ApiUpdateUserSettingsNotifications } from "@/lib/api/usersClient";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { SUCCESS, ERRORS } from "@/lib/constants";
 
 const MySettingsNotifications = ({ userNotificationsSettings }) => {
 	const [formInputs, setFormInputs] = useState({
@@ -47,9 +48,9 @@ const MySettingsNotifications = ({ userNotificationsSettings }) => {
 		e.preventDefault();
 		try {
 			await ApiUpdateUserSettingsNotifications(formInputs);
-			showSuccessToast("Notifications successfully updated!");
+			showSuccessToast(SUCCESS.USER_SETTINGS.NOTIFICATIONS);
 		} catch (error) {
-			showErrorToast(error.message);
+			showErrorToast(error.message || ERRORS.USER_SETTINGS.NOTIFICATIONS);
 		}
 	};
 

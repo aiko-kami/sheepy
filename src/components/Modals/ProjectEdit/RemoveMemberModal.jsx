@@ -10,7 +10,7 @@ import { Avatar } from "@/components/Badges/Avatar";
 import Warning from "@/components/Errors/Warning";
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { ApiDeleteProjectMember } from "@/lib/api/projectEditionServer";
-import WARNINGS from "@/lib/constants/warnings";
+import { WARNINGS, SUCCESS, ERRORS } from "@/lib/constants";
 
 const RemoveMemberModal = ({ member, projectId, role, talent, startDate, closeModalRemove }) => {
 	const router = useRouter();
@@ -27,10 +27,10 @@ const RemoveMemberModal = ({ member, projectId, role, talent, startDate, closeMo
 
 			const result = await ApiDeleteProjectMember(projectId, payload);
 			if (!result.ok) {
-				showErrorToast(result.message || "Failed to remove project member.");
+				showErrorToast(result.message || ERRORS.PROJECT_MEMBERS.REMOVE_FAILED);
 				return;
 			}
-			showSuccessToast("The project member has been removed.");
+			showSuccessToast(SUCCESS.PROJECT_MEMBERS.REMOVE);
 			closeModalRemove();
 			router.refresh();
 		} catch (error) {

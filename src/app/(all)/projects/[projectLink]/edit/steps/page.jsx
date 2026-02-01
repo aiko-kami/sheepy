@@ -4,7 +4,7 @@ import FormSteps from "@/components/ProjectEdit/StepsTab/FormSteps";
 import Error from "@/components/Errors/Error";
 
 import { ApiGetEditProjectSteps } from "@/lib/api/projectEditionServer";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 export const metadata = {
 	title: "Edit project - Make It",

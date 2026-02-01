@@ -3,7 +3,7 @@ import { Button } from "@/components/Buttons/Buttons";
 import DatePickerField from "@/components/Forms/DatePickerFieldNew";
 import { SelectField } from "@/components/Forms/SelectField";
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 const Visibility = ({ formInputs, onChange, handleStartDateChange, userPermissions }) => {
 	const optionsList = [
@@ -12,8 +12,8 @@ const Visibility = ({ formInputs, onChange, handleStartDateChange, userPermissio
 	];
 
 	const messages = [];
-	if (!userPermissions.canEditVisibility) messages.push(ERRORS.PROJECT_EDIT.EDIT_VISIBILITY);
-	if (!userPermissions.canEditStartDate) messages.push(ERRORS.PROJECT_EDIT.EDIT_START_DATE);
+	if (!userPermissions.canEditVisibility) messages.push(ERRORS.PROJECT_PERMISSIONS.EDIT_VISIBILITY);
+	if (!userPermissions.canEditStartDate) messages.push(ERRORS.PROJECT_PERMISSIONS.EDIT_START_DATE);
 
 	return (
 		<>

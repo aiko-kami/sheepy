@@ -2,16 +2,15 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { IoClose } from "react-icons/io5";
 
 import { Button } from "@/components/Buttons/Buttons";
 import ProfilePicture from "@/components/User/UserProfilePrivate/ProfilePicture";
-import ProjectCounter from "@/components/Common/ProjectCounter";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 
 import { ApiUpdateUserBioDescription } from "@/lib/api/usersClient";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { SUCCESS, ERRORS } from "@/lib/constants";
 import { handleFormChange } from "@/utils/formHandlers";
 
 const UserCardPictureBio = ({ username, profilePicture, backgroundPicture, description, bio }) => {
@@ -35,10 +34,10 @@ const UserCardPictureBio = ({ username, profilePicture, backgroundPicture, descr
 
 		try {
 			await ApiUpdateUserBioDescription(payload);
-			showSuccessToast("Profile updated successfully!");
+			showSuccessToast(SUCCESS.USER_PROFILE.BIO_DESCRIPTION_UPDATE);
 			router.push("/users/my-profile");
 		} catch (error) {
-			showErrorToast(error.message || "Something went wrong");
+			showErrorToast(error.message || ERRORS.USER_PROFILE.BIO_DESCRIPTION_UPDATE_FAILED);
 		}
 	};
 

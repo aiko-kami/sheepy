@@ -6,6 +6,7 @@ import SuggestionsList from "@/components/Forms/TagInputField/SuggestionsList";
 import TagsList from "@/components/Forms/TagInputField/TagsList";
 import AddTagButton from "@/components/Forms/TagInputField/AddTagButton";
 import { showErrorToast } from "@/utils/toast";
+import { ERRORS } from "@/lib/constants";
 
 const TagInputField = ({ formInputs, setFormInputs, tagsList = [], disabled = false }) => {
 	const wrapperRef = useRef(null);
@@ -49,11 +50,11 @@ const TagInputField = ({ formInputs, setFormInputs, tagsList = [], disabled = fa
 	const addExistingTag = (tagObject) => {
 		if (!tagObject) return;
 		if (totalSelectedCount >= MAX_TAGS) {
-			showErrorToast(`You can only add up to ${MAX_TAGS} tags`);
+			showErrorToast(ERRORS.PROJECT_TAGS.MAXIMUM_LIMIT);
 			return;
 		}
 		if (selectedExistingIds.has(tagObject.tagId) || selectedNewNames.has(normalize(tagObject.name))) {
-			showErrorToast("This tag is already present in the list");
+			showErrorToast(ERRORS.PROJECT_TAGS.DUPLICATE_TAG);
 			return;
 		}
 
@@ -80,16 +81,16 @@ const TagInputField = ({ formInputs, setFormInputs, tagsList = [], disabled = fa
 	const addNewTag = (name) => {
 		const trimmed = String(name || "").trim();
 		if (!trimmed) {
-			showErrorToast("Please enter a tag name");
+			showErrorToast(ERRORS.PROJECT_TAGS.EMPTY_INPUT);
 			return;
 		}
 		if (totalSelectedCount >= MAX_TAGS) {
-			showErrorToast(`You can only add up to ${MAX_TAGS} tags`);
+			showErrorToast(ERRORS.PROJECT_TAGS.MAXIMUM_LIMIT);
 			return;
 		}
 		const cap = normalize(trimmed);
 		if (selectedNewNames.has(cap) || existingTags.some((t) => normalize(t.name) === cap)) {
-			showErrorToast("This tag is already present in the list");
+			showErrorToast(ERRORS.PROJECT_TAGS.DUPLICATE_TAG);
 			return;
 		}
 

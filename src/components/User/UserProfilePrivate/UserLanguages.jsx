@@ -6,21 +6,22 @@ import { IoChatbubbleEllipsesOutline, IoAddCircleOutline, IoCloseCircleOutline }
 import InputField from "@/components/Forms/InputField";
 import { Button } from "@/components/Buttons/Buttons";
 import { showErrorToast } from "@/utils/toast";
+import { ERRORS } from "@/lib/constants";
 
 const UserLanguages = ({ formInputs, setFormInputs }) => {
 	const [languageInput, setLanguageInput] = useState("");
 
 	const addLanguage = () => {
 		if (!languageInput) {
-			showErrorToast("Please enter a language");
+			showErrorToast(ERRORS.USER_PROFILE.EMPTY_LANGUAGE);
 			return;
 		}
 		if (formInputs.languages?.includes(languageInput)) {
-			showErrorToast("This language is already present in the list");
+			showErrorToast(ERRORS.USER_PROFILE.DUPLICATE_LANGUAGE);
 			return;
 		}
 		if (formInputs.languages?.length >= 8) {
-			showErrorToast("You can only add up to 8 languages");
+			showErrorToast(ERRORS.USER_PROFILE.MAXIMUM_LANGUAGES_LIMIT);
 			return;
 		}
 

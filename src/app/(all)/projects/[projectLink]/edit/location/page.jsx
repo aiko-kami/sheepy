@@ -4,7 +4,7 @@ import FormLocation from "@/components/ProjectEdit/LocationTab/FormLocation";
 import Error from "@/components/Errors/Error";
 
 import { ApiGetEditProjectLocation } from "@/lib/api/projectEditionServer";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 export const metadata = {
 	title: "Edit project | Make It",

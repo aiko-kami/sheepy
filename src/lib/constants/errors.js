@@ -1,5 +1,77 @@
-const ERRORS = {
-	PROJECT_EDIT: {
+export const ERRORS = {
+	GENERIC: {
+		ERROR: "Something went wrong.",
+		UNAUTHORIZED: "You do not have permission to perform this action.",
+		UNKNOWN: "An unexpected error occurred. Please try again later.",
+	},
+
+	AUTHENTIFICATION: {
+		USERNAME_REQUIRED: "Username is required.",
+		EMAIL_REQUIRED: "Email is required.",
+		PASSWORD_REQUIRED: "Password is required.",
+		PASSWORD_CONFIRM_REQUIRED: "Password confirmation is required.",
+		IDENTIFIER_REQUIRED: "Email or username is required.",
+		USERNAME_INVALID: "Username can only contain letters, numbers, underscores, and periods.",
+		USERNAME_MIN_LENGTH: "Username must be at least 3 characters long.",
+		USERNAME_MAX_LENGTH: "Username cannot exceed 30 characters.",
+		EMAIL_INVALID: "Please enter a valid email address.",
+		PASSWORD_MIN_LENGTH: "Password must be at least 8 characters long.",
+		PASSWORD_MATCH: "Passwords do not match.",
+		PASSWORD_RESET_FAILED: "Password reset failed. Please try again later.",
+		REGISTER_FAILED: "Failed to register.",
+		LOGIN_FAILED: "Failed to login.",
+		PASSWORD_UPDATE_FAILED: "Failed to update password.",
+	},
+
+	USER_PROFILE: {
+		BIO_DESCRIPTION_UPDATE_FAILED: "Failed to update bio and description.",
+		UPDATE_FAILED: "Failed to update user profile.",
+		PICTURE_UPDATE_FAILED: "Failed to update user profile picture.",
+		BACKGROUND_UPDATE_FAILED: "Failed to update user background picture.",
+		EMPTY_LANGUAGE: "Please enter a language.",
+		DUPLICATE_LANGUAGE: "This language is already present in the list.",
+		MAXIMUM_LANGUAGES_LIMIT: "You can only add up to 8 languages.",
+	},
+
+	USER_SETTINGS: {
+		APPEARANCE: "Failed to update appearance.",
+		LANGUAGE: "Failed to update language.",
+		NOTIFICATIONS: "Failed to update notifications.",
+		PRIVACY: "Failed to update privacy settings.",
+	},
+
+	USER_TALENTS: {
+		NAME_REQUIRED: "Talent name is required.",
+		DESCRIPTION_REQUIRED: "Talent description is required.",
+		NAME_DUPLICATE: "Duplicate talent names are not allowed.",
+		MAXIMUM_TALENTS_LIMIT: "You can only add up to 10 talents.",
+		DUPLICATE_CERTIFICATION: "This certification is already present in the list.",
+		MAXIMUM_CERTIFICATIONS_LIMIT: "You can only add up to 20 certifications.",
+		EMPTY_CERTIFICATION: "Please enter a certification.",
+		EMPTY_TALENT_REMOVE: "Please select a talent to remove.",
+		EMPTY_CERTIFICATION_REMOVE: "Please select a certification to remove.",
+		ADD_FAILED: "Failed to add talent.",
+		UPDATE_FAILED: "Failed to update user talents.",
+		REMOVE_FAILED: "Failed to remove talent.",
+	},
+
+	USER_SKILLS: {
+		SKILL_REQUIRED: "Please enter a skill.",
+		DUPLICATE_SKILL: "This skill is already present in the list.",
+		MAXIMUM_LIMIT: "You can only add up to 20 skills.",
+		EMPTY_INPUT_REMOVE: "Please select a skill to remove.",
+	},
+
+	USER_QUICK_SKILLS: {
+		EMPTY_INPUT: "Please enter a quick skill.",
+		DUPLICATE_QUICK_SKILL: "This quick skill is already present in the list.",
+		MAXIMUM_LIMIT: "You can only add up to 20 quick skills.",
+		ADD_FAILED: "Failed to add quick skill.",
+		EMPTY_INPUT_REMOVE: "Please select a quick skill to remove.",
+		REMOVE_FAILED: "Failed to remove quick skill.",
+	},
+
+	PROJECT_PERMISSIONS: {
 		EDIT_TITLE_CATEGORY: "You do not have permission to edit the project title or category.",
 		EDIT_TITLE: "You do not have permission to edit the project title.",
 		EDIT_CATEGORY: "You do not have permission to edit the project category.",
@@ -25,24 +97,88 @@ const ERRORS = {
 		VIEW_ATTACHMENTS: "You do not have permission to view the project attachments.",
 		EDIT_STEPS: "You do not have permission to edit the project steps.",
 		EDIT_QNAS: "You do not have permission to edit the project Q&As.",
+		EDIT_QNAS_FAILED: "Failed to update project Q&A.",
 	},
 
 	PROJECT: {
+		UPDATE_FAILED: "Failed to update project.",
 		NO_STEPS: "Your project does not have any step yet.",
 	},
 
-	TAGS: {
+	PROJECT_TITLE_CATEGORY: {
+		UPDATE_FAILED: "Failed to update project title and category.",
+		TITLE_REQUIRED: "Project title is required.",
+		CATEGORY_REQUIRED: "Project category is required.",
+		SUBCATEGORY_REQUIRED: "Project sub-category is required.",
+	},
+
+	PROJECT_INFORMATION: {
+		UPDATE_FAILED: "Failed to update project information.",
+	},
+
+	PROJECT_MEMBERS: {
+		REMOVE_FAILED: "Failed to remove project member.",
+		UPDATE_FAILED: "Failed to update project member.",
+		CANNOT_REMOVE_OWNER: "You cannot remove the project owner.",
+	},
+
+	PROJECT_COVER: {
+		REMOVE_FAILED: "Failed to remove project cover.",
+		UPDATE_FAILED: "Failed to update project cover.",
+	},
+
+	PROJECT_LOCATION: {
+		UPDATE_FAILED: "Failed to update project location.",
+	},
+
+	PROJECT_STATUS: {
+		UPDATE_FAILED: "Failed to update project status.",
+	},
+
+	PROJECT_TAGS: {
 		NO_TAGS_FOUND: "No tags found.",
 		LOAD_FAILED: "Failed to load tags.",
+		MAXIMUM_LIMIT: "You can only add up to 8 tags.",
+		DUPLICATE_TAG: "This tag is already present in the list.",
+		ADD_FAILED: "Failed to add tag.",
+		EMPTY_INPUT: "Please enter a tag name.",
+		EMPTY_INPUT_REMOVE: "Please select a tag to remove.",
+		REMOVE_FAILED: "Failed to remove tag.",
 	},
 
-	CATEGORIES: {
+	PROJECT_RIGHTS: {
+		UPDATE_FAILED: "Failed to update project rights.",
+	},
+
+	PROJECT_OBJECTIVES: {
+		EMPTY_INPUT: "Please enter an objective.",
+		DUPLICATE_OBJECTIVE: "This objective is already present in the list.",
+		MAXIMUM_LIMIT: "You can only add up to 20 objectives.",
+		ADD_FAILED: "Failed to add objective.",
+		EMPTY_INPUT_REMOVE: "Please select an objective to remove.",
+		REMOVE_FAILED: "Failed to remove objective.",
+	},
+
+	PROJECT_TALENTS_NEEDED: {
+		EMPTY_INPUT: "Please enter a talent.",
+		EMPTY_DESCRIPTION_INPUT: "Please enter a description.",
+		DUPLICATE_TALENT: "This talent is already present in the list.",
+		MAXIMUM_LIMIT: "You can only add up to 20 talents.",
+		ADD_FAILED: "Failed to add talent needed.",
+		EMPTY_INPUT_REMOVE: "Please select a talent to remove.",
+		REMOVE_FAILED: "Failed to remove talent needed.",
+	},
+
+	PROJECT_STEPS: {
+		UPDATE_FAILED: "Failed to update project steps.",
+	},
+
+	PROJECT_QNAS: {
+		UPDATE_FAILED: "Failed to update project Q&A.",
+	},
+
+	PROJECT_CATEGORIES: {
 		LOAD_FAILED: "Failed to load categories.",
-	},
-
-	GENERIC: {
-		UNAUTHORIZED: "You do not have permission to perform this action.",
-		UNKNOWN: "An unexpected error occurred. Please try again later.",
 	},
 
 	NOT_FOUND: {
@@ -59,14 +195,6 @@ const ERRORS = {
 	ACCESS_DENIED: {
 		UNAUTHORIZED_TITLE: "401 - Access Denied",
 		UNAUTHORIZED_MESSAGE: "Sorry, you are not allowed to access this data... 😥",
-	},
-
-	TALENTS_EDIT: {
-		NAME_REQUIRED: "Talent name is required.",
-		DESCRIPTION_REQUIRED: "Talent description is required.",
-		NAME_DUPLICATE: "Duplicate talent names are not allowed.",
-		MAXIMUM_LIMIT: "You can only add up to 10 talents.",
-		UPDATE_FAILED: "Failed to update user talents.",
 	},
 };
 

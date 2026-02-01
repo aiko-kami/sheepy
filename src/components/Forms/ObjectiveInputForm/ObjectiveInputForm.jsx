@@ -11,6 +11,7 @@ import AddObjectiveButton from "@/components/Forms/ObjectiveInputForm/AddObjecti
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
 import { ApiPostAddObjective, ApiDeleteObjective } from "@/lib/api/projectEditionServer";
+import { SUCCESS, ERRORS } from "@/lib/constants";
 
 const ObjectiveInputForm = ({ projectId, objectives = [], disabled = false }) => {
 	const router = useRouter();
@@ -23,15 +24,15 @@ const ObjectiveInputForm = ({ projectId, objectives = [], disabled = false }) =>
 		const objective = (objectiveInput || "").trim();
 
 		// Basic validations with early returns
-		if (!objective) return showErrorToast("Please enter an objective.");
+		if (!objective) return showErrorToast(ERRORS.PROJECT_OBJECTIVES.EMPTY_INPUT);
 
 		// Case-insensitive duplicate check (assumes stored items have .objective)
 		const alreadyExists = objectives.some((obj) => String(obj || "").toLowerCase() === objective.toLowerCase());
-		if (alreadyExists) return showErrorToast("This objective is already present in the list.");
+		if (alreadyExists) return showErrorToast(ERRORS.PROJECT_OBJECTIVES.DUPLICATE_OBJECTIVE);
 
 		// Max limit check (max 20)
 		if (objectives.length >= 20) {
-			return showErrorToast("You can only add up to 20 objectives.");
+			return showErrorToast(ERRORS.PROJECT_OBJECTIVES.MAXIMUM_LIMIT);
 		}
 
 		const payload = {
@@ -40,13 +41,13 @@ const ObjectiveInputForm = ({ projectId, objectives = [], disabled = false }) =>
 
 		const result = await ApiPostAddObjective(projectId, payload);
 		if (!result.ok) {
-			showErrorToast(result.message || "Failed to add objective.");
+			showErrorToast(result.message || ERRORS.PROJECT_OBJECTIVES.ADD_FAILED);
 			return;
 		}
 
 		router.refresh();
 		setObjectiveInput("");
-		showSuccessToast("objective added successfully.");
+		showSuccessToast(SUCCESS.PROJECT_OBJECTIVES.ADD);
 	};
 
 	const handleObjectiveInputChange = (e) => {
@@ -61,7 +62,7 @@ const ObjectiveInputForm = ({ projectId, objectives = [], disabled = false }) =>
 	const removeObjective = async (objective) => {
 		// Basic validations with early returns
 		if (!objective) {
-			showErrorToast("Please select an objective to remove.");
+			showErrorToast(ERRORS.PROJECT_OBJECTIVES.EMPTY_INPUT_REMOVE);
 			return;
 		}
 
@@ -78,7 +79,7 @@ const ObjectiveInputForm = ({ projectId, objectives = [], disabled = false }) =>
 
 		const result = await ApiDeleteObjective(projectId, payload);
 		if (!result.ok) {
-			showErrorToast(result.message || "Failed to remove objective.");
+			showErrorToast(result.message || ERRORS.PROJECT_OBJECTIVES.REMOVE_FAILED);
 			return;
 		}
 
@@ -87,7 +88,7 @@ const ObjectiveInputForm = ({ projectId, objectives = [], disabled = false }) =>
 		setObjectiveToRemove(null);
 		setModalDisplayRemove(false);
 
-		showSuccessToast("Objective removed successfully.");
+		showSuccessToast(SUCCESS.PROJECT_OBJECTIVES.REMOVE);
 	};
 
 	return (

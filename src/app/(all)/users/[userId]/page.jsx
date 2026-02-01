@@ -7,7 +7,7 @@ import UserCardProjects from "@/components/User/UserProfilePublic/UserCardProjec
 import Error from "@/components/Errors/Error";
 
 import { ApiGetUserPublicData } from "@/lib/api/userServer";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 import user2 from "@/mock/user.json";
 

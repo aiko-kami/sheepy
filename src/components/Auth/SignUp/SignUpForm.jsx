@@ -9,8 +9,9 @@ import Triforce from "@/components/Loaders/Triforce";
 
 import { ApiSignUp } from "@/lib/api/auth";
 
-import { showErrorToast } from "@/utils/toast";
 import { handleFormChange } from "@/utils/formHandlers";
+import { showErrorToast } from "@/utils/toast";
+import { ERRORS } from "@/lib/constants";
 
 const SignUpForm = ({ setModalDisplay }) => {
 	const router = useRouter();
@@ -32,28 +33,28 @@ const SignUpForm = ({ setModalDisplay }) => {
 		e.preventDefault();
 
 		if (!username.trim()) {
-			showErrorToast("Username is required.");
+			showErrorToast(ERRORS.AUTHENTIFICATION.USERNAME_REQUIRED);
 			return;
 		}
 		if (!email.trim()) {
-			showErrorToast("Email is required.");
+			showErrorToast();
 			return;
 		}
 		const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 		if (!emailPattern.test(email)) {
-			showErrorToast("Please enter a valid email address.");
+			showErrorToast(ERRORS.AUTHENTIFICATION.VALID_EMAIL_REQUIRED);
 			return;
 		}
 		if (!password.trim()) {
-			showErrorToast("Password is required.");
+			showErrorToast(ERRORS.AUTHENTIFICATION.PASSWORD_REQUIRED);
 			return;
 		}
 		if (!confirmPassword.trim()) {
-			showErrorToast("Password confirmation is required.");
+			showErrorToast(ERRORS.AUTHENTIFICATION.PASSWORD_CONFIRM_REQUIRED);
 			return;
 		}
 		if (password !== confirmPassword) {
-			showErrorToast("Passwords do not match.");
+			showErrorToast(ERRORS.AUTHENTIFICATION.PASSWORD_MATCH);
 			return;
 		}
 
@@ -63,7 +64,7 @@ const SignUpForm = ({ setModalDisplay }) => {
 			await ApiSignUp({ username, email, password, confirmPassword });
 			setIsSignedUp(true);
 		} catch (error) {
-			showErrorToast(error.message || "Something went wrong");
+			showErrorToast(error.message || ERRORS.AUTHENTIFICATION.REGISTER_FAILED);
 		} finally {
 			setLoading(false);
 		}

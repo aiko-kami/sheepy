@@ -5,7 +5,7 @@ import Modal from "@/components/Modals/Modal";
 import RemoveCoverModal from "@/components/Modals/ProjectEdit/RemoveCoverModal";
 
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 const Cover = ({ formInputs, setFormInputs, userPermissions, closeModalCoverRemove, modalDisplayCoverRemove, confirmRemoveCover }) => {
 	const fileTypesAllowed = {
@@ -27,7 +27,7 @@ const Cover = ({ formInputs, setFormInputs, userPermissions, closeModalCoverRemo
 				{/* Project cover */}
 				{!userPermissions.canEditCover && (
 					<div className="mb-4">
-						<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.EDIT_COVER} />
+						<PermissionsErrorPane message={ERRORS.PROJECT_PERMISSIONS.EDIT_COVER} />
 					</div>
 				)}
 				<div className="mb-8">

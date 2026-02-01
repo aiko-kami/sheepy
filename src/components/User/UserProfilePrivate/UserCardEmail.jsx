@@ -10,6 +10,8 @@ import InputField from "@/components/Forms/InputField";
 import { ApiUpdateUserEmail } from "@/lib/api/usersClient";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { SUCCESS, ERRORS } from "@/lib/constants";
+
 import { handleFormChange } from "@/utils/formHandlers";
 
 const UserCardEmail = ({ email }) => {
@@ -26,12 +28,12 @@ const UserCardEmail = ({ email }) => {
 		e.preventDefault();
 
 		if (!formInputs.email.trim()) {
-			showErrorToast("Email is required.");
+			showErrorToast(ERRORS.AUTHENTIFICATION.EMAIL_REQUIRED);
 			return;
 		}
 		const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 		if (!emailPattern.test(formInputs.email)) {
-			showErrorToast("Please enter a valid email address.");
+			showErrorToast(ERRORS.AUTHENTIFICATION.EMAIL_INVALID);
 			return;
 		}
 
@@ -42,7 +44,7 @@ const UserCardEmail = ({ email }) => {
 
 		try {
 			await ApiUpdateUserEmail(payload);
-			showSuccessToast("We've sent a verification link to your new email. Please check your inbox to confirm the change.");
+			showSuccessToast(SUCCESS.AUTHENTIFICATION.EMAIL_VERIFY);
 			router.push("/users/my-profile");
 		} catch (error) {
 			showErrorToast(error.message);

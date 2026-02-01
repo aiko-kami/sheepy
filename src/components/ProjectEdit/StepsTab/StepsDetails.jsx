@@ -5,7 +5,7 @@ import StaticStepsList from "@/components/ProjectEdit/StepsTab/StaticStepsList";
 import LastUpdateBy from "@/components/ProjectEdit/LastUpdateBy";
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
 import { Button } from "@/components/Buttons/Buttons";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 const StepsDetails = ({ formInputs, onChange, addStep, statusesList, userPermissions }) => {
 	return (
@@ -22,7 +22,7 @@ const StepsDetails = ({ formInputs, onChange, addStep, statusesList, userPermiss
 				<div className="mb-6">
 					{!userPermissions.canEditSteps && (
 						<div className="mb-4">
-							<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.EDIT_STEPS} />
+							<PermissionsErrorPane message={ERRORS.PROJECT_PERMISSIONS.EDIT_STEPS} />
 						</div>
 					)}
 					{formInputs.projectSteps && formInputs.projectSteps.length !== 0 ? (

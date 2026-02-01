@@ -5,7 +5,7 @@ import ProjectEditNavbar from "@/components/ProjectEdit/ProjectEditNavbar";
 import Error from "@/components/Errors/Error";
 
 import { ApiGetEditUserRights } from "@/lib/api/projectEditionServer";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 export default async function RootLayout({ params, children }) {
 	const { projectLink } = params;

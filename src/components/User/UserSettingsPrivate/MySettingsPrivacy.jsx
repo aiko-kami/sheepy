@@ -9,6 +9,8 @@ import { Button } from "@/components/Buttons/Buttons";
 import { ApiUpdateUserSettingsPrivacy } from "@/lib/api/usersClient";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { SUCCESS, ERRORS } from "@/lib/constants";
+
 import { handleFormChange } from "@/utils/formHandlers";
 
 const MySettingsPrivacy = ({ userPrivacySettings }) => {
@@ -31,9 +33,9 @@ const MySettingsPrivacy = ({ userPrivacySettings }) => {
 		e.preventDefault();
 		try {
 			await ApiUpdateUserSettingsPrivacy(formInputs);
-			showSuccessToast("Privacy settings successfully updated!");
+			showSuccessToast(SUCCESS.USER_SETTINGS.PRIVACY);
 		} catch (error) {
-			showErrorToast(error.message);
+			showErrorToast(error.message || ERRORS.USER_SETTINGS.PRIVACY);
 		}
 	};
 

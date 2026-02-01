@@ -12,6 +12,8 @@ import { BadgeOwner } from "@/components/Badges/Badges";
 import { Avatar } from "@/components/Badges/Avatar";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { SUCCESS, ERRORS } from "@/lib/constants";
+
 import { handleFormChange } from "@/utils/formHandlers";
 
 import { ApiUpdateProjectMember } from "@/lib/api/projectEditionServer";
@@ -48,10 +50,10 @@ const UpdateMemberModal = ({ user, projectId, role, talent, startDate, closeModa
 
 			const result = await ApiUpdateProjectMember(projectId, payload);
 			if (!result.ok) {
-				showErrorToast(result.message || "Failed to update project member.");
+				showErrorToast(result.message || ERRORS.PROJECT_MEMBERS.UPDATE_FAILED);
 				return;
 			}
-			showSuccessToast("The project member has been updated.");
+			showSuccessToast(SUCCESS.PROJECT_MEMBERS.UPDATE);
 			closeModalUpdate();
 			router.refresh();
 		} catch (error) {

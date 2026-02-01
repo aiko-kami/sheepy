@@ -2,7 +2,7 @@ import { IoLocationSharp, IoGlobeOutline, IoLocationOutline } from "react-icons/
 import { Button } from "@/components/Buttons/Buttons";
 import LocationInputField from "@/components/Forms/LocationInputField";
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 const LocationDetails = ({ formInputs, onChange, userPermissions }) => {
 	return (
@@ -35,7 +35,7 @@ const LocationDetails = ({ formInputs, onChange, userPermissions }) => {
 				) : (
 					<>
 						<div className="mb-4">
-							<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.EDIT_LOCATION} />
+							<PermissionsErrorPane message={ERRORS.PROJECT_PERMISSIONS.EDIT_LOCATION} />
 						</div>
 						<div className="flex items-center gap-1">
 							{formInputs.locationOnlineOnly ? (

@@ -8,7 +8,7 @@ import { Button } from "@/components/Buttons/Buttons";
 import Modal from "@/components/Modals/Modal";
 import ProjectNewInvitationModal from "@/components/Modals/ProjectEdit/ProjectNewInvitationModal";
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 const JoinInvitations = ({ talentsNeeded, projectId, joinProjectInvitations, userPermissions }) => {
 	const [modalDisplayNewInvitation, setModalDisplayNewInvitation] = useState(false);
@@ -65,7 +65,7 @@ const JoinInvitations = ({ talentsNeeded, projectId, joinProjectInvitations, use
 						</>
 					) : (
 						<div className="w-full">
-							<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.VIEW_INVITATIONS} />
+							<PermissionsErrorPane message={ERRORS.PROJECT_PERMISSIONS.VIEW_INVITATIONS} />
 						</div>
 					)}
 				</div>

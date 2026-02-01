@@ -1,10 +1,9 @@
 "use client";
 
 import { IoPersonAdd } from "react-icons/io5";
-import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
-import ERRORS from "@/lib/constants/errors";
-
 import TalentInputForm from "@/components/Forms/TalentNeededInputForm/TalentInputForm";
+import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
+import { ERRORS } from "@/lib/constants";
 
 const TalentsNeeded = ({ projectId, talentsNeeded, userPermissions }) => {
 	return (
@@ -20,7 +19,7 @@ const TalentsNeeded = ({ projectId, talentsNeeded, userPermissions }) => {
 				{/* Project talents */}
 				{!userPermissions.canEditTalentsNeeded && (
 					<div className="mb-4">
-						<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.EDIT_TALENTS_NEEDED} />
+						<PermissionsErrorPane message={ERRORS.PROJECT_PERMISSIONS.EDIT_TALENTS_NEEDED} />
 					</div>
 				)}
 				<div className="w-full sm:w-100 xl:w-150 mb-8">

@@ -6,6 +6,7 @@ import ObjectivesList from "@/components/Forms/ObjectiveInputField/ObjectivesLis
 import AddObjectiveButton from "@/components/Forms/ObjectiveInputField/AddObjectiveButton";
 
 import { showErrorToast } from "@/utils/toast";
+import { ERRORS } from "@/lib/constants";
 
 const ObjectiveInputField = ({ objectives, setFormInputs, disabled = false }) => {
 	const [objectiveInput, setObjectiveInput] = useState("");
@@ -14,15 +15,15 @@ const ObjectiveInputField = ({ objectives, setFormInputs, disabled = false }) =>
 		const objective = (objectiveInput || "").trim();
 
 		// Basic validations with early returns
-		if (!objective) return showErrorToast("Please enter an objective");
+		if (!objective) return showErrorToast(ERRORS.PROJECT_OBJECTIVES.EMPTY_INPUT);
 
 		// Case-insensitive duplicate check (assumes stored items have .talent)
 		const alreadyExists = objectives.some((obj) => String(obj || "").toLowerCase() === objective.toLowerCase());
-		if (alreadyExists) return showErrorToast("This objective is already present in the list");
+		if (alreadyExists) return showErrorToast(ERRORS.PROJECT_OBJECTIVES.DUPLICATE_OBJECTIVE);
 
 		// Max limit check (max 10)
 		if (objectives.length >= 10) {
-			return showErrorToast("You can only add up to 20 objectives");
+			return showErrorToast(ERRORS.PROJECT_OBJECTIVES.MAXIMUM_LIMIT);
 		}
 
 		// Add new objective

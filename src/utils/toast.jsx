@@ -1,7 +1,8 @@
 import { toast } from "react-hot-toast";
 import { IoClose } from "react-icons/io5";
+import { SUCCESS } from "@/lib/constants/success";
 
-export const showSuccessToast = (message = "Success!") => {
+export const showSuccessToast = (message = SUCCESS.GENERIC.SUCCESS) => {
 	toast.success((t) => (
 		<div className="flex items-center align-bottom">
 			{message}
@@ -12,7 +13,7 @@ export const showSuccessToast = (message = "Success!") => {
 	));
 };
 
-export const showErrorToast = (message = "Something went wrong") => {
+export const showErrorToast = (message = ERRORS.GENERIC.ERROR) => {
 	toast.error((t) => (
 		<div className="flex items-center align-bottom">
 			{message}

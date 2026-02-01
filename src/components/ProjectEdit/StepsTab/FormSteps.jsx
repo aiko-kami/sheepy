@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 import Steps from "@/components/ProjectEdit/StepsTab/Steps";
 import { ApiUpdateProjectSteps } from "@/lib/api/projectEditionServer";
-import ERRORS from "@/lib/constants/errors";
+import { SUCCESS, ERRORS } from "@/lib/constants";
 import { showErrorToast, showSuccessToast } from "@/utils/toast";
 
 const FormSteps = ({ projectId, steps, statusesList, userPermissions }) => {
@@ -36,7 +36,7 @@ const FormSteps = ({ projectId, steps, statusesList, userPermissions }) => {
 		event.preventDefault();
 		try {
 			if (!userPermissions.canEditSteps) {
-				showErrorToast(ERRORS.PROJECT_EDIT.EDIT_STEPS);
+				showErrorToast(ERRORS.PROJECT_PERMISSIONS.EDIT_STEPS);
 				return;
 			}
 
@@ -52,11 +52,11 @@ const FormSteps = ({ projectId, steps, statusesList, userPermissions }) => {
 
 			const result = await ApiUpdateProjectSteps(projectId, payload);
 			if (!result.ok) {
-				showErrorToast(result.message || "Failed to update project steps.");
+				showErrorToast(result.message || ERRORS.PROJECT_STEPS.UPDATE_FAILED);
 				return;
 			}
 
-			showSuccessToast("Project steps have been updated.");
+			showSuccessToast(SUCCESS.PROJECT_STEPS.UPDATE);
 			router.refresh();
 		} catch (error) {
 			showErrorToast(error.message);

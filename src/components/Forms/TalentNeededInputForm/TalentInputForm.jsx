@@ -11,6 +11,7 @@ import AddTalentButton from "@/components/Forms/TalentNeededInputField/AddTalent
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
 import { ApiPostAddTalentNeeded, ApiDeleteTalentNeeded } from "@/lib/api/projectEditionServer";
+import { SUCCESS, ERRORS } from "@/lib/constants";
 
 const TalentInputForm = ({ projectId, talentsNeeded, disabled = false }) => {
 	const router = useRouter();
@@ -25,16 +26,16 @@ const TalentInputForm = ({ projectId, talentsNeeded, disabled = false }) => {
 		const description = (talentNeededDescriptionInput || "").trim();
 
 		// Basic validations with early returns
-		if (!talent) return showErrorToast("Please enter a talent.");
-		if (!description) return showErrorToast("Please enter a description.");
+		if (!talent) return showErrorToast(ERRORS.PROJECT_TALENTS_NEEDED.EMPTY_INPUT);
+		if (!description) return showErrorToast(ERRORS.PROJECT_TALENTS_NEEDED.EMPTY_DESCRIPTION_INPUT);
 
 		// Case-insensitive duplicate check (assumes stored items have .talent)
 		const alreadyExists = talentsNeeded.some((t) => String(t.talent || "").toLowerCase() === talent.toLowerCase());
-		if (alreadyExists) return showErrorToast("This talent is already present in the list.");
+		if (alreadyExists) return showErrorToast(ERRORS.PROJECT_TALENTS_NEEDED.DUPLICATE_TALENT);
 
 		// Max limit check (max 20)
 		if (talentsNeeded.length >= 20) {
-			return showErrorToast("You can only add up to 20 talents.");
+			return showErrorToast(ERRORS.PROJECT_TALENTS_NEEDED.MAXIMUM_LIMIT);
 		}
 
 		const payload = {
@@ -44,14 +45,14 @@ const TalentInputForm = ({ projectId, talentsNeeded, disabled = false }) => {
 
 		const result = await ApiPostAddTalentNeeded(projectId, payload);
 		if (!result.ok) {
-			showErrorToast(result.message || "Failed to add talent needed.");
+			showErrorToast(result.message || ERRORS.PROJECT_TALENTS_NEEDED.ADD_FAILED);
 			return;
 		}
 
 		router.refresh();
 		setTalentNeededTalentInput("");
 		setTalentNeededDescriptionInput("");
-		showSuccessToast("Talent needed added successfully.");
+		showSuccessToast(SUCCESS.PROJECT_TALENTS_NEEDED.ADD);
 	};
 
 	const handleTalentNeededTalentInputChange = (e) => {
@@ -70,7 +71,7 @@ const TalentInputForm = ({ projectId, talentsNeeded, disabled = false }) => {
 	const removeTalentNeeded = async (talent) => {
 		// Basic validations with early returns
 		if (!talent) {
-			showErrorToast("Please select a talent to remove.");
+			showErrorToast(ERRORS.PROJECT_TALENTS_NEEDED.EMPTY_INPUT_REMOVE);
 			return;
 		}
 
@@ -87,7 +88,7 @@ const TalentInputForm = ({ projectId, talentsNeeded, disabled = false }) => {
 
 		const result = await ApiDeleteTalentNeeded(projectId, payload);
 		if (!result.ok) {
-			showErrorToast(result.message || "Failed to remove talent needed.");
+			showErrorToast(result.message || ERRORS.PROJECT_TALENTS_NEEDED.REMOVE_FAILED);
 			return;
 		}
 
@@ -97,7 +98,7 @@ const TalentInputForm = ({ projectId, talentsNeeded, disabled = false }) => {
 		setTalentToRemove(null);
 		setModalDisplayRemove(false);
 
-		showSuccessToast("Talent needed removed successfully.");
+		showSuccessToast(SUCCESS.PROJECT_TALENTS_NEEDED.REMOVE);
 	};
 
 	return (

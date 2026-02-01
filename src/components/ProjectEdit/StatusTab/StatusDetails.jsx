@@ -3,7 +3,7 @@ import { Button } from "@/components/Buttons/Buttons";
 import { SelectField } from "@/components/Forms/SelectField";
 import InputField from "@/components/Forms/InputField";
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 const StatusDetails = ({ formInputs, onChange, statusesList, userPermissions }) => {
 	const optionsList = statusesList.map((item) => ({
@@ -23,7 +23,7 @@ const StatusDetails = ({ formInputs, onChange, statusesList, userPermissions }) 
 				<div className="mb-8">
 					{!userPermissions.canEditStatus && (
 						<div className="mb-4">
-							<PermissionsErrorPane messages={ERRORS.PROJECT_EDIT.EDIT_STATUS} />
+							<PermissionsErrorPane messages={ERRORS.PROJECT_PERMISSIONS.EDIT_STATUS} />
 						</div>
 					)}
 					<div className="flex flex-col lg:flex-row justify-between">

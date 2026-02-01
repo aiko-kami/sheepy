@@ -20,8 +20,9 @@ import { ApiGetAllTags } from "@/lib/api/tags";
 import { ApiCreateProjectDraft, ApiUpdateProjectDraft, ApiSubmitProject } from "@/lib/api/projectCore";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
-import { handleFormChange } from "@/utils/formHandlers";
+import { ERRORS, SUCCESS } from "@/lib/constants";
 
+import { handleFormChange } from "@/utils/formHandlers";
 import userTalentNeeded from "@/public/images/userTalentNeeded.jpg";
 
 const StepManager = () => {
@@ -98,7 +99,7 @@ const StepManager = () => {
 			if (result.ok && result.data?.categories) {
 				setCategories(result.data.categories);
 			} else {
-				showErrorToast(result.message || "Failed to load categories");
+				showErrorToast(result.message || ERRORS.PROJECT_CATEGORIES.LOAD_FAILED);
 			}
 		};
 		const fetchTags = async () => {
@@ -106,7 +107,7 @@ const StepManager = () => {
 			if (result.ok && result.data?.tags) {
 				setTagsList(result.data.tags);
 			} else {
-				showErrorToast(result.message || "Failed to load tags");
+				showErrorToast(result.message || ERRORS.TAGS.LOAD_FAILED);
 			}
 		};
 
@@ -169,7 +170,7 @@ const StepManager = () => {
 				if (formInputs.projectId) {
 					// Updating existing draft
 					projectDraft = await ApiUpdateProjectDraft(formInputs.projectId, payload);
-					showSuccessToast("Draft project updated!");
+					showSuccessToast(SUCCESS.PROJECT.DRAFT_UPDATED);
 				} else {
 					// Creating new draft
 					projectDraft = await ApiCreateProjectDraft(payload);
@@ -179,7 +180,7 @@ const StepManager = () => {
 							projectId: projectDraft.projectId, // Store the new ID
 						}));
 					}
-					showSuccessToast("Draft project saved!");
+					showSuccessToast(SUCCESS.PROJECT.DRAFT_SAVED);
 				}
 			} else if (formAction === "submit-project") {
 				if (formInputs.projectId) {
@@ -187,16 +188,16 @@ const StepManager = () => {
 					payload.projectId = formInputs.projectId;
 					await ApiSubmitProject(payload);
 					goToStep(totalSteps + 1);
-					showSuccessToast("Project submitted successfully!");
+					showSuccessToast(SUCCESS.PROJECT.SUBMITTED);
 				} else {
 					// Submit new project
 					await ApiSubmitProject(payload);
 					goToStep(totalSteps + 1);
-					showSuccessToast("Project submitted successfully!");
+					showSuccessToast(SUCCESS.PROJECT.SUBMITTED);
 				}
 			}
 		} catch (error) {
-			showErrorToast(error.message);
+			showErrorToast(error.message || ERRORS.PROJECT.UPDATE_FAILED);
 		}
 	};
 

@@ -1,5 +1,5 @@
 import Error from "@/components/Errors/Error";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 const AccessDeniedPage = () => {
 	return <Error title={ERRORS.ACCESS_DENIED.UNAUTHORIZED_TITLE} message={ERRORS.ACCESS_DENIED.UNAUTHORIZED_MESSAGE} />;

@@ -13,6 +13,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import defaultPicture from "@/public/images/default-profile-picture.png";
 import { ApiUpdateUserPicture, ApiUpdateUserBackgroundPicture, ApiRemoveUserPicture, ApiRemoveUserBackgroundPicture } from "@/lib/api/usersClient";
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { ERRORS, SUCCESS } from "@/lib/constants";
 
 const ProfilePicture = ({ profilePicture, backgroundPicture }) => {
 	const router = useRouter();
@@ -34,11 +35,11 @@ const ProfilePicture = ({ profilePicture, backgroundPicture }) => {
 				await ApiUpdateUserPicture(file);
 				await refreshUser();
 
-				showSuccessToast("Profile picture updated successfully!");
+				showSuccessToast(SUCCESS.USER_PROFILE.PICTURE_UPDATE);
 				setProfileImage(localImageURL);
 				router.push("/users/my-profile");
 			} catch (error) {
-				showErrorToast(error.message);
+				showErrorToast(error.message || ERRORS.USER_PROFILE.PICTURE_UPDATE_FAILED);
 			}
 		}
 	};
@@ -53,11 +54,11 @@ const ProfilePicture = ({ profilePicture, backgroundPicture }) => {
 				await ApiUpdateUserBackgroundPicture(file);
 				await refreshUser();
 
-				showSuccessToast("Background picture updated successfully!");
+				showSuccessToast(SUCCESS.USER_PROFILE.BACKGROUND_UPDATE);
 				setBackgroundImage(localImageURL);
 				router.push("/users/my-profile");
 			} catch (error) {
-				showErrorToast(error.message);
+				showErrorToast(error.message || ERRORS.USER_PROFILE.BACKGROUND_UPDATE_FAILED);
 			}
 		}
 	};
@@ -70,10 +71,10 @@ const ProfilePicture = ({ profilePicture, backgroundPicture }) => {
 			await ApiRemoveUserPicture();
 			setProfileImage(defaultPicture.src);
 			await refreshUser();
-			showSuccessToast("Profile picture removed successfully!");
+			showSuccessToast(SUCCESS.USER_PROFILE.PICTURE_REMOVE);
 			router.push("/users/my-profile");
 		} catch (error) {
-			showErrorToast(error.message);
+			showErrorToast(error.message || ERRORS.USER_PROFILE.PICTURE_UPDATE_FAILED);
 		}
 	};
 
@@ -82,10 +83,10 @@ const ProfilePicture = ({ profilePicture, backgroundPicture }) => {
 			await ApiRemoveUserBackgroundPicture();
 			setBackgroundImage("");
 			await refreshUser();
-			showSuccessToast("Background picture removed successfully!");
+			showSuccessToast(SUCCESS.USER_PROFILE.BACKGROUND_REMOVE);
 			router.push("/users/my-profile");
 		} catch (error) {
-			showErrorToast(error.message);
+			showErrorToast(error.message || ERRORS.USER_PROFILE.BACKGROUND_UPDATE_FAILED);
 		}
 	};
 

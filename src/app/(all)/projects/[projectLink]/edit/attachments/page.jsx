@@ -3,7 +3,7 @@ import FormAttachments from "@/components/ProjectEdit/AttachmentsTab/FormAttachm
 import Error from "@/components/Errors/Error";
 
 import { ApiGetEditProjectAttachments } from "@/lib/api/projectEditionServer";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 export const metadata = {
 	title: "Edit project - Make It",

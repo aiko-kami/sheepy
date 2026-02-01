@@ -6,6 +6,7 @@ import TalentsList from "@/components/Forms/TalentNeededInputField/TalentsList";
 import AddTalentButton from "@/components/Forms/TalentNeededInputField/AddTalentButton";
 
 import { showErrorToast } from "@/utils/toast";
+import { ERRORS } from "@/lib/constants";
 
 const TalentInputField = ({ talentsNeeded, setFormInputs, disabled = false }) => {
 	const [talentNeededTalentInput, setTalentNeededTalentInput] = useState("");
@@ -16,17 +17,17 @@ const TalentInputField = ({ talentsNeeded, setFormInputs, disabled = false }) =>
 		const description = (talentNeededDescriptionInput || "").trim();
 
 		// Basic validations with early returns
-		if (!talent) return showErrorToast("Please enter a talent");
+		if (!talent) return showErrorToast(ERRORS.PROJECT_TALENTS_NEEDED.EMPTY_INPUT);
 
-		if (!description) return showErrorToast("Please enter a description");
+		if (!description) return showErrorToast(ERRORS.PROJECT_TALENTS_NEEDED.EMPTY_DESCRIPTION_INPUT);
 
 		// Case-insensitive duplicate check (assumes stored items have .talent)
 		const alreadyExists = talentsNeeded.some((t) => String(t.talent || "").toLowerCase() === talent.toLowerCase());
-		if (alreadyExists) return showErrorToast("This talent is already present in the list");
+		if (alreadyExists) return showErrorToast(ERRORS.PROJECT_TALENTS_NEEDED.DUPLICATE_TALENT);
 
 		// Max limit check (max 20)
 		if (talentsNeeded.length >= 20) {
-			return showErrorToast("You can only add up to 20 talents");
+			return showErrorToast(ERRORS.PROJECT_TALENTS_NEEDED.MAXIMUM_LIMIT);
 		}
 
 		// Add new talent

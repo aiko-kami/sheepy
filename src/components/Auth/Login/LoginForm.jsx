@@ -12,6 +12,7 @@ import { ApiLogin } from "@/lib/api/auth";
 
 import { showErrorToast } from "@/utils/toast";
 import { handleFormChange } from "@/utils/formHandlers";
+import { ERRORS } from "@/lib/constants";
 
 const LoginForm = ({ setModalDisplay }) => {
 	const router = useRouter();
@@ -30,11 +31,11 @@ const LoginForm = ({ setModalDisplay }) => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		if (!identifier.trim()) {
-			showErrorToast("Email or username is required.");
+			showErrorToast(ERRORS.AUTHENTIFICATION.IDENTIFIER_REQUIRED);
 			return;
 		}
 		if (!password.trim()) {
-			showErrorToast("Password is required.");
+			showErrorToast(ERRORS.AUTHENTIFICATION.PASSWORD_REQUIRED);
 			return;
 		}
 
@@ -45,7 +46,7 @@ const LoginForm = ({ setModalDisplay }) => {
 			router.push("/");
 			loginUser(user);
 		} catch (error) {
-			showErrorToast(error.message || "Something went wrong");
+			showErrorToast(error.message || ERRORS.AUTHENTIFICATION.LOGIN_FAILED);
 		} finally {
 			setLoading(false);
 		}

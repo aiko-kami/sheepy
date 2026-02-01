@@ -5,8 +5,7 @@ import { IoRocketSharp } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import { SelectField } from "@/components/Forms/SelectField";
 import InputField from "@/components/Forms/InputField";
-import { PermissionsErrorText } from "@/components/Errors/PermissionsError";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 import { showErrorToast } from "@/utils/toast";
 
 import { ApiGetAllCategories } from "@/lib/api/categories";
@@ -24,10 +23,10 @@ const TitleCategory = ({ formInputs, onChange, setFormInputs, userPermissions })
 				if (result.ok && result.data?.categories) {
 					setCategories(result.data.categories);
 				} else {
-					showErrorToast(result.message || ERRORS.CATEGORIES.LOAD_FAILED);
+					showErrorToast(result.message || ERRORS.PROJECT_CATEGORIES.LOAD_FAILED);
 				}
 			} catch (error) {
-				showErrorToast(error.message);
+				showErrorToast(error.message || ERRORS.PROJECT_CATEGORIES.LOAD_FAILED);
 			} finally {
 				setLoading(false);
 			}
@@ -105,7 +104,7 @@ const TitleCategory = ({ formInputs, onChange, setFormInputs, userPermissions })
 						inputValue={formInputs.projectTitle}
 						onChange={onChange}
 						disabled={!userPermissions.canEditTitle}
-						disabledMessage={ERRORS.PROJECT_EDIT.EDIT_TITLE}
+						disabledMessage={ERRORS.PROJECT_PERMISSIONS.EDIT_TITLE}
 					/>
 				</div>
 				<div className="mb-8 max-w-180">
@@ -119,7 +118,7 @@ const TitleCategory = ({ formInputs, onChange, setFormInputs, userPermissions })
 								inputValue={formInputs.projectCategoryId}
 								onChange={handleCategoryChange}
 								disabled={!userPermissions.canEditCategory}
-								disabledMessage={ERRORS.PROJECT_EDIT.EDIT_CATEGORY}
+								disabledMessage={ERRORS.PROJECT_PERMISSIONS.EDIT_CATEGORY}
 							/>
 						</div>
 						{/* Project sub-category */}
@@ -131,7 +130,7 @@ const TitleCategory = ({ formInputs, onChange, setFormInputs, userPermissions })
 								inputValue={formInputs.projectSubCategory}
 								onChange={onChange}
 								disabled={!userPermissions.canEditSubCategory}
-								disabledMessage={ERRORS.PROJECT_EDIT.EDIT_SUBCATEGORY}
+								disabledMessage={ERRORS.PROJECT_PERMISSIONS.EDIT_SUBCATEGORY}
 							/>
 						</div>
 					</div>

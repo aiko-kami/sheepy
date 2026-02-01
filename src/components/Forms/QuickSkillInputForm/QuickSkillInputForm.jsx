@@ -11,6 +11,7 @@ import AddQuickSkillButton from "@/components/Forms/QuickSkillInputForm/AddQuick
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
 import { ApiPostAddQuickSkill, ApiDeleteQuickSkill } from "@/lib/api/userServer";
+import { ERRORS, SUCCESS } from "@/lib/constants";
 
 const QuickSkillInputForm = ({ quickSkills = [], disabled = false }) => {
 	const router = useRouter();
@@ -23,15 +24,15 @@ const QuickSkillInputForm = ({ quickSkills = [], disabled = false }) => {
 		const quickSkill = (quickSkillInput || "").trim();
 
 		// Basic validations with early returns
-		if (!quickSkill) return showErrorToast("Please enter a quick skill.");
+		if (!quickSkill) return showErrorToast(ERRORS.USER_QUICK_SKILLS.EMPTY_INPUT);
 
 		// Case-insensitive duplicate check (assumes stored items have .quickSkill)
 		const alreadyExists = quickSkills.some((obj) => String(obj || "").toLowerCase() === quickSkill.toLowerCase());
-		if (alreadyExists) return showErrorToast("This quick skill is already present in the list.");
+		if (alreadyExists) return showErrorToast(ERRORS.USER_QUICK_SKILLS.DUPLICATE_QUICK_SKILL);
 
 		// Max limit check (max 20)
 		if (quickSkills.length >= 20) {
-			return showErrorToast("You can only add up to 20 quick skills.");
+			return showErrorToast(ERRORS.USER_QUICK_SKILLS.MAXIMUM_LIMIT);
 		}
 
 		const payload = {
@@ -40,13 +41,13 @@ const QuickSkillInputForm = ({ quickSkills = [], disabled = false }) => {
 
 		const result = await ApiPostAddQuickSkill(payload);
 		if (!result.ok) {
-			showErrorToast(result.message || "Failed to add quick skill.");
+			showErrorToast(result.message || ERRORS.USER_QUICK_SKILLS.ADD_FAILED);
 			return;
 		}
 
 		router.refresh();
 		setQuickSkillInput("");
-		showSuccessToast("Quick skill added successfully.");
+		showSuccessToast(SUCCESS.USER_QUICK_SKILLS.ADD);
 	};
 
 	const handleQuickSkillInputChange = (e) => {
@@ -61,7 +62,7 @@ const QuickSkillInputForm = ({ quickSkills = [], disabled = false }) => {
 	const removeQuickSkill = async (quickSkill) => {
 		// Basic validations with early returns
 		if (!quickSkill) {
-			showErrorToast("Please select a quick skill to remove.");
+			showErrorToast(ERRORS.USER_QUICK_SKILLS.EMPTY_INPUT_REMOVE);
 			return;
 		}
 
@@ -78,7 +79,7 @@ const QuickSkillInputForm = ({ quickSkills = [], disabled = false }) => {
 
 		const result = await ApiDeleteQuickSkill(payload);
 		if (!result.ok) {
-			showErrorToast(result.message || "Failed to remove quick skill.");
+			showErrorToast(result.message || ERRORS.USER_QUICK_SKILLS.REMOVE_FAILED);
 			return;
 		}
 
@@ -87,7 +88,7 @@ const QuickSkillInputForm = ({ quickSkills = [], disabled = false }) => {
 		setQuickSkillToRemove(null);
 		setModalDisplayRemove(false);
 
-		showSuccessToast("The quick skill has been removed.");
+		showSuccessToast(SUCCESS.USER_QUICK_SKILLS.REMOVE);
 	};
 
 	return (

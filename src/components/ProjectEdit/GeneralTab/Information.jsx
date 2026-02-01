@@ -2,7 +2,7 @@ import { IoDocumentText } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 import RichTextEditorField from "@/components/Forms/RichTextEditorField/RichTextEditorField";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 const Information = ({ formInputs, onChange, userPermissions }) => {
 	return (
@@ -28,7 +28,7 @@ const Information = ({ formInputs, onChange, userPermissions }) => {
 						rows="6"
 						required={true}
 						disabled={!userPermissions.canEditSummary}
-						disabledMessage={!userPermissions.canEditSummary && ERRORS.PROJECT_EDIT.EDIT_SUMMARY}
+						disabledMessage={!userPermissions.canEditSummary && ERRORS.PROJECT_PERMISSIONS.EDIT_SUMMARY}
 					/>
 				</div>
 				{/* Project description */}
@@ -41,7 +41,7 @@ const Information = ({ formInputs, onChange, userPermissions }) => {
 						maxLength={10000}
 						rows="10"
 						editable={userPermissions.canEditDescription}
-						disabledMessage={!userPermissions.canEditDescription && ERRORS.PROJECT_EDIT.EDIT_DESCRIPTION}
+						disabledMessage={!userPermissions.canEditDescription && ERRORS.PROJECT_PERMISSIONS.EDIT_DESCRIPTION}
 					/>
 				</div>
 				{/* Project goal */}
@@ -57,7 +57,7 @@ const Information = ({ formInputs, onChange, userPermissions }) => {
 						rows="6"
 						required={true}
 						disabled={!userPermissions.canEditGoal}
-						disabledMessage={!userPermissions.canEditGoal && ERRORS.PROJECT_EDIT.EDIT_GOAL}
+						disabledMessage={!userPermissions.canEditGoal && ERRORS.PROJECT_PERMISSIONS.EDIT_GOAL}
 					/>
 				</div>
 				{/* Creator motivation */}
@@ -73,7 +73,7 @@ const Information = ({ formInputs, onChange, userPermissions }) => {
 						rows="4"
 						required={true}
 						disabled={!userPermissions.canEditCreatorMotivation}
-						disabledMessage={!userPermissions.canEditCreatorMotivation && ERRORS.PROJECT_EDIT.EDIT_MOTIVATION}
+						disabledMessage={!userPermissions.canEditCreatorMotivation && ERRORS.PROJECT_PERMISSIONS.EDIT_MOTIVATION}
 					/>
 				</div>
 

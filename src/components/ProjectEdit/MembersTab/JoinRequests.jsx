@@ -1,7 +1,7 @@
 import { IoArrowDownCircle } from "react-icons/io5";
 import JoinRequestsTable from "@/components/Tables/ProjectEdit/JoinRequestsTable";
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 const RequestsTable = ({ projectId, joinProjectRequests, userPermissions }) => {
 	return (
@@ -31,7 +31,7 @@ const RequestsTable = ({ projectId, joinProjectRequests, userPermissions }) => {
 						</>
 					) : (
 						<div className="w-full">
-							<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.VIEW_REQUESTS} />
+							<PermissionsErrorPane message={ERRORS.PROJECT_PERMISSIONS.VIEW_REQUESTS} />
 						</div>
 					)}
 				</div>

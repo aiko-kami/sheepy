@@ -5,7 +5,7 @@ import QuickSkills from "@/components/User/UserTalentsPrivate/QuickSkills";
 import Error from "@/components/Errors/Error";
 
 import { ApiGetUserFromSessionServer } from "@/lib/api/userServer";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 export const metadata = {
 	title: "My talents - Make It",

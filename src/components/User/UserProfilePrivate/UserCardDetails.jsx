@@ -11,6 +11,8 @@ import InputField from "@/components/Forms/InputField";
 import { ApiUpdateUserDetails } from "@/lib/api/usersClient";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { SUCCESS, ERRORS } from "@/lib/constants";
+
 import { handleFormChange } from "@/utils/formHandlers";
 
 const UserCardDetails = ({ locationCity, locationCountry, languages, company, website }) => {
@@ -41,10 +43,10 @@ const UserCardDetails = ({ locationCity, locationCountry, languages, company, we
 
 		try {
 			await ApiUpdateUserDetails(payload);
-			showSuccessToast("Profile updated successfully!");
+			showSuccessToast(SUCCESS.USER_PROFILE.UPDATE);
 			router.push("/users/my-profile");
 		} catch (error) {
-			showErrorToast(error.message);
+			showErrorToast(error.message || ERRORS.USER_PROFILE.UPDATE_FAILED);
 		}
 	};
 

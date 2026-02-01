@@ -11,6 +11,7 @@ import AddTagButton from "@/components/Forms/TagInputForm/AddTagButton";
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
 import { ApiPostAddTag, ApiDeleteTag } from "@/lib/api/projectEditionServer";
+import { ERRORS, SUCCESS } from "@/lib/constants";
 
 const TagInputForm = ({ projectId, tags = [], tagsList = [], disabled = false }) => {
 	const router = useRouter();
@@ -63,11 +64,11 @@ const TagInputForm = ({ projectId, tags = [], tagsList = [], disabled = false })
 	const addExistingTag = async (tagObject) => {
 		if (!tagObject) return;
 		if (totalSelectedCount >= MAX_TAGS) {
-			showErrorToast(`You can only add up to ${MAX_TAGS} tags.`);
+			showErrorToast(ERRORS.PROJECT_TAGS.MAXIMUM_LIMIT);
 			return;
 		}
 		if (selectedExistingIds.has(tagObject.tagId) || selectedNewNames.has(normalize(tagObject.name))) {
-			showErrorToast("This tag is already present in the list.");
+			showErrorToast(ERRORS.PROJECT_TAGS.DUPLICATE_TAG);
 			return;
 		}
 
@@ -77,7 +78,7 @@ const TagInputForm = ({ projectId, tags = [], tagsList = [], disabled = false })
 
 		const result = await ApiPostAddTag(projectId, payload);
 		if (!result.ok) {
-			showErrorToast(result.message || "Failed to add tag.");
+			showErrorToast(result.message || ERRORS.PROJECT_TAGS.ADD_FAILED);
 			return;
 		}
 
@@ -87,23 +88,23 @@ const TagInputForm = ({ projectId, tags = [], tagsList = [], disabled = false })
 		setOpenSuggestions(false);
 		setHighlightIndex(-1);
 		if (inputRef.current) inputRef.current.focus();
-		showSuccessToast("Tag added successfully.");
+		showSuccessToast(SUCCESS.PROJECT_TAGS.ADD);
 	};
 
 	// Add new tag (only store the tagName)
 	const addNewTag = async (name) => {
 		const tagTrimmed = String(name || "").trim();
 		if (!tagTrimmed) {
-			showErrorToast("Please enter a tag name.");
+			showErrorToast(ERRORS.PROJECT_TAGS.EMPTY_INPUT);
 			return;
 		}
 		if (totalSelectedCount >= MAX_TAGS) {
-			showErrorToast(`You can only add up to ${MAX_TAGS} tags.`);
+			showErrorToast(ERRORS.PROJECT_TAGS.MAXIMUM_LIMIT);
 			return;
 		}
 		const cap = normalize(tagTrimmed);
 		if (selectedNewNames.has(cap) || existingTags.some((t) => normalize(t.name) === cap)) {
-			showErrorToast("This tag is already present in the list.");
+			showErrorToast(ERRORS.PROJECT_TAGS.DUPLICATE_TAG);
 			return;
 		}
 
@@ -113,7 +114,7 @@ const TagInputForm = ({ projectId, tags = [], tagsList = [], disabled = false })
 
 		const result = await ApiPostAddTag(projectId, payload);
 		if (!result.ok) {
-			showErrorToast(result.message || "Failed to add tag.");
+			showErrorToast(result.message || ERRORS.PROJECT_TAGS.ADD_FAILED);
 			return;
 		}
 
@@ -123,7 +124,7 @@ const TagInputForm = ({ projectId, tags = [], tagsList = [], disabled = false })
 		setOpenSuggestions(false);
 		setHighlightIndex(-1);
 		if (inputRef.current) inputRef.current.focus();
-		showSuccessToast("Tag added successfully.");
+		showSuccessToast(SUCCESS.PROJECT_TAGS.ADD);
 	};
 
 	// Generic add: prefer suggestion exact match, else create new name
@@ -149,7 +150,7 @@ const TagInputForm = ({ projectId, tags = [], tagsList = [], disabled = false })
 	const removeTag = (tag) => {
 		// Basic validations with early returns
 		if (!tag) {
-			showErrorToast("Please select a tag to remove.");
+			showErrorToast(ERRORS.PROJECT_TAGS.EMPTY_INPUT_REMOVE);
 			return;
 		}
 
@@ -166,7 +167,7 @@ const TagInputForm = ({ projectId, tags = [], tagsList = [], disabled = false })
 
 		const result = await ApiDeleteTag(projectId, payload);
 		if (!result.ok) {
-			showErrorToast(result.message || "Failed to remove tag.");
+			showErrorToast(result.message || ERRORS.PROJECT_TAGS.REMOVE_FAILED);
 			return;
 		}
 
@@ -174,7 +175,7 @@ const TagInputForm = ({ projectId, tags = [], tagsList = [], disabled = false })
 
 		setTagToRemove(null);
 		setModalDisplayRemove(false);
-		showSuccessToast("Tag removed successfully.");
+		showSuccessToast(SUCCESS.PROJECT_TAGS.REMOVE);
 	};
 
 	// Handlers

@@ -8,7 +8,7 @@ import { Button } from "@/components/Buttons/Buttons";
 import RightsTable from "@/components/Tables/ProjectEdit/RightsTable";
 
 import { ApiUpdateProjectMembersRights } from "@/lib/api/projectEditionServer";
-import ERRORS from "@/lib/constants/errors";
+import { SUCCESS, ERRORS } from "@/lib/constants";
 import { showErrorToast, showSuccessToast } from "@/utils/toast";
 import { filterPermissions } from "@/utils/formHandlers";
 
@@ -20,7 +20,7 @@ const RightsDetails = ({ projectId, membersProjectRights, headers, userPermissio
 			userId: member.user.userId,
 			role: member.role,
 			permissions: { ...member.permissions },
-		}))
+		})),
 	);
 
 	const handleCheckboxChange = (userId, right) => {
@@ -56,7 +56,7 @@ const RightsDetails = ({ projectId, membersProjectRights, headers, userPermissio
 					return { ...member, permissions: updatedRights };
 				}
 				return member;
-			})
+			}),
 		);
 	};
 
@@ -64,7 +64,7 @@ const RightsDetails = ({ projectId, membersProjectRights, headers, userPermissio
 		event.preventDefault();
 		try {
 			if (!userPermissions.canEditRights) {
-				showErrorToast(ERRORS.PROJECT_EDIT.EDIT_RIGHTS);
+				showErrorToast(ERRORS.PROJECT_PERMISSIONS.EDIT_RIGHTS);
 				return;
 			}
 
@@ -81,11 +81,11 @@ const RightsDetails = ({ projectId, membersProjectRights, headers, userPermissio
 			};
 			const result = await ApiUpdateProjectMembersRights(projectId, payload);
 			if (!result.ok) {
-				showErrorToast(result.message || "Failed to update project rights.");
+				showErrorToast(result.message || ERRORS.PROJECT_RIGHTS.UPDATE_FAILED);
 				return;
 			}
 
-			showSuccessToast("Project rights have been updated.");
+			showSuccessToast(SUCCESS.PROJECT_RIGHTS.UPDATE);
 			router.refresh();
 		} catch (error) {
 			showErrorToast(error.message);
@@ -108,7 +108,7 @@ const RightsDetails = ({ projectId, membersProjectRights, headers, userPermissio
 								<div className="w-full">
 									{!userPermissions.canEditRights && (
 										<div className="mb-4">
-											<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.EDIT_RIGHTS} />
+											<PermissionsErrorPane message={ERRORS.PROJECT_PERMISSIONS.EDIT_RIGHTS} />
 										</div>
 									)}
 									<div className="w-full mb-8 overflow-x-auto shadow-md sm:rounded-lg">

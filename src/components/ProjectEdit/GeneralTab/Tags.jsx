@@ -2,7 +2,7 @@ import { IoPricetag } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import TagInputForm from "@/components/Forms/TagInputForm/TagInputForm";
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 const Tags = ({ projectId, tags, tagsList = [], userPermissions }) => {
 	return (
@@ -17,7 +17,7 @@ const Tags = ({ projectId, tags, tagsList = [], userPermissions }) => {
 				<div className="mb-8">
 					{!userPermissions.canEditTags && (
 						<div className="mb-4">
-							<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.EDIT_TAGS} />
+							<PermissionsErrorPane message={ERRORS.PROJECT_PERMISSIONS.EDIT_TAGS} />
 						</div>
 					)}
 					<TagInputForm projectId={projectId} tags={tags} tagsList={tagsList} disabled={!userPermissions.canEditTags} />

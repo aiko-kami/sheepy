@@ -6,7 +6,7 @@ import { IoAddCircle } from "react-icons/io5";
 import { FilesDropField } from "@/components/Forms/FileDropField";
 import { Button } from "@/components/Buttons/Buttons";
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS } from "@/lib/constants";
 
 const AddAttachments = ({ projectId, userPermissions }) => {
 	const [formInputs, setFormInputs] = useState({
@@ -63,7 +63,7 @@ const AddAttachments = ({ projectId, userPermissions }) => {
 						</div>
 					</form>
 				) : (
-					<PermissionsErrorPane message={ERRORS.PROJECT_EDIT.ADD_ATTACHMENTS} />
+					<PermissionsErrorPane message={ERRORS.PROJECT_PERMISSIONS.ADD_ATTACHMENTS} />
 				)}
 			</div>
 		</>

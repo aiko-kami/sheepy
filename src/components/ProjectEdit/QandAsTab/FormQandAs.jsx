@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 import QandAs from "@/components/ProjectEdit/QandAsTab/QandAs";
 import { ApiUpdateProjectQAs } from "@/lib/api/projectEditionServer";
-import ERRORS from "@/lib/constants/errors";
+import { ERRORS, SUCCESS } from "@/lib/constants";
 import { showErrorToast, showSuccessToast } from "@/utils/toast";
 
 const FormQandAs = ({ projectId, QAs, userPermissions }) => {
@@ -35,7 +35,7 @@ const FormQandAs = ({ projectId, QAs, userPermissions }) => {
 		event.preventDefault();
 		try {
 			if (!userPermissions.canEditQAs) {
-				showErrorToast(ERRORS.PROJECT_EDIT.EDIT_QNAS);
+				showErrorToast(ERRORS.PROJECT_PERMISSIONS.EDIT_QNAS);
 				return;
 			}
 
@@ -50,14 +50,14 @@ const FormQandAs = ({ projectId, QAs, userPermissions }) => {
 
 			const result = await ApiUpdateProjectQAs(projectId, payload);
 			if (!result.ok) {
-				showErrorToast(result.message || "Failed to update project Q&A.");
+				showErrorToast(result.message || ERRORS.PROJECT_PERMISSIONS.EDIT_QNAS_FAILED);
 				return;
 			}
 
-			showSuccessToast("Project Q&A have been updated.");
+			showSuccessToast(SUCCESS.PROJECT_EDIT.UPDATE_QNAS_SUCCESS);
 			router.refresh();
 		} catch (error) {
-			showErrorToast(error.message);
+			showErrorToast(error.message || ERRORS.PROJECT_QNAS.UPDATE_FAILED);
 		}
 	};
 

@@ -7,7 +7,7 @@ import General from "@/components/ProjectEdit/GeneralTab/General";
 import { handleFormChange } from "@/utils/formHandlers";
 
 import { ApiUpdateProjectTitleCategory, ApiUpdateProjectInformation, ApiUpdateProjectCover } from "@/lib/api/projectEditionServer";
-import ERRORS from "@/lib/constants/errors";
+import { SUCCESS, ERRORS } from "@/lib/constants";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
@@ -42,12 +42,12 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 		const result = await ApiUpdateProjectCover(projectId);
 
 		if (!result.ok) {
-			showErrorToast(result.message || "Failed to remove project cover.");
+			showErrorToast(result.message || ERRORS.PROJECT_COVER.REMOVE_FAILED);
 			return;
 		}
 		router.refresh();
 		setModalDisplayCoverRemove(false);
-		showSuccessToast("The project cover has been removed.");
+		showSuccessToast(SUCCESS.PROJECT_COVER.REMOVE);
 	};
 
 	const onSubmit = async (event) => {
@@ -58,7 +58,7 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 		try {
 			if (formAction === "submit-titleCategory") {
 				if (!userPermissions.canEditTitle && !userPermissions.canEditCategory && !userPermissions.canEditSubCategory) {
-					showErrorToast(ERRORS.PROJECT_EDIT.EDIT_TITLE_CATEGORY);
+					showErrorToast(ERRORS.PROJECT_PERMISSIONS.EDIT_TITLE_CATEGORY);
 					return;
 				}
 				const payload = {};
@@ -74,12 +74,12 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 
 				const result = await ApiUpdateProjectTitleCategory(projectId, payload);
 				if (!result.ok) {
-					showErrorToast(result.message || "Failed to update project title and category.");
+					showErrorToast(result.message || ERRORS.PROJECT_TITLE_CATEGORY.UPDATE_FAILED);
 					return;
 				}
 
 				const newLink = result.data?.link;
-				showSuccessToast("The project has been updated.");
+				showSuccessToast(SUCCESS.PROJECT.INFORMATION_UPDATE);
 				// Redirect to new link in case project title changed
 				if (newLink) {
 					router.push(`/projects/${newLink}/edit/general`);
@@ -88,7 +88,7 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 				router.refresh();
 			} else if (formAction === "submit-information") {
 				if (!userPermissions.canEditSummary && !userPermissions.canEditDescription && !userPermissions.canEditGoal && !userPermissions.canEditCreatorMotivation) {
-					showErrorToast(ERRORS.PROJECT_EDIT.EDIT_INFORMATION);
+					showErrorToast(ERRORS.PROJECT_PERMISSIONS.EDIT_INFORMATION);
 					return;
 				}
 				const payload = {};
@@ -108,14 +108,14 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 				const result = await ApiUpdateProjectInformation(projectId, payload);
 
 				if (!result.ok) {
-					showErrorToast(result.message || "Failed to update project information.");
+					showErrorToast(result.message || ERRORS.PROJECT_INFORMATION.UPDATE_FAILED);
 					return;
 				}
-				showSuccessToast("The project has been updated.");
+				showSuccessToast(SUCCESS.PROJECT.INFORMATION_UPDATE);
 				router.refresh();
 			} else if (formAction === "submit-cover") {
 				if (!userPermissions.canEditCover) {
-					showErrorToast(ERRORS.PROJECT_EDIT.EDIT_COVER);
+					showErrorToast(ERRORS.PROJECT_PERMISSIONS.EDIT_COVER);
 					return;
 				}
 
@@ -131,15 +131,15 @@ const FormGeneral = ({ projectId, title, category, subCategory, goal, summary, d
 					const result = await ApiUpdateProjectCover(projectId, payload);
 
 					if (!result.ok) {
-						showErrorToast(result.message || "Failed to update project cover.");
+						showErrorToast(result.message || ERRORS.PROJECT_COVER.UPDATE_FAILED);
 						return;
 					}
-					showSuccessToast("The project cover has been updated.");
+					showSuccessToast(SUCCESS.PROJECT_COVER.UPDATE);
 					router.refresh();
 				}
 			}
 		} catch (error) {
-			showErrorToast(error.message);
+			showErrorToast(error.message || ERRORS.PROJECT.UPDATE_FAILED);
 		}
 	};
 

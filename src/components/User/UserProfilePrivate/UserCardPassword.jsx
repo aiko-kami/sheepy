@@ -10,6 +10,8 @@ import InputField from "@/components/Forms/InputField";
 import { ApiUpdateUserPassword } from "@/lib/api/usersClient";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
+import { SUCCESS, ERRORS } from "@/lib/constants";
+
 import { handleFormChange } from "@/utils/formHandlers";
 
 const UserCardPassword = () => {
@@ -36,10 +38,10 @@ const UserCardPassword = () => {
 
 		try {
 			await ApiUpdateUserPassword(payload);
-			showSuccessToast("Password updated successfully!");
+			showSuccessToast(SUCCESS.AUTHENTIFICATION.PASSWORD_UPDATE);
 			router.push("/users/my-profile");
 		} catch (error) {
-			showErrorToast(error.message);
+			showErrorToast(error.message || ERRORS.AUTHENTIFICATION.PASSWORD_UPDATE_FAILED);
 		}
 	};
 

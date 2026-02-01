@@ -1,4 +1,4 @@
-const WARNINGS = {
+export const WARNINGS = {
 	PROJECT_EDIT: {
 		MEMBERS: {
 			title: "This action cannot be undone",
