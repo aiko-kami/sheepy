@@ -106,7 +106,7 @@ const DraggableTalentItem = ({ item, index, items, onChange, setIsProgrammaticMo
 	};
 
 	return (
-		<div ref={setNodeRef} style={style} className="relative border border-slate-700 bg-slate-800/70 text-white rounded-lg shadow-lg overflow-hidden will-change-transform">
+		<div ref={setNodeRef} style={style} className="relative border border-slate-700 bg-slate-800/70 text-white rounded-lg shadow-lg overflow-hidden">
 			{/* Talent Header */}
 			<div className="flex items-center justify-between p-4 bg-slate-600/50 cursor-pointer hover:bg-slate-500/70 transition-colors relative">
 				<div className="flex items-center gap-2">
