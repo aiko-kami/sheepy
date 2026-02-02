@@ -28,8 +28,6 @@ const MySettingsPage = async () => {
 	const userId = result.data.userId;
 	const userSettings = result.data.userSettings;
 
-	console.log("🚀 ~ MySettingsPage ~ userSettings:", userSettings);
-
 	return (
 		<>
 			<div className="container min-w-full mx-auto px-2 md:px-8">

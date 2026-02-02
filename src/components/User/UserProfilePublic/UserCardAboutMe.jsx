@@ -2,7 +2,7 @@ import { IoLocationOutline, IoBusinessOutline, IoChatbubbleEllipsesOutline, IoLi
 import ProfilePicture from "@/components/User/UserProfilePublic/ProfilePicture";
 import ProjectCounter from "@/components/Common/ProjectCounter";
 
-const UserCardAboutMe = ({ userId, username, profilePicture, backgroundPicture, description, projectCount, locationCity, locationCountry, company, languages, website, quickSkills }) => {
+const UserCardAboutMe = ({ userId, username, profilePicture, backgroundPicture, description, projectsCount, locationCity, locationCountry, company, languages, website, quickSkills }) => {
 	return (
 		<div className="md:row-span-2 bg-base-450 shadow-2xl relative pb-8">
 			{/* Profile and background pictures */}
@@ -31,7 +31,7 @@ const UserCardAboutMe = ({ userId, username, profilePicture, backgroundPicture, 
 
 				{/* Projects counters */}
 				<div className="my-6">
-					<ProjectCounter projectCount={projectCount} />
+					<ProjectCounter projectsCount={projectsCount} />
 				</div>
 
 				{/* User details */}

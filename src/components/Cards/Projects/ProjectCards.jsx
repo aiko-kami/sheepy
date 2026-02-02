@@ -7,6 +7,8 @@ import UserRequestsActions from "@/components/IconsActions/UserRequestsActions";
 import UserInvitationsActions from "@/components/IconsActions/UserInvitationsActions";
 
 const ProjectCard = ({ project, animate }) => {
+	console.log("🚀 ~ ProjectCard ~ project:", project);
+
 	const { projectId, title, summary, cover, category, tags } = project;
 
 	// Conditional classes for animation
@@ -74,7 +76,7 @@ const ProjectCardSkeleton = () => {
 };
 
 const ProjectHorizontalCard = ({ project, animate }) => {
-	const { title, projectId, summary, cover, likes, category, subCategory, location, tags, status } = project;
+	const { title, projectId, link, summary, cover, likes, category, subCategory, location, tags, status } = project;
 
 	// Conditional classes for animation
 	const animationClasses = animate ? "hover:-translate-y-1 transition ease-in duration-75" : "";
@@ -83,13 +85,13 @@ const ProjectHorizontalCard = ({ project, animate }) => {
 		<>
 			<div className={`relative grid grid-cols-4 items-center shadow-xl rounded-lg bg-blue-900 ${animationClasses}`}>
 				<div className="col-span-1 relative h-46">
-					<Link href={`/projects/${projectId}`}>
-						<Image src={cover} fill alt="Project picture" className="object-cover h-full shadow-md rounded-l-lg" />
+					<Link href={`/projects/${link}`}>
+						<Image src={cover.link} fill alt="Project picture" className="object-cover h-full shadow-md rounded-l-lg" />
 					</Link>
 				</div>
 				<div className="px-6 col-span-3 h-full py-8 relative">
-					<Link href={`/projects/${projectId}`}>
-						<h3 className="inline-block font-semibold text-2xl">{title}</h3>
+					<Link href={`/projects/${link}`}>
+						<h3 className="font-semibold text-2xl line-clamp-1">{title}</h3>
 					</Link>
 					<div className="py-2">
 						<Badge badge={category} size={"xs"} />

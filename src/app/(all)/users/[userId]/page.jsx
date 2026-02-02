@@ -9,8 +9,6 @@ import Error from "@/components/Errors/Error";
 import { ApiGetUserPublicData } from "@/lib/api/userServer";
 import { ERRORS } from "@/lib/constants";
 
-import user2 from "@/mock/user.json";
-
 const UserDescriptionPage = async ({ params }) => {
 	const { userId } = params;
 
@@ -24,13 +22,13 @@ const UserDescriptionPage = async ({ params }) => {
 	}
 
 	const user = result.data.user;
+	const projects = result.data.projects;
+	const projectsCount = result.data.projectsCount;
 
 	const username = user?.username;
 	const profilePicture = user?.profilePicture;
 	const backgroundPicture = user?.backgroundPicture;
 	const description = user?.description;
-	const projects = user?.projects;
-	const projectCount = user2?.projects?.projectCount;
 	const locationCity = user?.location?.city;
 	const locationCountry = user?.location?.country;
 	const company = user?.company;
@@ -39,8 +37,6 @@ const UserDescriptionPage = async ({ params }) => {
 	const bio = user?.bio;
 	const talents = user?.talents;
 	const quickSkills = user?.quickSkills;
-
-	console.log("🚀 ~ UserDescriptionPage ~ quickSkills:", quickSkills);
 
 	return (
 		<>
@@ -52,7 +48,7 @@ const UserDescriptionPage = async ({ params }) => {
 					profilePicture={profilePicture}
 					backgroundPicture={backgroundPicture}
 					description={description}
-					projectCount={projectCount}
+					projectsCount={projectsCount}
 					locationCity={locationCity}
 					locationCountry={locationCountry}
 					company={company}
@@ -68,7 +64,7 @@ const UserDescriptionPage = async ({ params }) => {
 				<UserCardTalents talents={talents} />
 
 				{/* User card with projects */}
-				<UserCardProjects projects={user2.projects} />
+				<UserCardProjects projects={projects} projectsCount={projectsCount} />
 			</div>
 		</>
 	);

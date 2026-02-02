@@ -5,24 +5,26 @@ import TabNavItem from "@/components/Tabs/TabNavItem";
 import TabContent from "@/components/Tabs/TabContent";
 import { ProjectHorizontalCard } from "@/components/Cards/Projects/ProjectCards";
 
-const ProjectsTabsList = ({ projects }) => {
+import { ERRORS } from "@/lib/constants";
+
+const ProjectsTabsList = ({ projects, projectsCount }) => {
 	const [activeTab, setActiveTab] = useState("tabProjectWorked");
 
 	const tabData = [
 		{
 			id: "tabProjectWorked",
 			label: "Projects I work on",
-			count: projects.projectCount.onGoing,
+			count: projectsCount.onGoing,
 		},
 		{
 			id: "tabProjectCreated",
 			label: "Projects I created",
-			count: projects.projectCount.created,
+			count: projectsCount.created,
 		},
 		{
 			id: "tabProjectCompleted",
 			label: "Projects completed",
-			count: projects.projectCount.completed,
+			count: projectsCount.completed,
 		},
 	];
 
@@ -49,31 +51,49 @@ const ProjectsTabsList = ({ projects }) => {
 			{/* Tabs content */}
 			<div id="defaultTabContent" className="">
 				<TabContent id="tabProjectWorked" activeTab={activeTab}>
-					<ul className="grid sm:grid-cols-2 gap-4">
-						{projects.projectsOnGoing.map((project, index) => (
-							<li key={index}>
-								<ProjectHorizontalCard project={project} animate={true} />
-							</li>
-						))}
-					</ul>
+					{projects.onGoing?.length > 0 ? (
+						<ul className="grid sm:grid-cols-2 gap-4">
+							{projects.onGoing.map((project, index) => (
+								<li key={index}>
+									<ProjectHorizontalCard project={project} animate />
+								</li>
+							))}
+						</ul>
+					) : (
+						<p className=" text-xl text-center py-10">
+							<span className="italic">No projects found</span> 😕
+						</p>
+					)}
 				</TabContent>
 				<TabContent id="tabProjectCreated" activeTab={activeTab}>
-					<ul className="grid sm:grid-cols-2 gap-4">
-						{projects.projectsCreated.map((project, index) => (
-							<li key={index}>
-								<ProjectHorizontalCard project={project} animate={true} />
-							</li>
-						))}
-					</ul>
+					{projects.created?.length > 0 ? (
+						<ul className="grid sm:grid-cols-2 gap-4">
+							{projects.created.map((project, index) => (
+								<li key={index}>
+									<ProjectHorizontalCard project={project} animate />
+								</li>
+							))}
+						</ul>
+					) : (
+						<p className=" text-xl text-center py-10">
+							<span className="italic">No projects found</span> 😕
+						</p>
+					)}
 				</TabContent>
 				<TabContent id="tabProjectCompleted" activeTab={activeTab}>
-					<ul className="grid sm:grid-cols-2 gap-4">
-						{projects.projectsLike.map((project, index) => (
-							<li key={index}>
-								<ProjectHorizontalCard project={project} animate={true} />
-							</li>
-						))}
-					</ul>
+					{projects.completed?.length > 0 ? (
+						<ul className="grid sm:grid-cols-2 gap-4">
+							{projects.completed.map((project, index) => (
+								<li key={index}>
+									<ProjectHorizontalCard project={project} animate />
+								</li>
+							))}
+						</ul>
+					) : (
+						<p className=" text-xl text-center py-10">
+							<span className="italic">No projects found</span> 😕
+						</p>
+					)}
 				</TabContent>
 			</div>
 		</>
