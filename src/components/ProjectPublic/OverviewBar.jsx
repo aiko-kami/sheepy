@@ -79,7 +79,7 @@ const OverviewBar = ({ projectId, category, subCategoryDetails, location, likes,
 					</div>
 					<div className="flex items-center text-nowrap">
 						{userLikeProject ? (
-							<button className="relative group mr-1 text-xl" title="Like this project" onClick={unlikeProject}>
+							<button className="relative group mr-1 text-xl" title="Unlike this project" onClick={unlikeProject}>
 								<IoHeart className="text-pink-600" />
 							</button>
 						) : (
