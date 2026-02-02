@@ -84,6 +84,14 @@ export async function ApiUpdateProjectQAs(projectId, data) {
 	return apiPatch(`/projectEdition/QAs/${projectId}`, data);
 }
 
+export async function ApiPatchLikeProject(projectId) {
+	return apiPatch(`/projectsExtended/likeProject/${projectId}`);
+}
+
+export async function ApiPatchUnlikeProject(projectId) {
+	return apiPatch(`/projectsExtended/unlikeProject/${projectId}`);
+}
+
 //POST requests
 
 export async function ApiPostAddTalentNeeded(projectId, data) {

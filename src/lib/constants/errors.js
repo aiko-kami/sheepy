@@ -105,6 +105,11 @@ export const ERRORS = {
 		NO_STEPS: "Your project does not have any step yet.",
 	},
 
+	PROJECT_LIKE: {
+		LIKE_FAILED: "Failed to like project.",
+		UNLIKE_FAILED: "Failed to unlike project.",
+	},
+
 	PROJECT_TITLE_CATEGORY: {
 		UPDATE_FAILED: "Failed to update project title and category.",
 		TITLE_REQUIRED: "Project title is required.",

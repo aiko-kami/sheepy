@@ -40,6 +40,11 @@ export const SUCCESS = {
 		SUBMITTED: "Project submitted successfully.",
 	},
 
+	PROJECT_LIKE: {
+		LIKE_SUCCESS: "You like this project.",
+		UNLIKE_SUCCESS: "You unliked this project.",
+	},
+
 	PROJECT_COVER: {
 		REMOVE: "Project cover removed successfully.",
 		UPDATE: "Project cover updated successfully.",

@@ -1,3 +1,4 @@
+import { apiGet, apiPost, apiPatch, apiDelete, apiPatchMultipart } from "@/lib/api/ApiHelpers";
 const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export async function ApiCreateProjectDraft(projectInputs) {
@@ -92,6 +93,10 @@ export async function ApiGetProjectPublicDataById(projectId) {
 }
 
 export async function ApiGetProjectPublicDataByLink(projectLink) {
+	return apiGet(`/projects/projectPublic/link/${projectLink}`);
+}
+
+export async function ApiGetProjectPublicDataByLink2(projectLink) {
 	let res = null;
 
 	try {

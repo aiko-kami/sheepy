@@ -7,8 +7,6 @@ import UserRequestsActions from "@/components/IconsActions/UserRequestsActions";
 import UserInvitationsActions from "@/components/IconsActions/UserInvitationsActions";
 
 const ProjectCard = ({ project, animate }) => {
-	console.log("🚀 ~ ProjectCard ~ project:", project);
-
 	const { projectId, title, summary, cover, category, tags } = project;
 
 	// Conditional classes for animation
