@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { useAuth } from "@/contexts/AuthContext";
+import { useAuth } from "@/contexts";
 import { ApiLogout } from "@/lib/api/auth";
 import Notification from "@/components/Badges/Notification";
 

@@ -9,8 +9,7 @@ import Popover from "@/components/Popover";
 import PopoverContent from "./PopoverContent";
 import { Avatar } from "@/components/Badges/Avatar";
 
-import { useAuth } from "@/contexts/AuthContext";
-import defaultPicture from "@/public/images/default-profile-picture.png";
+import { useAuth } from "@/contexts";
 import { ApiUpdateUserPicture, ApiUpdateUserBackgroundPicture, ApiRemoveUserPicture, ApiRemoveUserBackgroundPicture } from "@/lib/api/usersClient";
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { ERRORS, SUCCESS } from "@/lib/constants";
@@ -20,7 +19,7 @@ const ProfilePicture = ({ profilePicture, backgroundPicture }) => {
 	const { refreshUser } = useAuth();
 
 	const [displayPopover, setDisplayPopover] = useState(false);
-	const [profileImage, setProfileImage] = useState(profilePicture?.link || defaultPicture.src);
+	const [profileImage, setProfileImage] = useState(profilePicture?.link || "");
 	const [backgroundImage, setBackgroundImage] = useState(backgroundPicture?.link || "");
 	const fileInputProfileRef = useRef(null);
 	const fileInputBackgroundRef = useRef(null);
@@ -69,7 +68,7 @@ const ProfilePicture = ({ profilePicture, backgroundPicture }) => {
 	const handleRemoveProfilePicture = async () => {
 		try {
 			await ApiRemoveUserPicture();
-			setProfileImage(defaultPicture.src);
+			setProfileImage("");
 			await refreshUser();
 			showSuccessToast(SUCCESS.USER_PROFILE.PICTURE_REMOVE);
 			router.push("/users/my-profile");

@@ -1,36 +1,54 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
+import { useAuth } from "./AuthContext";
 
 const ThemeContext = createContext();
+const THEME_KEY = "sheepy-theme";
+const ALL_THEMES = ["light", "dark", "night", "unreal"];
 
 export const ThemeProvider = ({ children }) => {
+	const { user } = useAuth();
 	const [theme, setTheme] = useState("light");
+	const [hydrated, setHydrated] = useState(false);
 
-	// Load theme from localStorage on mount
+	// 1) Load from localStorage (first paint)
 	useEffect(() => {
-		const savedTheme = localStorage.getItem("theme");
-		if (savedTheme) {
-			setTheme(savedTheme);
-			document.documentElement.classList.add(savedTheme);
+		const saved = localStorage.getItem(THEME_KEY);
+		if (saved && ALL_THEMES.includes(saved)) {
+			setTheme(saved);
 		} else {
-			document.documentElement.classList.add("light");
+			setTheme("light");
 		}
+		setHydrated(true);
 	}, []);
 
-	// Update localStorage and <html> class whenever theme changes
+	// 2) Override with DB theme when user loads
 	useEffect(() => {
-		localStorage.setItem("theme", theme);
+		if (user?.settings?.appearance && ALL_THEMES.includes(user.settings.appearance)) {
+			setTheme(user.settings.appearance);
+		}
+	}, [user]);
 
-		document.documentElement.classList.remove("light", "dark");
+	// 3) Apply theme to <html> and persist
+	useEffect(() => {
+		if (!theme) return;
+
+		document.documentElement.classList.remove(...ALL_THEMES);
 		document.documentElement.classList.add(theme);
+		document.documentElement.setAttribute("data-theme", theme);
+
+		localStorage.setItem(THEME_KEY, theme);
 	}, [theme]);
 
-	const toggleTheme = () => {
-		setTheme((prev) => (prev === "light" ? "dark" : "light"));
+	const changeTheme = (newTheme) => {
+		if (!ALL_THEMES.includes(newTheme)) return;
+		setTheme(newTheme);
 	};
 
-	return <ThemeContext.Provider value={{ theme, toggleTheme }}>{children}</ThemeContext.Provider>;
+	if (!hydrated) return null;
+
+	return <ThemeContext.Provider value={{ theme, changeTheme }}>{children}</ThemeContext.Provider>;
 };
 
 export const useTheme = () => useContext(ThemeContext);

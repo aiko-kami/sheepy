@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Avatar } from "@/components/Badges/Avatar";
 import { Background } from "@/components/Badges/Background";
 
-import { useAuth } from "@/contexts/AuthContext";
+import { useAuth } from "@/contexts";
 
 const ProfilePicture = ({ userId, profilePicture, backgroundPicture }) => {
 	const { user: authUser } = useAuth();

@@ -9,6 +9,7 @@ import MosaicSixSkeleton from "@/components/Cards/Projects/MosaicSixSkeleton";
 import { normalizeCategoryLink } from "@/utils/projectHandlers";
 
 import { ApiGetProjectCrush } from "@/lib/api/projectsExtended";
+import { ERRORS } from "@/lib/constants";
 
 const MosaicSix = () => {
 	const [selectedProjects, setSelectedProjects] = useState([]);
@@ -18,12 +19,12 @@ const MosaicSix = () => {
 	useEffect(() => {
 		const fetchSelectedProjects = async () => {
 			try {
-				const projects = await ApiGetProjectCrush();
-				if (!Array.isArray(projects)) {
-					throw new Error("Invalid projects response");
+				const result = await ApiGetProjectCrush();
+				if (!result.ok || !result.data || !result.data.projects) {
+					setError(result.message || ERRORS.NOT_FOUND.PROJECTS);
+					return;
 				}
-
-				const updatedProjects = projects.map((project) => {
+				const updatedProjects = result.data.projects.map((project) => {
 					return {
 						...project,
 						category: {
@@ -34,8 +35,8 @@ const MosaicSix = () => {
 				});
 
 				setSelectedProjects(updatedProjects);
-			} catch (err) {
-				setError(err.message);
+			} catch (error) {
+				setError(error.message || ERRORS.NOT_FOUND.PROJECTS);
 			} finally {
 				setLoading(false);
 			}

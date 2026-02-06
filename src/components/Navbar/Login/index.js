@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-import { useAuth } from "@/contexts/AuthContext";
+import { useAuth } from "@/contexts";
 import Dropdown from "./Dropdown";
 import Notification from "@/components/Badges/Notification";
 import { Avatar } from "@/components/Badges/Avatar";
@@ -10,7 +10,6 @@ import { Avatar } from "@/components/Badges/Avatar";
 const Login = ({ isHomePage = false }) => {
 	const { user } = useAuth();
 	const [dropdownOpen, setDropdownOpen] = useState(false);
-	const [theme, setTheme] = useState("night");
 	let ref = useRef();
 
 	useEffect(() => {
@@ -23,15 +22,12 @@ const Login = ({ isHomePage = false }) => {
 		document.addEventListener("mousedown", handler);
 		document.addEventListener("touchstart", handler);
 
-		// Set theme preference from user preferences or default theme
-		document.documentElement.setAttribute("data-theme", theme);
-
 		return () => {
 			// Cleanup the event listener
 			document.removeEventListener("mousedown", handler);
 			document.removeEventListener("touchstart", handler);
 		};
-	}, [dropdownOpen, theme]);
+	}, [dropdownOpen]);
 
 	const closeDropdown = () => {
 		dropdownOpen && setDropdownOpen(false);

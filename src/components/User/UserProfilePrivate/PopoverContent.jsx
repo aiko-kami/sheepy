@@ -1,8 +1,7 @@
 import { IoCameraReverseOutline, IoImageOutline, IoClose } from "react-icons/io5";
-import defaultPicture from "@/public/images/default-profile-picture.png";
 
 const PopoverContent = ({ onSelectPicture, onRemovePicture, onSelectBackground, onRemoveBackground, profileImage, backgroundImage }) => {
-	const hasProfileImage = profileImage && profileImage !== defaultPicture.src;
+	const hasProfileImage = profileImage;
 	const hasBackgroundImage = backgroundImage && backgroundImage !== "" && !backgroundImage.includes("default-background.jpg");
 
 	return (

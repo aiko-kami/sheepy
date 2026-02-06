@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-import { useAuth } from "@/contexts/AuthContext";
+import { useAuth } from "@/contexts";
 
 import InputField from "@/components/Forms/InputField";
 import Triforce from "@/components/Loaders/Triforce";

@@ -17,8 +17,11 @@ import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { SUCCESS, ERRORS } from "@/lib/constants";
 
 import { handleFormChange } from "@/utils/formHandlers";
+import { useTheme } from "@/contexts";
 
 const MySettingsAppearance = ({ appearanceSettings }) => {
+	const { theme, changeTheme } = useTheme();
+
 	const [formInputs, setFormInputs] = useState({
 		appearance: appearanceSettings,
 	});
@@ -47,8 +50,7 @@ const MySettingsAppearance = ({ appearanceSettings }) => {
 	];
 
 	const handleAppearanceChange = (value) => {
-		document.documentElement.setAttribute("data-theme", value);
-
+		changeTheme(value);
 		setFormInputs((prevState) => ({
 			...prevState,
 			appearance: value,

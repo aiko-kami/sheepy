@@ -191,6 +191,7 @@ export const ERRORS = {
 		USER_MESSAGE: "Sorry, we couldn’t find the user you are looking for... 😥",
 		USER_SETTINGS_TITLE: "404 - User Not Found",
 		USER_SETTINGS_MESSAGE: "Sorry, we couldn’t find the user you are looking for... 😥",
+		PROJECTS: "Failed to retrive projects.",
 		PROJECT_TITLE: "404 - Project Not Found",
 		PROJECT_MESSAGE: "Sorry, we couldn’t find the project you are looking for... 😥",
 		CATEGORY_TITLE: "404 - Category Not Found",

@@ -11,7 +11,7 @@ import ProjectApplicationModal from "@/components/Modals/ProjectPublic/ProjectAp
 import AuthModal from "@/components/Modals/Auth/AuthModal";
 import talentNeededProfilePicture from "@/public/images/talentNeededProfilePicture.png";
 
-import { useAuth } from "@/contexts/AuthContext";
+import { useAuth } from "@/contexts";
 
 const TalentsNeeded = ({ talentsNeeded = [] }) => {
 	const { user } = useAuth();

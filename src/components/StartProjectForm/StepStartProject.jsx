@@ -8,7 +8,7 @@ import { IoArrowForwardOutline, IoRocketOutline, IoHeartOutline, IoEnterOutline,
 import { Button } from "@/components/Buttons/Buttons";
 import Triforce from "@/components/Loaders/Triforce";
 
-import { useAuth } from "@/contexts/AuthContext";
+import { useAuth } from "@/contexts";
 
 const StepStartProject = ({ goToStep }) => {
 	const { user } = useAuth();
