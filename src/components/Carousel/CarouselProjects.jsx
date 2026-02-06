@@ -2,7 +2,7 @@
 import Carousel from "./Carousel";
 import { ProjectCard } from "@/components/Cards/Projects/ProjectCards";
 import LatestProjects from "@/mock/LatestProjects.json";
-import "./styles.module.css";
+import "./styles.css";
 
 const CarouselProjects = () => {
 	const OPTIONS = { loop: true, align: "start" };

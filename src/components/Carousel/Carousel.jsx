@@ -1,5 +1,5 @@
 "use client";
-import "./styles.module.css";
+import "./styles.css";
 
 import useEmblaCarousel from "embla-carousel-react";
 import { NextButton, PrevButton, usePrevNextButtons } from "./CarouselArrows";
