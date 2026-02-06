@@ -1,48 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
-
 import Image from "next/image";
 import Link from "next/link";
 import { Badge } from "@/components/Badges/Badges";
 import MosaicSixSkeleton from "@/components/Cards/Projects/MosaicSixSkeleton";
-import { normalizeCategoryLink } from "@/utils/projectHandlers";
-
-import { ApiGetProjectCrush } from "@/lib/api/projectsExtended";
+import { useCrushProjects } from "@/hooks/useCrushProjects";
 
 const MosaicSix = () => {
-	const [selectedProjects, setSelectedProjects] = useState([]);
-	const [loading, setLoading] = useState(true);
-	const [error, setError] = useState(null);
-
-	useEffect(() => {
-		const fetchSelectedProjects = async () => {
-			try {
-				const projects = await ApiGetProjectCrush();
-				if (!Array.isArray(projects)) {
-					throw new Error("Invalid projects response");
-				}
-
-				const updatedProjects = projects.map((project) => {
-					return {
-						...project,
-						category: {
-							...project.category,
-							link: normalizeCategoryLink(project.category),
-						},
-					};
-				});
-
-				setSelectedProjects(updatedProjects);
-			} catch (err) {
-				setError(err.message);
-			} finally {
-				setLoading(false);
-			}
-		};
-
-		fetchSelectedProjects();
-	}, []);
+	const { projects: selectedProjects, isLoading: loading, error } = useCrushProjects();
 
 	return (
 		<>

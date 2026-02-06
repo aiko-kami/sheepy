@@ -1,73 +1,48 @@
-import MosaicFour from "@/components/Cards/Projects/MosaicFour";
 import MosaicSix from "@/components/Cards/Projects/MosaicSix";
 import MosaicCategories from "@/components/Cards/Projects/MosaicCategories";
 import PresentationBanner from "@/components/PresentationBanner";
 import CarouselProjects from "@/components/Carousel/CarouselProjects";
 import RecentProjects from "@/components/Cards/Projects/RecentProjects";
-import RecentTalents from "@/components/Cards/Talents/RecentTalents";
-import TalentsYouNeed from "@/components/Cards/Talents/TalentsYouNeed";
-import Link from "next/link";
+import TalentsShowcase from "@/components/Cards/Talents/TalentsShowcase";
+import HomeSection from "@/components/HomeSection";
 
 export const metadata = {
 	title: "Make It",
-	description: "Home page",
+	description: "Bring your projects to life",
 };
 
 const HomePage = async () => {
 	return (
 		<div className="relative">
-			<div className="mb-12">
-				<h2 className="font-semibold text-xl mb-4">Selected projects</h2>
-				<MosaicSix />
-			</div>
-
-			<div className="mb-12">
+			{/* 1. Value proposition -- trust builder right after hero */}
+			<HomeSection>
 				<PresentationBanner />
-			</div>
+			</HomeSection>
 
-			<div className="mb-12">
-				<CarouselProjects />
-			</div>
+			{/* 2. Featured projects -- main showcase */}
+			<HomeSection title="Featured projects">
+				<MosaicSix />
+			</HomeSection>
 
-			<div className="mb-12">
-				<div className="inline-flex">
-					<h2 className="font-semibold text-xl mr-4 mb-4">Recent projects</h2>
-					<Link href="/projects/01" className="text-xs mt-2.5 hover:underline">
-						See more...
-					</Link>
-				</div>
-				<RecentProjects />
-			</div>
-
-			<div className="mb-12">
-				<div className="inline-flex">
-					<h2 className="font-semibold text-xl mr-4 mb-4">New Talents</h2>
-					<Link href="/talents/meet-talents" className="text-xs mt-2.5 hover:underline">
-						See more...
-					</Link>
-				</div>
-				<RecentTalents />
-			</div>
-
-			<div className="mb-12">
-				<h2 className="font-semibold text-xl mb-4">Selected projects</h2>
-				<MosaicFour />
-			</div>
-
-			<div className="mb-12">
-				<h2 className="font-semibold text-xl mb-4">Selected projects by categories</h2>
+			{/* 3. Browse by category -- discovery */}
+			<HomeSection title="Browse by category" alternate>
 				<MosaicCategories />
-			</div>
+			</HomeSection>
 
-			<div className="mb-12">
-				<div className="inline-flex">
-					<h2 className="font-semibold text-xl mr-4 mb-4">Talents you need</h2>
-					<Link href="/talents/meet-talents" className="text-xs mt-2.5 hover:underline">
-						See more...
-					</Link>
-				</div>
-				<TalentsYouNeed />
-			</div>
+			{/* 4. Recent projects -- fresh content */}
+			<HomeSection title="Recent projects" href="/projects/01">
+				<RecentProjects />
+			</HomeSection>
+
+			{/* 5. Project carousel -- visual break */}
+			<HomeSection title="Trending projects" alternate>
+				<CarouselProjects />
+			</HomeSection>
+
+			{/* 6. Talents -- combined with tabs */}
+			<HomeSection title="Discover talents" href="/talents/meet-talents">
+				<TalentsShowcase />
+			</HomeSection>
 		</div>
 	);
 };
