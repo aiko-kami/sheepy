@@ -155,23 +155,25 @@ const Talents = ({ talents = [] }) => {
 								</Button>
 							</div>
 						</div>
-						<div className="text-right">
-							<Button
-								btnProps={{
-									type: "button",
-									btnColor: "gray",
-									btnRounded: "lg",
-									btnSize: "xs",
-									action: toggleAllTalents,
-								}}
-							>
-								{formInputs.userTalents.some((t) => !t.expanded) ? (
-									<IoChevronDownOutline className="w-4 h-4 cursor-pointer" title="Open all talents" />
-								) : (
-									<IoChevronUpOutline className="w-4 h-4 cursor-pointer" title="Close all talents" />
-								)}
-							</Button>
-						</div>
+						{formInputs.userTalents && formInputs.userTalents.length > 0 && (
+							<div className="text-right">
+								<Button
+									btnProps={{
+										type: "button",
+										btnColor: "gray",
+										btnRounded: "lg",
+										btnSize: "xs",
+										action: toggleAllTalents,
+									}}
+								>
+									{formInputs.userTalents.some((t) => !t.expanded) ? (
+										<IoChevronDownOutline className="w-4 h-4 cursor-pointer" title="Open all talents" />
+									) : (
+										<IoChevronUpOutline className="w-4 h-4 cursor-pointer" title="Close all talents" />
+									)}
+								</Button>
+							</div>
+						)}
 					</div>
 
 					{/* Talents List */}

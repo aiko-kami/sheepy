@@ -9,7 +9,7 @@ const ALL_THEMES = ["light", "dark", "night", "unreal"];
 
 export const ThemeProvider = ({ children }) => {
 	const { user } = useAuth();
-	const [theme, setTheme] = useState("light");
+	const [theme, setTheme] = useState("night");
 	const [hydrated, setHydrated] = useState(false);
 
 	// 1) Load from localStorage (first paint)
@@ -18,7 +18,7 @@ export const ThemeProvider = ({ children }) => {
 		if (saved && ALL_THEMES.includes(saved)) {
 			setTheme(saved);
 		} else {
-			setTheme("light");
+			setTheme("night");
 		}
 		setHydrated(true);
 	}, []);

@@ -1,6 +1,7 @@
 "use client";
+
 import React from "react";
-import { IoCheckmarkSharp, IoArrowForwardSharp, IoCloseSharp } from "react-icons/io5";
+import { IoCheckmarkSharp, IoArrowForwardSharp, IoEllipsisVertical } from "react-icons/io5";
 
 const Steps = ({ steps = [] }) => {
 	return (
@@ -21,7 +22,7 @@ const Steps = ({ steps = [] }) => {
 									break;
 								case "not started":
 								default:
-									IconComponent = IoCloseSharp;
+									IconComponent = IoEllipsisVertical;
 									break;
 							}
 							return (
