@@ -40,7 +40,7 @@ const ProjectRequestCancelModal = ({ closeModalCancel, request }) => {
 					<div className="xl:flex justify-center">
 						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Request status:</h2>
 						<div className="pl-1 xl:pl-2">
-							<Status name={request.status.name} size={"sm"} bgColor={request.status.bgColor} />
+							<Status name={request.status.status} size={"sm"} bgColor={request.status.colors.bgColor} />
 						</div>
 					</div>
 				</div>

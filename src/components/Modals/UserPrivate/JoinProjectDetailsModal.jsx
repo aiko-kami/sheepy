@@ -34,7 +34,7 @@ const JoinProjectDetailsModal = ({ joinProject, type }) => {
 						<span className="capitalize">{type}</span> status:
 					</h2>
 					<div className="pl-1 xl:pl-2">
-						<Status name={joinProject.status.name} size={"sm"} bgColor={joinProject.status.bgColor} />
+						<Status name={joinProject.status.status} size={"sm"} bgColor={joinProject.status.colors.bgColor} />
 					</div>
 				</div>
 			</div>

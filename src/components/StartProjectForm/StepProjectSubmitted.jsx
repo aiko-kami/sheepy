@@ -8,6 +8,7 @@ import { Button } from "@/components/Buttons/Buttons";
 const StepProjectSubmitted = ({ goToStep, formInputs, categories, talentNeededProfilePicture }) => {
 	const selectedCategory = categories.find((cat) => cat.categoryId === formInputs.selectedCategoryId);
 	const selectedSubCategory = selectedCategory?.subCategories.find((sub) => sub.name === formInputs.selectedSubCategory);
+	const allTags = [...(formInputs.projectTagsExisting || []).map((t) => t.name), ...(formInputs.projectTagsNew || []).map((t) => t.name)];
 
 	return (
 		<>
@@ -43,19 +44,13 @@ const StepProjectSubmitted = ({ goToStep, formInputs, categories, talentNeededPr
 											<BadgeRounded badge={selectedSubCategory} size={"sm"} clickable={false} />
 										</div>
 										<div className="flex gap-2 pr-4">
-											{Array.isArray(formInputs.tags) && formInputs.tags.length > 0 ? (
-												formInputs.tags.map((tag, index) => (
+											{Array.isArray(allTags) &&
+												allTags.length > 0 &&
+												allTags.map((tag, index) => (
 													<span key={index} className="inline-flex text-sm items-center px-3 pt-0.5 pb-1 rounded-full bg-blue-100 text-blue-800 border border-blue-200">
 														{tag}
 													</span>
-												))
-											) : (
-												<div className="w-9/10 p-3 bg-teal-100 border-l-4 border-teal-500 rounded-r-md">
-													<p className="text-teal-700 text-sm font-medium">
-														<span className="italic">Optional field</span> – You can add this later
-													</p>
-												</div>
-											)}
+												))}
 										</div>
 									</div>
 								</div>

@@ -94,7 +94,7 @@ const QuickSkillInputForm = ({ quickSkills = [], disabled = false }) => {
 	return (
 		<>
 			{!disabled && (
-				<div className="mb-6 max-w-140 relative">
+				<div className="mb-8 max-w-140 relative">
 					<div className="flex items-center">
 						<div className="w-full mr-2 relative">
 							<InputField

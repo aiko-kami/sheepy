@@ -66,7 +66,7 @@ const UserInvitationsActions = ({ invitation, iconSize }) => {
 
 	return (
 		<>
-			{invitation.actions.view && (
+			{invitation.actions?.view && (
 				<>
 					<button type="button" onClick={showModalDetails}>
 						<IoEyeOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="View invitation" />
@@ -76,7 +76,7 @@ const UserInvitationsActions = ({ invitation, iconSize }) => {
 					</Modal>
 				</>
 			)}
-			{invitation.actions.accept && (
+			{invitation.actions?.accept && (
 				<>
 					<button type="button" onClick={showModalAccept}>
 						<IoCheckmarkCircleOutline className={`m-1 hover:text-green-400 duration-100 transition ease-in-out ${size}`} title="Accept invitation" />
@@ -86,7 +86,7 @@ const UserInvitationsActions = ({ invitation, iconSize }) => {
 					</Modal>
 				</>
 			)}
-			{invitation.actions.decline && (
+			{invitation.actions?.decline && (
 				<>
 					<button type="button" onClick={showModalDecline}>
 						<IoCloseCircleOutline className={`m-1 hover:text-pink-400 duration-100 transition ease-in-out ${size}`} title="Decline invitation" />
@@ -96,7 +96,7 @@ const UserInvitationsActions = ({ invitation, iconSize }) => {
 					</Modal>
 				</>
 			)}
-			{invitation.actions.sendMessage && (
+			{invitation.actions?.sendMessage && (
 				<>
 					<button type="button" onClick={showModalSendMessage}>
 						<IoMailOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />
@@ -106,7 +106,7 @@ const UserInvitationsActions = ({ invitation, iconSize }) => {
 					</Modal>
 				</>
 			)}
-			{invitation.actions.report && (
+			{invitation.actions?.report && (
 				<>
 					<button type="button" onClick={showModalReport}>
 						<IoWarningOutline className={`m-1 hover:text-yellow-500 duration-100 transition ease-in-out ${size}`} title="Report" />

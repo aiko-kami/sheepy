@@ -27,7 +27,7 @@ const TagInputField = ({ formInputs, setFormInputs, tagsList = [], disabled = fa
 	const newTags = Array.isArray(formInputs.projectTagsNew) ? formInputs.projectTagsNew : [];
 
 	const selectedExistingIds = useMemo(() => new Set(existingTags.map((t) => t.tagId)), [existingTags]);
-	const selectedNewNames = useMemo(() => new Set(newTags.map((n) => normalize(n))), [newTags]);
+	const selectedNewNames = useMemo(() => new Set(newTags.map((t) => normalize(t.name))), [newTags]);
 
 	// Suggestions: exclude tags already selected (either existing by id or new by name)
 	const suggestions = useMemo(() => {
@@ -94,9 +94,14 @@ const TagInputField = ({ formInputs, setFormInputs, tagsList = [], disabled = fa
 			return;
 		}
 
+		const newTag = {
+			name: trimmed,
+			description: "",
+		};
+
 		setFormInputs((prev) => ({
 			...prev,
-			projectTagsNew: [...(prev.projectTagsNew || []), trimmed],
+			projectTagsNew: [...(prev.projectTagsNew || []), newTag],
 		}));
 
 		setQuery("");
@@ -131,7 +136,7 @@ const TagInputField = ({ formInputs, setFormInputs, tagsList = [], disabled = fa
 			const cap = normalize(tagToRemove.name);
 			setFormInputs((prev) => ({
 				...prev,
-				projectTagsNew: (prev.projectTagsNew || []).filter((n) => normalize(n) !== cap),
+				projectTagsNew: (prev.projectTagsNew || []).filter((t) => normalize(t.name) !== cap),
 			}));
 		}
 	};
@@ -192,8 +197,7 @@ const TagInputField = ({ formInputs, setFormInputs, tagsList = [], disabled = fa
 		};
 	}, []);
 
-	// Build unified list to show in TagList: existing objects + new name strings mapped to objects with _isNew flag
-	const unifiedTagsList = [...existingTags.map((t) => ({ ...t, _isNew: false })), ...newTags.map((n) => ({ name: n, _isNew: true }))];
+	const unifiedTagsList = [...existingTags.map((t) => ({ ...t, _isNew: false })), ...newTags.map((t) => ({ ...t, _isNew: true }))];
 
 	return (
 		<>

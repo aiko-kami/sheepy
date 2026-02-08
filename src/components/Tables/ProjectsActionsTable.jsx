@@ -3,7 +3,9 @@ import Link from "next/link";
 import { Badge, Status } from "@/components/Badges/Badges";
 import MyProjectsActions from "@/components/IconsActions/MyProjectsActions";
 
-const ProjectsActionsTable = ({ projects, filter }) => {
+import { normalizeCategoryData } from "@/utils/categoryHandlers";
+
+const ProjectsActionsTable = ({ projects }) => {
 	return (
 		<>
 			<table className="w-full text-xs md:text-sm shadow-lg">
@@ -28,29 +30,32 @@ const ProjectsActionsTable = ({ projects, filter }) => {
 				</thead>
 				<tbody>
 					{projects.map((project, index) => {
+						const { title, link, summary, statusInfo, isMember } = project;
+						const category = normalizeCategoryData(project.category);
+
 						return (
 							<tr key={index} className="border-b bg-gray-800 border-gray-700 hover:bg-gray-600">
 								<td scope="row" className="p-2 md:px-4 md:py-2">
 									<div className="font-semibold text-base lg:whitespace-nowrap">
-										<Link href={`/projects/${project.projectId}`}>{project.title}</Link>
+										<Link href={`/projects/${link}`}>{title}</Link>
 									</div>
 								</td>
 								<td className="p-2 md:px-4 md:py-2">
 									<div className="text-center">
-										<Badge badge={project.category} size={"xs"} />
+										<Badge badge={category} size={"xs"} />
 									</div>
 								</td>
 								<td className="p-2 md:px-4 md:py-2 hidden md:table-cell">
 									<div className="text-gray-400 line-clamp-2">
-										<Link href={`/projects/${project.projectId}`}>{project.summary}</Link>
+										<Link href={`/projects/${link}`}>{summary}</Link>
 									</div>
 								</td>
 								<td className="p-2 md:px-4 md:py-2 text-center hidden md:table-cell">
-									<Status name={project.status.name} size={"xs"} rounded={"xs"} bgColor={project.status.bgColor} />
+									<Status name={statusInfo.currentStatus?.status} size={"xs"} rounded={"xs"} bgColor={statusInfo.currentStatus?.colors.bgColor} />
 								</td>
 								<td className="p-2 md:px-4 md:py-2">
 									<div className="flex justify-center flex-wrap md:flex-nowrap">
-										<MyProjectsActions projectId={project.projectId} projectPermissions={project.permissions} />
+										<MyProjectsActions projectLink={link} isMember={isMember} />
 									</div>
 								</td>
 							</tr>

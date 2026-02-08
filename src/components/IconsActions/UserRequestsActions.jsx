@@ -58,7 +58,7 @@ const UserRequestsActions = ({ request, iconSize }) => {
 
 	return (
 		<>
-			{request.actions.view && (
+			{request.actions?.view && (
 				<>
 					<button type="button" onClick={showModalDetails}>
 						<IoEyeOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="View request" />
@@ -68,7 +68,7 @@ const UserRequestsActions = ({ request, iconSize }) => {
 					</Modal>
 				</>
 			)}
-			{request.actions.edit && (
+			{request.actions?.edit && (
 				<>
 					<button type="button" onClick={showModalEdit}>
 						<IoCreateOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Edit request" />
@@ -78,7 +78,7 @@ const UserRequestsActions = ({ request, iconSize }) => {
 					</Modal>
 				</>
 			)}
-			{request.actions.cancel && (
+			{request.actions?.cancel && (
 				<>
 					<button type="button" onClick={showModalCancel}>
 						<IoCloseCircleOutline className={`m-1 hover:text-pink-400 duration-100 transition ease-in-out ${size}`} title="Cancel request" />
@@ -88,7 +88,7 @@ const UserRequestsActions = ({ request, iconSize }) => {
 					</Modal>
 				</>
 			)}
-			{request.actions.sendMessage && (
+			{request.actions?.sendMessage && (
 				<>
 					<button type="button" onClick={showModalSendMessage}>
 						<IoMailOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Send a message" />

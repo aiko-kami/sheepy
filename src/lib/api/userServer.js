@@ -10,6 +10,10 @@ export async function ApiGetUserSettingsServer() {
 	return apiGet(`/users/mySettings`);
 }
 
+export async function ApiGetUserProjectsServer() {
+	return apiGet(`/users/myProjects`);
+}
+
 export async function ApiGetUserPublicData(userId) {
 	return apiGet(`/users/userPublic/${userId}`);
 }

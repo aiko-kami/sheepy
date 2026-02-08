@@ -38,7 +38,7 @@ const ProjectInvitationAcceptModal = ({ closeModalAccept, invitation }) => {
 					<div className="xl:flex justify-center">
 						<h2 className="text-lg text-gray-400 font-semibold mb-2 xl:mb-0">Invitation status:</h2>
 						<div className="pl-1 xl:pl-2">
-							<Status name={invitation.status.name} size={"sm"} bgColor={invitation.status.bgColor} />
+							<Status name={invitation.status.status} size={"sm"} bgColor={invitation.status.colors.bgColor} />
 						</div>
 					</div>
 				</div>

@@ -61,7 +61,7 @@ const ProjectRequestEditModal = ({ closeModalEdit, joinProject }) => {
 				<div className="xl:flex">
 					<h2 className="text-lg text-gray-400 font-semibold mb-1">Request status:</h2>
 					<p className="pl-1 xl:pl-2">
-						<Status name={joinProject.status.name} size={"sm"} bgColor={joinProject.status.bgColor} />
+						<Status name={joinProject.status.status} size={"sm"} bgColor={joinProject.status.colors.bgColor} />
 					</p>
 				</div>
 			</div>

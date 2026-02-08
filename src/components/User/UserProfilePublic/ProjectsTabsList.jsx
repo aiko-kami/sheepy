@@ -37,7 +37,7 @@ const ProjectsTabsList = ({ projects, projectsCount }) => {
 		},
 	];
 
-	// Only keep tabs that exist in projects
+	// Only keep tabs that exist in projects (if project likes are private they are not displayed)
 	const tabData = rawTabs.filter((tab) => projects?.[tab.type] !== undefined);
 
 	return (
@@ -61,7 +61,7 @@ const ProjectsTabsList = ({ projects, projectsCount }) => {
 			</ul>
 
 			{/* Tabs content */}
-			<div id="defaultTabContent" className="">
+			<div id="defaultTabContent">
 				{tabData.map(({ id, type }) => (
 					<TabContent key={id} id={id} activeTab={activeTab}>
 						{projects[type]?.length > 0 ? (

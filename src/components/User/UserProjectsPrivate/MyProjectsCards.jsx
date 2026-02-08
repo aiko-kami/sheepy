@@ -1,6 +1,6 @@
 import { ProjectHorizontalCardActions } from "@/components/Cards/Projects/ProjectCards";
 
-const MyProjectsCards = ({ projects, filter }) => {
+const MyProjectsCards = ({ projects }) => {
 	return (
 		<>
 			<ul className="grid sm:grid-cols-2 gap-4">

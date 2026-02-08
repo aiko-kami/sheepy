@@ -1,10 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { IoHeart } from "react-icons/io5";
 
 import { Badge, BadgeRounded, Status } from "@/components/Badges/Badges";
 import MyProjectsActions from "@/components/IconsActions/MyProjectsActions";
 import UserRequestsActions from "@/components/IconsActions/UserRequestsActions";
 import UserInvitationsActions from "@/components/IconsActions/UserInvitationsActions";
+
+import { normalizeCategoryData } from "@/utils/categoryHandlers";
 
 const ProjectCard = ({ project, animate }) => {
 	const { projectId, title, summary, cover, category, tags } = project;
@@ -102,7 +105,9 @@ const ProjectHorizontalCard = ({ project, animate }) => {
 };
 
 const ProjectHorizontalCardActions = ({ project, animate }) => {
-	const { title, projectId, summary, cover, likes, category, subCategory, location, tags, status, permissions } = project;
+	const { title, link, summary, cover, likes, isMember } = project;
+
+	const category = normalizeCategoryData(project.category);
 
 	// Conditional classes for animation
 	const animationClasses = animate ? "hover:-translate-y-1 transition ease-in duration-75" : "";
@@ -111,20 +116,24 @@ const ProjectHorizontalCardActions = ({ project, animate }) => {
 		<>
 			<div className={`relative grid grid-cols-4 items-center shadow-xl rounded-lg bg-blue-900 ${animationClasses}`}>
 				<div className="col-span-1 relative h-full">
-					<Link href={`/projects/${projectId}`}>
-						<Image src={cover} fill alt="Project picture" className="object-cover h-full shadow-md rounded-l-lg" />
+					<Link href={`/projects/${link}`}>
+						<Image src={cover.link} fill alt="Project picture" className="object-cover h-full shadow-md rounded-l-lg" />
 					</Link>
 				</div>
 				<div className="px-6 col-span-3 h-full py-4">
-					<Link href={`/projects/${projectId}`}>
-						<h3 className="inline-block font-semibold text-2xl">{title}</h3>
+					<Link href={`/projects/${link}`}>
+						<h3 className="font-semibold text-2xl line-clamp-1">{title}</h3>
 					</Link>
-					<div className="py-2">
+					<div className="py-2 flex gap-3 items-center">
 						<Badge badge={category} size={"xs"} />
+						<div className="flex items-center text-nowrap">
+							<IoHeart className="text-pink-600 text-xl mr-0.5" />
+							<p>{likes}</p>
+						</div>
 					</div>
 					<p className="line-clamp-2 mb-3">{summary}</p>
 					<div className="flex justify-end text-gray-300">
-						<MyProjectsActions projectId={projectId} projectPermissions={permissions} iconSize={"lg"} />
+						<MyProjectsActions projectLink={link} isMember={isMember} iconSize={"lg"} />
 					</div>
 				</div>
 			</div>
@@ -142,13 +151,14 @@ const JoinProjectHorizontalCardActions = ({ joinProject, animate, type }) => {
 		<>
 			<div className={`relative grid items-center shadow-xl rounded-lg bg-blue-900 ${animationClasses}`}>
 				<div className="px-6 h-full py-4">
-					<h3 className="inline-block font-semibold text-2xl">{project.title}</h3>
-					<div className="py-2">
+					<h3 className="font-semibold text-2xl line-clamp-1">{project.title}</h3>
+					<div className="py-2 mb-2">
 						<Badge badge={project.category} size={"xs"} />
 					</div>
+					<p className="font-semibold text-lg line-clamp-2 mb-1">{talent}</p>
 					<p className="line-clamp-2 mb-3">{message}</p>
 					<div className="flex items-center justify-end gap-2">
-						<Status name={joinProject.status.name} size={"xs"} rounded={"std"} bgColor={joinProject.status.bgColor} />
+						<Status name={joinProject.status.status} size={"xs"} rounded={"std"} bgColor={joinProject.status.colors.bgColor} />
 						<div className="flex justify-end text-gray-300">
 							{type === "invitation" && <UserInvitationsActions invitation={joinProject} iconSize={"lg"} />}
 							{type === "request" && <UserRequestsActions request={joinProject} iconSize={"lg"} />}

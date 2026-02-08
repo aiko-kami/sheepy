@@ -2,7 +2,7 @@ import Link from "next/link";
 
 import { IoConstructOutline, IoDocumentLockOutline, IoDocumentTextOutline, IoChatboxEllipsesOutline } from "react-icons/io5";
 
-const MyProjectsActions = ({ projectId, projectPermissions, iconSize }) => {
+const MyProjectsActions = ({ projectLink, isMember, iconSize }) => {
 	let size;
 	switch (iconSize) {
 		case "sm":
@@ -20,25 +20,21 @@ const MyProjectsActions = ({ projectId, projectPermissions, iconSize }) => {
 
 	return (
 		<>
-			{projectPermissions.isPublicAllowed && (
-				<Link href={`/projects/${projectId}`}>
-					<IoDocumentTextOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Go to project page" />
-				</Link>
-			)}
-			{projectPermissions.isPrivateAllowed && (
-				<Link href={`/projects/${projectId}`}>
-					<IoDocumentLockOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Go to project private page" />
-				</Link>
-			)}
-			{projectPermissions.isConfigureAllowed && (
-				<Link href={`/projects/${projectId}/edit/general`}>
-					<IoConstructOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Configure project" />
-				</Link>
-			)}
-			{projectPermissions.isChatAllowed && (
-				<Link href={`/projects/${projectId}`}>
-					<IoChatboxEllipsesOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Go to project discussion" />
-				</Link>
+			<Link href={`/projects/${projectLink}`}>
+				<IoDocumentTextOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Go to project page" />
+			</Link>
+			{isMember && (
+				<>
+					<Link href={`/projects/${projectLink}/edit/general`}>
+						<IoDocumentLockOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Go to project private page" />
+					</Link>
+					<Link href={`/projects/${projectLink}/edit/general`}>
+						<IoConstructOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Configure project" />
+					</Link>
+					<Link href={`/projects/${projectLink}/edit/general`}>
+						<IoChatboxEllipsesOutline className={`m-1 hover:text-blue-400 duration-100 transition ease-in-out ${size}`} title="Go to project discussion" />
+					</Link>
+				</>
 			)}
 		</>
 	);

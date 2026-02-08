@@ -50,6 +50,7 @@ const StepManager = () => {
 		projectVisibility: "public",
 		projectStartDate: null,
 		projectTagsNew: [],
+		projectTagsExisting: [],
 		talentsNeeded: [],
 		projectId: "",
 	});
@@ -159,9 +160,12 @@ const StepManager = () => {
 			locationOnlineOnly: formInputs.locationOnlineOnly,
 			visibility: formInputs.projectVisibility,
 			startDate: formInputs.projectStartDate ? formInputs.projectStartDate.toISODate() : "",
-			tags: formInputs.projectTagsNew,
+			tagsNew: formInputs.projectTagsNew,
+			tagsExisting: formInputs.projectTagsExisting,
 			talentsNeeded: formInputs.talentsNeeded,
 		};
+
+		console.log("🚀 ~ handleSubmit ~ payload:", payload);
 
 		try {
 			if (formAction === "save-draft" || formAction === "save-draft-modal") {
