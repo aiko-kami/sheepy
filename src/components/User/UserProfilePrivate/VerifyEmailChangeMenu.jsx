@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ApiValidateEmailChange } from "@/lib/api/usersClient";
+import { ApiValidateEmailChange } from "@/lib/api/userClient";
 import { Button } from "@/components/Buttons/Buttons";
 import Triforce from "@/components/Loaders/Triforce";
 

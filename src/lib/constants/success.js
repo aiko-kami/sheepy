@@ -18,6 +18,7 @@ export const SUCCESS = {
 
 	USER_SETTINGS: {
 		APPEARANCE: "Appearance updated successfully.",
+		DISPLAY_MODE: "Display mode updated successfully.",
 		LANGUAGE: "Language updated successfully.",
 		NOTIFICATIONS: "Notifications updated successfully.",
 		PRIVACY: "Privacy settings updated successfully.",

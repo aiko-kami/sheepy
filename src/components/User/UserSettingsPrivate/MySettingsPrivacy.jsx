@@ -6,7 +6,7 @@ import { FaUserShield } from "react-icons/fa6";
 import UserPrivacyTable from "@/components/Tables/UserPrivacyTable";
 import { Button } from "@/components/Buttons/Buttons";
 
-import { ApiUpdateUserSettingsPrivacy } from "@/lib/api/usersClient";
+import { ApiUpdateUserSettingsPrivacy } from "@/lib/api/userClient";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { SUCCESS, ERRORS } from "@/lib/constants";

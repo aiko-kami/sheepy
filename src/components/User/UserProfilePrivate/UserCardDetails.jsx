@@ -8,7 +8,7 @@ import UserLanguages from "@/components/User/UserProfilePrivate/UserLanguages";
 import { Button } from "@/components/Buttons/Buttons";
 import InputField from "@/components/Forms/InputField";
 
-import { ApiUpdateUserDetails } from "@/lib/api/usersClient";
+import { ApiUpdateUserDetails } from "@/lib/api/userClient";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { SUCCESS, ERRORS } from "@/lib/constants";

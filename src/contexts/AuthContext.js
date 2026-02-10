@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, useContext, useEffect, useState } from "react";
-import { ApiGetUserFromSessionClient } from "@/lib/api/usersClient";
+import { ApiGetUserFromSessionClient } from "@/lib/api/userClient";
 
 const AuthContext = createContext();
 

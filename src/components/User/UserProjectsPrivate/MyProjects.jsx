@@ -10,11 +10,39 @@ import MyJoinProjectsCards from "@/components/User/UserProjectsPrivate/MyJoinPro
 import Notification from "@/components/Badges/Notification";
 import DisplaySwitch from "@/components/Buttons/DisplaySwitch-V1";
 
+import { ApiUpdateUserSettingsDisplayMode } from "@/lib/api/userServer";
+
+import { showErrorToast } from "@/utils/toast";
+import { ERRORS } from "@/lib/constants";
+
 const MyProjects = ({ user, projects, projectsCount, joinProjectInvitations, joinProjectRequests }) => {
 	const [displayMode, setDisplayMode] = useState(user.settings.displayMode);
 	const [selectedProjectType, setSelectedProjectType] = useState("all");
 
 	const notifications = user.notifications;
+
+	// Handle change display mode
+	const handleDisplayMode = async (mode) => {
+		if (mode === displayMode) return;
+
+		try {
+			setDisplayMode(mode);
+
+			const payload = {
+				userNewData: {
+					displayMode: mode,
+				},
+			};
+
+			const result = await ApiUpdateUserSettingsDisplayMode(payload);
+			if (!result.ok) {
+				showErrorToast(result.message || ERRORS.USER_SETTINGS.DISPLAY_MODE);
+				return;
+			}
+		} catch (error) {
+			showErrorToast(error.message || ERRORS.USER_SETTINGS.DISPLAY_MODE);
+		}
+	};
 
 	// Filter projects based on the selected project type
 	const filterProjects = (projects, status) => {
@@ -37,7 +65,7 @@ const MyProjects = ({ user, projects, projectsCount, joinProjectInvitations, joi
 
 				{/* Change display buttons */}
 				{(projectsCount.onGoing > 0 || projectsCount.created > 0 || projectsCount.completed > 0 || projectsCount.like > 0) && (
-					<DisplaySwitch displayMode={displayMode} setDisplayMode={setDisplayMode} />
+					<DisplaySwitch displayMode={displayMode} handleDisplayMode={handleDisplayMode} />
 				)}
 			</div>
 

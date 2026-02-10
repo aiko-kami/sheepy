@@ -10,7 +10,7 @@ import PopoverContent from "./PopoverContent";
 import { Avatar } from "@/components/Badges/Avatar";
 
 import { useAuth } from "@/contexts";
-import { ApiUpdateUserPicture, ApiUpdateUserBackgroundPicture, ApiRemoveUserPicture, ApiRemoveUserBackgroundPicture } from "@/lib/api/usersClient";
+import { ApiUpdateUserPicture, ApiUpdateUserBackgroundPicture, ApiRemoveUserPicture, ApiRemoveUserBackgroundPicture } from "@/lib/api/userClient";
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { ERRORS, SUCCESS } from "@/lib/constants";
 

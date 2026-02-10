@@ -11,7 +11,7 @@ import colorModeUnreal from "@/public/images/colorModeUnreal.png";
 
 import { Button } from "@/components/Buttons/Buttons";
 
-import { ApiUpdateUserSettingsAppearance } from "@/lib/api/usersClient";
+import { ApiUpdateUserSettingsAppearance } from "@/lib/api/userClient";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { SUCCESS, ERRORS } from "@/lib/constants";

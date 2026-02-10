@@ -30,6 +30,10 @@ export async function ApiUpdateTalents(data) {
 	return apiPatch("/users/talent/updateTalents", data);
 }
 
+export async function ApiUpdateUserSettingsDisplayMode(data) {
+	return apiPatch("/users/updateMySettingsDisplayMode", data);
+}
+
 //DELETE requests
 
 export async function ApiDeleteQuickSkill(data) {

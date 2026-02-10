@@ -7,7 +7,7 @@ import { IoAtOutline } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import InputField from "@/components/Forms/InputField";
 
-import { ApiUpdateUserEmail } from "@/lib/api/usersClient";
+import { ApiUpdateUserEmail } from "@/lib/api/userClient";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { SUCCESS, ERRORS } from "@/lib/constants";
@@ -47,7 +47,7 @@ const UserCardEmail = ({ email }) => {
 			showSuccessToast(SUCCESS.AUTHENTIFICATION.EMAIL_VERIFY);
 			router.push("/users/my-profile");
 		} catch (error) {
-			showErrorToast(error.message);
+			showErrorToast(error.message || ERRORS.AUTHENTIFICATION.EMAIL_UPDATE_FAILED);
 		}
 	};
 

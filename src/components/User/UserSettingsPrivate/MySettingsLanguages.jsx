@@ -6,7 +6,7 @@ import { IoChatbubbleEllipses } from "react-icons/io5";
 import { SelectField } from "@/components/Forms/SelectField";
 import { Button } from "@/components/Buttons/Buttons";
 
-import { ApiUpdateUserSettingsLanguage } from "@/lib/api/usersClient";
+import { ApiUpdateUserSettingsLanguage } from "@/lib/api/userClient";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { handleFormChange } from "@/utils/formHandlers";

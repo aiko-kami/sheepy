@@ -35,57 +35,59 @@ const UserCardAboutMe = ({ userId, username, profilePicture, backgroundPicture, 
 				</div>
 
 				{/* User details */}
-				<div>
-					<h2 className="text-2xl font-semibold mb-4">More about me...</h2>
-					<ul>
-						{(locationCity || locationCountry) && (
-							<li className="flex mt-4">
-								<div>
-									<IoLocationOutline className="text-gray-400 mr-2 text-2xl" />
-								</div>
-								<p>
-									<span className="font-semibold text-gray-400 mr-1">Location:</span>
-									{locationCity && locationCountry ? `${locationCity}, ${locationCountry}` : locationCity || locationCountry}
-								</p>
-							</li>
-						)}
-						{company && (
-							<li className="flex mt-4">
-								<div>
-									<IoBusinessOutline className="text-gray-400 mr-2 text-2xl" />
-								</div>
-								<p>
-									<span className="font-semibold text-gray-400 mr-1">Company:</span>
-									{company}
-								</p>
-							</li>
-						)}
-						{languages && (
-							<li className="flex mt-4">
-								<div>
-									<IoChatbubbleEllipsesOutline className="text-gray-400 mr-2 text-2xl" />
-								</div>
-								<p>
-									<span className="font-semibold text-gray-400 mr-1">Languages:</span>
-									{languages?.join(", ")}
-								</p>
-							</li>
-						)}
-						{website && (
-							<li className="flex mt-4">
-								<div>
-									<IoLinkOutline className="text-gray-400 mr-2 text-2xl" />
-								</div>
-								<p>
-									<span className="font-semibold text-gray-400 mr-1">Website:</span>
-									<a href={website} className="italic hover:underline">
-										{website}
-									</a>
-								</p>
-							</li>
-						)}
-					</ul>
-				</div>
+				{(locationCity || locationCountry || company || website || (languages && languages.length > 0)) && (
+					<div>
+						<h2 className="text-2xl font-semibold mb-4">More about me...</h2>
+						<ul>
+							{(locationCity || locationCountry) && (
+								<li className="flex mt-4">
+									<div>
+										<IoLocationOutline className="text-gray-400 mr-2 text-2xl" />
+									</div>
+									<p>
+										<span className="font-semibold text-gray-400 mr-1">Location:</span>
+										{locationCity && locationCountry ? `${locationCity}, ${locationCountry}` : locationCity || locationCountry}
+									</p>
+								</li>
+							)}
+							{company && (
+								<li className="flex mt-4">
+									<div>
+										<IoBusinessOutline className="text-gray-400 mr-2 text-2xl" />
+									</div>
+									<p>
+										<span className="font-semibold text-gray-400 mr-1">Company:</span>
+										{company}
+									</p>
+								</li>
+							)}
+							{languages && languages.length > 0 && (
+								<li className="flex mt-4">
+									<div>
+										<IoChatbubbleEllipsesOutline className="text-gray-400 mr-2 text-2xl" />
+									</div>
+									<p>
+										<span className="font-semibold text-gray-400 mr-1">Languages:</span>
+										{languages?.join(", ")}
+									</p>
+								</li>
+							)}
+							{website && (
+								<li className="flex mt-4">
+									<div>
+										<IoLinkOutline className="text-gray-400 mr-2 text-2xl" />
+									</div>
+									<p>
+										<span className="font-semibold text-gray-400 mr-1">Website:</span>
+										<a href={website} className="italic hover:underline">
+											{website}
+										</a>
+									</p>
+								</li>
+							)}
+						</ul>
+					</div>
+				)}
 			</div>
 		</div>
 	);

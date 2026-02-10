@@ -7,7 +7,7 @@ import { Button } from "@/components/Buttons/Buttons";
 import ProfilePicture from "@/components/User/UserProfilePrivate/ProfilePicture";
 import { TextAreaField } from "@/components/Forms/TextAreaField";
 
-import { ApiUpdateUserBioDescription } from "@/lib/api/usersClient";
+import { ApiUpdateUserBioDescription } from "@/lib/api/userClient";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { SUCCESS, ERRORS } from "@/lib/constants";
@@ -34,10 +34,12 @@ const UserCardPictureBio = ({ username, profilePicture, backgroundPicture, descr
 
 		try {
 			await ApiUpdateUserBioDescription(payload);
-			showSuccessToast(SUCCESS.USER_PROFILE.BIO_DESCRIPTION_UPDATE);
+
+			showSuccessToast(SUCCESS.USER_PROFILE.UPDATE);
+
 			router.push("/users/my-profile");
 		} catch (error) {
-			showErrorToast(error.message || ERRORS.USER_PROFILE.BIO_DESCRIPTION_UPDATE_FAILED);
+			showErrorToast(error.message || ERRORS.USER_PROFILE.UPDATE_FAILED);
 		}
 	};
 

@@ -9,6 +9,8 @@ export const ERRORS = {
 		USERNAME_REQUIRED: "Username is required.",
 		EMAIL_REQUIRED: "Email is required.",
 		PASSWORD_REQUIRED: "Password is required.",
+		PASSWORD_OLD_REQUIRED: "Former password is required.",
+		PASSWORD_NEW_REQUIRED: "New password is required.",
 		PASSWORD_CONFIRM_REQUIRED: "Password confirmation is required.",
 		IDENTIFIER_REQUIRED: "Email or username is required.",
 		USERNAME_INVALID: "Username can only contain letters, numbers, underscores, and periods.",
@@ -17,14 +19,15 @@ export const ERRORS = {
 		EMAIL_INVALID: "Please enter a valid email address.",
 		PASSWORD_MIN_LENGTH: "Password must be at least 8 characters long.",
 		PASSWORD_MATCH: "Passwords do not match.",
+		PASSWORD_NEW_MATCH: "New password and confirmation do not match.",
 		PASSWORD_RESET_FAILED: "Password reset failed. Please try again later.",
 		REGISTER_FAILED: "Failed to register.",
 		LOGIN_FAILED: "Failed to login.",
 		PASSWORD_UPDATE_FAILED: "Failed to update password.",
+		EMAIL_UPDATE_FAILED: "Failed to update email.",
 	},
 
 	USER_PROFILE: {
-		BIO_DESCRIPTION_UPDATE_FAILED: "Failed to update bio and description.",
 		UPDATE_FAILED: "Failed to update user profile.",
 		PICTURE_UPDATE_FAILED: "Failed to update user profile picture.",
 		BACKGROUND_UPDATE_FAILED: "Failed to update user background picture.",
@@ -35,6 +38,7 @@ export const ERRORS = {
 
 	USER_SETTINGS: {
 		APPEARANCE: "Failed to update appearance.",
+		DISPLAY_MODE: "Failed to update display mode.",
 		LANGUAGE: "Failed to update language.",
 		NOTIFICATIONS: "Failed to update notifications.",
 		PRIVACY: "Failed to update privacy settings.",

@@ -7,7 +7,7 @@ import { IoLockClosed } from "react-icons/io5";
 import { Button } from "@/components/Buttons/Buttons";
 import InputField from "@/components/Forms/InputField";
 
-import { ApiUpdateUserPassword } from "@/lib/api/usersClient";
+import { ApiUpdateUserPassword } from "@/lib/api/userClient";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { SUCCESS, ERRORS } from "@/lib/constants";
@@ -28,6 +28,23 @@ const UserCardPassword = () => {
 	// Handle form submission
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+
+		if (!formInputs.oldPassword.trim()) {
+			showErrorToast(ERRORS.AUTHENTIFICATION.PASSWORD_OLD_REQUIRED);
+			return;
+		}
+		if (!formInputs.newPassword.trim()) {
+			showErrorToast(ERRORS.AUTHENTIFICATION.PASSWORD_NEW_REQUIRED);
+			return;
+		}
+		if (!formInputs.confirmNewPassword.trim()) {
+			showErrorToast(ERRORS.AUTHENTIFICATION.PASSWORD_CONFIRM_REQUIRED);
+			return;
+		}
+		if (formInputs.newPassword !== formInputs.confirmNewPassword) {
+			showErrorToast(ERRORS.AUTHENTIFICATION.PASSWORD_NEW_MATCH);
+			return;
+		}
 
 		// Prepare payload, replacing empty strings with special marker
 		const payload = {

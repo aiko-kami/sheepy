@@ -25,8 +25,6 @@ const MyProjectsPage = async () => {
 	const user = result.data.user;
 	const projects = result.data.projects;
 
-	console.log("🚀 ~ MyProjectsPage ~ projects:", projects.created[1].statusInfo);
-
 	const projectsCount = result.data.projectsCount;
 
 	const joinProjectInvitations = result.data.joinProjectInvitations;

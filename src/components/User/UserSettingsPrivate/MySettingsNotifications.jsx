@@ -6,7 +6,7 @@ import { IoNotifications } from "react-icons/io5";
 import { RadioMultiField } from "@/components/Forms/ToggleField";
 import { Button } from "@/components/Buttons/Buttons";
 
-import { ApiUpdateUserSettingsNotifications } from "@/lib/api/usersClient";
+import { ApiUpdateUserSettingsNotifications } from "@/lib/api/userClient";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 import { SUCCESS, ERRORS } from "@/lib/constants";
