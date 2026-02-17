@@ -10,7 +10,7 @@ const UserCard = ({ user, animate }) => {
 
 	return (
 		<>
-			<div className={`rounded-lg max-w-66 shadow-2xl bg-blue-900 p-4 ${animationClasses}`}>
+			<div className={`rounded-lg max-w-66 shadow-2xl bg-blue-800/30 p-4 ${animationClasses}`}>
 				<div className="flex flex-col items-center mb-2">
 					<Link href={`/users/${userId}`}>
 						<Avatar img={profilePicture} size={"3xl"} alt={username} />

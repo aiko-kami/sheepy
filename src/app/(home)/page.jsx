@@ -16,20 +16,20 @@ export const metadata = {
 const HomePage = async () => {
 	return (
 		<div className="relative">
-			<div className="mb-12">
+			<div className="mb-24">
 				<h2 className="font-semibold text-xl mb-4">Selected projects</h2>
 				<MosaicSix />
 			</div>
 
-			<div className="mb-12">
+			<div className="mb-24">
 				<PresentationBanner />
 			</div>
 
-			<div className="mb-12">
+			<div className="mb-24">
 				<CarouselProjects />
 			</div>
 
-			<div className="mb-12">
+			<div className="mb-24">
 				<div className="inline-flex">
 					<h2 className="font-semibold text-xl mr-4 mb-4">Recent projects</h2>
 					<Link href="/projects/01" className="text-xs mt-2.5 hover:underline">
@@ -39,7 +39,7 @@ const HomePage = async () => {
 				<RecentProjects />
 			</div>
 
-			<div className="mb-12">
+			<div className="mb-24">
 				<div className="inline-flex">
 					<h2 className="font-semibold text-xl mr-4 mb-4">New Talents</h2>
 					<Link href="/talents/meet-talents" className="text-xs mt-2.5 hover:underline">
@@ -49,17 +49,17 @@ const HomePage = async () => {
 				<RecentTalents />
 			</div>
 
-			<div className="mb-12">
+			<div className="mb-24">
 				<h2 className="font-semibold text-xl mb-4">Selected projects</h2>
 				<MosaicFour />
 			</div>
 
-			<div className="mb-12">
+			<div className="mb-24">
 				<h2 className="font-semibold text-xl mb-4">Selected projects by categories</h2>
 				<MosaicCategories />
 			</div>
 
-			<div className="mb-12">
+			<div className="mb-24">
 				<div className="inline-flex">
 					<h2 className="font-semibold text-xl mr-4 mb-4">Talents you need</h2>
 					<Link href="/talents/meet-talents" className="text-xs mt-2.5 hover:underline">

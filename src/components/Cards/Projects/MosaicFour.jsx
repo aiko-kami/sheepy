@@ -54,7 +54,7 @@ const MosaicFour = () => {
 			) : error ? (
 				<p className="text-center text-red-600">Error: {error}</p>
 			) : selectedProjects && selectedProjects.length >= 4 ? (
-				<div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+				<div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-320 mx-auto">
 					<div className="lg:col-span-2 relative h-50 lg:h-70 xl:h-100">
 						<Image src={selectedProjects[0].cover.link} height={0} width={0} sizes="100vw" alt="Project picture" className="object-cover h-full w-full" />
 						<div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-black/80 to-black/0">

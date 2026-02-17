@@ -5,7 +5,7 @@ import { useAuth } from "./AuthContext";
 
 const ThemeContext = createContext();
 const THEME_KEY = "sheepy-theme";
-const ALL_THEMES = ["light", "dark", "night", "unreal"];
+const ALL_THEMES = ["light", "night", "dark", "starfield", "unreal"];
 
 export const ThemeProvider = ({ children }) => {
 	const { user } = useAuth();

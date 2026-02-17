@@ -8,6 +8,7 @@ import colorModeLight from "@/public/images/colorModeLight.png";
 import colorModeNight from "@/public/images/colorModeNight.png";
 import colorModeDark from "@/public/images/colorModeDark.png";
 import colorModeUnreal from "@/public/images/colorModeUnreal.png";
+import colorModeStarfield from "@/public/images/colorModeStarfield.png";
 
 import { Button } from "@/components/Buttons/Buttons";
 
@@ -38,14 +39,19 @@ const MySettingsAppearance = ({ appearanceSettings }) => {
 			imageSrc: colorModeNight,
 		},
 		{
-			label: "Unreal mode",
-			value: "unreal",
-			imageSrc: colorModeUnreal,
-		},
-		{
 			label: "Dark mode",
 			value: "dark",
 			imageSrc: colorModeDark,
+		},
+		{
+			label: "Starfield mode",
+			value: "starfield",
+			imageSrc: colorModeStarfield,
+		},
+		{
+			label: "Unreal mode",
+			value: "unreal",
+			imageSrc: colorModeUnreal,
 		},
 	];
 

@@ -117,6 +117,52 @@
 	--gradiant-light: #facc15; /* yellow gradient */
 }
 
+/* Night theme */
+[data-theme="starfield"] {
+	--100: #ffffff;
+	--200: #bcbec5;
+	--300: #7e818d;
+	--400: #4f6fbf;
+	--440: #3667a2;
+	--450: #071e34;
+	--500: #002464;
+	--550: #0c1322;
+	--600: #020010;
+	--700: #0a0e19;
+	--800: #05070f;
+	--900: #000000;
+	--bg: #1e293b;
+	--text: #0f172a;
+	--text-primary: #ffffff;
+	--text-secondary: #9ca3af;
+	--gradiant-dark: #111646;
+	--gradiant-light: #002464;
+}
+
+@keyframes twinkle {
+	0%,
+	100% {
+		opacity: 0.2;
+	}
+	50% {
+		opacity: 1;
+	}
+}
+
+@keyframes radarPulse {
+	0% {
+		transform: scale(0.95);
+		opacity: 0.15;
+	}
+	40% {
+		opacity: 1;
+	}
+	100% {
+		transform: scale(1.1);
+		opacity: 0;
+	}
+}
+
 /* embla - carousel */
 /* Classes with embla are for the carousel component */
 

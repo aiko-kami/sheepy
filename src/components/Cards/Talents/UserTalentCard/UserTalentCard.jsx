@@ -17,12 +17,12 @@ const UserTalentCard = ({ talent }) => {
 
 	return (
 		<>
-			<div className="rounded-lg min-w-full shadow-2xl bg-blue-900">
+			<div className="rounded-lg min-w-full shadow-2xl bg-blue-900 hover:cursor-pointer" onClick={showModal}>
 				<div className="p-4 text-center">
-					<h2 className="font-semibold text-xl py-1">{talent.name}</h2>
-					<p className="py-1">{talent.description}</p>
-					<button type="button" className="italic hover:underline" onClick={showModal}>
-						Read more...
+					<h2 className="font-semibold text-lg py-1 line-clamp-1">{talent.name}</h2>
+					<p className="py-1 line-clamp-3">{talent.description}</p>
+					<button type="button" className="italic underline " onClick={showModal}>
+						Read more
 					</button>
 				</div>
 			</div>

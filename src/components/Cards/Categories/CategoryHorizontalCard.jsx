@@ -11,7 +11,7 @@ const CategoryHorizontalCard = ({ category, animate }) => {
 
 	return (
 		<>
-			<div className={`items-center shadow-xl w-full h-90 ${animationClasses}`}>
+			<div className={`items-center shadow-xl w-full h-70 ${animationClasses}`}>
 				{/* Category cover background */}
 				<div className="relative h-full">
 					<Image src={cover.link} height={0} width={0} sizes="100vw" alt="Category cover" className="absolute top-0 left-0 -z-10 w-full h-full object-cover rounded-lg" />

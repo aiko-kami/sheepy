@@ -4,7 +4,7 @@ import Login from "@/components/Navbar/Login";
 
 const Navbar = ({ isHomePage = false, displaySearchButton }) => {
 	return (
-		<header className={`sticky p-2 z-50 flex justify-between ${isHomePage && "bg-custom-gradiant-dark"}`}>
+		<header className="sticky p-2 z-50 flex justify-between">
 			<div>
 				<Sandwich />
 			</div>
