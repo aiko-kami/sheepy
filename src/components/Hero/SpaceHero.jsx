@@ -4,16 +4,16 @@ const SpaceHero = () => {
 	return (
 		<>
 			<div className="text-white relative">
-				<section className="relative min-h-210 flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20">
+				<section className="relative min-h-140 lg:min-h-210 test flex items-center justify-center px-4 sm:px-6 lg:px-8 xl:pt-20 overflow-hidden">
 					{/* Orbital rings */}
 					<div className="absolute inset-0 flex items-center justify-center pointer-events-none">
 						<div
-							className="w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] border border-violet-500/10 rounded-full
-					animate-[spin_60s_linear_infinite,radarPulse_4s_ease-out_infinite]"
+							className="absolute w-[600px] h-[600px] sm:w-[800px] sm:h-[800px] border border-violet-500/10 rounded-full
+					animate-[spin_60s_linear_infinite,radarPulse_4s_ease-out_infinite] overflow-hidden"
 						/>
 						<div
 							className="absolute w-[400px] h-[400px] sm:w-[550px] sm:h-[550px] border border-cyan-500/10 rounded-full
-					animate-[spin_45s_linear_infinite_reverse,radarPulse_3.5s_ease-out_infinite]"
+					animate-[spin_45s_linear_infinite_reverse,radarPulse_3.5s_ease-out_infinite] overflow-hidden"
 						/>
 						<div
 							className="absolute w-[200px] h-[200px] sm:w-[300px] sm:h-[300px] border border-purple-500/15 rounded-full

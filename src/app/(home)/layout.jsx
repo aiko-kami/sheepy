@@ -7,8 +7,8 @@ import BackgroundStarfield from "@/components/Backgrounds/BackgroundStarfield";
 export default function RootLayout({ children }) {
 	return (
 		<>
-			<Navbar isHomePage={true} />
 			<BackgroundStarfield />
+			<Navbar isHomePage={true} />
 			<SpaceHero />
 			<main className="relative my-auto mx-2 md:mx-10 lg:mx-auto lg:max-w-410">{children}</main>
 			<Footer />
