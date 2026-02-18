@@ -4,7 +4,7 @@ const SpaceHero = () => {
 	return (
 		<>
 			<div className="text-white relative">
-				<section className="relative min-h-140 lg:min-h-210 test flex items-center justify-center px-4 sm:px-6 lg:px-8 xl:pt-20 overflow-hidden">
+				<section className="relative min-h-140 lg:min-h-210 flex items-center justify-center px-4 sm:px-6 lg:px-8 xl:pt-20 overflow-hidden">
 					{/* Orbital rings */}
 					<div className="absolute inset-0 flex items-center justify-center pointer-events-none">
 						<div
