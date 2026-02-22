@@ -11,7 +11,7 @@ import QAs from "@/components/ProjectPublic/QAs";
 import Comments from "@/components/ProjectPublic/Comments";
 import Notification from "@/components/Badges/Notification";
 
-const StepsQAComments = ({ projectCount, steps, qnas, comments }) => {
+const StepsQAComments = ({ projectId, projectCount, steps, qnas, comments, members }) => {
 	const [activeTab, setActiveTab] = useState("tabSteps");
 
 	const tabData = [
@@ -38,7 +38,7 @@ const StepsQAComments = ({ projectCount, steps, qnas, comments }) => {
 	return (
 		<>
 			{/* Menu nav tabs selection */}
-			<ul className="flex flex-wrap justify-center font-semibold text-xl sm:text-3xl mb-12">
+			<ul className="flex flex-wrap justify-center font-semibold text-xl sm:text-3xl mb-8">
 				{tabData.map(({ id, label, count, icon: Icon }) => (
 					<li key={id} className="tn:w-1/3 justify-center cursor-pointer mt-2 sm:mt-0">
 						<TabNavItem
@@ -65,7 +65,7 @@ const StepsQAComments = ({ projectCount, steps, qnas, comments }) => {
 			</ul>
 
 			{/* Tabs content */}
-			<div id="defaultTabContent" className="lg:px-8">
+			<div id="defaultTabContent" className="lg:px-8 mb-12">
 				<TabContent id="tabSteps" activeTab={activeTab}>
 					<Steps steps={steps?.stepsList} />
 				</TabContent>
@@ -73,7 +73,7 @@ const StepsQAComments = ({ projectCount, steps, qnas, comments }) => {
 					<QAs qnas={qnas?.QAsList} />
 				</TabContent>
 				<TabContent id="tabComments" activeTab={activeTab}>
-					<Comments comments={comments} />
+					<Comments comments={comments} projectId={projectId} members={members} />
 				</TabContent>
 			</div>
 		</>

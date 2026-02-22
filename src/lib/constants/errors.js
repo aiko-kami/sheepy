@@ -114,6 +114,19 @@ export const ERRORS = {
 		UNLIKE_FAILED: "Failed to unlike project.",
 	},
 
+	PROJECT_COMMENTS: {
+		RETRIEVE_FAILED: "Failed to retrieve project comments.",
+		EMPTY_INPUT: "Please enter a comment.",
+		MAX_LENGTH: "Comment cannot exceed 1000 characters.",
+		EMPTY_INPUT_REMOVE: "Please select a comment to remove.",
+		ADD_FAILED: "Failed to add comment to the project.",
+		REPLY_FAILED: "Failed to send answer to the comment.",
+		UPDATE_FAILED: "Failed to update the comment.",
+		REPORT_FAILED: "Failed to report the comment.",
+		UNREPORT_FAILED: "Failed to unreport the comment.",
+		REMOVE_FAILED: "Failed to remove comment.",
+	},
+
 	PROJECT_TITLE_CATEGORY: {
 		UPDATE_FAILED: "Failed to update project title and category.",
 		TITLE_REQUIRED: "Project title is required.",
@@ -146,7 +159,7 @@ export const ERRORS = {
 
 	PROJECT_TAGS: {
 		NO_TAGS_FOUND: "No tags found.",
-		LOAD_FAILED: "Failed to load tags.",
+		RETRIEVE_FAILED: "Failed to retrieve tags.",
 		MAXIMUM_LIMIT: "You can only add up to 8 tags.",
 		DUPLICATE_TAG: "This tag is already present in the list.",
 		ADD_FAILED: "Failed to add tag.",
@@ -187,7 +200,7 @@ export const ERRORS = {
 	},
 
 	PROJECT_CATEGORIES: {
-		LOAD_FAILED: "Failed to load categories.",
+		RETRIEVE_FAILED: "Failed to retrieve categories.",
 	},
 
 	NOT_FOUND: {
@@ -195,7 +208,7 @@ export const ERRORS = {
 		USER_MESSAGE: "Sorry, we couldn’t find the user you are looking for... 😥",
 		USER_SETTINGS_TITLE: "404 - User Not Found",
 		USER_SETTINGS_MESSAGE: "Sorry, we couldn’t find the user you are looking for... 😥",
-		PROJECTS: "Failed to retrive projects.",
+		PROJECTS: "Failed to retrieve projects.",
 		PROJECT_TITLE: "404 - Project Not Found",
 		PROJECT_MESSAGE: "Sorry, we couldn’t find the project you are looking for... 😥",
 		CATEGORY_TITLE: "404 - Category Not Found",

@@ -100,7 +100,7 @@ const StepManager = () => {
 			if (result.ok && result.data?.categories) {
 				setCategories(result.data.categories);
 			} else {
-				showErrorToast(result.message || ERRORS.PROJECT_CATEGORIES.LOAD_FAILED);
+				showErrorToast(result.message || ERRORS.PROJECT_CATEGORIES.RETRIEVE_FAILED);
 			}
 		};
 		const fetchTags = async () => {
@@ -108,7 +108,7 @@ const StepManager = () => {
 			if (result.ok && result.data?.tags) {
 				setTagsList(result.data.tags);
 			} else {
-				showErrorToast(result.message || ERRORS.TAGS.LOAD_FAILED);
+				showErrorToast(result.message || ERRORS.TAGS.RETRIEVE_FAILED);
 			}
 		};
 

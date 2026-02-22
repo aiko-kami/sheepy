@@ -90,7 +90,9 @@ const OverviewBar = ({ projectId, category, subCategoryDetails, location, likes,
 								</button>
 							</>
 						)}
-						<p>{likes} likes</p>
+						<p>
+							{likes} {likes === 1 ? "like" : "likes"}
+						</p>
 					</div>
 				</li>
 

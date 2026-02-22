@@ -13,6 +13,7 @@ import StepsQAComments from "@/components/ProjectPublic/StepsQAComments";
 import SimilarProjects from "@/components/ProjectPublic/SimilarProjects";
 
 import { ApiGetProjectPublicDataByLink } from "@/lib/api/projectCore";
+import { ApiGetProjectComments } from "@/lib/api/projectsExtended";
 import { ERRORS } from "@/lib/constants";
 
 import { normalizeProjectData } from "@/utils/projectHandlers";
@@ -40,9 +41,7 @@ const ProjectPublicPage = async ({ params }) => {
 
 	const statusColorClass = project.statusInfo?.currentStatus?.colors?.bgColor;
 	const title = project.title;
-	const owner = project.owner;
 	const creator = project.createdBy;
-	const { userId: ownerUserId, username: ownerUsername, profilePicture: ownerProfilePicture } = owner;
 	const { userId: creatorUserId, username: creatorUsername, profilePicture: creatorProfilePicture } = creator;
 	const coverLink = project.cover.link;
 	const category = project.category;
@@ -56,64 +55,83 @@ const ProjectPublicPage = async ({ params }) => {
 	const description = project.description;
 	const tags = project.tags;
 	const similarProjects = project.similarProjects;
-	const projectCount = project.projectCount;
+	let projectCount = project.projectCount;
 	const steps = project.steps;
 	const qnas = project.QAs;
-	const comments = project.comments;
 	const creatorMotivation = project.creatorMotivation;
 	const objectives = project.objectives;
 	const userLikeProject = project.userLikeProject;
 
+	const resultComments = await ApiGetProjectComments(projectId);
+
+	if (!resultComments.ok || !resultComments.data) {
+		return <Error title={ERRORS.NOT_FOUND.PROJECT_TITLE} message={ERRORS.NOT_FOUND.PROJECT_MESSAGE} extraMessage={resultComments.message} />;
+	}
+
+	const comments = resultComments.data.comments;
+
+	//count all comments and answers
+	let commentCount = comments.length;
+	comments.forEach((comment) => {
+		if (comment.answers && comment.answers.length > 0) {
+			commentCount += comment.answers.length;
+		}
+	});
+
+	projectCount = { ...projectCount, commentsCount: commentCount };
+
 	return (
-		<div className="container mx-auto py-8 hyphens-auto space-y-4 lg:space-y-6">
+		<div className="mx-auto py-8 hyphens-auto space-y-4 lg:space-y-6">
 			{/* Project cover with title and creator */}
 			<Cover title={title} coverLink={coverLink} creatorUserId={creatorUserId} creatorUsername={creatorUsername} creatorProfilePicture={creatorProfilePicture?.link} />
-			{/* List with category, location, likes and project status */}
-			<OverviewBar
-				projectId={projectId}
-				category={category}
-				subCategoryDetails={subCategoryDetails}
-				statusColorClass={statusColorClass}
-				location={location}
-				likes={likes}
-				userLikeProject={userLikeProject}
-				status={status}
-				projectLink={projectLink}
-				talentsNeeded={talentsNeeded}
-			/>
-			{/* Summary */}
-			<ProjectSummary summary={summary} />
-			<div className="sm:grid sm:grid-cols-3 gap-6 mb-4 sm:mb-12 space-y-4 sm:space-y-0">
-				<div className="sm:col-start-3 order-1 sm:order-2 space-y-4 lg:space-y-6">
-					{/* Goal */}
-					<ProjectGoal goal={goal} />
+			<div className="mx-2 space-y-4 lg:space-y-6">
+				{/* List with category, location, likes and project status */}
+				<OverviewBar
+					projectId={projectId}
+					category={category}
+					subCategoryDetails={subCategoryDetails}
+					statusColorClass={statusColorClass}
+					location={location}
+					likes={likes}
+					userLikeProject={userLikeProject}
+					status={status}
+					projectLink={projectLink}
+					talentsNeeded={talentsNeeded}
+				/>
+				{/* Summary */}
+				<ProjectSummary summary={summary} />
+				<div className="sm:grid sm:grid-cols-3 gap-6 mb-4 sm:mb-12 space-y-4 sm:space-y-0">
+					<div className="sm:col-start-3 order-1 sm:order-2 space-y-4 lg:space-y-6">
+						{/* Goal */}
+						<ProjectGoal goal={goal} />
 
-					{/* Creator motivation */}
-					<ProjectCreatorMotivation creatorMotivation={creatorMotivation} />
+						{/* Creator motivation */}
+						<ProjectCreatorMotivation creatorMotivation={creatorMotivation} />
 
-					{/* Objectives */}
-					<ProjectObjectives objectives={objectives} />
+						{/* Objectives */}
+						<ProjectObjectives objectives={objectives} />
 
-					{/* Talents needed */}
-					<TalentsNeeded talentsNeeded={talentsNeeded} />
+						{/* Talents needed */}
+						<TalentsNeeded talentsNeeded={talentsNeeded} />
 
-					{/* Tags */}
-					<ProjectTags tags={tags} />
+						{/* Tags */}
+						<ProjectTags tags={tags} />
 
-					{/* Members */}
-					<ProjectMembers members={members} />
+						{/* Members */}
+						<ProjectMembers members={members} />
+					</div>
+					<div className="sm:col-span-2 sm:order-1 order-2 mb-4 sm:mb-0 space-y-4 lg:space-y-6">
+						{/* Project description */}
+						<ProjectDescription description={description} />
+					</div>
 				</div>
-				<div className="sm:col-span-2 sm:order-1 order-2 mb-4 sm:mb-0 space-y-4 lg:space-y-6">
-					{/* Project description */}
-					<ProjectDescription description={description} />
+				{/* Q&A and comments */}
+				<div className="mb-4 sm:mb-12">
+					<StepsQAComments projectId={projectId} projectCount={projectCount} steps={steps} qnas={qnas} comments={comments} members={members} />
 				</div>
-			</div>
-			{/* Q&A and comments */}
-			<div className="mb-4 sm:mb-12">
-				<StepsQAComments projectCount={projectCount} steps={steps} qnas={qnas} comments={comments} />
-			</div>
-			<div className="mb-4">
-				<SimilarProjects similarProjects={similarProjects} />
+				<div className="mb-4">
+					<SimilarProjects similarProjects={similarProjects} />
+				</div>
 			</div>
 		</div>
 	);

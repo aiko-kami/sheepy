@@ -7,7 +7,7 @@ export default function RootLayout({ children }) {
 		<>
 			<Navbar />
 			<BackgroundStarfield />
-			<main className="relative mx-2 md:mx-10 lg:mx-36">{children}</main>
+			<main className="relative mx-0 md:mx-10 lg:mx-36">{children}</main>
 			<Footer />
 		</>
 	);

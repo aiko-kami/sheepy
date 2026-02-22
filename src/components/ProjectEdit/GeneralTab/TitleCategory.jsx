@@ -23,10 +23,10 @@ const TitleCategory = ({ formInputs, onChange, setFormInputs, userPermissions })
 				if (result.ok && result.data?.categories) {
 					setCategories(result.data.categories);
 				} else {
-					showErrorToast(result.message || ERRORS.PROJECT_CATEGORIES.LOAD_FAILED);
+					showErrorToast(result.message || ERRORS.PROJECT_CATEGORIES.RETRIEVE_FAILED);
 				}
 			} catch (error) {
-				showErrorToast(error.message || ERRORS.PROJECT_CATEGORIES.LOAD_FAILED);
+				showErrorToast(error.message || ERRORS.PROJECT_CATEGORIES.RETRIEVE_FAILED);
 			} finally {
 				setLoading(false);
 			}

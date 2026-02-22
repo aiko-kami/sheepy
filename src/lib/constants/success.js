@@ -46,6 +46,15 @@ export const SUCCESS = {
 		UNLIKE_SUCCESS: "You unliked this project.",
 	},
 
+	PROJECT_COMMENTS: {
+		ADD: "Comment added successfully.",
+		REPLY: "Comment reply sent successfully.",
+		UPDATE: "Comment updated successfully.",
+		REPORT: "Comment reported successfully.",
+		UNREPORT: "Comment unreported successfully.",
+		REMOVE: "Comment removed successfully.",
+	},
+
 	PROJECT_COVER: {
 		REMOVE: "Project cover removed successfully.",
 		UPDATE: "Project cover updated successfully.",

@@ -7,7 +7,7 @@ const QAs = ({ qnas = [] }) => {
 			{qnas.length === 0 ? (
 				<p className="py-8 text-center italic">No questions have been posted yet</p>
 			) : (
-				<ul className="">
+				<ul>
 					{qnas.map((qna, index) => (
 						<React.Fragment key={index}>
 							<div className="grid sm:grid-cols-3 gap-10 mb-10">
