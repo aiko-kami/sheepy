@@ -3,6 +3,7 @@ export const ERRORS = {
 		ERROR: "Something went wrong.",
 		UNAUTHORIZED: "You do not have permission to perform this action.",
 		UNKNOWN: "An unexpected error occurred. Please try again later.",
+		NOT_CONNECTED: "You must be connected to perform this action.",
 	},
 
 	AUTHENTIFICATION: {
@@ -122,6 +123,10 @@ export const ERRORS = {
 		ADD_FAILED: "Failed to add comment to the project.",
 		REPLY_FAILED: "Failed to send answer to the comment.",
 		UPDATE_FAILED: "Failed to update the comment.",
+		LIKE_FAILED: "Failed to like the comment.",
+		UNLIKE_FAILED: "Failed to unlike the comment.",
+		DISLIKE_FAILED: "Failed to dislike the comment.",
+		UNDISLIKE_FAILED: "Failed to undislike the comment.",
 		REPORT_FAILED: "Failed to report the comment.",
 		UNREPORT_FAILED: "Failed to unreport the comment.",
 		REMOVE_FAILED: "Failed to remove comment.",

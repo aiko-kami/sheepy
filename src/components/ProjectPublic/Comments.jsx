@@ -37,7 +37,7 @@ const Comments = ({ comments = [], projectId, members }) => {
 					})}
 				</div>
 			)}
-			<CommentForm projectId={projectId} />
+			{user && <CommentForm projectId={projectId} />}
 		</>
 	);
 };

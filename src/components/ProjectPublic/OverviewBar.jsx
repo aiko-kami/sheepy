@@ -5,11 +5,14 @@ import { IoLocationOutline, IoGlobeOutline, IoHeartOutline, IoHeart, IoFitness }
 import ActionButtons from "@/components/ProjectPublic/ActionButtons";
 import { Badge, BadgeRounded } from "@/components/Badges/Badges";
 
+import { useAuth } from "@/contexts";
 import { ApiPatchLikeProject, ApiPatchUnlikeProject } from "@/lib/api/projectEditionServer";
 import { showErrorToast, showSuccessToast } from "@/utils/toast";
 import { ERRORS, SUCCESS } from "@/lib/constants";
 
 const OverviewBar = ({ projectId, category, subCategoryDetails, location, likes, userLikeProject, status, statusColorClass, projectLink, talentsNeeded }) => {
+	const { user } = useAuth();
+
 	const router = useRouter();
 
 	const colorClassStatus = statusColorClass && !statusColorClass.startsWith("#") ? `text-${statusColorClass}` : "text-gray-400";
@@ -17,6 +20,11 @@ const OverviewBar = ({ projectId, category, subCategoryDetails, location, likes,
 	const { onlineOnly = false, city = null, country = null } = location ?? {};
 
 	const likeProject = async () => {
+		if (!user) {
+			showErrorToast(ERRORS.GENERIC.NOT_CONNECTED);
+			return;
+		}
+
 		try {
 			const result = await ApiPatchLikeProject(projectId);
 			if (!result.ok) {

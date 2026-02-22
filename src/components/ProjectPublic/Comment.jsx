@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+
 import Link from "next/link";
 import { DateTime } from "luxon";
 import { IoArrowUndoOutline, IoArrowUndo, IoClose } from "react-icons/io5";
@@ -8,9 +10,22 @@ import { AiOutlineLike, AiOutlineDislike, AiFillLike, AiFillDislike } from "reac
 
 import CommentForm from "@/components/Forms/CommentForm";
 import { BadgeOwner } from "@/components/Badges/Badges";
+import { Avatar } from "@/components/Badges/Avatar";
+
+import { ApiEditComment, ApiReportComment, ApiUnreportComment, ApiLikeComment, ApiUnlikeComment, ApiDislikeComment, ApiUndislikeComment, ApiDeleteComment } from "@/lib/api/projectsExtended";
+
+import { showErrorToast } from "@/utils/toast";
+import { ERRORS } from "@/lib/constants";
+
+import { useAuth } from "@/contexts";
 
 const Comment = ({ projectId, comment, members }) => {
-	const { author, commentId, content, createdAt, isUserOwnComment, hasUserReported, likesCount, unlikesCount, hasUserliked, hasUserdisliked } = comment.comment;
+	console.log("🚀 ~ Comment ~ comment:", comment);
+
+	const router = useRouter();
+	const { user } = useAuth();
+
+	const { author, commentId, content, createdAt, isUserOwnComment, hasUserReported, likesCount, dislikesCount, hasUserLiked, hasUserDisliked } = comment.comment;
 
 	const isOwnerComment = members?.some((member) => member.user.userId === author.userId && member.role === "owner");
 
@@ -24,28 +39,148 @@ const Comment = ({ projectId, comment, members }) => {
 		setDisplayReply((prevDisplayReply) => !prevDisplayReply);
 	};
 
-	const likeComment = () => {
+	const likeComment = async () => {
+		if (!user) {
+			showErrorToast(ERRORS.GENERIC.NOT_CONNECTED);
+			return;
+		}
+
+		const payload = {
+			projectId,
+			commentId: commentId,
+		};
+
+		const result = await ApiLikeComment(payload);
+		if (!result.ok) {
+			showErrorToast(result.message || ERRORS.PROJECT_COMMENTS.LIKE_FAILED);
+			return;
+		}
+
+		router.refresh();
+	};
+
+	const unlikeComment = async () => {
+		if (!user) {
+			showErrorToast(ERRORS.GENERIC.NOT_CONNECTED);
+			return;
+		}
+
+		const payload = {
+			projectId,
+			commentId: commentId,
+		};
+
+		const result = await ApiUnlikeComment(payload);
+		if (!result.ok) {
+			showErrorToast(result.message || ERRORS.PROJECT_COMMENTS.UNLIKE_FAILED);
+			return;
+		}
+
+		router.refresh();
+	};
+
+	const dislikeComment = async () => {
+		if (!user) {
+			showErrorToast(ERRORS.GENERIC.NOT_CONNECTED);
+			return;
+		}
+
+		const payload = {
+			projectId,
+			commentId: commentId,
+		};
+
+		const result = await ApiDislikeComment(payload);
+		if (!result.ok) {
+			showErrorToast(result.message || ERRORS.PROJECT_COMMENTS.DISLIKE_FAILED);
+			return;
+		}
+
+		router.refresh();
+	};
+
+	const undislikeComment = async () => {
+		if (!user) {
+			showErrorToast(ERRORS.GENERIC.NOT_CONNECTED);
+			return;
+		}
+
+		const payload = {
+			projectId,
+			commentId: commentId,
+		};
+
+		const result = await ApiUndislikeComment(payload);
+		if (!result.ok) {
+			showErrorToast(result.message || ERRORS.PROJECT_COMMENTS.UNDISLIKE_FAILED);
+			return;
+		}
+
+		router.refresh();
+	};
+
+	const reportComment = async () => {
+		if (!user) {
+			showErrorToast(ERRORS.GENERIC.NOT_CONNECTED);
+			return;
+		}
+
+		const payload = {
+			projectId,
+			commentId: commentId,
+		};
+
+		const result = await ApiReportComment(payload);
+		if (!result.ok) {
+			showErrorToast(result.message || ERRORS.PROJECT_COMMENTS.REPORT_FAILED);
+			return;
+		}
+
+		router.refresh();
+	};
+
+	const unreportComment = async () => {
+		if (!user) {
+			showErrorToast(ERRORS.GENERIC.NOT_CONNECTED);
+			return;
+		}
+
+		const payload = {
+			projectId,
+			commentId: commentId,
+		};
+
+		const result = await ApiUnreportComment(payload);
+		if (!result.ok) {
+			showErrorToast(result.message || ERRORS.PROJECT_COMMENTS.UNREPORT_FAILED);
+			return;
+		}
+
+		router.refresh();
+	};
+
+	const editComment = async () => {
 		setDisplayReply((prevDisplayReply) => !prevDisplayReply);
 	};
 
-	const unlikeComment = () => {
-		setDisplayReply((prevDisplayReply) => !prevDisplayReply);
-	};
+	const deleteComment = async () => {
+		if (!user) {
+			showErrorToast(ERRORS.GENERIC.NOT_CONNECTED);
+			return;
+		}
 
-	const dislikeComment = () => {
-		setDisplayReply((prevDisplayReply) => !prevDisplayReply);
-	};
+		const payload = {
+			projectId,
+			commentId: commentId,
+		};
 
-	const undislikeComment = () => {
-		setDisplayReply((prevDisplayReply) => !prevDisplayReply);
-	};
+		const result = await ApiDeleteComment(payload);
+		if (!result.ok) {
+			showErrorToast(result.message || ERRORS.PROJECT_COMMENTS.REMOVE_FAILED);
+			return;
+		}
 
-	const editComment = () => {
-		setDisplayReply((prevDisplayReply) => !prevDisplayReply);
-	};
-
-	const deleteComment = () => {
-		setDisplayReply((prevDisplayReply) => !prevDisplayReply);
+		router.refresh();
 	};
 
 	const handleReportClick = () => {
@@ -54,8 +189,8 @@ const Comment = ({ projectId, comment, members }) => {
 
 	return (
 		<div className="flex w-full">
-			<Link href={`/users/${author.userId}`} className="min-w-12 h-12 rounded-full">
-				<img className={`object-cover w-12 h-12 border-2 ${isOwnerComment ? "border-yellow-600" : "border-blue-500"} rounded-full `} alt="profile picture" src={author.profilePicture.link} />
+			<Link href={`/users/${author.userId}`} className="w-12 h-12 rounded-full">
+				<Avatar img={author.profilePicture?.link} size={"lg"} alt={"user profile picture"} />
 			</Link>
 			<div className="mt-1 flex-1">
 				<div className="flex flex-wrap items-end px-4 font-bold">
@@ -73,20 +208,21 @@ const Comment = ({ projectId, comment, members }) => {
 				<div className="flex items-center justify-between mb-1">
 					<div className="flex items-center">
 						<div className="flex items-center gap-4">
-							{displayReply ? (
-								<button className="ml-4" title="Close form reply" onClick={handleReplyClick}>
-									<IoClose className="w-6 h-6 text-gray-300 hover:text-white" />
-								</button>
-							) : (
-								<button className="ml-4 group flex items-center gap-1 text-gray-300 hover:text-white" title="Reply to the comment" onClick={handleReplyClick}>
-									<IoArrowUndoOutline className="w-5 h-5 group-hover:hidden" />
-									<IoArrowUndo className="w-5 h-5 hidden group-hover:block" />
-									Reply
-								</button>
-							)}
+							{user &&
+								(displayReply ? (
+									<button className="ml-4" title="Close form reply" onClick={handleReplyClick}>
+										<IoClose className="w-6 h-6 text-gray-300 hover:text-white" />
+									</button>
+								) : (
+									<button className="ml-4 group flex items-center gap-1 text-gray-300 hover:text-white" title="Reply to the comment" onClick={handleReplyClick}>
+										<IoArrowUndoOutline className="w-5 h-5 group-hover:hidden" />
+										<IoArrowUndo className="w-5 h-5 hidden group-hover:block" />
+										Reply
+									</button>
+								))}
 
 							<div className="flex items-center text-nowrap text-base">
-								{hasUserliked ? (
+								{hasUserLiked ? (
 									<button className="flex items-center gap-1 relative group mr-1" title="Unlike this comment" onClick={unlikeComment}>
 										<AiFillLike className="text-white" />
 										<span>{likesCount}</span>
@@ -100,16 +236,16 @@ const Comment = ({ projectId, comment, members }) => {
 								)}
 							</div>
 							<div className="flex items-center text-nowrap text-base">
-								{hasUserdisliked ? (
+								{hasUserDisliked ? (
 									<button className="flex items-center gap-1 relative group mr-1" title="Unlike this comment" onClick={undislikeComment}>
 										<AiFillDislike className="text-white" />
-										<span>{unlikesCount}</span>
+										<span>{dislikesCount}</span>
 									</button>
 								) : (
 									<button className="flex items-center gap-1 relative group mr-1" title="Like this comment" onClick={dislikeComment}>
 										<AiOutlineDislike className="text-gray-300 group-hover:hidden" />
 										<AiFillDislike className="text-white hidden group-hover:block" />
-										<span>{unlikesCount}</span>
+										<span>{dislikesCount}</span>
 									</button>
 								)}
 							</div>
@@ -127,15 +263,16 @@ const Comment = ({ projectId, comment, members }) => {
 					</div>
 					<div className="flex items-center gap-3">
 						<span className="text-gray-400 ml-2">{answers?.length ? `${answers.length} ${answers.length === 1 ? "reply" : "replies"}` : null}</span>
-						{hasUserReported ? (
-							<button className="sm:mr-4 text-yellow-600 hover:text-yellow-500 hover:underline" title="Unreport comment" onClick={handleReportClick}>
-								Unreport
-							</button>
-						) : (
-							<button className="sm:mr-4 text-gray-300 hover:text-white hover:underline" title="Report comment" onClick={handleReportClick}>
-								Report
-							</button>
-						)}
+						{user &&
+							(hasUserReported ? (
+								<button className="sm:mr-4 text-yellow-600 hover:text-yellow-500 hover:underline" title="Unreport comment" onClick={unreportComment}>
+									Unreport
+								</button>
+							) : (
+								<button className="sm:mr-4 text-gray-300 hover:text-white hover:underline" title="Report comment" onClick={reportComment}>
+									Report
+								</button>
+							))}
 					</div>
 				</div>
 				{displayReply && <CommentForm projectId={projectId} commentId={commentId} setDisplayReply={setDisplayReply} />}

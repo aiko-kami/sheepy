@@ -23,19 +23,35 @@ export async function ApiPostAnswerComment(data) {
 //PATCH requests
 
 export async function ApiEditComment(data) {
-	return apiPost("/projectsExtended/editProjectComment", data);
+	return apiPatch("/projectsExtended/editProjectComment", data);
 }
 
 export async function ApiReportComment(data) {
-	return apiPost("/projectsExtended/reportProjectComment", data);
+	return apiPatch("/projectsExtended/reportProjectComment", data);
 }
 
 export async function ApiUnreportComment(data) {
-	return apiPost("/projectsExtended/unreportProjectComment", data);
+	return apiPatch("/projectsExtended/unreportProjectComment", data);
+}
+
+export async function ApiLikeComment(data) {
+	return apiPatch("/projectsExtended/likeProjectComment", data);
+}
+
+export async function ApiUnlikeComment(data) {
+	return apiPatch("/projectsExtended/unlikeProjectComment", data);
+}
+
+export async function ApiDislikeComment(data) {
+	return apiPatch("/projectsExtended/dislikeProjectComment", data);
+}
+
+export async function ApiUndislikeComment(data) {
+	return apiPatch("/projectsExtended/undislikeProjectComment", data);
 }
 
 //DELETE requests
 
-export async function ApiDeleteComment(projectId, data) {
+export async function ApiDeleteComment(data) {
 	return apiDelete("/projectsExtended/removeProjectComment", data);
 }
