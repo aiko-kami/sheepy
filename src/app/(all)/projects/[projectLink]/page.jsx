@@ -16,7 +16,7 @@ import { ApiGetProjectPublicDataByLink } from "@/lib/api/projectCore";
 import { ApiGetProjectComments } from "@/lib/api/projectsExtended";
 import { ERRORS } from "@/lib/constants";
 
-import { normalizeProjectData } from "@/utils/projectHandlers";
+import { normalizeProjectData, countComments } from "@/utils/projectHandlers";
 
 export const metadata = {
 	title: "Project - Make It",
@@ -71,12 +71,7 @@ const ProjectPublicPage = async ({ params }) => {
 	const comments = resultComments.data.comments;
 
 	//count all comments and answers
-	let commentCount = comments.length;
-	comments.forEach((comment) => {
-		if (comment.answers && comment.answers.length > 0) {
-			commentCount += comment.answers.length;
-		}
-	});
+	const commentCount = countComments(comments);
 
 	projectCount = { ...projectCount, commentsCount: commentCount };
 

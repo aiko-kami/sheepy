@@ -9,14 +9,14 @@ import { Button } from "@/components/Buttons/Buttons";
 import { TextAreaCommentField } from "@/components/Forms/TextAreaField";
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
-import { ApiPostAddComment, ApiPostAnswerComment } from "@/lib/api/projectsExtended";
+import { ApiPostAddComment, ApiPostAnswerComment, ApiEditComment } from "@/lib/api/projectsExtended";
 import { ERRORS, SUCCESS } from "@/lib/constants";
 
-const CommentForm = ({ projectId, commentId, setDisplayReply }) => {
+const CommentForm = ({ projectId, content = "", commentId, setDisplayReply, setDisplayEdit, action = "" }) => {
 	const router = useRouter();
 
 	const [showEmojiPicker, setShowEmojiPicker] = useState(false);
-	const [commentInput, setCommentInput] = useState("");
+	const [commentInput, setCommentInput] = useState(content);
 
 	let emojiPickerRef = useRef();
 
@@ -55,23 +55,44 @@ const CommentForm = ({ projectId, commentId, setDisplayReply }) => {
 		let result;
 
 		if (commentId) {
-			// If commentId exists, it's a reply to an existing comment
-			const payload = {
-				projectId,
-				commentIdtoAnswer: commentId,
-				commentContent: comment,
-			};
+			// If commentId exists and action is "edit", it's an edit to an existing comment
+			if (action === "edit") {
+				const payload = {
+					projectId,
+					commentId,
+					commentContent: comment,
+				};
+				result = await ApiEditComment(payload);
+				if (!result.ok) {
+					showErrorToast(result.message || ERRORS.PROJECT_COMMENTS.UPDATE_FAILED);
+					return;
+				}
 
-			result = await ApiPostAnswerComment(payload);
-			if (!result.ok) {
-				showErrorToast(result.message || ERRORS.PROJECT_COMMENTS.REPLY_FAILED);
+				router.refresh();
+				showSuccessToast(SUCCESS.PROJECT_COMMENTS.UPDATE);
+				setCommentInput("");
+				if (setDisplayEdit) setDisplayEdit(false); // Close the edit form after submitting
+				return;
+			} else {
+				// If commentId exists, it's a reply to an existing comment
+				const payload = {
+					projectId,
+					commentIdtoAnswer: commentId,
+					commentContent: comment,
+				};
+
+				result = await ApiPostAnswerComment(payload);
+				if (!result.ok) {
+					showErrorToast(result.message || ERRORS.PROJECT_COMMENTS.REPLY_FAILED);
+					return;
+				}
+
+				router.refresh();
+				showSuccessToast(SUCCESS.PROJECT_COMMENTS.REPLY);
+				setCommentInput(""); // Clear the comment after submitting
+				if (setDisplayReply) setDisplayReply(false); // Close the reply form after submitting
 				return;
 			}
-
-			router.refresh();
-			showSuccessToast(SUCCESS.PROJECT_COMMENTS.REPLY);
-			setCommentInput(""); // Clear the comment after submitting
-			if (setDisplayReply) setDisplayReply(false); // Close the reply form after submitting
 		} else {
 			// Otherwise, it's a new comment on the project
 			const payload = {
@@ -126,7 +147,7 @@ const CommentForm = ({ projectId, commentId, setDisplayReply }) => {
 								)}
 							</div>
 							{/* Post comment (submit form) */}
-							<Button btnProps={{ btnSize: "sm", type: "submit", btnColor: "blue" }}>Post comment</Button>
+							<Button btnProps={{ btnSize: "sm", type: "submit", btnColor: "blue" }}> {action === "edit" ? "Edit comment" : "Post comment"}</Button>
 						</div>
 					</div>
 				</form>

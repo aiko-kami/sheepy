@@ -11,8 +11,10 @@ import { AiOutlineLike, AiOutlineDislike, AiFillLike, AiFillDislike } from "reac
 import CommentForm from "@/components/Forms/CommentForm";
 import { BadgeOwner } from "@/components/Badges/Badges";
 import { Avatar } from "@/components/Badges/Avatar";
+import Modal from "@/components/Modals/Modal";
+import RemoveCommentModal from "@/components/Modals/ProjectPublic/RemoveCommentModal";
 
-import { ApiEditComment, ApiReportComment, ApiUnreportComment, ApiLikeComment, ApiUnlikeComment, ApiDislikeComment, ApiUndislikeComment, ApiDeleteComment } from "@/lib/api/projectsExtended";
+import { ApiReportComment, ApiUnreportComment, ApiLikeComment, ApiUnlikeComment, ApiDislikeComment, ApiUndislikeComment, ApiDeleteComment } from "@/lib/api/projectsExtended";
 
 import { showErrorToast } from "@/utils/toast";
 import { ERRORS } from "@/lib/constants";
@@ -20,8 +22,6 @@ import { ERRORS } from "@/lib/constants";
 import { useAuth } from "@/contexts";
 
 const Comment = ({ projectId, comment, members }) => {
-	console.log("🚀 ~ Comment ~ comment:", comment);
-
 	const router = useRouter();
 	const { user } = useAuth();
 
@@ -34,9 +34,15 @@ const Comment = ({ projectId, comment, members }) => {
 	const relativeDate = DateTime.fromISO(createdAt).toRelative();
 
 	const [displayReply, setDisplayReply] = useState(false);
+	const [displayEdit, setDisplayEdit] = useState(false);
+	const [modalDisplayRemove, setModalDisplayRemove] = useState(false);
 
 	const handleReplyClick = () => {
 		setDisplayReply((prevDisplayReply) => !prevDisplayReply);
+	};
+
+	const handleEditClick = () => {
+		setDisplayEdit((prevDisplayEdit) => !prevDisplayEdit);
 	};
 
 	const likeComment = async () => {
@@ -159,11 +165,15 @@ const Comment = ({ projectId, comment, members }) => {
 		router.refresh();
 	};
 
-	const editComment = async () => {
-		setDisplayReply((prevDisplayReply) => !prevDisplayReply);
+	const closeModalRemove = () => {
+		setModalDisplayRemove(false);
 	};
 
-	const deleteComment = async () => {
+	const removeComment = async () => {
+		setModalDisplayRemove(true);
+	};
+
+	const confirmRemoveComment = async () => {
 		if (!user) {
 			showErrorToast(ERRORS.GENERIC.NOT_CONNECTED);
 			return;
@@ -181,10 +191,7 @@ const Comment = ({ projectId, comment, members }) => {
 		}
 
 		router.refresh();
-	};
-
-	const handleReportClick = () => {
-		console.log("🚀 ~ handleReportClick ~ :", "💥 Comment reported! 💥");
+		setModalDisplayRemove(false);
 	};
 
 	return (
@@ -204,7 +211,18 @@ const Comment = ({ projectId, comment, members }) => {
 						</div>
 					)}
 				</div>
-				<p className="ml-2 p-3 text-sm font-medium text-justify">{content}</p>
+				{displayEdit ? (
+					<div className="ml-2 p-3 pt-4 relative">
+						<button className="absolute -top-3 right-8 ml-4" title="Close form reply" onClick={handleEditClick}>
+							<IoClose className="w-6 h-6 text-gray-300 hover:text-white" />
+						</button>
+
+						<CommentForm projectId={projectId} content={content} commentId={commentId} setDisplayEdit={setDisplayEdit} action="edit" />
+					</div>
+				) : (
+					<p className="ml-2 p-3 text-sm font-medium text-justify">{content}</p>
+				)}
+
 				<div className="flex items-center justify-between mb-1">
 					<div className="flex items-center">
 						<div className="flex items-center gap-4">
@@ -251,10 +269,10 @@ const Comment = ({ projectId, comment, members }) => {
 							</div>
 							{isUserOwnComment && (
 								<div className="flex items-center text-nowrap gap-3">
-									<button className="group flex items-center gap-1 text-gray-300 hover:text-white" title="Reply to the comment" onClick={editComment}>
+									<button className="group flex items-center gap-1 text-gray-300 hover:text-white" title="Edit comment" onClick={handleEditClick}>
 										Edit
 									</button>
-									<button className="group flex items-center gap-1 text-gray-300 hover:text-white" title="Reply to the comment" onClick={deleteComment}>
+									<button className="group flex items-center gap-1 text-gray-300 hover:text-white" title="Reply to the comment" onClick={removeComment}>
 										Delete
 									</button>
 								</div>
@@ -277,6 +295,9 @@ const Comment = ({ projectId, comment, members }) => {
 				</div>
 				{displayReply && <CommentForm projectId={projectId} commentId={commentId} setDisplayReply={setDisplayReply} />}
 			</div>
+			<Modal modalDisplay={modalDisplayRemove} closeModal={closeModalRemove} closeModalWithBackground={closeModalRemove} modalSize={"sm"} modalTitle={"Remove comment"}>
+				<RemoveCommentModal onConfirm={confirmRemoveComment} closeModalRemove={closeModalRemove} />
+			</Modal>
 		</div>
 	);
 };

@@ -38,3 +38,21 @@ export function normalizeCategoryLink(category) {
 
 	return categoryLink;
 }
+
+export function countComments(commentList = []) {
+	let total = 0;
+
+	const countThread = (list) => {
+		list.forEach((item) => {
+			total += 1; // count the current comment
+
+			if (item.answers?.length) {
+				countThread(item.answers);
+			}
+		});
+	};
+
+	countThread(commentList);
+
+	return total;
+}
