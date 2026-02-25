@@ -56,7 +56,7 @@ const Login = ({ isHomePage = false }) => {
 						<Avatar img={user.profilePicture?.link} size={"lg"} alt={"user profile picture"} />
 						{user.notifications?.globalNotif > 0 && (
 							<div className="absolute -bottom-2 right-10 z-10">
-								<Notification value={user.notifications.globalNotif} size={"xs"} notifColor={"pink"} ringMode={isHomePage ? "home" : "std"} />
+								<Notification value={user.notifications.globalNotif} size={"xs"} notifColor={"pink"} ringMode={"std"} />
 							</div>
 						)}
 					</button>

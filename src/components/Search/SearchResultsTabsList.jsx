@@ -81,7 +81,7 @@ const SearchResultsTabsList = ({ searchInput, tab, updateUrl }) => {
 			</ul>
 			{/* Change display buttons */}
 			<div className="mb-4">
-				<DisplaySwitch displayMode={displayMode} setDisplayMode={setDisplayMode} />
+				<DisplaySwitch displayMode={displayMode} handleDisplayMode={setDisplayMode} />
 			</div>
 
 			{/* Tabs content */}

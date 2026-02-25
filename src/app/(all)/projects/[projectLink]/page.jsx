@@ -64,11 +64,11 @@ const ProjectPublicPage = async ({ params }) => {
 
 	const resultComments = await ApiGetProjectComments(projectId);
 
-	if (!resultComments.ok || !resultComments.data) {
+	if (!resultComments.ok) {
 		return <Error title={ERRORS.NOT_FOUND.PROJECT_TITLE} message={ERRORS.NOT_FOUND.PROJECT_MESSAGE} extraMessage={resultComments.message} />;
 	}
 
-	const comments = resultComments.data.comments;
+	const comments = resultComments.data?.comments || [];
 
 	//count all comments and answers
 	const commentCount = countComments(comments);

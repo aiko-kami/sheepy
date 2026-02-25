@@ -195,105 +195,116 @@ const Comment = ({ projectId, comment, members }) => {
 	};
 
 	return (
-		<div className="flex w-full">
-			<Link href={`/users/${author.userId}`} className="w-12 h-12 rounded-full">
-				<Avatar img={author.profilePicture?.link} size={"lg"} alt={"user profile picture"} />
-			</Link>
-			<div className="mt-1 flex-1">
+		<div className="w-full">
+			<div className="flex mb-6">
+				<Link href={`/users/${author.userId}`} className="w-12 h-12 rounded-full">
+					<Avatar img={author.profilePicture?.link} size={"lg"} alt={"user profile picture"} />
+				</Link>
 				<div className="flex flex-wrap items-end px-4 font-bold">
 					<Link href={`/users/${author.userId}`}>
 						<span>{author.username}</span>
 					</Link>
 					<span className="ml-2 text-sm font-normal text-gray-300">{relativeDate}</span>
 					{isOwnerComment && (
-						<div className="mt-1 sm:mt-0 sm:ml-2">
+						<div className="w-full sm:w-auto mt-1.5 sm:mt-0 sm:ml-2">
 							<BadgeOwner size={"xs"} />
 						</div>
 					)}
 				</div>
+			</div>
+			<div className="flex-1 mb-5">
 				{displayEdit ? (
-					<div className="ml-2 p-3 pt-4 relative">
-						<button className="absolute -top-3 right-8 ml-4" title="Close form reply" onClick={handleEditClick}>
+					<div className="relative">
+						<button className="absolute -top-7 right-0 ml-4" title="Close form reply" onClick={handleEditClick}>
 							<IoClose className="w-6 h-6 text-gray-300 hover:text-white" />
 						</button>
 
 						<CommentForm projectId={projectId} content={content} commentId={commentId} setDisplayEdit={setDisplayEdit} action="edit" />
 					</div>
 				) : (
-					<p className="ml-2 p-3 text-sm font-medium text-justify">{content}</p>
+					<p className="ml-10 text-sm font-medium text-justify">{content}</p>
 				)}
-
-				<div className="flex items-center justify-between mb-1">
+			</div>
+			<div className="w-full px-1">
+				<div className="flex items-end justify-between mb-1 text-sm sm:text-base">
 					<div className="flex items-center">
-						<div className="flex items-center gap-4">
-							{user &&
-								(displayReply ? (
-									<button className="ml-4" title="Close form reply" onClick={handleReplyClick}>
-										<IoClose className="w-6 h-6 text-gray-300 hover:text-white" />
-									</button>
-								) : (
-									<button className="ml-4 group flex items-center gap-1 text-gray-300 hover:text-white" title="Reply to the comment" onClick={handleReplyClick}>
-										<IoArrowUndoOutline className="w-5 h-5 group-hover:hidden" />
-										<IoArrowUndo className="w-5 h-5 hidden group-hover:block" />
-										Reply
-									</button>
-								))}
-
-							<div className="flex items-center text-nowrap text-base">
-								{hasUserLiked ? (
-									<button className="flex items-center gap-1 relative group mr-1" title="Unlike this comment" onClick={unlikeComment}>
-										<AiFillLike className="text-white" />
-										<span>{likesCount}</span>
-									</button>
-								) : (
-									<button className="flex items-center gap-1 relative group mr-1" title="Like this comment" onClick={likeComment}>
-										<AiOutlineLike className="text-gray-300 group-hover:hidden" />
-										<AiFillLike className="text-white hidden group-hover:block" />
-										<span>{likesCount}</span>
-									</button>
-								)}
-							</div>
-							<div className="flex items-center text-nowrap text-base">
-								{hasUserDisliked ? (
-									<button className="flex items-center gap-1 relative group mr-1" title="Unlike this comment" onClick={undislikeComment}>
-										<AiFillDislike className="text-white" />
-										<span>{dislikesCount}</span>
-									</button>
-								) : (
-									<button className="flex items-center gap-1 relative group mr-1" title="Like this comment" onClick={dislikeComment}>
-										<AiOutlineDislike className="text-gray-300 group-hover:hidden" />
-										<AiFillDislike className="text-white hidden group-hover:block" />
-										<span>{dislikesCount}</span>
-									</button>
-								)}
-							</div>
-							{isUserOwnComment && (
-								<div className="flex items-center text-nowrap gap-3">
-									<button className="group flex items-center gap-1 text-gray-300 hover:text-white" title="Edit comment" onClick={handleEditClick}>
-										Edit
-									</button>
-									<button className="group flex items-center gap-1 text-gray-300 hover:text-white" title="Reply to the comment" onClick={removeComment}>
-										Delete
-									</button>
+						<div className="sm:flex items-center gap-3">
+							<div className="flex items-center gap-3 mb-1 sm:mb-0 sm:order-2">
+								<div className="flex items-center text-nowrap">
+									{hasUserLiked ? (
+										<button className="flex items-center gap-1 relative group" title="Unlike this comment" onClick={unlikeComment}>
+											<AiFillLike className="text-white text-lg sm:text-xl" />
+											<span>{likesCount}</span>
+										</button>
+									) : (
+										<button className="flex items-center gap-1 relative group" title="Like this comment" onClick={likeComment}>
+											<AiOutlineLike className="text-gray-300 group-hover:hidden text-lg sm:text-xl" />
+											<AiFillLike className="text-white hidden group-hover:block text-lg sm:text-xl" />
+											<span>{likesCount}00</span>
+										</button>
+									)}
 								</div>
-							)}
+								<div className="flex items-center text-nowrap">
+									{hasUserDisliked ? (
+										<button className="flex items-center gap-1 relative group" title="Unlike this comment" onClick={undislikeComment}>
+											<AiFillDislike className="text-white text-lg sm:text-xl" />
+											<span>{dislikesCount}</span>
+										</button>
+									) : (
+										<button className="flex items-center gap-1 relative group" title="Like this comment" onClick={dislikeComment}>
+											<AiOutlineDislike className="text-gray-300 group-hover:hidden text-lg sm:text-xl" />
+											<AiFillDislike className="text-white hidden group-hover:block text-lg sm:text-xl" />
+											<span>{dislikesCount}</span>
+										</button>
+									)}
+								</div>
+							</div>
+							<div className="flex items-center gap-3 sm:order-1">
+								{user &&
+									(displayReply ? (
+										<button className="" title="Close form reply" onClick={handleReplyClick}>
+											<IoClose className="w-6 h-6 text-gray-300 hover:text-white" />
+										</button>
+									) : (
+										<button className="group flex items-center gap-1 text-gray-300 hover:text-white" title="Reply to the comment" onClick={handleReplyClick}>
+											<IoArrowUndoOutline className="group-hover:hidden text-xl sm:text-2xl hidden sm:block" />
+											<IoArrowUndo className="hidden sm:group-hover:block text-xl sm:text-2xl" />
+											Reply
+										</button>
+									))}
+
+								{isUserOwnComment && (
+									<div className="flex items-center text-nowrap gap-3">
+										<button className="group flex items-center gap-1 text-gray-300 hover:text-white" title="Edit comment" onClick={handleEditClick}>
+											Edit
+										</button>
+										<button className="group flex items-center gap-1 text-gray-300 hover:text-white" title="Reply to the comment" onClick={removeComment}>
+											Delete
+										</button>
+									</div>
+								)}
+							</div>
 						</div>
 					</div>
 					<div className="flex items-center gap-3">
-						<span className="text-gray-400 ml-2">{answers?.length ? `${answers.length} ${answers.length === 1 ? "reply" : "replies"}` : null}</span>
+						<span className="text-gray-400 ml-2 hidden xs:inline">{answers?.length ? `${answers.length} ${answers.length === 1 ? "reply" : "replies"}` : null}</span>
 						{user &&
 							(hasUserReported ? (
-								<button className="sm:mr-4 text-yellow-600 hover:text-yellow-500 hover:underline" title="Unreport comment" onClick={unreportComment}>
+								<button className="text-yellow-600 hover:text-yellow-500 hover:underline" title="Unreport comment" onClick={unreportComment}>
 									Unreport
 								</button>
 							) : (
-								<button className="sm:mr-4 text-gray-300 hover:text-white hover:underline" title="Report comment" onClick={reportComment}>
+								<button className="text-gray-300 hover:text-white hover:underline" title="Report comment" onClick={reportComment}>
 									Report
 								</button>
 							))}
 					</div>
 				</div>
-				{displayReply && <CommentForm projectId={projectId} commentId={commentId} setDisplayReply={setDisplayReply} />}
+				{displayReply && (
+					<div className="mb-1">
+						<CommentForm projectId={projectId} commentId={commentId} setDisplayReply={setDisplayReply} action="reply" />
+					</div>
+				)}
 			</div>
 			<Modal modalDisplay={modalDisplayRemove} closeModal={closeModalRemove} closeModalWithBackground={closeModalRemove} modalSize={"sm"} modalTitle={"Remove comment"}>
 				<RemoveCommentModal onConfirm={confirmRemoveComment} closeModalRemove={closeModalRemove} />

@@ -2,20 +2,20 @@ const Notification = ({ value, size, notifColor, ringMode }) => {
 	let textSize;
 	switch (size) {
 		case "xs":
-			textSize = "text-[10px] px-2 min-h-[16px] min-w-[16px]";
+			textSize = "text-[10px] px-2 h-5 w-5";
 			break;
 		case "sm":
-			textSize = "text-[12px] px-2 pb-0.5 h-6";
+			textSize = "text-[12px] px-2 h-6 w-6";
 			break;
 		case "std":
-			textSize = "text-sm px-2 py-3 h-6";
+			textSize = "text-sm px-2 py-3 h-6 w-6";
 
 			break;
 		case "xl":
 			textSize = "text-lg";
 			break;
 		default:
-			textSize = "text-sm px-2 pb-0.5 h-7";
+			textSize = "text-sm px-2 py-3 h-6 w-6";
 	}
 
 	let color;
@@ -44,17 +44,19 @@ const Notification = ({ value, size, notifColor, ringMode }) => {
 
 	let ring;
 	switch (ringMode) {
-		case "home":
-			ring = "ring-4 ring-custom-gradiant-dark";
-			break;
 		case "std":
-			ring = "ring-4 ring-custom-gradiant-light";
+			ring = "ring-4 ring-base-500";
+			break;
+		case "none":
+			ring = "";
 			break;
 		default:
 			ring = "";
 	}
 
-	return <span className={`inline-flex items-center justify-center font-bold rounded-full ${textSize} ${color} ${ring}`}>{value}</span>;
+	const displayValue = typeof value === "number" && value > 99 ? "99+" : value;
+
+	return <span className={`inline-flex items-center justify-center font-bold rounded-full ${textSize} ${color} ${ring}`}>{displayValue}</span>;
 };
 
 export default Notification;

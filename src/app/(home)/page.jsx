@@ -32,7 +32,7 @@ const HomePage = async () => {
 			<div className="mb-24">
 				<div className="inline-flex">
 					<h2 className="font-semibold text-xl mr-4 mb-4">Recent projects</h2>
-					<Link href="/projects/01" className="text-xs mt-2.5 hover:underline">
+					<Link href="/projects/join-a-project" className="text-xs mt-2.5 hover:underline">
 						See more...
 					</Link>
 				</div>

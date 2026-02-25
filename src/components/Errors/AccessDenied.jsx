@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { FaExclamationTriangle } from "react-icons/fa";
 
+import { ERRORS } from "@/lib/constants";
+
 const ProjectNotFound = () => {
 	return (
 		<>
@@ -12,8 +14,8 @@ const ProjectNotFound = () => {
 								<FaExclamationTriangle className="fas fa-exclamation-triangle fa-5x text-8xl text-yellow-400"></FaExclamationTriangle>
 							</div>
 							<div className="text-center">
-								<h1 className="text-3xl font-bold mt-4 mb-2">401 - Access denied</h1>
-								<p className="text-gray-500 text-xl mb-10">Sorry, you are not allowed to access this data... 😥</p>
+								<h1 className="text-3xl font-bold mt-4 mb-2">{ERRORS.ACCESS_DENIED.UNAUTHORIZED_TITLE}</h1>
+								<p className="text-gray-500 text-xl mb-10">{ERRORS.ACCESS_DENIED.UNAUTHORIZED_MESSAGE}</p>
 
 								<div className="flex flex-col sm:flex-row justify-center gap-6 flex-nowrap">
 									<Link href="/" className="bg-blue-800 hover:bg-blue-900 text-white font-bold py-4 px-2 sm:px-6 rounded whitespace-nowrap">

@@ -13,9 +13,9 @@ const Comments = ({ comments = [], projectId, members }) => {
 	const renderComments = (commentList, isChild = false) => {
 		return commentList.map((item, index) => (
 			<React.Fragment key={index}>
-				{isChild && <hr className="my-5 ml-16 border-gray-500" />}
+				{isChild ? <hr className="my-5 ml-16 border-gray-700" /> : index !== 0 && <hr className="my-5 border-gray-700" />}
 
-				<div className={`flex flex-row ${isChild ? "ml-12" : ""}`}>
+				<div className={`flex flex-row ${isChild ? "ml-4 sm:ml-10" : ""}`}>
 					<Comment projectId={projectId} comment={item} members={members} />
 				</div>
 
@@ -33,7 +33,12 @@ const Comments = ({ comments = [], projectId, members }) => {
 				<div className="container w-full mx-auto lg:max-w-7/8 mb-8">{renderComments(comments)}</div>
 			)}
 
-			{user && <CommentForm projectId={projectId} />}
+			{user && (
+				<>
+					<hr className="my-5 border-gray-700" />
+					<CommentForm projectId={projectId} />
+				</>
+			)}
 		</>
 	);
 };

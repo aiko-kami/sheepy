@@ -114,44 +114,46 @@ const CommentForm = ({ projectId, content = "", commentId, setDisplayReply, setD
 
 	return (
 		<>
-			<div className="px-4">
-				<form onSubmit={onSubmit}>
-					<div className="w-full mb-4 border rounded-lg bg-gray-700 border-gray-600">
-						<div className="bg-gray-800 rounded-t-lg ">
-							<TextAreaCommentField
-								label="Your comment"
-								labelStyle="sr-only"
-								inputName="commentInput"
-								inputValue={commentInput}
-								onChange={onChange}
-								placeholder="Write a comment..."
-								maxLength={1000}
-								rows="4"
-								required={true}
-							/>
+			<form onSubmit={onSubmit}>
+				<div className="w-full border rounded-lg bg-gray-700 border-gray-600">
+					<div className="bg-gray-800 rounded-t-lg ">
+						<TextAreaCommentField
+							label="Your comment"
+							labelStyle="sr-only"
+							inputName="commentInput"
+							inputValue={commentInput}
+							onChange={onChange}
+							placeholder="Write a comment..."
+							maxLength={1000}
+							rows="4"
+							required={true}
+						/>
+					</div>
+					<div className="flex items-center justify-end sm:justify-between px-2 py-2 border-t border-gray-600 relative gap-2">
+						<div className="hidden sm:flex" ref={emojiPickerRef}>
+							<button
+								type="button"
+								className="inline-flex justify-center items-center p-2 text-gray-400 rounded hover:text-white hover:bg-gray-600"
+								onClick={() => setShowEmojiPicker(!showEmojiPicker)}
+							>
+								<IoHappy className="w-5 h-5 text-gray-400" />
+								<span className="sr-only">Add emoji</span>
+							</button>
+							{showEmojiPicker && (
+								<div className="absolute z-10 top-12 left-0">
+									<EmojiPicker onEmojiClick={onEmojiClick} Theme={"auto"} emojiStyle={"native"} lazyLoadEmojis={true} skinTonesDisabled={true} previewConfig={{ showPreview: false }} />
+								</div>
+							)}
 						</div>
-						<div className="flex items-center justify-end sm:justify-between px-2 py-2 border-t border-gray-600 relative">
-							<div className="hidden sm:flex" ref={emojiPickerRef}>
-								<button
-									type="button"
-									className="inline-flex justify-center items-center p-2 text-gray-400 rounded hover:text-white hover:bg-gray-600"
-									onClick={() => setShowEmojiPicker(!showEmojiPicker)}
-								>
-									<IoHappy className="w-5 h-5 text-gray-400" />
-									<span className="sr-only">Add emoji</span>
-								</button>
-								{showEmojiPicker && (
-									<div className="absolute z-10 top-12 left-0">
-										<EmojiPicker onEmojiClick={onEmojiClick} Theme={"auto"} emojiStyle={"native"} lazyLoadEmojis={true} skinTonesDisabled={true} previewConfig={{ showPreview: false }} />
-									</div>
-								)}
-							</div>
+						<div className="flex gap-2">
 							{/* Post comment (submit form) */}
-							<Button btnProps={{ btnSize: "sm", type: "submit", btnColor: "blue" }}> {action === "edit" ? "Edit comment" : "Post comment"}</Button>
+							{action === "edit" && <Button btnProps={{ btnSize: "xs", type: "button", btnColor: "gray", action: () => setDisplayEdit(false) }}>Cancel</Button>}
+							{action === "reply" && <Button btnProps={{ btnSize: "xs", type: "button", btnColor: "gray", action: () => setDisplayReply(false) }}>Cancel</Button>}
+							<Button btnProps={{ btnSize: "xs", type: "submit", btnColor: "blue" }}> {action === "edit" ? "Edit comment" : "Post comment"}</Button>
 						</div>
 					</div>
-				</form>
-			</div>
+				</div>
+			</form>
 		</>
 	);
 };

@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import SeeMyPublicProfileButton from "@/components/User/UserProfilePrivate/SeeMyPublicProfileButton";
 import MySettingsPrivacy from "@/components/User/UserSettingsPrivate/MySettingsPrivacy";
 import MySettingsAppearance from "@/components/User/UserSettingsPrivate/MySettingsAppearance";
-import MySettingsLanguages from "@/components/User/UserSettingsPrivate/MySettingsLanguages";
+import MySettingsLanguage from "@/components/User/UserSettingsPrivate/MySettingsLanguage";
 import MySettingsNotifications from "@/components/User/UserSettingsPrivate/MySettingsNotifications";
 import Error from "@/components/Errors/Error";
 
@@ -41,8 +41,8 @@ const MySettingsPage = async () => {
 				{/* Appearance settings*/}
 				<MySettingsAppearance appearanceSettings={userSettings.appearance} />
 
-				{/* Languages settings*/}
-				<MySettingsLanguages languageSettings={userSettings.language} />
+				{/* Language settings*/}
+				<MySettingsLanguage languageSettings={userSettings.language} />
 
 				{/* Notifications settings*/}
 				<MySettingsNotifications userNotificationsSettings={userSettings.notifications} />
