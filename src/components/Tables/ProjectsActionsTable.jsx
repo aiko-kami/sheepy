@@ -36,7 +36,7 @@ const ProjectsActionsTable = ({ projects }) => {
 						return (
 							<tr key={index} className="border-b bg-gray-800 border-gray-700 hover:bg-gray-600">
 								<td scope="row" className="p-2 md:px-4 md:py-2">
-									<div className="font-semibold text-base lg:whitespace-nowrap">
+									<div className="font-semibold text-sm sm:text-base whitespace-nowrap max-w-36 sm:max-w-none overflow-hidden text-ellipsis">
 										<Link href={`/projects/${link}`}>{title}</Link>
 									</div>
 								</td>
@@ -54,7 +54,7 @@ const ProjectsActionsTable = ({ projects }) => {
 									<Status name={statusInfo.currentStatus?.status} size={"xs"} rounded={"xs"} bgColor={statusInfo.currentStatus?.colors.bgColor} />
 								</td>
 								<td className="p-2 md:px-4 md:py-2">
-									<div className="flex justify-center flex-wrap md:flex-nowrap">
+									<div className="flex justify-center flex-nowrap">
 										<MyProjectsActions projectLink={link} isMember={isMember} />
 									</div>
 								</td>

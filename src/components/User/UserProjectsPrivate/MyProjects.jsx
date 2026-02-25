@@ -75,7 +75,7 @@ const MyProjects = ({ user, projects, projectsCount, joinProjectInvitations, joi
 					<h2 className="text-xl mb-2 sm:ml-4">Projects I created</h2>
 					<p className="mb-6 sm:ml-4">The projects you created or for which you are the owner</p>
 					{projects.created && projects.created.length !== 0 ? (
-						<div className="mb-12">
+						<div className="mb-12 w-full overflow-x-auto">
 							{displayMode === "table" && <ProjectsActionsTable projects={filteredProjectsCreated} />}
 							{displayMode === "cards" && <MyProjectsCards projects={filteredProjectsCreated} />}
 						</div>
@@ -92,7 +92,7 @@ const MyProjects = ({ user, projects, projectsCount, joinProjectInvitations, joi
 					<h2 className="text-xl mb-2 sm:ml-4">Projects I work on</h2>
 					<p className="mb-6 sm:ml-4">The projects for which you are a team member</p>
 					{projects.onGoing && projects.onGoing.length !== 0 ? (
-						<div className="mb-12">
+						<div className="mb-12 w-full overflow-x-auto">
 							{displayMode === "table" && <ProjectsActionsTable projects={projects.onGoing} />}
 							{displayMode === "cards" && <MyProjectsCards projects={projects.onGoing} />}
 						</div>
@@ -109,7 +109,7 @@ const MyProjects = ({ user, projects, projectsCount, joinProjectInvitations, joi
 					<h2 className="text-xl mb-2 sm:ml-4">Projects I like</h2>
 					<p className="mb-6 sm:ml-4">The projects you've shown appreciation for by giving a like</p>
 					{projects.like && projects.like.length !== 0 ? (
-						<div className="mb-12">
+						<div className="mb-12 w-full overflow-x-auto">
 							{displayMode === "table" && <ProjectsActionsTable projects={projects.like} />}
 							{displayMode === "cards" && <MyProjectsCards projects={projects.like} />}
 						</div>
@@ -133,7 +133,7 @@ const MyProjects = ({ user, projects, projectsCount, joinProjectInvitations, joi
 					</h2>
 					<p className="mb-6 sm:ml-4">The invitations you received to join a project</p>
 					{joinProjectInvitations && joinProjectInvitations.length !== 0 ? (
-						<div className="mb-12">
+						<div className="mb-12 w-full overflow-x-auto">
 							{displayMode === "table" && <JoinProjectTable joinProjects={joinProjectInvitations} type={"invitation"} />}
 							{displayMode === "cards" && <MyJoinProjectsCards joinProjects={joinProjectInvitations} type={"invitation"} />}
 						</div>
@@ -157,7 +157,7 @@ const MyProjects = ({ user, projects, projectsCount, joinProjectInvitations, joi
 					</h2>
 					<p className="mb-6 sm:ml-4">The requests you sent to join a project</p>
 					{joinProjectRequests && joinProjectRequests.length !== 0 ? (
-						<div className="mb-12">
+						<div className="mb-12 w-full overflow-x-auto">
 							{displayMode === "table" && <JoinProjectTable joinProjects={joinProjectRequests} type={"request"} />}
 							{displayMode === "cards" && <MyJoinProjectsCards joinProjects={joinProjectRequests} type={"request"} />}
 						</div>
