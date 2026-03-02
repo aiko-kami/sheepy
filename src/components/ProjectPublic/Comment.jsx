@@ -240,7 +240,7 @@ const Comment = ({ projectId, comment, members }) => {
 										<button className="flex items-center gap-1 relative group" title="Like this comment" onClick={likeComment}>
 											<AiOutlineLike className="text-gray-300 group-hover:hidden text-lg sm:text-xl" />
 											<AiFillLike className="text-white hidden group-hover:block text-lg sm:text-xl" />
-											<span>{likesCount}00</span>
+											<span>{likesCount}</span>
 										</button>
 									)}
 								</div>

@@ -184,7 +184,7 @@ const Button = ({ children, btnProps }) => {
 };
 
 const ButtonCircle = ({ children, btnProps }) => {
-	const { btnSize, type, btnColor, action = () => {}, name, value, disabled = false } = btnProps;
+	const { btnSize, type, btnColor, action = () => {}, name, value, disabled = false, title } = btnProps;
 
 	let size;
 	switch (btnSize) {
@@ -222,6 +222,7 @@ const ButtonCircle = ({ children, btnProps }) => {
 			className={`rounded-full leading-snug hover:shadow-lg transition duration-150 ease-in-out ${size} ${colorClasses}`}
 			data-mdb-ripple="true"
 			data-mdb-ripple-color="light"
+			title={title}
 		>
 			{children}
 		</button>

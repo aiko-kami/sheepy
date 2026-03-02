@@ -61,6 +61,7 @@ const ProjectPublicPage = async ({ params }) => {
 	const creatorMotivation = project.creatorMotivation;
 	const objectives = project.objectives;
 	const userLikeProject = project.userLikeProject;
+	const isUserProjectMember = project.isUserProjectMember || false;
 
 	const resultComments = await ApiGetProjectComments(projectId);
 
@@ -92,6 +93,7 @@ const ProjectPublicPage = async ({ params }) => {
 					status={status}
 					projectLink={projectLink}
 					talentsNeeded={talentsNeeded}
+					isUserProjectMember={isUserProjectMember}
 				/>
 				{/* Summary */}
 				<ProjectSummary summary={summary} />
@@ -107,7 +109,7 @@ const ProjectPublicPage = async ({ params }) => {
 						<ProjectObjectives objectives={objectives} />
 
 						{/* Talents needed */}
-						<TalentsNeeded talentsNeeded={talentsNeeded} />
+						<TalentsNeeded talentsNeeded={talentsNeeded} isUserProjectMember={isUserProjectMember} />
 
 						{/* Tags */}
 						<ProjectTags tags={tags} />

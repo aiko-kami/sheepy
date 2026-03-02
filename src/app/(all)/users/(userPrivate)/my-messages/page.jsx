@@ -18,11 +18,6 @@ const MyMessagesPage = async () => {
 	return (
 		<>
 			<div className="container min-w-full mx-auto px-2 md:px-8">
-				<ul>
-					{data.data.projects.map((project, index) => (
-						<li key={index}>{project.title}</li>
-					))}
-				</ul>
 				<MyMessages user={user} messages={messages} />
 			</div>
 		</>

@@ -13,7 +13,7 @@ import talentNeededProfilePicture from "@/public/images/talentNeededProfilePictu
 
 import { useAuth } from "@/contexts";
 
-const TalentsNeeded = ({ talentsNeeded = [] }) => {
+const TalentsNeeded = ({ talentsNeeded = [], isUserProjectMember }) => {
 	const { user } = useAuth();
 
 	const [modalApplyDisplay, setModalApplyDisplay] = useState(false);
@@ -51,14 +51,17 @@ const TalentsNeeded = ({ talentsNeeded = [] }) => {
 								</div>
 								<p className="overflow-auto hyphens-auto ">{talentNeeded.talent}</p>
 							</div>
-							<div className="flex items-center justify-end">
-								<Button btnProps={{ btnSize: "sm", type: "button", action: () => showModal(talentNeeded.talent) }}>
-									<div className="flex">
-										Apply
-										<IoArrowForward className="text-lg ml-1 mt-0.5" />
-									</div>
-								</Button>
-							</div>
+
+							{!isUserProjectMember && (
+								<div className="flex items-center justify-end">
+									<Button btnProps={{ btnSize: "sm", type: "button", action: () => showModal(talentNeeded.talent) }}>
+										<div className="flex">
+											Apply
+											<IoArrowForward className="text-lg ml-1 mt-0.5" />
+										</div>
+									</Button>
+								</div>
+							)}
 						</React.Fragment>
 					))}
 

@@ -12,7 +12,7 @@ const BackgroundStarfield = () => {
 		<>
 			<div className="fixed inset-0 z-0">
 				<div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_#0a0a2e_0%,_#030014_50%,_#000000_100%)]" />
-				{Array.from({ length: 600 }).map((_, i) => (
+				{Array.from({ length: 200 }).map((_, i) => (
 					<div
 						key={i}
 						className="absolute rounded-full bg-white"

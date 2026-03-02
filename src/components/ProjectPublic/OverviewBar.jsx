@@ -10,7 +10,7 @@ import { ApiPatchLikeProject, ApiPatchUnlikeProject } from "@/lib/api/projectEdi
 import { showErrorToast, showSuccessToast } from "@/utils/toast";
 import { ERRORS, SUCCESS } from "@/lib/constants";
 
-const OverviewBar = ({ projectId, category, subCategoryDetails, location, likes, userLikeProject, status, statusColorClass, projectLink, talentsNeeded }) => {
+const OverviewBar = ({ projectId, category, subCategoryDetails, location, likes, userLikeProject, status, statusColorClass, projectLink, talentsNeeded, isUserProjectMember }) => {
 	const { user } = useAuth();
 
 	const router = useRouter();
@@ -106,7 +106,7 @@ const OverviewBar = ({ projectId, category, subCategoryDetails, location, likes,
 
 				{/* Buttons Join project, Edit project */}
 				<li className="flex text-nowrap ml-auto">
-					<ActionButtons projectLink={projectLink} talentsNeeded={talentsNeeded} />
+					<ActionButtons projectLink={projectLink} talentsNeeded={talentsNeeded} isUserProjectMember={isUserProjectMember} />
 				</li>
 			</ul>
 		</>
