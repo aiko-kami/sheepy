@@ -9,7 +9,7 @@ const ALL_THEMES = ["light", "night", "dark", "starfield", "unreal"];
 
 export const ThemeProvider = ({ children }) => {
 	const { user } = useAuth();
-	const [theme, setTheme] = useState("night");
+	const [theme, setTheme] = useState("starfield");
 	const [hydrated, setHydrated] = useState(false);
 
 	// 1) Load from localStorage (first paint)

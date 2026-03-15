@@ -1,17 +1,33 @@
 "use client";
 
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { useState } from "react";
+
 import { IoArrowForward, IoBuild } from "react-icons/io5";
 
 import Modal from "@/components/Modals/Modal";
 import ProjectApplicationModal from "@/components/Modals/ProjectPublic/ProjectApplicationModal";
 import { Button, ButtonCircle } from "@/components/Buttons/Buttons";
+import { showErrorToast } from "@/utils/toast";
+import { ERRORS, errorNotConnectedWithLinks } from "@/lib/constants";
 
-const ActionButtons = ({ projectLink, talentsNeeded, isUserProjectMember }) => {
+const ActionButtons = ({ projectLink, projectId, talentsNeeded, user, isUserProjectMember, userAppliedProject }) => {
 	const [modalDisplay, setModalDisplay] = useState(false);
 
 	const showModal = () => {
+		if (!user) {
+			// Redirect to sign-up page if user is not authenticated
+			showErrorToast(errorNotConnectedWithLinks());
+			return;
+		}
+
+		if (userAppliedProject) {
+			// If the user has already applied, show a message or redirect to a different page
+			showErrorToast(ERRORS.PROJECT_REQUESTS.ALREADY_APPLIED);
+
+			return;
+		}
 		setModalDisplay(true);
 	};
 	const closeModal = () => {
@@ -40,7 +56,7 @@ const ActionButtons = ({ projectLink, talentsNeeded, isUserProjectMember }) => {
 				)}
 			</div>
 			<Modal modalDisplay={modalDisplay} closeModal={closeModal} modalSize={"xl"} modalTitle={"You want to join this project?"}>
-				<ProjectApplicationModal closeModal={closeModal} talentsNeeded={talentsNeeded} />
+				<ProjectApplicationModal closeModal={closeModal} talentsNeeded={talentsNeeded} projectId={projectId} />
 			</Modal>
 		</>
 	);

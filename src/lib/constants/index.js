@@ -1,3 +1,3 @@
-export { ERRORS } from "./errors";
+export { ERRORS, errorNotConnectedWithLinks } from "./errors";
 export { SUCCESS } from "./success";
 export { WARNINGS } from "./warnings";

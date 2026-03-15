@@ -8,9 +8,9 @@ import { Badge, BadgeRounded } from "@/components/Badges/Badges";
 import { useAuth } from "@/contexts";
 import { ApiPatchLikeProject, ApiPatchUnlikeProject } from "@/lib/api/projectEditionServer";
 import { showErrorToast, showSuccessToast } from "@/utils/toast";
-import { ERRORS, SUCCESS } from "@/lib/constants";
+import { ERRORS, errorNotConnectedWithLinks, SUCCESS } from "@/lib/constants";
 
-const OverviewBar = ({ projectId, category, subCategoryDetails, location, likes, userLikeProject, status, statusColorClass, projectLink, talentsNeeded, isUserProjectMember }) => {
+const OverviewBar = ({ projectId, category, subCategoryDetails, location, likes, userLikeProject, status, statusColorClass, projectLink, talentsNeeded, isUserProjectMember, userAppliedProject }) => {
 	const { user } = useAuth();
 
 	const router = useRouter();
@@ -21,7 +21,7 @@ const OverviewBar = ({ projectId, category, subCategoryDetails, location, likes,
 
 	const likeProject = async () => {
 		if (!user) {
-			showErrorToast(ERRORS.GENERIC.NOT_CONNECTED);
+			showErrorToast(errorNotConnectedWithLinks());
 			return;
 		}
 
@@ -106,7 +106,7 @@ const OverviewBar = ({ projectId, category, subCategoryDetails, location, likes,
 
 				{/* Buttons Join project, Edit project */}
 				<li className="flex text-nowrap ml-auto">
-					<ActionButtons projectLink={projectLink} talentsNeeded={talentsNeeded} isUserProjectMember={isUserProjectMember} />
+					<ActionButtons projectLink={projectLink} projectId={projectId} talentsNeeded={talentsNeeded} user={user} isUserProjectMember={isUserProjectMember} userAppliedProject={userAppliedProject} />
 				</li>
 			</ul>
 		</>

@@ -17,7 +17,7 @@ import RemoveCommentModal from "@/components/Modals/ProjectPublic/RemoveCommentM
 import { ApiReportComment, ApiUnreportComment, ApiLikeComment, ApiUnlikeComment, ApiDislikeComment, ApiUndislikeComment, ApiDeleteComment } from "@/lib/api/projectsExtended";
 
 import { showErrorToast } from "@/utils/toast";
-import { ERRORS } from "@/lib/constants";
+import { ERRORS, errorNotConnectedWithLinks } from "@/lib/constants";
 
 import { useAuth } from "@/contexts";
 
@@ -47,7 +47,7 @@ const Comment = ({ projectId, comment, members }) => {
 
 	const likeComment = async () => {
 		if (!user) {
-			showErrorToast(ERRORS.GENERIC.NOT_CONNECTED);
+			showErrorToast(errorNotConnectedWithLinks());
 			return;
 		}
 
@@ -67,7 +67,7 @@ const Comment = ({ projectId, comment, members }) => {
 
 	const unlikeComment = async () => {
 		if (!user) {
-			showErrorToast(ERRORS.GENERIC.NOT_CONNECTED);
+			showErrorToast(errorNotConnectedWithLinks());
 			return;
 		}
 
@@ -87,7 +87,7 @@ const Comment = ({ projectId, comment, members }) => {
 
 	const dislikeComment = async () => {
 		if (!user) {
-			showErrorToast(ERRORS.GENERIC.NOT_CONNECTED);
+			showErrorToast(errorNotConnectedWithLinks());
 			return;
 		}
 
@@ -107,7 +107,7 @@ const Comment = ({ projectId, comment, members }) => {
 
 	const undislikeComment = async () => {
 		if (!user) {
-			showErrorToast(ERRORS.GENERIC.NOT_CONNECTED);
+			showErrorToast(errorNotConnectedWithLinks());
 			return;
 		}
 
@@ -127,7 +127,7 @@ const Comment = ({ projectId, comment, members }) => {
 
 	const reportComment = async () => {
 		if (!user) {
-			showErrorToast(ERRORS.GENERIC.NOT_CONNECTED);
+			showErrorToast(errorNotConnectedWithLinks());
 			return;
 		}
 
@@ -147,7 +147,7 @@ const Comment = ({ projectId, comment, members }) => {
 
 	const unreportComment = async () => {
 		if (!user) {
-			showErrorToast(ERRORS.GENERIC.NOT_CONNECTED);
+			showErrorToast(errorNotConnectedWithLinks());
 			return;
 		}
 
@@ -175,7 +175,7 @@ const Comment = ({ projectId, comment, members }) => {
 
 	const confirmRemoveComment = async () => {
 		if (!user) {
-			showErrorToast(ERRORS.GENERIC.NOT_CONNECTED);
+			showErrorToast(errorNotConnectedWithLinks());
 			return;
 		}
 

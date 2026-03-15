@@ -55,6 +55,11 @@ export const SUCCESS = {
 		REMOVE: "Comment removed successfully.",
 	},
 
+	PROJECT_REQUESTS: {
+		SUBMIT_SUCCESS: "Your request to join the project has been submitted successfully.",
+		SAVE_DRAFT_SUCCESS: "Your draft request has been saved successfully.",
+	},
+
 	PROJECT_COVER: {
 		REMOVE: "Project cover removed successfully.",
 		UPDATE: "Project cover updated successfully.",
@@ -111,5 +116,3 @@ export const SUCCESS = {
 		UPDATE: "Project Q&A updated successfully.",
 	},
 };
-
-export default SUCCESS;

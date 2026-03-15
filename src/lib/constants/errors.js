@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const ERRORS = {
 	GENERIC: {
 		ERROR: "Something went wrong.",
@@ -132,6 +134,26 @@ export const ERRORS = {
 		REMOVE_FAILED: "Failed to remove comment.",
 	},
 
+	PROJECT_REQUESTS: {
+		RETRIEVE_FAILED: "Failed to retrieve project requests.",
+		EMPTY_MESSAGE: "Please enter a request message.",
+		EMPTY_ROLE: "Please enter a role.",
+		MAX_LENGTH: "Request cannot exceed 4000 characters.",
+		SUBMIT_FAILED: "Failed to submit the request.",
+		EMPTY_INPUT_REMOVE: "Please select a request to remove.",
+		ADD_FAILED: "Failed to add request to the project.",
+		REPLY_FAILED: "Failed to send answer to the request.",
+		UPDATE_FAILED: "Failed to update the request.",
+		LIKE_FAILED: "Failed to like the request.",
+		UNLIKE_FAILED: "Failed to unlike the request.",
+		DISLIKE_FAILED: "Failed to dislike the request.",
+		UNDISLIKE_FAILED: "Failed to undislike the request.",
+		REPORT_FAILED: "Failed to report the request.",
+		UNREPORT_FAILED: "Failed to unreport the request.",
+		REMOVE_FAILED: "Failed to remove request.",
+		ALREADY_APPLIED: "You have already applied to join this project.",
+	},
+
 	PROJECT_TITLE_CATEGORY: {
 		UPDATE_FAILED: "Failed to update project title and category.",
 		TITLE_REQUIRED: "Project title is required.",
@@ -226,4 +248,15 @@ export const ERRORS = {
 	},
 };
 
-export default ERRORS;
+export const errorNotConnectedWithLinks = () => (
+	<>
+		{ERRORS.GENERIC.NOT_CONNECTED}&nbsp;
+		<Link href="/sign-up" className="text-blue-500 hover:text-blue-700 transition duration-150 ease-in-out italic text-sm">
+			Sign up
+		</Link>
+		&nbsp;or&nbsp;
+		<Link href="/login" className="text-blue-500 hover:text-blue-700 transition duration-150 ease-in-out italic text-sm">
+			Log in
+		</Link>
+	</>
+);

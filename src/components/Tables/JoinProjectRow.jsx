@@ -19,44 +19,58 @@ const JoinProjectRow = ({ joinProject, type }) => {
 		setModalDisplay(false);
 	};
 
+	const cellBase = "p-2 md:px-4 md:py-2 align-middle";
+
+	const clickableCell = "w-full line-clamp-1";
+
 	return (
 		<>
-			<tr className={`border-b bg-gray-800 border-gray-700 hover:bg-gray-600 ${joinProject.recent && "text-green-500"}`}>
-				<td scope="row" className="p-2 md:px-4 md:py-2">
-					<div className="font-semibold text-sm sm:text-base whitespace-nowrap max-w-36 sm:max-w-none overflow-hidden text-ellipsis">
+			<tr className={`border-b bg-gray-800 border-gray-700 hover:bg-gray-600 ${joinProject.recent ? "text-green-500" : ""}`}>
+				{/* Project Title */}
+				<td className={`${cellBase} w-1/2 text-center`}>
+					<div className="font-semibold text-sm sm:text-base truncate">
 						<Link href={`/projects/${joinProject.project.projectId}`}>{joinProject.project.title}</Link>
 					</div>
 				</td>
-				<td className="p-2 md:px-4 md:py-2 text-center hidden md:table-cell">
-					<div>
-						<Badge badge={joinProject.project.category} size={"xs"} />
-					</div>
+
+				{/* Category */}
+				<td className={`${cellBase} text-center hidden lg:table-cell w-1/3`}>
+					<Badge badge={joinProject.project.category} size="xs" />
 				</td>
-				<td className="p-2 md:px-4 md:py-2 text-center hidden md:table-cell">
-					<button type="button" onClick={showModal}>
-						<div className={`${joinProject.recent && "font-bold"}`}>{joinProject.talent}</div>
+
+				{/* Talent */}
+				<td className={`${cellBase} text-center hidden lg:table-cell`}>
+					<button type="button" onClick={showModal} className={clickableCell}>
+						<span className={joinProject.recent ? "font-bold" : ""}>{joinProject.talent}</span>
 					</button>
 				</td>
-				<td className="p-2 md:px-4 md:py-2 hidden md:table-cell">
-					<button type="button" onClick={showModal}>
-						<div className={`${joinProject.recent && "font-bold"} text-left line-clamp-2`}>{joinProject.message}</div>
+
+				{/* Message */}
+				<td className={`${cellBase} hidden lg:table-cell`}>
+					<button type="button" onClick={showModal} className={`${clickableCell} text-left`}>
+						<span className={joinProject.recent ? "font-bold" : ""}>{joinProject.message}</span>
 					</button>
 				</td>
-				<td className="p-2 md:px-4 md:py-2 text-center">
+
+				{/* Status */}
+				<td className={`${cellBase} text-center`}>
 					<button type="button" onClick={showModal}>
-						<Status name={joinProject.status.status} size={"xs"} rounded={"xs"} bgColor={joinProject.status.colors.bgColor} />
+						<Status name={joinProject.status.status} size="xs" rounded="xs" bgColor={joinProject.status.colors.bgColor} />
 					</button>
 				</td>
-				<td className="p-2 md:px-4 md:py-2">
-					<div className="flex justify-center flex-nowrap text-white">
+
+				{/* Actions */}
+				<td className={`${cellBase}`}>
+					<div className="flex justify-center text-white">
 						{type === "invitation" && <UserInvitationsActions invitation={joinProject} />}
 						{type === "request" && <UserRequestsActions request={joinProject} />}
 					</div>
 				</td>
-				<Modal modalDisplay={modalDisplay} closeModal={closeModal} closeModalWithBackground={closeModal} modalSize={"std"} modalTitle={`Project ${type}`}>
-					<JoinProjectDetailsModal joinProject={joinProject} type={type} />
-				</Modal>
 			</tr>
+
+			<Modal modalDisplay={modalDisplay} closeModal={closeModal} closeModalWithBackground={closeModal} modalSize={"std"} modalTitle={`Project ${type}`}>
+				<JoinProjectDetailsModal joinProject={joinProject} type={type} />
+			</Modal>
 		</>
 	);
 };

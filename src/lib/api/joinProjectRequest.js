@@ -1,24 +1,49 @@
-/**
- * Join project routes
- */
+import { apiGet, apiPost, apiPatch, apiDelete } from "@/lib/api/ApiHelpers";
 
-const joinProjectRoute = require("express").Router();
+//GET requests
 
-const { joinProjectRequestController } = require("../controllers");
-const { verifyAccess } = require("../middlewares/verifyAccess.middleware");
+export async function ApiGetMyDrafts() {
+	return apiGet("/joinProject/request/myDrafts");
+}
 
-// Join Project Request
-joinProjectRoute.post("/saveDraft", verifyAccess, joinProjectRequestController.saveDraftRequest);
-joinProjectRoute.patch("/updateDraft", verifyAccess, joinProjectRequestController.updateDraftRequest);
-joinProjectRoute.delete("/removeDraft", verifyAccess, joinProjectRequestController.removeDraftRequest);
-joinProjectRoute.post("/send", verifyAccess, joinProjectRequestController.sendRequest);
+export async function ApiGetMyRequests() {
+	return apiGet("/joinProject/request/myRequests");
+}
 
-joinProjectRoute.patch("/cancel", verifyAccess, joinProjectRequestController.cancelRequest);
-joinProjectRoute.post("/accept", verifyAccess, joinProjectRequestController.acceptRequest);
-joinProjectRoute.post("/refuse", verifyAccess, joinProjectRequestController.refuseRequest);
+export async function ApiGetMyRequest(requestId) {
+	return apiGet(`/joinProject/request/myRequest/${requestId}`);
+}
 
-joinProjectRoute.get("/myDrafts", verifyAccess, joinProjectRequestController.retrieveMyDraftsRequests);
-joinProjectRoute.get("/myRequests", verifyAccess, joinProjectRequestController.retrieveAllMyRequests);
-joinProjectRoute.get("/myRequest/:requestId", verifyAccess, joinProjectRequestController.retrieveMyRequest);
+//POST requests
 
-module.exports = joinProjectRoute;
+export async function ApiPostSaveDraftRequest(data) {
+	return apiPost("/joinProject/request/saveDraft", data);
+}
+
+export async function ApiPostSendRequest(data) {
+	return apiPost("/joinProject/request/send", data);
+}
+
+export async function ApiPostAcceptRequest(data) {
+	return apiPost("/joinProject/request/accept", data);
+}
+
+export async function ApiPostRefuseRequest(data) {
+	return apiPost("/joinProject/request/refuse", data);
+}
+
+//PATCH requests
+
+export async function ApiEditDraftRequest(data) {
+	return apiPatch("/joinProject/request/updateDraft", data);
+}
+
+export async function ApiCancelRequest(data) {
+	return apiPatch("/joinProject/request/cancel", data);
+}
+
+//DELETE requests
+
+export async function ApiDeleteDraftRequest(data) {
+	return apiDelete("/joinProject/request/removeDraft", data);
+}
