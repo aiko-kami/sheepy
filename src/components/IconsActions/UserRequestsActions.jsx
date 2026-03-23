@@ -78,7 +78,7 @@ const UserRequestsActions = ({ request, iconSize }) => {
 					</Modal>
 				</>
 			)}
-			{request.permissions?.cancelDraft && (
+			{(request.permissions?.cancelDraft || request.permissions?.cancelSent) && (
 				<>
 					<button type="button" onClick={showModalCancel}>
 						<IoCloseCircleOutline className={`m-1 hover:text-pink-400 duration-100 transition ease-in-out ${size}`} title="Cancel request" />

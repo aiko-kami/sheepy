@@ -150,7 +150,7 @@ export const ERRORS = {
 		UNDISLIKE_FAILED: "Failed to undislike the request.",
 		REPORT_FAILED: "Failed to report the request.",
 		UNREPORT_FAILED: "Failed to unreport the request.",
-		REMOVE_FAILED: "Failed to remove request.",
+		CANCEL_FAILED: "Failed to cancel request.",
 		ALREADY_APPLIED: "You have already applied to join this project.",
 	},
 

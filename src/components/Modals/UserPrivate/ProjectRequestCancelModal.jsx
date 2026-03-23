@@ -1,11 +1,33 @@
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import { Button } from "@/components/Buttons/Buttons";
 import { Badge, Status } from "@/components/Badges/Badges";
 
+import { showSuccessToast, showErrorToast } from "@/utils/toast";
+
+import { ApiCancelJoinProjectRequest } from "@/lib/api/joinProjectRequest";
+import { ERRORS, SUCCESS } from "@/lib/constants";
+
 const ProjectRequestCancelModal = ({ closeModalCancel, request }) => {
-	const cancelRequest = () => {
-		console.log("🚀 ~ cancelRequest: the request has been cancelled");
+	const router = useRouter();
+
+	const cancelRequest = async () => {
+		if (!request) return;
+
+		const payload = {
+			joinProjectId: request.joinProjectId,
+		};
+
+		const result = await ApiCancelJoinProjectRequest(payload);
+		if (!result.ok) {
+			showErrorToast(result.message || ERRORS.PROJECT_REQUESTS.CANCEL_FAILED);
+			return;
+		}
+
+		router.refresh();
+
+		showSuccessToast(SUCCESS.PROJECT_REQUESTS.CANCEL_SUCCESS);
+
 		closeModalCancel();
 	};
 	return (

@@ -2,48 +2,48 @@ import { apiGet, apiPost, apiPatch, apiDelete } from "@/lib/api/ApiHelpers";
 
 //GET requests
 
-export async function ApiGetMyDrafts() {
+export async function ApiGetMyJoinProjectDrafts() {
 	return apiGet("/joinProject/request/myDrafts");
 }
 
-export async function ApiGetMyRequests() {
+export async function ApiGetMyJoinProjectRequests() {
 	return apiGet("/joinProject/request/myRequests");
 }
 
-export async function ApiGetMyRequest(requestId) {
+export async function ApiGetMyJoinProjectRequest(requestId) {
 	return apiGet(`/joinProject/request/myRequest/${requestId}`);
 }
 
 //POST requests
 
-export async function ApiPostSaveDraftRequest(data) {
+export async function ApiPostSaveDraftJoinProjectRequest(data) {
 	return apiPost("/joinProject/request/saveDraft", data);
 }
 
-export async function ApiPostSendRequest(data) {
+export async function ApiPostSendJoinProjectRequest(data) {
 	return apiPost("/joinProject/request/send", data);
 }
 
-export async function ApiPostAcceptRequest(data) {
+export async function ApiPostAcceptJoinProjectRequest(data) {
 	return apiPost("/joinProject/request/accept", data);
 }
 
-export async function ApiPostRefuseRequest(data) {
+export async function ApiPostRefuseJoinProjectRequest(data) {
 	return apiPost("/joinProject/request/refuse", data);
 }
 
 //PATCH requests
 
-export async function ApiEditDraftRequest(data) {
+export async function ApiEditDraftJoinProjectRequest(data) {
 	return apiPatch("/joinProject/request/updateDraft", data);
 }
 
-export async function ApiCancelRequest(data) {
+export async function ApiCancelJoinProjectRequest(data) {
 	return apiPatch("/joinProject/request/cancel", data);
 }
 
 //DELETE requests
 
-export async function ApiDeleteDraftRequest(data) {
+export async function ApiDeleteDraftJoinProjectRequest(data) {
 	return apiDelete("/joinProject/request/removeDraft", data);
 }

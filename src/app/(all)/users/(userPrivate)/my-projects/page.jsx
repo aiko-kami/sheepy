@@ -29,7 +29,6 @@ const MyProjectsPage = async () => {
 
 	const joinProjectInvitations = result.data.joinProjectInvitations;
 	const joinProjectRequests = result.data.joinProjectRequests;
-
 	return (
 		<>
 			<div className="container min-w-full mx-auto px-2 md:px-8">

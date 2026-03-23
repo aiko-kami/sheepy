@@ -58,6 +58,10 @@ export const SUCCESS = {
 	PROJECT_REQUESTS: {
 		SUBMIT_SUCCESS: "Your request to join the project has been submitted successfully.",
 		SAVE_DRAFT_SUCCESS: "Your draft request has been saved successfully.",
+		UPDATE_SUCCESS: "Your request has been updated successfully.",
+		CANCEL_SUCCESS: "Your request has been canceled successfully.",
+		APPROVE_SUCCESS: "The request has been approved successfully.",
+		DECLINE_SUCCESS: "The request has been declined successfully.",
 	},
 
 	PROJECT_COVER: {

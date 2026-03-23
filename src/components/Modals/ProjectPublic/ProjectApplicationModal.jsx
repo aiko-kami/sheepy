@@ -11,7 +11,7 @@ import { handleFormChange } from "@/utils/formHandlers";
 
 import { showSuccessToast, showErrorToast } from "@/utils/toast";
 
-import { ApiPostSaveDraftRequest, ApiPostSendRequest } from "@/lib/api/joinProjectRequest";
+import { ApiPostSaveDraftJoinProjectRequest, ApiPostSendJoinProjectRequest } from "@/lib/api/joinProjectRequest";
 import { ERRORS, SUCCESS } from "@/lib/constants";
 
 const ProjectApplicationModal = ({ closeModal, talentsNeeded = [], roleSelected, projectId }) => {
