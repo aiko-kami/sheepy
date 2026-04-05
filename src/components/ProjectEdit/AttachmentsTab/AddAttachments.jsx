@@ -63,7 +63,7 @@ const AddAttachments = ({ projectId, userPermissions }) => {
 						</div>
 					</form>
 				) : (
-					<PermissionsErrorPane message={ERRORS.PROJECT_PERMISSIONS.ADD_ATTACHMENTS} />
+					<PermissionsErrorPane title="Restricted Access" message={ERRORS.PROJECT_PERMISSIONS.ADD_ATTACHMENTS} />
 				)}
 			</div>
 		</>

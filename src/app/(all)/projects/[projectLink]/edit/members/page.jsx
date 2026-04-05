@@ -18,7 +18,7 @@ const ProjectEditMembersPage = async ({ params }) => {
 
 	//	console.dir(result, { depth: null, colors: true });
 
-	if (!result.ok || !result.data || !result.data.project || !result.data.userPermissions || !result.data.joinProject) {
+	if (!result.ok || !result.data || !result.data.project || !result.data.userPermissions) {
 		if (result.status === 401 || result.status === 403) {
 			redirect("/access-denied");
 		}

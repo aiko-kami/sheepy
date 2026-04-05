@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import { IoArrowUpCircle, IoAddOutline } from "react-icons/io5";
+import { IoArchive, IoAddOutline } from "react-icons/io5";
 import InvitationsTable from "@/components/Tables/ProjectEdit/InvitationsTable";
 import { Button } from "@/components/Buttons/Buttons";
 import Modal from "@/components/Modals/Modal";
@@ -10,7 +10,7 @@ import ProjectNewInvitationModal from "@/components/Modals/ProjectEdit/ProjectNe
 import { PermissionsErrorPane } from "@/components/Errors/PermissionsError";
 import { ERRORS } from "@/lib/constants";
 
-const JoinInvitations = ({ talentsNeeded, projectId, joinProjectInvitations, userPermissions }) => {
+const Archives = ({ talentsNeeded, projectId, joinProjectInvitations, userPermissions }) => {
 	const [modalDisplayNewInvitation, setModalDisplayNewInvitation] = useState(false);
 
 	const showModalNewInvitation = () => {
@@ -24,8 +24,8 @@ const JoinInvitations = ({ talentsNeeded, projectId, joinProjectInvitations, use
 		<>
 			{/* Join invitations */}
 			<h2 className="flex items-center text-xl mb-3 sm:ml-4">
-				<IoArrowUpCircle className="mr-2 text-2xl" />
-				Invitations to join the project
+				<IoArchive className="mr-2 text-2xl" />
+				Archives
 			</h2>
 			<hr className="h-px bg-gray-200 border-0 dark:bg-gray-700 mb-6" />
 
@@ -73,4 +73,4 @@ const JoinInvitations = ({ talentsNeeded, projectId, joinProjectInvitations, use
 		</>
 	);
 };
-export default JoinInvitations;
+export default Archives;

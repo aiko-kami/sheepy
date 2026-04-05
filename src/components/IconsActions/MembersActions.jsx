@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { useAuth } from "@/contexts";
+
 import Link from "next/link";
 
 import Modal from "@/components/Modals/Modal";
@@ -11,7 +13,9 @@ import IconButton from "@/components/Buttons/IconButton";
 
 import { IoBuildOutline, IoCloseCircleOutline, IoChatboxEllipsesOutline, IoPersonOutline } from "react-icons/io5";
 
-const MembersActions = ({ projectId, user, role, talent, startDate, userPermissions, iconSize }) => {
+const MembersActions = ({ projectId, member, role, talent, startDate, userPermissions, iconSize }) => {
+	const { user } = useAuth();
+
 	const [modalDisplayUpdate, setModalDisplayUpdate] = useState(false);
 	const [modalDisplayMessage, setModalDisplayMessage] = useState(false);
 	const [modalDisplayRemove, setModalDisplayRemove] = useState(false);
@@ -58,7 +62,7 @@ const MembersActions = ({ projectId, user, role, talent, startDate, userPermissi
 						<IoBuildOutline className={size} title="Edit member" />
 					</IconButton>
 					<Modal modalDisplay={modalDisplayUpdate} closeModal={closeModalUpdate} modalSize={"std"} modalTitle={"Update member"}>
-						<UpdateMemberModal user={user} projectId={projectId} role={role} talent={talent} startDate={startDate} closeModalUpdate={closeModalUpdate} />
+						<UpdateMemberModal user={member} projectId={projectId} role={role} talent={talent} startDate={startDate} closeModalUpdate={closeModalUpdate} />
 					</Modal>
 				</>
 			)}
@@ -66,21 +70,21 @@ const MembersActions = ({ projectId, user, role, talent, startDate, userPermissi
 				<IoChatboxEllipsesOutline className={size} title="Send a message" />
 			</IconButton>
 			<Modal modalDisplay={modalDisplayMessage} closeModal={closeModalMessage} modalSize={"std"} modalTitle={"Send a message"}>
-				<SendMessageMemberModal member={user} closeModalMessage={closeModalMessage} />
+				<SendMessageMemberModal member={member} closeModalMessage={closeModalMessage} />
 			</Modal>
 
-			<Link href={`/users/${user.userId}`}>
+			<Link href={`/users/${member.userId}`}>
 				<IconButton btnColor={"blue"}>
 					<IoPersonOutline className={size} title="Visit user profile" />
 				</IconButton>
 			</Link>
-			{userPermissions?.canRemoveMembers && (
+			{userPermissions?.canRemoveMembers && user?.userId !== member.userId && (
 				<>
 					<IconButton btnColor={"red"} action={showModalRemove}>
 						<IoCloseCircleOutline className={size} title="Remove from the project" />
 					</IconButton>
 					<Modal modalDisplay={modalDisplayRemove} closeModal={closeModalRemove} closeModalWithBackground={closeModalRemove} modalSize={"std"} modalTitle={"Remove member from the project"}>
-						<RemoveMemberModal member={user} projectId={projectId} role={role} talent={talent} startDate={startDate} closeModalRemove={closeModalRemove} />
+						<RemoveMemberModal member={member} projectId={projectId} role={role} talent={talent} startDate={startDate} closeModalRemove={closeModalRemove} />
 					</Modal>
 				</>
 			)}

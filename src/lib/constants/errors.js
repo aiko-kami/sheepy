@@ -152,6 +152,7 @@ export const ERRORS = {
 		UNREPORT_FAILED: "Failed to unreport the request.",
 		CANCEL_FAILED: "Failed to cancel request.",
 		ALREADY_APPLIED: "You have already applied to join this project.",
+		ACCEPT_FAILED: "Failed to accept the request.",
 	},
 
 	PROJECT_TITLE_CATEGORY: {

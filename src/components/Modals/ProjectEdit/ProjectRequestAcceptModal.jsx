@@ -1,10 +1,34 @@
+import { useRouter } from "next/navigation";
+
 import { Button } from "@/components/Buttons/Buttons";
 import { Status } from "@/components/Badges/Badges";
 import { Avatar } from "@/components/Badges/Avatar";
 
+import { showSuccessToast, showErrorToast } from "@/utils/toast";
+
+import { ApiPostAcceptJoinProjectRequest } from "@/lib/api/joinProjectRequest";
+import { ERRORS, SUCCESS } from "@/lib/constants";
+
 const ProjectRequestAcceptModal = ({ closeModalAccept, request }) => {
-	const acceptRequest = () => {
-		console.log("🚀 ~ acceptRequest: the request has been accepted");
+	const router = useRouter();
+
+	const acceptRequest = async () => {
+		if (!request) return;
+
+		const payload = {
+			joinProjectId: request.joinProjectId,
+		};
+
+		const result = await ApiPostAcceptJoinProjectRequest(payload);
+		if (!result.ok) {
+			showErrorToast(result.message || ERRORS.PROJECT_REQUESTS.ACCEPT_FAILED);
+			return;
+		}
+
+		router.refresh();
+
+		showSuccessToast(SUCCESS.PROJECT_REQUESTS.ACCEPT_SUCCESS);
+
 		closeModalAccept();
 	};
 	return (

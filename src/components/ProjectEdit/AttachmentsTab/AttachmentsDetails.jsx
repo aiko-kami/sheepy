@@ -26,7 +26,7 @@ const AttachmentsDetails = ({ projectId, attachments, userPermissions }) => {
 						</div>
 					</div>
 				) : (
-					<PermissionsErrorPane message={ERRORS.PROJECT_PERMISSIONS.VIEW_ATTACHMENTS} />
+					<PermissionsErrorPane title="Restricted Access" message={ERRORS.PROJECT_PERMISSIONS.VIEW_ATTACHMENTS} />
 				)}
 			</div>
 		</>

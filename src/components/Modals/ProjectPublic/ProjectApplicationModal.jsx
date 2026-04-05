@@ -75,7 +75,7 @@ const ProjectApplicationModal = ({ closeModal, talentsNeeded = [], roleSelected,
 				projectId,
 			};
 
-			const result = await ApiPostSendRequest(payload);
+			const result = await ApiPostSendJoinProjectRequest(payload);
 			if (!result.ok) {
 				showErrorToast(result.message || ERRORS.PROJECT_REQUESTS.SUBMIT_FAILED);
 				return;

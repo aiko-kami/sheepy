@@ -2,6 +2,7 @@ import MembersDetails from "@/components/ProjectEdit/MembersTab/MembersDetails";
 import TalentsNeeded from "@/components/ProjectEdit/MembersTab/TalentsNeeded";
 import JoinRequests from "@/components/ProjectEdit/MembersTab/JoinRequests";
 import JoinInvitations from "@/components/ProjectEdit/MembersTab/JoinInvitations";
+import Archives from "@/components/ProjectEdit/MembersTab/Archives";
 
 const Members = ({ projectId, userPermissions, members, talentsNeeded, joinProject }) => {
 	return (
@@ -21,6 +22,16 @@ const Members = ({ projectId, userPermissions, members, talentsNeeded, joinProje
 			{/* Invitations to join the project */}
 			<div className="mb-8 lg:mb-14">
 				<JoinInvitations projectId={projectId} talentsNeeded={talentsNeeded} joinProjectInvitations={joinProject?.joinInvitations} userPermissions={userPermissions} />
+			</div>
+			{/* Archives (requests, invitations and former members) */}
+			<div className="mb-8 lg:mb-14">
+				<Archives
+					projectId={projectId}
+					oldJoinProjectInvitations={joinProject?.joinInvitations}
+					oldJoinProjectRequests={joinProject?.joinRequests}
+					oldMembers={members}
+					userPermissions={userPermissions}
+				/>
 			</div>
 		</>
 	);

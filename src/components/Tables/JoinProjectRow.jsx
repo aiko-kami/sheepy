@@ -10,6 +10,8 @@ import UserRequestsActions from "@/components/IconsActions/UserRequestsActions";
 import UserInvitationsActions from "@/components/IconsActions/UserInvitationsActions";
 
 const JoinProjectRow = ({ joinProject, type }) => {
+	console.log("🚀 ~ JoinProjectRow ~ joinProject:", joinProject.project);
+
 	const [modalDisplay, setModalDisplay] = useState(false);
 
 	const showModal = () => {
@@ -29,7 +31,7 @@ const JoinProjectRow = ({ joinProject, type }) => {
 				{/* Project Title */}
 				<td className={`${cellBase} w-1/2 text-center`}>
 					<div className="font-semibold text-sm sm:text-base truncate">
-						<Link href={`/projects/${joinProject.project.projectId}`}>{joinProject.project.title}</Link>
+						<Link href={`/projects/${joinProject.project.link}`}>{joinProject.project.title}</Link>
 					</div>
 				</td>
 

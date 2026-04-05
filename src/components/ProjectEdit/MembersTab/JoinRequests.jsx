@@ -31,7 +31,7 @@ const RequestsTable = ({ projectId, joinProjectRequests, userPermissions }) => {
 						</>
 					) : (
 						<div className="w-full">
-							<PermissionsErrorPane message={ERRORS.PROJECT_PERMISSIONS.VIEW_REQUESTS} />
+							<PermissionsErrorPane title="Restricted Access" message={ERRORS.PROJECT_PERMISSIONS.VIEW_REQUESTS} />
 						</div>
 					)}
 				</div>

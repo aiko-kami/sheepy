@@ -44,7 +44,7 @@ const MembersTable = ({ members, projectId, userPermissions }) => {
 								</td>
 								<td scope="row" className="p-2 md:px-4 md:py-2">
 									<div className="flex justify-center flex-nowrap">
-										<MembersActions projectId={projectId} user={user} role={role} talent={talent} startDate={startDate} userPermissions={userPermissions} />
+										<MembersActions projectId={projectId} member={user} role={role} talent={talent} startDate={startDate} userPermissions={userPermissions} />
 									</div>
 								</td>
 							</tr>
